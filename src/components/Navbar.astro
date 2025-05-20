@@ -1,0 +1,92 @@
+---
+import "../styles/global.css"
+---
+
+<nav class="bg-white border-b border-blue-700">
+  <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="logo.png" alt="Triaso Logo" class="h-8">
+    </div>
+
+    <!-- Menú principal -->
+    <ul class="flex space-x-6 text-sm font-semibold text-gray-800">
+      <li class="relative group">
+        <button class="flex items-center gap-1 hover:text-red-600">
+          PRODUCTS <span class="text-xs">▼</span>
+        </button>
+
+        <!-- Mega Menu -->
+        <div class="absolute top-full left-0 z-50 hidden group-hover:flex bg-white border-t border-blue-700 shadow-xl py-4 px-6 w-[800px]">
+          <!-- Column 1 -->
+          <div class="w-1/3 px-4">
+            <h4 class="font-bold mb-2">ASPHALT PLANTS</h4>
+            <ul class="space-y-1">
+              <li>Drum Mixers</li>
+              <li>Baghouses</li>
+              <li>Asphalt Tanks</li>
+            </ul>
+
+            <h4 class="font-bold mt-4 text-red-600">BINS</h4>
+            <ul class="space-y-1">
+              <li>Bin Units</li>
+              <li>RAP Bins</li>
+              <li>Powder Additives Bins</li>
+            </ul>
+
+            <h4 class="font-bold mt-4 text-red-600">HEATING SYSTEMS</h4>
+            <ul class="space-y-1">
+              <li>Burners</li>
+              <li>Fuel Preheaters</li>
+              <li>Oil Heaters</li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="w-1/3 px-4">
+            <h4 class="font-bold mb-2 text-red-600">ROCK CRUSHERS</h4>
+            <ul class="space-y-1">
+              <li>Jaw Crushers</li>
+              <li>Cone Crushers</li>
+              <li>Ball Mills</li>
+              <li>Mini Crushers</li>
+              <li>Conveyors</li>
+            </ul>
+
+            <h4 class="font-bold mt-4 text-red-600">FEEDERS</h4>
+            <ul class="space-y-1">
+              <li>Belt Feeders</li>
+              <li>Vibratory Feeders</li>
+              <li>Vibratory Screens</li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="w-1/3 px-4">
+            <h4 class="font-bold mb-2">ASPHALT PLANTS</h4>
+            <ul class="space-y-1">
+              <li>About Us</li>
+              <li>Newsroom</li>
+              <li>Advantages</li>
+              <li>Manufacture</li>
+              <li class="text-red-600">Some Tips for Buying</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="#" class="hover:text-red-600">SERVICE</a></li>
+      <li><a href="#" class="hover:text-red-600">ABOUT</a></li>
+      <li><a href="#" class="hover:text-red-600">EXPOS</a></li>
+      <li><a href="#" class="hover:text-red-600">VIDEOS</a></li>
+      <li><a href="#" class="hover:text-red-600">CONTACT</a></li>
+    </ul>
+
+    <!-- Icons (simplificados) -->
+    <div class="flex items-center gap-3 text-sm">
+      <span class="text-red-600 font-bold">EN ▼</span>
+      <a href="#"><img src="facebook.svg" alt="Facebook" class="h-4"></a>
+      <a href="#"><img src="instagram.svg" alt="Instagram" class="h-4"></a>
+    </div>
+  </div>
+</nav>
