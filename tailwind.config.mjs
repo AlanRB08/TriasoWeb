@@ -9,7 +9,8 @@ module.exports = {
             'red_bg' : '#CA1C1C', // Rojo de botones e iconos
             'gris_titulos': '#393939', // Gris obscuro para titulos 
             'verde_whats': '#128c7e' , // Verde de whatshapp
-            'gris_text' : '#737373' // Gris para menu
+            'gris_text' : '#737373', // Gris para menu
+            'bg_main' : '#f4f5f6',
         },
         fontFamily : {
             sans: [
