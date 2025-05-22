@@ -1,37 +1,8 @@
 ---
-import '../styles/global.css'
+// src/components/LinkNavbar.astro
+import LinkNavbarItem from './LinkNavbarItem.astro'
 
-interface Props {
-    title : string,
-    options : number,
-}
-
-const { title , options } = Astro.props
+const { item } = Astro.props;
 ---
-<div class="group relative px-8">
-    <button 
-        id="producto-btn"
-        class="flex items-center justify-between w-full mx-1 px-4 py-2 text-sm font-bold text-black hover:text-red-500 hover:pointer rounded-lg transition-all"
-      >
-        <span>{title}</span>
-        <svg class="w-5 h-5 transform group-hover:rotate-180 transition-transform text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div id="click-menu" class="hidden absolute left-0 w-full bg-white rounded-sm shadow-md z-10">
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Opción Click 1</a>
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Opción Click 2</a>
-      </div>
 
-      <!-- Menú desplegable por HOVER (2 opciones diferentes) -->
-      <div class="hidden group-hover:block absolute left-0 w-full bg-white rounded-sm shadow-md z-10">
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Opción Hover 1</a>
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Opción Hover 2</a>
-      </div>
-
-</div>
-<script>
-    document.getElementById('producto-btn')!.addEventListener('click', function() {
-      document.getElementById('click-menu')!.classList.toggle('hidden');
-    });
-  </script>
+<LinkNavbarItem item={item} />

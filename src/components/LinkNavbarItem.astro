@@ -1,0 +1,56 @@
+---
+// src/components/LinkNavbarItem.astro
+import LinkNavbarItem from './LinkNavbarItem.astro';
+
+type MenuItem = {
+  title: string;
+  url: string;
+  children?: MenuItem[];
+};
+
+const { item } = Astro.props;
+---
+<!-- Cada nivel de menú tiene su propio grupo -->
+<style>
+  .nav-item {
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: var(--navbar-width, 250px); /* Hereda el ancho del contenedor padre */
+    min-width: max-content; /* Asegura que el contenido no se corte */
+  }
+  
+  .nav-item:hover > .submenu {
+    display: block;
+  }
+</style>
+
+<div class="nav-item px-4 py-4 border-b-2 border-b-gray-400">
+  <a 
+    href={item.url} 
+    class="flex items-center justify-between w-full px-4 py-2 text-sm font-bold text-black hover:text-red-500 rounded-lg transition-all"
+  >
+    <span>{item.title}</span>
+    {item.children && (
+      <svg class="w-5 h-5 transform hover:rotate-180 transition-transform text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    )}
+  </a>
+
+  {item.children && item.children.length > 0 && (
+    <ul class="submenu bg-white rounded-sm shadow-md z-10 min-w-max">
+      {item.children.map((child : MenuItem) => (
+        <li>
+          <LinkNavbarItem item={child} />
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
