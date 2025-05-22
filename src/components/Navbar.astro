@@ -2,36 +2,235 @@
 import "../styles/global.css"
 import LenguageSelector from "./LenguageSelector.astro"
 import LinkNavbar from "./LinkNavbar.astro"
+import Logo from "../assets/logos/LogoTriasoUs.svg"
+
+const menuItems = [
+  {
+    title : "PRODUCTS",
+    url : "/products",
+    children : [
+      {
+        title : "ASPHALT PLANTS",
+        url : "/products/asphalt-plants",
+        children : [
+        {
+          title : "DRUM MIXERS",
+          url : "/products/asphalt-plants/drum-mixers",
+        },
+        {
+          title : "BAG HOUSES",
+          url : "/products/asphalt-plants/bag-houses",
+        },
+        {
+          title: " BINS",
+          url: "/products/asphalt-plants/bins",
+          children : [ 
+            {
+              title : "BIN UNITS",
+              url : "/products/asphalt-plants/bins/bin-units",
+            },
+            {
+              title : "RAP BINS",
+              url : "/products/asphalt-plants/bins/rap-bins",
+            },
+            {
+              title: "POWDER ADDITIVE BINS",
+              url: "/products/asphalt-plants/bins/powder-additive-bins",
+            }
+          ]
+        },
+        {
+          title : "HEATING SYSTEMS",
+          url : "/products/asphalt-plants/heating-systems",
+          children : [
+            {
+              title : "BURNERS",
+              url : "/products/asphalt-plants/heating-systems/burners",
+            },
+            {
+              title : "FUEL PREHEATERS",
+              url : "/products/asphalt-plants/heating-systems/fuel-preheaters",
+            },
+            {
+              title : "OIL HEATERS",
+              url : "/products/asphalt-plants/heating-systems/oil-heaters",
+            }
+          ]
+        },
+        {
+          title : "HOT-MIX STORAGE SILOS",
+          url : "/products/asphalt-plants/hot-mix-storage-silos"
+        },
+        {
+          title : "COLD-MIX PLANTS",
+          url : "/products/asphalt-plants/cold-mix-plants",
+        },
+        {
+          title : "10 TPH INTEGRAL ASPHALT PLANTS",
+          url : "/products/asphalt-plants/integral-asphalt-plants",
+        }
+      ]
+      },
+      {
+        title : "ROCK CRUSHERS",
+        url : "/products/rock-crushers",
+        children : [
+          {
+            title : "JAW CRUSHERS",
+            url : "/products/rock-crushers/jaw-crushers",
+          },
+          {
+            title : "CONE CRUSHERS",
+            url : "/products/rock-crushers/conical-crushers",
+          },
+          {
+            title : "INTEGRAL EQUIPPED CRUSHERS",
+            url : "/products/rock-crushers/integral-equipped-crushers",
+          },
+          {
+            title : "BALL MILLS",
+            url : "/products/rock-crushers/ball-mills",
+          },
+          {
+            title : "MINI CRUSHERS",
+            url : "/products/rock-crushers/mini-crushers",
+          },
+          {
+            title : "CONVEYORS",
+            url : "/products/rock-crushers/conveyors",
+          },
+          {
+            title : "FEEDERS",
+            url : "/products/rock-crushers/feeders",
+            children : [
+              {
+                title : "BELT FEEDERS",
+                url : "/products/rock-crushers/feeders/belt-feeders",
+              },
+              {
+                title : "VIBRATORY FEEDERS",
+                url : "/products/rock-crushers/feeders/vibratory-feeders",
+              }
+            ]
+          },
+          {
+            title : "VIBRATORY SCREENS",
+            url : "/products/rock-crushers/vibratory-screens",
+          }
+        ]
+      },
+    ]
+  },
+  {
+    title : "SERVICE",
+    url : "/service",
+    children : [
+      {
+        title : "SPARE PARTS",
+        url : "/service/spare-parts",
+      },
+      {
+        title : "COSTUME DESIGN",
+        url : "/service/costume-design",
+      },
+      {
+        title : "MAINTENANCE",
+        url : "/service/maintenance",
+      },
+      {
+        title : "REHABILITATION",
+        url : "/service/rehabilitation",
+      }
+    ]
+  },
+  {
+    title : "ABOUT",
+    url : "/about",
+    children : [
+      {
+        title : "ABOUT US",
+        url : "/about/about-us",
+      },
+      {
+        title : "NEWS ROOM",
+        url : "/about/news-room",
+      },
+      {
+        title : "ADVANTAGES",
+        url : "/about/advantages",
+      },
+      {
+        title : "HIGH QUALITY",
+        url : "/about/high-quality",
+      },
+      {
+        title : "IMPROVMENT AND DESIGN",
+        url : "/about/improvment-and-design",
+      },
+      {
+        title : "MANUFACTURE",
+        url : "/about/manufacture",
+      },
+      {
+        title : "DELIVERY AND INSTALLATION",
+        url : "/about/delivery-and-installation",
+      },
+      {
+        title : "SOME TIPS FOR BUYING AN EQUIPMENT",
+        url : "/about/tips",
+        children : [
+          {
+            title : "ASPHALT PLANTS",
+            url : "/about/tips/asphalt-plants",
+          },
+          {
+            title : "ROCK CRUSHERS",
+            url : "/about/tips/rock-crushers",
+          }
+        ]
+      },
+      {
+        title : "ROCK CRUSHERS CONFIGURATION",
+        url : "/about/rock-crushers-configuration"
+      },
+      {
+        title : "RAP RECYCLED ASPHALT PAVEMENT",
+        url : "/about/rap-recycled-asphalt-pavement",
+      }
+    ]
+  },
+  {
+    title : "EXPOS",
+    url : "/expos",
+  },
+  {
+    title : "VIDEOS",
+    url : "/videos",
+  },
+  {
+    title : "CONTACT",
+    url : "/contact",
+  }
+]
 
 ---
 
 <nav class="bg-white border-b-2 border-[#14427C]">
-  <div class="max-w-screen-xl mx-auto px-1 flex items-center justify-between h-16">
+  <div class="max-w-screen mx-auto px-1 flex justify-center h-16">
     <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <img src="logo.png" alt="Triaso Logo" class="h-8">
+      <img src={Logo.src} alt="Triaso Logo" class="h-8">
     </div>
 
     <!-- Menú principal -->
-    <div class="relative flex items-center justify-evenly flex-grow">
-      <!-- PRODUCTS NAVBAR -->
-      <LinkNavbar 
-      title="PRODUCTS",
-      options={2}/>
-      <LinkNavbar 
-      title="SERVICE",
-      options={2}/>
-      <LinkNavbar 
-      title="ABOUT",
-      options={2}/>
-      <div>
-        <a href="" class="flex items-center justify-between w-full mx-1 px-4 py-2 text-sm font-bold text-black hover:text-red-500 rounded-lg transition-all">EXPOS</a>
-      </div>
-      <div>
-        <a href="" class="flex items-center justify-between w-full mx-1 px-4 py-2 text-sm font-bold text-black hover:text-red-500 rounded-lg transition-all">VIDEOS</a>
-      </div>
-      <div>
-        <a href="" class="flex items-center justify-between w-full mx-1 px-4 py-2 text-sm font-bold text-black hover:text-red-500 rounded-lg transition-all">CONTACT</a>
+    <div class="relative justify-around flex-grow">
+  <!-- Contenedor con flex-row -->
+      <div class="flex justify-between" style="--navbar-width: 300px">
+        <div class="w-[var(--navbar-width)] flex justify-between space-x-6 over"> <!-- Añadido flex y flex-row -->
+          {menuItems.map((item) => (
+            <LinkNavbar item={item} key={item.url} />
+          ))}
+        </div>
       </div>
     </div>
     <!-- Lenguaje Selector -->
@@ -39,7 +238,7 @@ import LinkNavbar from "./LinkNavbar.astro"
     <div class="flex justify-between items-center align text-baseline gap-2">
       <div>
         <a href="">
-          <?xml version="1.0" encoding="UTF-8"?><svg class="text-[#14427C]"  width="24px" height="24px" stroke-width="1.75" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427C"><path d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg class="text-[#14427C]"  width="24px" height="24px" stroke-width="1.75" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427C"><path d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
       </div>  
         <div>
