@@ -216,17 +216,17 @@ const menuItems = [
 ---
 
 <nav class="bg-white border-b-2 border-[#14427C]">
-  <div class="max-w-screen mx-auto px-1 flex justify-center h-16">
+  <div class="max-w-screen mx-auto px-1 flex justify-center items-center h-16">
     <!-- Logo -->
-    <div class="flex items-center space-x-2">
-      <img src={Logo.src} alt="Triaso Logo" class="h-8">
+    <div class="flex items-center space-x-2 max-w-[200px]">
+      <img src={Logo.src} alt="Triaso Logo" class="">
     </div>
 
     <!-- Menú principal -->
-    <div class="relative justify-around flex-grow">
+    <div class="relative justify-around flex-grow items-center">
   <!-- Contenedor con flex-row -->
       <div class="flex justify-between" style="--navbar-width: 300px">
-        <div class="w-[var(--navbar-width)] flex justify-between space-x-6 over"> <!-- Añadido flex y flex-row -->
+        <div class="w-[var(--navbar-width)] flex justify-between space-x-6"> <!-- Añadido flex y flex-row -->
           {menuItems.map((item) => (
             <LinkNavbar item={item} key={item.url} />
           ))}
@@ -234,7 +234,10 @@ const menuItems = [
       </div>
     </div>
     <!-- Lenguaje Selector -->
-    <LenguageSelector />
+     <div class="flex items-center">
+      <LenguageSelector />
+     </div>
+    
     <div class="flex justify-between items-center align text-baseline gap-2">
       <div>
         <a href="">
