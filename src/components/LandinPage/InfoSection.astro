@@ -1,0 +1,58 @@
+---
+import img1 from "../../assets/images/maquina1.webp";
+import img2 from "../../assets/images/planos.webp";
+import img3 from "../../assets/images/maquina2.png";
+---
+<section class="w-full mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 mx-10">
+        <div class="flex flex-col items-end justify-between">
+            <img src={img1.src} alt="">
+            <div>
+                <h1 class="font-semibold text-gray-800 text-lg">We care about details </h1>
+                <div class="mt-4 mb-6 flex justify-center">
+                    <div class="w-20 h-0.5 bg-red-500"></div>
+                    <div class="w-20 h-0.5 bg-gray-300"></div>
+                </div>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm text-end leading-relaxed">Our engineers design with your needs and expectations at the forefront. 
+                At our manufacturing facility, every component undergoes rigorous inspection to guarantee durability, 
+                reliability, and optimal performance. This commitment to excellence enables us to produce cost-effective 
+                equipment that not only deliver superior results but also comply with and exceed environmental regulations.</p>
+        </div>
+        <div class="flex flex-col items-start justify-between">
+            <div>
+                <h1 class="font-semibold text-gray-800 text-lg">Communications is Key </h1>
+                <div class="mt-4 mb-6 flex justify-center">
+                    <div class="w-20 h-0.5 bg-red-500"></div>
+                    <div class="w-20 h-0.5 bg-gray-300"></div>
+                </div>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm text-start leading-relaxed">Our engineers design with your needs and expectations at the forefront. 
+                At our manufacturing facility, every component undergoes rigorous inspection to guarantee durability, 
+                reliability, and optimal performance. This commitment to excellence enables us to produce cost-effective 
+                equipment that not only deliver superior results but also comply with and exceed environmental regulations.</p>
+            <img src={img2.src} alt="">
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center my-10">
+            <div class="flex justify-center items-center">
+                <div class="bg-red-800 rounded-r-lg pl-4 py-10 min-h-1/2">
+                    <h1 class="text-white font-bold text-2xl">Seamless Integration with <br>Other Systems</h1>
+                <br>
+                <p class="text-white text-sm">
+                    Triaso® equipment integrates seamlessly with other machinery, 
+                    ensuring smooth transitions between production stages. 
+                    This compatibility supports uninterrupted operations and optimizes workflow efficiency throughout your facility.
+                </p>
+                </div>
+            </div>
+            <!-- -->
+            <div class="w-full">
+                <img src={img3.src} alt="" class="object-cover w-full">
+
+            </div>
+
+            </div>
+        </div>  
+
+</section>
