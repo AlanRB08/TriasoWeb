@@ -3,242 +3,28 @@ import "../styles/global.css"
 import LenguageSelector from "./LenguageSelector.astro"
 import LinkNavbar from "./LinkNavbar.astro"
 import Logo from "../assets/logos/LogoTriasoUs.svg"
-
-const menuItems = [
-  {
-    title : "PRODUCTS",
-    url : "/products",
-    children : [
-      {
-        title : "ASPHALT PLANTS",
-        url : "/products/asphalt-plants",
-        children : [
-        {
-          title : "DRUM MIXERS",
-          url : "/products/asphalt-plants/drum-mixers",
-        },
-        {
-          title : "BAG HOUSES",
-          url : "/products/asphalt-plants/bag-houses",
-        },
-        {
-          title: " BINS",
-          url: "/products/asphalt-plants/bins",
-          children : [ 
-            {
-              title : "BIN UNITS",
-              url : "/products/asphalt-plants/bins/bin-units",
-            },
-            {
-              title : "RAP BINS",
-              url : "/products/asphalt-plants/bins/rap-bins",
-            },
-            {
-              title: "POWDER ADDITIVE BINS",
-              url: "/products/asphalt-plants/bins/powder-additive-bins",
-            }
-          ]
-        },
-        {
-          title : "HEATING SYSTEMS",
-          url : "/products/asphalt-plants/heating-systems",
-          children : [
-            {
-              title : "BURNERS",
-              url : "/products/asphalt-plants/heating-systems/burners",
-            },
-            {
-              title : "FUEL PREHEATERS",
-              url : "/products/asphalt-plants/heating-systems/fuel-preheaters",
-            },
-            {
-              title : "OIL HEATERS",
-              url : "/products/asphalt-plants/heating-systems/oil-heaters",
-            }
-          ]
-        },
-        {
-          title : "HOT-MIX STORAGE SILOS",
-          url : "/products/asphalt-plants/hot-mix-storage-silos"
-        },
-        {
-          title : "COLD-MIX PLANTS",
-          url : "/products/asphalt-plants/cold-mix-plants",
-        },
-        {
-          title : "10 TPH INTEGRAL ASPHALT PLANTS",
-          url : "/products/asphalt-plants/integral-asphalt-plants",
-        }
-      ]
-      },
-      {
-        title : "ROCK CRUSHERS",
-        url : "/products/rock-crushers",
-        children : [
-          {
-            title : "JAW CRUSHERS",
-            url : "/products/rock-crushers/jaw-crushers",
-          },
-          {
-            title : "CONE CRUSHERS",
-            url : "/products/rock-crushers/conical-crushers",
-          },
-          {
-            title : "INTEGRAL EQUIPPED CRUSHERS",
-            url : "/products/rock-crushers/integral-equipped-crushers",
-          },
-          {
-            title : "BALL MILLS",
-            url : "/products/rock-crushers/ball-mills",
-          },
-          {
-            title : "MINI CRUSHERS",
-            url : "/products/rock-crushers/mini-crushers",
-          },
-          {
-            title : "CONVEYORS",
-            url : "/products/rock-crushers/conveyors",
-          },
-          {
-            title : "FEEDERS",
-            url : "/products/rock-crushers/feeders",
-            children : [
-              {
-                title : "BELT FEEDERS",
-                url : "/products/rock-crushers/feeders/belt-feeders",
-              },
-              {
-                title : "VIBRATORY FEEDERS",
-                url : "/products/rock-crushers/feeders/vibratory-feeders",
-              }
-            ]
-          },
-          {
-            title : "VIBRATORY SCREENS",
-            url : "/products/rock-crushers/vibratory-screens",
-          }
-        ]
-      },
-    ]
-  },
-  {
-    title : "SERVICE",
-    url : "/service",
-    children : [
-      {
-        title : "SPARE PARTS",
-        url : "/service/spare-parts",
-      },
-      {
-        title : "COSTUME DESIGN",
-        url : "/service/costume-design",
-      },
-      {
-        title : "MAINTENANCE",
-        url : "/service/maintenance",
-      },
-      {
-        title : "REHABILITATION",
-        url : "/service/rehabilitation",
-      }
-    ]
-  },
-  {
-    title : "ABOUT",
-    url : "/about",
-    children : [
-      {
-        title : "ABOUT US",
-        url : "/about/about-us",
-      },
-      {
-        title : "NEWS ROOM",
-        url : "/about/news-room",
-      },
-      {
-        title : "ADVANTAGES",
-        url : "/about/advantages",
-      },
-      {
-        title : "HIGH QUALITY",
-        url : "/about/high-quality",
-      },
-      {
-        title : "IMPROVMENT AND DESIGN",
-        url : "/about/improvment-and-design",
-      },
-      {
-        title : "MANUFACTURE",
-        url : "/about/manufacture",
-      },
-      {
-        title : "DELIVERY AND INSTALLATION",
-        url : "/about/delivery-and-installation",
-      },
-      {
-        title : "SOME TIPS FOR BUYING AN EQUIPMENT",
-        url : "/about/tips",
-        children : [
-          {
-            title : "ASPHALT PLANTS",
-            url : "/about/tips/asphalt-plants",
-          },
-          {
-            title : "ROCK CRUSHERS",
-            url : "/about/tips/rock-crushers",
-          }
-        ]
-      },
-      {
-        title : "ROCK CRUSHERS CONFIGURATION",
-        url : "/about/rock-crushers-configuration"
-      },
-      {
-        title : "RAP RECYCLED ASPHALT PAVEMENT",
-        url : "/about/rap-recycled-asphalt-pavement",
-      }
-    ]
-  },
-  {
-    title : "EXPOS",
-    url : "/expos",
-  },
-  {
-    title : "VIDEOS",
-    url : "/videos",
-  },
-  {
-    title : "CONTACT",
-    url : "/contact",
-  }
-]
-
+import { menuItems } from "../assets/data/menuItems"
 ---
-
 <nav class="bg-white border-b-2 border-[#14427C]">
-  <div class="max-w-screen mx-auto px-1 flex justify-center items-center h-16">
-    <!-- Logo -->
-    <div class="flex items-center space-x-2 max-w-[200px]">
-      <img src={Logo.src} alt="Triaso Logo" class="">
+  <div class="max-w-screen-xl mx-auto px-4 flex justify-evenly items-center h-16">
+    {/* Logo */}
+    <div class="flex items-center space-x-2 max-w-[200px] flex-shrink-0">
+      <img src={Logo.src} alt="Triaso Logo" class="h-10 w-auto" />
     </div>
 
-    <!-- Menú principal -->
-    <div class="relative justify-around flex-grow items-center">
-  <!-- Contenedor con flex-row -->
-      <div class="flex justify-between" style="--navbar-width: 300px">
-        <div class="w-[var(--navbar-width)] flex justify-between space-x-6"> <!-- Añadido flex y flex-row -->
-          {menuItems.map((item) => (
-            <LinkNavbar item={item} key={item.url} />
-          ))}
-        </div>
+    {/* Menú principal */}
+    <div class="flex-grow justify-center hidden lg:block">
+      <div class="flex space-x-6">
+        {menuItems.map((item) => (
+          <LinkNavbar item={item} key={item.url} />
+        ))}
       </div>
     </div>
-    <!-- Lenguaje Selector -->
-     <div class="flex items-center">
+
+    {/* Lenguaje + redes sociales */}
+    <div class="flex items-center space-x-4">
       <LenguageSelector />
-     </div>
-    
-    <div class="flex justify-between items-center align text-baseline gap-2">
+      <div class="flex justify-between items-center align text-baseline gap-2">
       <div>
         <a href="">
           <svg class="text-[#14427C]"  width="24px" height="24px" stroke-width="1.75" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427C"><path d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -256,10 +42,12 @@ const menuItems = [
       </div>
       <div>
         <a href="">
-          <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.75" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427C"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4.15039C10.8087 4.15039 9.42076 4.17798 8.06649 4.21628L8.01146 4.21784C6.63265 4.25681 5.52112 4.28823 4.64461 4.43318C3.73199 4.58411 2.97386 4.87211 2.36772 5.49563C1.75996 6.12082 1.49451 6.89404 1.3699 7.81907C1.24996 8.70944 1.24998 9.83697 1.25 11.2382V11.2382V12.7627V12.7627C1.24998 14.1639 1.24996 15.2914 1.3699 16.1818C1.4945 17.1068 1.75996 17.88 2.36771 18.5052C2.97384 19.1287 3.73195 19.4167 4.64456 19.5676C5.52106 19.7126 6.63258 19.744 8.01137 19.783H8.0114L8.06639 19.7846C9.42068 19.8229 10.8087 19.8505 12 19.8505C13.1913 19.8505 14.5793 19.8229 15.9336 19.7846L15.9886 19.783H15.9886C17.3674 19.744 18.4789 19.7126 19.3554 19.5676C20.2681 19.4167 21.0262 19.1287 21.6323 18.5052C22.24 17.88 22.5055 17.1068 22.6301 16.1818C22.75 15.2914 22.75 14.1639 22.75 12.7627V11.2381C22.75 9.83696 22.75 8.70944 22.6301 7.81907C22.5055 6.89404 22.24 6.12082 21.6323 5.49563C21.0261 4.87211 20.268 4.58411 19.3554 4.43318C18.4789 4.28823 17.3674 4.25681 15.9885 4.21784L15.9335 4.21628C14.5792 4.17798 13.1913 4.15039 12 4.15039ZM10.8721 14.6512C10.64 14.7838 10.3548 14.7829 10.1236 14.6487C9.89232 14.5145 9.75 14.2674 9.75 14V10C9.75 9.73265 9.89232 9.48551 10.1236 9.35132C10.3548 9.21713 10.64 9.21617 10.8721 9.34882L14.3721 11.3488C14.6058 11.4823 14.75 11.7309 14.75 12C14.75 12.2691 14.6058 12.5177 14.3721 12.6512L10.8721 14.6512Z" fill="#000000"></path></svg>
+          <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.75" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427C"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 4.15039C10.8087 4.15039 9.42076 4.17798 8.06649 4.21628L8.01146 4.21784C6.63265 4.25681 5.52112 4.28823 4.64461 4.43318C3.73199 4.58411 2.97386 4.87211 2.36772 5.49563C1.75996 6.12082 1.49451 6.89404 1.3699 7.81907C1.24996 8.70944 1.24998 9.83697 1.25 11.2382V11.2382V12.7627V12.7627C1.24998 14.1639 1.24996 15.2914 1.3699 16.1818C1.4945 17.1068 1.75996 17.88 2.36771 18.5052C2.97384 19.1287 3.73195 19.4167 4.64456 19.5676C5.52106 19.7126 6.63258 19.744 8.01137 19.783H8.0114L8.06639 19.7846C9.42068 19.8229 10.8087 19.8505 12 19.8505C13.1913 19.8505 14.5793 19.8229 15.9336 19.7846L15.9886 19.783H15.9886C17.3674 19.744 18.4789 19.7126 19.3554 19.5676C20.2681 19.4167 21.0262 19.1287 21.6323 18.5052C22.24 17.88 22.5055 17.1068 22.6301 16.1818C22.75 15.2914 22.75 14.1639 22.75 12.7627V11.2381C22.75 9.83696 22.75 8.70944 22.6301 7.81907C22.5055 6.89404 22.24 6.12082 21.6323 5.49563C21.0261 4.87211 20.268 4.58411 19.3554 4.43318C18.4789 4.28823 17.3674 4.25681 15.9885 4.21784L15.9335 4.21628C14.5792 4.17798 13.1913 4.15039 12 4.15039ZM10.8721 14.6512C10.64 14.7838 10.3548 14.7829 10.1236 14.6487C9.89232 14.5145 9.75 14.2674 9.75 14V10C9.75 9.73265 9.89232 9.48551 10.1236 9.35132C10.3548 9.21713 10.64 9.21617 10.8721 9.34882L14.3721 11.3488C14.6058 11.4823 14.75 11.7309 14.75 12C14.75 12.2691 14.6058 12.5177 14.3721 12.6512L10.8721 14.6512Z" fill="#000000"></path></svg>
         </a>
       </div>
     </div>
+    </div>
   </div>
 </nav>
+
 

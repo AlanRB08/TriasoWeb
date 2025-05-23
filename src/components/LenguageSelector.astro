@@ -1,8 +1,11 @@
 ---
+import idiomaIcon from "../assets/iconos/idioma.png";
+import mxIcon from "../assets/iconos/mxIcon.png";
+import usaIcon from "../assets/iconos/usaIcon.png";
 const currentLang: 'es' | 'en' = Astro.cookies.get('lang')?.value === 'en' ? 'en' : 'es';
 const LANGS = {
-  es: { label: 'ES', flag: '🇪🇸' },
-  en: { label: 'EN', flag: '🇬🇧' }
+  es: { label: 'ES', flag: {mxIcon} },
+  en: { label: 'EN', flag: {usaIcon}} 
 };
 ---
 
@@ -10,11 +13,13 @@ const LANGS = {
   <button
     id="toggle-button"
     type="button"
-    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold hover:text-red-500 hover:pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium hover:text-red-500 hover:pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
     aria-haspopup="true"
     aria-expanded="false"
   >
-    <span>🌎</span>
+    <span>
+      <img src={idiomaIcon.src} alt="" class="w-4 h-4" />
+    </span>
     <span>{LANGS[currentLang].label}</span>
     <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -35,7 +40,7 @@ const LANGS = {
           data-lang={code}
           role="menuitem"
         >
-          {flag} {label}
+          {flag}{label}
         </button>
       ))}
     </div>
