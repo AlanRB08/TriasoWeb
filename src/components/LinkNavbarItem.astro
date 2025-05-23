@@ -8,47 +8,82 @@ type MenuItem = {
   children?: MenuItem[];
 };
 
-const { item } = Astro.props;
+const { item, depth = 0 } = Astro.props;
+const hasChildren = item.children && item.children.length > 0;
 ---
 <!-- Cada nivel de menú tiene su propio grupo -->
-<style>
+<style is:global>
   .nav-item {
     position: relative;
-    width: 100%; /* Ocupa todo el ancho disponible */
   }
-  
-  .submenu {
-    display: none;
-    position: absolute;
+
+  /* Submenu nivel 1 (debajo del ítem padre) */
+  .nav-item > .submenu {
     left: 0;
     top: 100%;
-    width: var(--navbar-width, 250px); /* Hereda el ancho del contenedor padre */
-    min-width: max-content; /* Asegura que el contenido no se corte */
+    transform: translateY(10px);
   }
-  
+
+  /* Submenu nivel 2+ (a la derecha) */
+  .nav-item .nav-item > .submenu {
+    left: 100%;
+    top: -0.5rem;
+    transform: translateY(0);
+  }
+
   .nav-item:hover > .submenu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .submenu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    min-width: 250px;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    z-index: 50;
   }
 </style>
 
-<div class="nav-item px-4 py-4 border-b-2 border-b-gray-400">
-  <a 
-    href={item.url} 
-    class="flex items-center justify-between w-full px-4 py-2 text-sm font-bold text-black hover:text-red-500 rounded-lg transition-all"
+<div class="nav-item">
+  <a
+    href={item.url}
+    class={`
+      flex items-center justify-between gap-2
+      px-4 py-3
+      font-medium
+      ${depth === 0 ? 'text-gray-900' : 'text-gray-600'}
+      hover:text-red-600 hover:bg-amber-50
+      rounded-lg
+      transition-colors
+      ${hasChildren ? 'pr-2' : ''}
+    `}
   >
     <span>{item.title}</span>
-    {item.children && (
-      <svg class="w-5 h-5 transform hover:rotate-180 transition-transform text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    {hasChildren && (
+      <svg
+        class={`w-4 h-4 text-red-500 ${
+          depth === 0 ? 'rotate-90' : ''  // Flecha hacia abajo solo en primer nivel
+        }`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
     )}
   </a>
 
-  {item.children && item.children.length > 0 && (
-    <ul class="submenu bg-white rounded-sm shadow-md z-10 min-w-max">
+  {hasChildren && (
+    <ul class="submenu">
       {item.children.map((child : MenuItem) => (
         <li>
-          <LinkNavbarItem item={child} />
+          <LinkNavbarItem item={child} depth={depth + 1} />
         </li>
       ))}
     </ul>
