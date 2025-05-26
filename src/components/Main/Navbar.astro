@@ -1,0 +1,29 @@
+---
+import LenguageSelector from "../NavbarComp/LenguageSelector.astro"
+import LinkNavbar from "../NavbarComp/LinkNavbar.astro"
+import Logo from "../../assets/logos/LogoTriasoUs.svg"
+import { menuItems } from "../../assets/data/menuItems"
+import SearchComponent from "../NavbarComp/SearchComponent.astro"
+---
+<nav class="bg-white border-b-2 border-[#14427C]">
+  <div class="max-w-screen mx-auto px-4 flex justify-around items-center h-16">
+    {/* Logo */}
+    <div class="flex items-center space-x-2 max-w-[200px] flex-shrink-0">
+      <img src={Logo.src} alt="Triaso Logo" class="h-10 w-auto" />
+    </div>
+
+    {/* Menú principal */}
+    <div class="flex-grow justify-around hidden lg:block">
+      <div class="flex space-x-6 gap-10 items-center justify-center">
+        {/* Map through menuItems to create links */}
+        {menuItems.map((item) => (
+          <LinkNavbar item={item} key={item.url} />
+        ))}
+      </div>
+    </div>
+    <SearchComponent />
+    <LenguageSelector />
+  </div>
+</nav>
+
+
