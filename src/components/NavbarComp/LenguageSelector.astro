@@ -1,7 +1,7 @@
 ---
-import idiomaIcon from "../assets/iconos/idioma.png";
-import mxIcon from "../assets/iconos/mxIcon.png";
-import usaIcon from "../assets/iconos/usaIcon.png";
+import idiomaIcon from "../../assets/iconos/idioma.png";
+import mxIcon from "../../assets/iconos/mxIcon.png";
+import usaIcon from "../../assets/iconos/usaIcon.png";
 const currentLang: 'es' | 'en' = Astro.cookies.get('lang')?.value === 'en' ? 'en' : 'es';
 const LANGS = {
   es: { label: 'ES', flag: {mxIcon} },
