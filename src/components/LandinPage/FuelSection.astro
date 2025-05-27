@@ -1,22 +1,23 @@
 ---
-import Img1 from "../../assets/images/heat.png";
-import Img2 from "../../assets/images/tools.png";
-import Img3 from "../../assets/images/idea.png";
+import Img1 from "../../assets/images/1.svg";
+import Img2 from "../../assets/images/2.svg";
+import Img3 from "../../assets/images/3.svg";
 ---
-<section class="bg-blue-900 mx-[25vw] rounded-xl flex flex-col items-center justify-center font-semibold text-white p-4">
+<section class="bg-blueMain mx-[25vw] px-8 rounded-xl flex flex-col items-center justify-center font-bold text-white p-4 text-base">
     <div class="flex items-center justify-center p-4">
-        <img src={Img1.src} alt="" class="w-20 rounded-full mr-4">
-        <div>
-            <h1 class="text-xl">Fuel consumption lower than most competition:</h1>
+        <img src={Img1.src} alt="" class="w-32 rounded-full mr-4">
+        <div class="pl-6">
+            <h1>Fuel consumption lower than most competition:</h1>
             <br>
-            <p class="">Our plants use less fuel per ton of mix than most 
+            <p class="text-grisSubP">Our plants use less fuel per ton of mix than most 
                 competing plants, whether diesel, oil, gas, or any alternative fuel.</p>
         </div>
     </div>
-    <div class="p-4">    
-        <h1 class="text-xl">This is primarily due, to the following advantages, among other factors:</h1>
+    <div class="p-4 flex items-center justify-center">
+        <div>
+            <h1>This is primarily due, to the following advantages, among other factors:</h1>
         <br>
-        <ul class="pl-4">
+        <ul class="pl-8 text-grisSubP">
             <li class="list-disc">Fuel preheater</li>
             <li class="list-disc">'Total air' burner with variable power</li>
             <li class="list-disc">Drum insulation</li>
@@ -26,21 +27,23 @@ import Img3 from "../../assets/images/idea.png";
             <li class="list-disc">No need for a 'cold air window' </li>
             <li class="list-disc">Computerized regulation of the entire system</li>
         </ul>
+        </div>    
+        
     </div>
     <div class="flex items-center justify-center p-4">
         <div>
-            <h1 class="text-xl">Durability and Minimal Maintenance:</h1>
+            <h1>Durability and Minimal Maintenance:</h1>
             <br>
-            <p class="">Designed and manufactured to the highest quality standards,
+            <p class="text-grisSubP">Designed and manufactured to the highest quality standards,
                  using American-certified steel and top-brand components.
                 <br>
                 Robust design to withstand harsh operating conditions and ensure long-term performance.
             </p>
         </div>
-        <img src={Img2.src} alt="" class="w-20 rounded-full mr-4">
+        <img src={Img2.src} alt="" class="w-32 rounded-full mr-4">
     </div>
     <div class="p-4">
-        <ul class="pl-4">
+        <ul class="pl-4 text-grisSubP">
             <li class="list-disc">Heavy duty design and materials.</li>
             <li class="list-disc">High quality electrostatic automotive paint (baked) in medium to 
                 small size pieces, and high quality paint in big pieces.
@@ -48,14 +51,14 @@ import Img3 from "../../assets/images/idea.png";
             <li class="list-disc">High corrosion-resistance, high adherence and long lasting color.</li>
         </ul>
         <br>
-        <p>Operation cycle of 100% in highly contaminated environments</p>
+        <p class="text-grisSubP">Operation cycle of 100% in highly contaminated environments</p>
     </div>
     <div class="flex items-center justify-center p-4">
-        <img src={Img3.src} alt="" class="w-20 rounded-full mr-4">
+        <img src={Img3.src} alt="" class="w-32 rounded-full mr-4">
         <div>
             <h1 class="text-xl">Technology and Control:</h1>
             <br>
-            <p class="">Advanced monitoring systems for real-time performance tracking and diagnostics.
+            <p class="text-grisSubP">Advanced monitoring systems for real-time performance tracking and diagnostics.
                 <br>
                 Fully integrated software for precise control of temperature, fuel, asphalt, aggregates,
                  RAP, adittional materials and the produced hot-mix.
