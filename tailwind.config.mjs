@@ -4,7 +4,7 @@ module.exports = {
     theme: {
       extend: {
         colors : {
-            'blue_bg' : '#14427C', // Azul de fondos y cards
+            'blue-main' : '#14427C', // Azul de fondos y cards
             'blue_bg2' : '#0044A4', // Azul de fondos y cards 2
             'red_bg' : '#CA1C1C', // Rojo de botones e iconos
             'gris_titulos': '#393939', // Gris obscuro para titulos 
