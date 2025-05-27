@@ -10,25 +10,26 @@
          it ensures reliable performance while prioritizing safety and ease of use.</p>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
         <div class="flex items-center justify-center gap-4">
-            <div class="text-md h-auto text-center text-gray-600 font-semibold flex flex-col items-end justify-around">
-                <p class="mb-3">Process Control, Automation, and Safety</p>
-                <div class="w-full border-1 border-gray-600 h-0.5"></div>
-            </div>
-            <div class="text-md text-center text-gray-600 font-semibold flex flex-col items-end justify-end">
-                <p class="mb-3">Control Cabin</p>
-                <div class="w-full border-1 border-gray-600 h-0.5"></div>
-            </div>
-            <div class="text-md text-center text-gray-600 font-semibold">
-                <p class="mb-3">Adaptability and Configuration</p>
-                <div class="border-1 border-gray-600 h-0.5"></div>
-            </div>
-            <div class="text-md text-center text-gray-600 font-semibold">
-                <p class="mb-3">Equipment, Connectivity, and Maintenance</p>
-                <div class="border-1 border-gray-600 h-0.5"></div>
-            </div>
+            <button class="tab-button py-2 px-4 font-semibold text-sm focus:outline-none"
+            data-tab="tab1" aria-selected="true">
+                Process Control, Automation, and Safety
+            </button>
+            <button class="tab-button py-2 px-4 font-semibold text-sm focus:outline-none"
+            data-tab="tab2" aria-selected="false">
+                Control Cabin
+            </button>
+            <button class="tab-button py-2 px-4 font-semibold text-sm focus:outline-none"
+            data-tab="tab3" aria-selected="false">
+                Adaptability and Configuration
+            </button>
+            <button class="tab-button py-2 px-4 font-semibold text-sm focus:outline-none"
+            data-tab="tab4" aria-selected="false">
+                Equipment, Connectivity, and Maintenance
+            </button>
         </div>
-        <!-- First Section -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div class="py-4">
+            <!-- First Section -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content" data-tab-content="tab1">
             <div class="col-span-2 flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-semibold">
                     <h1 class="text-black text-md">Visualization and control of materials consumption (current and cumulative).</h1>
@@ -94,7 +95,7 @@
 
         </div>
         <!-- Second Section -->
-         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content" data-tab-content="tab2">
             <div class="flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-semibold w-full">
                     <h1>Walls and roof made of 16-gauge sheet metal with insulated panels.</h1>
@@ -131,7 +132,7 @@
             </div>
          </div>
          <!-- Third Section -->
-          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content" data-tab-content="tab3">
             <div class="flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-semibold w-full">
                     <h1>Flexible Installation</h1>
@@ -177,7 +178,7 @@
             </div>
           </div>
         <!-- Fourth Section -->
-         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content" data-tab-content="tab4">
             <div class="flex flex-col items-center justify-start">
                 <div class="shadow-lg rounded-lg p-6 font-semibold w-full">
                     <h1>Industrial-grade components, with 95% from brands like Siemens™.</h1>
@@ -244,7 +245,54 @@
                 </div>
             </div>
           </div>
-
+        </div>    
     </div>
-
 </section>
+<style is:global>
+  /* Estilos para los tabs activos */
+  .tab-button[aria-selected="true"] {
+    color: #3b82f6;
+    border-bottom: 2px solid #3b82f6;
+  }
+  
+  .tab-button[aria-selected="false"] {
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab-button:hover:not([aria-selected="true"]) {
+    color: #1e40af;
+    border-bottom: 2px solid #dbeafe;
+  }
+  
+</style>
+<script is:inline>
+  // Mover la lógica fuera del DOMContentLoaded para ejecutarse inmediatamente
+  (function initTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    
+    // Ocultar todos los contenidos excepto el primero
+    document.querySelectorAll('.tab-content').forEach((content, index) => {
+      content.classList.toggle('hidden', index !== 0);
+    });
+    
+    // Configurar los listeners
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        
+        tabButtons.forEach(btn => {
+          btn.setAttribute('aria-selected', 'false');
+        });
+        
+        button.setAttribute('aria-selected', 'true');
+        
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        document.querySelector(`.tab-content[data-tab-content="${tabId}"]`).classList.remove('hidden');
+      });
+    });
+  })();
+</script>
