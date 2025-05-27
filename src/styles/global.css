@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --azul-bg1 : #14427C; /* Azul de fondos y cards */    
+    --azul-bg1Hover : #11396b; /* Azul de fondos y cards */  
+    --azul-bg2 : #0044A4; /* Azul de fondos y cards 2 */
+    --rojo-btn : #CA1C1C; /* Rojo de botones e iconos */
+    --rojo-btnHover : #b81a1a; /* Rojo de botones e iconos */
+    --gris-titulos: #393939; /* Gris obscuro para titulos */ 
+    --gris-textos : #727272; /* Gris para menu*/
+    --gris-textos2: #D9D9D9; /* Gris claro para textos */
+    --gris-textos3: #343434; /* Gris obscuro para textos */
+    --gris-textos4: #5D5D5D; /* Gris obscuro para textos */
+    --gris-textos5: #4d4d4d; /* Gris obscuro para textos */
+    --verde-whats: #128c7e; /* Verde de whatshapp */
+    --bg-main : #f4f5f6; /* Fondo principal de la app */
+}

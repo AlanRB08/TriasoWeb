@@ -13,7 +13,7 @@ const LANGS = {
   <button
     id="toggle-button"
     type="button"
-    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium hover:text-red-500 hover:pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold hover:text-red-500 hover:pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
     aria-haspopup="true"
     aria-expanded="false"
   >
@@ -28,7 +28,9 @@ const LANGS = {
 
   <div
     id="dropdown-menu"
-    class="invisible opacity-0 transition-opacity absolute right-0 z-10 mt-2 w-40 origin-top-right bg-white shadow-md hover:pointer focus:outline-none"
+    class="invisible opacity-0 transition-opacity absolute right-0 
+    z-10 mt-2 w-40 origin-top-right bg-white shadow-md 
+    hover:pointer focus:outline-none"
   >
     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="toggle-button">
       {Object.entries(LANGS).map(([code, { label, flag }]) => (

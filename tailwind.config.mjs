@@ -4,13 +4,19 @@ module.exports = {
     theme: {
       extend: {
         colors : {
-            'blue-main' : '#14427C', // Azul de fondos y cards
-            'blue_bg2' : '#0044A4', // Azul de fondos y cards 2
-            'red_bg' : '#CA1C1C', // Rojo de botones e iconos
-            'gris_titulos': '#393939', // Gris obscuro para titulos 
-            'verde_whats': '#128c7e' , // Verde de whatshapp
-            'gris_text' : '#737373', // Gris para menu
-            'bg_main' : '#f4f5f6',
+          blueMain : 'var(--azul-bg1)', // Azul de fondos y cards
+          blueMainHover : 'var(--azul-bg1Hover)', // Azul de fondos y cards
+          blueSecondary : "var(--azul-bg2)", // Azul de fondos y cards 2
+          redBg : 'var(--rojo-btn)', // Rojo de botones e iconos//
+          redBgHover : 'var(--rojo-btnHover)', // Rojo de botones e iconos en HOVER //
+          grisT: "var(--gris-titulos)", // Gris obscuro para titulos 
+          grisP : 'var(--gris-textos)', // Gris para menu
+          grisSubP : 'var(--gris-textos2)', //Gris para textos secundario //
+          grisPP : 'var(--gris-textos3)', // Gris para menu //
+          grisPPP : 'var(--gris-textos4)', // Gris para TEXTO //
+          gris5 : 'var(--gris-textos5)', // Gris para TEXTO //
+          verdeWhats: 'var(--verde-whats)' , // Verde de whatshapp
+          bgMain : 'var(--bg-main)',
         },
         fontFamily : {
             sans: [

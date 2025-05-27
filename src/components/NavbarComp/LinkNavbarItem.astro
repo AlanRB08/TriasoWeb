@@ -58,7 +58,7 @@ const hasChildren = item.children && item.children.length > 0;
       px-4 py-3
       font-bold
       ${depth === 0 ? 'text-gray-900' : 'text-gray-600'}
-      hover:text-red-600 hover:bg-amber-50
+      hover:text-redBg hover:bg-amber-50
       rounded-lg
       transition-colors
       ${hasChildren ? 'pr-2' : ''}
@@ -67,7 +67,7 @@ const hasChildren = item.children && item.children.length > 0;
     <span>{item.title}</span>
     {hasChildren && (
       <svg
-        class={`w-4 h-4 text-red-500 ${
+        class={`w-4 h-4 text-redBg ${
           depth === 0 ? 'rotate-90' : ''  // Flecha hacia abajo solo en primer nivel
         }`}
         fill="none"
