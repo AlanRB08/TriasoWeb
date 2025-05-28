@@ -1,35 +1,35 @@
 ---
 import wifiIcon from '../../assets/images/wifiIcon.svg';
 ---
-<section class="w-full flex 2xl:px-52 lg: px-20 flex-col items-center justify-center gap-4 p-4 bg-gray-100">
-    <h1 class="text-4xl text-grisT font-bold">Triaso® Control System</h1>
-    <p class="text-xl text-grisT font-bold text-center">Offering a practical and efficient 
+<section class="w-full flex 2xl:px-52 lg: px-8 md:px-20 flex-col items-center justify-center gap-4 p-4 bg-gray-100">
+    <h1 class="text-xl md:text-4xl text-grisT font-bold">Triaso® Control System</h1>
+    <p class="text-base md:text-xl text-grisT font-bold text-center">Offering a practical and efficient 
         way to manage industrial equipment operations. With advanced monitoring and
          automation, it simplifies the control of key processes like temperature, 
          material dosing, and production rates. Built to adapt to different setups,
          it ensures reliable performance while prioritizing safety and ease of use.</p>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
         <div class="flex items-center justify-center gap-4">
-            <button class="tab-button py-2 px-4 font-bold text-base focus:outline-none"
+            <button class="text-xs md:text-base tab-button py-2 md:px-4 font-bold focus:outline-none"
             data-tab="tab1" aria-selected="true">
                 Process Control, Automation, and Safety
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-base focus:outline-none"
+            <button class="tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab2" aria-selected="false">
                 Control Cabin
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-base focus:outline-none"
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab3" aria-selected="false">
                 Adaptability and Configuration
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-base focus:outline-none"
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab4" aria-selected="false">
                 Equipment, Connectivity, and Maintenance
             </button>
         </div>
         <div class="py-4">
             <!-- First Section -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-base" data-tab-content="tab1">
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-xs md:text-base" data-tab-content="tab1">
             <div class="col-span-2 flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-bold">
                     <h1 class="text-black">Visualization and control of materials consumption (current and cumulative).</h1>
@@ -72,7 +72,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
             <div class="col-span-1 flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-bold text-grisT h-full">
-                    <h1 class="text-black text-xl mb-2">
+                    <h1 class="text-black text-base md:text-xl mb-2">
                         Stop System
                     </h1>
                     <h2 class="text-grisT">
@@ -96,7 +96,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
 
         </div>
         <!-- Second Section -->
-         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-base text-grisT" data-tab-content="tab2">
+         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-xs md:text-base text-grisT" data-tab-content="tab2">
             <div class="flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
                     <h1>Walls and roof made of 16-gauge sheet metal with insulated panels.</h1>
@@ -136,7 +136,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
          </div>
          <!-- Third Section -->
-          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-base" data-tab-content="tab3">
+          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-xs md:text-base" data-tab-content="tab3">
             <div class="flex flex-col items-center justify-center">
                 <div class="shadow-lg rounded-lg p-6 font-semibold w-full">
                     <h1>Flexible Installation</h1>
@@ -146,13 +146,13 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
                     </p>
                 </div>
                 <div class="p-6 w-full font-bold">
-                    <h1 class="text-2xl">Versatile Setup</h1>
+                    <h1 class="text-lg md:text-2xl">Versatile Setup</h1>
                     <p class="text-grisT">
                         Works seamlessly in a dedicated control cabin or under a protective roof.
                     </p>
                 </div>
                 <div class="p-6 font-bold w-full">
-                    <h1 class="text-2xl">Quick Adjustments</h1>
+                    <h1 class="text-lg md:text-2xl">Quick Adjustments</h1>
                     <p class="text-grisT">
                         Allows rapid changes to recipes or control settings to match project requirements.
                     </p>
@@ -160,7 +160,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
             <div class="flex flex-col items-center justify-start">
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-xl">Advanced Automation Options</h1>
+                    <h1 class="text-base md:text-xl">Advanced Automation Options</h1>
                     <br>
                     <p class="text-grisT font-normal">
                         Supports weight-based control for precise material 
@@ -168,7 +168,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
                     </p>
                 </div>
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-xl">User-Friendly Interface</h1>
+                    <h1 class="text-base md:text-xl">User-Friendly Interface</h1>
                     <br>
                     <p class="font-normal text-grisT">
                         Simplifies configuration adjustments for operators with minimal downtime.
@@ -177,7 +177,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
             <div class="flex flex-col items-center justify-start">
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-xl">Scalable Configuration</h1>
+                    <h1 class="text-base md:text-xl">Scalable Configuration</h1>
                     <br>
                     <p class="font-normal text-grisT">
                         Easily adapts to upgrades or additional equipment integration.
@@ -186,7 +186,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
           </div>
         <!-- Fourth Section -->
-         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content" data-tab-content="tab4">
+         <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-xs md:text-base" data-tab-content="tab4">
             <div class="flex flex-col items-center justify-start">
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
                     <h1>Industrial-grade components, with 95% from brands like Siemens™.</h1>
@@ -207,7 +207,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
             </div>
             <div class="flex flex-col items-center justify-start col-span-2">
                 <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-xl">Advanced sensors, including guided wave radar for level monitoring</h1>
+                    <h1 class="text-base md:text-xl">Advanced sensors, including guided wave radar for level monitoring</h1>
                     <div class="font-normal text-grisT grid grid-cols-2 justify-around gap-20 pt-3">
                         <p class="text-justify">Provide precise measurements of materials like asphalt or aggregates,
                              unaffected by dust or temperature. They track levels to prevent overflows or shortages, 
@@ -223,7 +223,7 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
                 </div>
                 <div class="grid grid-cols-2 gap-4 mt-4">
                     <div class="shadow-lg rounded-lg p-6 font-bold w-full h-fit text-grisT">
-                        <img src={wifiIcon.src} alt="" class="w-12">
+                        <img src={wifiIcon.src} alt="" class="w-10 md:w-12">
                         <h1>Remote access via the internet for diagnostics and technical support.</h1>
                         <p class="font-normal text-justify max-w-prose [hyphens:auto] [text-wrap:balance]">Enables real-time monitoring, troubleshooting, and system adjustments 
                             from anywhere. This reduces downtime, allows remote issue resolution,
@@ -233,26 +233,26 @@ import wifiIcon from '../../assets/images/wifiIcon.svg';
                     <div class="flex flex-col items-center justify-center gap-8 p-6 font-bold w-full text-grisT">
                         <div class="w-full">
                             <h2 class="">Digital</h2>
-                            <h1 class="text-2xl text-black">Operation Log</h1>
-                            <h2 class="text-sm">with export and ticket printing options.</h2>
+                            <h1 class="text-lg md:text-2xl text-black">Operation Log</h1>
+                            <h2 class="text-xs md:text-sm">with export and ticket printing options.</h2>
                         </div>
                         <div class="w-full">
                             <h2 class="">Real-time</h2>
-                            <h1 class="text-2xl text-black">Communication Via SMS</h1>
+                            <h1 class="text-lg md:text-2xl text-black">Communication Via SMS</h1>
                             <h2 class="">about operational status.</h2>
                         </div>
                     </div>
                     
                         <div class="w-full font-bold text-grisT p-4">
                             <h2 class="">Guided</h2>
-                            <h1 class="text-2xl text-black">Thermocouple Calibration</h1>
+                            <h1 class="text-lg md:text-2xl text-black">Thermocouple Calibration</h1>
                             <h2 class="">for accurate adjustments.</h2>
                         </div>
                     
                     
                         <div class="w-full font-bold text-grisT p-4">
                             <h2 class="">On-screen</h2>
-                            <h1 class="text-2xl text-black">Maintenance Log</h1>
+                            <h1 class="text-lg md:text-2xl text-black">Maintenance Log</h1>
                             <h2 class="">with operational hour indicators.</h2>
                         </div>
                     
