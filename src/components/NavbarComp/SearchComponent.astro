@@ -1,12 +1,13 @@
 ---
 import SearchIcon from "../../assets/iconos/idioma.png";
 ---
-<div class="hidden md:block max-w-[300px] flex items-center justify-center">
+<div class="max-w-[300px] flex items-center justify-center">
     <img src={SearchIcon.src} alt="" class="w-[20px] mr-2">
     <input
         type="text"
         placeholder="Search..."
         class="w-full px-4 py-1 border border-gray-300
+        hidden 2xl:block
          rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
 </div>
