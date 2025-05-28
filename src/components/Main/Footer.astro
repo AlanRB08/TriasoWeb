@@ -1,11 +1,17 @@
 ---
-// No se necesita lógica por ahora, puro markup
+import Logo from '../../assets/logos/LogoTriasoUs.svg';
+import Insta from '../../assets/iconos/instaIcon.svg';
+import LinkedIn from '../../assets/iconos/linkedIcon.svg';
+import Face from '../../assets/iconos/facebookIcon.svg';
+import YouTube from '../../assets/iconos/youIcon.svg';
+import Phone from '../../assets/iconos/phone.svg';
+import Mail from '../../assets/iconos/mail-2.svg';
 ---
 
-<footer class="bg-[#1e1e1e] text-white text-sm mt-20">
+<footer class="bg-bgFooter text-white text-sm mt-20">
     <!-- Subscribe Section -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between border border-gray-300 p-4 bg-white text-black rounded-md">
+    <!-- <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between border border-gray-300 p-4 bg-white text-black">
         <h2 class="text-2xl font-light mb-4 md:mb-0">Subscribe</h2>
         <div class="flex w-full md:w-auto items-center gap-2">
           <input
@@ -16,25 +22,25 @@
           <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 text-sm uppercase">Sign up</button>
         </div>
       </div>
-    </div>
+    </div>-->
   
     <!-- Main Footer Content -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300 border-t border-gray-700 pt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300 pt-10">
       <!-- About -->
       <div>
         <h3 class="text-white font-semibold mb-2">About Triaso</h3>
-        <hr class="border-blue-500 w-12 mb-4" />
-        <img src="/logo-triaso.png" alt="Triaso logo" class="mb-4 w-32" />
+        <hr class="border-blueMain w-12 mb-4" />
+        <img src={Logo.src} alt="Triaso logo" class="mb-4 w-32" />
         <p>
           We are a leading company in manufacturing and engineering development...
-          <a href="#" class="text-blue-400 underline">Show more</a>
+          <a href="#" class="text-blueMain underline">Show more</a>
         </p>
       </div>
   
       <!-- Navigation -->
       <div>
         <h3 class="text-white font-semibold mb-2">Navigation</h3>
-        <hr class="border-blue-500 w-12 mb-4" />
+        <hr class="border-blueMain w-12 mb-4" />
         <div class="grid grid-cols-2 gap-4">
           <div>
             <ul class="space-y-2">
@@ -59,7 +65,7 @@
         <hr class="border-blue-500 w-12 mb-4" />
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <span>📞</span>
+            <img src={Phone.src} alt="">
             <input
               type="text"
               value="(248)-613-4885"
@@ -68,13 +74,20 @@
             />
           </div>
           <div class="flex items-center gap-2">
-            <span>✉️</span>
+            <img src={Mail.src} alt="">
             <input
               type="text"
               value="sales@triasous.com"
               readonly
               class="bg-transparent border border-gray-600 px-3 py-1 w-full"
             />
+          </div>
+          <div class="flex items-center gap-2">
+            <img src={Insta.src} alt="">
+            <img src={LinkedIn.src} alt="">
+            <img src={Face.src} alt="">
+            <img src={YouTube.src} alt="">
+            
           </div>
         </div>
       </div>
@@ -84,14 +97,6 @@
     <div class="border-t border-gray-700 mt-10 pt-6 pb-4 text-center text-gray-400 text-sm">
       <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-4">
         <p>Copyright © 2025 Triaso – All rights reserved</p>
-        <div class="flex items-center gap-4 mt-4 md:mt-0">
-          <a href="#" class="text-blue-500 hover:text-blue-300 text-2xl">📘</a>
-          <a href="#" class="text-blue-500 hover:text-blue-300 text-2xl">📸</a>
-          <a href="#" class="text-blue-500 hover:text-blue-300 text-2xl">🔗</a>
-          <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white px-3 py-2 rounded-lg">
-            ▶️
-          </a>
-        </div>
       </div>
     </div>
   </footer>

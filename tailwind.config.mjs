@@ -16,7 +16,8 @@ module.exports = {
           grisPPP : 'var(--gris-textos4)', // Gris para TEXTO //
           gris5 : 'var(--gris-textos5)', // Gris para TEXTO //
           verdeWhats: 'var(--verde-whats)' , // Verde de whatshapp
-          bgMain : 'var(--bg-main)',
+          bgMain : 'var(--bg-main)', // Fondo de la pagina
+          bgFooter : 'var(--bg-footer)',//Fondo de Footer
         },
         fontFamily : {
             sans: [
