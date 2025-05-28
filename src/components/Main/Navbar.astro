@@ -6,10 +6,10 @@ import { menuItems } from "../../assets/data/menuItems"
 import SearchComponent from "../NavbarComp/SearchComponent.astro"
 ---
 <nav class="bg-white border-b-2 border-blueMain font-sans font-bold text-black text-sm">
-  <div class="max-w-screen mx-auto px-4 flex justify-around items-center h-16">
+  <div class="max-w-screen mx-auto px-4 flex justify-between items-center h-16">
     {/* Logo */}
     <div class="flex items-center space-x-2 max-w-[200px] flex-shrink-0">
-      <img src={Logo.src} alt="Triaso Logo" class="h-10 w-auto" />
+      <img src={Logo.src} alt="Triaso Logo" class="h-5 md:h-10 w-auto" />
     </div>
 
     {/* Menú principal */}
@@ -23,6 +23,9 @@ import SearchComponent from "../NavbarComp/SearchComponent.astro"
     </div>
     <SearchComponent />
     <LenguageSelector />
+    <button class="block md:hidden">
+      <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M3 5H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 12H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 19H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
   </div>
 </nav>
 
