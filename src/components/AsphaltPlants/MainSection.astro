@@ -1,0 +1,121 @@
+---
+const items  = [
+    {text: 'LOW MAINTENANCE',
+    img: 'urlfake'
+},{
+    text: 'HIGH PRODUCTIVITY',
+    img: 'urlfake'
+},
+{
+    text: 'HIGH QUALITY ASPHALT MIX',
+    img: 'urlfake'
+},{
+    text: 'ECOLOGICAL STANDARS',
+    img: 'urlfake'
+},{
+    text: 'HIGH PORTABLE',
+    img: 'urlfake'
+},{
+    text: 'ECONOMIC LONG-LASTING LIFE',
+    img: 'urlfake'
+},{
+    text: 'UP TO 40% RAP',
+    img: 'urlfake'
+},{
+    text: 'CONTINUOUS',
+    img: 'urlfake'
+},{
+    text: 'LOW FUEL CONSUMPTION',
+    img: 'urlfake'
+}
+]
+---
+
+<div class="w-full flex flex-col items-center justify-center font-bold">
+    <div class="flex items-center justify-between gap-4 mt-8 px-8 md:px-52 w-full ">
+            <button class="text-xs md:text-base tab-button py-2 md:px-4 font-bold focus:outline-none"
+            data-tab="tab1" aria-selected="true">
+                Drum Mixers
+            </button>
+            <button class="tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab2" aria-selected="false">
+                Baghouses
+            </button>
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab3" aria-selected="false">
+                Asphalt tanks
+            </button>
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab4" aria-selected="false">
+                Bins
+            </button>
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Heating <br> Systems
+            </button>
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab6" aria-selected="false">
+                Hot-Mix <br> Storage Silos
+            </button>
+            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab7" aria-selected="false">
+                Cold Mix Plants
+            </button>
+    </div>
+    <div class="w-full text-justify font-bold text-base md:text-xl px-8 md:px-52 text-grisT mt-10">
+        <p>With models ranging from 10 to 500 tons per hour, Triaso asphalt plants 
+            combine quality, high-quality materials, and a sophisticated design to 
+            enhance our clients' corporate image. They deliver superior performance, 
+            high-quality hot mix asphalt, long-term cost efficiency, and compliance 
+            with the highest industry standards.</p>
+            <br>
+        <p>
+            We understand the importance of keeping your equipment running non-stop. 
+            The operation of many other machines depends on the reliability of your 
+            asphalt plant.
+        </p>
+        <br>
+        <p>
+           Strict quality control ensures the operation of your 
+           asphalt plant with low maintenance for many years. 
+        </p>
+
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20 px-8 md:px-52 w-full">
+        {items.map((item)=>(
+            <div class="flex flex-col items-center justify-center text-center">
+            <img src="" alt="">
+            <p class="text-black text-base md:text-xl">{item.text}</p>
+        </div>
+        ))}
+    </div>
+    <div class="w-full flex flex-col items-center md:px-52 px-8 justify-center mt-20 text-black text-base md:text-xl">
+        <h1>With Triaso, Become the Exclusive Provider of Hot Mix for 
+            All Paving Projects in Your Region</h1>
+        <img src="" alt="">
+        <h1>Our customers choose Triaso asphalt plants over other brands for their
+             high quality, 
+            reliability, and competitive pricing.</h1>
+    </div>
+    
+    
+    
+</div>
+<style is:global>
+  /* Estilos para los tabs activos */
+  .tab-button[aria-selected="true"] {
+    color: var(--azul-bg1);
+    border-bottom: 1px solid var(--azul-bg1);
+  }
+  
+  .tab-button[aria-selected="false"] {
+    color: var(--gris-titulos);
+    border-bottom: 1px solid var(--gris-titulos);
+  }
+  
+  .tab-button:hover:not([aria-selected="true"]) {
+    color: var(--azul-bg1);
+    border-bottom: 1px solid var(--azul-bg1);
+  }
+  
+</style>

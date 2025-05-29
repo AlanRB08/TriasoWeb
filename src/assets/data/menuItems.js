@@ -5,7 +5,7 @@ export const menuItems = [
     children : [
       {
         title : "ASPHALT PLANTS",
-        url : "/products/asphalt-plants",
+        url : "/AsphaltPlant",
         children : [
         {
           title : "DRUM MIXERS",
