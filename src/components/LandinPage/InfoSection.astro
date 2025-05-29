@@ -1,25 +1,27 @@
 ---
-import img1 from "../../assets/images/maquina1.webp";
+import img1 from "../../assets/images/maquina1.png";
 import img2 from "../../assets/images/planos.webp";
 import img3 from "../../assets/images/maquina2.png";
 ---
-<section class="w-full mt-10">
+<section class="w-full mt-10 md:mt-20">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 2xl:px-52 mx-10">
-        <div class="flex flex-col items-end justify-between">
-            <img src={img1.src} alt="">
-            <div>
+        <div class="flex flex-col items-start justify-between">
+            <img src={img1.src} alt="" class="order-3 md:order-1">
+            <div class="order-1 md:order-2">
                 <h1 class="font-bold text-grisT text-base md:text-xl">We care about details </h1>
                 <div class="mt-4 mb-6 flex justify-center">
                     <div class="w-20 h-0.5 bg-red-500"></div>
                     <div class="w-20 h-0.5 bg-gray-300"></div>
                 </div>
             </div>
-            <p class="font-bold text-grisP text-sm md:text-lg text-justify">Our engineers design with your needs and expectations at the forefront. 
-                At our manufacturing facility, every component undergoes rigorous inspection to guarantee durability, 
-                reliability, and optimal performance. This commitment to excellence enables us to produce cost-effective 
-                equipment that not only deliver superior results but also comply with and exceed environmental regulations.</p>
+            <p class="font-bold text-grisP text-sm md:text-lg text-justify order-2 md:order-3">Our dedicated U.S. sales 
+                team is ready to assist you with your daily needs, ensuring seamless support throughout
+                 the purchasing and manufacturing process. Our Service Team is available 24/7, 365 days
+                  a year, to provide comprehensive maintenance and technical assistance. We understand 
+                  that uptime is crucial, and you can count on our full
+                 team to coordinate and communicate with you every step of the way during your projects.</p>
         </div>
-        <div class="flex flex-col items-start justify-between">
+        <div class="flex flex-col items-start">
             <div>
                 <h1 class="font-bold text-grisT text-base md:text-xl">Communications is Key </h1>
                 <div class="mt-4 mb-6 flex justify-center">
@@ -31,15 +33,15 @@ import img3 from "../../assets/images/maquina2.png";
                 At our manufacturing facility, every component undergoes rigorous inspection to guarantee durability, 
                 reliability, and optimal performance. This commitment to excellence enables us to produce cost-effective 
                 equipment that not only deliver superior results but also comply with and exceed environmental regulations.</p>
-            <img src={img2.src} alt="">
+            <img src={img2.src} alt="" class="md:mt-32">
         </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center my-10">
-            <div class="flex justify-center items-center">
-                <div class="bg-redBg rounded-r-lg pl-4 py-10 min-h-1/2 pr-10">
+    <div class="flex flex-col md:grid md:grid-cols-2 justify-center my-10">
+            <div class="flex justify-center items-center w-full">
+                <div class="bg-redBg rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
                     <h1 class="text-white font-bold text-2xl md:text-3xl">Seamless Integration with <br>Other Systems</h1>
                 <br>
-                <p class="text-white text-sm md:text-lg font-bold">
+                <p class="text-grisSubP text-sm md:text-lg font-bold">
                     Triaso® equipment integrates seamlessly with other machinery, 
                     ensuring smooth transitions between production stages. 
                     This compatibility supports uninterrupted operations and optimizes workflow efficiency throughout your facility.
