@@ -1,3 +1,7 @@
+---
+import img1 from '../../assets/images/AsphaltPlant/render2.png';
+import img2 from '../../assets/images/AsphaltPlant/render3.png';
+---
 <div class="w-full flex flex-col items-center justify-center font-bold">
     <div class="flex flex-col items-center justify-center mt-20 text-white">
         <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-4">
@@ -33,7 +37,7 @@
             Reduces production costs for small-volume asphalt manufacturing by optimizing startups, 
             minimizing fuel consumption, and lowering labor and transportation expenses.
         </p>
-        <h1>AQUI VA UNA IMAGEN</h1>
+        <img src={img1.src} alt="">
         <h1 class="text-lg md:text-xl text-blueMain">Learn more of our <span class="text-redBg">incredible</span> 10 Tph Asphalt Plants ></h1>
     </div>
     <div class="flex flex-col items-center justify-center mt-20 px-8 md:px-52 w-full">
@@ -45,10 +49,10 @@
         <div class="">
             <h1>Aqui hay dudas con respecto al layout</h1>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-4 mt-10 w-full">
-            <div class="flex items.center justify-center gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-4 mt-10 h-full">
+            <div class="flex items-center justify-center gap-10 h-full">
                 <img src="" alt="" class="">
-                <div class="flex flex-col items-center justify-center gap-4">
+                <div class="flex flex-col justify-around h-full">
                     <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
                         <h2>It can hold up</h2>
                         <h1 class="text-black text-lg md:text-2xl">0.5 cubic meters</h1>
@@ -62,7 +66,7 @@
                 </div>
             </div>
             <div class="flex items-center justify-center gap-10">
-                <div class="flex flex-col items-start justify-around gap-4 h-full">
+                <div class="flex flex-col items-start justify-between gap-4">
                     <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
                         <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
                         <h2>in the console centralizes system management. </h2>
@@ -86,5 +90,39 @@
                 </div>
             </div>
        </div>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-4">
+            <div class="flex flex-col items-start justify-center gap-4">
+                <h1 class="text-xl md:text-4xl text-redBg">Hot-mix</h1>
+                <h1 class="text-xl md:text-4xl text-black mb-4">Pugmill</h1>
+                <p class="text-base md:text-lg text-grisP">
+                    The pugmill is an essential component at the end of the drum mix process,
+                     where the hot mix is finalized to ensure a homogeneous and high-quality blend. This 
+                     is achieved through two robust shafts equipped with flights that thoroughly mix the material,
+                      providing consistency and uniformity. <br><br> Its durable construction ensures smooth operation
+                       and long-term reliability, while its efficient mixing mechanism allows precise control 
+                       over the final mix. Designed for easy maintenance and operation, the pugmill delivers consistent
+                        performance in demanding industrial environments.
+                </p>
+            </div>
+            <img src={img2.src} alt="">
+        </div>
+        <button class="bg-redBg rounded-full font-normal max-w-[130px] text-white py-1 px-4 text-sm md:text-lg hover:bg-redBgHover">Learn more</button>
+
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52 font-bold">
+        <h1 class="text-lg md:text-2xl mb-4">User-Friendly Interface</h1>
+        <h2 class="text-base md:text-lg text-grisT mb-4 font-normal md:mb-20">Simplifies configuration adjustments for operators with minimal downtime.</h2>
+        <p class="text-sm md:text-base text-grisT mb-4 md:mb-16 text-justify">Created to offer plant operators a deeper understanding of their operation,
+             this cloud-based platform stores all production data remotely and securely.
+              It gives you the freedom to access detailed performance analytics from any 
+              location and any device—whether you're in the office, on the road, or at a job 
+              site. With real-time access to trends, logs, and operational metrics, decision-making
+               becomes faster, more informed, and fully independent of your physical location.
+        </p>
+        <button class="bg-redBg rounded-full 
+        font-normal max-w-[200px] text-white py-1 px-4 
+        text-sm md:text-lg hover:bg-redBgHover">Let´s Get Started</button>
     </div>
 </div>
