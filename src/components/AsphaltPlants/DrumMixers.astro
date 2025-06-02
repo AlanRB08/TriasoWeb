@@ -1,6 +1,8 @@
 ---
 import img1 from '../../assets/images/AsphaltPlant/render2.png';
 import img2 from '../../assets/images/AsphaltPlant/render3.png';
+import img3 from '../../assets/images/AsphaltPlant/render5.png';
+import img4 from '../../assets/images/AsphaltPlant/render6.png';
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
     <div class="flex flex-col items-center justify-center mt-20 text-white">
@@ -45,9 +47,40 @@ import img2 from '../../assets/images/AsphaltPlant/render3.png';
         <h1>AQUI VIDEO 2</h1>
     </div>
     <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
-        <h1 class="text-xl md:text-4xl text-blueMain">Elevator</h1>
-        <div class="">
-            <h1>Aqui hay dudas con respecto al layout</h1>
+        <h1 class="text-xl md:text-4xl text-blueMain mb-10 w-full text-start">Elevator</h1>
+        <div class="w-full grid grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col col-span-2 gap-8">
+                <div class="bg-white rounded-2xl text-2xl lg:text-lg flex flex-col text-start justify-center p-4">
+                    <h1 class="text-black mb-4">Hinged and Integrated Elevator</h1>
+                    <p class="text-grisT text-base lg:text-lg">This hinged elevator is fully assembled on its own chassis, allowing for immediate installation 
+                        and reducing on-site assembly time. Its structural design is intended to integrate directly
+                         with the mix discharge system without the need for additional adjustments.</p>
+                </div>
+                <img src={img3.src} alt="">
+            </div>
+            <div class="flex flex-col col-span-3 items-center gap-10">
+                <div class="bg-white rounded-2xl text-2xl lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
+                    <p class="text-grisT text-base lg:text-lg">The 4” pitch chain is a key component of the elevator, 
+                        designed for heavy-duty operation.  <span style="color:black;">With a tensile strength of 50,000 lbs (22,700 kg)</span>
+                         and <span style="color: black;">floating-type chain</span> guides to prevent jams, it ensures smooth and reliable performance, 
+                         durability, efficiency, and minimal maintenance.</p>
+                </div>
+                <div class="bg-white rounded-2xl text-2xl lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <h1 class="text-black mb-4">Self-aligning bearings</h1>
+                    <p class="text-grisT text-base lg:text-lg">Self-aligning bearings in the straight elevator ensure
+                         smooth operation by automatically adjusting to misalignments.
+                         This reduces wear, extends lifespan, and enhances reliability in heavy-duty applications.</p>
+                </div>
+                <div class="bg-white rounded-2xl text-2xl lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <p class="text-grisT text-base lg:text-lg">With a <span style="color:black;">15 Hp to a 50 Hp motor</span>, the straight elevator
+                         delivers enhanced power for heavy-duty applications. It supports a<span style="color:black;"> maximum speed increase 
+                         to 377 ft/min, boosting capacity to 500 TPH</span>. At a standard chain<span style="color:black;"> speed from 120 ft/min to 
+                         377 ft/min</span>, the system maintains a <span style="color:black"> drag capacity from 160 TPH to 500 TPH</span>, ensuring efficient
+                          and reliable material handling.</p>
+                </div>
+
+            </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-4 mt-10 h-full">
             <div class="flex items-center justify-center gap-10 h-full">
@@ -91,6 +124,7 @@ import img2 from '../../assets/images/AsphaltPlant/render3.png';
             </div>
        </div>
     </div>
+    
     <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
         <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-4">
             <div class="flex flex-col items-start justify-center gap-4">
@@ -110,6 +144,76 @@ import img2 from '../../assets/images/AsphaltPlant/render3.png';
         </div>
         <button class="bg-redBg rounded-full font-normal max-w-[130px] text-white py-1 px-4 text-sm md:text-lg hover:bg-redBgHover">Learn more</button>
 
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
+        <h1 class="lg:text-4xl text-2xl text-grisT w-full text-end mb-10">CONTROL SYSTEM</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10"> 
+            <img src={img4.src} alt="" class="rounded-2xl">
+            <p class="lg:text-lg text-base text-grisT text-justify">At Triaso, we don’t believe in standardized solutions—especially when it comes to our 
+                control systems. We recognize that each client operates under unique conditions, with 
+                specific priorities in automation, data handling, usability, and investment. 
+                That’s why every control cabin we build is tailored to fit those distinct requirements.
+                 From interface design to functional integration,
+                 we carefully configure each system to match the operational goals and workflow of 
+                 every customer.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10"> 
+            <div class="flex flex-col items-center justify-center gap-4">
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4">
+                    <h1 class="text-black mb-4">Visualization and control of materials consumption (current and cumulative).</h1>
+                    <p class="text-grisT font-normal">Enables real-time monitoring of 
+                        material usage, while tracking total consumption over time for accurate
+                         records and optimized production.
+                    </p>
+                    <br>
+                    <ol class="list-disc font-normal text-sm lg:text-base text-grisT ml-8">
+                        <li>Asphalt</li>
+                        <li>Aggregates</li>
+                        <li>Fuel Consumption</li>
+                        <li>Water Usage</li>
+                        <li>Recycled Asphalt Pavement (RAP)</li>
+                        <li>Additives</li>
+                    </ol>
+                </div>
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
+                    <h2>Customizable production management with storage for thousands of recipes.</h2>
+                </div>
+                <div class="text-sm lg:text-base flex text-start justify-center p-4 gap-10 text-grisT">
+                    <div>
+                        <h1 class="text-black lg:text-2xl text-xl">Versatile Setup</h1>
+                        <p>Works seamlessly in a dedicated control cabin or 
+                            under a protective roof.</p>
+                    </div>
+                    <div>
+                        <h1 class="text-black lg:text-2xl text-xl">Quick Adjustments</h1>
+                        <p>Allows rapid changes to recipes or control 
+                            settings to match project requirements.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="flex flex-col items-center gap-10 text-grisT">
+                <p class="lg:text-lg text-base">Offering a practical and efficient way to achieve total control over your asphalt
+                     plant operations. With advanced monitoring and automation, it simplifies the
+                      management of key processes such as temperature control, material dosing, and production 
+                      rates. Designed to adapt to different setups, it ensures reliable performance 
+                      while prioritizing safety and ease of use.</p>
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
+                    <h2>Walls and roof made of 16-gauge sheet metal with insulated panels.</h2>
+                    <br>
+                    <p class="font-normal">Provides durability and thermal insulation, ensuring structural 
+                        strength while maintaining a controlled interior environment.</p>
+                        <br>
+                    <ol class="list-disc ml-8">
+                        <li>Built with reinforced materials for heavy-duty use.</li>
+                        <li>Panoramic windows for enhanced visibility.</li>
+                    </ol>
+                </div>
+                
+
+            </div>
+        </div>
     </div>
     <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52 font-bold">
         <h1 class="text-lg md:text-2xl mb-4">User-Friendly Interface</h1>
