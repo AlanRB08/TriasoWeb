@@ -1,4 +1,7 @@
 ---
+import img1 from '../../assets/images/AsphaltPlant/render3.png';
+import img2 from '../../assets/images/AsphaltPlant/Aislamiento.png';
+import img3 from '../../assets/images/AsphaltPlant/tanqueV.png';
 
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold px-8 md:px-52 mt-20">
@@ -48,12 +51,55 @@
         </ul>
         <h1>FALTA UNA IMAGEN</h1>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center w-full items-center gap-8 mt-20">
-        <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT">
+    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center w-full items-center gap-8 mt-20">
+        <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT gap-4">
             <h1 class="text-black text-xl lg:text-2xl mb-4">AGITATORS FOR ADDITIVES <br> AND POLYMERS</h1>
+            <div class="bg-white flex flex-col gap-4 rounded-2xl lg:text-lg text-base p-4">
+                <h2>Designed for a homogeneous mixture of additives and polymers,
+                     the agitator ensures uniform distribution of all components 
+                     within the asphalt.</h2>
+                <ul class="font-normal">
+                    <li class="list-disc ml-4">Two 5 Hp agitators for:</li>
+                    <ul class="ml-4">
+                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Speeding up heating and homogenizing asphalt temperature.</li>
+                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating type 2 polymers: natural latex, SBR, neoprene, etc.</li>
+                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating additives such as:</li>
+                        
+                        <ol class="ml-8">
+                            <li>Rejuvenator for recycled asphalts.</li>
+                            <li> Asphalt softener.</li>
+                            <li>For warm mix applications.</li>
+                            <li> Adhesion promoter.</li>
+                            <li> Etc.</li>
+                        </ol>
+                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Maintaining homogeneity in polymer-modified asphalts.</li>
+                    </ul>
+                </ul>
+                <img src={img1.src} alt="">
+            </div>
+            <div class="grid grid-cols-3">
+                <img src={img2.src} alt="" class="col-spa-1 h-full">
+                <div class="col-span-2 bg-white rounded-2xl p-4">
+                    <h1 class="text-black">Two inches fiberglass insulation</h1><br>
+                    <p class="text-justify">Our asphalt storage tanks feature Two-inch fiberglass insulation,
+                         designed for superior performance in minimizing heat loss and maintaining 
+                         consistent temperatures. This durable, energy-efficient insulation ensures 
+                         your asphalt remains at the optimal temperature, ready for use. Additionally, 
+                         the exterior is reinforced with a stainless steel sheet lining, providing enhanced
+                          durability and protection against harsh external conditions.</p>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT">
-            <h1 class="text-black text-xl lg:text-2xl">AGITATORS FOR ADDITIVES <br> AND POLYMERS</h1>
+        <div class="flex flex-col justify-start text-base lg:text-lg text-grisT h-full">
+            <div class="bg-grisT text-white rounded-2xl p-8">
+                <h1 class="text-xl lg:text-4xl">Fully Versatile and <br> Customizable</h1><br>
+                <p class="text-grisSubP">Our asphalt tanks are designed to meet your specific needs. We can fully customize them,
+                     from color and capacity to the type of heating system and intended use. Whether you need a 
+                     standard solution or a tailor-made design, we ensure your tank is built to fit your exact
+                      requirements—with the option of stationary vertical asphalt tanks or mobile asphalt tanks.</p>
+
+            </div>
+            <img src={img3.src} alt="" class="flex-grow">
         </div>
     </div>
 </div>
