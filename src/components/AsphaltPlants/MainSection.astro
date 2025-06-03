@@ -42,37 +42,36 @@ const items  = [
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="flex items-center justify-between gap-4 mt-8 px-8 md:px-52 w-full ">
-            <button class="text-xs md:text-base tab-button py-2 md:px-4 font-bold focus:outline-none"
-            data-tab="tab1" aria-selected="true">
+    <div class="flex items-stretch justify-between gap-1 md:gap-4 mt-8 px-8 md:px-8 lg:px-52 w-full text-grisP">
+            <button class="text-xs md:text-base py-2 md:px-4 font-bold focus:outline-none border-b border-b-grisT">
                 Drum Mixers
             </button>
-            <button class="tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab2" aria-selected="false">
                 Baghouses
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab3" aria-selected="false">
                 Asphalt tanks
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab4" aria-selected="false">
                 Bins
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab5" aria-selected="false">
                 Heating <br> Systems
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab6" aria-selected="false">
                 Hot-Mix <br> Storage Silos
             </button>
-            <button class="tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab7" aria-selected="false">
                 Cold Mix Plants
             </button>
     </div>
-    <div class="w-full text-justify font-bold text-base md:text-xl px-8 md:px-52 text-grisT mt-10">
+    <div class="w-full text-justify font-bold text-base md:text-xl px-8 lg:px-52 text-grisT mt-10">
         <p>With models ranging from 10 to 500 tons per hour, Triaso asphalt plants 
             combine quality, high-quality materials, and a sophisticated design to 
             enhance our clients' corporate image. They deliver superior performance, 
@@ -91,10 +90,10 @@ const items  = [
         </p>
 
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20 px-8 md:px-52 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 lg:mt-20 px-8 lg:px-52 w-full">
         {items.map((item)=>(
             <div class="flex flex-col items-center justify-center text-center">
-            <img src={item.img.src} alt="" class="w-28">
+            <img src={item.img.src} alt="" class="lg:w-28 w-20">
             <p class="text-black text-base md:text-xl">{item.text}</p>
         </div>
         ))}
@@ -111,21 +110,3 @@ const items  = [
     
     
 </div>
-<style is:global>
-  /* Estilos para los tabs activos */
-  .tab-button[aria-selected="true"] {
-    color: var(--azul-bg1);
-    border-bottom: 1px solid var(--azul-bg1);
-  }
-  
-  .tab-button[aria-selected="false"] {
-    color: var(--gris-titulos);
-    border-bottom: 1px solid var(--gris-titulos);
-  }
-  
-  .tab-button:hover:not([aria-selected="true"]) {
-    color: var(--azul-bg1);
-    border-bottom: 1px solid var(--azul-bg1);
-  }
-  
-</style>
