@@ -44,14 +44,14 @@ import img3 from '../../assets/images/AsphaltPlant/tanqueV.png';
             </div>
         </div>
         <h1 class="text-lg lg:text-2xl mb-4">Incorporators and agitators</h1>
-        <ul class="flex list-disc w-full gap-10 pl-8 font-normal">
+        <ul class="flex list-disc w-full gap-1 md:gap-10 pl-8 font-normal flex-col md:flex-row">
             <li>Rubber incorporators</li>
             <li>Agitators for any application</li>
             <li>Incorporators for all types of polymers</li>
         </ul>
         <h1>FALTA UNA IMAGEN</h1>
     </div>
-    <div class="grid grid-cols-1 xl:grid-cols-2 justify-center w-full items-center gap-8 mt-20">
+    <div class="grid grid-cols-1 xl:grid-cols-2 justify-center items-start gap-8 mt-20">
         <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT gap-4">
             <h1 class="text-black text-xl lg:text-2xl mb-4">AGITATORS FOR ADDITIVES <br> AND POLYMERS</h1>
             <div class="bg-white flex flex-col gap-4 rounded-2xl lg:text-lg text-base p-4">
@@ -78,7 +78,9 @@ import img3 from '../../assets/images/AsphaltPlant/tanqueV.png';
                 <img src={img1.src} alt="">
             </div>
             <div class="grid grid-cols-3">
-                <img src={img2.src} alt="" class="col-spa-1 h-full">
+                <div class="col-spa-1 flex items-center">
+                    <img src={img2.src} alt="" class="h-[90%]">
+                </div>
                 <div class="col-span-2 bg-white rounded-2xl p-4">
                     <h1 class="text-black">Two inches fiberglass insulation</h1><br>
                     <p class="text-justify">Our asphalt storage tanks feature Two-inch fiberglass insulation,
@@ -90,16 +92,15 @@ import img3 from '../../assets/images/AsphaltPlant/tanqueV.png';
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-start text-base lg:text-lg text-grisT h-full">
-            <div class="bg-grisT text-white rounded-2xl p-8">
-                <h1 class="text-xl lg:text-4xl">Fully Versatile and <br> Customizable</h1><br>
-                <p class="text-grisSubP">Our asphalt tanks are designed to meet your specific needs. We can fully customize them,
-                     from color and capacity to the type of heating system and intended use. Whether you need a 
-                     standard solution or a tailor-made design, we ensure your tank is built to fit your exact
-                      requirements—with the option of stationary vertical asphalt tanks or mobile asphalt tanks.</p>
-
+        <div class="flex flex-col justify-start text-base lg:text-lg text-grisT h-[100%]">
+            <div class="bg-grisT text-white rounded-2xl p-4 md:p-8 w-full">
+              <h1 class="text-xl lg:text-4xl">Fully Versatile and <br> Customizable</h1>
+              <p class="text-grisSubP mt-4">Our asphalt tanks are designed to meet your specific needs. We can fully customize them,
+                from color and capacity to the type of heating system and intended use. Whether you need a 
+                standard solution or a tailor-made design, we ensure your tank is built to fit your exact
+                 requirements—with the option of stationary vertical asphalt tanks or mobile asphalt tanks.</p>
             </div>
-            <img src={img3.src} alt="" class="flex-grow xl:w-full w-1/2 self-center">
-        </div>
+            <img src={img3.src} alt="" class="w-full md:h-[100%] self-center mt-4 md:mt-0">
+          </div>
     </div>
 </div>
