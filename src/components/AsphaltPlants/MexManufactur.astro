@@ -1,0 +1,39 @@
+---
+import Img from "../../assets/images/soldadura.jpg"
+---
+<div class="w-full 2xl:px-52 px-8 md:px-20 mt-20 flex flex-col items-start min-h-10/12 mb-1">
+    <h1 class="text-xl md:text-4xl font-bold mb-5">100% <span class="text-[#00840d]">Mexican</span>
+        <br> Manufacturers</h1>
+    <h2 class="text-base md:text-xl font-bold mb-5 text-grisT">TRIASO MANUFACTURES DIRECTLY, WE DON´T HAVE SUBCONTRACTORS</h2>
+    <p class="font-bold text-gris5 text-sm md:text-lg mb-5 text-justify">
+        At Triaso, no other asphalt plant manufacturer in the world produces as many components 
+        for its own equipment as we do. Unlike others,<span class="text-black">we manufacture 
+            directly without subcontractors </span>, 
+        ensuring that every part meets our strict quality standards. <br> <br> This approach allows us to
+         provide <span class="text-black">the best service, warranty, and direct support</span>, both from our team in Mexico and
+          our USA distributor. Most brands only produce a few components, relying heavily on external 
+          suppliers and merely assembling the equipment in their facilities.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 w-full">
+  <!-- Columna de texto -->
+        <div class="font-bold text-grisT order-2 md:order-1">
+            <h2 class="mb-5 text-base md:text-lg">Direct Attention from the Manufacturer</h2>
+            <p class="text-grisP text-sm md:text-lg text-justify">At Triaso, you work directly with the manufacturer—no intermediaries or external sellers. We design and produce our equipment, guaranteeing top quality, competitive pricing, and personalized service. Our in-house manufacturing ensures unparalleled warranty coverage, rapid support, immediate spare parts availability, and customized solutions tailored to your needs.</p>
+            <div class="flex gap-10 justify-center items-center mt-5 md:mt-20 pb-5">
+            <button class="text-sm md:text-lg font-normal border-blueMain text-blueMain border rounded-full px-4 py-1 hover:bg-blueMainHover hover:text-white">Maintenance</button>
+            <button class="text-sm md:text-lg font-normal border-redBg text-redBg border rounded-full px-4 py-1 hover:bg-redBgHover hover:text-white">Manufacture</button>
+            </div>
+        </div>
+        
+        <!-- Columna de imagen (ajustada) -->
+        <div class="w-full flex justify-center items-center order-1 md:order-2">
+            <img src={Img.src} alt="" class="rounded-2xl object-cover w-full h-auto max-h-[400px] md:max-h-none">
+        </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 font-bold text-grisT lg:text-lg text-base mt-20">
+        <button class="border-b border-b-grisT pb-3">Competitive pricing without compromising quality</button>
+        <button class="border-b border-b-grisT pb-3">In-depth technical expertise for exceptional customer service</button>
+        <button class="border-b border-b-grisT pb-3">Customization to adapt to specific customer needs</button>
+        <button class="border-b border-b-grisT pb-3">Immediate spare parts availability</button>
+    </div>
+</div>
