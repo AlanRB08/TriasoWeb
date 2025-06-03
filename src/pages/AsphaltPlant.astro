@@ -8,6 +8,23 @@ import AsphaltTanks from '../components/AsphaltPlants/AsphaltTanks.astro';
 import BinUnits from '../components/AsphaltPlants/BinUnits.astro';
 import HeatingSystem from '../components/AsphaltPlants/HeatingSystem.astro';
 import StorageSilos from '../components/AsphaltPlants/StorageSilos.astro';
+import ColdMix from '../components/AsphaltPlants/ColdMix.astro';
+import MexManufactur from '../components/AsphaltPlants/MexManufactur.astro';
+import Spare from '../components/AsphaltPlants/Spare.astro';
+import ImageSlider from '../components/AsphaltPlants/ImageSlider.astro';
+import img1 from '../assets/images/AsphaltPlant/cold2.png';
+import img2 from '../assets/images/AsphaltPlant/cold1.png';
+
+const images = [
+    img1,
+    img2,
+    img1,
+    img1,
+    img2,
+    img1,
+    img2
+];
+
 ---
 <Layout title="Aphalt Plants">
     <Hero />
@@ -18,4 +35,8 @@ import StorageSilos from '../components/AsphaltPlants/StorageSilos.astro';
     <BinUnits />
     <HeatingSystem />
     <StorageSilos />
+    <ColdMix />
+    <MexManufactur />
+    <ImageSlider images={images.map(img => img.src)} />
+    <Spare /> 
 </Layout>
