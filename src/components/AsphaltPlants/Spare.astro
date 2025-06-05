@@ -1,6 +1,21 @@
 ---
 import Boxes from "../../assets/images/Boxes.jpg";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
+import img1 from '../../assets/images/AsphaltPlant/tips.png';
+import GallerySlider2 from "./GallerySlider2";
+
+const images1 = [
+  { src: '/Gallery/fab-silo.jpg', title: 'Silo Manufacturing' },
+  { src: '/Gallery/oil-heater.jpg', title: 'Oil heater thermal insulation' },
+  { src: '/Gallery/serial-parts-bg.jpg', title: 'Serial parts machining' },
+  { src: '/Gallery/fly-cutting-sm.jpg', title: 'Flights cutting' },
+  { src: '/Gallery/fab-planta-frio.jpg', title: 'Cold mixing plant manufacturing' },
+  { src: '/Gallery/quemadores.jpg', title: 'Burners manufacture' },
+  { src: '/Gallery/drum-mixer.jpg', title: 'Burners manufacture' },
+  { src: '/Gallery/elevator-manu.jpg', title: 'Drum mixer welding' },
+  { src: '/Gallery/oil-heater.jpg', title: 'Elevator hinges manufacturing' }
+  // agrega hasta 16 o más imágenes
+];
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold px-8 lg:px-52 mt-24">
     <h1 class="text-grisT lg:text-4xl text-2xl mb-10">Complete Equipment Solutions
@@ -14,14 +29,21 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
         <div class="flex flex-col items-center justify-center w-full mt-10">
             <h1 class="text-xl md:text-4xl text-grisT font-bold mb-10">Triaso® Spare Parts</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
+                <div class="hidden md:block">
                     <img src={Boxes.src} alt="" class="rounded-2xl mb-6">
                 </div>
                 <div class="font-bold flex flex-col items-center text-grisPPP text-base md:text-lg">
                     <p class="text-justify">No other asphalt plant manufacturer globally produces
-                         as many components for its own equipment as Triaso does. <br> <br>That's why we 
+                         as many components for its own equipment as Triaso does.
+                    </p> <br>
+                    <p class="text-justify"> 
+                        That's why we 
                          provide the best service, warranty, and direct support from both 
-                         the Mexican manufacturer and USA distributor.</p> <br>
+                         the Mexican manufacturer and USA distributor.
+                    </p>
+                    <div class="block md:hidden my-4">
+                        <img src={Boxes.src} alt="" class="rounded-2xl mb-6">
+                    </div>
                     <p class="text-justify"><span class="text-black">We ship spare parts worldwide, ensuring your production
                          never stops.</span>  All our parts come with guaranteed quality, competitive prices,
                           and fast delivery times.</p>
@@ -42,8 +64,7 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
                            efficiency and reduce downtime.
                     </p>
             </div>
-            <button class="bg-redBg hover:bg-redBgHover text-white mt-10 text-sm 
-                    md:text-lg font-normal rounded-full py-1 px-4">Learn more</button>
+            <LearnBtn />
         </div>
     </section>
     <h1 class="text-black lg:text-4xl text-2xl mt-20 w-full text-start">
@@ -54,8 +75,8 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
                     <div class="w-20 h-0.5 bg-red-500"></div>
                     <div class="w-20 h-0.5 bg-gray-300"></div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-        <div class="flex flex-col items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center mb-10 md:mb-20">
+        <div class="flex flex-col items-center mb-10">
             <p class="text-grisPPP md:text-lg text-base">Purchasing an asphalt plant is a significant investment
                  and serves as the foundation of an asphalt mix production 
                  business. Buy wisely.</p>
@@ -63,6 +84,8 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
             className="bg-blueMain hover:blueMainHover"; 
             />   
         </div>
-        <h1>AQUI NECESITO OTRA IMAGEN PNG</h1>
+        <img src={img1.src} alt="">
     </div>
+    <GallerySlider2 client:load images={images1}/>
+    
 </div>

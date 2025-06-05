@@ -1,5 +1,5 @@
 ---
-import img2 from '../../assets/images/AsphaltPlant/render4.png';
+import Tabs from './Tabs';
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -18,17 +18,8 @@ import img2 from '../../assets/images/AsphaltPlant/render4.png';
     </div>
     <div class="w-full flex flex-col items-center mt-20 text-grisT px-8 md:px-52 text-base md:text-lg">
         <h1 class="text-black text-lg md:text-xl">Ranging from 4,000 to 90,000 ACFM Capacity</h1>
-        <div class="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4">
-            <div class="flex lg:flex-col items-stretch justify-around gap-4">
-                <button class="text-start font-normal border-b border-b-grisT pr-8 lg:w-5/12">
-                    Mounted on the same <br> chassis as the drum mixer
-                </button>
-                <button class="text-start font-normal border-b border-b-grisT pr-8 lg:w-5/12">
-                    Self-contained
-                </button>
-            </div>
-            <img src={img2.src} alt="" class="border border-blueMain rounded-2xl">
-        </div>
+        <Tabs client:visible />
+
     </div>
     <div class="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-10 mt-10 md:mt-20">
         <div class="flex flex-col items-start justify-center text-base md:text-lg text-grisT px-8 lg:pl-52">
@@ -53,7 +44,7 @@ import img2 from '../../assets/images/AsphaltPlant/render4.png';
             </ul>
         </div>
         <div class="flex flex-col items-start justify-center text-base md:text-lg text-grisSubP">
-            <h1 class="text-black pl-8 md:pr-52 mb-4">Mechanism of baghouses available in pulse jet and reverse jet</h1>
+            <h1 class="text-black px-8 md:pr-52 mb-4">Mechanism of baghouses available in pulse jet and reverse jet</h1>
             <div class="bg-blueMain lg:rounded-l-2xl p-8 md:my-8">
                 <p class="md:w-3/4">Pulse Jet: A cleaning system that uses compressed air bursts to dislodge 
                     dust and debris from the filter bags, maintaining continuous airflow.</p><br>

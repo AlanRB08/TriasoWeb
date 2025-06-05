@@ -41,29 +41,54 @@ const items  = [
 ]
 ---
 
-<div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="flex items-stretch justify-between gap-1 md:gap-4 mt-8 px-8 lg:px-52 text-grisP">
-            <button class="text-xs md:text-base py-2 md:px-4 font-bold focus:outline-none border-b border-b-grisT">
-                Drum Mixers
-            </button>
-            <button class="border-b border-b-grisT tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
-            data-tab="tab2" aria-selected="false">
-                Baghouses
-            </button>
-            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
-            data-tab="tab3" aria-selected="false">
-                Asphalt tanks
-            </button>
-            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
-            data-tab="tab4" aria-selected="false">
-                Bins
-            </button>
+<div class="w-full flex flex-col items-center justify-around font-bold">
+    <div class="grid grid-cols-4 md:grid-cols-7 items-stretch justify-items-center md:justify-between gap-1 md:gap-4 mt-8 px-4 md:px-8 lg:px-52 text-grisP">
+        <!-- Primera fila - siempre 4 elementos -->
+        <button class="text-xs md:text-base py-2 md:px-4 font-bold focus:outline-none border-b border-b-grisT">
+            Drum Mixers
+        </button>
+        <button class="border-b border-b-grisT tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab2" aria-selected="false">
+            Baghouses
+        </button>
+        <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab3" aria-selected="false">
+            Asphalt tanks
+        </button>
+        <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab4" aria-selected="false">
+            Bins
+        </button>
+        
+        <!-- Segunda fila - 3 elementos centrados -->
+        <div class="col-span-4 flex justify-center gap-1 md:hidden">
             <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
             data-tab="tab5" aria-selected="false">
                 Heating <br> Systems
             </button>
-            
-            
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Hot-Mix <br> Storage Silos
+            </button>
+            <button class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Cold Mix <br> Plants
+            </button>
+        </div>
+        
+        <!-- Versión desktop - todos en una línea -->
+        <button class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Heating <br> Systems
+        </button>
+        <button class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Hot-Mix <br> Storage Silos
+        </button>
+        <button class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Cold Mix <br> Plants
+        </button>
     </div>
     <div class="w-full text-justify font-bold text-base md:text-xl px-8 lg:px-52 text-grisT mt-10">
         <p>With models ranging from 10 to 500 tons per hour, Triaso asphalt plants 
@@ -94,7 +119,7 @@ const items  = [
             </div>
         ))}
     </div>
-    <div class="w-full flex flex-col items-center md:px-52 px-8 justify-center mt-20 text-black text-base md:text-xl">
+    <div class="w-full flex flex-col items-center md:px-52 px-8 justify-center mt-20 text-black text-base text-center md:text-xl">
         <h1>With Triaso, Become the Exclusive Provider of Hot Mix for 
             All Paving Projects in Your Region</h1>
         <img src={img1.src} alt="">

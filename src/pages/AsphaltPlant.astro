@@ -11,18 +11,18 @@ import StorageSilos from '../components/AsphaltPlants/StorageSilos.astro';
 import ColdMix from '../components/AsphaltPlants/ColdMix.astro';
 import MexManufactur from '../components/AsphaltPlants/MexManufactur.astro';
 import Spare from '../components/AsphaltPlants/Spare.astro';
-import ImageSlider from '../components/AsphaltPlants/ImageSlider.astro';
-import img1 from '../assets/images/AsphaltPlant/cold2.png';
-import img2 from '../assets/images/AsphaltPlant/cold1.png';
-
-const images = [
-    img1,
-    img2,
-    img1,
-    img1,
-    img2,
-    img1,
-    img2
+import GallerySlider from '../components/AsphaltPlants/GallerySlider';
+const images1 = [
+  { src: '/Gallery/fab-silo.jpg', title: 'Silo Manufacturing' },
+  { src: '/Gallery/oil-heater.jpg', title: 'Oil heater thermal insulation' },
+  { src: '/Gallery/serial-parts-bg.jpg', title: 'Serial parts machining' },
+  { src: '/Gallery/fly-cutting-sm.jpg', title: 'Flights cutting' },
+  { src: '/Gallery/fab-planta-frio.jpg', title: 'Cold mixing plant manufacturing' },
+  { src: '/Gallery/quemadores.jpg', title: 'Burners manufacture' },
+  { src: '/Gallery/drum-mixer.jpg', title: 'Burners manufacture' },
+  { src: '/Gallery/elevator-manu.jpg', title: 'Drum mixer welding' },
+  { src: '/Gallery/oil-heater.jpg', title: 'Elevator hinges manufacturing' }
+  // agrega hasta 16 o más imágenes
 ];
 
 ---
@@ -37,6 +37,6 @@ const images = [
     <StorageSilos />
     <ColdMix />
     <MexManufactur />
-    <ImageSlider images={images.map(img => img.src)} />
+    <GallerySlider client:load images={images1} />
     <Spare /> 
 </Layout>
