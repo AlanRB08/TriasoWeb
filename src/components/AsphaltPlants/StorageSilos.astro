@@ -4,10 +4,12 @@ import img2 from '../../assets/images/AsphaltPlant/Aislamiento.png';
 import img3 from '../../assets/images/AsphaltPlant/bin2.png';
 import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import img5 from '../../assets/images/AsphaltPlant/silos3.png';
+import img6 from '../../assets/images/AsphaltPlant/segre1.png';
+import LearnBtn from '../unitComponents/LearnBtn.astro';
 ---
 <div class="flex flex-col items-center justify-center px-8 lg:px-52 mt-10 md:mt-20 font-bold text-grisT">
     <div class="grid grid-cols-1 lg:grid-cols-2">
-        <img src={img1.src} alt="">
+        <img src={img1.src} alt="" class="hidden md:block">
         <div class="p-4 flex flex-col items-center justify-center">
             <h1 class="lg:text-4xl text-2xl text-redBg w-full text-start">Hot-Mix</h1>
             <h1 class="lg:text-4xl text-2xl w-full text-start">Storage Silos</h1><br>
@@ -17,25 +19,28 @@ import img5 from '../../assets/images/AsphaltPlant/silos3.png';
                  These silos are designed for easy transportation and quick setup, making them 
                  ideal for projects that require frequent relocation. With a self-erecting system,
                   they minimize the need for heavy machinery during installation, reducing setup 
-                  time and labor costs. <br><br> Built to withstand harsh environments, 
+                  time and labor costs.
+            </p>
+            <img src={img1.src} alt="" class="block md:hidden">
+            <p class="text-justify">
+                Built to withstand harsh environments, 
                   they ensure reliable storage capacity, optimal material protection, 
                   and seamless integration into various operations, improving productivity and 
                   reducing downtime.
             </p>
-            <button class="bg-redBg hover:redBgHover max-w-[130px] text-white mt-5 rounded-2xl py-1 px-4">
-                Learn more</button>
+            <LearnBtn />
         </div>
 
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-6">
-        <div class="flex flex-col items-center justify-center col-span-1">
+        <div class="hidden md:flex md:flex-col items-center justify-center col-span-1">
             <img src={img2.src} alt="" class="lg:w-full w-1/4">
-            <h1 class="lg:text-3xl text-xl text-blueMain text-center">Six inches</h1>
-            <h2 class="lg:text-2xl text-lg text-black text-center">fiberglass insulation</h2>
+            <h1 class="lg:text-3xl text-xl text-blueMain text-start">Six inches</h1>
+            <h2 class="lg:text-2xl text-lg text-black text-start">fiberglass insulation</h2>
         </div>
         <div class="col-span-1"></div>
-        <div class="col-span-4 bg-white rounded-2xl grid grid-cols-1 lg:grid-cols-2 p-8">
-            <div class="flex flex-col gap-4">
+        <div class="col-span-4 bg-white rounded-2xl grid grid-cols-1 lg:grid-cols-2 pl-8 py-8">
+            <div class="flex flex-col gap-4 pr-8">
                 <h1 class="lg:text-2xl text-xl text-black">Even Distribution Without Segregation</h1>
                 <p class="lg:text-base text-sm text-justify">Triaso® silos use a top-mounted batcher that collects a full load
                      of mix before discharging it in one motion through overlapping clam-style gates.
@@ -44,7 +49,7 @@ import img5 from '../../assets/images/AsphaltPlant/silos3.png';
                         material buildup. This method prevents segregation, ensures uniform layering,
                          and maintains the mix’s quality during storage.</p>
             </div>
-            <img src={img3.src} alt="" class="">
+            <img src={img6.src} alt="" class="self-start w-full h-auto max-h-[300px] lg:max-h-none object-contain">
         </div>
 
     </div>
@@ -57,15 +62,22 @@ import img5 from '../../assets/images/AsphaltPlant/silos3.png';
         </p>
         <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start md:gap-4">
             <img src={img4.src} alt="" class="rounded-2xl w-full col-span-1">
-            <div class="col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4 justify-start items-start">
-                <div class="bg-white rounded-2xl p-4 self-start">
-                    <p>Telescopic hydraulic cylinders for lifting.</p>
+            <div class="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4 justify-start items-start">
+                <div class="flex flex-col gap-2 col-span-1 md:col-span-3 md:flex-row">
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
                 </div>
-                <div class="bg-white rounded-2xl p-4 self-start">
-                    <p>Telescopic hydraulic cylinders for lifting.</p>
-                </div>
-                <div class="bg-white rounded-2xl p-4 self-start">
-                    <p>Telescopic hydraulic cylinders for lifting.</p>
+                <div class="flex flex-col items-center justify-center w-fit col-span-1 md:hidden">
+                    <img src={img2.src} alt="" class="w-[80%]">
+                    <h1 class="lg:text-3xl text-xl text-blueMain text-center">Six inches</h1>
+                    <h2 class="lg:text-2xl text-lg text-black text-center">fiberglass insulation</h2>
                 </div>
             </div>
         </div>
