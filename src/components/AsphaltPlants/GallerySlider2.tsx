@@ -70,7 +70,7 @@ export default function GallerySlider2({ images }: Props) {
   const offset = windowWidth < 768 ? 0 : -(currentIndex * (100 / itemsPerPage));
 
   return (
-    <div className="w-full mx-auto py-8 mt-10 md:mt-20">
+    <div className="w-full mx-auto pt-8 pb-2 mt-10 md:mt-20 md:border md:border-grisSubP">
       <div 
         ref={sliderRef}
         className={`relative w-full ${windowWidth < 768 ? 'overflow-x-auto snap-x snap-mandatory' : 'overflow-hidden'}`}
@@ -98,7 +98,7 @@ export default function GallerySlider2({ images }: Props) {
               }}
               onClick={() => setModalIndex(i)}
             >
-              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden hover:border-2 hover:border-blueMain">
                 <img
                   src={img.src}
                   alt={img.title}
@@ -110,24 +110,25 @@ export default function GallerySlider2({ images }: Props) {
           ))}
         </div>
 
-        {/* Botones de navegación - solo visible en desktop */}
-        {windowWidth >= 768 && (
-          <>
+        
+      </div>
+      {/* Botones de navegación - solo visible en desktop */}
+      {windowWidth >= 768 && (
+          <div className="text-end mr-4 flex gap-2 justify-end mt-4">
             <button
               onClick={prevSlide}
-              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 hover:bg-white text-black p-2 rounded-full shadow-md"
+              className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
             >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM10.9697 16.0303L7.46967 12.5303C7.17678 12.2374 7.17678 11.7626 7.46967 11.4697L10.9697 7.96967C11.2626 7.67678 11.7374 7.67678 12.0303 7.96967C12.3232 8.26256 12.3232 8.73744 12.0303 9.03033L9.81066 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H9.81066L12.0303 14.9697C12.3232 15.2626 12.3232 15.7374 12.0303 16.0303C11.7374 16.3232 11.2626 16.3232 10.9697 16.0303Z" fill="#000000"></path></svg>
+              <svg width="24px" height="24px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M15 6L9 12L15 18" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </button>
             <button
               onClick={nextSlide}
-              className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 hover:bg-white text-black p-2 rounded-full shadow-md"
+              className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
             >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path fillRule="evenodd" clipRule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM13.0303 7.96967L16.5303 11.4697C16.8232 11.7626 16.8232 12.2374 16.5303 12.5303L13.0303 16.0303C12.7374 16.3232 12.2626 16.3232 11.9697 16.0303C11.6768 15.7374 11.6768 15.2626 11.9697 14.9697L14.1893 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H14.1893L11.9697 9.03033C11.6768 8.73744 11.6768 8.26256 11.9697 7.96967C12.2626 7.67678 12.7374 7.67678 13.0303 7.96967Z" fill="#000000"></path></svg>
+              <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M9 6L15 12L9 18" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </button>
-          </>
+          </div>
         )}
-      </div>
 
       {/* Modal para imagen ampliada */}
       {modalIndex !== null && (
