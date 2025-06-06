@@ -6,11 +6,11 @@ const images = [
   { id: 1, src: "/Gallery/baghouses2.png", alt: "Imagen 2" },
 ];
 
-export default function Tabs() {
+export default function TabsIntegral() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4 px-8">
       <div className="flex lg:flex-col items-stretch justify-around gap-4 md:gap-20">
         {images.map((img, index) => (
           <button

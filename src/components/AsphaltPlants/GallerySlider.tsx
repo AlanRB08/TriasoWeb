@@ -38,11 +38,43 @@ export default function GallerySlider({ images }: Props) {
   const offset = -(currentIndex * (100 / totalPages));
 
   return (
-    <div className="w-full mx-auto py-8 bg-blueMain mt-10 md:mt-20">
+    <div className="w-full mx-auto py-10 bg-blueMain mt-10 md:mt-20 relative">
       <h1 className="text-3xl md:text-4xl text-white mb-4 px-8">GALLERY</h1>
-
+      {/* Botones solo en desktop */}
+      {!isMobile && (
+          <div className="absolute bottom-2 right-4 flex gap-2 justify-end">
+            <button
+              onClick={prevSlide}
+              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
+            >
+              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M15 6L9 12L15 18"
+                  stroke="#393939"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
+            >
+              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 6L15 12L9 18"
+                  stroke="#393939"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
       {/* Contenedor deslizable */}
-      <div className="relative w-full h-[300px]">
+      <div className="relative overflow-hidden w-full h-[300px]">
         <div
           ref={containerRef}
           className={`flex transition-transform duration-500 ease-in-out ${
@@ -78,39 +110,7 @@ export default function GallerySlider({ images }: Props) {
           ))}
         </div>
 
-        {/* Botones solo en desktop */}
-        {!isMobile && (
-          <div className="absolute bottom-0 right-4 flex gap-2 justify-end mt-4">
-            <button
-              onClick={prevSlide}
-              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-            >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M15 6L9 12L15 18"
-                  stroke="#393939"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <button
-              onClick={nextSlide}
-              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-            >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 6L15 12L9 18"
-                  stroke="#393939"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
+        
       </div>
 
       {/* Modal para imagen ampliada */}

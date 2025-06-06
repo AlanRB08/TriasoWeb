@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IntroductionSection from '../components/IntegralAsphalt/IntroductionSection.astro';
+import SlidersCarrusel from '../components/IntegralAsphalt/SlidersCarrusel';
+import Hero2 from '../components/IntegralAsphalt/Hero2.astro';
+import TabsIntegral from '../components/IntegralAsphalt/TabsIntegral';
+import NeedSection from '../components/IntegralAsphalt/NeedSection.astro';
+
+const images2 = [
+  { src: '/Gallery/fab-silo.jpg', title: 'Counterflow drum mixer' , texto: 'The counterflow drum mixer, located at the center of the chassis, is engineered for efficient heat transfer and minimal fines loss, ensuring consistent asphalt mix quality. Its robust construction and advanced sealing minimize air infiltration and reduce maintenance. Designed specifically for the 10 Tph plant, it delivers reliable performance in a compact, cost-effective system.'},
+  { src: '/Gallery/oil-heater.jpg', title: 'External pugmill mixer' , texto: 'The external pugmill mixer, mounted directly below the drum outlet, ensures superior final mixing of the asphalt. This added stage guarantees a more homogeneous and consistent mix by thoroughly blending materials before discharge. Driven by a 5 hp motor with a robust gearbox, it features interchangeable wear-resistant paddles for long service life and easy maintenance.'},
+  { src: '/Gallery/serial-parts-bg.jpg', title: 'Aggregates bin',texto:'The aggregates bin is designed to store pre-dosed material ready for asphalt production. Its trapezoidal discharge and smooth belt operation ensure steady, controlled flow to the drying system. Equipped with a lagged head pulley for improved belt grip, it supports consistent feeding for reliable mix quality throughout the process.'},
+  { src: '/Gallery/fly-cutting-sm.jpg', title: 'Asphalt tank', texto:'The asphalt tank is designed for efficient storage and heating, ensuring a steady asphalt supply at the ideal production temperature. With a 140,000 Btu/hr burner and integrated agitator, it enables fast heating and quick start-up. A 2" pump with a 2 hp motor ensures smooth flow, optimizing plant performance. Mounted on a sturdy chassis with support legs, it offers stable stationary operation with optional mobility.'},
+  { src: '/Gallery/fab-planta-frio.jpg', title: 'Electric Generator' , texto:'The electric generator provides consistent, reliable power for the entire asphalt plant. With 20 kW continuous and 22 kW emergency capacity, it supports all electrical components seamlessly. Powered by a 35 hp Cummins diesel engine and a 110-liter fuel tank, it offers extended runtime with low maintenance. Its soundproof housing and robust base make it ideal for both stationary and mobile setups.'},
+  { src: '/Gallery/quemadores.jpg', title: 'Control Cabinet', texto:'The control cabinet centralizes the operation of the entire plant, offering intuitive management of all key components—from aggregate feeding to asphalt injection. Built with industrial-grade components, it ensures reliable performance in demanding environments. Its user-friendly interface allows precise control of temperature, material flow, and mixer timing, streamlining production and reducing operator error.' },
+  { src: '/Gallery/drum-mixer.jpg', title: 'Fuel Tank', texto:'The fuel tank, positioned behind the asphalt tank, has a 750-liter capacity and supplies diesel to the burner system. Its placement ensures easy access for refueling while maintaining a compact layout within the plant. Built for durability and continuous operation, it supports extended production runs without interruption.' },
+  { src: '/Gallery/elevator-manu.jpg', title: 'Burner' , texto:'The burner optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.'},
+  { src: '/Gallery/oil-heater.jpg', title: 'Elevator hinges manufacturing', texto:'The burner optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.' }
+  // agrega hasta 16 o más imágenes
+];
+---
+
+<Layout title="Integral Asphalt Plant">
+    <IntroductionSection />
+    <SlidersCarrusel client:load images={images2}/>
+    <Hero2 />
+    <TabsIntegral client:visible/>
+    <NeedSection />
+    
+
+</Layout>

@@ -61,7 +61,7 @@ export const menuItems = [
         },
         {
           title : "10 TPH INTEGRAL ASPHALT PLANTS",
-          url : "/products/asphalt-plants/integral-asphalt-plants",
+          url : "/IntegralAphaltPlant",
         }
       ]
       },
