@@ -2,31 +2,33 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.png", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/tolva1.png", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/tolva2.png", alt: "Imagen 2" },
+  { id: 2, src: "/Gallery/tolva3.png", alt: "Imagen 3" }, // Nueva imagen
 ];
 
 export default function TabsIntegral() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4 px-8">
-      <div className="flex lg:flex-col items-stretch justify-around gap-4 md:gap-20">
+    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 md:px-52">
+      <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
         {images.map((img, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center md:text-start font-normal border-b-2 md:pr-4 md:w-8/12 text-sm md:text-base ${
-              activeIndex === index ? "border-red-500" : "border-transparent"
+            className={`text-center font-normal border-b-2 md:pr-4 w-full text-sm md:text-base ${
+              activeIndex === index ? "border-red-500 text-black font-bold" : "border-transparent"
             }`}
           >
             {index === 0 ? (
               <>
-                Mounted on the same <br/>
-                chassis <span className="hidden md:inline">as the drum mixer</span>
+                Standard chassis for <br />mobility of empty plant
               </>
+            ) : index === 1 ? (
+              "All mounted on a lightweight chassis with support legs"
             ) : (
-              "Self-contained"
+              "Reinforced chassis for full-loaded plant mobility" // Texto para el nuevo tab
             )}
           </button>
         ))}

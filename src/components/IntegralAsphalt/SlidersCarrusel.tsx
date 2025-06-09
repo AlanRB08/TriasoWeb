@@ -39,7 +39,7 @@ export default function SlidersCarrusel({ images }: Props) {
     const offset = -(currentIndex * (100 / totalPages));
   
     return (
-      <div className="w-full mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 md:px-44">
+      <div className="w-full mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 md:px-44 mb-10">
         
         {/* Botones solo en desktop */}
         {!isMobile && (
@@ -110,7 +110,7 @@ export default function SlidersCarrusel({ images }: Props) {
                     </div>
                 </div>
                 
-                <div className="mt-4 text-justify font-bold text-grisT text-base md:text-lg px-4">
+                <div className="mt-4 text-justify font-bold text-grisT text-sm md:text-base px-4">
                     {img.texto}
                 </div>
               </div>

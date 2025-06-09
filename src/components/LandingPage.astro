@@ -9,13 +9,27 @@ import ControlSection from "./LandinPage/ControlSection.astro"
 import FuelSection from "./LandinPage/FuelSection.astro"
 import DeliverySection from "./LandinPage/DeliverySection.astro"
 import TotalAirSection from "./LandinPage/TotalAirSection.astro"
-import BroucherSection from "./LandinPage/BroucherSection.astro"
+import ItemsSlider from "./LandinPage/ItemsSlider"
+
+const images1 = [
+  { src: '/Gallery/fab-silo.jpg', title: 'Economic long-lasting life',texto:'Cost-effective, long-lasting durability, crafted with premium materials and strict quality control.' },
+  { src: '/Gallery/oil-heater.jpg', title: 'Low maintenance' ,texto:'Minimal upkeep required, ensuring long-term reliability.'},
+  { src: '/Gallery/serial-parts-bg.jpg', title: 'Construction regulations' ,texto:'Compliant with all relevant U.S. construction standards and regulations.'},
+  { src: '/Gallery/fly-cutting-sm.jpg', title: 'Cost-Effective' ,texto:'Reduce downtime, relocation costs, and maintenance with efficient design and reliable performance.'},
+  { src: '/Gallery/fab-planta-frio.jpg', title: 'High productivity' ,texto:'Utilization of the maximum capacity of its components and balance between them to avoid bottlenecks and achieve high efficiency.'},
+  { src: '/Gallery/quemadores.jpg', title: 'Highly portable',texto:'Easy to transport and relocate, saving time and costs, ideal for both multiple job sites and stationary operations' },
+  { src: '/Gallery/drum-mixer.jpg', title: 'Improved Company Image' ,texto:'Industrial aesthetics enhance the visual appeal of your operations.'},
+  { src: '/Gallery/elevator-manu.jpg', title: 'Customizable' ,texto:'We tailor features to align with your specific project requirements and operational goals.'},
+  { src: '/Gallery/oil-heater.jpg', title: 'Elevator hinges manufacturing' ,texto:'nada de texto'}
+  // agrega hasta 16 o más imágenes
+];
 ---
 <div class="w-full">
     <MainSection />
     <InfoSection />
     <AsphaltSection />
     <MapaSection/>
+    <ItemsSlider client:load images={images1}/>
     <SpareSection />
     <ManufactuSection />
     <ControlSection />
