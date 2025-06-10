@@ -111,7 +111,7 @@ export default function SlidersCarrusel({ images }: Props) {
                 </div>
                 
                 <div className="mt-4 text-justify font-bold text-grisT text-sm md:text-base px-4">
-                    {img.texto}
+                <p dangerouslySetInnerHTML={{ __html: img.texto }}></p>
                 </div>
               </div>
             ))}

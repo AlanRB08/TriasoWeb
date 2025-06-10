@@ -18,7 +18,7 @@ export default function TabsIntegral() {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center font-normal border-b-2 md:pr-4 w-full text-sm md:text-base ${
-              activeIndex === index ? "border-red-500 text-black font-bold" : "border-transparent"
+              activeIndex === index ? "border-redBg text-black font-bold" : "border-transparent"
             }`}
           >
             {index === 0 ? (
@@ -37,7 +37,7 @@ export default function TabsIntegral() {
       <img
         src={images[activeIndex].src}
         alt={images[activeIndex].alt}
-        className="border border-blueMain rounded-2xl"
+        className="rounded-2xl"
       />
     </div>
   );
