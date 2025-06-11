@@ -17,8 +17,10 @@ export default function TabsIntegral() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center font-normal border-b-2 md:pr-4 w-full text-sm md:text-base ${
-              activeIndex === index ? "border-redBg text-black font-bold" : "border-transparent"
+            className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
+              activeIndex === index 
+                ? "border-redBg text-black font-bold" 
+                : "border-transparent text-grisT font-normal"
             }`}
           >
             {index === 0 ? (
@@ -26,9 +28,15 @@ export default function TabsIntegral() {
                 Standard chassis for <br />mobility of empty plant
               </>
             ) : index === 1 ? (
-              "All mounted on a lightweight chassis with support legs"
+              <>
+                All mounted on a lightweight chassis <br /> with support legs
+              </>
+            
             ) : (
-              "Reinforced chassis for full-loaded plant mobility" // Texto para el nuevo tab
+              <>
+                Reinforced chassis for full- <br /> loaded plant mobility
+              </>
+               // Texto para el nuevo tab
             )}
           </button>
         ))}

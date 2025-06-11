@@ -53,7 +53,7 @@ const TabsPlane = () => {
       </div>
 
       {/* Contenido de los tabs */}
-      <div className="w-full border border-white mt-20">
+      <div className="w-full mt-20 mb-10">
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
@@ -115,7 +115,7 @@ const TabsPlane = () => {
                 </div>
             </div>
             <div className='col-span-2'>NADA</div>
-            <div className='flex flex-col items-start justify-center gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -134,6 +134,23 @@ const TabsPlane = () => {
                         <li>Siemens-grade motors and wiring</li>
                         <li>110 V system in control cabinet with emergency shutdown</li>
                         <li>20 kW three-phase electric generator</li>
+                        <ul className='ml-4'>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">20 Kw in continuous service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">22 Kw in emergency service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">220/440 Voltage</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">35 hp Cummins engine</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">110 L diesel tank</li>
+                        </ul>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
@@ -490,6 +507,23 @@ const TabsPlane = () => {
                         <li>Siemens-grade motors and wiring</li>
                         <li>110 V system in control cabinet with emergency shutdown</li>
                         <li>20 kW three-phase electric generator</li>
+                        <ul className='ml-4'>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">20 Kw in continuous service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">22 Kw in emergency service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">220/440 Voltage</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">35 hp Cummins engine</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">110 L diesel tank</li>
+                        </ul>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
@@ -853,6 +887,23 @@ const TabsPlane = () => {
                         <li>Siemens-grade motors and wiring</li>
                         <li>110 V system in control cabinet with emergency shutdown</li>
                         <li>20 kW three-phase electric generator</li>
+                        <ul className='ml-4'>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">20 Kw in continuous service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">22 Kw in emergency service</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">220/440 Voltage</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">35 hp Cummins engine</li>
+                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                            before:w-2 before:rounded-full before:border before:border-white 
+                            before:bg-transparent">110 L diesel tank</li>
+                        </ul>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
