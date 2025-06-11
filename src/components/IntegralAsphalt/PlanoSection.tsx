@@ -1,5 +1,5 @@
 import React from 'react'
-import reinforcedMain from '../../assets/images/IntegralAsphalt/reinforcerdmain.png';
+import reinfo1 from '../../assets/images/IntegralAsphalt/reinfo1.png';
 import reinforcedBlue from '../../assets/images/IntegralAsphalt/reinforced.png';
 import UnitSwitch from './UnitSwitch';
 import TabsPlane from './TabsPlane';
@@ -10,11 +10,11 @@ const PlanoSection = () => {
   
   return (
     <div className='w-full flex flex-col items-center justify-center bg-green-400'>
-      <div className='grid grid-cols-2 px-8 md:px-52'>
+      <div className='px-8 md:px-52 relative'>
         <div>
-          <img src={reinforcedMain.src} alt="" className='w-[314px] h-[860px]' />
+          <img src={reinfo1.src} alt="" className='w-[314px] h-[860px]' />
         </div>
-        <div>
+        <div className='absolute top-0'>
           <img src={reinforcedBlue.src} alt="" className='w-[314px] h-[860px]'/>
         </div>
       </div>
