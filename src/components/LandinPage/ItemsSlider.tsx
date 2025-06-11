@@ -124,13 +124,13 @@ export default function ItemsSlider({ images }: Props) {
                 scrollSnapAlign: isMobile ? 'start' : undefined,
               }}
             >
-              <div className="p-4">
+              <div className="px-4">
                 <img
                   src={img.src}
                   alt={img.title}
-                  className="h-20 object-cover"
+                  className="h-14 object-cover"
                 />
-                <div className="mt-4 text-start font-bold text-grisT">
+                <div className="text-start font-bold text-grisT">
                   {img.title}
                 </div>
               </div>
