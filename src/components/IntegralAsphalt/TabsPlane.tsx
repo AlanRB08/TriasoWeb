@@ -53,7 +53,7 @@ const TabsPlane = () => {
       </div>
 
       {/* Contenido de los tabs */}
-      <div className="w-full mt-20 mb-10">
+      <div className="w-full mt-20 mb-10" id='tabsSection'>
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
@@ -867,7 +867,9 @@ const TabsPlane = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2'>NADA</div>
+            <div className='col-span-2 bg-red-800 h-full' id='nadaSection'>
+                nada
+            </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
