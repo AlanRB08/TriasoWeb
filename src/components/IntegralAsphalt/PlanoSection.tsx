@@ -27,6 +27,7 @@ const PlanoSection = () => {
   const columnGrid1 = useRef<HTMLDivElement>(null);
   const columnGrid2 = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<'imperial' | 'metric'>('imperial');
@@ -59,6 +60,7 @@ const PlanoSection = () => {
   const options = optionsRef.current;
   const col1 = columnGrid1.current;
   const col2 = columnGrid2.current;
+  
 
   if (!box || !target || !otro || !options || !col1 || !col2) return;
 
@@ -212,7 +214,7 @@ const PlanoSection = () => {
       {/* Contenido de los tabs */}
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 1 && (
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-center gap-4'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
@@ -367,7 +369,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
