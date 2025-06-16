@@ -7,7 +7,8 @@ import TabsIntegral from '../components/IntegralAsphalt/TabsIntegral';
 import NeedSection from '../components/IntegralAsphalt/NeedSection.astro';
 import Banner from "../components/unitComponents/Banner.astro";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
-import PlanoSection from "../components/IntegralAsphalt/PlanoSection";
+import PlanoSection from '../components/IntegralAsphalt/PlanoSection'
+
 
 const images2 = [
   { src: '/Gallery/counterflow.png', title: 'Counterflow drum mixer' , texto: `<span style="color:black">The counterflow drum mixer</span>, located at the center of the chassis, is engineered for efficient heat transfer and minimal fines loss, ensuring consistent asphalt mix quality. Its robust construction and advanced sealing minimize air infiltration and reduce maintenance. Designed specifically for the 10 Tph plant, it delivers reliable performance in a compact, cost-effective system.`},
@@ -27,12 +28,12 @@ const images2 = [
 
 <Layout title="Integral Asphalt Plant">
     <IntroductionSection />
-    <SlidersCarrusel client:load images={images2}/>
+    <SlidersCarrusel client:load images={images2}/> 
     <Hero2 />
-    <TabsIntegral client:visible/>
+    <TabsIntegral client:load />
     <NeedSection />
     <Banner />
-    <PlanoSection client:load />
+     <PlanoSection client:only/>
     <CardSection />
     
 
