@@ -5,9 +5,10 @@ import supportRight from '../../assets/images/IntegralAsphalt/supportright.png';
 import supportLeft from '../../assets/images/IntegralAsphalt/supportleft.png';
 import standarRight from '../../assets/images/IntegralAsphalt/standarright.png';
 import standarLeft from '../../assets/images/IntegralAsphalt/standarleft.png';
+import { forwardRef } from 'react';
 
 
-const TabsPlane = () => {
+const TabsPlane = forwardRef<HTMLDivElement, {}>((props, ref) => {
   const [activeTab, setActiveTab] = useState(3); // 1, 2 o 3
 
   return (
@@ -53,7 +54,7 @@ const TabsPlane = () => {
       </div>
 
       {/* Contenido de los tabs */}
-      <div className="w-full mt-20 mb-10" id='tabsSection'>
+      <div className="w-full mt-20 mb-10" id='tabsSection' ref={ref}>
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
@@ -1191,6 +1192,6 @@ const TabsPlane = () => {
       </div>
     </div>
   );
-};
+});
 
 export default TabsPlane;

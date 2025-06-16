@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Section from '../components/Example/Section';
+import Section from '../components/Example/Section.tsx';
 ---
 
 <Layout>
-    <Section client:load/>
+    <Section client:only/>
 </Layout>
