@@ -8,6 +8,8 @@ import NeedSection from '../components/IntegralAsphalt/NeedSection.astro';
 import Banner from "../components/unitComponents/Banner.astro";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import PlanoSection from '../components/IntegralAsphalt/PlanoSection'
+import SliderHero from "../components/IntegralAsphalt/SliderHero";
+import OdometerSection from '../components/IntegralAsphalt/OdometerSection';
 
 
 const images2 = [
@@ -27,7 +29,9 @@ const images2 = [
 ---
 
 <Layout title="Integral Asphalt Plant">
+    <SliderHero client:only />
     <IntroductionSection />
+    <OdometerSection client:only />
     <SlidersCarrusel client:load images={images2}/> 
     <Hero2 />
     <TabsIntegral client:load />
