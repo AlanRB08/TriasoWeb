@@ -7,6 +7,8 @@ import reinforcedRight from '../../assets/images/IntegralAsphalt/reinfright.png'
 import reinforcedLeft from '../../assets/images/IntegralAsphalt/reinfleft.png';
 import supportRight from '../../assets/images/IntegralAsphalt/supportright.png';
 import supportLeft from '../../assets/images/IntegralAsphalt/supportleft.png';
+import supportMain from '../../assets/images/IntegralAsphalt/supportmain.png';
+import standarMain from '../../assets/images/IntegralAsphalt/standarmain.png';
 import standarRight from '../../assets/images/IntegralAsphalt/standarright.png';
 import standarLeft from '../../assets/images/IntegralAsphalt/standarleft.png';
 import UnitSwitch from './UnitSwitch';
@@ -50,95 +52,99 @@ const PlanoSection = () => {
   };
 
 
-  useEffect(() => {
-    if (
-      !boxRef.current ||
-      !nextSectionRef.current ||
-      !otroElemento.current ||
-      !optionsRef.current ||
-      !columnGrid1.current ||
-      !columnGrid2.current
-    ) return;
-  
-    const box = boxRef.current;
-    const target = nextSectionRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
-  
-    const distanceToMove =
-      target.getBoundingClientRect().top -
-      box.getBoundingClientRect().top;
-  
-    const tl = gsap.timeline();
-  
-    const scrollTrig = ScrollTrigger.create({
-      id: 'boxScroll',
-      trigger: box,
-      start: 'top-=200 20%',
-      end: `+=${distanceToMove}`,
-      scrub: 1,
-      markers: true,
-      animation: gsap.to(box, {
-        y: distanceToMove,
-        ease: 'none',
-      }),
-      onUpdate: (self) => {
-        const p = self.progress;
-  
-        // Animación para "otro": del 50% al 60%
-        gsap.to(otro, {
-          opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-          y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-          scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-          ease: 'none',
-          duration: 0.8,
-        });
-  
-        // Animación para "options": del 20% al 50%
-        gsap.to(options, {
-          opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-          y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-          scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-          ease: 'none',
-          duration: 0.8,
-        });
-  
-        // Animación para "col1": del 90% al 100%
-        gsap.to(col1, {
-          opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-          x: p >= 0.9 && p <= 1 ? 0 : -50,
-          scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-          ease: 'none',
-          duration: 0.8,
-        });
-  
-        // Animación para "col2": del 10% al 30%
-        gsap.to(col2, {
-          opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-          x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-          scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-          ease: 'none',
-          duration: 0.8,
-        });
-      }
+ useEffect(() => {
+  const box = boxRef.current;
+  const target = nextSectionRef.current;
+  const otro = otroElemento.current;
+  const options = optionsRef.current;
+  const col1 = columnGrid1.current;
+  const col2 = columnGrid2.current;
+
+  if (!box || !target || !otro || !options || !col1 || !col2) return;
+
+  let scrollTrig = null;
+
+  if (activeTab !== 3) {
+    gsap.set(box, {
+      y: 0,
+      opacity: 0,
+      display: 'none',
     });
-  
-    return () => {
-      scrollTrig.kill();
-      tl.kill();
-    };
-  }, []);
+    return;
+  }
+
+  gsap.set(box, {
+    opacity: 1,
+    display: 'block',
+  });
+
+  const distanceToMove = target.getBoundingClientRect().top - box.getBoundingClientRect().top;
+
+  scrollTrig = ScrollTrigger.create({
+    id: 'boxScroll',
+    trigger: box,
+    start: 'top-=200 20%',
+    end: `+=${distanceToMove}`,
+    scrub: 1,
+    markers: false,
+    animation: gsap.to(box, {
+      y: distanceToMove,
+      ease: 'none',
+    }),
+    onUpdate: (self) => {
+      const p = self.progress;
+
+      gsap.to(otro, {
+        opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
+        y: p >= 0.8 && p <= 1.0 ? 0 : -50,
+        scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
+        ease: 'none',
+        duration: 0.8,
+      });
+
+      gsap.to(options, {
+        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+        y: p >= 0.9 && p <= 1.0 ? 0 : -50,
+        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+        ease: 'none',
+        duration: 0.8,
+      });
+
+      gsap.to(col1, {
+        opacity: p >= 0.9 && p <= 1 ? 1 : 0,
+        x: p >= 0.9 && p <= 1 ? 0 : -50,
+        scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
+        ease: 'none',
+        duration: 0.8,
+      });
+
+      gsap.to(col2, {
+        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+        x: p >= 0.9 && p <= 1.0 ? 0 : 50,
+        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+        ease: 'none',
+        duration: 0.8,
+      });
+    }
+  });
+
+  ScrollTrigger.refresh();
+
+  return () => {
+    scrollTrig?.kill(); // <-- evita error si no existe
+  };
+}, [activeTab]);
+
+
 
   return (
-    <div className='w-full flex flex-col items-center justify-center bg-green-400'>
-      <div className="h-screen bg-gray-100 flex items-center justify-center">
+    <div className='w-full flex flex-col items-center justify-center'>
+      <div className="h-screen flex items-center justify-center bg-bgMain">
         <div
           id='boxScroll'
           ref={boxRef}
           className="text-white font-bold
-           flex items-center justify-center shadow-lg
+           flex items-center justify-center
             rounded will-change-transform transform-gpu
              z-20 w-[230px] h-[628px]"
         >
@@ -265,7 +271,9 @@ const PlanoSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2'>NADA</div>
+            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                <img src={supportMain.src} alt="" className='w-[230px] h-[628px]' />
+            </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
@@ -581,7 +589,7 @@ const PlanoSection = () => {
         {activeTab === 2 && (
           <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-center gap-4'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -638,7 +646,9 @@ const PlanoSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2'>NADA</div>
+            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                <img src={standarMain.src} alt="" className='w-[230px] h-[628px]' />
+            </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
@@ -1018,8 +1028,8 @@ const PlanoSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 h-full' id=''>
-                
+            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                <img src={reinforcedBlue.src} alt="" className='w-[230px] h-[628px]' />
             </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>

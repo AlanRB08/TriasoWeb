@@ -5,6 +5,7 @@ module.exports = {
       extend: {
         colors : {
           blueMain : 'var(--azul-bg1)', // Azul de fondos y cards
+          blueMainTrans : 'var(--azul-tran)',
           blueMainHover : 'var(--azul-bg1Hover)', // Azul de fondos y cards
           blueSecondary : "var(--azul-bg2)", // Azul de fondos y cards 2
           redBg : 'var(--rojo-btn)', // Rojo de botones e iconos//
