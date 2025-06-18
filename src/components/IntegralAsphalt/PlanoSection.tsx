@@ -30,27 +30,30 @@ const PlanoSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   //SWITCH LOGIC
-  const [unit, setUnit] = useState<'imperial' | 'metric'>('imperial');
-  const [distance, setDistance] = useState<number>(0);
+  const [unit, setUnit] = useState<"metric" | "imperial">("metric");
 
+  // Función para alternar unidades
   const toggleUnit = () => {
-    const newUnit = unit === 'imperial' ? 'metric' : 'imperial';
-    
-    // Convertir el valor actual al cambiar de unidad
-    if (newUnit === 'metric') {
-      // Convertir pies a metros (1 ft = 0.3048 m)
-      setDistance(parseFloat((distance * 0.3048).toFixed(2)));
-    } else {
-      // Convertir metros a pies (1 m ≈ 3.28084 ft)
-      setDistance(parseFloat((distance * 3.28084).toFixed(2)));
-    }
-    
+    const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
+    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
 
-  const handleDistanceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDistance(parseFloat(e.target.value) || 0);
+  // Función que busca elementos con data-metric/data-imperial y los actualiza
+  const updateElements = (currentUnit: "metric" | "imperial") => {
+    const elements = document.querySelectorAll("[data-metric][data-imperial]");
+    elements.forEach((element) => {
+      const value = element.getAttribute(`data-${currentUnit}`);
+      if (value) {
+        element.textContent = value;
+      }
+    });
   };
+
+  // Efecto para actualizar al cargar (opcional)
+  useEffect(() => {
+    updateElements(unit);
+  }, []);
 
 
  useEffect(() => {
@@ -163,7 +166,27 @@ const PlanoSection = () => {
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>
           <div className='flex items-center justify-center mt-10'>
             <h1 className='mr-3' id='measure'>MEASURE:</h1>
-            <UnitSwitch onChange={(unit) => console.log('Sistema cambiado a:', unit)} />
+            <div
+                onClick={toggleUnit}
+                className="relative w-48 h-10 rounded-full border border-white cursor-pointer select-none"
+                >
+                {/* Fondo deslizante */}
+                <div
+                    className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
+                    unit === 'metric' ? 'translate-x-full' : ''
+                    }`}
+                ></div>
+
+                {/* Texto sobrepuesto */}
+                <div className="relative z-10 flex h-full items-center justify-between px-4 text-sm font-bold">
+                    <span className={unit === 'imperial' ? 'text-black' : 'text-white'}>
+                    IMPERIAL
+                    </span>
+                    <span className={unit === 'metric' ? 'text-black' : 'text-white'}>
+                    METRIC
+                    </span>
+                </div>
+                </div>
           </div>
         </header>
         <div className="w-full px-8 lg:px-8 mt-14">
@@ -426,7 +449,7 @@ const PlanoSection = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg'>12.94 ft</p>
+                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -475,7 +498,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -511,30 +534,30 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>9.88 ft</p>
+                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>3.68 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>3.68 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>12.94 ft</p>
+                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>12.94 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>4.2 ft</p>
+                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.2 ft</p>
+                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -545,15 +568,15 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>10.41 ft</p>
+                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>6.25 ft</p>
+                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.25 ft</p>
+                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -563,8 +586,8 @@ const PlanoSection = () => {
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p>29.26 ft</p>
+                            <h1>Total length(including hitch):</h1>
+                            <p data-imperial='762.00 cm' data-metric='29.26 ft'>29.26 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Support:</h1>
@@ -572,15 +595,15 @@ const PlanoSection = () => {
                         </div>
                         <div className='flex justify-between'>
                             <h1>Chassis width:</h1>
-                            <p>8.75 ft</p>
+                            <p data-imperial='266.70 cm' data-metric='8.75 ft'>8.75 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total width:</h1>
-                            <p>9.58 ft</p>
+                            <p data-imperial='311.5 cm' data-metric='9.58 ft'>9.58 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total height:</h1>
-                            <p>12.75 ft</p>
+                            <p data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
                         </div>
                     </div>
                 </div>
@@ -744,7 +767,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>10.22 FT</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='311.15 cm' data-metric='10.22 ft'>10.22 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -797,7 +820,7 @@ const PlanoSection = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg'>12.75 FT</p>
+                            <p className='text-white text-lg' data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -846,7 +869,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>29.26 FT</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -882,30 +905,30 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>9.885 ft</p>
+                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>3.686 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>3.686 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>12.77 ft</p>
+                            <p data-imperial='389.2 cm' data-metric='12.77 ft'>12.77 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>4.2 ft</p>
+                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.2 ft</p>
+                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -916,15 +939,15 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>10.41 ft</p>
+                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>6.25 ft</p>
+                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.25 ft</p>
+                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -935,15 +958,11 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
                             <h1>Total length (incluiding hitch):</h1>
-                            <p>28.75 ft</p>
+                            <p data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Axle configuration:</h1>
-                            <p>Dual 9-lug axles</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Fifth-wheel hitch height:</h1>
-                            <p>4.28 ft</p>
+                            <p>Dual 8-lug axles</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Support:</h1>
@@ -951,19 +970,19 @@ const PlanoSection = () => {
                         </div>
                         <div className='flex justify-between'>
                             <h1>Transport wheels:</h1>
-                            <p>11-22.5 tires</p>
+                            <p>Eight 16" tires</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Chassis width:</h1>
-                            <p>8.33 ft</p>
+                            <p data-imperial='304.8 cm' data-metric='10.00 ft'>10.00 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total width:</h1>
-                            <p>9.37 ft</p>
+                            <p data-imperial='311.5 cm' data-metric='28.75 ft'>10.22 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total height:</h1>
-                            <p>13.828 ft</p>
+                            <p data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
                         </div>
                     </div>
                 </div>
@@ -1126,7 +1145,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>9.37 FT</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='290.5 cm' data-metric='9.37 ft'>9.37 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1179,7 +1198,7 @@ const PlanoSection = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg'>12.828 FT</p>
+                            <p className='text-white text-lg' data-imperial='421 cm' data-metric='12.828 ft'>12.828 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1228,7 +1247,7 @@ const PlanoSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>28.75 FT</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='876 cm' data-metric='28.75 ft'>28.75 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1264,30 +1283,30 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>9.885 ft</p>
+                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>3.686 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>3.686 ft</p>
+                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>12.77 ft</p>
+                            <p data-imperial='398.2 cm' data-metric='12.77 ft'>12.77 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>4.2 ft</p>
+                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.2 ft</p>
+                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -1298,15 +1317,15 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p>10.41 ft</p>
+                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p>6.25 ft</p>
+                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p>5.25 ft</p>
+                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Capacity:</h1>
@@ -1317,7 +1336,7 @@ const PlanoSection = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
                             <h1>Total length (incluiding hitch):</h1>
-                            <p>28.75 ft</p>
+                            <p data-imperial='876 cm' data-metric='28.75 ft'>28.75 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Axle configuration:</h1>
@@ -1325,7 +1344,7 @@ const PlanoSection = () => {
                         </div>
                         <div className='flex justify-between'>
                             <h1>Fifth-wheel hitch height:</h1>
-                            <p>4.28 ft</p>
+                            <p data-imperial='130.45 cm' data-metric='4.28 ft'>4.28 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Support:</h1>
@@ -1337,15 +1356,15 @@ const PlanoSection = () => {
                         </div>
                         <div className='flex justify-between'>
                             <h1>Chassis width:</h1>
-                            <p>8.33 ft</p>
+                            <p data-imperial='254 cm' data-metric='8.33 ft'>8.33 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total width:</h1>
-                            <p>9.37 ft</p>
+                            <p data-imperial='290.5 cm' data-metric='9.37 ft'>9.37 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total height:</h1>
-                            <p>13.828 ft</p>
+                            <p data-imperial='421 cm' data-metric='13.828 ft'>13.828 ft</p>
                         </div>
                     </div>
                 </div>
