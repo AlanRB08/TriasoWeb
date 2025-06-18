@@ -4,10 +4,14 @@ import IntroSection from "../components/BinUnits/IntroSection.astro";
 import Layout from "../layouts/Layout.astro";
 import IntegrateControl from '../components/BinUnits/IntegrateControl.astro';
 import BinGallery from '../components/BinUnits/BinGallery';
+import BinSelector from '../components/BinUnits/BinSelector';
+import BinSlider from '../components/BinUnits/BinSlider';
 ---
 <Layout title='Bin Units'>
     <IntroSection />
+    <BinSelector client:only/>
     <CustomBins />
     <IntegrateControl />
     <BinGallery />
+    <BinSlider client:only/>
 </Layout>
