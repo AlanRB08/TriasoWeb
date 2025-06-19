@@ -17,7 +17,7 @@ export const menuItems = [
         },
         {
           title: " BINS",
-          url: "/products/asphalt-plants/bins",
+          url: "/BinUnits",
           children : [ 
             {
               title : "BIN UNITS",
