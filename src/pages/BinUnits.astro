@@ -6,6 +6,7 @@ import IntegrateControl from '../components/BinUnits/IntegrateControl.astro';
 import BinGallery from '../components/BinUnits/BinGallery';
 import BinSelector from '../components/BinUnits/BinSelector';
 import BinSlider from '../components/BinUnits/BinSlider';
+import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 ---
 <Layout title='Bin Units'>
     <IntroSection />
@@ -14,4 +15,5 @@ import BinSlider from '../components/BinUnits/BinSlider';
     <IntegrateControl />
     <BinGallery />
     <BinSlider client:only/>
+    <BinPlanosSection client:only/>
 </Layout>
