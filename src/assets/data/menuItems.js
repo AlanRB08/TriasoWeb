@@ -9,7 +9,7 @@ export const menuItems = [
         children : [
         {
           title : "DRUM MIXERS",
-          url : "/products/asphalt-plants/drum-mixers",
+          url : "/DrumMixers",
         },
         {
           title : "BAG HOUSES",
