@@ -1,4 +1,5 @@
 import React from 'react'
+import BinSlider from '../BinUnits/BinSlider';
 
 const BinGallery = () => {
   return (
@@ -24,8 +25,8 @@ const BinGallery = () => {
                 </p>
             </div>
         </div>
-        <div className='md:pr-52 pr-8 md:pl-0 pl-8 bg-white h-full rounded-2xl'>
-            <h1>COMPONENTE</h1>
+        <div className='md:pl-0 pl-8 bg-white h-full w-full rounded-2xl'>
+            <BinSlider />
         </div>
     </div>
   )
