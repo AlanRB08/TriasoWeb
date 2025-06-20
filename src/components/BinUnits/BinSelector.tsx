@@ -7,24 +7,24 @@ type PanelType = typeof panelOptions[number];
 
 const imageMap: Record<number, Record<PanelType, string>> = {
   2: {
-    aesthetic: '/images/2-aesthetic.jpg',
-    without: '/images/2-without.jpg',
+    aesthetic: 'src/assets/images/BinUnits/TlvU2CF.png',
+    without: 'src/assets/images/BinUnits/TlvU2SF.png',
   },
   3: {
-    aesthetic: '/images/3-aesthetic.jpg',
-    without: '/images/3-without.jpg',
+    aesthetic: 'src/assets/images/BinUnits/TlvU3CF.png',
+    without: 'src/assets/images/BinUnits/TlvU3SF.png',
   },
   4: {
-    aesthetic: '/images/4-aesthetic.jpg',
-    without: '/images/4-without.jpg',
+    aesthetic: 'src/assets/images/BinUnits/TlvU4CF.png',
+    without: 'src/assets/images/BinUnits/TlvU4SF.png',
   },
   5: {
-    aesthetic: '/images/5-aesthetic.jpg',
-    without: '/images/5-without.jpg',
+    aesthetic: 'src/assets/images/BinUnits/TlvU5CF.png',
+    without: 'src/assets/images/BinUnits/TlvU5SF.png',
   },
   6: {
-    aesthetic: '/images/6-aesthetic.jpg',
-    without: '/images/6-without.jpg',
+    aesthetic: 'src/assets/images/BinUnits/TlvU6CF.png',
+    without: 'src/assets/images/BinUnits/TlvU6SF.png',
   },
 };
 
