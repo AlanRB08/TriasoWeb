@@ -3,9 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import IntroSection from '../components/DrumMixers/IntroSection.astro';
 import OdometerDrum from '../components/DrumMixers/OdometerDrum';
 import OneSection from '../components/DrumMixers/OneSection.astro';
+import StationarySection from "../components/DrumMixers/StationarySection.astro";
+import IntegratedBaghouses from "../components/DrumMixers/IntegratedBaghouses.astro";
 ---
 <Layout title="Drum Mixers Page">
     <IntroSection />
     <OdometerDrum  client:only/>
     <OneSection />
+    <StationarySection />
+    <IntegratedBaghouses />
 </Layout>
