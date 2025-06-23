@@ -22,6 +22,7 @@ const OdometerDrum = () => {
           setValue2(0);
           setValue3(0);
           setValue4(0);
+          setValue6(0);
 
           setTimeout(() => {
             setValue(25);
@@ -74,8 +75,8 @@ const OdometerDrum = () => {
               <h1>.</h1>
               <Odometer value={value4} format="(,ddd)" duration={2000} />
               <h1>-</h1>
-              <Odometer value={value3} format="(,ddd)" duration={2000} />
-              <p className="text-sm font-normal ml-3">million BTU/hr</p>
+              <Odometer value={value3} format="(,ddd)" duration={2000}/>
+              <p className="text-sm font-normal md:ml-3">million BTU/hr</p>
             </div>
             <p className="text-grisP text-start w-full">Modulating burner capacity</p>
           </div>
