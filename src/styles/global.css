@@ -4,6 +4,7 @@
 
 :root {
     --azul-bg1 : #14427C; /* Azul de fondos y cards */    
+    --azul-tran: rgba(20, 66, 124, 0.8);
     --azul-bg1Hover : #11396b; /* Azul de fondos y cards */  
     --azul-bg2 : #0044A4; /* Azul de fondos y cards 2 */
     --rojo-btn : #CA1C1C; /* Rojo de botones e iconos */
