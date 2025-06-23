@@ -1,64 +1,58 @@
-'use client';
-
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import img1 from '../../assets/images/IntegralAsphalt/reinforced.png';
+import img2 from '../../assets/images/IntegralAsphalt/reinfo1.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Section = () => {
-  const boxRef = useRef<HTMLDivElement>(null);
-  const nextSectionRef = useRef<HTMLDivElement>(null);
+export default function Section() {
+  const imgRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!boxRef.current || !nextSectionRef.current) return;
-
-    const box = boxRef.current;
-    const target = nextSectionRef.current;
-
-    // Calculamos la distancia entre top del box y top del siguiente section
-    const distanceToMove =
-      target.getBoundingClientRect().top -
-      box.getBoundingClientRect().top;
-
-    const ctx = gsap.context(() => {
-      gsap.to(box, {
-        y: distanceToMove + 100,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: box,
-          start: 'top-=200 20%', // cuando el top del box toca el top del viewport
-          end: () => `+=${distanceToMove}`, // cuando se mueve la misma distancia
-          scrub: true,
-          markers: true
-        },
-      });
+    gsap.to(imgRef.current, {
+      clipPath: "inset(0% 0% 100% 0%)", // recorta de arriba a abajo
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
     });
-
-    return () => ctx.revert();
   }, []);
 
   return (
-    <div>
-      {/* Espaciado para iniciar scroll */}
-      <div className="h-screen bg-gray-100 flex items-center justify-center">
-        <div
-          ref={boxRef}
-          className="w-32 h-32 bg-blue-500 text-white font-bold flex items-center justify-center shadow-lg rounded will-change-transform transform-gpu"
-        >
-          Muevo
+    <div className="relative">
+      {/* Espacio arriba */}
+      <div className="h-[100vh] bg-black flex items-center justify-center text-white">
+        <h1 className="text-3xl">Scroll hacia abajo 👇</h1>
+      </div>
+
+      {/* Contenedor con la animación */}
+      <div ref={containerRef} className="relative h-[200vh] overflow-hidden bg-gray-900 flex items-center justify-center">
+        <div className="relative w-[250px] h-[600px]">
+          <img
+            src={img1.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen de fondo"
+          />
+          <img
+            ref={imgRef}
+            src={img2.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen superior"
+            style={{ clipPath: "inset(0% 0% 0% 0%)" }}
+          />
         </div>
       </div>
 
-      {/* Sección destino */}
-      <div
-        ref={nextSectionRef}
-        className="h-screen bg-red-300 flex items-center justify-center"
-      >
-        <h2 className="text-3xl font-bold">Destino</h2>
+      {/* Espacio abajo */}
+      <div className="h-[100vh] bg-black flex items-center justify-center text-white">
+        <h1 className="text-3xl">Fin de la animación ☝️</h1>
       </div>
     </div>
   );
-};
-
-export default Section;
+}

@@ -5,6 +5,8 @@ import OdometerDrum from '../components/DrumMixers/OdometerDrum';
 import OneSection from '../components/DrumMixers/OneSection.astro';
 import StationarySection from "../components/DrumMixers/StationarySection.astro";
 import IntegratedBaghouses from "../components/DrumMixers/IntegratedBaghouses.astro";
+import DrumMixPlanos from "../components/DrumMixers/DrumMixPlanos";
+import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 ---
 <Layout title="Drum Mixers Page">
     <IntroSection />
@@ -12,4 +14,6 @@ import IntegratedBaghouses from "../components/DrumMixers/IntegratedBaghouses.as
     <OneSection />
     <StationarySection />
     <IntegratedBaghouses />
+    <DrumMixPlanos client:only/>
+    <CardSection />
 </Layout>
