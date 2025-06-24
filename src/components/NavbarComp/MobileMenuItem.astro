@@ -29,7 +29,12 @@ const id = Math.random().toString(36).slice(2); // ID único para controlar el s
         data-target={`submenu-${id}`}
         aria-label="Abrir submenú"
       >
-        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          class="w-4 h-4 transition-transform duration-300 rotate-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
         </svg>
       </button>
@@ -37,7 +42,10 @@ const id = Math.random().toString(36).slice(2); // ID único para controlar el s
   </div>
 
   {hasChildren && (
-    <ul id={`submenu-${id}`} class="ml-4 mt-2 hidden space-y-2 border-l border-white/20 pl-4">
+    <ul
+      id={`submenu-${id}`}
+      class="ml-4 mt-2 max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out space-y-2 border-l border-white/20 pl-4"
+    >
       {item.children.map((child: unknown) => (
         <MobileMenuItem item={child} />
       ))}
@@ -45,7 +53,6 @@ const id = Math.random().toString(36).slice(2); // ID único para controlar el s
   )}
 </li>
 
-<!-- Script de interacción para abrir/cerrar submenús -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.toggle-submenu-button');
@@ -54,8 +61,19 @@ const id = Math.random().toString(36).slice(2); // ID único para controlar el s
       button.addEventListener('click', () => {
         const targetId = button.dataset.target;
         const submenu = document.getElementById(targetId);
+        const icon = button.querySelector('.rotate-icon');
+
         if (submenu) {
-          submenu.classList.toggle('hidden');
+          const isOpen = submenu.classList.contains('max-h-0');
+
+          submenu.classList.toggle('max-h-0', !isOpen);
+          submenu.classList.toggle('max-h-96', isOpen); // ajusta según el contenido
+          submenu.classList.toggle('opacity-0', !isOpen);
+          submenu.classList.toggle('opacity-100', isOpen);
+          submenu.classList.toggle('scale-y-95', !isOpen);
+          submenu.classList.toggle('scale-y-100', isOpen);
+
+          icon?.classList.toggle('rotate-180', isOpen);
         }
       });
     });
