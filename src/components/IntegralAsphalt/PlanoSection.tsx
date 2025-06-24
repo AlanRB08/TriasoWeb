@@ -28,6 +28,7 @@ const PlanoSection = () => {
   const columnGrid2 = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -53,6 +54,20 @@ const PlanoSection = () => {
   // Efecto para actualizar al cargar (opcional)
   useEffect(() => {
     updateElements(unit);
+  }, []);
+  //clipath
+  useEffect(() => {
+    gsap.to(imgRef.current, {
+      clipPath: "inset(0% 0% 100% 0%)", // recorta de arriba a abajo
+      ease: "none",
+      scrollTrigger: {
+        trigger: boxRef.current,
+        start: "bottom #sectionNueva",
+        end: "top #sectionNueva",
+        scrub: true,
+        markers: true,
+      },
+    });
   }, []);
 
 
@@ -153,7 +168,18 @@ const PlanoSection = () => {
             rounded will-change-transform transform-gpu
              z-20 w-[230px] h-[628px]"
         >
-          <img src={reinfo1.src} alt=""/>
+          <img
+            src={reinforcedBlue.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen de fondo"
+          />
+          <img
+            ref={imgRef}
+            src={reinfo1.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen superior"
+            style={{ clipPath: "inset(0% 0% 0% 0%)" }}
+          />
         </div>
       </div>
 
@@ -1050,7 +1076,7 @@ const PlanoSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={reinforcedBlue.src} alt="" className='w-[230px] h-[628px]' />
+                
             </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
