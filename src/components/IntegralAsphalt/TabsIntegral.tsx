@@ -25,16 +25,16 @@ export default function TabsIntegral() {
           >
             {index === 0 ? (
               <>
-                Standard chassis for <br />mobility of empty plant
+                Standard chassis <span className="hidden md:inline">for <br />mobility of empty plant</span>
               </>
             ) : index === 1 ? (
               <>
-                All mounted on a lightweight chassis <br /> with support legs
+                <span className="hidden md:inline"> All mounted on a </span> Lightweight chassis <br /> <span className="hidden md:inline"> with support legs </span>
               </>
             
             ) : (
               <>
-                Reinforced chassis for full- <br /> loaded plant mobility
+                Reinforced chassis  <span className="hidden md:inline">for full- <br /> loaded plant mobility</span>
               </>
                // Texto para el nuevo tab
             )}

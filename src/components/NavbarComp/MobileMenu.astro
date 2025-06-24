@@ -5,7 +5,7 @@ import { menuItems } from '../../assets/data/menuItems';
 ---
 
 <!-- Botón Hamburguesa -->
-<button id="mobileMenuButton" class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-colors">
+<button id="mobileMenuButton" class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-opacity duration-200" aria-expanded="false">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800">
     <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
     <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -14,11 +14,13 @@ import { menuItems } from '../../assets/data/menuItems';
 </button>
 
 <!-- Menú Mobile -->
-<div id="mobileMenu" class="fixed inset-0 z-40 hidden transition-opacity duration-300">
-  <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black bg-opacity-50"></div>
+<div id="mobileMenu" class="fixed inset-0 z-40 hidden">
+  <!-- Fondo oscuro con animación de opacidad -->
+  <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300"></div>
 
-  <div class="absolute right-0 top-0 h-full w-5/6 bg-blueMain shadow-xl transform transition-transform duration-300 translate-x-full">
-    <button id="mobileMenuClose" class="absolute left-4 top-4 p-2 rounded-full hover:bg-gray-100" aria-label="Cerrar menú">
+  <!-- Panel del menú con animación de deslizamiento -->
+  <div class="absolute right-0 top-0 h-full w-5/6 bg-blueMain shadow-xl transform transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] translate-x-full">
+    <button id="mobileMenuClose" class="absolute left-4 top-4 p-2 rounded-full hover:bg-redBg" aria-label="Cerrar menú">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white">
         <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
@@ -38,11 +40,25 @@ import { menuItems } from '../../assets/data/menuItems';
   body.mobile-menu-open {
     overflow: hidden;
   }
+  
   #mobileMenu.active {
     display: block;
   }
+  
+  /* Animación del fondo */
+  #mobileMenu.active > #mobileMenuBackdrop {
+    opacity: 0.5 !important;
+  }
+  
+  /* Animación del panel */
   #mobileMenu.active > div:last-child {
-    transform: translateX(0);
+    transform: translateX(0) !important;
+  }
+  
+  /* Ocultar botón cuando el menú está abierto */
+  #mobileMenuButton.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 </style>
 
@@ -55,11 +71,28 @@ import { menuItems } from '../../assets/data/menuItems';
 
     const toggleMenu = (open) => {
       if (open) {
-        menu.classList.add('active');
-        document.body.classList.add('mobile-menu-open');
+        // Mostrar el menú primero
+        menu.style.display = 'block';
+        
+        // Pequeño retraso para permitir que el navegador procese el cambio
+        requestAnimationFrame(() => {
+          // Activar animaciones
+          menu.classList.add('active');
+          document.body.classList.add('mobile-menu-open');
+          menuButton.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'true');
+        });
       } else {
+        // Desactivar animaciones
         menu.classList.remove('active');
         document.body.classList.remove('mobile-menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        
+        // Esperar a que termine la animación antes de ocultar
+        setTimeout(() => {
+          menu.style.display = 'none';
+          menuButton.classList.remove('hidden');
+        }, 500); // Coincide con la duración de la animación
       }
     };
 

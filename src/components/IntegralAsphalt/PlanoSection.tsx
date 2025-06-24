@@ -65,7 +65,7 @@ const PlanoSection = () => {
         start: "bottom #sectionNueva",
         end: "top #sectionNueva",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
   }, []);
