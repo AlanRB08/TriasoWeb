@@ -1,0 +1,63 @@
+---
+// src/components/MobileMenuItem.astro
+type MenuItem = {
+  title: string;
+  url: string;
+  children?: MenuItem[];
+};
+
+import MobileMenuItem from './MobileMenuItem.astro';
+
+const { item } = Astro.props;
+const hasChildren = item.children && item.children.length > 0;
+const id = Math.random().toString(36).slice(2); // ID único para controlar el submenu
+---
+
+<li>
+  <div class="flex justify-between items-center">
+    <a
+      href={item.url}
+      class="block py-3 px-4 text-white hover:bg-redBg rounded-md transition-colors w-full"
+    >
+      {item.title}
+    </a>
+
+    {hasChildren && (
+      <button
+        class="text-white px-4 toggle-submenu-button"
+        aria-controls={`submenu-${id}`}
+        data-target={`submenu-${id}`}
+        aria-label="Abrir submenú"
+      >
+        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+    )}
+  </div>
+
+  {hasChildren && (
+    <ul id={`submenu-${id}`} class="ml-4 mt-2 hidden space-y-2 border-l border-white/20 pl-4">
+      {item.children.map((child: unknown) => (
+        <MobileMenuItem item={child} />
+      ))}
+    </ul>
+  )}
+</li>
+
+<!-- Script de interacción para abrir/cerrar submenús -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.toggle-submenu-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.dataset.target;
+        const submenu = document.getElementById(targetId);
+        if (submenu) {
+          submenu.classList.toggle('hidden');
+        }
+      });
+    });
+  });
+</script>

@@ -1,91 +1,39 @@
 ---
 // src/components/MobileMenu.astro
-interface Props {
-  menuItems: Array<{
-    href: string;
-    text: string;
-    icon?: string;
-  }>;
-}
-
-// Valores por defecto para las props
-const { menuItems = [
-  { href: "/", text: "Inicio" },
-  { href: "/about", text: "Acerca de" },
-  { href: "/contact", text: "Contacto" }
-] } = Astro.props;
+import MobileMenuItem from './MobileMenuItem.astro';
+import { menuItems } from '../../assets/data/menuItems';
 ---
 
-<!-- Botón Hamburguesa - Solo visible en mobile -->
-<button
-  id="mobileMenuButton"
-  class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-colors"
-  aria-label="Menú principal"
->
-  <svg 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-    class="text-gray-800"
-  >
-    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<!-- Botón Hamburguesa -->
+<button id="mobileMenuButton" class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-colors">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800">
+    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
   </svg>
 </button>
 
-<!-- Overlay y Panel del Menú -->
-<div 
-  id="mobileMenu"
-  class="fixed inset-0 z-40 hidden transition-opacity duration-300"
->
-  <!-- Fondo oscuro semi-transparente -->
-  <div 
-    id="mobileMenuBackdrop"
-    class="absolute inset-0 bg-black bg-opacity-50"
-  ></div>
+<!-- Menú Mobile -->
+<div id="mobileMenu" class="fixed inset-0 z-40 hidden transition-opacity duration-300">
+  <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-  <!-- Panel del menú (80% del ancho) -->
   <div class="absolute right-0 top-0 h-full w-5/6 bg-blueMain shadow-xl transform transition-transform duration-300 translate-x-full">
-    <!-- Botón para cerrar -->
-    <button
-      id="mobileMenuClose"
-      class="absolute left-4 top-4 p-2 rounded-full hover:bg-gray-100"
-      aria-label="Cerrar menú"
-    >
-      <svg 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-        class="text-white"
-      >
+    <button id="mobileMenuClose" class="absolute left-4 top-4 p-2 rounded-full hover:bg-gray-100" aria-label="Cerrar menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white">
         <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
 
-    <!-- Contenido del menú -->
     <nav class="mt-16 p-6">
       <ul class="space-y-4">
         {menuItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class="block py-3 px-4 text-lg font-medium text-white hover:bg-gray-50 rounded-md transition-colors"
-            >
-              {item.text}
-            </a>
-          </li>
+          <MobileMenuItem item={item} />
         ))}
       </ul>
     </nav>
   </div>
 </div>
 
-<!-- Estilos globales -->
 <style is:global>
   body.mobile-menu-open {
     overflow: hidden;
@@ -98,16 +46,13 @@ const { menuItems = [
   }
 </style>
 
-<!-- Script de control -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobileMenuButton');
     const menu = document.getElementById('mobileMenu');
     const backdrop = document.getElementById('mobileMenuBackdrop');
     const closeButton = document.getElementById('mobileMenuClose');
-    const menuLinks = document.querySelectorAll('#mobileMenu nav a');
 
-    // Función para abrir/cerrar el menú
     const toggleMenu = (open) => {
       if (open) {
         menu.classList.add('active');
@@ -118,17 +63,10 @@ const { menuItems = [
       }
     };
 
-    // Event listeners
     menuButton?.addEventListener('click', () => toggleMenu(true));
     backdrop?.addEventListener('click', () => toggleMenu(false));
     closeButton?.addEventListener('click', () => toggleMenu(false));
-    
-    // Cerrar menú al hacer clic en cualquier enlace
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => toggleMenu(false));
-    });
 
-    // Cerrar menú con la tecla ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('active')) {
         toggleMenu(false);
