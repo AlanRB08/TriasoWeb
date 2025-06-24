@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Odometer from 'react-odometerjs';
 import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
 
 const OdometerSection = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -79,7 +80,7 @@ const OdometerSection = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
-            <img src="" alt="" />
+            <img src={single.src} alt="" />
           </div>
           <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
             All Technical Details
