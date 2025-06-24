@@ -8,32 +8,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Section() {
   const imgRef = useRef(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef(null);        // Este será #sectionNueva
+  const startRef = useRef(null);            // Este será el elemento de inicio
 
   useEffect(() => {
-    gsap.to(imgRef.current, {
-      clipPath: "inset(0% 0% 100% 0%)", // recorta de arriba a abajo
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom center",
-        scrub: true,
-        markers: true,
-      },
+    ScrollTrigger.create({
+      trigger: startRef.current,
+      endTrigger: containerRef.current,
+      start: "top top",
+      end: "top top",
+      scrub: true,
+      markers: true,
+      onUpdate: (self) => {
+        // Controlar la animación manualmente con self.progress
+        gsap.to(imgRef.current, {
+          clipPath: `0% 0% inset(${(1 - self.progress) * 100}% 0%)`,
+          ease: "none",
+          overwrite: true
+        });
+      }
     });
   }, []);
 
   return (
     <div className="relative">
-      {/* Espacio arriba */}
-      <div className="h-[100vh] bg-black flex items-center justify-center text-white">
-        <h1 className="text-3xl">Scroll hacia abajo 👇</h1>
+      {/* Elemento que marca el inicio del scroll */}
+      <div ref={startRef} className="h-[100vh] bg-black flex items-center justify-center text-white">
+        <h1 className="text-3xl">Inicio del scroll 👇</h1>
       </div>
 
-      {/* Contenedor con la animación */}
-      <div ref={containerRef} className="relative h-[200vh] overflow-hidden bg-gray-900 flex items-center justify-center">
-        <div className="relative w-[250px] h-[600px]">
+      {/* Sección con las imágenes, será el endTrigger */}
+      <div ref={containerRef} id="sectionNueva" className="relative h-[150vh] overflow-hidden bg-gray-900 flex items-center justify-center">
+        <div className="relative w-[200px] h-[500px]">
           <img
             src={img1.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
@@ -49,9 +55,9 @@ export default function Section() {
         </div>
       </div>
 
-      {/* Espacio abajo */}
+      {/* Espacio extra para scroll */}
       <div className="h-[100vh] bg-black flex items-center justify-center text-white">
-        <h1 className="text-3xl">Fin de la animación ☝️</h1>
+        <h1 className="text-3xl">Fin ☝️</h1>
       </div>
     </div>
   );
