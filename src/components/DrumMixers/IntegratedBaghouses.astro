@@ -1,6 +1,8 @@
 ---
-import img1 from '../../assets/images/maquina1.webp';
+import sideP from '../../assets/images/DrumMixers/sideP.png';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
+import baghouse from '../../assets/images/DrumMixers/baghouse.png';
+import baghouse2 from '../../assets/images/DrumMixers/baghouse2.png';
 ---
 <div class="w-full flex flex-col items-center justify-center text-grisT font-bold">
     <h1 class="w-full text-start px-8 md:px-52 text-2xl md:text-4xl mb-10">INTEGRATED BAGHOUSES</h1>
@@ -25,17 +27,17 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                  ensures cleaner air, contributing to a greener, more eco-conscious workplace.</p>
         </div>
         <div class="flex flex-col items-center justify-center">
-            <img src="" alt="">
+            <img src={baghouse.src} alt="" class="w-1/2">
             <p class="text-black">Mechanism of baghouses available in pulse jet and reverse jet</p>
         </div>
     </div>
     <div class="w-full flex flex-col md:flex-row text-white my-10">
-        <img src={img1.src} alt="" class="w-full h-auto md:h-[300px] object-cover">
+        <img src={baghouse2.src} alt="" class="w-full h-auto md:h-[300px] object-cover">
         <div class="bg-blueMain px-4 md:px-8 md:pr-52 py-6 md:py-0 flex flex-col items-center justify-center">
             <p class="text-grisSubP mb-4 md:mb-0">
                 <span class="text-white">Pulse Jet:</span> A cleaning system that uses compressed air bursts to dislodge
                 dust and debris from the filter bags, maintaining continuous airflow.
-            </p>
+            </p><br>
             <p class="text-grisSubP">
                 <span class="text-white">Reverse Air:</span>
                 A cleaning system that blows air in the opposite direction to
@@ -86,5 +88,7 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
             </p>
         </div>
     </div>
-    <h1>IMG</h1>
+    <div class="px-8">
+        <img src={sideP.src} alt="">
+    </div>
 </div>
