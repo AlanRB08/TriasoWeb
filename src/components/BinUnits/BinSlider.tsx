@@ -7,25 +7,106 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    image: '/images/tmph-1.jpg',
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.png',
     caption: 'Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo',
   },
   {
-    image: '/images/tmph-2.jpg',
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.png',
     caption: 'Vista lateral del sistema de alimentación',
   },
   {
-    image: '/images/tmph-3.jpg',
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.png',
     caption: 'Posición de transporte',
   },
   {
-    image: '/images/tmph-4.jpg',
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.png',
     caption: 'Vista trasera de los controles',
   },
   {
-    image: '/images/tmph-5.jpg',
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
     caption: 'Otra vista del equipo completo',
   },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P286TrabA.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P286TrabB.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P286TrabRapA.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P286TranspA.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+  {
+    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
+    caption: 'Otra vista del equipo completo',
+  },
+
 ];
 
 export default function BinSlider() {
