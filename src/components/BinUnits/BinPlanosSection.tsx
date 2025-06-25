@@ -1337,7 +1337,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={tolva4Main.src} alt="" className='w-[230px] h-auto' />
+                <img src={tolva4Main.src} alt="" className='w-[150px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1665,7 +1665,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={tolva5Main.src} alt="" className='w-[230px] h-auto' />
+                <img src={tolva5Main.src} alt="" className='w-[150px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1989,7 +1989,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={tolva6Main.src} alt="" className='w-[230px] h-auto' />
+                <img src={tolva6Main.src} alt="" className='w-[150px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
