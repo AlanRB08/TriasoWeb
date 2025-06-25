@@ -1,16 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
+import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
+import tab6Left from '../../assets/images/DrumMixers/tab6Left.png';
+import tab5Main from '../../assets/images/DrumMixers/tab5Main.png';
+import tab5Left from '../../assets/images/DrumMixers/tab5Left.png';
+import tab5Right from '../../assets/images/DrumMixers/tab5Right.png';
+import tab1Main from '../../assets/images/DrumMixers/tab1Main.png';
+import tab1Left from '../../assets/images/DrumMixers/tab1Left.png';
+import tab1Right from '../../assets/images/DrumMixers/tab5Right.png';
 import reinfo1 from '../../assets/images/IntegralAsphalt/reinfo1.png';
-import reinforcedBlue from '../../assets/images/IntegralAsphalt/reinforced.png';
-import reinforcedRight from '../../assets/images/IntegralAsphalt/reinfright.png';
-import reinforcedLeft from '../../assets/images/IntegralAsphalt/reinfleft.png';
 import supportRight from '../../assets/images/IntegralAsphalt/supportright.png';
 import supportLeft from '../../assets/images/IntegralAsphalt/supportleft.png';
-import supportMain from '../../assets/images/IntegralAsphalt/supportmain.png';
-import standarMain from '../../assets/images/IntegralAsphalt/standarmain.png';
-import standarRight from '../../assets/images/IntegralAsphalt/standarright.png';
-import standarLeft from '../../assets/images/IntegralAsphalt/standarleft.png';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -244,9 +246,9 @@ const DrumMixPlanos = () => {
       <div className="flex justify-center gap-10">
         {/* Botón 5 */}
         <button
-          onClick={() => setActiveTab(1)}
+          onClick={() => setActiveTab(5)}
           className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-            activeTab === 1
+            activeTab === 5
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
           }`}
@@ -256,9 +258,9 @@ const DrumMixPlanos = () => {
 
         {/* Botón 6 */}
         <button
-          onClick={() => setActiveTab(2)}
+          onClick={() => setActiveTab(6)}
           className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-            activeTab === 2
+            activeTab === 6
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
           }`}
@@ -351,7 +353,7 @@ const DrumMixPlanos = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={supportMain.src} alt="" className='w-[230px] h-[628px]' />
+                <img src={tab1Main.src} alt="" className='w-[500px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -400,83 +402,63 @@ const DrumMixPlanos = () => {
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
                         <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                            <h1>ACFM:</h1>
+                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <h1>Filtering Area:</h1>
+                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <h1>Fiberglass insulation:</h1>
+                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
                         <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <h1>3% humidity:</h1>
+                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
+                            <h1>5% humidity:</h1>
+                            <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
                         <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
+                            <h1>3% humidity:</h1>
+                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>8 ton</p>
+                            <h1>5% humidity:</h1>
+                            <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
                         <div className='flex justify-between'>
-                            <h1>Total length(including hitch):</h1>
-                            <p data-imperial='762.00 cm' data-metric='29.26 ft'>29.26 ft</p>
+                            <h1>Modulating burner:</h1>
+                            <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Support:</h1>
-                            <p>Stationary legs</p>
+                            <h1>Fueled with total-air control system</h1>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Chassis width:</h1>
-                            <p data-imperial='266.70 cm' data-metric='8.75 ft'>8.75 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='311.5 cm' data-metric='9.58 ft'>9.58 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
+                        <ul className='pl-6 list-disc'>
+                            <li>Diesel</li>
+                            <li>Gas</li>
+                        </ul>
+                        <div className='flex flex-col'>
+                            <p>UV sensor for flame monitoring</p>
+                            <p>Separate pilot and main flame system</p>
+                            <p>Fuel filtration and safety regulation system</p>
                         </div>
                     </div>
                 </div>
                 <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>
-                        <div className='flex items-center justify-center w-full h-[60px]'>
+                        <div className='flex items-center justify-center w-1/2 h-[60px] self-start'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
@@ -499,7 +481,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -524,15 +506,15 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                        <div className='w-[272px] h-[185px] flex items-center justify-center'>
                             <img 
-                                src={supportLeft.src} 
+                                src={tab1Left.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[185px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -556,7 +538,7 @@ const DrumMixPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -605,7 +587,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -630,8 +612,8 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                            <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                        <div className='h-[185px] w-[744px] flex justify-center items-center'>
+                            <img src={tab1Right.src} alt="" className='max-w-full max-h-full object-contain'/>
                         </div>
                     </div>
 
@@ -641,34 +623,42 @@ const DrumMixPlanos = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                            <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
                         </div>
                     </div>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <h1>Total length (including hitch):</h1>
+                            <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
+                            <h1>Axle configuration:</h1>
+                            <p>Three Axle</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
+                            <h1>Fifth-wheel hitch height:</h1>
+                            <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
+                            <h1>Total width:</h1>
+                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Total height:</h1>
+                            <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Transportation height:</h1>
+                            <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
                         </div>
                     </div>
                 </div>
@@ -677,15 +667,15 @@ const DrumMixPlanos = () => {
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                            <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                            <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
                         </div>
                     </div>
                     <div className='col-span-3'>
@@ -714,7 +704,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -771,7 +761,7 @@ const DrumMixPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -820,7 +810,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -859,517 +849,740 @@ const DrumMixPlanos = () => {
         )}
 
         {activeTab === 2 && (
-          <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
-                        <li>Foldable support legs with preset working height</li>
-                        <li>Galvanized bolts and electrostatic automotive paint</li>
-                        <li>Drum made from high-temp resistant alloyed steel</li>
-                        <li>Reinforced front shield and EPDM rubber seals at drum ends</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Electronic control panel with ammeter</li>
-                        <li>Digital temperature and asphalt dosing controls</li>
-                        <li>Speed variator for mix adjustments</li>
-                        <li>Visual, audible, and strobe alarm system</li>
-                        <li>Pre-wired cable setup for plug-and-play startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Inlet Flights</li>
-                        <li>Drying Veiling Flights</li>
-                        <li>Radiation Flights</li>
-                        <li>Heating Flights</li>
-                        <li>Mixing Flights</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>All mounted on a lightweight chassis with support legs</li>
-                        <li>Pull-type hitch with safety coupling</li>
-                        <li>Includes braking system and DOT-compliant lighting</li>
-                        <li>Compact and stable for relocation when empty</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>ASPHALT STORAGE TANK</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted asphalt tank: 6,000 L capacity</li>
-                        <li>Direct heating with 140,000 BTU/hr burner</li>
-                        <li>2" pump (2 HP motor)</li>
-                        <li>Integrated asphalt agitator for faster startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PRODUCTION RATE</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>Nominal: 10 TPH continuous</li>
-                        <li>Continuous production for 10 hours (with full tank)</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={standarMain.src} alt="" className='w-[230px] h-[628px]' />
-            </div>
-            <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Modulating diesel burner</li>
-                        <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
-                        <li>1.5 HP motor with UV sensors and fuel filtration</li>
-                        <li>Meets U.S. safety standards</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Two 3 HP motors for drum rotation</li>
-                        <li>Four gearbox reducers</li>
-                        <li>1 HP gear pump motor for asphalt injection</li>
-                        <li>Siemens-grade motors and wiring</li>
-                        <li>110 V system in control cabinet with emergency shutdown</li>
-                        <li>20 kW three-phase electric generator</li>
-                        <ul className='ml-4'>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">20 Kw in continuous service</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">22 Kw in emergency service</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">220/440 Voltage</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">35 hp Cummins engine</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">110 L diesel tank</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Nomex filter bags (optional)</li>
-                        <li>1.5" fiberglass drum and tank insulation</li>
-                        <li>Exterior stainless steel tank lining</li>
-                        <li>Automotive-grade baked paint for corrosion resistance</li>
-                        <li>Guarded moving parts and warning signage for operator safety</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
-                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
-                        <li>18" wide feeding belt with lagged head pulley</li>
-                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
-                    </ul>
-                </div>
-            </div>
-                </div>
-                <div className='flex justify-center items-end my-10'>
-                    <div className='flex flex-col items-center justify-center'>
-                        <div className='flex items-center justify-center w-full h-[60px]'>
-                            <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
-                                <div className='bg-white h-[1px] w-full relative'>
-                                    <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="8 5 8 14" 
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
-                                            fill="#ffffff"
-                                        />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='311.15 cm' data-metric='10.22 ft'>10.22 ft</p>
-                            <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
-                                <div className='bg-white h-[1px] w-full relative'>
-                                    <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
-                                            fill="#ffffff"
-                                        />
-                                        </svg>
-                                    </div>
-                                
-                                </div>
-                            </div>
+                    <div className='flex flex-col items-center justify-center' ref={containerRef}>
+                        <div className='grid grid-cols-4 justify-center items-center'>
+                    <div className='flex flex-col items-start justify-center gap-4'>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Inlet Flights</li>
+                                <li>Drying Veiling Flights</li>
+                                <li>Radiation Flights</li>
+                                <li>Heating Flights</li>
+                                <li>Mixing Flights</li>
+                            </ul>
                         </div>
-                        <div className='w-[272px] h-[353px] flex justify-center items-center'>
-                            <img src={standarLeft.src} alt="" className='max-w-full max-h-full object-contain'/>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital temperature monitoring and regulation</li>
+                                <li>Independent controls for each plant component</li>
+                                <li>Simple and intuitive interface</li>
+                                <li>Control system designed for field reliabilit</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Mounted on standard transport chassis</li>
+                                <li>Dual axles with 8-lug hubs</li>
+                                <li>16” highway-rated wheels</li>
+                                <li>Pull-type hitch with safety coupling</li>
+                                <li>Includes brakes and road lighting system</li>
+                                <li>Reinforced for loaded or empty transport</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Driven by four 3 HP motors</li>
+                                <li>Trunnion-driven system for reliable, continuous operation</li>
+                                <li>Four high-efficiency electric motors</li>
+                                <li>Digital VFDs for precise speed adjustments</li>
+                                <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
+                                <li>Drum tires made from normalized high-carbon alloy steel</li>
+                                <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
+                                <li>Equipped with industrial self-aligning bearings</li>
+                                <li>Precision-machined for balanced, deformation-resistant performance</li>
+                                <li>Spring-mounted to absorb load shifts and thermal expansion</li>
+                                <li>Single-point trunnion adjustment for quick field alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>7' x 10' control cabin, towable.</li>
+                                <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
+                                <li>Insulated panel-style walls.</li>
+                                <li>110-volt electrical installation with interior lighting.</li>
+                                <li>Panoramic windows.</li>
+                                <li>1.5-ton air conditioning unit.</li>
+                                <li>Standard road lights: brake and turn signals.</li>
+                                <li>Jack stand for parking and hitch height adjustment.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
-                        <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
-                            <div className='bg-white w-[1px] h-full relative'>
-                                <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="6 5 12 10"  // Área ajustada al contenido real
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
-                                            fill="#ffffff"
-                                        />
-                                    </svg>
-                                </div>
-                            </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                        <img src={tab1Main.src} alt="" className='w-[500px] h-auto' />
+                    </div>
+                    <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Reinforced structure for heavy-duty use</li>
+                                <li>Low-profile frame for stable and easy transport</li>
+                                <li>Foldable support legs with preset working height</li>
+                                <li>Transport skids for quick coupling and parking</li>
+                                <li>Forged tires mounted on flexible springs</li>
+                                <li>Labyrinth seals to reduce air loss and heat escape</li>
+                                <li>Galvanized bolts and electrostatic paint for durability</li>
+                            </ul>
                         </div>
-                        <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Pulley and bushing transmission system</li>
+                            </ul>
                         </div>
-                        <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
-                            <div className='bg-white w-[1px] h-full relative'>
-                                <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="6 8 12 10"  // Área ajustada al contenido real
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
-                                            fill="#ffffff"
-                                        />
-                                    </svg>
-                                </div>
-                            </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>High-resistance structure for long-term operation</li>
+                                <li>Protected by electrostatic paint with strong adhesion</li>
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li>Thermal insulation reduces surface temperature</li>
+                                <li>Guarded access to moving and hot parts for operator safety</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <ul className='ml-6 list-disc'>  
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center'>
-                        <div className='flex items-center justify-center w-full h-[60px]'>
-                            <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
-                                <div className='bg-white h-[1px] w-full relative'>
-                                    <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="8 5 8 14" 
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
-                                            fill="#ffffff"
-                                        />
-                                        </svg>
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
+                                <div className='flex justify-between'>
+                                    <h1>ACFM:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Filtering Area:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fiberglass insulation:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Modulating burner:</h1>
+                                    <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fueled with total-air control system</h1>
+                                </div>
+                                <ul className='pl-6 list-disc'>
+                                    <li>Diesel</li>
+                                    <li>Gas</li>
+                                </ul>
+                                <div className='flex flex-col'>
+                                    <p>UV sensor for flame monitoring</p>
+                                    <p>Separate pilot and main flame system</p>
+                                    <p>Fuel filtration and safety regulation system</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-1/2 h-[60px] self-start'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[185px] flex items-center justify-center'>
+                                    <img 
+                                        src={tab1Left.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[185px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
-                            <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
-                                <div className='bg-white h-[1px] w-full relative'>
-                                    <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
-                                    <svg 
-                                        width="8" 
-                                        height="8" 
-                                        viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
-                                        fill="none" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="block p-0 m-0 overflow-visible"
-                                        style={{ shapeRendering: 'crispEdges' }}
-                                        >
-                                        <path 
-                                            fill-rule="evenodd" 
-                                            clip-rule="evenodd" 
-                                            d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
-                                            fill="#ffffff"
-                                        />
-                                        </svg>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
-                                
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[185px] w-[744px] flex justify-center items-center'>
+                                    <img src={tab1Right.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
-                        </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                            <img src={standarRight.src} alt="" className='max-w-full max-h-full object-contain'/>
-                        </div>
-                    </div>
 
-                </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='898.95 cm' data-metric='29.49 ft'>29.49 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>Three Axle</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transportation height:</h1>
+                                    <p data-imperial='424.57 cm' data-metric='13.92 ft'>13.92 ft</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
+                        <div className='grid grid-cols-4 justify-center items-center w-full mt-10 gap-10'>
+                            <div className='text-white font-normal col-span-1'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                            </div>
+                            <div className='col-span-3'>
+                            <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                                    <img 
+                                        src={supportLeft.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
                         </div>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.77 ft'>12.77 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>8 ton</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
-                            <h1>Total length (incluiding hitch):</h1>
-                            <p data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Axle configuration:</h1>
-                            <p>Dual 8-lug axles</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Support:</h1>
-                            <p>Pre-set stationary legs</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Transport wheels:</h1>
-                            <p>Eight 16" tires</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Chassis width:</h1>
-                            <p data-imperial='304.8 cm' data-metric='10.00 ft'>10.00 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='311.5 cm' data-metric='28.75 ft'>10.22 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )}
+                
+                )}
 
         {activeTab === 3 && (
           <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-center gap-4' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
-                        <li>Foldable support legs with preset working height</li>
-                        <li>Galvanized bolts and electrostatic automotive paint</li>
-                        <li>Drum made from high-temp resistant alloyed steel</li>
-                        <li>Reinforced front shield and EPDM rubber seals at drum ends</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Electronic control panel with ammeter</li>
-                        <li>Digital temperature and asphalt dosing controls</li>
-                        <li>Speed variator for mix adjustments</li>
-                        <li>Visual, audible, and strobe alarm system</li>
-                        <li>Pre-wired cable setup for plug-and-play startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Inlet Flights</li>
-                        <li>Drying Veiling Flights</li>
-                        <li>Radiation Flights</li>
-                        <li>Heating Flights</li>
-                        <li>Mixing Flights</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted on a heavy-duty reinforced chassis for transporting the full-loaded plant.</li>
-                        <li>25-ton load capacity with double Kenworth axles rated at 60,000 lbs.</li>
-                        <li>Includes eight 11-22.5 tires, Wallace Forge pull-type hitch, suspension, brakes, and road lighting system.</li>
-                        <li>Designed for rugged use, allowing relocation with asphalt, aggregates, and fuel loaded</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>ASPHALT STORAGE TANK</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted asphalt tank: 6,000 L capacity</li>
-                        <li>Direct heating with 140,000 BTU/hr burner</li>
-                        <li>2" pump (2 HP motor)</li>
-                        <li>Integrated asphalt agitator for faster startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PRODUCTION RATE</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>Nominal: 10 TPH continuous</li>
-                        <li>Continuous production for 10 hours (with full tank)</li>
-                    </ul>
-                </div>
+            <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Inlet Flights</li>
+                                <li>Drying Veiling Flights</li>
+                                <li>Radiation Flights</li>
+                                <li>Heating Flights</li>
+                                <li>Mixing Flights</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital temperature monitoring and regulation</li>
+                                <li>Independent controls for each plant component</li>
+                                <li>Simple and intuitive interface</li>
+                                <li>Control system designed for field reliabilit</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Mounted on standard transport chassis</li>
+                                <li>Dual axles with 8-lug hubs</li>
+                                <li>16” highway-rated wheels</li>
+                                <li>Pull-type hitch with safety coupling</li>
+                                <li>Includes brakes and road lighting system</li>
+                                <li>Reinforced for loaded or empty transport</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Driven by four 3 HP motors</li>
+                                <li>Trunnion-driven system for reliable, continuous operation</li>
+                                <li>Four high-efficiency electric motors</li>
+                                <li>Digital VFDs for precise speed adjustments</li>
+                                <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
+                                <li>Drum tires made from normalized high-carbon alloy steel</li>
+                                <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
+                                <li>Equipped with industrial self-aligning bearings</li>
+                                <li>Precision-machined for balanced, deformation-resistant performance</li>
+                                <li>Spring-mounted to absorb load shifts and thermal expansion</li>
+                                <li>Single-point trunnion adjustment for quick field alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>7' x 10' control cabin, towable.</li>
+                                <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
+                                <li>Insulated panel-style walls.</li>
+                                <li>110-volt electrical installation with interior lighting.</li>
+                                <li>Panoramic windows.</li>
+                                <li>1.5-ton air conditioning unit.</li>
+                                <li>Standard road lights: brake and turn signals.</li>
+                                <li>Jack stand for parking and hitch height adjustment.</li>
+                            </ul>
+                        </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={reinforcedBlue.src} alt="" className='w-[230px] h-[628px]' />
+                <img src={tab1Main.src} alt="" className='w-[230px] h-[628px]' />
             </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full' id='column2' ref={columnGrid2}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Modulating diesel burner</li>
-                        <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
-                        <li>1.5 HP motor with UV sensors and fuel filtration</li>
-                        <li>Meets U.S. safety standards</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Two 3 HP motors for drum rotation</li>
-                        <li>Four gearbox reducers</li>
-                        <li>1 HP gear pump motor for asphalt injection</li>
-                        <li>Siemens-grade motors and wiring</li>
-                        <li>110 V system in control cabinet with emergency shutdown</li>
-                        <li>20 kW three-phase electric generator</li>
-                        <ul className='ml-4'>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">20 Kw in continuous service</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">22 Kw in emergency service</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">220/440 Voltage</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">35 hp Cummins engine</li>
-                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                            before:w-2 before:rounded-full before:border before:border-white 
-                            before:bg-transparent">110 L diesel tank</li>
-                        </ul>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Nomex filter bags (optional)</li>
-                        <li>1.5" fiberglass drum and tank insulation</li>
-                        <li>Exterior stainless steel tank lining</li>
-                        <li>Automotive-grade baked paint for corrosion resistance</li>
-                        <li>Guarded moving parts and warning signage for operator safety</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
-                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
-                        <li>18" wide feeding belt with lagged head pulley</li>
-                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
-                    </ul>
-                </div>
+            <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Reinforced structure for heavy-duty use</li>
+                                <li>Low-profile frame for stable and easy transport</li>
+                                <li>Foldable support legs with preset working height</li>
+                                <li>Transport skids for quick coupling and parking</li>
+                                <li>Forged tires mounted on flexible springs</li>
+                                <li>Labyrinth seals to reduce air loss and heat escape</li>
+                                <li>Galvanized bolts and electrostatic paint for durability</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Pulley and bushing transmission system</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>High-resistance structure for long-term operation</li>
+                                <li>Protected by electrostatic paint with strong adhesion</li>
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li>Thermal insulation reduces surface temperature</li>
+                                <li>Guarded access to moving and hot parts for operator safety</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <ul className='ml-6 list-disc'>  
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
+                        </div>
             </div>
+                </div>
+                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
+                                <div className='flex justify-between'>
+                                    <h1>ACFM:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Filtering Area:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fiberglass insulation:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Modulating burner:</h1>
+                                    <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fueled with total-air control system</h1>
+                                </div>
+                                <ul className='pl-6 list-disc'>
+                                    <li>Diesel</li>
+                                    <li>Gas</li>
+                                </ul>
+                                <div className='flex flex-col'>
+                                    <p>UV sensor for flame monitoring</p>
+                                    <p>Separate pilot and main flame system</p>
+                                    <p>Fuel filtration and safety regulation system</p>
+                                </div>
+                            </div>
                 </div>
                 <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>
-                        <div className='flex items-center justify-center w-full h-[60px]'>
+                        <div className='flex items-start justify-center w-1/2 h-[60px] self-start'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
@@ -1417,11 +1630,11 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px]'>
-                            <img src={reinforcedLeft.src} alt="" />
+                        <div className='w-[272px] h-[185px]'>
+                            <img src={tab1Left.src} alt="" />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[185px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1519,104 +1732,1361 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px]'>
-                            <img src={reinforcedRight.src} alt="" />
+                        <div className='h-[185px] w-[744px]'>
+                            <img src={tab3Right.src} alt="" className='h-[185px] w-[744px]'/>
                         </div>
                     </div>
 
                 </div>
                 <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='898.95 cm' data-metric='29.49 ft'>29.49 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>Three Axle</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transportation height:</h1>
+                                    <p data-imperial='424.57 cm' data-metric='13.92 ft'>13.92 ft</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
+                        <div className='grid grid-cols-4 justify-center items-center w-full mt-10 gap-10'>
+                            <div className='text-white font-normal col-span-1'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                            </div>
+                            <div className='col-span-3'>
+                            <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                                    <img 
+                                        src={supportLeft.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='398.2 cm' data-metric='12.77 ft'>12.77 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>8 ton</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
-                            <h1>Total length (incluiding hitch):</h1>
-                            <p data-imperial='876 cm' data-metric='28.75 ft'>28.75 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Axle configuration:</h1>
-                            <p>Dual 9-lug axles</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Fifth-wheel hitch height:</h1>
-                            <p data-imperial='130.45 cm' data-metric='4.28 ft'>4.28 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Support:</h1>
-                            <p>Pre-set stationary legs</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Transport wheels:</h1>
-                            <p>11-22.5 tires</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Chassis width:</h1>
-                            <p data-imperial='254 cm' data-metric='8.33 ft'>8.33 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='290.5 cm' data-metric='9.37 ft'>9.37 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='421 cm' data-metric='13.828 ft'>13.828 ft</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         )}
+        {activeTab === 5 && (
+                    <div className='flex flex-col items-center justify-center' ref={containerRef}>
+                        <div className='grid grid-cols-4 justify-center items-center'>
+                    <div className='flex flex-col items-start justify-center gap-4'>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Inlet Flights</li>
+                                <li>Drying Veiling Flights</li>
+                                <li>Radiation Flights</li>
+                                <li>Heating Flights</li>
+                                <li>Mixing Flights</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital temperature monitoring and regulation</li>
+                                <li>Independent controls for each plant component</li>
+                                <li>Simple and intuitive interface</li>
+                                <li>Control system designed for field reliabilit</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Mounted on standard transport chassis</li>
+                                <li>Dual axles with 8-lug hubs</li>
+                                <li>16” highway-rated wheels</li>
+                                <li>Pull-type hitch with safety coupling</li>
+                                <li>Includes brakes and road lighting system</li>
+                                <li>Reinforced for loaded or empty transport</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Driven by four 3 HP motors</li>
+                                <li>Trunnion-driven system for reliable, continuous operation</li>
+                                <li>Four high-efficiency electric motors</li>
+                                <li>Digital VFDs for precise speed adjustments</li>
+                                <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
+                                <li>Drum tires made from normalized high-carbon alloy steel</li>
+                                <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
+                                <li>Equipped with industrial self-aligning bearings</li>
+                                <li>Precision-machined for balanced, deformation-resistant performance</li>
+                                <li>Spring-mounted to absorb load shifts and thermal expansion</li>
+                                <li>Single-point trunnion adjustment for quick field alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>7' x 10' control cabin, towable.</li>
+                                <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
+                                <li>Insulated panel-style walls.</li>
+                                <li>110-volt electrical installation with interior lighting.</li>
+                                <li>Panoramic windows.</li>
+                                <li>1.5-ton air conditioning unit.</li>
+                                <li>Standard road lights: brake and turn signals.</li>
+                                <li>Jack stand for parking and hitch height adjustment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                        <img src={tab5Main.src} alt="" className='w-[200px] h-auto' />
+                    </div>
+                    <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Reinforced structure for heavy-duty use</li>
+                                <li>Low-profile frame for stable and easy transport</li>
+                                <li>Foldable support legs with preset working height</li>
+                                <li>Transport skids for quick coupling and parking</li>
+                                <li>Forged tires mounted on flexible springs</li>
+                                <li>Labyrinth seals to reduce air loss and heat escape</li>
+                                <li>Galvanized bolts and electrostatic paint for durability</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Pulley and bushing transmission system</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>High-resistance structure for long-term operation</li>
+                                <li>Protected by electrostatic paint with strong adhesion</li>
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li>Thermal insulation reduces surface temperature</li>
+                                <li>Guarded access to moving and hot parts for operator safety</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <ul className='ml-6 list-disc'>  
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
+                        </div>
+                    </div>
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
+                                <div className='flex justify-between'>
+                                    <h1>ACFM:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Filtering Area:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fiberglass insulation:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Modulating burner:</h1>
+                                    <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fueled with total-air control system</h1>
+                                </div>
+                                <ul className='pl-6 list-disc'>
+                                    <li>Diesel</li>
+                                    <li>Gas</li>
+                                </ul>
+                                <div className='flex flex-col'>
+                                    <p>UV sensor for flame monitoring</p>
+                                    <p>Separate pilot and main flame system</p>
+                                    <p>Fuel filtration and safety regulation system</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-1/2 h-[60px] self-center'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[185px] flex items-center justify-center'>
+                                    <img 
+                                        src={tab5Left.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[185px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[185px] w-[744px] flex justify-center items-center'>
+                                    <img src={tab5Right.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='898.95 cm' data-metric='29.49 ft'>29.49 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>Three Axle</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transportation height:</h1>
+                                    <p data-imperial='424.57 cm' data-metric='13.92 ft'>13.92 ft</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-center w-full mt-10 gap-10'>
+                            <div className='text-white font-normal col-span-1'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                            </div>
+                            <div className='col-span-3'>
+                            <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                                    <img 
+                                        src={supportLeft.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
+                        </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                )}
+        {activeTab === 6 && (
+                    <div className='flex flex-col items-center justify-center' ref={containerRef}>
+                        <div className='grid grid-cols-4 justify-center items-center'>
+                    <div className='flex flex-col items-start justify-center gap-4'>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Inlet Flights</li>
+                                <li>Drying Veiling Flights</li>
+                                <li>Radiation Flights</li>
+                                <li>Heating Flights</li>
+                                <li>Mixing Flights</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital temperature monitoring and regulation</li>
+                                <li>Independent controls for each plant component</li>
+                                <li>Simple and intuitive interface</li>
+                                <li>Control system designed for field reliabilit</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Mounted on standard transport chassis</li>
+                                <li>Dual axles with 8-lug hubs</li>
+                                <li>16” highway-rated wheels</li>
+                                <li>Pull-type hitch with safety coupling</li>
+                                <li>Includes brakes and road lighting system</li>
+                                <li>Reinforced for loaded or empty transport</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Driven by four 3 HP motors</li>
+                                <li>Trunnion-driven system for reliable, continuous operation</li>
+                                <li>Four high-efficiency electric motors</li>
+                                <li>Digital VFDs for precise speed adjustments</li>
+                                <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
+                                <li>Drum tires made from normalized high-carbon alloy steel</li>
+                                <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
+                                <li>Equipped with industrial self-aligning bearings</li>
+                                <li>Precision-machined for balanced, deformation-resistant performance</li>
+                                <li>Spring-mounted to absorb load shifts and thermal expansion</li>
+                                <li>Single-point trunnion adjustment for quick field alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>7' x 10' control cabin, towable.</li>
+                                <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
+                                <li>Insulated panel-style walls.</li>
+                                <li>110-volt electrical installation with interior lighting.</li>
+                                <li>Panoramic windows.</li>
+                                <li>1.5-ton air conditioning unit.</li>
+                                <li>Standard road lights: brake and turn signals.</li>
+                                <li>Jack stand for parking and hitch height adjustment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                        <img src={tab5Main.src} alt="" className='w-[200px] h-auto' />
+                    </div>
+                    <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Reinforced structure for heavy-duty use</li>
+                                <li>Low-profile frame for stable and easy transport</li>
+                                <li>Foldable support legs with preset working height</li>
+                                <li>Transport skids for quick coupling and parking</li>
+                                <li>Forged tires mounted on flexible springs</li>
+                                <li>Labyrinth seals to reduce air loss and heat escape</li>
+                                <li>Galvanized bolts and electrostatic paint for durability</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Pulley and bushing transmission system</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>High-resistance structure for long-term operation</li>
+                                <li>Protected by electrostatic paint with strong adhesion</li>
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li>Thermal insulation reduces surface temperature</li>
+                                <li>Guarded access to moving and hot parts for operator safety</li>
+                            </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <ul className='ml-6 list-disc'>  
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
+                        </div>
+                    </div>
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
+                                <div className='flex justify-between'>
+                                    <h1>ACFM:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Filtering Area:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fiberglass insulation:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Modulating burner:</h1>
+                                    <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fueled with total-air control system</h1>
+                                </div>
+                                <ul className='pl-6 list-disc'>
+                                    <li>Diesel</li>
+                                    <li>Gas</li>
+                                </ul>
+                                <div className='flex flex-col'>
+                                    <p>UV sensor for flame monitoring</p>
+                                    <p>Separate pilot and main flame system</p>
+                                    <p>Fuel filtration and safety regulation system</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-1/2 h-[60px] self-center'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[185px] flex items-center justify-center'>
+                                    <img 
+                                        src={tab6Left.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[185px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[185px] w-[744px] flex justify-center items-center'>
+                                    <img src={tab6Right.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='898.95 cm' data-metric='29.49 ft'>29.49 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='2,007.70 cm' data-metric='65.86 ft'>65.86 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>Three Axle</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='299.09 cm' data-metric='9.81 ft'>9.81 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transportation height:</h1>
+                                    <p data-imperial='424.57 cm' data-metric='13.92 ft'>13.92 ft</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-4 justify-center items-center w-full mt-10 gap-10'>
+                            <div className='text-white font-normal col-span-1'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                            </div>
+                            <div className='col-span-3'>
+                            <div className='flex justify-center items-end my-10'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                                    <img 
+                                        src={supportLeft.src} 
+                                        alt="" 
+                                        className='max-w-full max-h-full object-contain'
+                                    />
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                                <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='my-3'>
+                                    <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                </div>
+                                <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                                    <div className='bg-white w-[1px] h-full relative'>
+                                        <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                                    fill="#ffffff"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='flex items-center justify-center w-full h-[60px]'>
+                                    <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                        <div className='bg-white h-[1px] w-full relative'>
+                                            <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                            <svg 
+                                                width="8" 
+                                                height="8" 
+                                                viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="block p-0 m-0 overflow-visible"
+                                                style={{ shapeRendering: 'crispEdges' }}
+                                                >
+                                                <path 
+                                                    fill-rule="evenodd" 
+                                                    clip-rule="evenodd" 
+                                                    d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                                    fill="#ffffff"
+                                                />
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                </div>
+                            </div>
+
+                        </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                )}
       </div>
     </div>
       </div>

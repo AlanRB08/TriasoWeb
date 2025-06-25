@@ -159,7 +159,19 @@ const PlanoSection = () => {
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
-      <div className="h-screen flex items-center justify-center bg-bgMain">
+      <div className="h-[150vh] relative flex items-center justify-center w-full">
+        <div className='absolute bottom-0 w-full h-4/6 overflow-hidden'>
+            <img 
+                src="/fondoAsphalt.png" 
+                alt="Fondo"
+                className='w-full h-full object-[position:center_bottom]'
+                style={{
+                objectFit: 'scale-down', // Alterna entre esto y 'contain' según necesites
+                minWidth: '100%',
+                minHeight: '100%'
+                }}
+            />
+        </div>
         <div
           id='boxScroll'
           ref={boxRef}
