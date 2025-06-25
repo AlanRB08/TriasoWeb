@@ -46,7 +46,7 @@ export default function BinSelector() {
             onClick={() => setSelectedBins(num)}
             className={`px-4 py-2 rounded font-bold border ${
               selectedBins === num
-                ? 'bg-black text-white'
+                ? 'bg-blueMain text-white'
                 : 'bg-white text-black'
             }`}
           >
@@ -59,7 +59,7 @@ export default function BinSelector() {
           onClick={() => setPanelType('aesthetic')}
           className={`text-start px-4 py-2 rounded font-bold border ${
             panelType === 'aesthetic'
-              ? 'bg-black text-white'
+              ? 'bg-blueMain text-white'
               : 'bg-white text-black'
           }`}
         >
@@ -69,7 +69,7 @@ export default function BinSelector() {
           onClick={() => setPanelType('without')}
           className={`px-4 py-2 rounded font-bold border ${
             panelType === 'without'
-              ? 'bg-black text-white'
+              ? 'bg-blueMain text-white'
               : 'bg-white text-black'
           }`}
         >
@@ -79,7 +79,7 @@ export default function BinSelector() {
                     
                 </div>
 
-                <p className="text-sm max-w-3xl font-bold text-grisT">
+                <p className="text-base max-w-3xl font-bold text-grisT">
         High-quality equipment built for durability and efficient asphalt
         production. Featuring reinforced steel structures and integrated
         vibration systems, Triaso® bin units ensure steady aggregate flow,
@@ -101,7 +101,7 @@ export default function BinSelector() {
           <h2 className="text-lg font-bold mb-2">
             Specifications and Characteristics
           </h2>
-          <ul className="list-disc pl-4 space-y-2 text-sm font-bold text-grisT">
+          <ul className="list-disc pl-6 space-y-2 text-base font-bold text-grisT">
             <li>
               With dimensions and aggregate dosing systems that comply with
               construction regulations
@@ -122,7 +122,7 @@ export default function BinSelector() {
         </div>
 
         {/* Image */}
-        <div className="bg-white p-4 rounded-2xl shadow flex items-center justify-center">
+        <div className="bg-white p-0 rounded-2xl shadow flex items-center justify-center">
           <img
             src={currentImage}
             alt={`Bins ${selectedBins} - ${panelType}`}
