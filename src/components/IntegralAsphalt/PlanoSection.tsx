@@ -28,7 +28,7 @@ const PlanoSection = () => {
   const columnGrid2 = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -56,122 +56,141 @@ const PlanoSection = () => {
     updateElements(unit);
   }, []);
   //clipath
+
+
+
+
   useEffect(() => {
-    gsap.to(imgRef.current, {
-      clipPath: "inset(0% 0% 100% 0%)", // recorta de arriba a abajo
-      ease: "none",
-      scrollTrigger: {
-        trigger: boxRef.current,
-        start: "bottom #sectionNueva",
-        end: "top #sectionNueva",
-        scrub: true,
-        markers: false,
+    const box = boxRef.current;
+    const target = nextSectionRef.current;
+    const img = imgRef.current;
+    const otro = otroElemento.current;
+    const options = optionsRef.current;
+    const col1 = columnGrid1.current;
+    const col2 = columnGrid2.current;
+  
+    if (!box || !target || !img || !otro || !options || !col1 || !col2) return;
+  
+    if (activeTab !== 3) {
+      gsap.set(box, {
+        y: 0,
+        opacity: 0,
+        display: 'none',
+      });
+      return;
+    }
+  
+    gsap.set(box, {
+      opacity: 1,
+      display: 'block',
+    });
+  
+    gsap.set(img, {
+      clipPath: "inset(0% 0% 0% 0%)",
+    });
+  
+    // Posiciones absolutas iniciales
+    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+    const boxHeight = box.offsetHeight;
+    const boxBottomAbs = boxTopAbs + boxHeight;
+  
+    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+  
+    // Movimiento total
+    const distanceToMove = targetTopAbs - boxTopAbs;
+  
+    // Progreso cuando bottom de box toca top de target
+    const clipStart = (targetTopAbs - boxBottomAbs) / distanceToMove;
+    // Progreso cuando top de box toca top de target
+    const clipEnd = (targetTopAbs - boxTopAbs) / distanceToMove;
+  
+    // Asegura que el rango esté entre 0 y 1
+    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+  
+    const scrollTrig = ScrollTrigger.create({
+      id: 'boxScroll',
+      trigger: box,
+      start: 'top-=200 20%',
+      end: `+=${distanceToMove}`,
+      scrub: 1,
+      markers: false,
+      animation: gsap.to(box, {
+        y: distanceToMove,
+        ease: 'none',
+      }),
+      onUpdate: (self) => {
+        const p = self.progress;
+  
+        // ClipPath interpolado según rango dinámico
+        let clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+        clipProgress = Math.max(0, Math.min(clipProgress, 1));
+  
+        gsap.set(img, {
+          clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+        });
+  
+        // Otras animaciones
+        gsap.to(otro, {
+          opacity: p >= 0.8 ? 1 : 0,
+          y: p >= 0.8 ? 0 : -50,
+          scale: p >= 0.8 ? 1 : 0.95,
+          ease: 'none',
+          duration: 0.8,
+        });
+  
+        gsap.to(options, {
+          opacity: p >= 0.9 ? 1 : 0,
+          y: p >= 0.9 ? 0 : -50,
+          scale: p >= 0.9 ? 1 : 0.95,
+          ease: 'none',
+          duration: 0.8,
+        });
+  
+        gsap.to(col1, {
+          opacity: p >= 0.9 ? 1 : 0,
+          x: p >= 0.9 ? 0 : -50,
+          scale: p >= 0.9 ? 1 : 0.95,
+          ease: 'none',
+          duration: 0.8,
+        });
+  
+        gsap.to(col2, {
+          opacity: p >= 0.9 ? 1 : 0,
+          x: p >= 0.9 ? 0 : 50,
+          scale: p >= 0.9 ? 1 : 0.95,
+          ease: 'none',
+          duration: 0.8,
+        });
       },
     });
-  }, []);
-
-
- useEffect(() => {
-  const box = boxRef.current;
-  const target = nextSectionRef.current;
-  const otro = otroElemento.current;
-  const options = optionsRef.current;
-  const col1 = columnGrid1.current;
-  const col2 = columnGrid2.current;
   
-
-  if (!box || !target || !otro || !options || !col1 || !col2) return;
-
-  let scrollTrig = null;
-
-  if (activeTab !== 3) {
-    gsap.set(box, {
-      y: 0,
-      opacity: 0,
-      display: 'none',
-    });
-    return;
-  }
-
-  gsap.set(box, {
-    opacity: 1,
-    display: 'block',
-  });
-
-  const distanceToMove = target.getBoundingClientRect().top - box.getBoundingClientRect().top;
-
-  scrollTrig = ScrollTrigger.create({
-    id: 'boxScroll',
-    trigger: box,
-    start: 'top-=200 20%',
-    end: `+=${distanceToMove}`,
-    scrub: 1,
-    markers: false,
-    animation: gsap.to(box, {
-      y: distanceToMove,
-      ease: 'none',
-    }),
-    onUpdate: (self) => {
-      const p = self.progress;
-
-      gsap.to(otro, {
-        opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-        y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-        scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-        ease: 'none',
-        duration: 0.8,
-      });
-
-      gsap.to(options, {
-        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-        y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-        ease: 'none',
-        duration: 0.8,
-      });
-
-      gsap.to(col1, {
-        opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-        x: p >= 0.9 && p <= 1 ? 0 : -50,
-        scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-        ease: 'none',
-        duration: 0.8,
-      });
-
-      gsap.to(col2, {
-        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-        x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-        ease: 'none',
-        duration: 0.8,
-      });
-    }
-  });
-
-  ScrollTrigger.refresh();
-
-  return () => {
-    scrollTrig?.kill(); // <-- evita error si no existe
-  };
-}, [activeTab]);
+    ScrollTrigger.refresh();
+  
+    return () => {
+      scrollTrig?.kill();
+    };
+  }, [activeTab]);
+  
+  
+  
+  
+  
 
 
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
       <div className="h-[150vh] relative flex items-center justify-center w-full">
-        <div className='absolute bottom-0 w-full h-4/6 overflow-hidden'>
-            <img 
-                src="/fondoAsphalt.png" 
-                alt="Fondo"
-                className='w-full h-full object-[position:center_bottom]'
-                style={{
-                objectFit: 'scale-down', // Alterna entre esto y 'contain' según necesites
-                minWidth: '100%',
-                minHeight: '100%'
-                }}
-            />
-        </div>
+      <div 
+        className='absolute bottom-0 w-full h-4/6 overflow-hidden'
+        style={{
+            backgroundImage: 'url(/fondoAsphalt.png)',
+            backgroundRepeat: 'repeat-x', // Se repetirá horizontalmente si es necesario
+            backgroundPosition: 'center bottom',
+            backgroundSize: 'auto 100%' // Mantiene la altura completa y el ancho automático (se repetirá)
+        }}
+        ></div>
         <div
           id='boxScroll'
           ref={boxRef}
@@ -194,12 +213,9 @@ const PlanoSection = () => {
           />
         </div>
       </div>
-
-
       <div 
         id='sectionNueva'  
-        className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
-      >
+        className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen">
         <header className='mt-10 text-white' ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>
           <div className='flex items-center justify-center mt-10'>

@@ -145,7 +145,16 @@ const DrumMixPlanos = () => {
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
-      <div className="h-screen flex items-center justify-center bg-bgMain">
+      <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div 
+        className='absolute bottom-0 w-full h-4/6 overflow-hidden'
+        style={{
+            backgroundImage: 'url(/fondoAsphalt.png)',
+            backgroundRepeat: 'repeat-x', // Se repetirá horizontalmente si es necesario
+            backgroundPosition: 'center bottom',
+            backgroundSize: 'auto 100%' // Mantiene la altura completa y el ancho automático (se repetirá)
+        }}
+        ></div>
         <div
           id='boxScroll'
           ref={boxRef}
