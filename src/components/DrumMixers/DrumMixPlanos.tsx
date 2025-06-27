@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import tab3Main from '../../assets/images/DrumMixers/tab3Main.png';
 import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
 import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
 import tab6Left from '../../assets/images/DrumMixers/tab6Left.png';
@@ -29,6 +30,8 @@ const DrumMixPlanos = () => {
   const columnGrid2 = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const clipTargetRef = useRef<HTMLDivElement>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -64,11 +67,12 @@ const DrumMixPlanos = () => {
   const options = optionsRef.current;
   const col1 = columnGrid1.current;
   const col2 = columnGrid2.current;
+  const img = imgRef.current;
+  const clipTarget = clipTargetRef.current;
   
 
-  if (!box || !target || !otro || !options || !col1 || !col2) return;
+  if (!box || !target || !otro || !img|| !clipTarget|| !options || !col1 || !col2) return;
 
-  let scrollTrig = null;
 
   if (activeTab !== 3) {
     gsap.set(box, {
@@ -84,14 +88,28 @@ const DrumMixPlanos = () => {
     display: 'block',
   });
 
-  const distanceToMove = target.getBoundingClientRect().top - box.getBoundingClientRect().top;
+   // Cálculo de posiciones absolutas
+    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+    const boxHeight = box.offsetHeight;
+    const boxBottomAbs = boxTopAbs + boxHeight;
+    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
 
-  scrollTrig = ScrollTrigger.create({
+    // Desplazamiento total (se mantiene con el target original)
+    const distanceToMove = targetTopAbs - boxTopAbs;
+
+    // Nuevos cálculos para clipPath basado en clipTarget
+    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+
+  const scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
     start: 'top-=200 20%',
     end: `+=${distanceToMove}`,
-    scrub: 1,
+    scrub: true,
     markers: false,
     animation: gsap.to(box, {
       y: distanceToMove,
@@ -99,6 +117,16 @@ const DrumMixPlanos = () => {
     }),
     onUpdate: (self) => {
       const p = self.progress;
+       // ClipPath interpolado usando clipTarget
+              let clipProgress = 0;
+              if (clipEndClamped > clipStartClamped) {
+                clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+              }
+              clipProgress = Math.max(0, Math.min(clipProgress, 1));
+        
+              gsap.set(img, {
+                clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+              });
 
       gsap.to(otro, {
         opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
@@ -161,14 +189,26 @@ const DrumMixPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[230px] h-[628px]"
+             z-20 w-[450px] h-[1000px]"
         >
-          <img src={reinfo1.src} alt=""/>
+          <img
+            src={tab1Main.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen de fondo"
+          />
+          <img
+            ref={imgRef}
+            src={tab3Main.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen superior"
+            style={{ clipPath: "inset(0% 0% 0% 0%)" }}
+          />
         </div>
       </div>
 
 
       <div 
+      ref={clipTargetRef}
         id='sectionNueva'  
         className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
@@ -1486,7 +1526,7 @@ const DrumMixPlanos = () => {
                         </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={tab1Main.src} alt="" className='w-[230px] h-[628px]' />
+                
             </div>
             <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full' id='column2' ref={columnGrid2}>
             <div className='flex flex-col items-start justify-center gap-4 text-white'>
