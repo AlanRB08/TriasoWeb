@@ -43,6 +43,8 @@ const BinPlanosSection = () => {
   const columnGrid2 = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const clipTargetRef = useRef<HTMLDivElement>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -73,16 +75,17 @@ const BinPlanosSection = () => {
 
  useEffect(() => {
   const box = boxRef.current;
-  const target = nextSectionRef.current;
+  const target = nextSectionRef.current;//target original
+  const clipTarget = clipTargetRef.current;//target del clipath
+  const img = imgRef.current;
   const otro = otroElemento.current;
   const options = optionsRef.current;
   const col1 = columnGrid1.current;
   const col2 = columnGrid2.current;
   
 
-  if (!box || !target || !otro || !options || !col1 || !col2) return;
+  if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) return;
 
-  let scrollTrig = null;
 
   if (activeTab !== 3) {
     gsap.set(box, {
@@ -98,21 +101,45 @@ const BinPlanosSection = () => {
     display: 'block',
   });
 
-  const distanceToMove = target.getBoundingClientRect().top - box.getBoundingClientRect().top;
+   // Cálculo de posiciones absolutas
+   const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+   const boxHeight = box.offsetHeight;
+   const boxBottomAbs = boxTopAbs + boxHeight;
+   const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+   const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
 
-  scrollTrig = ScrollTrigger.create({
+   // Desplazamiento total (se mantiene con el target original)
+   const distanceToMove = targetTopAbs - boxTopAbs;
+
+   // Nuevos cálculos para clipPath basado en clipTarget
+   const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+   const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+   const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+   const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+
+  const scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
     start: 'top-=200 20%',
     end: `+=${distanceToMove}`,
-    scrub: 1,
-    markers: false,
+    scrub: true,
+    markers: true,
     animation: gsap.to(box, {
       y: distanceToMove,
       ease: 'none',
     }),
     onUpdate: (self) => {
       const p = self.progress;
+      // ClipPath interpolado usando clipTarget
+      let clipProgress = 0;
+      if (clipEndClamped > clipStartClamped) {
+        clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+      }
+      clipProgress = Math.max(0, Math.min(clipProgress, 1));
+
+      gsap.set(img, {
+        clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+      });
 
       gsap.to(otro, {
         opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
@@ -175,14 +202,26 @@ const BinPlanosSection = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[200px] h-auto"
+             z-20 w-[200px] h-[920px]"
         >
-          <img src={tolva3Main.src} alt=""/>
+          <img
+            src={tolva3Blue.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen de fondo"
+          />
+          <img
+            ref={imgRef}
+            src={tolva3Main.src}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Imagen superior"
+            style={{ clipPath: "inset(0% 0% 0% 0%)" }}
+          />
         </div>
       </div>
 
 
       <div 
+      ref={clipTargetRef}
         id='sectionNueva'  
         className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
@@ -645,7 +684,7 @@ const BinPlanosSection = () => {
         )}
 
         {activeTab === 2 && (
-            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
@@ -974,7 +1013,7 @@ const BinPlanosSection = () => {
         )}
 
         {activeTab === 3 && (
-            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full' id='column1' ref={columnGrid1}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
@@ -1018,7 +1057,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
-                <img src={tolva3Blue.src} alt="" className='w-[200px] h-auto' />
+                
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1302,7 +1341,7 @@ const BinPlanosSection = () => {
           
         )}
         {activeTab === 4 && (
-            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
@@ -1630,7 +1669,7 @@ const BinPlanosSection = () => {
           
         )}
         {activeTab === 5 && (
-            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
@@ -1954,7 +1993,7 @@ const BinPlanosSection = () => {
           
         )}
         {activeTab === 6 && (
-            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+            <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
