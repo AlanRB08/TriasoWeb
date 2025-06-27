@@ -29,6 +29,7 @@ const PlanoSection = () => {
   const optionsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
+  const clipTargetRef = useRef<HTMLDivElement>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -62,15 +63,18 @@ const PlanoSection = () => {
 
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current;
+    const target = nextSectionRef.current; // Target original para el desplazamiento
+    const clipTarget = clipTargetRef.current; // Nuevo target para el clipPath
     const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
   
-    if (!box || !target || !img || !otro || !options || !col1 || !col2) return;
-  
+    // Verificación de elementos
+    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) return;
+
+    // Reset si no es la pestaña activa
     if (activeTab !== 3) {
       gsap.set(box, {
         y: 0,
@@ -80,6 +84,7 @@ const PlanoSection = () => {
       return;
     }
   
+    // Configuración inicial
     gsap.set(box, {
       opacity: 1,
       display: 'block',
@@ -88,33 +93,31 @@ const PlanoSection = () => {
     gsap.set(img, {
       clipPath: "inset(0% 0% 0% 0%)",
     });
-  
-    // Posiciones absolutas iniciales
+
+    // Cálculo de posiciones absolutas
     const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
     const boxHeight = box.offsetHeight;
     const boxBottomAbs = boxTopAbs + boxHeight;
-  
     const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-  
-    // Movimiento total
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
+
+    // Desplazamiento total (se mantiene con el target original)
     const distanceToMove = targetTopAbs - boxTopAbs;
-  
-    // Progreso cuando bottom de box toca top de target
-    const clipStart = (targetTopAbs - boxBottomAbs) / distanceToMove;
-    // Progreso cuando top de box toca top de target
-    const clipEnd = (targetTopAbs - boxTopAbs) / distanceToMove;
-  
-    // Asegura que el rango esté entre 0 y 1
+
+    // Nuevos cálculos para clipPath basado en clipTarget
+    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
     const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
     const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-  
+
+    // ScrollTrigger principal
     const scrollTrig = ScrollTrigger.create({
       id: 'boxScroll',
       trigger: box,
       start: 'top-=200 20%',
       end: `+=${distanceToMove}`,
-      scrub: 1,
-      markers: false,
+      scrub: true,
+      markers: false, // Cambiar a true para debugging si necesitas
       animation: gsap.to(box, {
         y: distanceToMove,
         ease: 'none',
@@ -122,15 +125,18 @@ const PlanoSection = () => {
       onUpdate: (self) => {
         const p = self.progress;
   
-        // ClipPath interpolado según rango dinámico
-        let clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+        // ClipPath interpolado usando clipTarget
+        let clipProgress = 0;
+        if (clipEndClamped > clipStartClamped) {
+          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+        }
         clipProgress = Math.max(0, Math.min(clipProgress, 1));
   
         gsap.set(img, {
           clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
         });
   
-        // Otras animaciones
+        // Animaciones de otros elementos (se mantienen igual)
         gsap.to(otro, {
           opacity: p >= 0.8 ? 1 : 0,
           y: p >= 0.8 ? 0 : -50,
@@ -170,7 +176,7 @@ const PlanoSection = () => {
     return () => {
       scrollTrig?.kill();
     };
-  }, [activeTab]);
+}, [activeTab]);
   
   
   
@@ -214,8 +220,10 @@ const PlanoSection = () => {
         </div>
       </div>
       <div 
+      ref={clipTargetRef}
         id='sectionNueva'  
-        className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen">
+        className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        >
         <header className='mt-10 text-white' ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>
           <div className='flex items-center justify-center mt-10'>
