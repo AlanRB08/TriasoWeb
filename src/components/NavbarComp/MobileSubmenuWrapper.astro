@@ -1,0 +1,27 @@
+---
+// src/components/MobileSubmenuWrapper.astro
+import MobileMenuItem from './MobileMenuItem.astro';
+
+const { items, parentTitle, parentId } = Astro.props;
+const submenuId = `submenu-${parentTitle.toLowerCase().replace(/\s+/g, '-')}`;
+---
+
+<div id={submenuId} class="submenu-level bg-blueMain overflow-y-auto">
+  <!-- Botón "Atrás" -->
+  <button 
+    class="flex items-center gap-2 p-4 text-white sticky top-0 z-10 bg-blueMain"
+    onclick={`goBack('${parentId}')`}
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    {parentTitle}
+  </button>
+
+  <!-- Items del submenú -->
+  <ul class="p-4 pt-0 space-y-4">
+    {items.map((item: any) => (
+      <MobileMenuItem item={item} />
+    ))}
+  </ul>
+</div>

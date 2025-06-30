@@ -1,6 +1,7 @@
 ---
 // src/components/MobileMenu.astro
 import MobileMenuItem from './MobileMenuItem.astro';
+import MobileSubMenuWrapper from './MobileSubMenuWrapper.astro';
 import { menuItems } from '../../assets/data/menuItems';
 ---
 
@@ -13,14 +14,14 @@ import { menuItems } from '../../assets/data/menuItems';
   </svg>
 </button>
 
-<!-- Menú Mobile -->
+<!-- Contenedor principal del menú -->
 <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
-  <!-- Fondo oscuro con animación de opacidad -->
+  <!-- Fondo oscuro -->
   <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300"></div>
 
-  <!-- Panel del menú con animación de deslizamiento -->
-  <div class="absolute right-0 top-0 h-full w-5/6 bg-blueMain shadow-xl transform transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] translate-x-full overflow-y-auto">
-    <button id="mobileMenuClose" class="absolute left-4 top-4 p-2 rounded-full hover:bg-redBg" aria-label="Cerrar menú">
+  <!-- Panel principal (nivel 0) -->
+  <div id="main-menu" class="absolute inset-0 bg-blueMain transform transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] overflow-y-auto">
+    <button id="mobileMenuClose" class="absolute right-4 top-4 p-2 rounded-full hover:bg-redBg" aria-label="Cerrar menú">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white">
         <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
@@ -29,11 +30,22 @@ import { menuItems } from '../../assets/data/menuItems';
     <nav class="mt-16 p-6">
       <ul class="space-y-4">
         {menuItems.map((item) => (
-          <MobileMenuItem item={item} />
+          <MobileMenuItem item={item} isFirstLevel={true} />
         ))}
       </ul>
     </nav>
   </div>
+
+  <!-- Aquí se renderizarán los submenús de primer nivel -->
+  {menuItems.map((item) => (
+    item.children && (
+      <MobileSubMenuWrapper 
+        items={item.children} 
+        parentTitle={item.title} 
+        parentId="main-menu" 
+      />
+    )
+  ))}
 </div>
 
 <style is:global>
@@ -45,21 +57,29 @@ import { menuItems } from '../../assets/data/menuItems';
     display: block;
   }
   
-  /* Animación del fondo */
   #mobileMenu.active > #mobileMenuBackdrop {
     opacity: 0.5 !important;
   }
+ 
   
-  /* Animación del panel */
-  #mobileMenu.active > div:last-child {
-    transform: translateX(0) !important;
+
+  /* Animaciones para submenús */
+  .submenu-level {
+    position: absolute;
+    inset: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
-  
-  /* Ocultar botón cuando el menú está abierto */
-  #mobileMenuButton.hidden {
-    opacity: 0;
-    pointer-events: none;
+  .submenu-level.active {
+    transform: translateX(0);
   }
+  #main-menu {
+  transform: translateY(-100%); /* Inicia arriba */
+  transition: transform 0.5s ease-[cubic-bezier(0.25,0.1,0.25,1)];
+}
+#mobileMenu.active #main-menu {
+  transform: translateY(0); /* Entra desde arriba */
+}
 </style>
 
 <script is:inline>
@@ -71,29 +91,39 @@ import { menuItems } from '../../assets/data/menuItems';
 
     const toggleMenu = (open) => {
       if (open) {
-        // Mostrar el menú primero
         menu.style.display = 'block';
-        
-        // Pequeño retraso para permitir que el navegador procese el cambio
         requestAnimationFrame(() => {
-          // Activar animaciones
           menu.classList.add('active');
           document.body.classList.add('mobile-menu-open');
           menuButton.classList.add('hidden');
           menuButton.setAttribute('aria-expanded', 'true');
         });
       } else {
-        // Desactivar animaciones
+        // Cerrar todos los submenús primero
+        document.querySelectorAll('.submenu-level').forEach(el => el.classList.remove('active'));
+        document.getElementById('main-menu').classList.remove('slide-left');
+        
         menu.classList.remove('active');
         document.body.classList.remove('mobile-menu-open');
         menuButton.setAttribute('aria-expanded', 'false');
         
-        // Esperar a que termine la animación antes de ocultar
         setTimeout(() => {
           menu.style.display = 'none';
           menuButton.classList.remove('hidden');
-        }, 500); // Coincide con la duración de la animación
+        }, 500);
       }
+    };
+
+    // Función global para abrir submenús
+    window.openSubmenu = (submenuId, parentId) => {
+      document.getElementById(parentId).classList.add('slide-left');
+      document.getElementById(submenuId).classList.add('active');
+    };
+
+    // Función global para volver atrás
+    window.goBack = (parentId) => {
+      document.querySelector('.submenu-level.active').classList.remove('active');
+      document.getElementById(parentId).classList.remove('slide-left');
     };
 
     menuButton?.addEventListener('click', () => toggleMenu(true));

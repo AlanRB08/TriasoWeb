@@ -1,5 +1,7 @@
 ---
 // src/components/MobileMenuItem.astro
+
+
 type MenuItem = {
   title: string;
   url: string;
@@ -7,75 +9,70 @@ type MenuItem = {
 };
 
 import MobileMenuItem from './MobileMenuItem.astro';
-
-const { item , level = 0 } = Astro.props;
+const { item, isFirstLevel = false, level = 0 } = Astro.props;
 const hasChildren = item.children && item.children.length > 0;
-const id = Math.random().toString(36).slice(2); // ID único para controlar el submenu
+const submenuId = `submenu-${item.title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <li class="font-normal">
   <div class="flex justify-between items-center">
     <a
-      href={item.url}
-      class="block py-3 px-4 text-white hover:bg-redBg rounded-md transition-colors w-full"
+      href={!hasChildren ? item.url : '#'}
+      class="block py-2 px-4 text-white hover:bg-redBg rounded-md transition-colors w-full text-lg font-bold"
+      onclick={isFirstLevel && hasChildren ? `event.preventDefault(); openSubmenu('${submenuId}', 'main-menu')` : ''}
     >
       {item.title}
     </a>
 
-    {hasChildren && (
+    {hasChildren && isFirstLevel && (
       <button
-        class="text-white px-4 toggle-submenu-button"
-        aria-controls={`submenu-${id}`}
-        data-target={`submenu-${id}`}
+        class="text-white px-4"
+        onclick={`openSubmenu('${submenuId}', 'main-menu')`}
         aria-label="Abrir submenú"
       >
-        <svg
-          class="w-4 h-4 transition-transform duration-300 rotate-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#ffffff">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    )}
+
+    {hasChildren && !isFirstLevel && (
+      <button class="text-white px-4 toggle-submenu-button" data-target={`submenu-${level}-${item.title}`}>
+        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#ffffff">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     )}
   </div>
 
-  {hasChildren && (
+  <!-- Submenús anidados (niveles > 1) -->
+  {hasChildren && !isFirstLevel && (
     <ul
-      id={`submenu-${id}`}
-      class={`ml-4 mt-2 max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out space-y-2 border-l border-white/20 pl-4 ${
-    level === 0 ? 'bg-white/10' : level === 1 ? 'bg-white/20' : 'bg-white/30'
-  }`}
+      id={`submenu-${level}-${item.title}`}
+      class="ml-4 mt-1 max-h-0 overflow-hidden opacity-0 scale-y-95 transition-all duration-300 space-y-2 border-l border-white/20 pl-4"
     >
-      {item.children.map((child: unknown) => (
-        <MobileMenuItem item={child} level={level+1} />
+      {item.children.map((child: any) => (
+        <MobileMenuItem item={child} level={level + 1} />
       ))}
     </ul>
   )}
 </li>
 
 <script is:inline>
+  // Lógica para submenús anidados (niveles > 1)
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle-submenu-button');
-
-    buttons.forEach(button => {
+    document.querySelectorAll('.toggle-submenu-button').forEach(button => {
       button.addEventListener('click', () => {
-        const targetId = button.dataset.target;
-        const submenu = document.getElementById(targetId);
-        const icon = button.querySelector('.rotate-icon');
-
+        const target = button.dataset.target;
+        const submenu = document.getElementById(target);
         if (submenu) {
           const isOpen = submenu.classList.contains('max-h-0');
-
           submenu.classList.toggle('max-h-0', !isOpen);
-          submenu.classList.toggle('max-h-[600px]', isOpen); // ajusta según el contenido
+          submenu.classList.toggle('max-h-[600px]', isOpen);
           submenu.classList.toggle('opacity-0', !isOpen);
           submenu.classList.toggle('opacity-100', isOpen);
           submenu.classList.toggle('scale-y-95', !isOpen);
           submenu.classList.toggle('scale-y-100', isOpen);
-
-          icon?.classList.toggle('rotate-180', isOpen);
         }
       });
     });
