@@ -53,7 +53,7 @@ export const menuItems = [
         },
         {
           title : "HOT-MIX STORAGE SILOS",
-          url : "/products/asphalt-plants/hot-mix-storage-silos"
+          url : "/HotMix"
         },
         {
           title : "COLD-MIX PLANTS",
