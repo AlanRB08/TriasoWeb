@@ -82,6 +82,10 @@ const DrumMixPlanos = () => {
       opacity: 0,
       display: 'none',
     });
+    gsap.set(img, {
+      clipPath: 'inset(100% 0% 0% 0%)', // Oculta completamente la imagen
+      opacity: 0,
+    });
     return;
   }
 
