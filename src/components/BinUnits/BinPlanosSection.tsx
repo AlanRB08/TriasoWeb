@@ -123,7 +123,7 @@ const BinPlanosSection = () => {
     start: 'top-=200 20%',
     end: `+=${distanceToMove}`,
     scrub: true,
-    markers: true,
+    markers: false,
     animation: gsap.to(box, {
       y: distanceToMove,
       ease: 'none',

@@ -3,7 +3,7 @@ import BinSlider from '../BinUnits/BinSlider';
 
 const BinGallery = () => {
   return (
-    <div className='w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center mt-20 gap-10'>
+    <div className='w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center mt-20 gap-10'>
         <div className='flex flex-col gap-6'>
             <div className='text-white bg-redBg p-4 font-bold md:rounded-r-2xl'>
                 <h1 className='text-2xl md:text-3xl pl-8 md:pl-52'>Options to Meet Any Need</h1><br />
@@ -25,7 +25,7 @@ const BinGallery = () => {
                 </p>
             </div>
         </div>
-        <div className='md:pl-0 pl-8 bg-white h-full w-full rounded-2xl'>
+        <div className=' bg-white h-full w-full rounded-2xl'>
             <BinSlider />
         </div>
     </div>
