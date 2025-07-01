@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import caseta1 from '../../assets/images/DrumMixers/caseta1.png';
+import caseta2 from '../../assets/images/DrumMixers/caseta2.png';
 import tab3Main from '../../assets/images/DrumMixers/tab3Main.png';
 import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
 import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
@@ -780,7 +782,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className='w-[272px] h-[353px] flex items-center justify-center'>
                             <img 
-                                src={supportLeft.src} 
+                                src={caseta1.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
@@ -884,8 +886,8 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                            <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                        <div className='h-[353px] w-[497px] flex justify-center items-center'>
+                            <img src={caseta2.src} alt="" className='max-w-full max-h-full object-contain'/>
                         </div>
                     </div>
 
@@ -1342,7 +1344,7 @@ const DrumMixPlanos = () => {
                                 </div>
                                 <div className='w-[272px] h-[353px] flex items-center justify-center'>
                                     <img 
-                                        src={supportLeft.src} 
+                                        src={caseta1.src} 
                                         alt="" 
                                         className='max-w-full max-h-full object-contain'
                                     />
@@ -1446,8 +1448,8 @@ const DrumMixPlanos = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                <div className='h-[353px] w-[497px] flex justify-center items-center'>
+                                    <img src={caseta2.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
 
@@ -1900,7 +1902,7 @@ const DrumMixPlanos = () => {
                                 </div>
                                 <div className='w-[272px] h-[353px] flex items-center justify-center'>
                                     <img 
-                                        src={supportLeft.src} 
+                                        src={caseta1.src} 
                                         alt="" 
                                         className='max-w-full max-h-full object-contain'
                                     />
@@ -2004,8 +2006,8 @@ const DrumMixPlanos = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                <div className='h-[353px] w-[497px] flex justify-center items-center'>
+                                    <img src={caseta2.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
 
@@ -2459,7 +2461,7 @@ const DrumMixPlanos = () => {
                                 </div>
                                 <div className='w-[272px] h-[353px] flex items-center justify-center'>
                                     <img 
-                                        src={supportLeft.src} 
+                                        src={caseta1.src} 
                                         alt="" 
                                         className='max-w-full max-h-full object-contain'
                                     />
@@ -2563,8 +2565,8 @@ const DrumMixPlanos = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                <div className='h-[353px] w-[497px] flex justify-center items-center'>
+                                    <img src={caseta2.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
 
@@ -3020,7 +3022,7 @@ const DrumMixPlanos = () => {
                                 </div>
                                 <div className='w-[272px] h-[353px] flex items-center justify-center'>
                                     <img 
-                                        src={supportLeft.src} 
+                                        src={caseta1.src} 
                                         alt="" 
                                         className='max-w-full max-h-full object-contain'
                                     />
@@ -3124,8 +3126,8 @@ const DrumMixPlanos = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                                    <img src={supportRight.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                <div className='h-[353px] w-[497px] flex justify-center items-center'>
+                                    <img src={caseta2.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
 
