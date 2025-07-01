@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MainSection from '../components/HotMixStorage/MainSection.astro';
+import TabsHot from '../components/HotMixStorage/Tabs.astro';
+import SliderHotMix from "../components/HotMixStorage/SliderHotMix";
+const images1 = [
+  { src: '/Gallery/5.svg', title: 'Preservation of Quality',texto:'Perservation of quality  and integrity of the asphlt mix for up to 72 hours.' },
+  { src: '/Gallery/6.svg', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
+  { src: '/Gallery/7.svg', title: 'Versatile Storage Options' ,texto:'Long-duration thermal retention, ensuring it remains usable and high-quality for extended periods.'},
+  { src: '/Gallery/8.svg', title: 'Mobility' ,texto:'Triaso silos allow quick setup without heavy machinery, ideal for relocatable operations.'},
+  { src: '/Gallery/9.svg', title: 'Durability' ,texto:'Built with reinforced materials, thermally insulated cylinders, and corrosion-resistant finishes.'},
+  { src: '/Gallery/10.svg', title: 'Seamless Integration',texto:'Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.' },
+  { src: '/Gallery/11.svg', title: 'Enhanced Safety' ,texto:'Equipped with guards, alarms, and visual indicators to protect personnel and equipment.'},
+  { src: '/Gallery/12.svg', title: 'Cost-Effective' ,texto:'Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.'},
+
+  // agrega hasta 16 o más imágenes
+];
+---
+<Layout title="Hot-Mix Storage Silos">
+    <MainSection/>
+    <TabsHot />
+    <SliderHotMix client:load images={images1}/>
+</Layout>
