@@ -1,10 +1,12 @@
 ---
 import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
-
+import Whatsbtn from '../unitComponents/Whatsbtn.astro';
+import Card from '../unitComponents/Card.astro';
+import LearnBtn from '../unitComponents/LearnBtn.astro';
 ---
-<section class="w-full flex 2 mt-20 flex-col items-center justify-center gap-4 p-4 bg-gray-100">
+<section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
-        <div class="flex items-center justify-around w-full gap-4">
+        <div class="flex items-center justify-around w-full gap-4 px-8 md:px-36">
             <button class="text-xs md:text-base tab-button py-2 md:px-4 font-bold focus:outline-none"
             data-tab="tab1" aria-selected="false">
                 Computerization
@@ -20,7 +22,7 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
         </div>
         <div class="py-4">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-xs md:text-base text-grisT" data-tab-content="tab1">
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT" data-tab-content="tab1">
                 <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
                     <div class="bg-white p-4 font-bold rounded-2xl">
                         <p>Offers automated, precise control for weighing and delivering hot mix, reducing the risk of
@@ -41,7 +43,7 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                         <img src="" alt="">
                     </div>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 px-8 md:px-36">
+                <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 px-4 md:px-36">
                     <div class="col-span-2 flex flex-col justify-between gap-1 font-bold h-full">
                         <div class="bg-white p-4 font-bold rounded-2xl">
                             <h1 class="text-base md:text-lg text-black">
@@ -74,9 +76,19 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                                 Power transmissions are equipped with oversized heavy-duty Browning gear
                                  reducers and hub-mounted steel pulleys for smooth and efficient power transfer
                             </p>
+                        </div><br>
+                        <div class="w-full flex justify-center gap-10">
+                            <div>
+                                <h2 class="text-2xl text-black">Versatil Setup</h2>
+                                <p class="text-sm">Works seamlessly in a dedicated control cabin or under a protective roof.</p>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl text-black">Quick Adjustments</h2>
+                                <p class="text-sm">Allows rapid changes to recipes or control settings to match project requirements.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-1 flex flex-col items-center justify-between gap-2 h-full">
+                    <div class="col-span-1 flex flex-col items-center justify-between gap-2 h-full w-full">
                         <div class="bg-white p-4 font-bold rounded-2xl">
                             <h1 class="text-base md:text-lg text-black">
                                 Load History:</h1>
@@ -104,61 +116,42 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                         </div>
                     </div>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-6 font-bold">
-                    <div class="md:ml-36 lg:ml-36 ml-8 bg-white rounded-2xl p-4 flex flex-col items-center justify-center">
-                        <img src="" alt="">
+                <div class="w-full flex flex-col justify-center px-8 md:px-36 font-bold">
+                    <div class="w-full text-end">
                         <br>
-                        <h2 class="text-black w-full text-start">Silo Cone</h2>
-                        <p>
-                            Our silo cones are designed with a steep 66° angle to ensure full
-                             cross-sectional flow. This geometry guarantees first-in/first-out discharge,
-                              eliminates material buildup on the walls, and prevents mix segregation.
-                               The result: clean, consistent flow with every load.
-                        </p>
+                        <h1 class="text-black text-2xl">User-Friendly Interface</h1><br>
+                        <p class="font-thin">Simplifies configuration adjustments for operators with minimal downtime.</p><br>
                     </div>
-                    <div class="w-full flex flex-col gap-6">
-                        <div class="bg-white p-4 rounded-2xl md:mr-36 lg:mr-36 mr-8">
+                    <div class="w-full p-4 bg-white rounded-2xl">
+                        <p>
+                            Created to offer plant operators a deeper understanding of their operation, this
+                             cloud-based platform stores all production data remotely and securely. It gives you
+                              the freedom to access detailed performance analytics from any location and any 
+                              device—whether you're in the office, on the road, or at a job site. With real-time access to
+                               trends, logs, and operational metrics, decision-making becomes faster, more informed, and fully 
+                               independent of your physical location.
+                        </p>
+                    </div><br>
+                    <div class="grid grid-cols-1 md:grid-cols-5 w-full gap-6">
+                        <div class="col-span-2 p-4 bg-white rounded-2xl">
+                            <h2 class="text-xl">Visual and audible alarm for maximum mix level</h2><br>
                             <p>
-                                Both the self-erecting and stationary silos share the same key features and 
-                                advantages, offering unmatched efficiency, durability, and flexibility. The
-                                 primary difference lies in their functionality: the self-erecting silo 
-                                 provides the convenience of automated setup, making it ideal for projects 
-                                 requiring quick relocation, while the stationary silo offers greater capacity,
-                                  making it the perfect choice for larger, long-term operations. Both options
-                                   ensure optimal performance, easy integration with asphalt plants, and a 
-                                   robust design for reliable operation in demanding conditions.
+                                Visual and audible alarms to alert the operator and personnel when the silo 
+                                is full, preventing the conveyor from overloading
                             </p>
                         </div>
-                        <div class="p-4 bg-white rounded-2xl flex">
-                            <div class="flex flex-col items-start justify-center">
-                                <h2 class="text-black">Even Distribution Without <br> Segregation</h2>
-                                <p>
-                                    Triaso® silos use a top-mounted batcher that collects a full load of mix before 
-                                    discharging it in one motion through overlapping clam-style gates. These gates open 
-                                    rapidly and guide the mix to fall centered, distributing it evenly across the silo 
-                                    floor. Their cutting action reduces wear and avoids material buildup. This method
-                                     prevents segregation, ensures uniform layering, and maintains the mix’s quality 
-                                     during storage.
-                                </p>
-                            </div>
-                            <img src="" alt="">
-    
+                        <div class="col-span-2 p-4 bg-white rounded-2xl">
+                            <h2 class="text-xl">Sonic sensor to indicate mix level inside the silo
+                            </h2><br>
+                            <p>
+                                Real-time display of hot mix level on the operator console.
+                            </p>
                         </div>
-                    </div>
-                </div>
-                <div class="flex p-4 bg-white rounded-2xl mx-36">
-                    <div class="font-bold">
-                        <h2 class="text-black">Sealed from Top to Bottom</h2><br>
-                        <p>
-                            To prevent premature hardening, the silo is fully sealed during storage. 
-                            This airtight design blocks air exposure, preserving the mix’s quality and
-                             delaying oxidation.
-                        </p>
                     </div>
                 </div>
              </div>
         <!-- Second Section -->
-         <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-xs md:text-base text-grisT" data-tab-content="tab2">
+         <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT" data-tab-content="tab2">
             <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
                 <div class="bg-white p-4 font-bold rounded-2xl">
                     <h1 class="text-base md:text-lg text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
@@ -181,7 +174,7 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                 </div>
             </div>
             <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 px-8 md:px-36">
-                <div class="col-span-1 flex flex-col justify-center gap-1 font-bold">
+                <div class="col-span-1 flex flex-col justify-center items-center md:items-start gap-1 font-bold">
                     <img src={fiberGlass.src} alt="" class="max-h-[500px] w-[150px]">
                     <h2 class="text-blueMain text-xl">Six inches</h2>
                     <h2 class="text-lg">fiberglass insulation</h2>
@@ -209,7 +202,7 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                 </div>
             </div>
             <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-6 font-bold">
-                <div class="md:ml-36 lg:ml-36 ml-8 bg-white rounded-2xl p-4 flex flex-col items-center justify-center">
+                <div class="md:ml-36 lg:ml-36 mx-8 bg-white rounded-2xl p-4 flex flex-col items-center justify-center">
                     <img src="" alt="">
                     <br>
                     <h2 class="text-black w-full text-start">Silo Cone</h2>
@@ -250,7 +243,7 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
                     </div>
                 </div>
             </div>
-            <div class="flex p-4 bg-white rounded-2xl mx-36">
+            <div class="flex p-4 bg-white rounded-2xl px-4 md:mx-36 w-full">
                 <div class="font-bold">
                     <h2 class="text-black">Sealed from Top to Bottom</h2><br>
                     <p>
@@ -262,54 +255,111 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
             </div>
          </div>
          <!-- Third Section -->
-          <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 tab-content text-xs md:text-base" data-tab-content="tab3">
-            <div class="flex flex-col items-center justify-center">
-                <div class="shadow-lg rounded-lg p-6 font-semibold w-full">
-                    <h1>Flexible Installation</h1>
-                    <br>
-                    <p class="font-normal text-grisT">
-                        Can be positioned up to 8 meters from the equipment for optimal site integration.
+          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full px-8 md:px-36">
+                <div class="bg-white rounded-2xl p-4 w-full">
+                    <p>
+                        The silos are built with durable, easy-to-maintain components that require
+                         minimal upkeep. Their robust construction and simple design reduce the need
+                          for frequent repairs, lowering long-term maintenance costs and increasing 
+                          the lifespan of the equipment.
+                    </p><br>
+                    <p>
+                        We understand the importance of keeping your equipment running nonstop. 
+                        The reliability of your silos, built to operate in a variety of weather 
+                        conditions—from intense heat to freezing temperatures—ensures consistent 
+                        performance and minimizes downtime, providing dependable operation 
+                        year-round.
                     </p>
                 </div>
-                <div class="p-6 w-full font-bold">
-                    <h1 class="text-lg md:text-2xl">Versatile Setup</h1>
-                    <p class="text-grisT">
-                        Works seamlessly in a dedicated control cabin or under a protective roof.
-                    </p>
-                </div>
-                <div class="p-6 font-bold w-full">
-                    <h1 class="text-lg md:text-2xl">Quick Adjustments</h1>
-                    <p class="text-grisT">
-                        Allows rapid changes to recipes or control settings to match project requirements.
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col items-center justify-start">
-                <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-base md:text-xl">Advanced Automation Options</h1>
-                    <br>
-                    <p class="text-grisT font-normal">
-                        Supports weight-based control for precise material 
-                        dosing or time-based control for process efficiency.
-                    </p>
-                </div>
-                <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-base md:text-xl">User-Friendly Interface</h1>
-                    <br>
-                    <p class="font-normal text-grisT">
-                        Simplifies configuration adjustments for operators with minimal downtime.
-                    </p>
+                <div class="w-full">
+                    <img src="" alt="">
                 </div>
             </div>
-            <div class="flex flex-col items-center justify-start">
-                <div class="shadow-lg rounded-lg p-6 font-bold w-full">
-                    <h1 class="text-base md:text-xl">Scalable Configuration</h1>
-                    <br>
-                    <p class="font-normal text-grisT">
-                        Easily adapts to upgrades or additional equipment integration.
+            <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full gap-6">
+                <div class="bg-blueMain rounded-r-2xl w-full h-full col-span-1 text-white flex flex-col gap-6 p-4 md:pl-36">
+                    <h2 class="text-xl">24/7 customer <br> service</h2>
+                    <p class="text-grisSubP">
+                        Our team is available around the clock, ready to assist you at any time,
+                         even on weekends and holidays.
                     </p>
+                    <Whatsbtn />
+                </div>
+                <div class="w-full col-span-2 flex flex-col items-center justify-center gap-6">
+                    <div class="flex gap-6 w-full">
+                        <Card>
+                            <h2 class="text-black">Quick Replacement Parts Availability:
+                            </h2>
+                            <p>
+                                To ensure minimal downtime, the silos are designed with standard, easily 
+                                replaceable parts. This reduces lead time for repairs and helps maintain smooth
+                                 operations without extended interruptions.
+                            </p>
+                        </Card>
+                        <Card>
+                            <h2 class="text-black">Corrosion-Resistant Coating:
+                            </h2>
+                            <p>
+                                Equipped with aspecialized corrosion-resistant coating that protects against wear and tear 
+                                from weather elements and chemicals, ensuring durability and functionality even in harsh 
+                                environments.
+                            </p>
+                        </Card>
+                    </div>
+                    <Card>
+                        <h2 class="text-black">
+                            High-Quality Materials, Manufactured In-House:
+                        </h2>
+                        </h2>
+                        <p>
+                            Our silos are constructed using premium materials sourced directly by us, ensuring superior 
+                            quality and long-lasting performance. By manufacturing every component in-house, we maintain
+                             strict quality control standards, guaranteeing that each silo meets the highest industry
+                              standards for durability, efficiency, and reliability.
+                        </p>
+                    </Card>
                 </div>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch items-center justify-center mt-10 px-4 md:px-36 w-full">
+                <!-- Primer Card -->
+                <div class="bg-[url('/Gallery/drum-mixer.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">MANUFACTURE</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      We manufacture directly without subcontractors, ensuring that every part meets our strict quality standards.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Segundo Card -->
+                <div class="bg-[url('/Gallery/Boxes.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">SPARE PARTS</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      Triaso spare parts are precisely designed to ensure optimal performance, extending both the lifespan of the part and the overall equipment.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Tercer Card -->
+                <div class="bg-[url('/Gallery/customdes.png')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">CUSTOM DESIGN</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      In addition to our standardized designs, we specialize in providing customized solutions tailored to meet the specific needs of our clients.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>    
     </div>

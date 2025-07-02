@@ -1,0 +1,32 @@
+---
+// src/components/Card.astro
+interface Props {
+  className?: string;
+  contentClass?: string;
+  // Props para slots
+  title?: string;
+  titleClass?: string;
+  text?: string;
+  textClass?: string;
+}
+
+const {
+  className = 'p-4 rounded-2xl w-full bg-white',
+  contentClass = '',
+  title = '',
+  titleClass = '',
+  text = '',
+  textClass = ''
+} = Astro.props;
+---
+
+<div class={`${className}`}>
+  <div class={`${contentClass}`}>
+    <!-- Slot para contenido completamente personalizado -->
+    <slot />
+    
+    <!-- Opción estructurada rápida -->
+    {title && <h3 class={`${titleClass || 'text-lg font-semibold text-gray-800'}`}>{title}</h3>}
+    {text && <p class={`${textClass || 'mt-2 text-gray-600'}`}>{text}</p>}
+  </div>
+</div>
