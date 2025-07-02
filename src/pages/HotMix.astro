@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import MainSection from '../components/HotMixStorage/MainSection.astro';
 import TabsHot from '../components/HotMixStorage/Tabs.astro';
 import SliderHotMix from "../components/HotMixStorage/SliderHotMix";
+import Tabs2 from "../components/HotMixStorage/Tabs2.astro";
 const images1 = [
   { src: '/Gallery/5.svg', title: 'Preservation of Quality',texto:'Perservation of quality  and integrity of the asphlt mix for up to 72 hours.' },
   { src: '/Gallery/6.svg', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
@@ -20,4 +21,5 @@ const images1 = [
     <MainSection/>
     <TabsHot />
     <SliderHotMix client:load images={images1}/>
+    <Tabs2 />
 </Layout>
