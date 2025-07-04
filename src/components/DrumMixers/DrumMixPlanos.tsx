@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import caseta1 from '../../assets/images/DrumMixers/caseta1.png';
 import caseta2 from '../../assets/images/DrumMixers/caseta2.png';
-import tab3Main from '../../assets/images/DrumMixers/tab3Main.png';
+import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.png';
 import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
 import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
 import tab6Left from '../../assets/images/DrumMixers/tab6Left.png';
@@ -204,7 +204,7 @@ const DrumMixPlanos = () => {
           />
           <img
             ref={imgRef}
-            src={tab3Main.src}
+            src={tab3Main2.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
