@@ -6,10 +6,10 @@ const { items, parentTitle, parentId } = Astro.props;
 const submenuId = `submenu-${parentTitle.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
-<div id={submenuId} class="submenu-level bg-blueMain overflow-y-auto">
+<div id={submenuId} class="submenu-level bg-bgMain overflow-y-auto">
   <!-- Botón "Atrás" -->
   <button 
-    class="flex items-center gap-2 p-4 text-white sticky top-0 z-10 bg-blueMain"
+    class="flex items-center gap-2 p-4 text-grisT sticky top-0 z-10 bg-bgMain"
     onclick={`goBack('${parentId}')`}
   >
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">

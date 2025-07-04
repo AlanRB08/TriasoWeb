@@ -18,7 +18,7 @@ const submenuId = `submenu-${item.title.toLowerCase().replace(/\s+/g, '-')}`;
   <div class="flex justify-between items-center">
     <a
       href={!hasChildren ? item.url : '#'}
-      class="block py-2 px-4 text-white hover:bg-redBg rounded-md transition-colors w-full text-lg font-bold"
+      class="block py-2 px-4 text-grisT hover:bg-grisSubP rounded-md transition-colors w-full text-lg font-bold"
       onclick={isFirstLevel && hasChildren ? `event.preventDefault(); openSubmenu('${submenuId}', 'main-menu')` : ''}
     >
       {item.title}
@@ -26,21 +26,19 @@ const submenuId = `submenu-${item.title.toLowerCase().replace(/\s+/g, '-')}`;
 
     {hasChildren && isFirstLevel && (
       <button
-        class="text-white px-4"
+        class="text-grisT px-4"
         onclick={`openSubmenu('${submenuId}', 'main-menu')`}
         aria-label="Abrir submenú"
       >
-        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#ffffff">
+        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#393939">
           <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     )}
 
     {hasChildren && !isFirstLevel && (
-      <button class="text-white px-4 toggle-submenu-button" data-target={`submenu-${level}-${item.title}`}>
-        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#ffffff">
-          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      <button class="text-grisT px-4 toggle-submenu-button" data-target={`submenu-${level}-${item.title}`}>
+        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#393939"><path d="M6 9L12 15L18 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </button>
     )}
   </div>
