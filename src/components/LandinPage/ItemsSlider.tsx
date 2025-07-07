@@ -65,6 +65,7 @@ export default function ItemsSlider({ images }: Props) {
       {!isMobile && (
         <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
           <button
+            aria-label="Previous slide"
             onClick={prevSlide}
             className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
           >
@@ -79,6 +80,7 @@ export default function ItemsSlider({ images }: Props) {
             </svg>
           </button>
           <button
+          aria-label="Next slide"
             onClick={nextSlide}
             className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
           >
