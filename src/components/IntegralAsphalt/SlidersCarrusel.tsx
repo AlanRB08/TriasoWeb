@@ -45,6 +45,7 @@ export default function SlidersCarrusel({ images }: Props) {
         {!isMobile && (
             <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
               <button
+              aria-label='Prev slide'
                 onClick={prevSlide}
                 className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
               >
@@ -59,6 +60,7 @@ export default function SlidersCarrusel({ images }: Props) {
                 </svg>
               </button>
               <button
+              aria-label='Next slide'
                 onClick={nextSlide}
                 className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
               >
@@ -133,6 +135,7 @@ export default function SlidersCarrusel({ images }: Props) {
                 className="w-full max-h-[80vh] object-contain rounded"
               />
               <button
+                aria-label='Close modal'
                 onClick={() => setModalIndex(null)}
                 className="absolute top-2 right-2 text-white bg-black/50 hover:bg-black px-3 py-1 rounded"
               >

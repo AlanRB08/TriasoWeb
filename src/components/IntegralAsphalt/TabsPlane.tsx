@@ -18,6 +18,7 @@ const TabsPlane = forwardRef<HTMLDivElement, {}>((props, ref) => {
       <div className="flex justify-around">
         {/* Botón 1 */}
         <button
+        aria-label='Lightweight chassis Tab'
           onClick={() => setActiveTab(1)}
           className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
             activeTab === 1
@@ -30,6 +31,7 @@ const TabsPlane = forwardRef<HTMLDivElement, {}>((props, ref) => {
 
         {/* Botón 2 */}
         <button
+        aria-label='Standard chassis Tab'
           onClick={() => setActiveTab(2)}
           className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
             activeTab === 2
@@ -42,6 +44,7 @@ const TabsPlane = forwardRef<HTMLDivElement, {}>((props, ref) => {
 
         {/* Botón 3 */}
         <button
+        aria-label='Reinforced chassis Tab'
           onClick={() => setActiveTab(3)}
           className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
             activeTab === 3
