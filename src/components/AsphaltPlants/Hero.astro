@@ -1,9 +1,31 @@
 ---
-import Hero1 from '../../assets/images/AsphaltPlant/HeroAsphalt.png';
+// Componente HeroSection (src/components/HeroSection.astro)
+import { Image } from 'astro:assets';
+
+export interface Props {
+  heroImage: ImageMetadata;
+  title: string;
+  altText: string;
+}
+
+const { heroImage, title, altText } = Astro.props;
 ---
-<div class="w-full relative mt-16 overflow-hidden"> <!-- Contenedor relativo para posicionamiento absoluto interno -->
-    <img src={Hero1.src} alt="" class="w-full">
-    <div class="absolute bottom-0 md:bottom-5 right-0 z-40 p-4 md:pr-52 overflow-hidden"> <!-- Posiciona en esquina inferior derecha -->
-        <h1 class="text-grisT text-2xl md:text-5xl font-bold">ASPHALT PLANTS</h1>
-    </div>
+
+<div class="w-full relative mt-16 overflow-hidden">
+  <Image
+    src={heroImage}
+    widths={[400, 600, 800, 1000, 1200, 1400, 1600, 1920]}
+    sizes="100vw"
+    format="webp"
+    quality={80}
+    alt={altText}
+    class="w-full h-auto object-cover min-h-[50vh]"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  
+  <div class="absolute bottom-0 md:bottom-5 right-0 z-40 p-4 md:pr-52 overflow-hidden">
+    <h1 class="text-grisT text-2xl md:text-5xl font-bold">{title}</h1>
+  </div>
 </div>

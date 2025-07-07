@@ -1,12 +1,13 @@
 ---
 import img1 from '../../assets/images/AsphaltPlant/cold1.png';
 import img2 from '../../assets/images/AsphaltPlant/cold2.png';
+import Image from 'astro/components/Image.astro';
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold px-8 md:px-52 mt-10 md:mt-24">
     <h1 class="lg:text-4xl text-2xl text-blueMain text-start w-full">Cold</h1>
     <h1 class="lg:text-4xl text-2xl text-grisT text-start w-full">Mix Plants</h1>
     <div class="grid grid-cols-1 xl:grid-cols-6 gap-8 mt-10">
-        <img src={img1.src} alt="" class="col-span-4 hidden md:block">
+        <Image src={img1} alt="" class="col-span-4 hidden md:block">
         <div class="col-span-4 md:col-span-2 ">
             <p class="text-grisP lg:text-lg md:text-base text-justify">
                 Cold mix plants are designed to mix a variety of materials for asphalt 
@@ -16,7 +17,7 @@ import img2 from '../../assets/images/AsphaltPlant/cold2.png';
                 dose the materials, allowing for precise control over the mix.
             </p>
             <br>
-            <img src={img1.src} alt="" class="col-span-4 block md:hidden my-10">
+            <Image src={img1} alt="" class="col-span-4 block md:hidden my-10">
             <p class="text-grisP lg:text-lg md:text-base text-justify">
                 These plants are highly
                  versatile, capable of handling different types of aggregates, making them ideal for road 
@@ -39,7 +40,7 @@ import img2 from '../../assets/images/AsphaltPlant/cold2.png';
                  
             </p>
             <br>
-            <img src={img2.src} alt="" class="w-full block md:hidden my-10">
+            <Image src={img2} alt="" class="w-full block md:hidden my-10">
             <p class="text-grisP lg:text-lg md:text-base text-justify">
                 The pugmill’s efficient mixing process allows for precise control, making it 
                  suitable for a wide range of applications where consistent material quality is 
@@ -52,7 +53,7 @@ import img2 from '../../assets/images/AsphaltPlant/cold2.png';
         <div class="col-span-2 hidden md:flex md:flex-col items-start justify-evenly">
             <h1 class="lg:text-3xl text-xl text-blueMain">Pugmill</h1>
             <br>
-            <img src={img2.src} alt="" class="w-full">
+            <Image src={img2} alt="" class="w-full">
         </div>
     </div>
 </div>

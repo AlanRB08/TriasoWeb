@@ -1,5 +1,5 @@
 ---
-import img1 from '../../assets/images/AsphaltPlant/render3.png';
+import Image from 'astro/components/Image.astro';
 import img2 from '../../assets/images/AsphaltPlant/Aislamiento.png';
 import img3 from '../../assets/images/AsphaltPlant/tanqueV.png';
 import img4 from '../../assets/images/AsphaltPlant/tanks1.png';
@@ -51,9 +51,9 @@ import img5 from '../../assets/images/AsphaltPlant/agitators1.png';
             <li>Agitators for any application</li>
             <li>Incorporators for all types of polymers</li>
         </ul>
-        <img src={img4.src} alt="" class="mt-4 hidden md:block">
+        <Image src={img4} alt="" class="mt-4 hidden md:block">
     </div>
-    <img src={img4.src} alt="" class="mt-4 block md:hidden">
+    <Image src={img4} alt="" class="mt-4 block md:hidden">
     <div class="grid grid-cols-1 xl:grid-cols-2 justify-center items-start gap-8 mt-20">
         <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT gap-4">
             <h1 class="text-black text-xl lg:text-2xl mb-4">AGITATORS FOR ADDITIVES <br> AND POLYMERS</h1>
@@ -78,11 +78,11 @@ import img5 from '../../assets/images/AsphaltPlant/agitators1.png';
                         <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Maintaining homogeneity in polymer-modified asphalts.</li>
                     </ul>
                 </ul>
-                <img src={img5.src} alt="" class="rounded-2xl mx-5 object-cover">
+                <Image src={img5} alt="" class="rounded-2xl mx-5 object-cover">
             </div>
             <div class="grid grid-cols-3">
                 <div class="col-spa-1 flex items-center">
-                    <img src={img2.src} alt="" class="h-[90%]">
+                    <Image src={img2} alt="" class="h-[90%]">
                 </div>
                 <div class="col-span-2 bg-white rounded-2xl p-4">
                     <h1 class="text-black">Two inches fiberglass insulation</h1><br>
@@ -103,7 +103,7 @@ import img5 from '../../assets/images/AsphaltPlant/agitators1.png';
                 standard solution or a tailor-made design, we ensure your tank is built to fit your exact
                  requirements—with the option of stationary vertical asphalt tanks or mobile asphalt tanks.</p>
             </div>
-            <img src={img3.src} alt="" class="w-full md:h-[100%] self-center mt-4 md:mt-0">
+            <Image src={img3} alt="" class="w-full md:h-[100%] self-center mt-4 md:mt-0">
           </div>
     </div>
 </div>
