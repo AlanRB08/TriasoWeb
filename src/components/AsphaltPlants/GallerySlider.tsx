@@ -44,6 +44,7 @@ export default function GallerySlider({ images }: Props) {
       {!isMobile && (
           <div className="absolute bottom-2 right-4 flex gap-2 justify-end">
             <button
+              aria-label="Previous slide"
               onClick={prevSlide}
               className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
             >
@@ -58,6 +59,7 @@ export default function GallerySlider({ images }: Props) {
               </svg>
             </button>
             <button
+              aria-label="Next slide"
               onClick={nextSlide}
               className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
             >
@@ -126,6 +128,7 @@ export default function GallerySlider({ images }: Props) {
               className="w-full max-h-[80vh] object-contain rounded"
             />
             <button
+              aria-label="Close modal"
               onClick={() => setModalIndex(null)}
               className="absolute top-2 right-2 text-white bg-black/50 hover:bg-black px-3 py-1 rounded"
             >

@@ -14,6 +14,7 @@ export default function Tabs() {
       <div className="flex lg:flex-col items-stretch justify-around gap-4 md:gap-20">
         {images.map((img, index) => (
           <button
+            aria-label="Select tab"
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center md:text-start font-normal border-b-2 md:pr-4 md:w-8/12 text-sm md:text-base ${
