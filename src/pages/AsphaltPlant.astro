@@ -12,6 +12,7 @@ import ColdMix from '../components/AsphaltPlants/ColdMix.astro';
 import MexManufactur from '../components/AsphaltPlants/MexManufactur.astro';
 import Spare from '../components/AsphaltPlants/Spare.astro';
 import GallerySlider from '../components/AsphaltPlants/GallerySlider';
+import Hero1 from '../assets/images/AsphaltPlant/HeroAsphalt.png';
 const images1 = [
   { src: '/Gallery/fab-silo.jpg', title: 'Silo Manufacturing' },
   { src: '/Gallery/oil-heater.jpg', title: 'Oil heater thermal insulation' },
@@ -27,16 +28,36 @@ const images1 = [
 
 ---
 <Layout title="Aphalt Plants">
-    <Hero />
-    <MainSection />
-    <DrumMixers />
-    <Baghouses />
-    <AsphaltTanks />
-    <BinUnits />
-    <HeatingSystem />
-    <StorageSilos />
-    <ColdMix />
-    <MexManufactur />
+  <head>
+    <!-- Preload para la imagen Hero -->
+    <link 
+      rel="preload" 
+      href={Hero1.src} 
+      as="image" 
+      imagesrcset={`
+        ${Hero1.src}?width=400 400w,
+        ${Hero1.src}?width=800 800w,
+        ${Hero1.src}?width=1200 1200w
+      `}
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+  </head>
+
+  <Hero 
+    heroImage={Hero1} 
+    title="ASPHALT PLANTS" 
+    altText="Modern asphalt production plant with heavy machinery" 
+  />
+    <MainSection client:visible />
+    <DrumMixers client:visible/>
+    <Baghouses client:visible/>
+    <AsphaltTanks client:visible/>
+    <BinUnits client:visible/>
+    <HeatingSystem client:visible/>
+    <StorageSilos client:visible/>
+    <ColdMix client:visible/>
+    <MexManufactur client:visible/>
     <GallerySlider client:load images={images1} />
-    <Spare /> 
+    <Spare client:visible/> 
 </Layout>

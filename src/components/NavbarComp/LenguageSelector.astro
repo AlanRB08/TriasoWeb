@@ -1,82 +1,85 @@
 ---
 import idiomaIcon from "../../assets/iconos/idioma.png";
-import mxIcon from "../../assets/iconos/mxIcon.png";
+import mxIcon from "../../assets/iconos/mxIcon.jpeg";
 import usaIcon from "../../assets/iconos/usaIcon.png";
-const currentLang: 'es' | 'en' = Astro.cookies.get('lang')?.value === 'en' ? 'en' : 'es';
-const LANGS = {
-  es: { label: 'ES', flag: {mxIcon} },
-  en: { label: 'EN', flag: {usaIcon}} 
+
+// Configuración de los sitios web por idioma
+const SITES = {
+  es: { 
+    label: 'ES', 
+    flag: mxIcon,
+    url: 'https://tusitio.com/es'  // Reemplaza con tu URL en español
+  },
+  en: { 
+    label: 'EN', 
+    flag: usaIcon,
+    url: 'https://yoursite.com/en'  // Reemplaza con tu URL en inglés
+  } 
 };
+
+// Determinar el idioma actual basado en la URL
+const currentLang = typeof window !== 'undefined' ? 
+  (window.location.href.includes('/en') ? 'en' : 'es') : 'es';
 ---
 
 <div class="hidden md:block relative inline-block text-left" id="lang-switcher">
   <button
     id="toggle-button"
     type="button"
-    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold hover:text-red-500 hover:pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
     aria-haspopup="true"
     aria-expanded="false"
+    aria-controls="dropdown-menu"
   >
     <span>
-      <img src={idiomaIcon.src} alt="" class="w-4 h-4" />
+      <img src={idiomaIcon.src} alt="Idioma" class="w-4 h-4" />
     </span>
-    <span>{LANGS[currentLang].label}</span>
-    <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <span>{SITES[currentLang].label}</span>
+    <svg class="ml-1 h-4 w-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
   </button>
 
   <div
     id="dropdown-menu"
-    class="invisible opacity-0 transition-opacity absolute right-0 
-    z-10 mt-2 w-40 origin-top-right bg-white shadow-md 
-    hover:pointer focus:outline-none"
+    class="invisible opacity-0 transition-all duration-200 absolute right-0 
+    z-10 mt-2 w-40 origin-top-right bg-white shadow-md rounded-md"
   >
     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="toggle-button">
-      {Object.entries(LANGS).map(([code, { label, flag }]) => (
-        <button
-          type="button"
-          class={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+      {Object.entries(SITES).map(([code, { label, flag, url }]) => (
+        <a
+          href={url}
+          class={`flex items-center gap-2 w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
             code === currentLang ? 'text-blue-600 font-semibold' : 'text-gray-700'
           }`}
-          data-lang={code}
           role="menuitem"
         >
-          {flag}{label}
-        </button>
+          <img src={flag.src} alt="" class="w-4 h-4" />
+          {label}
+        </a>
       ))}
     </div>
   </div>
 </div>
 
-<script type="module">
-  const toggleButton = document.getElementById('toggle-button');
-  const dropdown = document.getElementById('dropdown-menu');
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggle-button');
+    const dropdown = document.getElementById('dropdown-menu');
 
-  toggleButton?.addEventListener('click', () => {
-    const isOpen = dropdown?.classList.contains('opacity-100');
-    dropdown?.classList.toggle('invisible', isOpen);
-    dropdown?.classList.toggle('opacity-0', isOpen);
-    dropdown?.classList.toggle('opacity-100', !isOpen);
-    dropdown?.classList.toggle('visible', !isOpen);
-  });
-
-  document.querySelectorAll('#dropdown-menu [data-lang]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const lang = (e.currentTarget).dataset.lang;
-      if (!lang) return;
-      localStorage.setItem('lang', lang);
-      document.cookie = `lang=${lang}; path=/`;
-      location.reload();
+    // Toggle dropdown
+    toggleButton?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown?.classList.contains('opacity-100');
+      dropdown?.classList.toggle('invisible', isOpen);
+      dropdown?.classList.toggle('opacity-0', isOpen);
+      dropdown?.classList.toggle('opacity-100', !isOpen);
     });
-  });
 
-  // Close dropdown on outside click
-  document.addEventListener('click', (e) => {
-    const container = document.getElementById('lang-switcher');
-    if (!container?.contains(e.target)) {
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
       dropdown?.classList.add('invisible', 'opacity-0');
-      dropdown?.classList.remove('opacity-100', 'visible');
-    }
+      dropdown?.classList.remove('opacity-100');
+    });
   });
 </script>
