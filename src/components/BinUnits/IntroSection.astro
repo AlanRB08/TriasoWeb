@@ -1,6 +1,7 @@
 ---
 import Separator from "../unitComponents/Separator.astro";
 import img1 from '../../assets/images/AsphaltPlant/drum3.png';
+import Image from "astro/components/Image.astro";
 ---
 <div class="w-full flex flex-col items-start justify-center mt-20">
     <div class="px-8 md:px-52">
@@ -23,7 +24,7 @@ import img1 from '../../assets/images/AsphaltPlant/drum3.png';
         <div class="bg-blueMain md:rounded-l-2xl p-4 font-bold flex flex-col justify-around gap-4">
             <h1 class="text-white md:text-4xl text-2xl">From 10 or 20 tons</h1>
             <div>
-                <img src={img1.src} alt="">
+                <Image src={img1} alt="">
             </div>
         </div>
     </div>

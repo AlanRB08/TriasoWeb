@@ -5,6 +5,7 @@ import item3 from '../../assets/images/DrumMixers/a4.png';
 import item4 from '../../assets/images/DrumMixers/a2.png';
 import item5 from '../../assets/images/DrumMixers/a6.png';
 import item6 from '../../assets/images/DrumMixers/a1.png';
+import Image from 'astro/components/Image.astro';
 ---
 <div class="w-full px-8 lg:px-52 mt-20 md:mt-32 font-bold">
     <h1 class="text-2xl lg:text-4xl text-grisT">DRUM MIXERS</h1><br>
@@ -30,27 +31,27 @@ import item6 from '../../assets/images/DrumMixers/a1.png';
         </p>
         <div class="grid grid-cols-3 md:grid-cols-6 items-start justify-around gap-5 my-10 w-full">
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item1.src} alt="">
+                <Image src={item1} alt="">
                 <p>Inlet Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item2.src} alt="">
+                <Image src={item2} alt="">
                 <p>Pusher Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item3.src} alt="">
+                <Image src={item3} alt="">
                 <p>Drying Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item4.src} alt="">
+                <Image src={item4} alt="">
                 <p>Rap Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item5.src} alt="">
+                <Image src={item5} alt="">
                 <p>Radiation Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <img src={item6.src} alt="">
+                <Image src={item6} alt="">
                 <p>Mixing Flight</p>
             </div>
         </div>
