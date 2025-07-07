@@ -8,7 +8,8 @@ const submenuId = `submenu-${parentTitle.toLowerCase().replace(/\s+/g, '-')}`;
 
 <div id={submenuId} class="submenu-level bg-bgMain overflow-y-auto">
   <!-- Botón "Atrás" -->
-  <button 
+  <button
+    aria-label="Go back button" 
     class="flex items-center gap-2 p-4 text-grisT sticky top-0 z-10 bg-bgMain"
     onclick={`goBack('${parentId}')`}
   >
