@@ -116,12 +116,14 @@ export default function GallerySlider2({ images }: Props) {
       {windowWidth >= 768 && (
           <div className="text-end mr-4 flex gap-2 justify-end mt-4">
             <button
+              aria-label="Previous slide"
               onClick={prevSlide}
               className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
             >
               <svg width="24px" height="24px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M15 6L9 12L15 18" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </button>
             <button
+              aria-label="Next slide"
               onClick={nextSlide}
               className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
             >
@@ -143,6 +145,7 @@ export default function GallerySlider2({ images }: Props) {
               className="w-full max-h-[80vh] object-contain rounded-lg"
             />
             <button
+              aria-label="Close modal"
               onClick={(e) => {
                 e.stopPropagation();
                 setModalIndex(null);
