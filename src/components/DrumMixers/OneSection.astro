@@ -5,6 +5,7 @@ import img2 from '../../assets/images/AsphaltPlant/Aislamiento.png';
 import img3 from '../../assets/images/AsphaltPlant/render.png';
 import gif from '../../assets/images/DrumMixers/singlegift.gif';
 import drumT from '../../assets/images/DrumMixers/drumT.png';
+import Image from 'astro/components/Image.astro';
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold my-20">
     <div class="lg:px-52 px-8">
@@ -26,7 +27,7 @@ import drumT from '../../assets/images/DrumMixers/drumT.png';
     </h2>
     <div class="bg-blueMain w-full flex justify-end">
         <div class="flex flex-col md:flex-row h-auto md:h-[150px] w-full md:w-3/4 my-6">
-            <img src={img1.src} alt="" class="w-full md:w-auto md:rounded-l-2xl md:rounded-tr-none">
+            <Image src={img1} alt="" class="w-full md:w-auto md:rounded-l-2xl md:rounded-tr-none">
             <div class="bg-grisT text-white flex h-full p-4 md:pr-24">
                 <p class="text-justify">We give you options to match your project demands—offering drum shells 
                     in 5/16", 3/8" or 1/2" thicknesses. Every shell, no matter the gauge, 
@@ -49,7 +50,7 @@ import drumT from '../../assets/images/DrumMixers/drumT.png';
         </div>
         <div class="col-span-2 grid grid-cols-1 md:grid-cols-4 items-center justify-center h-full">
             <div class="col-span-1 h-full">
-                <img src={img2.src} alt="">
+                <Image src={img2} alt="">
             </div>
             <div class="col-span-3 h-full">
                 <h1>AQUI FALTA UNA IMAGEN</h1>
@@ -73,7 +74,7 @@ import drumT from '../../assets/images/DrumMixers/drumT.png';
             </p>
         </div>
     </div>
-    <img src={img3.src} alt="" class="mt-10">
+    <Image src={img3} alt="" class="mt-10">
     <div class="lg:px-52 px-8 flex flex-col items-center justify-center w-full">
         <h2 class="text-lg md:text-xl mb-10 text-center">With Triaso, Become the Exclusive Provider
              of Hot Mix for All Paving Projects in Your Region
@@ -113,7 +114,7 @@ import drumT from '../../assets/images/DrumMixers/drumT.png';
         <h1 class="w-full items-start text-xl md:text-2xl">DRUM TIRES & TRUNNIONS</h1><br>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full text-grisT">
             <div class="w-full flex flex-col items-center justify-center">
-                <img src={drumT.src} alt="">
+                <Image src={drumT} alt="">
                 <div class="bg-white rounded-2xl p-4">
                     <p class="text-justify">Special high-carbon alloy steel trunnions and tires forged and normalized, 
                         with fixed central pivot roller bases to prevent lateral misalignment and facilitate 
@@ -155,7 +156,7 @@ import drumT from '../../assets/images/DrumMixers/drumT.png';
                    your plant running efficiently with minimal downtime.
             </p>
             <div class="flex items-center justify-center">
-                <img src={gif.src} alt="">
+                <Image src={gif} alt="">
             </div>
         </div>
 
