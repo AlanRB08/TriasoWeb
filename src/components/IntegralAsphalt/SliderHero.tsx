@@ -68,6 +68,7 @@ const SliderHero = () => {
 
       {/* Botones navegación */}
       <button
+        aria-label='Previous slide'
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full"
         onClick={() =>
           setCurrentSlide((currentSlide - 1 + Sliders.length) % Sliders.length)
@@ -76,6 +77,7 @@ const SliderHero = () => {
         ‹
       </button>
       <button
+      aria-label='Next slide'
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full"
         onClick={() => setCurrentSlide((currentSlide + 1) % Sliders.length)}
       >

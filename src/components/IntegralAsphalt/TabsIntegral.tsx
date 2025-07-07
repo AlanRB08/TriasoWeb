@@ -15,6 +15,7 @@ export default function TabsIntegral() {
       <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
         {images.map((img, index) => (
           <button
+            aria-label='Tab Selector'
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
