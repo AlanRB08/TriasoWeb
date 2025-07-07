@@ -28,7 +28,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300 pt-10">
       <!-- About -->
       <div>
-        <h3 class="text-white font-semibold mb-2">About Triaso</h3>
+        <h2 class="text-white font-semibold mb-2">About Triaso</h2>
         <hr class="border-blueMain w-12 mb-4" />
         <img src={Logo.src} alt="Triaso logo" class="mb-4 w-32" />
         <p>
@@ -67,6 +67,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
           <div class="flex items-center gap-2">
             <img src={Phone.src} alt="">
             <input
+              aria-label="Phone number"
               type="text"
               value="(248)-613-4885"
               readonly
@@ -76,6 +77,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
           <div class="flex items-center gap-2">
             <img src={Mail.src} alt="">
             <input
+            aria-label="Email address"
               type="text"
               value="sales@triasous.com"
               readonly

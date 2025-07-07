@@ -2,6 +2,7 @@
 import "../styles/global.css"
 import Footer from "../components/Main/Footer.astro"
 import Navbar from "../components/Main/Navbar.astro"
+const { title = "TRIASOUS", description ="Manufacturer of high-quality asphalt plants and equipment. Durable, efficient, and built for top performance in road construction projects worldwide." } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,6 +12,10 @@ import Navbar from "../components/Main/Navbar.astro"
 		<meta name="viewport" content="width=device-width" >
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta
+			name="description"
+			content={description}>
 		<title>Astro Basics</title>
 	</head>
 	<body class="min-h-screen flex flex-col font-sans bg-bgMain">
