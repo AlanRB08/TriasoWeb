@@ -30,6 +30,7 @@ const PlanoSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
+  const blueRef = useRef<HTMLImageElement | null>(null);
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -70,29 +71,46 @@ const PlanoSection = () => {
     const options = optionsRef.current;
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
+    const blue = blueRef.current;
   
     // Verificación de elementos
-    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) return;
+    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2 || !blue ) return;
 
     // Reset si no es la pestaña activa
-    if (activeTab !== 3) {
-      gsap.set(box, {
-        y: 0,
-        opacity: 0,
-        display: 'none',
-      });
-      return;
-    }
-  
-    // Configuración inicial
-    gsap.set(box, {
-      opacity: 1,
-      display: 'block',
-    });
-  
-    gsap.set(img, {
-      clipPath: "inset(0% 0% 0% 0%)",
-    });
+  if (activeTab !== 3) {
+  gsap.set(box, {
+    y: 0,
+    opacity: 0,
+    display: 'none',
+  });
+  gsap.set(blue, {
+    opacity: 0,
+    display: 'none',
+    visibility: "hidden",
+  });
+  gsap.set(img, {
+    opacity: 0,
+    display: 'none',
+    clipPath: "inset(0% 0% 100% 0%)", // <- esta línea es importante
+  });
+  return;
+}
+
+// Configuración inicial cuando el tab es 3
+gsap.set(box, {
+  opacity: 1,
+  display: 'block',
+});
+gsap.set(blue, {
+  opacity: 1,
+  display: 'block',
+  visibility: "visible",
+});
+gsap.set(img, {
+  opacity: 1,
+  display: 'block',
+  clipPath: "inset(0% 0% 0% 0%)",
+});
 
     // Cálculo de posiciones absolutas
     const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
@@ -171,7 +189,7 @@ const PlanoSection = () => {
       },
     });
   
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(true);
   
     return () => {
       scrollTrig?.kill();
@@ -206,8 +224,9 @@ const PlanoSection = () => {
              z-20 w-[230px] h-[628px]"
         >
           <img
+            ref={blueRef}
             src={reinforcedBlue.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover hidden"
             alt="Imagen de fondo"
           />
           <img

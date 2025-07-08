@@ -18,7 +18,7 @@ export default function Tabs() {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center md:text-start font-normal border-b-2 md:pr-4 md:w-8/12 text-sm md:text-base ${
-              activeIndex === index ? "border-red-500" : "border-transparent"
+              activeIndex === index ? "border-red-500 text-black" : "border-transparent"
             }`}
           >
             {index === 0 ? (
