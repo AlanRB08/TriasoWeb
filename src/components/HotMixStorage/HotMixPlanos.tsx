@@ -198,9 +198,9 @@ const HotMixPlanos = () => {
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
-      display: activeTab === 3 ? 'block' : 'none',
-      opacity: activeTab === 3 ? 1 : 0,
-      visibility: activeTab === 3 ? 'visible' : 'hidden',
+      display: activeTab === 1 ? 'block' : 'none',
+      opacity: activeTab === 1 ? 1 : 0,
+      visibility: activeTab === 1 ? 'visible' : 'hidden',
     }}
           />
           <img
