@@ -104,7 +104,7 @@ gsap.set(box, {
 gsap.set(blue, {
   opacity: 1,
   display: 'block',
-  visibility: "visible",
+  visibility: 'visible',
 });
 gsap.set(img, {
   opacity: 1,
@@ -226,8 +226,13 @@ gsap.set(img, {
           <img
             ref={blueRef}
             src={reinforcedBlue.src}
-            className="absolute top-0 left-0 w-full h-full object-cover hidden"
+            className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
+            style={{
+      display: activeTab === 3 ? 'block' : 'none',
+      opacity: activeTab === 3 ? 1 : 0,
+      visibility: activeTab === 3 ? 'visible' : 'hidden',
+    }}
           />
           <img
             ref={imgRef}
@@ -1359,7 +1364,7 @@ gsap.set(img, {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
