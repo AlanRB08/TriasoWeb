@@ -615,7 +615,7 @@ const BinPlanosSection = () => {
 
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-1'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
@@ -634,7 +634,7 @@ const BinPlanosSection = () => {
                             <p>20 tons</p>
                         </div>
                     </div>
-                    <div className='text-white font-normal col-span-1'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
                             <h1>Total length (including hitch):</h1>
@@ -658,7 +658,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
@@ -943,8 +943,8 @@ const BinPlanosSection = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-1'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
@@ -963,7 +963,7 @@ const BinPlanosSection = () => {
                             <p>20 tons</p>
                         </div>
                     </div>
-                    <div className='text-white font-normal col-span-1'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
                             <h1>Total length (including hitch):</h1>
@@ -987,7 +987,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
@@ -1272,8 +1272,8 @@ const BinPlanosSection = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-1'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
@@ -1316,7 +1316,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
@@ -1600,8 +1600,8 @@ const BinPlanosSection = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-1'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                    <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Length:</h1>
@@ -1644,7 +1644,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
@@ -1924,7 +1924,7 @@ const BinPlanosSection = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal col-span-1'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
@@ -1968,7 +1968,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
@@ -2252,7 +2252,7 @@ const BinPlanosSection = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal col-span-1'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE UNIT DIMENSIONS</h1>
                         <div className='flex justify-between'>
@@ -2296,7 +2296,7 @@ const BinPlanosSection = () => {
                         </div>
                     </div>
   
-                    <div className='text-white font-normal col-span-2'>
+                    <div className='text-white font-normal col-span-1 md:col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN OPTIONS</h1>
                         <div className='grid grid-cols-2 justify-center items-center'>
                             <ul className='ml-6 list-disc'>
