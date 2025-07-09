@@ -279,7 +279,7 @@ gsap.set(img, {
       {/* Contenedor de los botones */}
       <div id='options' ref={optionsRef} className='w-full'>
       <h1 className='text-white lg:text-xl text-lg text-center mb-10'>OPTIONS:</h1>
-      <div className="flex justify-around">
+      <div className="flex flex-col md:flex-row justify-around gap-3">
         {/* Botón 1 */}
         <button
           onClick={() => setActiveTab(1)}

@@ -286,11 +286,11 @@ const BinPlanosSection = () => {
       </div>
 
       <h1 className='text-white lg:text-xl text-lg text-center mb-10'>NUMBER OF UNITS:</h1>
-      <div className="flex gap-10 justify-center">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-3 justify-center items-center w-full justify-items-center">
         {/* Botón 1 */}
         <button
           onClick={() => setActiveTab(1)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${
             activeTab === 1
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -302,7 +302,7 @@ const BinPlanosSection = () => {
         {/* Botón 2 */}
         <button
           onClick={() => setActiveTab(2)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${
             activeTab === 2
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -314,7 +314,7 @@ const BinPlanosSection = () => {
         {/* Botón 3 */}
         <button
           onClick={() => setActiveTab(3)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
             activeTab === 3
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -324,7 +324,7 @@ const BinPlanosSection = () => {
         </button>
         <button
           onClick={() => setActiveTab(4)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
             activeTab === 4
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -334,7 +334,7 @@ const BinPlanosSection = () => {
         </button>
         <button
           onClick={() => setActiveTab(5)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
             activeTab === 5
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -344,7 +344,7 @@ const BinPlanosSection = () => {
         </button>
         <button
           onClick={() => setActiveTab(6)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
             activeTab === 6
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
