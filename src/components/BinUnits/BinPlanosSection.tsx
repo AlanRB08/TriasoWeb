@@ -361,8 +361,8 @@ const BinPlanosSection = () => {
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -403,10 +403,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tolva1Main.src} alt="" className='w-[230px] h-[628px]' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -690,8 +690,8 @@ const BinPlanosSection = () => {
 
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -732,10 +732,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tolva2Main.src} alt="" className='w-[230px] h-auto' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -1019,8 +1019,8 @@ const BinPlanosSection = () => {
 
         {activeTab === 3 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full' id='column1' ref={columnGrid1}>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -1061,10 +1061,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-[628px] order-1 md:order-2'>
                 
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1' id='column2' ref={columnGrid2}>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -1347,8 +1347,8 @@ const BinPlanosSection = () => {
         )}
         {activeTab === 4 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -1389,10 +1389,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tolva4Main.src} alt="" className='w-[150px] h-auto' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -1675,8 +1675,8 @@ const BinPlanosSection = () => {
         )}
         {activeTab === 5 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -1717,10 +1717,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tolva5Main.src} alt="" className='w-[150px] h-auto' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -1999,8 +1999,8 @@ const BinPlanosSection = () => {
         )}
         {activeTab === 6 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -2041,10 +2041,10 @@ const BinPlanosSection = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tolva6Main.src} alt="" className='w-[150px] h-auto' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>

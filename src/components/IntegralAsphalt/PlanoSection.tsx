@@ -324,9 +324,9 @@ gsap.set(img, {
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-center gap-4'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
+            <div className='flex flex-col w-full items-start justify-center gap-4 order-2 md:order-1'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
                         <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
@@ -382,10 +382,10 @@ gsap.set(img, {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={supportMain.src} alt="" className='w-[230px] h-[628px]' />
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1'>
+            <div className='flex flex-col items-start justify-start w-full h-full gap-4 col-span-1 order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -699,8 +699,8 @@ gsap.set(img, {
 
         {activeTab === 2 && (
           <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
@@ -757,10 +757,10 @@ gsap.set(img, {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={standarMain.src} alt="" className='w-[230px] h-[628px]' />
             </div>
-            <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full'>
+            <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -1077,9 +1077,9 @@ gsap.set(img, {
 
         {activeTab === 3 && (
           <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-center gap-4' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-center gap-4 order-2 md:order-1' id='column1' ref={columnGrid1}>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                     <ul className='ml-6 list-disc'>
                         <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
@@ -1135,10 +1135,10 @@ gsap.set(img, {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+            <div className='col-span-2 flex items-start justify-center w-full h-[628px] order-1 md:order-2'>
                 
             </div>
-            <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full' id='column2' ref={columnGrid2}>
+            <div className='flex flex-col items-start justify-start gap-4 w-full h-full order-3 md:order-3' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
