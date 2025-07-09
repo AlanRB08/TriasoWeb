@@ -258,7 +258,7 @@ const DrumMixPlanos = () => {
         {/* Botón 1 */}
         <button
           onClick={() => setActiveTab(1)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
             activeTab === 1
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -270,7 +270,7 @@ const DrumMixPlanos = () => {
         {/* Botón 2 */}
         <button
           onClick={() => setActiveTab(2)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
             activeTab === 2
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -282,7 +282,7 @@ const DrumMixPlanos = () => {
         {/* Botón 3 */}
         <button
           onClick={() => setActiveTab(3)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
             activeTab === 3
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -293,7 +293,7 @@ const DrumMixPlanos = () => {
         {/* Botón 4 */}
         <button
           onClick={() => setActiveTab(1)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
             activeTab === 1
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -307,7 +307,7 @@ const DrumMixPlanos = () => {
         {/* Botón 5 */}
         <button
           onClick={() => setActiveTab(5)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
             activeTab === 5
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -319,7 +319,7 @@ const DrumMixPlanos = () => {
         {/* Botón 6 */}
         <button
           onClick={() => setActiveTab(6)}
-          className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+          className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
             activeTab === 6
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
@@ -331,7 +331,7 @@ const DrumMixPlanos = () => {
         {/* Botón 7 */}
         <button
           onClick={() => setActiveTab(1)}
-          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
+          className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
             activeTab === 1
               ? 'text-gray-900 bg-white border-white'
               : 'text-white bg-transparent border-white'
