@@ -615,7 +615,7 @@ gsap.set(img, {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
@@ -986,7 +986,7 @@ gsap.set(img, {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
                         <div className='flex justify-between'>
