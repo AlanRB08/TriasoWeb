@@ -13,9 +13,10 @@ import tab5Right from '../../assets/images/DrumMixers/tab5Right.png';
 import tab1Main from '../../assets/images/DrumMixers/tab1Main.png';
 import tab1Left from '../../assets/images/DrumMixers/tab1Left.png';
 import tab1Right from '../../assets/images/DrumMixers/tab5Right.png';
-import reinfo1 from '../../assets/images/IntegralAsphalt/reinfo1.png';
-import supportRight from '../../assets/images/IntegralAsphalt/supportright.png';
-import supportLeft from '../../assets/images/IntegralAsphalt/supportleft.png';
+import tab2Main from '../../assets/images/DrumMixers/tab2Main.png';
+import tab2Left from '../../assets/images/DrumMixers/tab2L.png';
+import tab6Main from '../../assets/images/DrumMixers/tab6M.png';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -975,7 +976,7 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                        <img src={tab1Main.src} alt="" className='w-[500px] h-auto' />
+                        <img src={tab2Main.src} alt="" className='w-[500px] h-auto' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1235,7 +1236,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                                 <div className='h-[185px] w-[744px] flex justify-center items-center'>
-                                    <img src={tab1Right.src} alt="" className='max-w-full max-h-full object-contain'/>
+                                    <img src={tab2Left.src} alt="" className='max-w-full max-h-full object-contain'/>
                                 </div>
                             </div>
 
@@ -2653,7 +2654,7 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                        <img src={tab5Main.src} alt="" className='w-[200px] h-auto' />
+                        <img src={tab6Main.src} alt="" className='w-[200px] h-auto' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
