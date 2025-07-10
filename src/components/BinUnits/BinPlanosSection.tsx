@@ -21,6 +21,7 @@ import tolva1L2 from '../../assets/images/BinUnits/tolva1L2.png';
 import tolva1L1 from '../../assets/images/BinUnits/tolva1L1.png';
 import tolva1F from '../../assets/images/BinUnits/tolva1F.png';
 import tolva1Main from '../../assets/images/BinUnits/tolva1Main.png';
+import tolva3L2 from '../../assets/images/BinUnits/tolva3L2.png';
 
 
 
@@ -1264,9 +1265,9 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='h-[287px] w-[744px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L1.src} alt="Dinámica con paneles" className='h-[287px] w-[744px]'/>
+                                <img src={tolva3L2.src} alt="Dinámica con paneles" className='h-[287px] w-[744px]'/>
                             ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[287px] w-[744px]'/>
+                                <img src={tolva3L1.src} alt="Dinámica sin paneles" className='h-[287px] w-[744px]'/>
                             )}
                         </div>
                     </div>
