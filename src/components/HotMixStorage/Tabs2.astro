@@ -181,9 +181,14 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
         const tabContents = tabSection.querySelectorAll('.tab-content');
     
         // Ocultar todos menos el primero
-        tabContents.forEach((content, index) => {
-          content.classList.toggle('hidden', index !== 0);
-        });
+        const selectedTab = tabSection.querySelector('.tab-button[aria-selected="true"]');
+const selectedTabId = selectedTab?.getAttribute('data-tab');
+
+tabContents.forEach(content => {
+  const contentTabId = content.getAttribute('data-tab-content');
+  content.classList.toggle('hidden', contentTabId !== selectedTabId);
+});
+
     
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
