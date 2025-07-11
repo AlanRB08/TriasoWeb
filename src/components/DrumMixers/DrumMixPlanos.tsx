@@ -110,16 +110,20 @@ const DrumMixPlanos = () => {
     const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
     const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
     const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+    
+    const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
+  const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
+  const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
 
   const scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
-    start: 'top-=200 20%',
-    end: `+=${distanceToMove}`,
+    start: 'top+=70 20%',
+    end: `+=${adjustedScrollDistance}`,
     scrub: true,
     markers: false,
     animation: gsap.to(box, {
-      y: distanceToMove,
+      y: adjustedDistanceToMove,
       ease: 'none',
     }),
     onUpdate: (self) => {
@@ -196,7 +200,7 @@ const DrumMixPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[450px] h-[1000px]"
+             z-20 w-[250px] h-[600px]"
         >
           <img
             src={tab1Main.src}
@@ -255,7 +259,7 @@ const DrumMixPlanos = () => {
       {/* Contenedor de los botones */}
       <div id='options' ref={optionsRef} className='w-full'>
       <h1 className='text-white lg:text-xl text-lg text-center mb-10'>PRODUCTION CAPACITY:</h1>
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center gap-2 md:gap-10">
         {/* Botón 1 */}
         <button
           onClick={() => setActiveTab(1)}
@@ -291,6 +295,10 @@ const DrumMixPlanos = () => {
         >
           140-180 Tph
         </button>
+        
+      </div>
+      <br />
+      <div className="flex justify-center gap-2 md:gap-10">
         {/* Botón 4 */}
         <button
           onClick={() => setActiveTab(1)}
@@ -302,9 +310,6 @@ const DrumMixPlanos = () => {
         >
           200-270 Tph
         </button>
-      </div>
-      <br />
-      <div className="flex justify-center gap-10">
         {/* Botón 5 */}
         <button
           onClick={() => setActiveTab(5)}
@@ -329,7 +334,7 @@ const DrumMixPlanos = () => {
         400-540 Tph
         </button>
 
-        {/* Botón 7 */}
+        {/* Botón 7 
         <button
           onClick={() => setActiveTab(1)}
           className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
@@ -339,7 +344,7 @@ const DrumMixPlanos = () => {
           }`}
         >
           500-650 Tph
-        </button>
+        </button>*/}
       </div>
 
       </div>
@@ -414,7 +419,7 @@ const DrumMixPlanos = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tab1Main.src} alt="" className='w-[500px] h-auto' />
+                <img src={tab1Main.src} alt="" className='w-[250px] h-auto'/>
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -976,7 +981,7 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                        <img src={tab2Main.src} alt="" className='w-[500px] h-auto' />
+                        <img src={tab2Main.src} alt="" className='w-[150px] h-[600px]' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -2093,7 +2098,7 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                        <img src={tab5Main.src} alt="" className='w-[200px] h-auto' />
+                        <img src={tab5Main.src} alt="" className='w-[120px] h-auto' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -2654,7 +2659,7 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                        <img src={tab6Main.src} alt="" className='w-[200px] h-auto' />
+                        <img src={tab6Main.src} alt="" className='w-[120px] h-auto' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
