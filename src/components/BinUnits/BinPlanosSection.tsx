@@ -119,15 +119,20 @@ const BinPlanosSection = () => {
    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
 
+   const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
+  const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
+  const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+
+
   const scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
-    start: 'top-=200 20%',
-    end: `+=${distanceToMove}`,
+    start: 'top+=70 20%',
+    end: `+=${adjustedScrollDistance}`,
     scrub: true,
     markers: false,
     animation: gsap.to(box, {
-      y: distanceToMove,
+      y: adjustedDistanceToMove,
       ease: 'none',
     }),
     onUpdate: (self) => {
@@ -204,7 +209,7 @@ const BinPlanosSection = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[200px] h-[920px]"
+             z-20 w-[120px] h-[560px]"
         >
           <img
             src={tolva3Blue.src}
@@ -288,7 +293,7 @@ const BinPlanosSection = () => {
       </div>
 
       <h1 className='text-white lg:text-xl text-lg text-center mb-10'>NUMBER OF UNITS:</h1>
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-3 justify-center items-center w-full justify-items-center">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-3 justify-center w-full md:px-32 items-center justify-items-center">
         {/* Botón 1 */}
         <button
           onClick={() => setActiveTab(1)}
@@ -406,7 +411,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva1Main.src} alt="" className='w-[230px] h-[628px]' />
+                <img src={tolva1Main.src} alt="" className='w-[240px] h-[600px]' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -735,7 +740,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva2Main.src} alt="" className='w-[230px] h-auto' />
+                <img src={tolva2Main.src} alt="" className='w-[180px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1392,7 +1397,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva4Main.src} alt="" className='w-[150px] h-auto' />
+                <img src={tolva4Main.src} alt="" className='w-[120px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -1720,7 +1725,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva5Main.src} alt="" className='w-[150px] h-auto' />
+                <img src={tolva5Main.src} alt="" className='w-[100px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -2044,7 +2049,7 @@ const BinPlanosSection = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva6Main.src} alt="" className='w-[150px] h-auto' />
+                <img src={tolva6Main.src} alt="" className='w-[90px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
