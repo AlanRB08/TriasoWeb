@@ -3,6 +3,11 @@ import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
 import Whatsbtn from '../unitComponents/Whatsbtn.astro';
 import Card from '../unitComponents/Card.astro';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
+import Image from 'astro/components/Image.astro';
+import silo from '../../assets/images/AsphaltPlant/silos1.jpg';
+import silo1 from '../../assets/images/HotMix/siloCone.png';
+import silo2 from '../../assets/images/HotMix/siloUse.png';
+import silo3 from '../../assets/images/HotMix/siloSealed.png';
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -39,8 +44,8 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                              conditions.
                         </p>
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="w-full h-auto flex justify-center items-center">
+                        <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                     </div>
                 </div>
                 <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 px-4 md:px-36">
@@ -201,9 +206,9 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                     </div>
                 </div>
             </div>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-6 font-bold">
-                <div class="md:ml-36 lg:ml-36 mx-8 bg-white rounded-2xl p-4 flex flex-col items-center justify-center">
-                    <img src="" alt="">
+            <div class="w-full grid grid-cols-1 md:grid-cols-5 justify-center items-center gap-6 font-bold">
+                <div class="md:ml-36 lg:ml-36 mx-8 bg-white md:col-span-2 rounded-2xl p-4 flex flex-col items-center justify-center">
+                    <Image src={silo1} alt="Silo Cone Image" class="w-full h-auto"/>
                     <br>
                     <h2 class="text-black w-full text-start">Silo Cone</h2>
                     <p>
@@ -213,7 +218,7 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                            The result: clean, consistent flow with every load.
                     </p>
                 </div>
-                <div class="w-full flex flex-col gap-6">
+                <div class="w-full flex flex-col gap-6  md:col-span-3">
                     <div class="bg-white p-4 rounded-2xl md:mr-36 lg:mr-36 mr-8">
                         <p>
                             Both the self-erecting and stationary silos share the same key features and 
@@ -226,7 +231,7 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                                robust design for reliable operation in demanding conditions.
                         </p>
                     </div>
-                    <div class="p-4 bg-white rounded-2xl flex">
+                    <div class="p-4 bg-white rounded-2xl flex md:flex-row flex-col">
                         <div class="flex flex-col items-start justify-center">
                             <h2 class="text-black">Even Distribution Without <br> Segregation</h2>
                             <p>
@@ -238,12 +243,12 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                                  during storage.
                             </p>
                         </div>
-                        <img src="" alt="">
+                        <Image src={silo2} alt="Silo Use Image" class="max-w-[250px] h-auto"/>
 
                     </div>
                 </div>
             </div>
-            <div class="flex p-4 bg-white rounded-2xl px-4 md:mx-36 w-full">
+            <div class="flex p-4 bg-white rounded-2xl px-4 md:mx-36 w-4/6 items-start justify-start">
                 <div class="font-bold">
                     <h2 class="text-black">Sealed from Top to Bottom</h2><br>
                     <p>
@@ -252,6 +257,7 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
                          delaying oxidation.
                     </p>
                 </div>
+                <Image src={silo3} alt="Silo Sealed Image" class="max-w-[250px] h-auto ml-4 rounded-2xl"/>
             </div>
          </div>
          <!-- Third Section -->
