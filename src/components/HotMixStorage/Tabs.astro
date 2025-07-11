@@ -13,21 +13,21 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
         <div class="flex items-center justify-around w-full gap-4 px-8 md:px-36">
             <button class="text-xs md:text-base tab-button-1 py-2 md:px-4 font-bold focus:outline-none"
-            data-tab="tab1" aria-selected="false">
+                    data-tab="tab1" aria-selected="true"> <!-- Cambiado a true -->
                 Computerization
             </button>
             <button class="tab-button-1 py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
-            data-tab="tab2" aria-selected="true">
+                    data-tab="tab2" aria-selected="false"> <!-- Cambiado a false -->
                 Advantages
             </button>
             <button class="tab-button-1 py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
-            data-tab="tab3" aria-selected="false">
+                    data-tab="tab3" aria-selected="false">
                 Low Maintenance
             </button>
         </div>
         <div class="py-4">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT" data-tab-content="tab1">
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT" data-tab-content="tab1">
                 <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
                     <div class="bg-white p-4 font-bold rounded-2xl">
                         <p>Offers automated, precise control for weighing and delivering hot mix, reducing the risk of
@@ -156,7 +156,7 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
                 </div>
              </div>
         <!-- Second Section -->
-         <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT" data-tab-content="tab2">
+         <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
             <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
                 <div class="bg-white p-4 font-bold rounded-2xl">
                     <h1 class="text-base md:text-lg text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
@@ -261,7 +261,7 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
             </div>
          </div>
          <!-- Third Section -->
-          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
+          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
             <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full px-8 md:px-36">
                 <div class="bg-white rounded-2xl p-4 w-full">
                     <p>
@@ -389,32 +389,37 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
   
 </style>
 <script is:inline>
-  // Mover la lógica fuera del DOMContentLoaded para ejecutarse inmediatamente
-  (function initTabs() {
-    const tabButtons = document.querySelectorAll('.tab-button-1');
-    
-    // Ocultar todos los contenidos excepto el primero
-    document.querySelectorAll('.tab-content').forEach((content, index) => {
-      content.classList.toggle('hidden', index !== 0);
-    });
-    
-    // Configurar los listeners
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const tabId = button.getAttribute('data-tab');
-        
-        tabButtons.forEach(btn => {
-          btn.setAttribute('aria-selected', 'false');
-        });
-        
-        button.setAttribute('aria-selected', 'true');
-        
-        document.querySelectorAll('.tab-content').forEach(content => {
-          content.classList.add('hidden');
-        });
-        
-        document.querySelector(`.tab-content[data-tab-content="${tabId}"]`).classList.remove('hidden');
+    (function initTabs() {
+      // Usamos selectores más específicos para evitar conflictos
+      const tabButtons = document.querySelectorAll('.tab-button-1');
+      const tabContents = document.querySelectorAll('.tab-content-1'); // Cambiado a clase específica
+      
+      // Ocultar todos los contenidos y desactivar botones
+      tabContents.forEach((content, index) => {
+        content.classList.toggle('hidden', index !== 0);
       });
-    });
-  })();
-</script>
+      
+      tabButtons.forEach((button, index) => {
+        button.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+      });
+      
+      // Configurar los listeners
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabId = button.getAttribute('data-tab');
+          
+          tabButtons.forEach(btn => {
+            btn.setAttribute('aria-selected', 'false');
+          });
+          
+          button.setAttribute('aria-selected', 'true');
+          
+          tabContents.forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          document.querySelector(`.tab-content-1[data-tab-content="${tabId}"]`).classList.remove('hidden');
+        });
+      });
+    })();
+  </script>
