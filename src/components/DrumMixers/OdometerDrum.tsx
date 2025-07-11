@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Odometer from 'react-odometerjs';
+import Image from 'astro/components/Image.astro';
+import odoImg from '../../assets/images/DrumMixers/odometerImg.png';
 import 'odometer/themes/odometer-theme-default.css';
 
 const OdometerDrum = () => {
@@ -84,7 +86,7 @@ const OdometerDrum = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
-            <img src="" alt="" />
+            <img src={odoImg.src} alt="Odometer Drum" className="rounded-2xl" />
           </div>
           <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
             All Technical Details
