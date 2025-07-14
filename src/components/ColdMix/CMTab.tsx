@@ -4,21 +4,20 @@ import { useState } from "react";
 const images = [
   { id: 0, src: "/Gallery/tolva1.png", alt: "Imagen 1" },
   { id: 1, src: "/Gallery/tolva2.png", alt: "Imagen 2" },
-  { id: 2, src: "/Gallery/tolva3.png", alt: "Imagen 3" }, // Nueva imagen
 ];
 
-export default function TabsIntegral() {
+export default function CMTab() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 md:px-52">
-      <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
+      <div className="grid grid-cols-2 w-full justify-center items-center text-center">
         {images.map((img, index) => (
           <button
             aria-label='Tab Selector'
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
+            className={`text-center border-b-2 md:pr-4 w-3/4 text-sm md:text-base ${
               activeIndex === index 
                 ? "border-redBg text-black font-bold" 
                 : "border-transparent text-grisT font-normal"
@@ -26,24 +25,18 @@ export default function TabsIntegral() {
           >
             {index === 0 ? (
               <>
-                Standard chassis <span className="hidden md:inline">for <br />mobility of empty plant</span>
+                Discharge at truck level 
               </>
             ) : index === 1 ? (
               <>
-                <span className="hidden md:inline"> All mounted on a </span> Lightweight chassis <br /> <span className="hidden md:inline"> with support legs </span>
+                <span> Discharge at ground level </span>
               </>
-            
-            ) : (
-              <>
-                Reinforced chassis  <span className="hidden md:inline">for full- <br /> loaded plant mobility</span>
-              </>
-               // Texto para el nuevo tab
-            )}
+            ):null}
           </button>
         ))}
       </div>
 
-      <div className="w-full h-[300px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="w-full h-[400px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}

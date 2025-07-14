@@ -1,0 +1,55 @@
+---
+import Image from "astro/components/Image.astro"
+import img2 from '../../assets/images/ColdMix/pugmill2.png';
+import img3 from '../../assets/images/ColdMix/pugmill3.png';
+---
+<div class="w-full px-8 md:px-32 font-bold">
+    <h1 class="text-blueMain text-xl md:text-2xl">Pugmill</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-3 md:gap-10">
+        <div>
+            <p class="text-grisP">
+                The pugmill is a crucial component in cold mix plants, designed to
+                 effectively blend a variety of materials, including aggregates, to create a 
+                 uniform mix. Its durable construction ensures smooth operation and reliable 
+                 performance over time. <br><br>
+                 The pugmill’s efficient mixing process allows for precise control, making it 
+                 suitable for a wide range of applications where consistent material quality is 
+                 required. With easy maintenance and operation, the pugmill provides long-lasting 
+                 performance in various industrial environments.
+            </p>
+        </div>
+        <div>
+            <Image src={img2} alt=""/>
+        </div>
+        <div>
+            <Image src={img2} alt=""/>
+        </div>
+        <div>
+            <h2 class="text-lg md:text-xl">The mixing paddles</h2> <br>
+            <p class="text-grisP">
+                The mixing paddles inside the pugmill are essential for achieving a uniform, 
+                high-quality asphalt blend. Strategically arranged along twin synchronized shafts 
+                driven by a gear system, they ensure thorough blending of all components, preventing
+                material build-up and promoting even distribution of asphalt emulsion. <br><br>
+
+                Made from wear-resistant materials such as Hardox steel or cast iron, the paddles
+                are fully interchangeable and designed to endure heavy use and abrasive aggregates without
+                losing efficiency. An internal protective layer forms during operation, minimizing direct 
+                wear on the structure and significantly extending the service life of the equipment. <br><br>
+                
+                Easy to maintain and built for durability, the pugmill guarantees consistent mixing 
+                performance even under the most demanding conditions.
+            </p>
+        </div>
+    </div>
+    <div class="w-full flex flex-col justify-center items-center">
+        <Image src={img3} alt="" class={'w-3/4 h-auto object-contain'}/>
+        <br>
+        <p class="px-20 text-grisT">
+            The pugmill features twin synchronized shafts driven by a gear system for balanced,
+             efficient mixing. Its cast iron mixer pads are fully interchangeable and built for
+              durability. An internal protective layer forms during operation, reducing direct wear 
+              on the structure and extending the plant’s service life.
+        </p>
+    </div>
+</div>
