@@ -381,32 +381,14 @@ const BinPlanosSection = () => {
                         <li>Seamless integration with cold or hot mix asphalt plants</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Diesel burner with automatic temperature control</li>
-                        <li>Two operating modes: Manual and Automatic</li>
-                        <li>Digital thermometers with programmable set points</li>
-                        <li>Siemens PLC-based control system</li>
-                        <li>100 L thermal oil expansion tank</li>
-                    </ul>
-                </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
                     <ul className='ml-6 list-disc'>
-                        <li>Fifth-wheel hitch for secure towing</li>
-                        <li>Integrated braking and lighting system</li>
-                        <li>DOT-compliant for road transport</li>
-                        <li>Support legs for parking and stability</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
+                        <li>Galvanized bolts and anti-corrosion coating</li>
+                        <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
+                        <li>Electrostatic paint finish for durability</li>
+                        <li>Anti-slip aluminum panels for operator safety</li>
+                        <li>Perforated guards and OSHA-compliant protections</li>
                     </ul>
                 </div>
             </div>
@@ -432,28 +414,48 @@ const BinPlanosSection = () => {
                         <li>Motor control center with Siemens VFDs</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
                     <ul className='ml-6 list-disc'>
-                        <li>Galvanized bolts and anti-corrosion coating</li>
-                        <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                        <li>Electrostatic paint finish for durability</li>
-                        <li>Anti-slip aluminum panels for operator safety</li>
-                        <li>Perforated guards and OSHA-compliant protections</li>
+                        <li>Diesel burner with automatic temperature control</li>
+                        <li>Two operating modes: Manual and Automatic</li>
+                        <li>Digital thermometers with programmable set points</li>
+                        <li>Siemens PLC-based control system</li>
+                        <li>100 L thermal oil expansion tank</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>OPERATING CONGIFURATION</h1>
-                    <div className='flex justify-between'>
-                            <h1>Maximum feeding capacity:</h1>
-                            <p>Up to 650 TPH</p>
-                      </div>
-                      <div className='flex justify-between'>
-                            <h1>Feeding system:</h1>
-                            <p>Variable-speed dosing belts <br /> with fine motor control <br /> adjustment for precise  <br />dosing.</p>
-                      </div>
-                </div>
             </div>
+                </div>
+                <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-10'>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Fifth-wheel hitch for secure towing</li>
+                            <li>Integrated braking and lighting system</li>
+                            <li>DOT-compliant for road transport</li>
+                            <li>Support legs for parking and stability</li>
+                        </ul>
+                    </div>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-10'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>OPERATING CONGIFURATION</h1>
+                        <div className='flex justify-between'>
+                                <h1>Maximum feeding capacity:</h1>
+                                <p>Up to 650 TPH</p>
+                        </div>
+                        <div className='flex justify-between text-end'>
+                                <h1>Feeding system:</h1>
+                                <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARS</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>EPA</li>
+                            <li>OSHA</li>
+                            <li>DOT</li>
+                            <li>UL wiring</li>
+                        </ul>
+                    </div>
                 </div>
                 <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>

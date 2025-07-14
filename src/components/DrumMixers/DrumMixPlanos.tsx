@@ -355,8 +355,8 @@ const DrumMixPlanos = () => {
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-center gap-4 w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+            <div className='flex flex-col items-start justify-between gap-4 w-full h-full order-2 md:order-1'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
                     <ul className='ml-6 list-disc'>
                         <li>Inlet Flights</li>
@@ -366,7 +366,7 @@ const DrumMixPlanos = () => {
                         <li>Mixing Flights</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
                     <ul className='ml-6 list-disc'>
                         <li>Fully automatic or manual operation</li>
@@ -376,52 +376,21 @@ const DrumMixPlanos = () => {
                         <li>Control system designed for field reliabilit</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                     <ul className='ml-6 list-disc'>
-                        <li>Mounted on standard transport chassis</li>
-                        <li>Dual axles with 8-lug hubs</li>
-                        <li>16” highway-rated wheels</li>
-                        <li>Pull-type hitch with safety coupling</li>
-                        <li>Includes brakes and road lighting system</li>
-                        <li>Reinforced for loaded or empty transport</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Driven by four 3 HP motors</li>
-                        <li>Trunnion-driven system for reliable, continuous operation</li>
-                        <li>Four high-efficiency electric motors</li>
-                        <li>Digital VFDs for precise speed adjustments</li>
-                        <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
-                        <li>Drum tires made from normalized high-carbon alloy steel</li>
-                        <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
-                        <li>Equipped with industrial self-aligning bearings</li>
-                        <li>Precision-machined for balanced, deformation-resistant performance</li>
-                        <li>Spring-mounted to absorb load shifts and thermal expansion</li>
-                        <li>Single-point trunnion adjustment for quick field alignment</li>
+                        <li>Industrial-grade motors and components</li>
+                        <li>Simple wiring system for easy maintenance</li>
+                        <li>Weather-protected electrical connections</li>
+                        <li>Pulley and bushing transmission system</li>
                     </ul>
                 </div>
                 
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>7' x 10' control cabin, towable.</li>
-                        <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
-                        <li>Insulated panel-style walls.</li>
-                        <li>110-volt electrical installation with interior lighting.</li>
-                        <li>Panoramic windows.</li>
-                        <li>1.5-ton air conditioning unit.</li>
-                        <li>Standard road lights: brake and turn signals.</li>
-                        <li>Jack stand for parking and hitch height adjustment.</li>
-                    </ul>
-                </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
                 <img src={tab1Main.src} alt="" className='w-[250px] h-auto'/>
             </div>
-            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1 w-full order-3 md:order-3'>
+            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3 gap-10'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -434,38 +403,7 @@ const DrumMixPlanos = () => {
                         <li>Galvanized bolts and electrostatic paint for durability</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Industrial-grade motors and components</li>
-                        <li>Simple wiring system for easy maintenance</li>
-                        <li>Weather-protected electrical connections</li>
-                        <li>Pulley and bushing transmission system</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>High-resistance structure for long-term operation</li>
-                        <li>Protected by electrostatic paint with strong adhesion</li>
-                        <li>Bolted components with anti-corrosion coating</li>
-                        <li>Thermal insulation reduces surface temperature</li>
-                        <li>Guarded access to moving and hot parts for operator safety</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
-                    </ul>
-                </div>
-            </div>
-                </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
+                <div className='text-white font-normal w-full'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BAGHOUSE CAPACITY</h1>
                         <div className='flex justify-between'>
                             <h1>ACFM:</h1>
@@ -480,47 +418,18 @@ const DrumMixPlanos = () => {
                             <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
                         </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
-                        <div className='flex justify-between'>
-                            <h1>3% humidity:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>5% humidity:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
-                        <div className='flex justify-between'>
-                            <h1>3% humidity:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>5% humidity:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
-                        </div>
-                    </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BURNER SYSTEM</h1>
-                        <div className='flex justify-between'>
-                            <h1>Modulating burner:</h1>
-                            <p data-imperial='762.00 cm' data-metric='29.26 ft'>XXXX million BTU/hr</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Fueled with total-air control system</h1>
-                        </div>
-                        <ul className='pl-6 list-disc'>
-                            <li>Diesel</li>
-                            <li>Gas</li>
-                        </ul>
-                        <div className='flex flex-col'>
-                            <p>UV sensor for flame monitoring</p>
-                            <p>Separate pilot and main flame system</p>
-                            <p>Fuel filtration and safety regulation system</p>
-                        </div>
-                    </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>High-resistance structure for long-term operation</li>
+                        <li>Protected by electrostatic paint with strong adhesion</li>
+                        <li>Bolted components with anti-corrosion coating</li>
+                        <li>Thermal insulation reduces surface temperature</li>
+                        <li>Guarded access to moving and hot parts for operator safety</li>
+                    </ul>
+                </div>
+               
+            </div>
                 </div>
                 <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>
@@ -684,66 +593,119 @@ const DrumMixPlanos = () => {
                     </div>
 
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                <div className='grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full mt-10 gap-10'>
+                    <div className='col-span-2 flex flex-col items-start justify-start w-full gap-10 h-full'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>Three Axle</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transportation height:</h1>
+                                    <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                        <div className='grid grid-cols-1 md:grid-cols-3 w-full gap-10'>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>PRODUCTION RATE</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                </div>
+                            </div>
+                            <div className='text-white font-normal'>
+                                <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>RAP INCORPORATION</h1>
+                                <div className='flex justify-between'>
+                                    <h1>3% humidity:</h1>
+                                    <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>5% humidity:</h1>
+                                    <p data-imperial='128 cm' data-metric='4.2 ft'>XX%</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                                <ul className='ml-6 list-disc'>  
+                                    <li>EPA</li>
+                                    <li>OSHA</li>
+                                    <li>DOT</li>
+                                    <li>UL wiring</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
-                            <h1>Total length (including hitch):</h1>
-                            <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                    <div className='col-span-1 w-full flex flex-col gap-10'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DRUM DRIVE SYSTEM</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Driven by four 3 HP motors</li>
+                                <li>Trunnion-driven system for reliable, continuous operation</li>
+                                <li>Four high-efficiency electric motors</li>
+                                <li>Digital VFDs for precise speed adjustments</li>
+                                <li>Trunnions and tires forged, machined, and heat-treated for durability.</li>
+                                <li>Drum tires made from normalized high-carbon alloy steel</li>
+                                <li>Mounted on fixed central pivot bases for alignment and drum flotation</li>
+                                <li>Equipped with industrial self-aligning bearings</li>
+                                <li>Precision-machined for balanced, deformation-resistant performance</li>
+                                <li>Spring-mounted to absorb load shifts and thermal expansion</li>
+                                <li>Single-point trunnion adjustment for quick field alignment</li>
+                            </ul>
                         </div>
-                        <div className='flex justify-between'>
-                            <h1>Axle configuration:</h1>
-                            <p>Three Axle</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Fifth-wheel hitch height:</h1>
-                            <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Transportation height:</h1>
-                            <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>Mounted on standard transport chassis</li>
+                                <li>Dual axles with 8-lug hubs</li>
+                                <li>16” highway-rated wheels</li>
+                                <li>Pull-type hitch with safety coupling</li>
+                                <li>Includes brakes and road lighting system</li>
+                                <li>Reinforced for loaded or empty transport</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>        
+                </div>
                 <div className='grid grid-cols-4 justify-center items-center w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-1'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABINDIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
-                        </div>
-                    </div>
                     <div className='col-span-3'>
                     <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>
@@ -907,6 +869,36 @@ const DrumMixPlanos = () => {
                     </div>
 
                 </div>
+                    </div>
+                    <div className='col-span-1 w-full flex flex-col items-start justify-center gap-10'>
+                        <div className='text-white font-normal col-span-1'>
+                            <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CONTROL CABIN DIMENSIONS</h1>
+                            <div className='flex justify-between'>
+                                <h1>Length:</h1>
+                                <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Width:</h1>
+                                <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Height:</h1>
+                                <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                            </div>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                            <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL CABIN</h1>
+                            <ul className='ml-6 list-disc'>
+                                <li>7' x 10' control cabin, towable.</li>
+                                <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
+                                <li>Insulated panel-style walls.</li>
+                                <li>110-volt electrical installation with interior lighting.</li>
+                                <li>Panoramic windows.</li>
+                                <li>1.5-ton air conditioning unit.</li>
+                                <li>Standard road lights: brake and turn signals.</li>
+                                <li>Jack stand for parking and hitch height adjustment.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
