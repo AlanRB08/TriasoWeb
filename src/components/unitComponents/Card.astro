@@ -23,10 +23,11 @@ const {
 <div class={`${className}`}>
   <div class={`${contentClass}`}>
     <!-- Slot para contenido completamente personalizado -->
-    <slot />
+    
     
     <!-- Opción estructurada rápida -->
-    {title && <h3 class={`${titleClass || 'text-lg font-semibold text-gray-800'}`}>{title}</h3>}
-    {text && <p class={`${textClass || 'mt-2 text-gray-600'}`}>{text}</p>}
+    {title && <h3 class={`${titleClass || 'text-lg font-bold text-black'}`}>{title}</h3>}
+    <slot />
+    {text && <p class={`${textClass || 'mt-2 text-grisP'}`}>{text}</p>}
   </div>
 </div>

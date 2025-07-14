@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CMIntroSection from '../components/ColdMix/CMIntroSection.astro';
+import CMCards from "../components/ColdMix/CMCards.astro";
+import CMTab from '../components/ColdMix/CMTab';
+import CMPugMill from '../components/ColdMix/CMPugMill.astro';
+---
+<Layout title="ColdMix Page">
+ <CMIntroSection/>
+ <CMCards/>
+ <CMTab client:only/>
+ <CMPugMill/>
+</Layout>

@@ -57,7 +57,7 @@ export const menuItems = [
         },
         {
           title : "COLD-MIX PLANTS",
-          url : "/products/asphalt-plants/cold-mix-plants",
+          url : "/ColdMix",
         },
         {
           title : "10 TPH INTEGRAL ASPHALT PLANTS",
