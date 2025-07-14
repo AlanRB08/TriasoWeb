@@ -311,49 +311,24 @@ const HotMixPlanos = () => {
             <div className='flex flex-col items-center justify-center'>
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING SLAT CONVEYOR</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Transported together with the silo on the same chassis</li>
-                        <li>Installed and dismantled on-site using a crane</li>
-                        <li>Independent structure, not fixed to the silo frame</li>
-                        <li>Capacity up to 320 TPH</li>
-                        <li>Reinforced steel paddles for durability and consistent performance</li>
-                        <li>Enclosed design helps retain material temperature and prevent contamination</li>
-                        <li>Driven by industrial motor and reducer for easy maintenance</li>
-                        <li>Top access doors for easy cleaning and inspection</li>
-                        <li>Manual chain tensioning system for long-term reliability</li>
-                        <li>Designed for fast alignment with the silo inlet during setup</li>
-                    </ul>
-                </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Fully automatic or manual operation</li>
-                        <li>Digital temperature monitoring and regulation</li>
-                        <li>Simple and intuitive interface</li>
-                        <li>Control system designed for field reliability</li>
-                        <li>Proface touchscreen control interface</li>
-                        <li>HMI for weighing, temp control, and gate timing</li>
-                        <li>Automatic dispatch tickets (weight, truck, time)</li>
-                        <li>Internal mix temp sensors</li>
-                        <li>Programmable alarms and data logging (200+ records)</li>
-                        <li>Remote operation ready via Modbus / Ethernet</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Industrial-grade motors and components</li>
-                        <li>Simple wiring system for easy maintenance</li>
-                        <li>Pulley and bushing transmission system</li>
-                        <li>Siemens motors / industrial-grade wiring</li>
-                        <li>Quick-connect terminals (IP rated)</li>
-                        <li>Oversized Browning reducers</li>
-                        <li>Load cells for mix weighing</li>
-                        <li>External fuel lines, sensors, and cabling included</li>
-                    </ul>
-                </div>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Fully automatic or manual operation</li>
+                            <li>Digital temperature monitoring and regulation</li>
+                            <li>Simple and intuitive interface</li>
+                            <li>Control system designed for field reliability</li>
+                            <li>Proface touchscreen control interface</li>
+                            <li>HMI for weighing, temp control, and gate timing</li>
+                            <li>Automatic dispatch tickets (weight, truck, time)</li>
+                            <li>Internal mix temp sensors</li>
+                            <li>Programmable alarms and data logging (200+ records)</li>
+                            <li>Remote operation ready via Modbus / Ethernet</li>
+                        </ul>
+                    </div>
+                
+                
+                
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -398,7 +373,35 @@ const HotMixPlanos = () => {
                         <li>Dust-resistant control module housing</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                
+                
+            </div>
+            
+                </div>
+                <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-10'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Industrial-grade motors and components</li>
+                            <li>Simple wiring system for easy maintenance</li>
+                            <li>Pulley and bushing transmission system</li>
+                            <li>Siemens motors / industrial-grade wiring</li>
+                            <li>Quick-connect terminals (IP rated)</li>
+                            <li>Oversized Browning reducers</li>
+                            <li>Load cells for mix weighing</li>
+                            <li>External fuel lines, sensors, and cabling included</li>
+                        </ul>
+                </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-2 px-20'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARS</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>EPA</li>
+                        <li>OSHA</li>
+                        <li>DOT</li>
+                        <li>UL wiring</li>
+                    </ul>
+                </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
                     <ul className='ml-6 list-disc'>
                         <li>Designed for occasional relocation with crane support</li>
@@ -408,18 +411,7 @@ const HotMixPlanos = () => {
                         <li>DOT-compliant lighting and reflective markings for transport visibility</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
-                    </ul>
-                </div>
-                
             </div>
-                </div>
                 <div className='flex justify-center items-end my-10'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
@@ -645,33 +637,49 @@ const HotMixPlanos = () => {
                             <p data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
                         </div>
                     </div>
-  
+                </div>
+                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal col-span-1'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SLAT CONVEYOR</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height (erected):</h1>
-                            <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Chain pitch:</h1>
-                            <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height (discharge height):</h1>
-                            <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Angle of inclination:</h1>
-                            <p>48.6°</p>
-                        </div>
+                            <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SLAT CONVEYOR</h1>
+                            <div className='flex justify-between'>
+                                <h1>Length:</h1>
+                                <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Width:</h1>
+                                <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Height (erected):</h1>
+                                <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Chain pitch:</h1>
+                                <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Height (discharge height):</h1>
+                                <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Angle of inclination:</h1>
+                                <p>48.6°</p>
+                            </div>
+                    </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING SLAT CONVEYOR</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Transported together with the silo on the same chassis</li>
+                            <li>Installed and dismantled on-site using a crane</li>
+                            <li>Independent structure, not fixed to the silo frame</li>
+                            <li>Capacity up to 320 TPH</li>
+                            <li>Reinforced steel paddles for durability and consistent performance</li>
+                            <li>Enclosed design helps retain material temperature and prevent contamination</li>
+                            <li>Driven by industrial motor and reducer for easy maintenance</li>
+                            <li>Top access doors for easy cleaning and inspection</li>
+                            <li>Manual chain tensioning system for long-term reliability</li>
+                            <li>Designed for fast alignment with the silo inlet during setup</li>
+                        </ul>
                     </div>
                 </div>
             </div>
