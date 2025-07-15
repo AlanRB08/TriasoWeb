@@ -244,7 +244,7 @@ const DrumMixPlanos = () => {
       <div 
       ref={clipTargetRef}
         id='sectionNueva'  
-        className="bg-[url('/fondopatron.png')] bg-cover bg-center w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header className='mt-10 text-white' ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>
@@ -717,9 +717,9 @@ const DrumMixPlanos = () => {
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full mt-10 gap-0 md:gap-10'>
-                    <div className='col-span-1 md:col-span-2 flex flex-col items-start justify-start w-full gap-4 md:gap-10 h-full'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 w-full gap-4 md:gap-10'>
-                            <div className='text-white font-normal'>
+                    <div className='col-span-1 md:col-span-2 flex flex-col items-start justify-start w-full md:gap-10 h-full'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 w-full md:gap-10'>
+                            <div className='text-white font-normal flex flex-col gap-4'>
                             <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DRUM DIMENSIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -736,7 +736,7 @@ const DrumMixPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
                                     <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
@@ -752,7 +752,7 @@ const DrumMixPlanos = () => {
                         </div>
                                 
                             </div>
-                            <div className='text-white font-normal'>
+                            <div className='text-white font-normal flex flex-col gap-4'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
                                     <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -769,7 +769,7 @@ const DrumMixPlanos = () => {
                                         </svg>
                                     </button>
                                 </div>
-                                <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>Total length (including hitch):</h1>
                                         <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
@@ -797,8 +797,8 @@ const DrumMixPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-10'>
-                            <div className='text-white font-normal'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 w-full md:gap-10'>
+                            <div className='text-white font-normal flex flex-col gap-4'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
                                     <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PRODUCTION RATE</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -815,7 +815,7 @@ const DrumMixPlanos = () => {
                                         </svg>
                                     </button>
                                 </div>
-                                <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
                                         <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
@@ -826,7 +826,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='text-white font-normal'>
+                            <div className='text-white font-normal flex flex-col gap-4'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
                                         <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>RAP INCORPORATION</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -843,7 +843,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                                     </div>
-                                <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_4 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className={`transition-all duration-500 overflow-hidden md:mb-0 ml-6 list-disc list-inside ${openSections.C3_4 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
                                         <p data-imperial='389.2 cm' data-metric='12.94 ft'>40%</p>
@@ -854,7 +854,7 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex flex-col items-start justify-start text-white'>
+                            <div className='items-start justify-start text-white flex flex-col gap-4'>
                             <div className='w-full flex justify-between border-b border-b-white'>
                                         <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARS</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -871,7 +871,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_5 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_5 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <li>EPA</li>
                                     <li>OSHA</li>
                                     <li>DOT</li>
@@ -898,7 +898,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                             </div>
-                            <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"}`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <li>Driven by four 3 HP motors</li>
                                 <li>Trunnion-driven system for reliable, continuous operation</li>
                                 <li>Digital VFDs for precise speed adjustments</li>
@@ -924,7 +924,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                             </div>
-                            <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"}`}>
+                            <ul className={`transition-all duration-500 overflow-hidden md:mb-0 ml-6 list-disc list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <li>Mounted on standard transport chassis</li>
                                 <li>Dual axles with 8-lug hubs</li>
                                 <li>16” highway-rated wheels</li>
@@ -1102,8 +1102,8 @@ const DrumMixPlanos = () => {
                         </div>
                     </div>
                     </div>
-                    <div className='col-span-1 w-full flex flex-col items-start justify-center gap-4 md:gap-10'>
-                        <div className='text-white font-normal col-span-1 w-full'>
+                    <div className='col-span-1 w-full flex flex-col items-start justify-center md:gap-10'>
+                        <div className='text-white font-normal col-span-1 w-full flex flex-col gap-4'>
                         <div className='w-full flex justify-between border-b border-b-white'>
                                         <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL CABIN DIMENSIONS</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -1120,7 +1120,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                             </div>
-                            <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
                                     <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
@@ -1152,7 +1152,7 @@ const DrumMixPlanos = () => {
                                             </svg>
                                         </button>
                             </div>
-                            <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <li>7' x 10' control cabin, towable.</li>
                                 <li>Portable, with hitch, 3,000 lb axle, two 8-14.5 tires, and electric brakes.</li>
                                 <li>Insulated panel-style walls.</li>
