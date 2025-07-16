@@ -11,7 +11,7 @@ import supportMain from '../../assets/images/IntegralAsphalt/supportmain.png';
 import standarMain from '../../assets/images/IntegralAsphalt/standarmain.png';
 import standarRight from '../../assets/images/IntegralAsphalt/standarright.png';
 import standarLeft from '../../assets/images/IntegralAsphalt/standarleft.png';
-import UnitSwitch from './UnitSwitch';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -875,22 +875,56 @@ gsap.set(img, {
         )}
 
         {activeTab === 2 && (
-          <div className='flex flex-col items-center justify-center'>
-                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start gap-4 h-full w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                    <ul className='ml-6 list-disc'>
+            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
+            <div className='flex flex-col w-full h-full items-start justify-between gap-0 order-2 md:order-1'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C1_1: !prev.C1_1
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C1_1 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
                         <li>Foldable support legs with preset working height</li>
                         <li>Galvanized bolts and electrostatic automotive paint</li>
                         <li>Drum made from high-temp resistant alloyed steel</li>
                         <li>Reinforced front shield and EPDM rubber seals at drum ends</li>
+                        <li>Nomex filter bags (optional)</li>
+                        <li>1.5" fiberglass drum and tank insulation</li>
+                        <li>Exterior stainless steel tank lining</li>
+                        <li>Automotive-grade baked paint for corrosion resistance</li>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PRODUCTION RATE</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C1_2: !prev.C1_2
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C1_2 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Electronic control panel with ammeter</li>
                         <li>Digital temperature and asphalt dosing controls</li>
                         <li>Speed variator for mix adjustments</li>
@@ -898,58 +932,29 @@ gsap.set(img, {
                         <li>Pre-wired cable setup for plug-and-play startup</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Inlet Flights</li>
-                        <li>Drying Veiling Flights</li>
-                        <li>Radiation Flights</li>
-                        <li>Heating Flights</li>
-                        <li>Mixing Flights</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>All mounted on a lightweight chassis with support legs</li>
-                        <li>Pull-type hitch with safety coupling</li>
-                        <li>Includes braking system and DOT-compliant lighting</li>
-                        <li>Compact and stable for relocation when empty</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>ASPHALT STORAGE TANK</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted asphalt tank: 6,000 L capacity</li>
-                        <li>Direct heating with 140,000 BTU/hr burner</li>
-                        <li>2" pump (2 HP motor)</li>
-                        <li>Integrated asphalt agitator for faster startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PRODUCTION RATE</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>Nominal: 10 TPH continuous</li>
-                        <li>Continuous production for 10 hours (with full tank)</li>
-                    </ul>
-                </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={standarMain.src} alt="" className='w-[230px] h-[628px]' />
+            <div className='col-span-2 flex items-start mb-6 md:mb-0 justify-center w-full h-full order-1 md:order-2'>
+                <img src={standarMain.src} alt="" className='w-[200px] h-[588px]' />
             </div>
-            <div className='flex flex-col items-start justify-start gap-4 col-span-1 h-full w-full order-3 md:order-3'>
+            <div className='flex flex-col items-start justify-between w-full h-full col-span-1 order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Modulating diesel burner</li>
-                        <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
-                        <li>1.5 HP motor with UV sensors and fuel filtration</li>
-                        <li>Meets U.S. safety standards</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C2_1: !prev.C2_1
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C2_1 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Two 3 HP motors for drum rotation</li>
                         <li>Four gearbox reducers</li>
                         <li>1 HP gear pump motor for asphalt injection</li>
@@ -975,37 +980,109 @@ gsap.set(img, {
                         </ul>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Nomex filter bags (optional)</li>
-                        <li>1.5" fiberglass drum and tank insulation</li>
-                        <li>Exterior stainless steel tank lining</li>
-                        <li>Automotive-grade baked paint for corrosion resistance</li>
-                        <li>Guarded moving parts and warning signage for operator safety</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
-                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
-                        <li>18" wide feeding belt with lagged head pulley</li>
-                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C2_2: !prev.C2_2
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C2_2 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <li>Electronic control panel with ammeter</li>
+                        <li>Digital temperature and asphalt dosing controls</li>
+                        <li>Speed variator for mix adjustments</li>
+                        <li>Visual, audible, and strobe alarm system</li>
+                        <li>Pre-wired cable setup for plug-and-play startup</li>
                     </ul>
                 </div>
             </div>
                 </div>
-                <div className='flex justify-center items-end my-10'>
+                <div className='w-full grid grid-cols-1 md:grid-cols-4 mt-0 md:mt-10 justify-center items-center'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BURNER SYSTEM</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_1: !prev.C3_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Modulating diesel burner</li>
+                                <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
+                                <li>1.5 HP motor with UV sensors and fuel filtration</li>
+                                <li>Meets U.S. safety standards</li>
+                            </ul>
+                    </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-2  w-full md:px-44 self-center'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARDS</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_2: !prev.C3_2
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_2 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
+                    </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_3: !prev.C3_3
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_3 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+
+                                <li>All mounted on a standard-duty chassis designed for relocating the empty plant.</li>
+                                <li>10-ton load capacity supported by dual 8-lug axles and eight 16" wheels.</li>
+                                <li>Equipped with hitch, braking system, and DOT-compliant lighting.</li>
+                                <li>Ideal for transport between job sites without requiring full disassembly.</li>
+                            </ul>
+                    </div>
+                </div>
+                <div className='flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
@@ -1030,7 +1107,7 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='311.15 cm' data-metric='10.22 ft'>10.22 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1055,8 +1132,12 @@ gsap.set(img, {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex justify-center items-center'>
-                            <img src={standarLeft.src} alt="" className='max-w-full max-h-full object-contain'/>
+                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                            <img 
+                                src={standarLeft.src} 
+                                alt="" 
+                                className='max-w-full max-h-full object-contain'
+                            />
                         </div>
                     </div>
                     <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
@@ -1083,7 +1164,7 @@ gsap.set(img, {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
+                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1132,7 +1213,7 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1161,114 +1242,237 @@ gsap.set(img, {
                             <img src={standarRight.src} alt="" className='max-w-full max-h-full object-contain'/>
                         </div>
                     </div>
-
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
-                        </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C4_1: !prev.C4_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C4_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Support:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Chassis width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='389.2 cm' data-metric='12.77 ft'>12.77 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
-                        </div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-0 md:mt-10 gap-0 md:gap-10'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DRUM MIXER</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_1: !prev.C5_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>Inlet Flights</li>
+                                        <li>Drying Veiling Flights</li>
+                                        <li>Radiation Flights</li>
+                                        <li>Heating Flights</li>
+                                        <li>Mixing Flights</li>
+                                    </ul>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
+                                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
+                                        <li>18" wide feeding belt with lagged head pulley</li>
+                                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>8 ton</p>
-                        </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>ASPHALT TANK</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_2: !prev.C5_2
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_2 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Capacity:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>STORAGE TANK</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>Mounted asphalt tank: 6,000 L capacity</li>
+                                        <li>Direct heating with 140,000 BTU/hr burner</li>
+                                        <li>2" pump (2 HP motor)</li>
+                                        <li>Integrated asphalt agitator for faster startup</li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
-                            <h1>Total length (incluiding hitch):</h1>
-                            <p data-imperial='891.65 cm' data-metric='29.26 ft'>29.26 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Axle configuration:</h1>
-                            <p>Dual 8-lug axles</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Support:</h1>
-                            <p>Pre-set stationary legs</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Transport wheels:</h1>
-                            <p>Eight 16" tires</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Chassis width:</h1>
-                            <p data-imperial='304.8 cm' data-metric='10.00 ft'>10.00 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='311.5 cm' data-metric='28.75 ft'>10.22 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='388.75 cm' data-metric='12.75 ft'>12.75 ft</p>
-                        </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BIN UNITS</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_3: !prev.C5_3
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_3 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Capacity:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
+          
         )}
-
         {activeTab === 3 && (
-          <div className='flex flex-col items-center justify-center'>
-                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-center gap-4 order-2 md:order-1' id='column1' ref={columnGrid1}>
+            <div className='flex flex-col items-center justify-center' ref={containerRef}>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
+            <div className='flex flex-col w-full h-full items-start justify-between gap-0 order-2 md:order-1' id='column1' ref={columnGrid1}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                    <ul className='ml-6 list-disc'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C1_1: !prev.C1_1
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C1_1 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Low-profile, heavy-duty frame for stability and easy relocation</li>
                         <li>Foldable support legs with preset working height</li>
                         <li>Galvanized bolts and electrostatic automotive paint</li>
                         <li>Drum made from high-temp resistant alloyed steel</li>
                         <li>Reinforced front shield and EPDM rubber seals at drum ends</li>
+                        <li>Nomex filter bags (optional)</li>
+                        <li>1.5" fiberglass drum and tank insulation</li>
+                        <li>Exterior stainless steel tank lining</li>
+                        <li>Automotive-grade baked paint for corrosion resistance</li>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                    <ul className='ml-6 list-disc'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PRODUCTION RATE</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C1_2: !prev.C1_2
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C1_2 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Electronic control panel with ammeter</li>
                         <li>Digital temperature and asphalt dosing controls</li>
                         <li>Speed variator for mix adjustments</li>
@@ -1276,58 +1480,28 @@ gsap.set(img, {
                         <li>Pre-wired cable setup for plug-and-play startup</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Inlet Flights</li>
-                        <li>Drying Veiling Flights</li>
-                        <li>Radiation Flights</li>
-                        <li>Heating Flights</li>
-                        <li>Mixing Flights</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted on a heavy-duty reinforced chassis for transporting the full-loaded plant.</li>
-                        <li>25-ton load capacity with double Kenworth axles rated at 60,000 lbs.</li>
-                        <li>Includes eight 11-22.5 tires, Wallace Forge pull-type hitch, suspension, brakes, and road lighting system.</li>
-                        <li>Designed for rugged use, allowing relocation with asphalt, aggregates, and fuel loaded</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>ASPHALT STORAGE TANK</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Mounted asphalt tank: 6,000 L capacity</li>
-                        <li>Direct heating with 140,000 BTU/hr burner</li>
-                        <li>2" pump (2 HP motor)</li>
-                        <li>Integrated asphalt agitator for faster startup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PRODUCTION RATE</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>Nominal: 10 TPH continuous</li>
-                        <li>Continuous production for 10 hours (with full tank)</li>
-                    </ul>
-                </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-[628px] order-1 md:order-2'>
-                
+            <div className='col-span-2 flex items-start mb-6 md:mb-0 justify-center w-full h-[588px] order-1 md:order-2'>
             </div>
-            <div className='flex flex-col items-start justify-start gap-4 w-full h-full order-3 md:order-3' id='column2' ref={columnGrid2}>
+            <div className='flex flex-col items-start justify-between w-full h-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>BURNER SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Modulating diesel burner</li>
-                        <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
-                        <li>1.5 HP motor with UV sensors and fuel filtration</li>
-                        <li>Meets U.S. safety standards</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                    <ul className='ml-6 list-disc'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C2_1: !prev.C2_1
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C2_1 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Two 3 HP motors for drum rotation</li>
                         <li>Four gearbox reducers</li>
                         <li>1 HP gear pump motor for asphalt injection</li>
@@ -1353,37 +1527,109 @@ gsap.set(img, {
                         </ul>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>Nomex filter bags (optional)</li>
-                        <li>1.5" fiberglass drum and tank insulation</li>
-                        <li>Exterior stainless steel tank lining</li>
-                        <li>Automotive-grade baked paint for corrosion resistance</li>
-                        <li>Guarded moving parts and warning signage for operator safety</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
-                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
-                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
-                        <li>18" wide feeding belt with lagged head pulley</li>
-                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
-                    <ul className='ml-6 list-disc'>  
-                        <li>EPA</li>
-                        <li>OSHA</li>
-                        <li>DOT</li>
-                        <li>UL wiring</li>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='w-full flex justify-between border-b border-b-white'>
+                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                        ...prev,
+                        C2_2: !prev.C2_2
+                        }))}>
+                            <svg width="28px" height="28px"
+                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg" color="#000000"
+                              className={`transition-transform duration-300 transform ${
+                                openSections.C2_2 ? "rotate-180" : ""
+                              }`}>
+                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <li>Electronic control panel with ammeter</li>
+                        <li>Digital temperature and asphalt dosing controls</li>
+                        <li>Speed variator for mix adjustments</li>
+                        <li>Visual, audible, and strobe alarm system</li>
+                        <li>Pre-wired cable setup for plug-and-play startup</li>
                     </ul>
                 </div>
             </div>
                 </div>
-                <div className='flex justify-center items-end my-10'>
+                <div className='w-full grid grid-cols-1 md:grid-cols-4 mt-0 md:mt-10 justify-center items-center'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BURNER SYSTEM</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_1: !prev.C3_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Modulating diesel burner</li>
+                                <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
+                                <li>1.5 HP motor with UV sensors and fuel filtration</li>
+                                <li>Meets U.S. safety standards</li>
+                            </ul>
+                    </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-2  w-full md:px-44 self-center'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARDS</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_2: !prev.C3_2
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_2 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>EPA</li>
+                                <li>OSHA</li>
+                                <li>DOT</li>
+                                <li>UL wiring</li>
+                            </ul>
+                    </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C3_3: !prev.C3_3
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C3_3 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+
+                                <li>All mounted on a standard-duty chassis designed for relocating the empty plant.</li>
+                                <li>10-ton load capacity supported by dual 8-lug axles and eight 16" wheels.</li>
+                                <li>Equipped with hitch, braking system, and DOT-compliant lighting.</li>
+                                <li>Ideal for transport between job sites without requiring full disassembly.</li>
+                            </ul>
+                    </div>
+                </div>
+                <div className='flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
@@ -1408,7 +1654,7 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='290.5 cm' data-metric='9.37 ft'>9.37 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1433,8 +1679,12 @@ gsap.set(img, {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px]'>
-                            <img src={reinforcedLeft.src} alt="" />
+                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                            <img 
+                                src={reinforcedLeft.src} 
+                                alt="" 
+                                className='max-w-full max-h-full object-contain'
+                            />
                         </div>
                     </div>
                     <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
@@ -1461,7 +1711,7 @@ gsap.set(img, {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='421 cm' data-metric='12.828 ft'>12.828 ft</p>
+                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1510,7 +1760,7 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='876 cm' data-metric='28.75 ft'>28.75 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1535,103 +1785,189 @@ gsap.set(img, {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px]'>
-                            <img src={reinforcedRight.src} alt="" />
+                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                            <img src={reinforcedRight.src} alt="" className='max-w-full max-h-full object-contain'/>
                         </div>
                     </div>
-
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>DRUM DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='300 cm' data-metric='9.885 ft'>9.885 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='112.32 cm' data-metric='3.686 ft'>3.686 ft</p>
-                        </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-10'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C4_1: !prev.C4_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C4_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className='flex justify-between'>
+                                    <h1>Total length (including hitch):</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Support:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Chassis width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Total height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>ASPHALT TANK DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='398.2 cm' data-metric='12.77 ft'>12.77 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='128 cm' data-metric='4.2 ft'>4.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='158.50 cm' data-metric='5.2 ft'>5.2 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>6,000 lts</p>
-                        </div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full mt-0 md:mt-10 gap-0 md:gap-10'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DRUM MIXER</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_1: !prev.C5_1
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_1 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>Inlet Flights</li>
+                                        <li>Drying Veiling Flights</li>
+                                        <li>Radiation Flights</li>
+                                        <li>Heating Flights</li>
+                                        <li>Mixing Flights</li>
+                                    </ul>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
+                                        <li>8 Ton mounted aggregate bin with gate adjustment</li>
+                                        <li>18" wide feeding belt with lagged head pulley</li>
+                                        <li>Mini belt conveyor (9" x 6 m) with 1 HP motor and worm gearbox</li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>BIN UNIT DIMENSIONS</h1>
-                        <div className='flex justify-between'>
-                            <h1>Length:</h1>
-                            <p data-imperial='317 cm' data-metric='10.41 ft'>10.41 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Width:</h1>
-                            <p data-imperial='190.5 cm' data-metric='6.25 ft'>6.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Height:</h1>
-                            <p data-imperial='160 cm' data-metric='5.25 ft'>5.25 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Capacity:</h1>
-                            <p>8 ton</p>
-                        </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>ASPHALT TANK</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_2: !prev.C5_2
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_2 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Capacity:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div><br />
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>STORAGE TANK</h1>
+                                    <ul className='ml-6 list-disc'>
+                                        <li>Mounted asphalt tank: 6,000 L capacity</li>
+                                        <li>Direct heating with 140,000 BTU/hr burner</li>
+                                        <li>2" pump (2 HP motor)</li>
+                                        <li>Integrated asphalt agitator for faster startup</li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
-                    <div className='text-white font-normal'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
-                            <h1>Total length (incluiding hitch):</h1>
-                            <p data-imperial='876 cm' data-metric='28.75 ft'>28.75 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Axle configuration:</h1>
-                            <p>Dual 9-lug axles</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Fifth-wheel hitch height:</h1>
-                            <p data-imperial='130.45 cm' data-metric='4.28 ft'>4.28 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Support:</h1>
-                            <p>Pre-set stationary legs</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Transport wheels:</h1>
-                            <p>11-22.5 tires</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Chassis width:</h1>
-                            <p data-imperial='254 cm' data-metric='8.33 ft'>8.33 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total width:</h1>
-                            <p data-imperial='290.5 cm' data-metric='9.37 ft'>9.37 ft</p>
-                        </div>
-                        <div className='flex justify-between'>
-                            <h1>Total height:</h1>
-                            <p data-imperial='421 cm' data-metric='13.828 ft'>13.828 ft</p>
-                        </div>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BIN UNITS</h1>
+                                <button className='block' onClick={() => setOpenSections(prev => ({
+                                ...prev,
+                                C5_3: !prev.C5_3
+                                }))}>
+                                    <svg width="28px" height="28px"
+                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                    className={`transition-transform duration-300 transform ${
+                                        openSections.C5_3 ? "rotate-180" : ""
+                                    }`}>
+                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                                <div className='flex justify-between'>
+                                    <h1>Length:</h1>
+                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Width:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Height:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Capacity:</h1>
+                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
+          
         )}
       </div>
     </div>
