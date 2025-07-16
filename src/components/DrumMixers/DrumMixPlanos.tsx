@@ -139,7 +139,7 @@ const DrumMixPlanos = () => {
     start: 'top+=70 20%',
     end: `+=${adjustedScrollDistance}`,
     scrub: true,
-    markers: true,
+    markers: false,
     animation: gsap.to(box, {
       y: adjustedDistanceToMove,
       ease: 'none',
