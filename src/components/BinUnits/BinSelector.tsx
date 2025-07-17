@@ -44,7 +44,7 @@ export default function BinSelector() {
           <button
             key={num}
             onClick={() => setSelectedBins(num)}
-            className={`px-4 py-2 rounded font-bold border ${
+            className={`px-4 py-2 text-base md:text-lg rounded font-bold border ${
               selectedBins === num
                 ? 'bg-blueMain text-white'
                 : 'bg-white text-black'
@@ -57,7 +57,7 @@ export default function BinSelector() {
       <div className="flex flex-col gap-4">
         <button
           onClick={() => setPanelType('aesthetic')}
-          className={`text-start px-4 py-2 rounded font-bold border ${
+          className={`text-start text-base md:text-lg px-4 py-2 rounded font-bold border ${
             panelType === 'aesthetic'
               ? 'bg-blueMain text-white'
               : 'bg-white text-black'
@@ -67,7 +67,7 @@ export default function BinSelector() {
         </button>
         <button
           onClick={() => setPanelType('without')}
-          className={`px-4 py-2 rounded font-bold border ${
+          className={`px-4 py-2 rounded text-base md:text-lg font-bold border ${
             panelType === 'without'
               ? 'bg-blueMain text-white'
               : 'bg-white text-black'
@@ -79,7 +79,7 @@ export default function BinSelector() {
                     
                 </div>
 
-                <p className="text-base max-w-3xl font-bold text-grisT">
+                <p className="text-base md:text-lg max-w-3xl font-bold text-grisT">
         High-quality equipment built for durability and efficient asphalt
         production. Featuring reinforced steel structures and integrated
         vibration systems, Triaso® bin units ensure steady aggregate flow,
@@ -98,10 +98,10 @@ export default function BinSelector() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Specs */}
         <div className="bg-white p-4 rounded-2xl shadow">
-          <h2 className="text-lg font-bold mb-2">
+          <h2 className="text-lg md:text-xl font-bold mb-2">
             Specifications and Characteristics
           </h2>
-          <ul className="list-disc pl-6 space-y-2 text-base font-bold text-grisT">
+          <ul className="list-disc pl-6 space-y-2 text-base md:text-lg font-bold text-grisT">
             <li>
               With dimensions and aggregate dosing systems that comply with
               construction regulations

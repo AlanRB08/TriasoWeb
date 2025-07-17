@@ -43,7 +43,7 @@ export default function TabsIntegral() {
         ))}
       </div>
 
-      <div className="w-full h-[300px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="w-full h-[50vh] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}
