@@ -3,7 +3,7 @@ import CustomBins from "../components/BinUnits/CustomBins.astro";
 import IntroSection from "../components/BinUnits/IntroSection.astro";
 import Layout from "../layouts/Layout.astro";
 import IntegrateControl from '../components/BinUnits/IntegrateControl.astro';
-import BinGallery from '../components/BinUnits/BinGallery';
+import BinGallery from "../components/BinUnits/BinGallery.astro";
 import BinSelector from '../components/BinUnits/BinSelector';
 import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
@@ -13,7 +13,7 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
     <BinSelector client:only/>
     <CustomBins />
     <IntegrateControl />
-    <BinGallery client:only/>
+    <BinGallery />
     <BinPlanosSection client:only/>
     <CardSection />
 </Layout>
