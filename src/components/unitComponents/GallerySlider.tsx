@@ -1,139 +1,28 @@
+// components/ImageSlider.tsx
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-type Slide = {
+export type Slide = {
   image: string;
   caption: string;
 };
 
-const slides: Slide[] = [
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.png',
-    caption: 'Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.png',
-    caption: 'Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.png',
-    caption: 'Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.png',
-    caption: 'Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, en posición de transporte',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo con Rap',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.png',
-    caption: 'Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de transporte',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/consola.png',
-    caption: 'Consola de control, con computadora plus para planta de asfalto de contraflujo',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/tanqueplusA.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/tanqueplusB.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/tanqueplusC.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/tanqueplusD.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.png',
-    caption: 'Unidad de tolvas triple plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.png',
-    caption: 'Unidad de tolvas triple plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.png',
-    caption: 'Unidad de tolvas triple plus',
-  },
-  {
-    image: 'src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.png',
-    caption: 'Unidad de tolvas triple plus',
-  }
+type ImageSliderProps = {
+  slides: Slide[];
+  visibleThumbs?: number;
+};
 
-];
-
-export default function BinSlider() {
+export default function GallerySlider({ slides, visibleThumbs = 5 }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
   const [isFullscreen, setIsFullscreen] = useState(false);
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
   const fullscreenRef = useRef<HTMLDivElement>(null);
   const prevIndexRef = useRef(0);
-  const visibleThumbs = 5;
 
-  // Función para pantalla completa
   const toggleFullscreen = () => {
     if (!fullscreenRef.current) return;
 
@@ -148,33 +37,25 @@ export default function BinSlider() {
     }
   };
 
-  // Detectar cambios en pantalla completa
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
-
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
 
-  // Calcular rango de thumbnails visibles
   const getVisibleThumbRange = () => {
     let start = Math.max(0, currentIndex - Math.floor(visibleThumbs / 2));
     const end = Math.min(slides.length - 1, start + visibleThumbs - 1);
-    
     if (end === slides.length - 1) {
       start = Math.max(0, end - visibleThumbs + 1);
     }
-    
     return { start, end };
   };
 
-  const { start: thumbStart, end: thumbEnd } = getVisibleThumbRange();
-
-  // Navegación entre slides
   const goToPrevious = () => {
     if (currentIndex > 0) {
       setDirection('left');
@@ -195,7 +76,6 @@ export default function BinSlider() {
     scrollThumbIntoView(index);
   };
 
-  // Scroll para mostrar el thumbnail seleccionado
   const scrollThumbIntoView = (index: number) => {
     if (thumbsRef.current) {
       const thumb = thumbsRef.current.children[index] as HTMLElement;
@@ -208,23 +88,18 @@ export default function BinSlider() {
     }
   };
 
-  // Animaciones con GSAP
   useEffect(() => {
     if (!imageRef.current || prevIndexRef.current === currentIndex) return;
 
     const imageElement = imageRef.current;
     const fromX = direction === 'right' ? '100%' : '-100%';
 
-    gsap.set(imageElement, {
-      x: fromX,
-      opacity: 0,
-    });
-
+    gsap.set(imageElement, { x: fromX, opacity: 0 });
     gsap.to(imageElement, {
       x: 0,
       opacity: 1,
       duration: 0.5,
-      ease: "power2.out",
+      ease: "power2.out"
     });
 
     prevIndexRef.current = currentIndex;
@@ -235,7 +110,6 @@ export default function BinSlider() {
     };
   }, [currentIndex, direction]);
 
-  // Navegación por teclado
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') goToPrevious();
@@ -243,10 +117,11 @@ export default function BinSlider() {
       if (e.key === 'Escape' && isFullscreen) toggleFullscreen();
       if (e.key === 'f') toggleFullscreen();
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentIndex, isFullscreen]);
+
+  const { start: thumbStart, end: thumbEnd } = getVisibleThumbRange();
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React from 'react'
-import BinSlider from '../BinUnits/BinSlider';
+import BinSlider from './BinSlider.astro'
 
 const BinGallery = () => {
   return (
@@ -26,7 +26,7 @@ const BinGallery = () => {
             </div>
         </div>
         <div className=' bg-white h-full w-full rounded-2xl'>
-            <BinSlider />
+            <BinSlider client:only="react"/>
         </div>
     </div>
   )
