@@ -4,11 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
 import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
 import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
-import tolva2L2 from '../../assets/images/BinUnits/tolva2L2.png';
 import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
 import tolva2F1 from '../../assets/images/BinUnits/tolva2F1.png';
-import tolva2Main from '../../assets/images/BinUnits/tolva2Main.png';
-import tolva1F from '../../assets/images/BinUnits/tolva1F.png';
+import HMainS1 from '../../assets/images/HotMix/Silo50-Comp.Assy-R.png';
+import HMainBS1 from '../../assets/images/HotMix/Silo50-Comp.Assy.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,15 +95,19 @@ const HotMixPlanos = () => {
    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
 
+   const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
+  const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
+  const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+
   const scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
-    start: 'top-=200 20%',
-    end: `+=${distanceToMove}`,
+    start: 'top+=70 20%',
+    end: `+=${adjustedScrollDistance}`,
     scrub: true,
     markers: false,
     animation: gsap.to(box, {
-      y: distanceToMove,
+      y: adjustedDistanceToMove,
       ease: 'none',
     }),
     onUpdate: (self) => {
@@ -154,10 +157,11 @@ const HotMixPlanos = () => {
     }
   });
 
-  ScrollTrigger.refresh();
+  const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
 
   return () => {
     scrollTrig?.kill(); // <-- evita error si no existe
+    clearTimeout(refreshTimer);
   };
 }, [activeTab]);
 
@@ -179,10 +183,10 @@ const HotMixPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[200px] h-[920px]"
+             z-20 w-[120px] h-[600px]"
         >
           <img
-            src={tolva3Blue.src}
+            src={HMainBS1.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
@@ -193,7 +197,7 @@ const HotMixPlanos = () => {
           />
           <img
             ref={imgRef}
-            src={tolva3Main.src}
+            src={HMainS1.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
