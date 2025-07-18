@@ -8,12 +8,21 @@ import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
 import tolva2F1 from '../../assets/images/BinUnits/tolva2F1.png';
 import HMainS1 from '../../assets/images/HotMix/Silo50-Comp.Assy-R.png';
 import HMainBS1 from '../../assets/images/HotMix/Silo50-Comp.Assy.png';
+import HLeftBS1 from '../../assets/images/HotMix/Silosf50-1.png';
+import HRightBS1 from '../../assets/images/HotMix/Silosf50-3.png';
+import HLeftBS2 from '../../assets/images/HotMix/Siloae100-1.png';
+import HRightBS2 from '../../assets/images/HotMix/Siloae100-3.png';
+import HMainBS2 from '../../assets/images/HotMix/Siloae100-2.png';
+import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
+import HMainBR2 from '../../assets/images/HotMix/Silo-SF100TBpS.png';
+import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.png';
+import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HotMixPlanos = () => {
     //logica de cambio de imagenes
-    const [activeVersion, setActiveVersion] = useState('withPanels');
+    const [activeVersion, setActiveVersion] = useState('50tons');
   //tabs states
   const [activeTab, setActiveTab] = useState(1);
 
@@ -27,6 +36,18 @@ const HotMixPlanos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
+
+  //RENDERIZADO CONDICIONAL DE IMAGENES
+  type VersionType = '50tons' | '100tons' | '150tons' | '200tons';
+  const imageMap: Record<VersionType, string> = {
+  '50tons': HMainBR1.src,
+  '100tons': HMainBR2.src,
+  '150tons': HMainBR3.src,
+  '200tons': HMainBR4.src,
+  // Agrega más versiones aquí
+};
+
+const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -52,6 +73,7 @@ const HotMixPlanos = () => {
   }, []);
 
  useEffect(() => {
+  console.log('Current values:', { activeTab, activeVersion });
   const box = boxRef.current;
   const target = nextSectionRef.current;//target original
   const clipTarget = clipTargetRef.current;//target del clipath
@@ -65,14 +87,10 @@ const HotMixPlanos = () => {
   if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) return;
 
 
-  if (activeTab !== 1) {
-    gsap.set(box, {
-      y: 0,
-      opacity: 0,
-      display: 'none',
-    });
-    return;
-  }
+  if (activeTab !== 1 || activeVersion !== '50tons') {
+  gsap.set(box, { y: 0, opacity: 0, display: 'none' });
+  return;
+}
 
   gsap.set(box, {
     opacity: 1,
@@ -163,7 +181,7 @@ const HotMixPlanos = () => {
     scrollTrig?.kill(); // <-- evita error si no existe
     clearTimeout(refreshTimer);
   };
-}, [activeTab]);
+}, [activeTab,activeVersion]);
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
@@ -190,9 +208,9 @@ const HotMixPlanos = () => {
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
-      display: activeTab === 1 ? 'block' : 'none',
-      opacity: activeTab === 1 ? 1 : 0,
-      visibility: activeTab === 1 ? 'visible' : 'hidden',
+      display: (activeVersion === '50tons' && activeTab === 1) ? 'block' : 'none',
+      opacity: (activeVersion === '50tons'&& activeTab === 1) ? 1 : 0,
+      visibility: (activeVersion === '50tons' && activeTab === 1) ? 'visible' : 'hidden',
     }}
           />
           <img
@@ -245,9 +263,9 @@ const HotMixPlanos = () => {
       <div className="version-selector flex gap-10 justify-center mb-6">
         <button
             
-            onClick={() => setActiveVersion('withPanels')}
+            onClick={() => setActiveVersion('50tons')}
             className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                activeVersion === 'withPanels' 
+                activeVersion === '50tons' 
                 ? 'text-black bg-white border-white' 
                 : 'text-white bg-transparent border-white'
             }`}
@@ -255,9 +273,9 @@ const HotMixPlanos = () => {
             50 tons
             </button>
             <button
-            onClick={() => setActiveVersion('withoutPanels')}
+            onClick={() => setActiveVersion('100tons')}
             className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                activeVersion === 'withoutPanels' 
+                activeVersion === '100tons' 
                 ? 'text-black bg-white border-white' 
                 : 'text-white bg-transparent border-white'
             }`}
@@ -267,9 +285,9 @@ const HotMixPlanos = () => {
         {activeTab === 2 && (
             <div className=''>
                 <button
-            onClick={() => setActiveVersion('withoutPanels')}
+            onClick={() => setActiveVersion('150tons')}
             className={`px-4 py-2 text-sm mr-6 font-medium border rounded-full transition-all duration-300 ${
-                activeVersion === 'withoutPanels' 
+                activeVersion === '150tons' 
                 ? 'text-black bg-white border-white' 
                 : 'text-white bg-transparent border-white'
             }`}
@@ -277,9 +295,9 @@ const HotMixPlanos = () => {
             150 tons
             </button>
             <button
-            onClick={() => setActiveVersion('withoutPanels')}
+            onClick={() => setActiveVersion('200tons')}
             className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                activeVersion === 'withoutPanels' 
+                activeVersion === '200tons' 
                 ? 'text-black bg-white border-white' 
                 : 'text-white bg-transparent border-white'
             }`}
@@ -294,7 +312,7 @@ const HotMixPlanos = () => {
       <div className="flex gap-10 justify-center">
         {/* Botón 1 */}
         <button
-          onClick={() => setActiveTab(1)}
+          onClick={() => {setActiveVersion('50tons'); setActiveTab(1);}}
           className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
             activeTab === 1
               ? 'text-gray-900 bg-white border-white'
@@ -342,9 +360,6 @@ const HotMixPlanos = () => {
                             <li>Remote operation ready via Modbus / Ethernet</li>
                         </ul>
                     </div>
-                
-                
-                
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
                     <ul className='ml-6 list-disc'>
@@ -356,7 +371,412 @@ const HotMixPlanos = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                {
+                    activeVersion === '50tons' ? (
+                        <div className='w-full'>
+
+                        </div>
+                    ):(<img src={HMainBS2.src} alt="" className='w-[120px] h-[600px]'/>
+                    )
+                }
+            </div>
+            <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1' id='column2' ref={columnGrid2}>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>Fully insulated walls – up to 72 hrs heat retention</li>
+                        <li>Rain shield and anti-segregation batch chamber</li>
+                        <li>Built-in safety railings and OSHA-compliant platform</li>
+                        <li>Aesthetic side panels for professional image</li>
+                        <li>Reinforced materials for heavy-duty operation</li>
+                        <li>Low-profile structure for stable and efficient transport</li>
+                        <li>Pre-set height support legs, foldable for transport</li>
+                        <li>Transport skids for quick coupling and parking</li>
+                        <li>Galvanized bolts and corrosion-resistant hardware</li>
+                        <li>Electrostatic paint for long-lasting durability</li>
+                        <li>Transport via flatbed or container-style chassis</li>
+                        <li>Accessory lifting hooks for crane handling</li>
+                    </ul>
+                </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>High-resistance structure for long-term operation</li>
+                        <li>Protected by electrostatic paint with strong adhesion</li>
+                        <li>Bolted components with anti-corrosion coating</li>
+                        <li>Thermal insulation reduces surface temperature</li>
+                        <li>Guarded access to moving and hot parts for operator safety</li>
+                        <li>Reinforced anti-slip decks and railings</li>
+                        <li>Access doors with non-skid finish</li>
+                        <li>Dust-resistant control module housing</li>
+                    </ul>
+                </div>
                 
+                
+            </div>
+            
+                </div>
+                <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-10'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Industrial-grade motors and components</li>
+                            <li>Simple wiring system for easy maintenance</li>
+                            <li>Pulley and bushing transmission system</li>
+                            <li>Siemens motors / industrial-grade wiring</li>
+                            <li>Quick-connect terminals (IP rated)</li>
+                            <li>Oversized Browning reducers</li>
+                            <li>Load cells for mix weighing</li>
+                            <li>External fuel lines, sensors, and cabling included</li>
+                        </ul>
+                </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-2 px-20'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARS</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>EPA</li>
+                        <li>OSHA</li>
+                        <li>DOT</li>
+                        <li>UL wiring</li>
+                    </ul>
+                </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>Designed for occasional relocation with crane support</li>
+                        <li>Transportable in sections on flatbed trailer</li>
+                        <li>Setup requires crane or hoisting equipment</li>
+                        <li>Bolt-on support legs for fast on-site assembly</li>
+                        <li>DOT-compliant lighting and reflective markings for transport visibility</li>
+                    </ul>
+                </div>
+            </div>
+                <div className='flex justify-center items-end my-10'>
+                    <div className='flex flex-col items-center justify-center'>
+                        <div className='flex items-center justify-center w-full h-[60px]'>
+                            <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                <div className='bg-white h-[1px] w-full relative'>
+                                    <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="8 5 8 14" 
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                            fill="#ffffff"
+                                        />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                            <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                <div className='bg-white h-[1px] w-full relative'>
+                                    <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                            fill="#ffffff"
+                                        />
+                                        </svg>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div className='w-[245px] h-[287px] flex items-center justify-center'>
+                            {
+                                activeVersion === '50tons' ? (
+                                    <img 
+                                    src={HLeftBS1.src} 
+                                    alt="" 
+                                    className='max-w-full max-h-full object-contain'
+                                />
+                                ):(
+                                    <img 
+                                src={HRightBS1.src} 
+                                alt="" 
+                                className='max-w-full max-h-full object-contain'
+                            />
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[287px]'>
+                        <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
+                            <div className='bg-white w-[1px] h-full relative'>
+                                <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="6 5 12 10"  // Área ajustada al contenido real
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z" 
+                                            fill="#ffffff"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='my-3'>
+                            <p className='text-white text-lg' data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                        </div>
+                        <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
+                            <div className='bg-white w-[1px] h-full relative'>
+                                <div className='absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="6 8 12 10"  // Área ajustada al contenido real
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z" 
+                                            fill="#ffffff"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-col items-center justify-center'>
+                        <div className='flex items-center justify-center w-full h-[60px]'>
+                            <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
+                                <div className='bg-white h-[1px] w-full relative'>
+                                    <div className='absolute left-0 top-1/2 transform -translate-y-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="8 5 8 14" 
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z" 
+                                            fill="#ffffff"
+                                        />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                            <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
+                                <div className='bg-white h-[1px] w-full relative'>
+                                    <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
+                                    <svg 
+                                        width="8" 
+                                        height="8" 
+                                        viewBox="8 5 8 14"  // Ajustado para recortar espacio vacío
+                                        fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="block p-0 m-0 overflow-visible"
+                                        style={{ shapeRendering: 'crispEdges' }}
+                                        >
+                                        <path 
+                                            fill-rule="evenodd" 
+                                            clip-rule="evenodd" 
+                                            d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z" 
+                                            fill="#ffffff"
+                                        />
+                                        </svg>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div className='h-[287px] w-[744px] flex justify-center items-center'>
+                        {
+                                activeVersion === '50tons' ? (
+                                    <img 
+                                    src={HRightBS1.src} 
+                                    alt="" 
+                                    className='max-w-full max-h-full object-contain'
+                                />
+                                ):(
+                                    <img 
+                                src={HRightBS2.src} 
+                                alt="" 
+                                className='max-w-full max-h-full object-contain'
+                            />
+                                )
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                    <div className='text-white font-normal col-span-1'>
+                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE MAIN BODY <br /> DIMENSIONS</h1>
+                        <div className='flex justify-between'>
+                            <h1>Width:</h1>
+                            <p data-imperial='301.75 cm' data-metric='9.9 ft'>9.9 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Height:</h1>
+                            <p data-imperial='545.59 cm' data-metric='17.9 ft'>17.9 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Storage Capacity:</h1>
+                            <p>50 tons</p>
+                        </div>
+                    </div>
+                    <div className='text-white font-normal col-span-2'>
+                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                        <div className='flex justify-between'>
+                            <h1>Total length (including transport skid):</h1>
+                            <p data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Chassis length:</h1>
+                            <p data-imperial='1,459.99 cm' data-metric='47.9 ft'>47.9 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Transportation width:</h1>
+                            <p data-imperial='365.76 cm' data-metric='12 ft'>12 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Total width:</h1>
+                            <p data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Axle configuration: </h1>
+                            <p>Doble Axle</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
+                            <p data-imperial='124.96 cm' data-metric='4.1 ft'>4.1 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Support system: </h1>
+                            <p>Steel legs with base plates for anchor bolting</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Wheels: </h1>
+                            <p>16" highway-rated tires</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Truck height dischange:</h1>
+                            <p data-imperial='368.80 cm' data-metric='12.1 ft'>12.1 ft</p>
+                        </div>
+                        <div className='flex justify-between'>
+                            <h1>Total height (heighest point):</h1>
+                            <p data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
+                    <div className='text-white font-normal col-span-3'>
+                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>FEDDING SLAT CONVEYOR</h1>
+                        <div className='grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-20'>
+                            <div className='text-white font-normal col-span-1'>
+                                    <div className='flex justify-between'>
+                                        <h1>Length:</h1>
+                                        <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Width:</h1>
+                                        <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Height (erected):</h1>
+                                        <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Chain pitch:</h1>
+                                        <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Height (discharge height):</h1>
+                                        <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Angle of inclination:</h1>
+                                        <p>48.6°</p>
+                                    </div>
+                            </div>
+                            <div className='flex flex-col gap-4 text-white col-span-1 md:col-span-2 w-full justify-center'>
+                                <ul className='ml-6 list-disc w-full'>
+                                    <li>Transported together with the silo on the same chassis</li>
+                                    <li>Installed and dismantled on-site using a crane</li>
+                                    <li>Independent structure, not fixed to the silo frame</li>
+                                    <li>Capacity up to 320 TPH</li>
+                                    <li>Reinforced steel paddles for durability and consistent performance</li>
+                                    <li>Enclosed design helps retain material temperature and prevent contamination</li>
+                                    <li>Driven by industrial motor and reducer for easy maintenance</li>
+                                    <li>Top access doors for easy cleaning and inspection</li>
+                                    <li>Manual chain tensioning system for long-term reliability</li>
+                                    <li>Designed for fast alignment with the silo inlet during setup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        )}
+        {activeTab === 2 && (
+            <div className='flex flex-col items-center justify-center'>
+                <div className='grid grid-cols-4 justify-center items-center'>
+            <div className='flex flex-col items-start justify-start gap-4 h-full' id='column1' ref={columnGrid1}>
+                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                        <ul className='ml-6 list-disc'>
+                            <li>Fully automatic or manual operation</li>
+                            <li>Digital temperature monitoring and regulation</li>
+                            <li>Simple and intuitive interface</li>
+                            <li>Control system designed for field reliability</li>
+                            <li>Proface touchscreen control interface</li>
+                            <li>HMI for weighing, temp control, and gate timing</li>
+                            <li>Automatic dispatch tickets (weight, truck, time)</li>
+                            <li>Internal mix temp sensors</li>
+                            <li>Programmable alarms and data logging (200+ records)</li>
+                            <li>Remote operation ready via Modbus / Ethernet</li>
+                        </ul>
+                    </div>
+                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
+                    <ul className='ml-6 list-disc'>
+                        <li>Top inlet with rubber seal and rain cover</li>
+                        <li>1 m³ batch discharge chamber</li>
+                        <li>Pneumatic gates: fast-release and waste bypass</li>
+                        <li>Load cell integration with programmable logic</li>
+                    </ul>
+                </div>
+            </div>
+            <div className='col-span-2 flex items-start justify-center w-full h-full'>
+                <img src={selectedImage} alt="Selected image" className='w-[120px] h-[600px]' />
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
