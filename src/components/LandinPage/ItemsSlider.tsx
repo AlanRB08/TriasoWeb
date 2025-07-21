@@ -60,7 +60,6 @@ export default function ItemsSlider({ images }: Props) {
 
   return (
     <div className="w-full mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 md:px-44 mb-10">
-      <p className="w-full font-bold text-lg lg:text-xl text-center mb-10 px-8">Strict quality control ensures the operation of your equipment with low maintenance for many years.</p>
       {/* Desktop navigation buttons */}
       {!isMobile && (
         <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">

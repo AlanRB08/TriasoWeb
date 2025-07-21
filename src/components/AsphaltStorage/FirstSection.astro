@@ -1,0 +1,60 @@
+---
+import Image from "astro/components/Image.astro";
+import Separator from "../unitComponents/Separator.astro";
+import ItemsSlider from "../LandinPage/ItemsSlider";
+
+const iconos = [
+  { src: '/Gallery/sliderHotMix/1.png', title: 'Preservation of Quality',texto:'Perservation of quality and integrity of the asphlt.' },
+  { src: '/Gallery/sliderHotMix/2.png', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
+  { src: '/Gallery/sliderHotMix/3.png', title: 'Versatile Storage Options' ,texto:'Long-duration thermal retention, ensuring it remains liquid and high-quality for extended periods.'},
+  { src: '/Gallery/sliderHotMix/4.png', title: 'Mobility' ,texto:'Triaso asphalt tanks allow quick setup without heavy machinery, ideal for relocatable operations.'},
+  { src: '/Gallery/sliderHotMix/5.png', title: 'Durability' ,texto:'Built with reinforced materials, thermally insulated cylinders, and corrosion-resistant finishes.'},
+  { src: '/Gallery/sliderHotMix/6.png', title: 'Seamless Integration',texto:'Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.' },
+  { src: '/Gallery/sliderHotMix/7.png', title: 'Enhanced Safety' ,texto:'Equipped with guards, alarms, and visual indicators to protect personnel and equipment.'},
+  { src: '/Gallery/sliderHotMix/8.png', title: 'Cost-Effective' ,texto:'Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.'},
+    { src: '/Gallery/sliderHotMix/9.png', title: 'Improved Company Image' ,texto:'Industrial aesthetics elevate the visual appeal of your operation.'},
+    { src: '/Gallery/sliderHotMix/10.png', title: 'Customizable' ,texto:'Adaptable features to meet specific project requirements and operational goals.'},
+  // agrega hasta 16 o más imágenes
+];
+---
+<section class="w-full flex flex-col items-center justify-center mt-40 font-bold">
+    <div class="w-full px-8 md:px-32">
+        <h1 class="text-2xl md:text-3xl">Triaso® Asphalt <br> Storage Tanks</h1>
+        <Separator />
+    </div>
+    <p class="font-extralight px-8 md:px-32 text-center">
+        Our asphalt tanks are designed to store and maintain asphalt at optimal conditions,
+         ensuring consistent quality and performance. With robust construction and reliable insulation,
+          they keep asphalt ready for use in any application. Ideal for polymer-modified asphalt production,
+           these tanks deliver the durability and functionality you need for both small projects and large-scale operations.
+    </p>
+    <h2 class="mt-20 text-lg md:text-xl text-start w-full pl-8 md:pl-32">Versatile and Efficient Asphalt Storage Solutions</h2>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center mt-10 pl-8 md:pl-32">
+        <div class="text-grisT">
+            <p>Our tanks are engineered for versatility and ease of use across various asphalt storage needs. With advanced
+                 features such as efficient heating systems and precise temperature control, they ensure that asphalt remains
+                  at its ideal consistency. Whether you're working with standard or modified asphalt, these tanks provide the
+                   reliability and durability required to support both small and large-scale production environments.</p>
+            <br>
+                   <p>
+                Our tanks are versatile and can be used across a variety of industries such as road construction, roofing,
+                 and other large-scale applications that require consistent asphalt storage. Whether you’re working with hot 
+                 mix asphalt or other materials, our tanks provide the reliability you need for all your storage needs.
+            </p>
+        </div>
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="w-full px-8 md:px-32 mt-10">
+        <h2 class="text-lg md:text-xl text-blueMain text-center w-full">Simplifying Operations with Triaso Intelligent Features</h2>
+        <br>
+        <p class="text-grisT text-center">
+            Beyond storage, our tanks are equipped with user-friendly features like automated monitoring systems,
+            real-time data tracking, and efficient unloading mechanisms. These technologies help streamline operations,
+            reduce maintenance, and enhance productivity across the board.
+        </p>
+    </div>
+    <ItemsSlider client:only images={iconos}/>
+    
+</section>
