@@ -19,6 +19,7 @@ module.exports = {
           verdeWhats: 'var(--verde-whats)' , // Verde de whatshapp
           bgMain : 'var(--bg-main)', // Fondo de la pagina
           bgFooter : 'var(--bg-footer)',//Fondo de Footer
+          bgBeige : 'var(--bg-beige)',//Fondo de Footer
         },
         fontFamily : {
             sans: [

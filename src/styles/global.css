@@ -18,6 +18,7 @@
     --verde-whats: #128c7e; /* Verde de whatshapp */
     --bg-main : #f4f5f6; /* Fondo principal de la app */
     --bg-footer: #252726; /*Fondo del footer */
+    --bg-beige:#fffaea; /* Fondo beige de la app */
 }
 .bgplane{
     background-image: url('../assets/images/IntegralAsphalt/fondopatron.png');
