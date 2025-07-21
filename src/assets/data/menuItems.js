@@ -17,7 +17,7 @@ export const menuItems = [
         },
         {
           title : "ASPHALT STORAGE TANKS",
-          url : "/AsphaltStorageTanks",
+          url : "/AsphaltStorage",
         },
         {
           title: " BINS",
