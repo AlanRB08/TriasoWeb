@@ -568,8 +568,8 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                         <li>DOT-compliant lighting and reflective markings for transport visibility</li>
                     </ul>
                 </div>
-            </div>
-                <div className='flex justify-center items-end my-10'>
+                </div>
+                <div className='flex justify-center items-end my-10 gap-0 md:gap-20'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
@@ -619,7 +619,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[245px] h-[287px] flex items-center justify-center'>
+                        <div className='w-[500px] flex items-center justify-center'>
                             {
                                 activeVersion === '50tons' ? (
                                     <img 
@@ -637,7 +637,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                             }
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[287px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[525px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -735,7 +735,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[287px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[525px] flex justify-center items-center'>
                         {
                                 activeVersion === '50tons' ? (
                                     <img 
@@ -850,7 +850,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                     </div>
                 </div>
                 <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
-                    <div className='text-white font-normal col-span-3'>
+                    <div className='text-white font-normal col-span-3 w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
                         <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING SLAT CONVEYOR</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -866,47 +866,47 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                                 <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </button>
-                    </div>
-                    <div className={`grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        </div>
+                        <div className={`grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100`}>
                             <div className='text-white font-normal col-span-1'>
-                                    <div className='flex justify-between'>
-                                        <h1>Length:</h1>
-                                        <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Width:</h1>
-                                        <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Height (erected):</h1>
-                                        <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Chain pitch:</h1>
-                                        <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Height (discharge height):</h1>
-                                        <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Angle of inclination:</h1>
-                                        <p>48.6°</p>
-                                    </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Length:</h1>
+                                            <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Width:</h1>
+                                            <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Height (erected):</h1>
+                                            <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Chain pitch:</h1>
+                                            <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Height (discharge height):</h1>
+                                            <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <h1>Angle of inclination:</h1>
+                                            <p>48.6°</p>
+                                        </div>
                             </div>
                             <div className='flex flex-col gap-4 text-white col-span-1 md:col-span-2 w-full justify-center'>
-                                <ul className='ml-6 list-disc w-full'>
-                                    <li>Transported together with the silo on the same chassis</li>
-                                    <li>Installed and dismantled on-site using a crane</li>
-                                    <li>Independent structure, not fixed to the silo frame</li>
-                                    <li>Capacity up to 320 TPH</li>
-                                    <li>Reinforced steel paddles for durability and consistent performance</li>
-                                    <li>Enclosed design helps retain material temperature and prevent contamination</li>
-                                    <li>Driven by industrial motor and reducer for easy maintenance</li>
-                                    <li>Top access doors for easy cleaning and inspection</li>
-                                    <li>Manual chain tensioning system for long-term reliability</li>
-                                    <li>Designed for fast alignment with the silo inlet during setup</li>
-                                </ul>
+                                    <ul className='ml-6 list-disc w-full'>
+                                        <li>Transported together with the silo on the same chassis</li>
+                                        <li>Installed and dismantled on-site using a crane</li>
+                                        <li>Independent structure, not fixed to the silo frame</li>
+                                        <li>Capacity up to 320 TPH</li>
+                                        <li>Reinforced steel paddles for durability and consistent performance</li>
+                                        <li>Enclosed design helps retain material temperature and prevent contamination</li>
+                                        <li>Driven by industrial motor and reducer for easy maintenance</li>
+                                        <li>Top access doors for easy cleaning and inspection</li>
+                                        <li>Manual chain tensioning system for long-term reliability</li>
+                                        <li>Designed for fast alignment with the silo inlet during setup</li>
+                                    </ul>
                             </div>
                         </div>
                     </div>
@@ -1066,7 +1066,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[245px] h-[287px] flex items-center justify-center'>
+                        <div className='w-[500px] flex items-center justify-center'>
                             <img 
                                 src={tolva2F1.src} 
                                 alt="" 
@@ -1074,7 +1074,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[287px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[525px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1172,11 +1172,11 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[287px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[525px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L1.src} alt="Dinámica con paneles" className='h-[287px] w-[744px]'/>
+                                <img src={tolva3L1.src} alt="Dinámica con paneles" className=''/>
                             ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[287px] w-[744px]'/>
+                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className=''/>
                             )}
                         </div>
                     </div>
