@@ -2,7 +2,35 @@
 import Card from "../unitComponents/Card.astro"
 import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import Image from "astro/components/Image.astro";
-import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
+import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
+import GallerySlider from "../unitComponents/GallerySlider";
+
+const tanksSlides = [
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp',
+    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp',
+    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp',
+    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp',
+    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp',
+    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp',
+    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+  }
+];
 ---
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -16,12 +44,105 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                 Direct Fire Heating
             </button>
         </div>
-        <div class="py-4 px-8">
+        <div class="py-4">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold pl-32" data-tab-content="tab1">
                 <p>
-                    tab1
-                </p>
+                    Designed for precise temperature control, the oil heater ensures uniform heat distribution through advanced thermal oil 
+                    circulation. Its robust construction supports continuous operation, making it ideal for demanding applications that require
+                     consistent performance and energy efficiency.
+                </p><br>
+                <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-[10%]">
+                    <div class="w-full flex flex-col gap-10 justify-between items-center">
+                        <Card>
+                            <h2 class="text-blueMain">Oil Heater option available instead of direct-fire heating system in asphalt storage tanks.</h2>
+                            <br>
+                            <ul class="list-disc ml-6 font-thin">
+                                <li>With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.</li>
+                                <li>Includes a high-efficiency 2” diameter coil system inside the asphalt tank.</li>
+                                <li>Connections for asphalt tankers with coil heating systems.</li>
+                                <li>Thermally insulated with ceramic fiber.</li>
+                                <li>Stainless steel exterior sheet covering.</li>
+                                <li>Equipped with a diesel burner.</li>
+                                <li>Automatic on/off control based on temperature.</li>
+                                <li>Two operating modes: Automatic and Manual.</li>
+                                <li>Digital thermometers with programmable set point for burner activation and shutoff.</li>
+                                <li>Siemens PLC-based control system.</li>
+                                <li>100-liter (26.4-gallon) thermal oil expansion tank.</li>
+                                <li>100% duty cycle.</li>
+                                <li>Includes safety systems and automatic shutdown in case of errors.</li>
+                            </ul>
+                        </Card>
+                        <div class="w-full flex flex-col justify-center items-center gap-3">
+                            <div class="h-0.5 bg-blueMain w-[250px]"></div>
+                            <div class="h-0.5 bg-redBg w-[250px] mr-20"></div>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col gap-10">
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                        <div class="bg-blueMain p-4 pr-52 rounded-l-2xl">
+                            <h2 class="text-white text-xl md:text-2xl">24/7 customer service</h2>
+                            <br>
+                            <p class="text-grisSubP font-normal">Our team is available around the clock, 
+                                ready to assist you at any time, even on weekends and holidays.
+                            </p>
+                            <br>
+                            <Whatsbtn />
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 pr-32">
+                    <Card>
+                        <h3>Precision Temperature Control:</h3>
+                        <p class="font-thin">
+                            Maintains exact temperatures with a tolerance of ±1°C, ensuring optimal conditions for material processing.
+                        </p>
+                    </Card>
+                    <Card>
+                        <h3>Customizable Heating Capacity: 
+                            </h3>
+                        <p class="font-thin">
+                            Tailored to meet specific project needs, from small-scale operations to large industrial requirements.
+                        </p>
+                    </Card>
+                    <Card>
+                        <h3>High-Efficiency Burners: 
+                            </h3>
+                        <p class="font-thin">
+                            Equipped with low-NOx burners that reduce emissions while maximizing fuel efficiency.
+                        </p>
+                    </Card>
+                    <Card>
+                        <h3>Thermal Oil Circulation System: 
+                            </h3>
+                        <p class="font-thin">
+                            Ensures even heat distribution across the entire system, preventing hot spots and material degradation.
+                        </p>
+                    </Card>
+                </div>
+                <div class="w-full pr-32 bg-bgBeige p-4 grid grid-cols-1 md:grid-cols-2">
+                    <div class="w-full">
+                        <h2>Hot Oil Coils</h2>
+                        <div>
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="w-full text-justify">  
+                        <p>
+                            Our asphalt storage tanks are equipped with coils through which hot oil circulates, ensuring even and efficient heating 
+                            of the asphalt. The hot oil passes through the coils, preventing solidification and maintaining the asphalt at the ideal
+                             temperature for use. 
+                        </p><br>
+                        <p>
+                            This system provides reliable performance, reduces energy consumption, and allows for precise temperature control. 
+                            The design helps minimize wear and tear, contributing to a longer lifespan of the tank while ensuring optimal asphalt
+                             consistency and readiness for operation.
+                        </p>
+                    </div>
+                </div>
              </div>
         <!-- Second Section -->
          <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold md:px-36" data-tab-content="tab2">
