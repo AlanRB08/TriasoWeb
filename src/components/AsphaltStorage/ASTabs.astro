@@ -1,0 +1,87 @@
+---
+import Card from "../unitComponents/Card.astro"
+import img4 from '../../assets/images/AsphaltPlant/silos2.png';
+import Image from "astro/components/Image.astro";
+import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
+---
+<section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
+    <div class="flex flex-col items-center justify-center gap-4 mt-8">
+        <div class="flex items-center justify-around w-full gap-4 px-8">
+            <button class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
+            data-tab="tab1" aria-selected="true">
+                Oil Heating
+            </button>
+            <button class="tab-button py-2 md:px-4 font-bold text-xl md:text-4xl focus:outline-none"
+            data-tab="tab2" aria-selected="false">
+                Direct Fire Heating
+            </button>
+        </div>
+        <div class="py-4 px-8">
+            <!-- First Section -->
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+                <p>
+                    tab1
+                </p>
+             </div>
+        <!-- Second Section -->
+         <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold md:px-36" data-tab-content="tab2">
+            <p>
+                TAB2</p>        
+         </div>
+        </div>    
+    </div>
+</section>
+<style is:global>
+  /* Estilos para los tabs activos */
+  .tab-button[aria-selected="true"] {
+    color: black;
+    border-bottom: 2px solid var(--rojo-btn);
+  }
+  
+  .tab-button[aria-selected="false"] {
+    color: var(--gris-titulos);
+    font-weight: normal;
+    border-bottom: 2px solid var(--gris-titulos);
+  }
+  
+  .tab-button:hover:not([aria-selected="true"]) {
+    color: black;
+    border-bottom: 2px solid var(--rojo-btn);
+  }
+  
+</style>
+<script is:inline>
+    (function initTabs() {
+      document.querySelectorAll('section[data-tabs]').forEach(tabSection => {
+        const tabButtons = tabSection.querySelectorAll('.tab-button');
+        const tabContents = tabSection.querySelectorAll('.tab-content');
+    
+        // Ocultar todos menos el primero
+        const selectedTab = tabSection.querySelector('.tab-button[aria-selected="true"]');
+const selectedTabId = selectedTab?.getAttribute('data-tab');
+
+tabContents.forEach(content => {
+  const contentTabId = content.getAttribute('data-tab-content');
+  content.classList.toggle('hidden', contentTabId !== selectedTabId);
+});
+
+    
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+    
+            tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+            button.setAttribute('aria-selected', 'true');
+    
+            tabContents.forEach(content => {
+              content.classList.add('hidden');
+            });
+    
+            const activeContent = tabSection.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
+            if (activeContent) activeContent.classList.remove('hidden');
+          });
+        });
+      });
+    })();
+    </script>
+    

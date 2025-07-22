@@ -1,13 +1,18 @@
+---
+import glass from '../../assets/images/AsphaltPlant/Aislamiento.png';
+import blueT from '../../assets/images/AsphaltStorage/blueT.png';
+---
 
-<section class="w-full flex flex-col items-center justify-center mt-10 font-bold">
-    <div class="w-full mr-8 md:mx-32 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-white pl-0 md:pl-32 pr-8">
-            <h1 class="text-2xl md:text-3xl">From <br>
+<section class="w-full flex flex-col items-center justify-center mt-20 font-bold relative">
+    <img src={blueT.src} alt="" class="max-w-[300px] absolute top-0 z-0">
+    <div class="w-full mr-8 md:mx-32 grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 z-10">
+        <div class="bg-white pl-0 md:pl-32 pr-8 rounded-r-2xl">
+            <h1 class="text-2xl md:text-3xl mt-10">From <br>
             12,000 to 30,000 gallons
             </h1><br>
             <div class="w-full grid grid-cols-3 gap-4">
-                <div class="col-span-1">
-                    <img src="" alt="">
+                <div class="col-span-1 flex justify-center">
+                    <img src={glass.src} alt="" class="max-h-[300px]">
                 </div>
                 <div class="col-span-2">
                     <h2>Two inches fiberglass insulation</h2><br>
@@ -21,8 +26,8 @@
                 </div>
             </div>
         </div>
-        <div class="pr-8 md:pr-32 pl-8 w-full">
-            <div class="text-2xl md:text-3xl">
+        <div class="pr-8 md:pr-32 pl-8 w-full ml-6">
+            <div class="text-2xl md:text-3xl mt-16">
                 <h1>Triaso</h1>
                 <h1 class="text-blueMain">Control System</h1>
             </div>
@@ -38,5 +43,4 @@
             </div>
         </div>
     </div>
-    
 </section>
