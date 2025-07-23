@@ -2,7 +2,9 @@
 import Image from 'astro/components/Image.astro';
 import img5 from '../../assets/images/AsphaltPlant/agitators1.png';
 import img1 from '../../assets/images/AsphaltStorage/ATG1.png';
+import img3 from '../../assets/images/AsphaltStorage/ATG2.png';
 import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
+
 ---
 <section class="w-full mt-10 flex flex-col gap-10">
     <div class="w-full bg-bgBeige p-4 px-4 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
@@ -73,8 +75,18 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
                 </p>
             </div>
             <div class="w-full bg-blueMain text-white p-4 rounded-2xl">
-                <div class="py-4">
-                    <img src={img1.src} alt="">
+                <div class="p-4 flex justify-center items-center" id="slider-container"
+                data-img1={img1.src} 
+                data-img2={img3.src}>
+                   <img id="miImagen" src={img1.src} alt="" class="w-[600px] h-[250px]">
+                </div>
+                <div class="w-full flex justify-end gap-3">
+                    <button id="btnAnterior" class="bg-grisSubP rounded-full p-1 hover:bg-[#BDBDBD]">
+                        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M15 6L9 12L15 18" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                    <button id="btnSiguiente" class="bg-grisSubP rounded-full p-1 hover:bg-[#BDBDBD]">
+                        <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M9 6L15 12L9 18" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
                 </div>
                 <div>
                     <h1 class="text-2xl md:text-3xl font-bold">Fully Versatile and <br>Customizable</h1><br>
@@ -117,4 +129,29 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
         </div>
         
     </div>
+
 </section>
+<script is:inline>
+    const container = document.getElementById("slider-container");
+  
+    const imagenes = [
+      container.dataset.img1,
+      container.dataset.img2
+    ];
+  
+    let index = 0;
+  
+    const img = document.getElementById("miImagen");
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnSiguiente = document.getElementById("btnSiguiente");
+  
+    btnAnterior.addEventListener("click", () => {
+      index = (index - 1 + imagenes.length) % imagenes.length;
+      img.src = imagenes[index];
+    });
+  
+    btnSiguiente.addEventListener("click", () => {
+      index = (index + 1) % imagenes.length;
+      img.src = imagenes[index];
+    });
+  </script>

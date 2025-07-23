@@ -1,5 +1,15 @@
 ---
-import img2 from '../../assets/images/AsphaltStorage/ATG2.png';
+import img1 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS1.jpg';
+import img2 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS2.png';
+import img3 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS3.jpg';
+import img4 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS4.jpg';
+import img5 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS5.jpg';
+import img6 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS6.jpg';
+import img7 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS7.jpg';
+import img8 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS8.jpg';
+import MiniGallery from '../unitComponents/MiniGallery';
+
+const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{img:img6},{img:img7},{img:img8},]
 ---
 <div class="w-full grid grid-cols-1 md:grid-cols-2 px-32">
     <div class="w-full font-bold text-white p-10 bg-grisT rounded-t-2xl">
@@ -35,9 +45,11 @@ import img2 from '../../assets/images/AsphaltStorage/ATG2.png';
         </div>
         <div class="bg-grisT p-4 rounded-tr-2xl overflow-hidden">
             <h2 class="font-bold text-white text-2xl md:text-3xl">Gallery</h2><br>
-            <div>
-                <img src={img2.src} alt="" class="">
-            </div>
+            <MiniGallery slides={gallerySlides}
+            autoSlide={false}
+            heightClass="h-[150px] md:h-[300px]"
+            showText={false}
+            client:only/>
         </div>
     </div>
 </div>

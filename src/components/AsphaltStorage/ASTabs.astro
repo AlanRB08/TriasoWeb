@@ -4,6 +4,9 @@ import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import Image from "astro/components/Image.astro";
 import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
 import GallerySlider from "../unitComponents/GallerySlider";
+import type { slide } from "astro:transitions";
+import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
+import sideP from '../../assets/images/DrumMixers/sideP.png';
 
 const tanksSlides = [
   {
@@ -145,10 +148,75 @@ const tanksSlides = [
                 </div>
              </div>
         <!-- Second Section -->
-         <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold md:px-36" data-tab-content="tab2">
-            <p>
-                TAB2</p>        
-         </div>
+            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
+                <p class="px-52 text-center">
+                  Triaso® direct fire heating is designed to heat up the asphalt. A burner is mounted directly beneath the tank, transferring heat through a steel plate into the asphalt.
+                  This method provides fast, efficient heating with minimal energy loss.
+                </p>
+                <GallerySlider client:only slides={tanksSlides} visibleThumbs={5}/>
+                <div class="w-full mx-32 bg-bgBeige p-8 grid grid-cols-1 md:grid-cols-2 justify-center items-center">
+                    <div>
+                      <img src="" alt="">
+                    </div>
+                    <div>
+                      <h2>Direct Fire Heating Burner</h2>
+                      <br>
+                      <p>
+                        Direct fire heating works on the basis of a diesel burner that would irradiate heat to a tube inside the asphalt tank, which 
+                        has two secondary tubes to irradiate its heat with better distribution and the gases exit through the steam condensers.
+                      </p>
+                    </div>
+                </div>
+                <div class="w-full flex gap-20">
+                    <div class="bg-blueMain p-4 rounded-r-2xl pl-32">
+                        <h2 class="text-white text-xl md:text-2xl">24/7 customer service</h2>
+                        <br>
+                        <p class="text-grisSubP font-normal">Our team is available around the clock, 
+                            ready to assist you at any time, even on weekends and holidays.
+                        </p>
+                        <br>
+                        <Whatsbtn />
+                    </div>
+                  
+                  <div class="w-full rounded-2xl bg-white p-4 flex gap-10 mr-32">
+                    <div>
+                      <h2>Vapor condensers</h2><br>
+                      <p>
+                        Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage and heating, preventing emissions 
+                        from escaping into the environment. Installed on the tank’s vent line, they cool down hot vapors into liquid form, reducing odor,
+                        improving safety, and ensuring compliance with environmental regulations.
+                      </p>
+                    </div>
+                    <div>
+                      <img src="" alt="">
+                    </div>
+                  </div>
+                </div>        
+            </div>
+        </div>
+        <div class="w-full px-32 flex flex-col gap-10">
+          <div class="w-full flex justify-between font-bold text-2xl md:text-3xl">
+            <div>
+              <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
+              <SeparatorBlue></SeparatorBlue>
+            </div>
+            <div>
+              <h1 class="text-end text-blueMain">
+                ENHANCE YOUR COMPANY IMAGE <br>
+                WITH TRIASO DESIGN
+              </h1>
+            </div>
+          </div>
+          <p class="font-bold text-grisT text-base md:text-lg">
+            Triaso’s aesthetic side panels are designed not just for visual appeal, but to elevate the professional image of your equipment and 
+            company. These original side panels provide a clean, modern look that reflects quality and attention to detail—leaving a strong impression
+             on clients, inspectors, and the public, but also protect internal components from dust, weather, and debris. Ideal for projects in urban
+              or high-visibility areas, they reinforce your brand’s commitment to excellence and enhance the overall presentation of your asphalt
+               storage tank.
+          </p>
+          <div>
+            <img src={sideP.src} alt="">
+          </div>
         </div>    
     </div>
 </section>
