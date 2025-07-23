@@ -75,7 +75,7 @@ const MiniGallery: React.FC<SliderProps> = ({
             />
             ))}
         </div>
-        <div className='absolute right-10'>
+        <div className='absolute right-20'>
             {/* Botones */}
             <button
                 aria-label="Previous"
