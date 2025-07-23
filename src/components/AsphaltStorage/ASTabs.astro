@@ -1,5 +1,6 @@
 ---
-import Card from "../unitComponents/Card.astro"
+import Card from "../unitComponents/Card.astro";
+import redT from '../../assets/images/AsphaltStorage/redT.png';
 import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import Image from "astro/components/Image.astro";
 import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
@@ -34,6 +35,24 @@ const tanksSlides = [
     caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
   }
 ];
+const tanksSlides2 = [
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT1.png',
+    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT2.png',
+    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT3.png',
+    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+  },
+  {
+    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT4.png',
+    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+  }
+];
 ---
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -56,8 +75,9 @@ const tanksSlides = [
                      consistent performance and energy efficiency.
                 </p><br>
                 <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-[10%]">
-                    <div class="w-full flex flex-col gap-10 justify-between items-center">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-[10%] relative">
+                    <img src={redT.src} alt="" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-0 w-[200px]">
+                    <div class="w-full flex flex-col gap-10 justify-between items-center z-10">
                         <Card>
                             <h2 class="text-blueMain">Oil Heater option available instead of direct-fire heating system in asphalt storage tanks.</h2>
                             <br>
@@ -82,7 +102,7 @@ const tanksSlides = [
                             <div class="h-0.5 bg-redBg w-[250px] mr-20"></div>
                         </div>
                     </div>
-                    <div class="w-full flex flex-col gap-10">
+                    <div class="w-full flex flex-col gap-10 z-10">
                         <div>
                             <img src="" alt="">
                         </div>
@@ -153,7 +173,7 @@ const tanksSlides = [
                   Triaso® direct fire heating is designed to heat up the asphalt. A burner is mounted directly beneath the tank, transferring heat through a steel plate into the asphalt.
                   This method provides fast, efficient heating with minimal energy loss.
                 </p>
-                <GallerySlider client:only slides={tanksSlides} visibleThumbs={5}/>
+                <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
                 <div class="w-full mx-32 bg-bgBeige p-8 grid grid-cols-1 md:grid-cols-2 justify-center items-center">
                     <div>
                       <img src="" alt="">
