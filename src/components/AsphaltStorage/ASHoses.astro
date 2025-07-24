@@ -20,10 +20,10 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
             <img src='' alt="">
         </div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-32">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:px-32">
         <div class="w-full flex flex-col gap-4">
-            <h1 class="font-bold text-xl md:text-2xl">AGITATORS FOR ADDITIVE <br>AND POLYMERS</h1>
-            <div class="bg-white flex flex-col gap-6 rounded-2xl lg:text-lg text-base p-4">
+            <h1 class="font-bold text-xl md:text-2xl px-8">AGITATORS FOR ADDITIVE <br>AND POLYMERS</h1>
+            <div class="bg-white flex flex-col gap-6 md:rounded-2xl lg:text-lg text-base p-4">
                 <h2>Designed for a homogeneous mixture of additives and polymers,
                      the agitator ensures uniform distribution of all components 
                      within the asphalt.</h2>
@@ -47,14 +47,14 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
                     </li>
                 </ul>
                 <div class="w-full rounded-2xl px-5">
-                    <Image src={img5} alt="" class="rounded-2xl h-[350px]"/>
+                    <Image src={img5} alt="" class="rounded-2xl h-full md:h-[350px]"/>
                 </div>
             </div>
-            <div>
+            <div class="w-full">
                 <img src={img2.src} alt="">
             </div>
         </div>
-        <div class="w-full flex flex-col gap-20">
+        <div class="w-full flex flex-col gap-10 md:gap-20 px-8">
             <h1 class="font-bold text-xl md:text-2xl text-redBg">SAFETY AND COMPLIANCE IN DESIGN <br>AND TRANSPORT</h1>
             <div class="w-full">
                 <h2 class="font-bold">DOT-Compliant Design for Safe Transport</h2><br>
@@ -78,7 +78,7 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
                 <div class="p-4 flex justify-center items-center" id="slider-container"
                 data-img1={img1.src} 
                 data-img2={img3.src}>
-                   <img id="miImagen" src={img1.src} alt="" class="w-[600px] h-[250px]">
+                   <img id="miImagen" src={img1.src} alt="" class="w-[300px] h-[125px] md:w-[600px] md:h-[250px]">
                 </div>
                 <div class="w-full flex justify-end gap-3">
                     <button id="btnAnterior" class="bg-grisSubP rounded-full p-1 hover:bg-[#BDBDBD]">

@@ -237,9 +237,9 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
-      display: (activeVersion === '50tons' && activeTab === 1) ? 'block' : 'none',
-      opacity: (activeVersion === '50tons'&& activeTab === 1) ? 1 : 0,
-      visibility: (activeVersion === '50tons' && activeTab === 1) ? 'visible' : 'hidden',
+      display: (activeVersion === '12' && activeTab === 1) ? 'block' : 'none',
+      opacity: (activeVersion === '12'&& activeTab === 1) ? 1 : 0,
+      visibility: (activeVersion === '12' && activeTab === 1) ? 'visible' : 'hidden',
     }}
           />
           <img
@@ -291,7 +291,7 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
         <div className='flex gap-10 justify-center'>
             <button
                 
-                onClick={() => setActiveVersion('12')}
+                onClick={() => {setActiveVersion('12'), setActiveTab(1)}}
                 className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
                     activeVersion === '12' 
                     ? 'text-black bg-white border-white' 
@@ -312,7 +312,7 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
             </button>
             <button
                 onClick={() => setActiveVersion('20')}
-                className={`px-4 py-2 text-sm mr-6 font-medium border rounded-full transition-all duration-300 ${
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
                     activeVersion === '20' 
                     ? 'text-black bg-white border-white' 
                     : 'text-white bg-transparent border-white'
@@ -536,7 +536,7 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                             <li>UL wiring</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1 md:col-span-3 pl-[15%]'>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1 md:col-span-3 md:pl-[15%]'>
                         <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>OPERATING TEMPERATURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -569,8 +569,8 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-start md:justify-center items-end my-10 gap-0 md:gap-20 w-full overflow-x-auto'>
-                    <div className='flex flex-col items-center justify-center'>
+                <div className='flex w-full justify-start md:justify-center items-end my-10 overflow-x-auto'>
+                    <div className='flex flex-col items-center justify-center w-[250px]'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
@@ -619,11 +619,11 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[500px] flex items-center justify-center'>
-                            <img src={ATL1.src} alt="" className='h-[300px]'/>
+                        <div className='w-[250px] flex items-center justify-center'>
+                            <img src={ATL1.src} alt="" className=''/>
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[525px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[295px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -672,7 +672,7 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    <div className='flex flex-col items-center justify-center max-w-[1000px]'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
@@ -721,11 +721,10 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[525px] flex justify-center items-center'>
-                            <img src={selectedImage2} alt="" className='h-[200px]' />
+                        <div className='h-[295px] flex justify-center items-center'>
+                            <img src={selectedImage2} alt="" className='h-[295px]' />
                         </div>
                     </div>
-
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-start w-full mt-10 gap-3 md:gap-10'>
                     <div className='text-white font-normal col-span-1'>
