@@ -672,7 +672,7 @@ const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-center max-w-[1000px]'>
+                    <div className='flex flex-col items-center justify-center min-w-[800px] max-w-[1000px]'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
