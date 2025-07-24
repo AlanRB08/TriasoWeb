@@ -57,22 +57,29 @@ const submenuId = `submenu-${item.title.toLowerCase().replace(/\s+/g, '-')}`;
 </li>
 
 <script is:inline>
-  // Lógica para submenús anidados (niveles > 1)
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.toggle-submenu-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.dataset.target;
-        const submenu = document.getElementById(target);
-        if (submenu) {
-          const isOpen = submenu.classList.contains('max-h-0');
-          submenu.classList.toggle('max-h-0', !isOpen);
-          submenu.classList.toggle('max-h-[600px]', isOpen);
-          submenu.classList.toggle('opacity-0', !isOpen);
-          submenu.classList.toggle('opacity-100', isOpen);
-          submenu.classList.toggle('scale-y-95', !isOpen);
-          submenu.classList.toggle('scale-y-100', isOpen);
-        }
-      });
+  function initSubmenuToggles(scope = document) {
+    scope.querySelectorAll('.toggle-submenu-button').forEach(button => {
+      const targetId = button.dataset.target;
+      const submenu = document.getElementById(targetId);
+      if (!submenu) return;
+
+      button.onclick = () => {
+        const isOpen = submenu.classList.contains('max-h-0');
+        submenu.classList.toggle('max-h-0', !isOpen);
+        submenu.classList.toggle('max-h-[600px]', isOpen);
+        submenu.classList.toggle('opacity-0', !isOpen);
+        submenu.classList.toggle('opacity-100', isOpen);
+        submenu.classList.toggle('scale-y-95', !isOpen);
+        submenu.classList.toggle('scale-y-100', isOpen);
+      };
     });
+  }
+
+  // Ejecutar en toda la página cuando cargue
+  document.addEventListener('DOMContentLoaded', () => {
+    initSubmenuToggles();
   });
+
+  // Hacer la función accesible globalmente si necesitas volver a llamarla
+  window.initSubmenuToggles = initSubmenuToggles;
 </script>
