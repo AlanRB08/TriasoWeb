@@ -5,39 +5,38 @@ import Card from '../unitComponents/Card.astro';
 ---
 <div class="w-full flex flex-col gap-10">
     <section class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 font-bold">
-    <div class="w-full bg-bgBeige p-4 grid grid-cols-2 gap-4 rounded-2xl">
-        <div>
-            <h2>Triaso Asphalt Level Sensor</h2><br>
-            <p class="text-grisT">
-                Asphalt level sensor with guided wave radar technology, 
-                designed for continuous and accurate monitoring in real-time.
-            </p>
+        <div class="w-full bg-bgBeige p-4 grid grid-cols-1 md:grid-cols-2 gap-4 rounded-2xl">
+            <div>
+                <h2>Triaso Asphalt Level Sensor</h2><br>
+                <p class="text-grisT">
+                    Asphalt level sensor with guided wave radar technology, 
+                    designed for continuous and accurate monitoring in real-time.
+                </p>
+            </div>
+            <div>
+                <img src="" alt="">
+            </div>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="w-full grid grid-cols-1 gap-4">
+            <div class="bg-bgBeige p-4 rounded-2xl w-full">
+                <p class="text-grisT">
+                    Asphalt volume in the tank (accuracy with a margin of error of 11.3 liters in 60,000 liters).
+                </p>
+                <ul class="list-disc pl-6 text-grisT">
+                    <li>
+                        Consumption and refill history of asphalt.
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-bgBeige p-4 rounded-2xl w-full">
+                <p class="text-grisT">
+                    Industrial mini-computer for monitoring and control, mounted on the tank, 
+                    ensuring real-time data tracking and operational security.
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="w-full grid grid-cols-1 gap-4">
-        <div class="bg-bgBeige p-4 rounded-2xl w-full">
-            <p class="text-grisT">
-                Asphalt volume in the tank (accuracy with a margin of error of 11.3 liters in 60,000 liters).
-            </p>
-            <ul class="list-disc pl-6 text-grisT">
-                <li>
-                    Consumption and refill history of asphalt.
-                </li>
-            </ul>
-        </div>
-        <div class="bg-bgBeige p-4 rounded-2xl w-full">
-            <p class="text-grisT">
-                Industrial mini-computer for monitoring and control, mounted on the tank, 
-                ensuring real-time data tracking and operational security.
-            </p>
-        </div>
-    </div>
-    
     </section>
-    <div class="w-full px-8 md:px-52 font-bold">
+    <div class="w-full md:px-52 font-bold">
             <div class="w-full flex flex-col items-start justify-center mt-10 p-8 md:p-10 text-grisT bg-white md:rounded-2xl">
                 <h1 class="text-xl md:text-3xl text-black md:mb-4">Options</h1>
                 <div class="flex flex-col xl:flex-row items-start justify-between gap-8 w-full">
@@ -83,10 +82,10 @@ import Card from '../unitComponents/Card.astro';
                     <li>Agitators for any application</li>
                     <li>Incorporators for all types of polymers</li>
                 </ul>
-                <Image src={img4} alt="" class="mt-4 hidden md:block"/>
+                <Image src={img4} alt="" class="mt-4"/>
             </div>
     </div>
-    <div class="w-full px-52">
+    <div class="w-full px-8 md:px-52 text-justify md:text-start">
         <p>
         Our asphalt storage tanks are completely customizable to fit the unique requirements of your operations. 
         From adjusting the size and layout to selecting specialized features like vapor condensers, manual valves,
@@ -101,8 +100,8 @@ import Card from '../unitComponents/Card.astro';
             helping you optimize asphalt management while maintaining top performance across diverse applications.
         </p>
     </div>
-    <div class="w-full h-full pl-8 md:pl-32 grid grid-cols-1 md:grid-cols-2 gap-[10%]">
-        <div class="w-full h-full flex flex-col gap-10">
+    <div class="w-full h-full md:pl-32 grid grid-cols-1 md:grid-cols-2 gap-[10%]">
+        <div class="w-full flex flex-col md:gap-10">
             <Card>
                 <h2 class="font-bold text-lg md:text-xl">Durable Fabrication</h2><br>
                 <p class="text-grisT text-sm md:text-base font-bold">Our asphalt storage tanks are engineered using wear-resistant materials designed 
@@ -116,7 +115,7 @@ import Card from '../unitComponents/Card.astro';
             </div>
         </div>
         <div class="w-full flex flex-col gap-10">
-            <div class="w-full h-full bg-redBg rounded-l-2xl p-4 text-white font-bold pr-8 md:pr-32">
+            <div class="w-full bg-redBg md:rounded-l-2xl p-4 text-white font-bold pr-8 md:pr-32">
                 <h1 class="text-2xl md:text-3xl">Portable and <br> Relocatable Systems</h1><br>
                 <p>Engineered for easy transport and quick setup, our systems deliver reliable performance
                     at any site—ideal for temporary or changing project locations.

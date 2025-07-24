@@ -45,7 +45,7 @@ const tanksSlides = [
   }
 ];
 ---
-<section class="w-full flex flex-col items-center justify-center mt-40 font-bold">
+<section class="w-full flex flex-col items-center justify-center mt-20 md:mt-40 font-bold">
     <div class="w-full px-8 md:px-32">
         <h1 class="text-2xl md:text-3xl">Triaso® Asphalt <br> Storage Tanks</h1>
         <Separator />
@@ -56,9 +56,9 @@ const tanksSlides = [
           they keep asphalt ready for use in any application. Ideal for polymer-modified asphalt production,
            these tanks deliver the durability and functionality you need for both small projects and large-scale operations.
     </p>
-    <h2 class="mt-20 text-lg md:text-xl text-start w-full pl-8 md:pl-32">Versatile and Efficient Asphalt Storage Solutions</h2>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-[10%] items-center justify-center mt-10 pl-8 md:pl-32">
-        <div class="text-grisT flex flex-col h-full gap-10 text-justify">
+    <h2 class="mt-20 text-lg md:text-xl text-start w-full px-8 md:pl-32">Versatile and Efficient Asphalt Storage Solutions</h2>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[10%] items-center justify-center mt-10 px-8 md:pl-32">
+        <div class="text-grisT flex flex-col h-full gap-3 md:gap-10 text-justify">
             <p>Our tanks are engineered for versatility and ease of use across various asphalt storage needs. With advanced
                  features such as efficient heating systems and precise temperature control, they ensure that asphalt remains
                   at its ideal consistency. Whether you're working with standard or modified asphalt, these tanks provide the
@@ -84,6 +84,6 @@ const tanksSlides = [
         </p>
     </div>
     <ItemsSlider client:only images={iconos}/>
-    <div class="h-20"></div>
+    <div class="h-10 md:h-20"></div>
     <GallerySlider client:only slides={tanksSlides} visibleThumbs={4}/>
 </section>

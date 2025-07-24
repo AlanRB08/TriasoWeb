@@ -12,7 +12,7 @@ import MiniGallery from '../unitComponents/MiniGallery';
 const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{img:img6},{img:img7},{img:img8},]
 ---
 <div class="w-full bg-bgMain">
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 pl-32 bg-grisT">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 pl-0 md:pl-32 bg-grisT">
         <div class="w-full font-bold text-white p-10 rounded-t-2xl">
             <h2 class="text-2xl md:text-3xl">Applications</h2><br><br>
             <h3>Asphalt Mixing</h3>
@@ -41,11 +41,11 @@ const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{i
             </ul>
         </div>
         <div class="w-full flex flex-col justify-center items-center bg-bgMain">
-            <div class="h-[250px] w-full bg-bgMain rounded-bl-2xl">
+            <div class="h-[250px] w-full bg-bgMain rounded-bl-2xl hidden md:block">
                 
             </div>
-            <div class="bg-grisT p-4 overflow-hidden pr-32">
-                <h2 class="font-bold text-white text-2xl md:text-3xl">Gallery</h2><br>
+            <div class="bg-grisT py-4 w-full overflow-hidden md:pr-32">
+                <h2 class="font-bold text-white text-2xl px-4 md:text-3xl">Gallery</h2><br>
                 <MiniGallery slides={gallerySlides}
                 autoSlide={false}
                 heightClass="h-[150px] md:h-[300px]"
