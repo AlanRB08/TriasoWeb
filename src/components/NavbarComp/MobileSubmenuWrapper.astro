@@ -26,3 +26,7 @@ const submenuId = `submenu-${parentTitle.toLowerCase().replace(/\s+/g, '-')}`;
     ))}
   </ul>
 </div>
+<script is:inline>
+  // Reinicia los listeners dentro de este submenú una vez insertado en el DOM
+  window.initSubmenuToggles?.(document.currentScript.closest('.submenu-level'));
+</script>
