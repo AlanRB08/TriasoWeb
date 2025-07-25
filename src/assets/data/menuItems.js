@@ -13,7 +13,7 @@ export const menuItems = [
         },
         {
           title : "BAG HOUSES",
-          url : "/products/asphalt-plants/bag-houses",
+          url : "/BagHouses",
         },
         {
           title : "ASPHALT STORAGE TANKS",
