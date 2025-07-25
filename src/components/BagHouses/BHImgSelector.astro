@@ -5,28 +5,20 @@ import Separator from "../unitComponents/Separator.astro";
 
 const tanksSlides = [
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: 'src/assets/images/BagHouses/GallerySlider/BHG1.webp',
+    caption: 'Self-contained Baghouse of 24,000 Acfm, Pulse Jet',
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: 'src/assets/images/BagHouses/GallerySlider/BHG2.webp',
+    caption: 'Self-contained Baghouse of 24,000 Acfm, Pulse Jet',
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: 'src/assets/images/BagHouses/GallerySlider/BHG3.webp',
+    caption: 'Self-contained Baghouse of 24,000 Acfm, Reverse',
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: 'src/assets/images/BagHouses/GallerySlider/BHG4.webp',
+    caption: 'Self-contained Baghouse of 24,000 Acfm, Reverse Air',
   }
 ];
 ---
@@ -285,5 +277,5 @@ const tanksSlides = [
             <li>Tool-free access to service components.</li>
         </ul>
     </div>
-    <GallerySlider slides={tanksSlides} visibleThumbs={4}/>
+    <GallerySlider client:only slides={tanksSlides} visibleThumbs={4}/>
 </div>
