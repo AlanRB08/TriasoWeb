@@ -1,7 +1,9 @@
 ---
+import Baghouses from "../AsphaltPlants/Baghouses.astro";
 import Card from "../unitComponents/Card.astro";
 import GallerySlider from "../unitComponents/GallerySlider";
 import Separator from "../unitComponents/Separator.astro";
+import img1 from '../../assets/images/DrumMixers/baghouse.png';
 
 const tanksSlides = [
   {
@@ -23,14 +25,14 @@ const tanksSlides = [
 ];
 ---
 
-<div class="w-full flex flex-col justify-center items-center font-bold gap-10">
+<div class="w-full flex flex-col justify-center items-center font-bold md:mt-20 gap-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:pl-32">
-        <div>
-            <img src="" alt="">
+        <div class="w-full flex justify-center">
+            <img src={img1.src} alt="" class="max-w-[30vw]">
         </div>
         <div class="w-full bg-grisT p-8 flex flex-col gap-6 justify-center">
             <div>
-                <img src="" alt="">
+                <img src='' alt="">
             </div>
             <div class="w-full md:pr-32 rounded-2xl">
                 <p class="text-white text-base md:text-lg">
@@ -86,11 +88,11 @@ const tanksSlides = [
             </h2>
             <div class="px-8 md:pr-32 bg-blueMain py-4 md:pl-4 text-grisSubP text-base md:text-lg md:rounded-l-2xl">
                 <p>
-                    <span class="text-whtie"> Pulse Jet: </span>A cleaning system that uses compressed air bursts to dislodge dust and debris from the filter bags,
+                    <span class="text-white"> Pulse Jet: </span>A cleaning system that uses compressed air bursts to dislodge dust and debris from the filter bags,
                      maintaining continuous airflow.
                 </p><br>
                 <p>
-                    <span class="text-whtie">Reverse Air: </span> A cleaning system that blows air in the opposite direction to remove dust from the filter bags, 
+                    <span class="text-white">Reverse Air: </span> A cleaning system that blows air in the opposite direction to remove dust from the filter bags, 
                     typically used in larger baghouses or high-dust applications.
                 </p>
             </div>

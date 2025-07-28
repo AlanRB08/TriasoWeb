@@ -1,7 +1,8 @@
 ---
-import Separator from "../unitComponents/Separator.astro"
+import Separator from "../unitComponents/Separator.astro";
+import img1 from '../../assets/images/BagHouses/GallerySlider/BHG1.webp';
 ---
-<section class="w-full px-8 md:px-32 flex flex-col justify-center items-center font-bold mt-20 md:mt-40">
+<section class="w-full px-8 md:px-32 flex flex-col justify-center items-center font-bold mt-20 md:mt-32">
     <div class="w-full flex flex-col justify-start">
         <h1 class="text-2xl md:text-3xl">
             Triaso® Baghouses
@@ -9,10 +10,10 @@ import Separator from "../unitComponents/Separator.astro"
         <Separator></Separator>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-6">
-        <div class="w-full flex flex-col justify-between text-base md:text-lg">
+        <div class="w-full flex flex-col gap-10 justify-between text-base md:text-lg">
             <p>Baghouses for asphalt plants ranging from 10 tph to 500 tph.</p>
             <p>Ranging from 4,000 to 90,000 ACFM Capacity</p>
-            <p class="text-grisPPP">The baghouses are highly efficient at capturing fine particles,<span class="text-black"> achieving up to 99.99% filtration</span>. Total and homogeneous return
+            <p class="text-grisPPP text-justify md:text-start">The baghouses are highly efficient at capturing fine particles,<span class="text-black"> achieving up to 99.99% filtration</span>. Total and homogeneous return
                  of fines to the asphalt mix to optimize its quality and pavement life.</p>
         </div>
         <div>
@@ -25,7 +26,7 @@ import Separator from "../unitComponents/Separator.astro"
             </p>
         </div>
     </div>
-    <div class="w-full">
-        <img src="" alt="">
+    <div class="w-full px-8 md:px-32 flex justify-center mt-20">
+        <img src={img1.src} alt="" class="max-w-[60vw]">
     </div>
 </section>
