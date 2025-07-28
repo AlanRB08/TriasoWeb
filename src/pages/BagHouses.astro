@@ -1,9 +1,11 @@
 ---
 import BHFirst from "../components/BagHouses/BHFirst.astro";
 import BHImgSelector from '../components/BagHouses/BHImgSelector.astro';
+import Tab from '../components/BagHouses/BHTab';
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="BagHouses Page">
     <BHFirst/>
+    <Tab client:only/>
     <BHImgSelector/>
 </Layout>
