@@ -29,7 +29,7 @@ export const menuItems = [
             },
             {
               title : "RAP BINS",
-              url : "/products/asphalt-plants/bins/rap-bins",
+              url : "/RapBins",
             },
             {
               title: "POWDER ADDITIVE BINS",
