@@ -1,4 +1,34 @@
+---
+import GallerySlider from "../unitComponents/GallerySlider";
+import TRed from '../../assets/images/AsphaltStorage/redT.png';
+const RBImages = [
+  {
+    image: 'src/assets/images/RapBins/Gallery/RBG1.png',
+    caption: 'RAP single Bin',
+  },
+  {
+    image: 'src/assets/images/RapBins/Gallery/RBG2.png',
+    caption: 'RAP single Bin',
+  },
+  {
+    image: 'src/assets/images/RapBins/Gallery/RBG3.png',
+    caption: 'RAP single Bin',
+  },
+  {
+    image: 'src/assets/images/RapBins/Gallery/RBG4.png',
+    caption: 'Drum mixer, 110-150 Tph, counter-flow, with pugmill, in working position with RAP Bin',
+  }
+];
+---
+
 <section class="w-full font-bold text-grisT">
+    <div class="w-full mt-10 pb-10">
+        <div class="z-50">
+            <GallerySlider client:only slides={RBImages} visibleThumbs={3}/>
+        </div>
+        <img src={TRed.src} alt="" class="relative bottom-0 right-72 w-[300px] z-10">
+        
+    </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 mt-20">
         <div class="col-span-1 w-full">
             <img src="" alt="">
