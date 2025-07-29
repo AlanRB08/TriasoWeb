@@ -47,7 +47,7 @@ export const menuItems = [
             },
             {
               title : "FUEL PREHEATERS",
-              url : "/products/asphalt-plants/heating-systems/fuel-preheaters",
+              url : "/FuelPreHeaters",
             },
             {
               title : "OIL HEATERS",
