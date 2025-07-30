@@ -43,7 +43,7 @@ export const menuItems = [
           children : [
             {
               title : "BURNERS",
-              url : "/products/asphalt-plants/heating-systems/burners",
+              url : "/Burners",
             },
             {
               title : "FUEL PREHEATERS",
