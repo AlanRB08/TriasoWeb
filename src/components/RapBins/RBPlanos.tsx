@@ -1,17 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import tolva6L2 from '../../assets/images/BinUnits/tolva6L2.png';
-import tolva6L1 from '../../assets/images/BinUnits/tolva6L1.png';
-import tolva6Main from '../../assets/images/BinUnits/tolva6Main.png';
-import tolva5L1 from '../../assets/images/BinUnits/tolva5L1.png';
-import tolva5L2 from '../../assets/images/BinUnits/tolva5L2.png';
-import tolva5Main from '../../assets/images/BinUnits/tolva5Main.png';
-import tolva4L2 from '../../assets/images/BinUnits/tolva4L2.png';
-import tolva4L1 from '../../assets/images/BinUnits/tolva4L1.png';
-import tolva4F1 from '../../assets/images/BinUnits/tolva4F1.png';
-import tolva4Main from '../../assets/images/BinUnits/tolva4Main.png';
-import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
 import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
 import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
 import tolva2L2 from '../../assets/images/BinUnits/tolva2L2.png';
@@ -827,7 +816,7 @@ const RBPlanos = () => {
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+            <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -845,17 +834,18 @@ const RBPlanos = () => {
                             </button>
                         </div>
                     <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Fine material flow sensor with low-level alarm</li>
-                        <li>Vibrators on fine bins to ensure consistent feed</li>
-                        <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
-                        <li>Drum made from high-temp resistant alloyed steel</li>
-                        <li>Collector belt receives material from all bins for final dosing</li>
-                        <li>Seamless integration with cold or hot mix asphalt plants</li>
+                        <li>18" variable-speed dosing belt</li>
+                        <li>Fine motor control down to 1 rpm for accurate flow</li>
+                        <li>Rubber-coated head pulley for reliable grip</li>
+                        <li>Trapezoidal discharge gate for smooth material flow</li>
+                        <li>Flow sensor triggers air cannons to avoid clogging</li>
+                        <li>24" wide conveyor belt for smoother low-speed transport</li>
+                        <li>Polyethylene scraper and onboard vibrator prevent material build-up</li>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -871,11 +861,11 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Galvanized bolts and anti-corrosion coating</li>
-                        <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                        <li>Electrostatic paint finish for durability</li>
-                        <li>Anti-slip aluminum panels for operator safety</li>
-                        <li>Perforated guards and OSHA-compliant protections</li>
+                        <li>Variable-speed dosing system integrated with plant control console</li>
+                        <li>Digital interface for dosage adjustment and monitoring</li>
+                        <li>Real-time feedback of flow rate for precision control</li>
+                        <li>Adaptable to existing asphalt plant control infrastructure</li>
+                        <li>Fully compatible with cold or hot mix asphalt plants, with seamless integration to central control systems</li>
                     </ul>
                 </div>
             </div>
@@ -883,7 +873,7 @@ const RBPlanos = () => {
                 
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+            <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -901,39 +891,18 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Reinforced steel chassis for heavy-duty operation</li>
+                        <li>Extra-reinforced steel structure</li>
                         <li>Trapezoidal bin design for better material flow</li>
-                        <li>Foldable support legs</li>
-                        <li>Removable transport skids</li>
+                        <li>Low-profile frame for easy relocation</li>
+                        <li>Galvanized bolts for corrosion resistance</li>
+                        <li>Automotive-grade electrostatic paint</li>
+                        <li>Oversized Browning™ gear reducers</li>
+                        <li>Steel pulleys for heavy-duty power transmission</li>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_2: !prev.C2_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Industrial Siemens motors</li>
-                        <li>Grounded electrical wiring</li>
-                        <li>Quick-connect terminals with weather protection</li>
-                        <li>Motor control center with Siemens VFDs</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -949,19 +918,25 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Diesel burner with automatic temperature control</li>
-                        <li>Two operating modes: Manual and Automatic</li>
-                        <li>Digital thermometers with programmable set points</li>
-                        <li>Siemens PLC-based control system</li>
-                        <li>100 L thermal oil expansion tank</li>
+                        <li>Compact and low-profile structure designed for easy transportation and relocation</li>
+                        <li>Mounted on wheels:</li>
+                        <ul className='ml-6'>
+                            <li>Equipped with a fifth-wheel hitch for secure towing</li>
+                            <li>Integrated braking and lighting system for safe road transport</li>
+                            <li>Dual-axle configuration ensures stability and even load distribution</li>
+                        </ul>
+                        <li>Mounted on legs:</li>
+                        <ul className='ml-6'>
+                            <li>Support legs pre-set at working height for fast and stable on-site setup</li>
+                        </ul>
                     </ul>
                 </div>
             </div>
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -977,15 +952,15 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Perforated guards for moving parts</li>
+                            <li>Built-in skirtboards to contain material</li>
+                            <li>Hooks for safety tensioners</li>
+                            <li>120-gallon air tank for air cannon operation</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -1000,20 +975,16 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <div className='flex justify-between'>
-                                    <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
-                            </div>
-                        </div>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <li>EPA</li>
+                            <li>OSHA</li>
+                            <li>DOT</li>
+                            <li>UL wiring</li>
+                        </ul>
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -1029,10 +1000,11 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>EPA</li>
-                            <li>OSHA</li>
-                            <li>DOT</li>
-                            <li>UL wiring</li>
+                            <li>Siemens™ motors and electrical components</li>
+                            <li>Polarized cabling with weather-sealed connections</li>
+                            <li>CEMA-standard pulleys and idlers</li>
+                            <li>Weather-resistant quick-connect terminals</li>
+                            <li>Motor control center with Siemens VFDs</li>
                         </ul>
                     </div>
                 </div>
@@ -1194,9 +1166,9 @@ const RBPlanos = () => {
                         </div>
                         <div className='h-[253px] w-[744px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L2.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
                             ) : (
-                                <img src={tolva3L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
                             )}
                         </div>
                     </div>
