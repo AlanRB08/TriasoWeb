@@ -3,9 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import OHFirstSection from '../components/OilHeaters/OHFirstSection.astro';
 import OHOdometer from "../components/OilHeaters/OHOdometer";
 import OHPrecision from "../components/OilHeaters/OHPrecision.astro";
+import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 ---
 <Layout title="Oil Heaters Page">
     <OHFirstSection></OHFirstSection>
     <OHOdometer client:only></OHOdometer>
     <OHPrecision></OHPrecision>
+    <CardSection></CardSection>
 </Layout>
