@@ -33,7 +33,7 @@ export const menuItems = [
             },
             {
               title: "POWDER ADDITIVE BINS",
-              url: "/products/asphalt-plants/bins/powder-additive-bins",
+              url: "/PowderAd",
             }
           ]
         },
@@ -51,7 +51,7 @@ export const menuItems = [
             },
             {
               title : "OIL HEATERS",
-              url : "/products/asphalt-plants/heating-systems/oil-heaters",
+              url : "/OilHeaters",
             }
           ]
         },
