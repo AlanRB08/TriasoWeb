@@ -1,0 +1,48 @@
+---
+import oil from '../../assets/images/AsphaltPlant/oil1.png';
+import ItemsSlider from '../LandinPage/ItemsSlider';
+
+const images1 = [
+  { src: '/Gallery/sliderHotMix/1.png', title: 'Preservation of Quality',texto:'Preservation of quality and integrity of the asphalt.' },
+  { src: '/Gallery/sliderHotMix/2.png', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
+  { src: '/Gallery/sliderHotMix/3.png', title: 'Versatile Storage Options' ,texto:'Long-duration thermal retention, ensuring it remains liquid and high-quality for extended periods.'},
+  { src: '/Gallery/sliderHotMix/4.png', title: 'Mobility' ,texto:'Triaso asphalt tanks allow quick setup without heavy machinery, ideal for relocatable operations.'},
+  { src: '/Gallery/sliderHotMix/5.png', title: 'Durability' ,texto:'Built with reinforcerd material, thermally insulated cylinders, and corrosion-resistant finishes.'},
+  { src: '/Gallery/sliderHotMix/6.png', title: 'Seamless Integration',texto:'Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.' },
+  { src: '/Gallery/sliderHotMix/7.png', title: 'Enhanced Safety' ,texto:'Equipped with guards, alarms, and visual indicators to protect personnel and equipment.'},
+  { src: '/Gallery/sliderHotMix/8.png', title: 'Cost-Effective' ,texto:'Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.'},
+  { src: '/Gallery/sliderHotMix/9.png', title: 'Improved Company Image' ,texto:'Industrial aesthetics elevate the visual appeal of your operation.'},
+  { src: '/Gallery/sliderHotMix/10.png', title: 'Customizable' ,texto:'Adaptable features to meet specific project requirements and operational goals.'}
+
+  // agrega hasta 16 o más imágenes
+];
+---
+<section class="w-full mt-20 md:mt-32 font-bold text-grisT flex flex-col gap-10">
+    <div class="px-8 md:px-32 w-fit">
+        <h1 class="text-3xl md:text-4xl border-b-2 border-b-blueMain">OIL HEATERS</h1>
+    </div>
+    <div class="w-full text-base md:text-lg px-8 md:px-32">
+        <p>
+            Engineered for precise temperature regulation, our oil heater guarantees uniform heat distribution across the system thanks 
+            to its advanced thermal oil circulation technology. This ensures optimal heating performance, preventing hot spots and maintaining 
+            temperature consistency throughout the process. 
+        </p><br>
+        <p>
+            Built with heavy-duty materials and designed for continuous, long-term operation, it is perfectly suited for demanding industrial 
+            applications such as asphalt plants and other heat-intensive systems. In addition to its robust reliability, the heater offers excellent
+             energy efficiency, helping to reduce operating costs while maintaining peak performance in even the most challenging environments
+        </p>
+    </div>
+    <div class="w-full px-8 md:px-32 flex justify-center">
+        <img src={oil.src} alt="">
+    </div>
+    <div class="w-full px-8 md:px-32 text-center">
+        <h2 class="text-black text-lg md:text-xl">Simplifying Operations with Triaso Intelligent Features</h2><br>
+        <p class="text-base md:text-lg">
+            Beyond storage, our tanks are equipped with user-friendly features like automated monitoring systems, real-time data tracking, 
+            and efficient unloading mechanisms. 
+            These technologies help streamline operations, reduce maintenance, and enhance productivity across the board.
+        </p>
+    </div>
+    <ItemsSlider images={images1} client:only></ItemsSlider>
+</section>
