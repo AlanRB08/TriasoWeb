@@ -35,103 +35,81 @@ export default function BinSelector() {
   const currentImage = imageMap[selectedBins][panelType];
 
   return (
-    <div className="px-8 lg:px-52 bg-gray-100 flex flex-col gap-6 text-black w-full mt-10">
-      <h1 className="text-3xl font-bold">From two to six bins units</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 justify-center items-center'>
-                <div className='flex flex-col items-start justify-center gap-6'>
-                <div className="flex gap-4">
-        {binOptions.map((num) => (
-          <button
-            key={num}
-            onClick={() => setSelectedBins(num)}
-            className={`px-4 py-2 text-base md:text-lg rounded font-bold border ${
-              selectedBins === num
-                ? 'bg-blueMain text-white'
-                : 'bg-white text-black'
-            }`}
-          >
-            {num}
-          </button>
-        ))}
+    <div className="bg-gray-100 flex flex-col gap-6 text-black w-full mt-10">
+      <h1 className="text-3xl md:text-4xl  font-bold text-center px-8 lg:px-52">From two to six bins units</h1>
+      <div className='w-full flex flex-col gap-10 justify-center items-center px-8 lg:px-52'>
+          <div className='w-full flex gap-10 justify-center'>
+              <button
+              onClick={() => setPanelType('aesthetic')}
+              className={`md:min-w-[400px] text-center text-base md:text-lg px-4 py-2 rounded font-bold border ${
+                panelType === 'aesthetic'
+                  ? 'bg-blueMain text-white'
+                  : 'bg-white text-black'
+              }`}
+            >
+              Aesthetic Side Panels
+            </button>
+            <button
+              onClick={() => setPanelType('without')}
+              className={`md:min-w-[400px] px-4 py-2 rounded text-center md:text-lg font-bold border ${
+                panelType === 'without'
+                  ? 'bg-blueMain text-white'
+                  : 'bg-white text-black'
+              }`}
+            >
+              Without Aesthetic Side Panels
+            </button>
+          </div>
+          <div className="flex items-center justify-center h-[650px]">
+            <img
+              src={currentImage}
+              alt={`Bins ${selectedBins} - ${panelType}`}
+              className="max-w-[1100px]"
+            />
+          </div>
+          <div className="flex bg-white rounded-2xl py-2">
+            <p className='font-bold text-base md:text-lg py-2 px-4'>Bin units:</p>
+          {binOptions.map((num) => (
+            <button
+              key={num}
+              onClick={() => setSelectedBins(num)}
+              className={`mx-5 px-5 py-2 text-base md:text-lg font-bold rounded-full ${
+                selectedBins === num
+                  ? 'bg-blueMain text-white'
+                  : 'bg-white text-black'
+              }`}
+            >
+              {num}
+            </button>
+          ))}
+          </div>
       </div>
-      <div className="flex flex-col gap-4">
-        <button
-          onClick={() => setPanelType('aesthetic')}
-          className={`text-start text-base md:text-lg px-4 py-2 rounded font-bold border ${
-            panelType === 'aesthetic'
-              ? 'bg-blueMain text-white'
-              : 'bg-white text-black'
-          }`}
-        >
-          Aesthetic Side Panels
-        </button>
-        <button
-          onClick={() => setPanelType('without')}
-          className={`px-4 py-2 rounded text-base md:text-lg font-bold border ${
-            panelType === 'without'
-              ? 'bg-blueMain text-white'
-              : 'bg-white text-black'
-          }`}
-        >
-          Without Aesthetic Side Panels
-        </button>
-      </div>
-                    
-                </div>
-
-                <p className="text-base md:text-lg max-w-3xl font-bold text-grisT">
-        High-quality equipment built for durability and efficient asphalt
-        production. Featuring reinforced steel structures and integrated
-        vibration systems, Triaso® bin units ensure steady aggregate flow,
-        minimal clogging, and reduced wear. Designed for continuous operation,
-        they deliver consistent, reliable performance with low maintenance—even
-        under the toughest jobsite conditions.
-      </p>
-
+      <div className='w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 lg:px-52'>
+          <h1 className='text-white font-bold text-2xl md:text-3xl text-center'>Specifications and Characteristics</h1><br />
+          <div className='w-full grid grid-cols-1 md:grid-cols-2 justify-center'>
+            <div>
+              <p>
+              With dimensions and aggregate dosing systems that comply with construction regulations
+              <ul className='list-disc ml-6'>
+                <li>DOT</li>
+                <li>OSHA</li>
+                <li>EPA</li>
+                <li>UL Wiring</li>
+              </ul><br />
+              Built with high-strength steel to withstand heavy loads and resist deformation under tough working conditions. <br /><br />
+              Designed for quick and smooth unloading to maintain continuous workflow and minimize downtime.
+              </p>
             </div>
-      {/* Bins selector */}
-      
-
-      {/* Panel type selector */}
-      
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Specs */}
-        <div className="bg-white p-4 rounded-2xl shadow">
-          <h2 className="text-lg md:text-xl font-bold mb-2">
-            Specifications and Characteristics
-          </h2>
-          <ul className="list-disc pl-6 space-y-2 text-base md:text-lg font-bold text-grisT">
-            <li>
-              With dimensions and aggregate dosing systems that comply with
-              construction regulations
-            </li>
-            <li>
-              Built with high-strength steel to withstand heavy loads and resist
-              deformation under tough working conditions.
-            </li>
-            <li>
-              Designed for quick and smooth unloading to maintain continuous
-              workflow and minimize downtime.
-            </li>
-            <li>
-              Equipped with precision-controlled aggregate dosing mechanisms to
-              ensure accurate material distribution.
-            </li>
-          </ul>
-        </div>
-
-        {/* Image */}
-        <div className="bg-white p-0 rounded-2xl shadow flex items-center justify-center">
-          <img
-            src={currentImage}
-            alt={`Bins ${selectedBins} - ${panelType}`}
-            className="max-w-full h-auto"
-          />
-        </div>
+            <div>
+              <p>
+              High-quality equipment built for durability and efficient asphalt production. Featuring reinforced steel structures and 
+              integrated vibration systems, Triaso® bin units ensure steady aggregate flow, minimal clogging, and reduced wear. Designed 
+              for continuous operation, they deliver consistent, reliable performance with low maintenance—even under the toughest jobsite conditions. <br /><br />
+              Equipped with precision-controlled aggregate dosing mechanisms to ensure accurate material distribution.
+              </p>
+            </div>
+          </div>
       </div>
-
-      {/* Description */}
       
     </div>
   );

@@ -115,12 +115,16 @@ const binSlides2 = [
   }
 
 ];
+import Tred from '../../assets/images/AsphaltStorage/redT.png';
+import Separator from "../unitComponents/Separator.astro";
+import sideP from '../../assets/images/DrumMixers/sideP.png';
+import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
-<div class='w-full grid grid-cols-1 lg:grid-cols-5 justify-center items-center mt-20 gap-10'>
-    <div class='flex flex-col gap-6 col-span-2'>
-        <div class='text-white bg-redBg p-4 font-bold md:rounded-r-2xl'>
-            <h1 class='text-2xl md:text-3xl pl-8 md:pl-52'>Options to Meet Any Need</h1><br />
-            <p class='pl-8 md:pl-52'>Our bin units offer versatile features such as flow detectors
+<div class='w-full flex flex-col justify-center items-center gap-10'>
+    <div class='grid grid-cols-1 md:grid-cols-2 relative'>
+        <div class='text-white bg-redBg p-4 font-bold py-10'>
+            <h1 class='text-2xl md:text-3xl px-8 md:px-32'>Options to Meet Any Need</h1><br />
+            <p class='px-8 md:px-32'>Our bin units offer versatile features such as flow detectors
                  for precise monitoring, level indicators to prevent overflow,
                   and vibrators to ensure smooth material flow. Customizable with
                    bin dividers, extensions, and grizzlies, they adapt to diverse
@@ -128,17 +132,51 @@ const binSlides2 = [
                      in any application.
             </p>
         </div>
-        <div class='text-white bg-blueMain p-4 font-bold md:rounded-r-2xl'>
-            <h1 class='text-2xl md:text-3xl pl-8 md:pl-52'>Belt Feeders with Rubberized Pulleys</h1><br />
-            <p class='pl-8 md:pl-52'>Our belt feeders are equipped with rubberized head
-                 and tail pulleys, ensuring superior grip and minimizing slippage during
-                  operation. This design enhances durability, reduces wear on the belt,
-                   and provides reliable performance, even under heavy loads or challenging 
-                   conditions.
+        <div class='text-white bg-blueMain p-4 font-bold py-10'>
+            <h1 class='text-2xl md:text-3xl px-8 md:px-32'>24/7 customer service</h1><br />
+            <p class='px-8 md:px-32'>Our team is available around the clock, ready to assist you at any time, even on weekends and holidays.
             </p>
         </div>
+        <div class="max-w-[150px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img src={Tred.src} alt="" class="w-full h-auto">
+        </div>
     </div>
-    <div class="col-span-3">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 overflow-visible px-8 md:px-52">
+      <div class="w-full">
+
+      </div>
+      <div class="w-full flex flex-col gap-10">
+          <div>
+              <img src="" alt="">
+          </div>
+          <div class="w-full flex flex-col justify-center">
+              <h1 class="text-lg md:text-xl font-bold">Belt Feeders with Rubberized Pulleys </h1>
+              <br>
+              <p class="text-base md:text-lg font-extralight text-grisT text-justify" >Our belt feeders are equipped with rubberized head and tail pulleys, ensuring superior grip and minimizing slippage during operation. This design enhances durability, reduces wear on the belt, and provides reliable performance, even under heavy loads or challenging conditions.
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="w-full px-8 md:px-52 text-3xl md:text-4xl font-bold">
+    <div class="w-full flex justify-between">
+      <div>
+        <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
+        <Separator/>
+      </div>
+      <div class="text-end">
+        <h2 class="text-redBg">
+          ENHANCE YOUR COMPANY IMAGE <br> WITH TRIASO DESIGN
+        </h2>
+      </div>
+    </div>
+    <div class="my-10 flex flex-col justify-center items-center gap-6">
+      <img src={sideP.src} alt="">
+      <div class="max-w-[250px]">
+        <LearnBtn/>
+      </div>
+    </div>
+  </div>
+    <div class="w-full">
         <GallerySlider slides={binSlides2} visibleThumbs={6}/>
     </div>
 </div>

@@ -7,10 +7,12 @@ import BinGallery from "../components/BinUnits/BinGallery.astro";
 import BinSelector from '../components/BinUnits/BinSelector';
 import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
+import BOdometer from "../components/BinUnits/BOdometer";
 ---
 <Layout title='Bin Units'>
     <IntroSection />
     <BinSelector client:only/>
+    <BOdometer client:only/>
     <CustomBins />
     <IntegrateControl />
     <BinGallery />

@@ -1,63 +1,43 @@
 ---
 import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
 import Image from 'astro/components/Image.astro';
+import bin from '../../assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.png';
+import AcordeonItem from '../unitComponents/AcordeonItem';
 ---
 <div class="w-full flex flex-col items-center justify-center mt-10">
-    <div class="px-8 md:px-52 flex flex-col items-center justify-center">
-        <h1 class="text-lg md:text-xl font-bold">Integrated Control Over Aggregate Flow </h1>
-        <br>
-        <p class="text-base md:text-lg font-extralight text-grisT text-justify" >Triaso® bin feeders are fully managed by the central
-             control system, allowing real-time adjustment of
-              material output for each bin. Through synchronized
-               coordination, the system ensures exact proportions
-                are delivered to the mixing process according to
-                 the selected recipe. Operators can monitor and
-                  adjust each bin’s behavior from the control
-                   cabinet, enabling instant response to production
-                    needs or material changes. This seamless integration reduces waste,
-                     ensures mix consistency, and streamlines the entire asphalt production
-                      cycle.
-        </p>
-    </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-3 items-start justify-center mt-10">
-        <div class="col-span-1 flex justify-center">
-            <Image src={binUnit1} alt="" class="w-1/2 md:w-full"/>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 overflow-visible px-8 md:px-52">
+        <div class="w-full flex flex-col gap-10">
+            <div>
+                <img src="" alt="">
+            </div>
+            <div class="w-full flex flex-col justify-center">
+                <h1 class="text-lg md:text-xl font-bold">Integrated Control Over Aggregate Flow </h1>
+                <br>
+                <p class="text-base md:text-lg font-extralight text-grisT text-justify" >Triaso® bin feeders are fully managed by the central
+                     control system, allowing real-time adjustment of
+                      material output for each bin. Through synchronized
+                       coordination, the system ensures exact proportions
+                        are delivered to the mixing process according to
+                         the selected recipe. Operators can monitor and
+                          adjust each bin’s behavior from the control
+                           cabinet, enabling instant response to production
+                            needs or material changes. This seamless integration reduces waste,
+                             ensures mix consistency, and streamlines the entire asphalt production
+                              cycle.
+                </p>
+            </div>
         </div>
-        <div class="col-span-2 flex flex-col items-start justify-center md:pr-52 pr-8 md:pl-0 pl-8">
-            <h1 class="text-lg md:text-xl font-bold">Precision Dosing Systems in Bin Units</h1><br>
-            <p class="text-base md:text-lg font-bold text-grisT text-justify">Our bin units are equipped with advanced dosing systems designed for optimal
-                 precision and reliability. These systems ensure accurate material flow and
-                  distribution, meeting the demands of even the most stringent project
-                   requirements.
-            </p><br>
-            <ul class="text-base md:text-lg font-bold text-grisT text-justify pl-8 list-disc space-y-8">
-                <li>High-Precision Sensors: Integrated sensors monitor material levels
-                     in real time, allowing for precise control of dosing quantities and
-                      preventing overflows or shortages.</li>
-                <li>Adjustable Flow Rates: The system allows operators to modify the flow rate,
-                     accommodating a wide range of materials, from fine aggregates to
-                      larger-sized rocks or sand.</li>
-                <li>Consistent Material Distribution: Ensures uniform dosing to maintain a balanced
-                     mixture in downstream operations, such as mixing or crushing processes.</li>
-                <li>Automated Controls: Equipped with programmable logic controllers (PLCs), the system can be automated for
-                     consistent and repeatable performance across different projects.</li>
-                <li>Anti-Clogging Mechanism: Specially designed chutes and gates minimize the risk of blockages,
-                     ensuring a smooth and uninterrupted material flow.</li>
-                <li>Energy-Efficient Operation: Engineered to optimize power usage, reducing operational
-                     costs while maintaining high performance.</li>
-            </ul>
-            <br>
-            <p class="text-base md:text-lg font-bold text-grisT text-justify">These features make our bin units with dosing systems an essential component
-                 for industries requiring precise and efficient material handling.</p>
-        </div>
-
     </div>
-    <div class="w-full flex flex-col items-center justify-center px-8 md:px-52 mt-10">
-        <h1 class="text-2xl md:text-4xl font-bold mb-10">Portable and Relocatable Systems</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-white p-4 font-bold rounded-2xl">
+    <div class="w-full px-8 md:px-52 font-bold my-10">
+        <h1 class="text-blueMain text-3xl md:text-4xl text-center">
+            The Triaso team understands that proper material handling and storage are key to optimal performance and durability
+        </h1>
+    </div>
+    <div class="w-full bg-grisP px-8 md:px-52">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 text-white py-10">
+            <div class="p-4 font-bold rounded-2xl">
                 <h1 class="text-lg md:text-xl">Durable Construction</h1><br>
-                <p class="text-grisT text-base md:text-lg">Our bin units are engineered with wear-resistant materials that excel
+                <p class="text-grisSubP text-base md:text-lg">Our bin units are engineered with wear-resistant materials that excel
                      in handling abrasive and heavy loads. This robust construction ensures
                       the system remains reliable even under the harshest working conditions.
                        By minimizing wear and tear, the design significantly reduces maintenance
@@ -65,9 +45,9 @@ import Image from 'astro/components/Image.astro';
                          for long-term operations.
                 </p>
             </div>
-            <div class="bg-white p-4 font-bold rounded-2xl">
+            <div class="p-4 font-bold rounded-2xl">
                 <h1 class="text-lg md:text-xl">Customizable Settings</h1><br>
-                <p class="text-grisT text-base md:text-lg">The dosing system offers unparalleled flexibility to accommodate the 
+                <p class="text-grisSubP text-base md:text-lg">The dosing system offers unparalleled flexibility to accommodate the 
                     unique demands of each project. With options for both manual and automatic
                      adjustment, the system ensures precise control over material flow. This 
                      versatility allows seamless handling of a wide range of materials, from 
@@ -75,20 +55,54 @@ import Image from 'astro/components/Image.astro';
                       smooth integration into any operational setup.
                 </p>
             </div>
-            
         </div>
-        <div class="mt-10 flex flex-col items-center justify-center">
-            <p class="text-grisT font-medium text-base md:text-lg text-justify">More than just functionality, Triaso® equipment is designed with clean,
-                 modern aesthetics that reflect professionalism and attention to detail.
-                  Our exclusive side panels, clean lines, and high-quality finishes aren’t
-                   just for looks—they project the strength, precision, and innovation behind
-                    your operation. These original design elements are unique to Triaso® and
-                     give your machinery a distinct visual identity that sets you apart. Present
-                      a polished, trustworthy image to your clients and partners while working with 
-                      equipment that performs as well as it looks.
-            </p>
-            <img src="" alt="">
+        <div class="my-10 w-full flex justify-center">
+            <img src={bin.src} alt="" class="max-h-[400px]">
         </div>
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
+        <div class="col-span-2 flex justify-center">
+            <Image src={binUnit1} alt="" class="w-1/2 md:w-full"/>
+        </div>
+        <div class="col-span-3 flex flex-col items-start h-full justify-center md:pr-52 pr-8 md:pl-0 pl-8">
+            <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>Bin Units</h1><br>
+            <p class="text-lg md:text-xl font-thin text-grisT text-justify">Our bin units are equipped with advanced dosing systems designed for optimal
+                 precision and reliability. These systems ensure accurate material flow and
+                  distribution, meeting the demands of even the most stringent project
+                   requirements.
+            </p><br>
+            <div class="w-full flex flex-col gap-6 pr-10">
+                <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Automated Controls" content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Anti-Clogging Mechanism" content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Energy-Efficient Operation" content="Engineered to optimize power usage, reducing operational costs while maintaining high performance.">
+                </AcordeonItem>
+            </div>
+        </div>
+
     </div>
 
 </div>
+<script is:inline>
+    function toggleDropdown() {
+        const dropdown = document.getElementById("extradiv2");
+        const arrow = document.getElementById("dropdown-arrow2");
+        
+        if (dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight) {
+            // Abrir dropdown
+            dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+            arrow.style.transform = "rotate(180deg)";
+        } else {
+            // Cerrar dropdown
+            dropdown.style.maxHeight = "0";
+            arrow.style.transform = "rotate(0deg)";
+        }
+    }
+</script>
