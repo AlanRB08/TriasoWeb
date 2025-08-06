@@ -6,10 +6,12 @@ import CMTab from '../components/ColdMix/CMTab';
 import CMPugMill from '../components/ColdMix/CMPugMill.astro';
 import CMSection from "../components/ColdMix/CMSection.astro";
 import CMSidePanels from "../components/ColdMix/CMSidePanels.astro";
+import CMOdom from "../components/ColdMix/CMOdom";
 ---
 <Layout title="ColdMix Page">
  <CMIntroSection/>
  <CMCards/>
+ <CMOdom client:only></CMOdom>
  <CMSection />
  <CMSidePanels />
  <CMTab client:only/>
