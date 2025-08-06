@@ -1,6 +1,7 @@
 ---
 import Card from "../unitComponents/Card.astro";
 import GallerySlider from "../unitComponents/GallerySlider";
+import img1 from "../../assets/images/ColdMix/PlaMFDscC.png";
 
 const binSlides = [
 {
@@ -40,6 +41,9 @@ const binSlides = [
 <div class="w-full flex flex-col items-center justify-center px-8 md:px-32 gap-6">
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center px-8 md:px-32 font-bold mt-6">
         <Card>
+          <div>
+            <img src="" alt="">
+          </div>
             <h2 class="text-lg md:text-xl">What is a Cold Mix Plant?</h2><br>
             <p class="text-grisP">Cold mix asphalt plants are designed for blending aggregates and asphalt emulsions 
                 at ambient temperatures, eliminating the need for heating. Using a pugmill mixer, 
@@ -47,25 +51,14 @@ const binSlides = [
                 and construction applications.</p>
         </Card>
         <Card>
-            <h2 class="text-lg md:text-xl">Precision Dosing for Reliable Results</h2><br>
-            <p class="text-grisP">Equipped with material hoppers and adjustable gates, 
-                cold mix plants provide precise control over aggregate dosing. This accuracy allows 
-                for consistent mix quality and repeatable results, even when using different material 
-                types or gradations.</p>
-        </Card>
-        <Card>
-            <h2 class="text-lg md:text-xl">Eco-Friendly Asphalt Solutions</h2><br>
-            <p class="text-grisP">Cold mix technology uses lower temperatures and fewer emissions
-                 compared to traditional hot mix plants. This makes them a more environmentally 
-                 conscious choice, particularly in areas with strict emissions regulations or 
-                 urban work zones.</p>
-          </Card>
-        <Card>
-            <h2 class="text-lg md:text-xl">Built for Mobility and Easy Setup</h2><br>
-            <p class="text-grisP">Compact and mobile configurations make cold mix plants easy to 
-                transport and set up on any site. With minimal installation requirements, they’re 
-                ideal for short-term jobs or shifting from site to site quickly and efficiently.</p>
-        </Card>
+            <h2 class="text-lg md:text-xl">Versatile discarge level</h2><br>
+            <p class="text-grisP">Cold mix asphalt plants are designed according to the user's discharge height requirements, 
+              with the option of ground-level discharge for needed projects, or elevated discharge for direct loading into trucks for
+               bulk applications</p>
+                <div>
+                  <img src={img1.src} alt="">
+                </div>
+        </Card> 
     </div>
     <GallerySlider slides={binSlides} visibleThumbs={6} client:only />
 </div>
