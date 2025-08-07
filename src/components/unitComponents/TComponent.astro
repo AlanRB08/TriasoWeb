@@ -1,0 +1,27 @@
+---
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import Whatsbtn from "./Whatsbtn.astro";
+---
+<div class='grid grid-cols-1 md:grid-cols-2 relative'>
+        <div class='text-white bg-redBg p-4 font-bold py-10'>
+            <h1 class='text-2xl md:text-3xl px-8 md:px-32'>Options to Meet Any Need</h1><br />
+            <p class='px-8 md:px-32'>Our bin units offer versatile features such as flow detectors
+                 for precise monitoring, level indicators to prevent overflow,
+                  and vibrators to ensure smooth material flow. Customizable with
+                   bin dividers, extensions, and grizzlies, they adapt to diverse
+                    material handling requirements, delivering efficiency and reliability
+                     in any application.
+            </p>
+        </div>
+        <div class='text-white bg-blueMain p-4 font-bold py-10 flex flex-col w-full gap-3'>
+            <h1 class='text-2xl md:text-3xl px-8 md:px-32'>24/7 customer service</h1>
+            <p class='px-8 md:px-32'>Our team is available around the clock, ready to assist you at any time, even on weekends and holidays.
+            </p>
+            <div class="max-w-[250px] mx-8 md:mx-32">
+                <Whatsbtn/>
+            </div>
+        </div>
+        <div class="max-w-[150px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img src={Tred.src} alt="" class="w-full h-auto">
+        </div>
+</div>
