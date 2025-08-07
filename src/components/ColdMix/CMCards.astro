@@ -1,42 +1,7 @@
 ---
 import Card from "../unitComponents/Card.astro";
-import GallerySlider from "../unitComponents/GallerySlider";
 import img1 from "../../assets/images/ColdMix/PlaMFDscC.png";
 
-const binSlides = [
-{
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG1.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG2.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG3.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG4.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG5.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG6.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG7.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG8.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-]
 ---
 <div class="w-full flex flex-col items-center justify-center px-8 md:px-32 gap-6">
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 justify-between items-center px-8 md:px-32 font-bold mt-6">
@@ -60,5 +25,5 @@ const binSlides = [
                 </div>
         </Card> 
     </div>
-    <GallerySlider slides={binSlides} visibleThumbs={6} client:only />
+
 </div>

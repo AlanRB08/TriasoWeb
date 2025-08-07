@@ -2,8 +2,76 @@
 import Image from "astro/components/Image.astro"
 import img2 from '../../assets/images/ColdMix/pugmill2.png';
 import img3 from '../../assets/images/ColdMix/pugmill3.png';
+import GallerySlider from "../unitComponents/GallerySlider";
+import TComponent from "../unitComponents/TComponent.astro";
+import AcordeonItem from "../unitComponents/AcordeonItem";
+import img6 from '../../assets/images/AsphaltPlant/elevator1.png';
+import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
+
+const binSlides = [
+{
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG1.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG2.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG3.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG4.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG5.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG6.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG7.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
+  },
+  {
+    image: 'src/assets/images/ColdMix/GallerySlider/CMG8.png',
+    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
+  },
+]
 ---
-<div class="w-full font-bold flex flex-col justify-center items-center mt-[20vh] gap-10">
+<div class="w-full font-bold flex flex-col justify-center items-center mt-[20vh]">
+    <TComponent/>
+    <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
+        <div class="col-span-2 flex justify-center">
+            <Image src={binUnit1} alt="" class="w-1/2 md:w-full"/>
+        </div>
+        <div class="col-span-3 flex flex-col items-start h-full justify-center md:pr-52 pr-8 md:pl-0 pl-8">
+            <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>Cold Mix <br>Asphalt Plants</h1><br>
+            <p class="text-lg md:text-xl font-thin text-grisT text-justify">Our cold mix are equipped with advanced dosing systems designed for optimal
+                 precision and reliability. These systems ensure accurate material flow and
+                  distribution, meeting the demands of even the most stringent project
+                   requirements.
+            </p><br>
+            <div class="w-full flex flex-col gap-6 pr-10">
+                <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Automated Controls" content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Anti-Clogging Mechanism" content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Energy-Efficient Operation" content="Engineered to optimize power usage, reducing operational costs while maintaining high performance.">
+                </AcordeonItem>
+            </div>
+        </div>
+    </div>
     <div class="w-full md:w-1/2 px-8 md:px-32">
         <Image src={img2} alt={'Front PugMill Image'}/>
     </div>
@@ -19,13 +87,13 @@ import img3 from '../../assets/images/ColdMix/pugmill3.png';
             industrial environments.
         </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 p-6 justify-center items-center gap-3 md:gap-10 bg-white px-8 md:px-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 p-6 justify-center items-center gap-3 md:gap-10 bg-grisSubP px-8 md:px-32">
         <div>
             <Image src={img2} alt=""/>
         </div>
         <div>
-            <h2 class="text-lg md:text-2xl">The mixing paddles</h2> <br>
-            <p class="text-grisP text-base md:text-lg">
+            <h2 class="text-lg md:text-2xl text-blueMain">The mixing paddles</h2> <br>
+            <p class="text-grisT text-base md:text-lg">
                 The mixing paddles inside the pugmill are essential for achieving a uniform, 
                 high-quality asphalt blend. Strategically arranged along twin synchronized shafts 
                 driven by a gear system, they ensure thorough blending of all components, preventing
@@ -52,6 +120,43 @@ import img3 from '../../assets/images/ColdMix/pugmill3.png';
               on the structure and extending the plant’s service life.
         </p>
     </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 h-full">
+            <div class="flex items-start justify-start gap-10 col-span-1">
+                <Image src={img6} alt="" class="w-full max-w-[300px] md:max-w-[420px] object-contain"/>
+
+
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 col-span-2 justify-center items-start gap-10 md:gap-20 px-8 md:pr-52 bg-bgBeige p-6 rounded-l-2xl">
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h2>It can hold up</h2>
+                    <h1 class="text-black text-lg md:text-2xl">0.5 cubic meters</h1>
+                    <h2>of material.</h2>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Automatic opening</h1>
+                    <h2>controlled by time regulates the opening </h2>
+                    <h1 class="text-black text-lg md:text-2xl">via a timer.
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
+                    <h2>in the console centralizes system management. </h2>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
+                    <h2>with a</h2>
+                    <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Automatic or manual opening</h1>
+                    <h2>allows operation either manually or automatically</h2>
+                    
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">7.5 Hp air <br>compressor with a 293-liter air tank</h1>
+                    <h2>supplies air for pneumatic operation</h2>
+                </div>
+            </div>
+       </div>
     <div class="w-full bg-blueMain px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 py-10">
         <div>
             <img src="" alt="">
@@ -62,4 +167,5 @@ import img3 from '../../assets/images/ColdMix/pugmill3.png';
                  Our Triaso equipment is designed for fast installation and startup.</p>
         </div>
     </div>
+    <GallerySlider slides={binSlides} visibleThumbs={6} client:only />
 </div>
