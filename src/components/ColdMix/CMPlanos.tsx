@@ -1,16 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import tolva6L2 from '../../assets/images/BinUnits/tolva6L2.png';
-import tolva6L1 from '../../assets/images/BinUnits/tolva6L1.png';
-import tolva6Main from '../../assets/images/BinUnits/tolva6Main.png';
-import tolva5L1 from '../../assets/images/BinUnits/tolva5L1.png';
-import tolva5L2 from '../../assets/images/BinUnits/tolva5L2.png';
-import tolva5Main from '../../assets/images/BinUnits/tolva5Main.png';
-import tolva4L2 from '../../assets/images/BinUnits/tolva4L2.png';
-import tolva4L1 from '../../assets/images/BinUnits/tolva4L1.png';
-import tolva4F1 from '../../assets/images/BinUnits/tolva4F1.png';
-import tolva4Main from '../../assets/images/BinUnits/tolva4Main.png';
+import FW from "../../assets/images/ColdMix/Planos/FW.png";
+import FL from "../../assets/images/ColdMix/Planos/FL.png";
 import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
 import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
 import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
@@ -347,7 +339,7 @@ const CMPlanos = () => {
                     <button
                     onClick={() => setMountedVersion("legs")}
                     className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${
-                        activeTab === 2
+                        mountedVersion === 'legs'
                         ? 'text-gray-900 bg-white border-white'
                         : 'text-white bg-transparent border-white'
                     }`}
@@ -358,7 +350,7 @@ const CMPlanos = () => {
                     <button
                     onClick={() => setMountedVersion("wheels")}
                     className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
-                        activeTab === 3
+                        mountedVersion === 'wheels'
                         ? 'text-gray-900 bg-white border-white'
                         : 'text-white bg-transparent border-white'
                     }`}
@@ -691,10 +683,10 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='w-[272px] h-[353px] flex items-center justify-center'>
-                        {activeVersion === 'withPanels' ? (
-                                <img src={tolva1F.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                        {mountedVersion === 'wheels' ? (
+                                <img src={FW.src} alt="Mounted on wheels" className='h-[353px] w-[744px]'/>
                             ) : (
-                                <img src={tolva2F1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
+                                <img src={FL.src} alt="Mounted on legs" className='h-[353px] w-[744px]'/>
                             )}
                         </div>
                     </div>
