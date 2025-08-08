@@ -3,6 +3,21 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FW from "../../assets/images/ColdMix/Planos/FW.png";
 import FL from "../../assets/images/ColdMix/Planos/FL.png";
+import A2GLA from '../../assets/images/ColdMix/Planos/2GLA.png';
+import A2GLW from '../../assets/images/ColdMix/Planos/2GLW.png';
+import A2GWA from '../../assets/images/ColdMix/Planos/2GWA.png';
+import A2GWW from '../../assets/images/ColdMix/Planos/2GWW.png';
+import A2TLA from '../../assets/images/ColdMix/Planos/2TLA.png';
+import A2TWA from '../../assets/images/ColdMix/Planos/2TWA.png';
+import A2TWW from '../../assets/images/ColdMix/Planos/2TWW.png';
+import A3GLA from '../../assets/images/ColdMix/Planos/3GLA.png';
+import A3GLW from '../../assets/images/ColdMix/Planos/3GLW.png';
+import A3GWA from '../../assets/images/ColdMix/Planos/3GWA.png';
+import A3GWW from '../../assets/images/ColdMix/Planos/3GWW.png';
+import A3TLA from '../../assets/images/ColdMix/Planos/3TLA.png';
+import A3TLW from '../../assets/images/ColdMix/Planos/3TLW.png';
+import A3TWA from '../../assets/images/ColdMix/Planos/3TWA.png';
+import A3TWW from '../../assets/images/ColdMix/Planos/3TWW.png';
 import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
 import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
 import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
@@ -30,6 +45,28 @@ const CMPlanos = () => {
     const [mountedVersion, setMountedVersion] = useState('legs');
   //tabs states
   const [activeTab, setActiveTab] = useState(3);
+
+  //combinaciones de las imagenes
+  const imageMap = {
+    "2-withPanels-groundLevel-legs": A2GLA,
+    "2-withPanels-groundLevel-wheels": A2GWA,
+    "2-withPanels-truckLevel-legs": A2TLA,
+    "2-withPanels-truckLevel-wheels": A2TWA,
+    "2-withoutPanels-groundLevel-legs": A2GLW,
+    "2-withoutPanels-groundLevel-wheels": A2GWW,
+    "2-withoutPanels-truckLevel-legs": A2TLA,
+    "2-withoutPanels-truckLevel-wheels": A2TWW,
+    "3-withPanels-groundLevel-legs": A3GLA,
+    "3-withPanels-groundLevel-wheels": A3GWA,
+    "3-withoutPanels-groundLevel-legs": A3GLW,
+    "3-withoutPanels-groundLevel-wheels": A3GWW,
+    "3-withPanels-truckLevel-legs": A3TLA,
+    "3-withPanels-truckLevel-wheels": A3TWA,
+    "3-withoutPanels-truckLevel-legs": A3TLW,
+    "3-withoutPanels-truckLevel-wheels": A3TWW,
+  }
+  const key = `${activeTab}-${activeVersion}-${dischargeVersion}-${mountedVersion}`;
+    const selectedImage = imageMap[key as keyof typeof imageMap];
 
   //animation 
   const boxRef = useRef<HTMLDivElement>(null);
@@ -312,7 +349,7 @@ const CMPlanos = () => {
                     <button
                     onClick={() => setDischargeVersion("groundLevel")}
                     className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-2/3 ${
-                        activeTab === 2
+                        dischargeVersion === "groundLevel"
                         ? 'text-gray-900 bg-white border-white'
                         : 'text-white bg-transparent border-white'
                     }`}
@@ -323,7 +360,7 @@ const CMPlanos = () => {
                     <button
                     onClick={() => setDischargeVersion("truckLevel")}
                     className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-2/3 ${
-                        activeTab === 3
+                        dischargeVersion === "truckLevel"
                         ? 'text-gray-900 bg-white border-white'
                         : 'text-white bg-transparent border-white'
                     }`}
@@ -789,11 +826,7 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                        {activeVersion === 'withPanels' ? (
-                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
-                            ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
-                            )}
+                        <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
                         </div>
                     </div>
                 </div>
@@ -1171,11 +1204,20 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='w-[200px] h-[253px] flex items-center justify-center'>
+                            {
+                                mountedVersion === 'legs' ?
+                                <img 
+                                src={FL.src} 
+                                alt="" 
+                                className='max-w-full max-h-full object-contain'
+                            />:
                             <img 
-                                src={tolva1F.src} 
+                                src={FW.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
+                            }
+                            
                         </div>
                     </div>
                     <div className='flex flex-col items-center justify-end w-[90px] h-[253px]'>
@@ -1277,11 +1319,7 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='h-[253px] w-[744px] flex justify-center items-center'>
-                        {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L2.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
-                            ) : (
-                                <img src={tolva3L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
-                            )}
+                            <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
                         </div>
                     </div>
                 </div>
