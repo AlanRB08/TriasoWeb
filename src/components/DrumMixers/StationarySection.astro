@@ -7,20 +7,45 @@ import Image from "astro/components/Image.astro";
 
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white bg-grisT px-8 md:px-52">
-        <div class="flex flex-col items-center justidy-center py-6">
-            <img src="" alt="">
-            <h2 class="w-full text-start">TRUNNIONS</h2><br>
-            <p>Heavy-duty trunnions built with precision-machined 
-                steel and fitted with industrial bearings for smooth, stable drum rotation.</p>
+    <div class="w-full bg-[#2b2b2b] text-white flex flex-col gap-6 justify-center pt-10">
+        <div>
+            <h2 class="px-8 md:px-52">Always matching your project</h2>
+            <br>
+            <p class="px-8 md:px-52 font-thin">
+                We give you options to match your project demands—offering drum shells in 5/16", 3/8" or 1/2" thicknesses. 
+                Every shell, no matter the gauge, is manufactured in-house using high-strength A-572 alloy steel to ensure consistent
+                 durability and performance.
+            </p>
         </div>
-        <div class="flex flex-col items-center justidy-center py-6">
-            <img src="" alt="">
-            <h2 class="w-full text-start">DRUM TIRES</h2><br>
-            <p>Forged from high-strength alloy steel and machined for accuracy,
-                 ensuring reliable support and quiet, consistent operation.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white px-8 md:px-52">
+            <div class="flex flex-col items-center justidy-center py-6">
+                <img src="" alt="">
+                <h2 class="w-full text-start">TRUNNIONS</h2><br>
+                <p>Heavy-duty trunnions built with precision-machined 
+                    steel and fitted with industrial bearings for smooth, stable drum rotation.</p>
+            </div>
+            <div class="flex flex-col items-center justidy-center py-6">
+                <img src="" alt="">
+                <h2 class="w-full text-start">DRUM TIRES</h2><br>
+                <p>Forged from high-strength alloy steel and machined for accuracy,
+                    ensuring reliable support and quiet, consistent operation.</p>
+            </div>
+        </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52 bg-gradient-to-b from-[#2b2b2b] to-[#727272]">
+            <div class="flex justify-center">
+                <img src={rap.src} alt="" class="max-w-[350px]">
+            </div>
+            <div class="w-full flex flex-col items-center justify-center">
+                <h2 class="w-full text-start text-2xl md:text-3xl">RAP COLLAR & BIN</h2><br>
+                <p class="text-justify">
+                    The specialized drum collar is designed to ensure the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
+                     into the mixing zone. Fed directly from the RAP bins through a dedicated conveyor, the material enters 
+                     the drum smoothly and precisely.
+                </p>
+            </div>
         </div>
     </div>
+    
     <h1 class="text-xl md:text-3xl my-10">Stationary and Mobile Drum Mixers</h1><br>
     <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full text-white">
         <div class="px-8 md:pl-52">
