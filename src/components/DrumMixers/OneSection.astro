@@ -7,13 +7,24 @@ import img4 from '../../assets/images/DrumMixers/plantaLim.png';
 import gif from '../../assets/images/DrumMixers/singlegift.gif';
 import drumT from '../../assets/images/DrumMixers/drumT.png';
 import reinfo from '../../assets/images/DrumMixers/extrareinfo.jpg';
+import obracivil from "../../assets/images/DrumMixers/obracivil.jpg";
+import obracivil2 from "../../assets/images/DrumMixers/obracivil2.jpg";
 import Image from 'astro/components/Image.astro';
+import TComponent from '../unitComponents/TComponent.astro';
+import AcordeonItem from '../unitComponents/AcordeonItem';
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold my-20">
     <div class="lg:px-52 px-8">
         <h1 class="text-redBg text-xl md:text-3xl">The One and Always</h1><br>
-        <h2 class="text-black text-lg md:text-xl">Engineered for Demanding Producers. Built for Performance.</h2><br>
-        <p class="text-grisT text-base md:text-lg text-justify">At Triaso, we know that no two asphalt operations are alike. That’s why our plants
+        
+    </div>
+    <div class="w-full lg:px-52 px-8">
+        <img src={obracivil.src} alt="" class="rounded-2xl"/>
+    </div>
+    <div class="w-full flex lg:px-52 px-8 my-10">
+        <div class="w-full px-20">
+            <h2 class="text-black text-lg md:text-xl">Engineered for Demanding Producers. Built for Performance.</h2><br>
+            <p class="text-grisT text-base md:text-lg text-justify">At Triaso, we know that no two asphalt operations are alike. That’s why our plants
              aren’t off-the-shelf solutions—they’re precision-engineered systems tailored to 
              meet your specific production needs. From rugged construction built to endure 
              years of intensive use, to smart configurations that enhance efficiency and 
@@ -23,49 +34,27 @@ import Image from 'astro/components/Image.astro';
             to your operation—not the other way around. Whether you're expanding capacity
              or optimizing your process, Triaso delivers the flexibility, performance, and 
              reliability you need to stay ahead in a competitive market.</p>
-    </div>
-    <h2 class="text-blueMain text-xl lg:text-2xl my-10 text-center px-8">Precision where it matters. Strength that lasts.
-         Flexibility when it counts. <br> That’s the Triaso promise.
-    </h2>
-    <div class="bg-blueMain w-full flex justify-end">
-        <div class="flex flex-col md:flex-row h-auto md:h-[150px] w-full md:w-3/4 my-6">
-            <Image src={img1} alt="" class="w-full md:w-auto md:rounded-l-2xl md:rounded-tr-none"/>
-            <div class="bg-grisT text-white flex h-full p-4 md:pr-24">
-                <p class="text-justify">We give you options to match your project demands—offering drum shells 
-                    in 5/16", 3/8" or 1/2" thicknesses. Every shell, no matter the gauge, 
-                    is manufactured in-house using high-strength A-572 alloy steel to ensure 
-                    consistent durability and performance.</p>
-            </div>
+        </div>
+        <div>
+            <img src={obracivil2.src} alt="" class="rounded-2xl"/>
         </div>
     </div>
-    <div class="lg:px-52 px-8 w-full grid grid-cols-1 md:grid-cols-3 items-center justify-center mt-10">
-        <div class="bg-white p-4 rounded-2xl col-span-1">
-            <h2 class="text-lg md:text-xl">
-                Optimized Insulation Design:
-            </h2><br>
-            <p class="text-grisT text-justify">
-                The drum mixer is built with high-efficiency mineral wool insulation that maintains consistent
-                 internal temperatures throughout the drying and mixing process. This insulation minimizes heat loss
-                 , reduces fuel consumption, and ensures the asphalt mix stays at optimal temperature—delivering reliable
-                  performance even in demanding weather conditions.
-            </p>
-        </div>
-        <div class="col-span-2 grid grid-cols-1 md:grid-cols-4 items-center justify-center h-full">
-            <div class="col-span-1 h-full">
-                <Image src={img2} alt=""/>
-            </div>
-            <div class="col-span-3 h-full">
-                <Image src={img4} alt="" class="rounded-2xl"/>
-            </div>
-        </div>
-
+    <div class="w-full lg:px-52 px-8">
+        <img src={obracivil.src} alt="" class="rounded-2xl"/>
+    </div>
+    <div class="w-full flex flex-col gap-3 my-10">
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Precision where it matters. </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Strength that lasts. </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Flexibility when it counts. </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">That’s the Triaso promise. </h2>
     </div>
     <div class="md:mx-52 mx-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl">
-        <img src="" alt="">
-        <h1>VIDEO</h1>
+        <h2 class="text-2xl md:text-3xl">Retractable Elevator for Efficient Transport and Operation
+            </h2>
         <div class="">
-            <h2 class="text-lg md:text-xl">Retractable Elevator for Efficient Transport and Operation
-            </h2><br>
+            <div>
+                <h1>VIDEO</h1>
+            </div>
             <p class="text-grisT text-justify">
                 Triaso’s vertical elevator is designed with a retractable configuration that complies 
                 with DOT transportation height limits, ensuring safe and legal road transport. 
@@ -76,91 +65,21 @@ import Image from 'astro/components/Image.astro';
             </p>
         </div>
     </div>
-    <Image src={img3} alt="" class="mt-10"/>
-    <div class="lg:px-52 px-8 flex flex-col items-center justify-center w-full">
-        <h2 class="text-lg md:text-xl mb-10 text-center">With Triaso, Become the Exclusive Provider
-             of Hot Mix for All Paving Projects in Your Region
+    <div class="w-full space-y-3 my-6">
+        <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
+        <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
+    </div>
+    <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">With Triaso, Become the Exclusive Provider
+             of Hot Mix <br> for All Paving Projects in Your Region
         </h2>
-        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-2xl w-full">
-            <div class="flex flex-col items-start justify-center">
-                <h3>Extra-reinforced front shield, 
-                    sealed to <br> prevent unwanted air from entering the drum.
-                </h3><br>
-                <Image src={reinfo} alt="Reinfo" class="rounded-2xl">
-            </div>
-            <div class="flex flex-col items-start justify-center text-justify text-grisT">
-                <p>
-                    The entire drum is sealed to prevent the entry of unwanted cold air,
-                     maintaining optimal internal temperatures and combustion efficiency.
-                      This airtight design includes an extra-reinforced front shield and sealing
-                       components made of heavy-duty steel or EPDM rubber. These materials provide
-                        long-lasting durability, resist high temperatures, and ensure that no external
-                         air disrupts the controlled environment inside the drum, improving fuel efficiency
-                          and mix quality.
-                </p>
-                <br>
-                <h2 class="text-black">Airtight, Reinforced Drum Sealing</h2>
-                <br>
-                <div class="h-[1px] bg-redBg w-1/2"></div>
-                <div class="h-[1px] bg-blueMain w-1/2 mt-2 ml-10"></div>
-                <br>
-                <p>
-                    The Triaso® drum is fully sealed at both ends with extra reinforcement to maintain internal
-                     temperatures and maximize combustion efficiency. Heavy-duty steel and EPDM rubber seals
-                      prevent the entry of cold air, improving fuel economy and ensuring consistent, high-quality asphalt mixes.
-                </p>
-            </div>
-        </div>
+    <Image src={img3} alt="" class="mt-10"/>
+    <TComponent />
+    <div class="w-full px-8 md:px-52 flex flex-col gap-3 my-10">
+        <AcordeonItem title='Extra-reinforced front shield' content='The Triaso® drum is fully sealed at both ends with extra reinforcement to maintain internal temperatures and maximize combustion efficiency. Heavy-duty steel and EPDM rubber seals prevent the entry of cold air, improving fuel economy and ensuring consistent, high-quality asphalt mixes. The entire drum is sealed to prevent the entry of unwanted cold air, maintaining optimal internal temperatures and combustion efficiency. This airtight design includes an extra-reinforced front shield and sealing components made of heavy-duty steel or EPDM rubber. These materials provide long-lasting durability, resist high temperatures, and ensure that no external air disrupts the controlled environment inside the drum, improving fuel efficiency and mix quality.' client:only/>
+        <AcordeonItem title='Optimized Insulation Design' content='The drum mixer is built with high-efficiency mineral wool insulation that maintains consistent internal temperatures throughout the drying and mixing process. This insulation minimizes heat loss, reduces fuel consumption, and ensures the asphalt mix stays at optimal temperature—delivering reliable performance even in demanding weather conditions.' client:only/>
+        <AcordeonItem title='Single-Point Adjustment System' content='Triaso® equips all its drum mixers with a centralized trunnion adjustment system designed for fast, precise alignment in the field. Each trunnion base includes a fixed central pivot that keeps the drum tire centered during adjustments, eliminating guesswork and preventing lateral drift. With a single-point adjustment mechanism, operators can easily align the drum without needing to reposition multiple components. This system ensures smoother rotation, reduces wear on tires and rollers, and simplifies maintenance—keeping your plant running efficiently with minimal downtime.' client:only/>
+        <AcordeonItem title='Drum Tires & Trunnions' content='Triaso® equips all its drum mixers with a centralized trunnion adjustment system designed for fast, precise alignment in the field' client:only/>
+        <AcordeonItem title='Triaso Thrust Rollers' content='Triaso® equips all its drum mixers with a centralized trunnion adjustment system designed for fast, precise alignment in the field' client:only/>
     </div>
-    <div class="lg:px-52 px-8 flex flex-col items-center justify-center w-full mt-10">
-        <h1 class="w-full items-start text-xl md:text-2xl">DRUM TIRES & TRUNNIONS</h1><br>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full text-grisT">
-            <div class="w-full flex flex-col items-center justify-center">
-                <Image src={drumT} alt=""/>
-                <div class="bg-white rounded-2xl p-4">
-                    <p class="text-justify">Special high-carbon alloy steel trunnions and tires forged and normalized, 
-                        with fixed central pivot roller bases to prevent lateral misalignment and facilitate 
-                        drum flotation.
-                    </p>
-                </div>
-            </div>
-            <div class="w-full flex flex-col items-center justify-between text-grisT">
-                <div class="bg-white rounded-2xl p-4">
-                    <p class="text-justify">
-                        At the heart of every Triaso drum mixer is a heavy-duty trunnion drive system engineered 
-                        for reliability and adaptability. Each unit is powered by four high-efficiency electric motors,
-                         seamlessly regulated by digital variable frequency drives (VFDs). This system enables precise
-                          speed adjustments—critical for optimizing material curtain behavior when producing hot-mix asphalt
-                           or high-percentage RAP blends.
-                    </p>
-                </div>
-                <Separator />
-                <div class="bg-white rounded-2xl p-4">
-                    <p>
-                        The trunnions are forged, precision-machined, and heat-treated for maximum durability,
-                         and come equipped with industry-trusted bearings. Designed for smooth, stable rotation under
-                          all load conditions, this configuration delivers consistent performance while minimizing wear
-                           and maintenance over time.
-                    </p>
-                </div>
-            </div>
 
-        </div>
-        <h1 class="w-full items-start mt-10 text-xl md:text-2xl">SINGLE-POINT ADJUSTMENT SYSTEM</h1>
-        <br>
-        <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-10 w-full text-grisT">
-            <p class="text-justify">
-                Triaso® equips all its drum mixers with a centralized trunnion adjustment system designed for fast, 
-                precise alignment in the field. Each trunnion base includes a fixed central pivot that keeps the drum 
-                tire centered during adjustments, eliminating guesswork and preventing lateral drift. With a single-point
-                 adjustment mechanism, operators can easily align the drum without needing to reposition multiple components.
-                  This system ensures smoother rotation, reduces wear on tires and rollers, and simplifies maintenance—keeping
-                   your plant running efficiently with minimal downtime.
-            </p>
-            <div class="flex items-center justify-center">
-                <Image src={gif} alt=""/>
-            </div>
-        </div>
-
-    </div>
 </div>
