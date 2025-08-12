@@ -4,22 +4,22 @@ import LearnBtn from '../unitComponents/LearnBtn.astro';
 import baghouse from '../../assets/images/DrumMixers/baghouse.png';
 import baghouse2 from '../../assets/images/DrumMixers/baghouse2.png';
 import Image from 'astro/components/Image.astro';
+import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
 ---
-<div class="w-full flex flex-col items-center justify-center text-grisT font-bold">
+<div class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20">
     <h1 class="w-full text-start px-8 md:px-52 text-2xl md:text-4xl mb-10">INTEGRATED BAGHOUSES</h1>
-    <div class="px-8 md:px-52">
-        <p>Integrated dust control systems for efficient air filtration 
-            and particulate matter capture.</p><br>
-        <p>Baghouses are crucial for controlling dust and maintaining air quality
-             in industrial settings. They efficiently capture particulate matter,
-              ensuring compliance with environmental standards and creating a safer 
-              work environment. Ideal for industries like asphalt plants and aggregate processing,
-               baghouses offer reliable, long-lasting performance.</p><br>
-        <p>Elimination of sludge pits and their costly operation.</p>
+    <div class="w-full px-8 md:px-52">
+        <SeparatorBlue/>
     </div>
-    <h2 class="text-black my-10">Ranging from 4,000 to 90,000 ACFM Capacity</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full px-8 md:px-52">
-        <div>
+    <div class="px-8 md:px-52">
+        <p class="text-base md:text-lg">Baghouses are crucial for controlling dust and maintaining air 
+            quality in industrial settings. They efficiently capture particulate matter, 
+            ensuring compliance with environmental standards and creating a safer work environment. Ideal
+             for industries like asphalt plants and aggregate processing, baghouses offer reliable, long-lasting performance.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full">
+        <div class="px-8 md:pl-52 bg-white border-black border-2 rounded-r-2xl py-10">
+            <h2 class="text-black text-xl md:text-2xl">Ranging from 4,000 to 90,000 ACFM Capacity</h2>
             <p>The baghouses are highly efficient at capturing fine particles,<span class="text-black"> achieving up
                  to 99.99% filtration</span>. Total and homogeneous return of fines to the asphalt mix 
                  to optimize its quality and pavement life.</p><br>
@@ -27,14 +27,16 @@ import Image from 'astro/components/Image.astro';
                  impact by minimizing airborne dust and particulate pollution</span>. Their advanced filtration system 
                  ensures cleaner air, contributing to a greener, more eco-conscious workplace.</p>
         </div>
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center px-8 md:pr-52">
             <Image src={baghouse} alt="" class="w-1/2"/>
-            <p class="text-black text-center">Mechanism of baghouses available in pulse jet and reverse jet</p>
         </div>
     </div>
     <div class="w-full flex flex-col md:flex-row text-white my-10">
-        <Image src={baghouse2} alt="" class="w-full h-auto md:h-[300px] object-cover"/>
-        <div class="bg-blueMain px-4 md:px-8 md:pr-52 py-6 md:py-0 flex flex-col items-center justify-center">
+        <Image src={baghouse2} alt="" class="w-full h-auto md:h-[250px] object-cover"/>
+        <div class="bg-blueMain px-4 md:px-8 md:pr-52 py-6 md:py-0 flex flex-col items-center justify-center rounded-l-2xl">
+            <h2 class="text-xl md:text-2xl mb-4">
+                Mechanism of baghouses available in pulse jet and reverse jet
+            </h2>
             <p class="text-grisSubP mb-4 md:mb-0">
                 <span class="text-white">Pulse Jet:</span> A cleaning system that uses compressed air bursts to dislodge
                 dust and debris from the filter bags, maintaining continuous airflow.
@@ -47,14 +49,10 @@ import Image from 'astro/components/Image.astro';
             </p>
         </div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 px-8 md:px-52">
-        <p>
-            Manufacturing highly protable self-contained, and integrated models,
-             Triaso® baghouses operates at an air to cloth ratio as high as 8:1.
-        </p>
+    <div class="w-full flex justify-center items-center gap-10 px-8 md:px-52 bg-grisT py-10">
         <div>
-            <p>Different Types of Filter Bags and Their Specific Applications:</p>
-            <ul class="list-disc pl-6">
+            <h2 class="text-lg md:text-xl text-white">Different Types of Filter Bags and Their Specific Applications:</h2>
+            <ul class="list-disc pl-6 text-grisSubP">
                 <li>Polyester</li>
                 <li>Nomex</li>
                 <li>Polyamide (P84)</li>
@@ -63,33 +61,5 @@ import Image from 'astro/components/Image.astro';
     </div>
     <h1>VIDEO</h1>
     <h1 class="text-2xl md:text-3xl text-blueMain px-8 text-center">ENHANCE YOUR COMPANY IMAGE WITH TRIASO DESIGN</h1>
-    <div class="w-full grid grid-cols-1 md:grid-cols-8 justify-between my-20 gap-10">
-        <div class="bg-blueMain col-span-8 md:col-span-3 px-8 lg:pl-52 text-white py-10 md:rounded-r-2xl">
-            <h2 class="text-xl md:text-2xl">24/7 customer <br> service</h2><br>
-            <p>Our team is available around the clock,
-                 ready to assist you at any time, even
-                  on weekends and holidays.
-            </p><br>
-            <LearnBtn text='Talk to a representative'/>
-        </div>
-        <div class="col-span-8 md:col-span-5 px-8 lg:pr-52 flex flex-col items-end justify-start">
-            <h1 class="text-xl md:text-2xl">AESTHETIC SIDE PANELS</h1>
-            <div class="mt-4 mb-6 flex self-end">
-                <div class="w-20 h-0.5 bg-blueMain"></div>
-                <div class="w-20 h-0.5 bg-gray-300"></div>
-            </div>
-            <p class="text-justify">
-                Triaso’s aesthetic side panels are designed not just for visual appeal, 
-                but to elevate the professional image of your equipment and company. 
-                These original side panels provide a clean, modern look that reflects
-                 quality and attention to detail—leaving a strong impression on clients, 
-                 inspectors, and the public. Ideal for projects in urban or high-visibility areas,
-                  they reinforce your brand’s commitment to excellence and enhance the overall presentation 
-                  of your asphalt plant.
-            </p>
-        </div>
-    </div>
-    <div class="px-8 md:px-52">
-        <Image src={sideP} alt=""/>
-    </div>
+       
 </div>
