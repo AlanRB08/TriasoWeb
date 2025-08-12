@@ -7,6 +7,7 @@ import Tabs2 from "../components/HotMixStorage/Tabs2.astro";
 import HotMixPlanos from "../components/HotMixStorage/HotMixPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import SlatConveyor from "../components/HotMixStorage/SlatConveyor.astro";
+import HMOdometer from "../components/HotMixStorage/HMOdometer";
 const images1 = [
   { src: '/Gallery/sliderHotMix/1.png', title: 'Preservation of Quality',texto:'Perservation of quality  and integrity of the asphlt mix for up to 72 hours.' },
   { src: '/Gallery/sliderHotMix/2.png', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
@@ -23,6 +24,7 @@ const images1 = [
 ---
 <Layout title="Hot-Mix Storage Silos">
     <MainSection/>
+    <HMOdometer client:only/>
     <TabsHot />
     <SliderHotMix client:load images={images1}/>
     <Tabs2 />
