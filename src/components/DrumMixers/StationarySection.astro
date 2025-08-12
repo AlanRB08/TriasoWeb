@@ -3,30 +3,37 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
 import stationary from '../../assets/images/DrumMixers/stationary.png';
 import rap from '../../assets/images/DrumMixers/rap.png';
 import rapBin from '../../assets/images/DrumMixers/rapBin.png';
+import Logo from "../../assets/logos/LogoTriasoMX.svg";
+import Separator from "../unitComponents/SeparatorBlue.astro";
+import sideP from '../../assets/images/DrumMixers/sideP.png';
 import Image from "astro/components/Image.astro";
 
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="w-full bg-[#2b2b2b] text-white flex flex-col gap-6 justify-center pt-10">
-        <div>
-            <h2 class="px-8 md:px-52">Always matching your project</h2>
+    <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10">
+        <div class="w-full relative">
+            <h2 class="px-8 md:px-52 text-xl md:text-2xl relative z-20">
+                Always matching your project
+            </h2>
             <br>
-            <p class="px-8 md:px-52 font-thin">
+            <p class="px-8 md:px-52 font-thin text-base md:text-lg relative z-20">
                 We give you options to match your project demands—offering drum shells in 5/16", 3/8" or 1/2" thicknesses. 
                 Every shell, no matter the gauge, is manufactured in-house using high-strength A-572 alloy steel to ensure consistent
-                 durability and performance.
+                durability and performance.
             </p>
+            <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white px-8 md:px-52">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white px-8 md:px-52 z-20 gap-20">
             <div class="flex flex-col items-center justidy-center py-6">
                 <img src="" alt="">
-                <h2 class="w-full text-start">TRUNNIONS</h2><br>
+                <h2 class="w-full text-start text-xl md:text-2xl">TRUNNIONS</h2><br>
                 <p>Heavy-duty trunnions built with precision-machined 
                     steel and fitted with industrial bearings for smooth, stable drum rotation.</p>
             </div>
-            <div class="flex flex-col items-center justidy-center py-6">
+            <div class="flex flex-col items-center justidy-center py-6 ">
                 <img src="" alt="">
-                <h2 class="w-full text-start">DRUM TIRES</h2><br>
+                <h2 class="w-full text-start text-xl md:text-2xl">DRUM TIRES</h2><br>
                 <p>Forged from high-strength alloy steel and machined for accuracy,
                     ensuring reliable support and quiet, consistent operation.</p>
             </div>
@@ -44,94 +51,93 @@ import Image from "astro/components/Image.astro";
                 </p>
             </div>
         </div>
-    </div>
-    
-    <h1 class="text-xl md:text-3xl my-10">Stationary and Mobile Drum Mixers</h1><br>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full text-white">
-        <div class="px-8 md:pl-52">
-            <Image src={stationary} alt=""/>
+        <div class="w-full bg-[#727272] flex justify-center">
+            <button class="text-blueMain px-4 py-2 rounded-2xl text-6xl" onclick="toggleDropdown()" id="dropdown-button">
+            <svg width="84px" height="84px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" id="dropdown-arrow">
+                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
         </div>
-        <div class="flex flex-col items-center justify-between gap-10">
-            <div class="bg-blueMain p-8 md:rounded-l-2xl pr-8 lg:pr-52">
-                <h2 class="text-end w-full">STATIONARY DRUM MIXERS</h2><br>
+        <div class="w-full transition-all duration-300 overflow-hidden bg-[#727272] px-8 md:px-52" id="extradiv" style="max-height: 0">
+            <div class="text-white w-full list-inside md:mb-0 md:opacity-100 my-10">
                 <p>
-                    Durable and easy to move, the drum mixers are
-                     built for long-term use with heavy steel supports that eliminate the need
-                      for concrete foundations.
-                </p>
-            </div>
-            <div class="bg-grisT p-8 md:rounded-l-2xl pr-8 lg:pr-52">
-                <h2 class="text-end w-full">MOBILE DRUM MIXERS</h2><br>
+                Strategically positioned, the collar introduces RAP downstream of the burner flame, avoiding excessive heat exposure
+                 that could damage the recycled
+                 material or cause blue smoke emissions.
+                </p><br>
                 <p>
-                    Perfect for remote job sites, these mixers provide quick setup, portability,
-                     and high-output production while remaining cost-effective.
-                </p>
-            </div>
-
-        </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center w-full gap-10 my-20 px-8 lg:px-52">
-        <div>
-            <img src="" alt="">
-        </div>
-        <div class="flex flex-col items-start justify-center">
-            <h2 class="text-lg md:text-2xl">TRIASO THRUST ROLLERS</h2><br>
-            <div class="bg-white rounded-2xl p-4">
-                <h2>Built to Move. Designed to Last</h2>
-                <p class="text-grisT text-justify">
-                    Triaso drum mixers rotate on solid one-piece forged steel tires, delivering the strength and
-                     reliability needed for continuous operation. These tires are secured using bolt-on spring 
-                     plate assemblies that flex with thermal expansion, preventing stress and distortion during
-                      high-temperature cycles.
-                </p>
+                    Its engineered shape promotes a steady, turbulence-free flow, allowing for even distribution and thorough blending
+                    with superheated virgin aggregates.
+                    This results in a consistent final mix with improved cohesion and overall performance.
+                </p><br>
+                <p>
+                    By maintaining temperature control and maximizing contact between old and new materials, the drum collar plays a critical 
+                    role in preserving RAP quality,
+                    increasing recycled content percentages, and supporting both cost-effective and environmentally conscious asphalt production.
+                </p><br><br>
             </div>
         </div>
     </div>
-    <p class="px-8 lg:px-52 text-grisT text-justify text-base lg:text-lg">To maintain proper alignment and stability during rotation, each unit includes dual guide rollers.
-         This system ensures smooth, centered operation throughout the production process, reducing wear
-          and preserving the integrity of the entire assembly. Rugged, responsive, and engineered for 
-          long-term performance.
-    </p>
-    <h1 class="my-10 text-xl md:text-3xl px-8">The most versatile and mobile drum mix on the market</h1>
-    <h1 class="w-full items-start text-xl md:text-3xl px-8 lg:px-52 mt-20 mb-10">RAP COLLAR & BIN</h1>
-    <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-10 w-full px-8 lg:px-52">
-        <div class="col-span-1">
-            <Image src={rap} alt=""/>
-        </div>
-        <div class="col-span-2 text-grisP">
-            <p>The specialized drum collar is designed to ensure the controlled and efficient entry of 
-                Recycled Asphalt Pavement (RAP) into the mixing zone. Fed directly from the RAP bins through
-                 a dedicated conveyor, the material enters the drum smoothly and precisely.
-            </p><br>
-            <p>
-                Strategically positioned, the collar introduces RAP downstream of the burner flame,
-                 avoiding excessive heat exposure that could damage the recycled material or cause blue smoke emissions.
-            </p><br>
-            <p>
-                Its engineered shape promotes a steady, turbulence-free flow, allowing for even distribution
-                 and thorough blending with superheated virgin aggregates. This results in a consistent final
-                  mix with improved cohesion and overall performance.
-            </p><br>
-            <p>
-                By maintaining temperature control and maximizing contact between old and new materials,
-                 the drum collar plays a critical role in preserving RAP quality, increasing recycled content percentages,
-                  and supporting both cost-effective and environmentally conscious asphalt production.
-            </p>
-        </div>
-    </div>
-    <div class="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-10 bg-white px-8 lg:px-52 my-20 py-10">
-        <div class="flex flex-col items-center justify-center">
-            <h2 class="w-full text-start">RAP Bins</h2><br>
-            <p class="text-grisP text-justify">
-                Triaso® RAP bins are designed to efficiently handle and transport recycled asphalt pavement (RAP) 
-                in asphalt plants. Built for durability, they ensure a consistent and reliable flow of material,
-                 enabling seamless integration into your plant's production process. With their robust construction,
-                  Triaso® RAP bins can handle the heavy, abrasive nature of RAP, reducing downtime and ensuring high operational efficiency.
-            </p>
-            <LearnBtn />
-        </div>
+    <div class="w-full px-8 md:px-52 text-3xl md:text-4xl font-bold my-10">
+        <div class="w-full flex justify-between">
         <div>
-            <Image src={rapBin} alt="Rap Bin">
+            <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
+            <Separator/>
+        </div>
+        <div class="text-end">
+            <h2 class="text-blueMain">
+            ENHANCE YOUR COMPANY IMAGE <br> WITH TRIASO DESIGN
+            </h2>
+        </div>
+        </div>
+        <div class="my-10 flex flex-col justify-center items-center gap-6">
+        <img src={sideP.src} alt="">
+        <div class="max-w-[250px]">
+            <LearnBtn/>
+        </div>
+        </div>
+  </div>
+  <div class="w-full my-10 px-8 md:px-80 rounded-2xl">
+    <div class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[400px] relative">
+        <h1 class="text-2xl md:text-3xl text white z-20">THE MOST VERSATILE AND MOBILE DRUM MIX ON THE MARKET</h1>
+        <p class="text-lg md:text-xl text white font-thin italic z-20">
+            "Triaso asphalt plants have proven to be reliable, efficient, and built to last. 
+            Their performance and low operating costs have greatly improved our productivity. We highly recommend
+             Triaso to any company in the industry."
+        </p>
+        <p class="text-lg md:text-xl text white font-thin italic z-20">
+            — Grupo Carso
+        </p>
+        <div class="w-full h-full bg-black/50 absolute top-0 z-10 rounded-2xl">
         </div>
     </div>
+  </div>    
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.getElementById("extradiv");
+    const arrow = document.getElementById("dropdown-arrow");
+    const button = document.getElementById("dropdown-button");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        if (!dropdown || !arrow) return;
+
+        const isClosed = dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
+
+        if (isClosed) {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          arrow.style.transform = "rotate(180deg)";
+        } else {
+          dropdown.style.maxHeight = "0px";
+          arrow.style.transform = "rotate(0deg)";
+        }
+      });
+    }
+  });
+</script>
+<style>
+    #dropdown-arrow {
+        transition: transform 0.3s ease;
+    }
+</style>
