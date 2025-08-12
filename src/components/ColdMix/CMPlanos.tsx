@@ -568,7 +568,7 @@ const CMPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -584,11 +584,10 @@ const CMPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Diesel burner with automatic temperature control</li>
-                        <li>Two operating modes: Manual and Automatic</li>
-                        <li>Digital thermometers with programmable set points</li>
-                        <li>Siemens PLC-based control system</li>
-                        <li>100 L thermal oil expansion tank</li>
+                        <li>Mounted on steel frame with telescopic legs or fixed supports</li>
+                        <li>Heavy-duty structure with reinforced joints</li>
+                        <li>Galvanized bolts and electrostatic paint</li>
+                        <li>Lifting lugs and base skids for easy transport and assembly</li>
                     </ul>
                 </div>
             </div>
@@ -935,6 +934,34 @@ const CMPlanos = () => {
                                 <p>One Axle</p>
                             </div>
                         </div>
+                    </div>
+                    <div className='text-white font-normal flex flex-col gap-4'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PUGMILL MIXING SYSTEM</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C4_4: !prev.C4_4
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C4_4 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_4 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <li>Twin-shaft horizontal pugmill </li>
+                        <li> High-resistance steel liners</li>
+                        <li> Interchangeable paddles</li>
+                        <li>Adjustable mixing time</li>
+                        <li>Direct discharge gate to stockpile or truck</li>
+                        <li>Driven by 10–15 HP electric motor</li>
+                        <li>Speed reducer transmission</li>
+
+                    </ul>
                     </div>
                 </div>
             </div>
