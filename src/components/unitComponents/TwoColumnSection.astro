@@ -1,0 +1,32 @@
+---
+const {
+  leftBg = "bg-redBg",
+  rightBg = "bg-blueMain",
+  imageSrc,
+  imageAlt = "",
+  imageWidth = "150px",
+} = Astro.props;
+if (!imageSrc) {
+  throw new Error("TwoColumnSection requires 'imageSrc' prop.");
+}
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 relative w-full min-h-[250px]">
+  <!-- Columna izquierda -->
+  <div class={`text-white ${leftBg} p-4 px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}>
+    <slot name="left" />
+  </div>
+
+  <!-- Columna derecha -->
+  <div class={`text-white ${rightBg} p-4 px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}>
+    <slot name="right" />
+  </div>
+
+  <!-- Imagen central siempre visible -->
+  <div
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    style={`max-width: ${imageWidth};`}
+  >
+    <img src={imageSrc} alt={imageAlt} class="w-full h-auto" />
+  </div>
+</div>
