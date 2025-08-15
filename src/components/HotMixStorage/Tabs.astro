@@ -8,6 +8,9 @@ import silo from '../../assets/images/AsphaltPlant/silos1.jpg';
 import silo1 from '../../assets/images/HotMix/siloCone.png';
 import silo2 from '../../assets/images/HotMix/siloUse.png';
 import silo3 from '../../assets/images/HotMix/siloSealed.png';
+import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
+import Collapsable from '../HotMixStorage/Collapsable';
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -28,8 +31,8 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
         <div class="py-4">
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT" data-tab-content="tab1">
-                <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
-                    <div class="bg-white p-4 font-bold rounded-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center ">
+                    <div class="bg-white p-4 font-bold rounded-r-2xl px-8 md:px-36 border-2 border-black">
                         <p>Offers automated, precise control for weighing and delivering hot mix, reducing the risk of
                              human error and increasing operational efficiency.
                         </p><br>
@@ -44,9 +47,35 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
                              conditions.
                         </p>
                     </div>
-                    <div class="w-full h-auto flex justify-center items-center">
+                    <div class="w-full h-auto flex justify-center items-center px-8 md:px-36">
                         <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                     </div>
+                </div>
+                <TwoColumnSection
+                leftBg="bg-redBg"
+  rightBg="bg-blueMain"
+  imageSrc={Tred.src}
+  imageAlt="Red T icon"
+  imageWidth="150px"
+                >
+                    <div slot="left" class="flex flex-col justify-center gap-3">
+                        <h1 class="text-xl md:text-2xl">Versatil Setup</h1>
+                        <p class="text-base md:text-lg">
+                            Works seamlessly in a dedicated control cabin or under a protective roof
+                        </p>
+                    </div>
+                    <div slot="right" class="flex flex-col justify-center gap-3">
+                        <h1 class="text-xl md:text-2xl">
+                            Quick Adjustments
+                        </h1>
+                        <p class="text-base md:text-lg">
+                            Allows rapid changes to recipes or control settings to match project requirements
+                        </p>
+                    </div>
+                </TwoColumnSection>
+
+                <div class="w-full px-12 md:px-52 flex flex-col justify-center gap-2">
+                 <Collapsable client:only/>   
                 </div>
                 <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 px-4 md:px-36">
                     <div class="col-span-2 flex flex-col justify-between gap-1 font-bold h-full">
