@@ -1,6 +1,7 @@
 ---
 import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
 import Whatsbtn from '../unitComponents/Whatsbtn.astro';
+import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import Card from '../unitComponents/Card.astro';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
 import Image from 'astro/components/Image.astro';
@@ -11,6 +12,9 @@ import silo3 from '../../assets/images/HotMix/siloSealed.png';
 import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
 import Collapsable from '../HotMixStorage/Collapsable';
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import tank from "../../assets/images/AsphaltStorage/SliderStorage/P-3f.webp";
+import AcordeonItem from '../unitComponents/AcordeonItem';
+import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -77,134 +81,93 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
                 <div class="w-full px-12 md:px-52 flex flex-col justify-center gap-2">
                  <Collapsable client:only/>   
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 px-4 md:px-36">
-                    <div class="col-span-2 flex flex-col justify-between gap-1 font-bold h-full">
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                PLC and HMI Integration:</h1>
-                            <p>The silo operates with a Programmable Logic Controller (PLC) and Proface HMI for seamless control 
-                                and monitoring. The system allows for easy interface management and ensures precise handling
-                                 of all silo functions.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Enhanced Loading and Unloading Efficiency:</h1>
-                            <p>
-                                Equipped with load cells for accurate measurement of both stored and delivered hot mix. The system 
-                                integrates with the PLC for real-time data logging and precise weight control.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Real-Time Display: </h1>
-                            <p>
-                                All silo functions, including mix temperature and weighing data, are clearly 
-                                displayed on the Proface HMI screen for operational transparency.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Browning Gear Reducers and Steel Pulleys:</h1>
-                            <p>
-                                Power transmissions are equipped with oversized heavy-duty Browning gear
-                                 reducers and hub-mounted steel pulleys for smooth and efficient power transfer
-                            </p>
-                        </div><br>
-                        <div class="w-full flex justify-center gap-10">
-                            <div>
-                                <h2 class="text-2xl text-black">Versatil Setup</h2>
-                                <p class="text-sm">Works seamlessly in a dedicated control cabin or under a protective roof.</p>
-                            </div>
-                            <div>
-                                <h2 class="text-2xl text-black">Quick Adjustments</h2>
-                                <p class="text-sm">Allows rapid changes to recipes or control settings to match project requirements.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-1 flex flex-col items-center justify-between gap-2 h-full w-full">
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Load History:</h1>
-                            <p>Tracks up to 200 truck loads, storing all relevant data for future reference or analysis.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Automated Ticketing System:</h1>
-                            <p>The system automatically generates tickets for delivered hot mix, detailing delivery time, weight, 
-                                mix temperature, and truck identification via barcode or keyboard capture.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Siemens Motors and Electrical Components:</h1>
-                            <p>Reliable Siemens motors and electrical parts ensure durability and consistent performance.
-                            </p>
-                        </div>
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <h1 class="text-base md:text-lg text-black">
-                                Sonic sensor of hot mix level inside the silo:</h1>
-                            <p>Precisely monitors hot mix levels in real time, optimizing storage and preventing overflows.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full flex flex-col justify-center px-8 md:px-36 font-bold">
-                    <div class="w-full text-end">
+                <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
+                    <div class="w-full relative h-[250px]">
+                        <h2 class="px-8 md:px-52 text-xl md:text-2xl relative z-20 font-bold">
+                           User Friendly Interface
+                        </h2>
                         <br>
-                        <h1 class="text-black text-2xl">User-Friendly Interface</h1><br>
-                        <p class="font-thin">Simplifies configuration adjustments for operators with minimal downtime.</p><br>
-                    </div>
-                    <div class="w-full p-4 bg-white rounded-2xl">
-                        <p>
-                            Created to offer plant operators a deeper understanding of their operation, this
-                             cloud-based platform stores all production data remotely and securely. It gives you
-                              the freedom to access detailed performance analytics from any location and any 
-                              device—whether you're in the office, on the road, or at a job site. With real-time access to
-                               trends, logs, and operational metrics, decision-making becomes faster, more informed, and fully 
-                               independent of your physical location.
+                        <p class="px-8 md:px-52 font-thin text-base md:text-lg relative z-20">
+                            Created to offer plant operators a deeper understanding of their operation, this cloud-based platform
+                             stores all production data remotely and securely. It gives you the freedom to access detailed
+                              performance analytics from any location and any device—whether you're in the office, on the 
+                              road, or at a job site. With real-time access to trends, logs, and operational metrics, 
+                              decision-making becomes faster, more informed, and fully independent of your physical location.
                         </p>
-                    </div><br>
-                    <div class="grid grid-cols-1 md:grid-cols-5 w-full gap-6">
-                        <div class="col-span-2 p-4 bg-white rounded-2xl">
-                            <h2 class="text-xl">Visual and audible alarm for maximum mix level</h2><br>
-                            <p>
-                                Visual and audible alarms to alert the operator and personnel when the silo 
-                                is full, preventing the conveyor from overloading
+                        <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
+                    </div>
+                    <div class="w-full bg-bgBeige grid grid-cols-1 md:grid-cols-2 py-10 px-8 md:px-52">
+                        <div class="w-full text-center text-black">
+                            <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
+                            <p class="text-base md:text-lg">
+                                Visual and audible alarms to alert the operator and personnel when the silo is fully, preventing tghe conveyor from overloading
                             </p>
                         </div>
-                        <div class="col-span-2 p-4 bg-white rounded-2xl">
-                            <h2 class="text-xl">Sonic sensor to indicate mix level inside the silo
-                            </h2><br>
-                            <p>
+                        <div class="w-full text-center text-black">
+                            <h1 class="font-bold text-black text-xl md:text-2xl">Sonic sensor to indicate mix level inside the silo</h1><br>
+                            <p class="text-base md:text-lg">
                                 Real-time display of hot mix level on the operator console.
                             </p>
                         </div>
                     </div>
+                    <div class="w-full flex flex-col justify-center items-center relative">
+                        <img src={tank.src} alt="" class="w-[50vw]">
+                        <div class="w-full bg-bgMain h-[30px]">
+                        </div>
+                    </div>
+                    
                 </div>
              </div>
         <!-- Second Section -->
          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
             <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
-                <div class="bg-white p-4 font-bold rounded-2xl">
-                    <h1 class="text-base md:text-lg text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
-                    <br>
-                    <p>Hot mix storage silos are essential for maintaining the quality and 
-                        efficiency of asphalt production and delivery operations. They offer a
-                         range of benefits, from preserving the integrity of the asphalt mix to
-                          streamlining logistics and enhancing overall productivity.
-                    </p><br>
-                    <p>
-                        gned with durability and advanced technology, these silos ensure reliable 
-                        performance under demanding conditions while reducing operational costs and 
-                        downtime. Whether for stationary or mobile use, a silo provides unmatched 
-                        convenience and adaptability, making it a critical component of any asphalt 
-                        plant setup.
-                    </p>
+                <div class="w-full flex flex-col justify-start items-center gap-6">
+                    <div class="bg-white p-4 font-bold rounded-2xl">
+                        <h1 class="text-lg md:text-2xl text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
+                        <br>
+                        <p>Hot mix storage silos are essential for maintaining the quality and 
+                            efficiency of asphalt production and delivery operations. They offer a
+                            range of benefits, from preserving the integrity of the asphalt mix to
+                            streamlining logistics and enhancing overall productivity.
+                        </p><br>
+                        <p>
+                            gned with durability and advanced technology, these silos ensure reliable 
+                            performance under demanding conditions while reducing operational costs and 
+                            downtime. Whether for stationary or mobile use, a silo provides unmatched 
+                            convenience and adaptability, making it a critical component of any asphalt 
+                            plant setup.
+                        </p>
+                    </div>
+                    <div class="w-full bg-white p-10">
+                        <img src={silo1.src} alt="" class="max-w-[300px]">
+                    </div>
                 </div>
                 <div>
-                    <img src="" alt="">
+                    <video src={HTAdv} controls autoplay loop></video>
+                </div>
+            </div>
+            <div class="w-full bg-[#727272] px-8 md:px-52 grid grid-cols-1 md:grid-cols-2">
+                <div class="w-full flex flex-col justify-center items-center gap-3 my-10 text-white px-20">
+                    <h1 class="text-xl md:text-2xl text-center font-bold">Sealed from Top <br> to Bottom</h1>
+                    <p>
+                        To prevent premature hardening, the silo is fully sealed during storage. This airtight design blocks air exposure, 
+                        preserving the mix’s quality and delaying oxidation.
+                    </p>
+                    <div class="w-full bg-white">
+                        <img src={silo3.src} alt="">
+                    </div>
+                </div>
+                <div class="w-full flex flex-col justify-center items-center gap-3 my-10 text-white px-20">
+                    <h1 class="text-xl md:text-2xl text-center font-bold">Even Distribution <br> without Segregation</h1>
+                    <div class="w-full bg-white">
+                        <img src={silo2.src} alt="">
+                    </div>
+                    <p>
+                        Triaso® silos use a top-mounted batcher that collects a full load of mix before discharging it in one motion through
+                        overlapping clam-style gates. These gates open rapidly and guide the mix to fall centered, distributing it evenly across the silo floor.
+                        Their cutting action reduces wear and avoids material buildup. 
+                    </p>
+                    
                 </div>
             </div>
             <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 px-8 md:px-36">
@@ -213,86 +176,16 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
                     <h2 class="text-blueMain text-xl">Six inches</h2>
                     <h2 class="text-lg">fiberglass insulation</h2>
                 </div>
-                <div class="col-span-3 flex flex-col items-center justify-between gap-6 h-full">
-                    <div class="bg-white p-4 font-bold rounded-2xl">
-                        <h1 class="text-base md:text-lg text-black">
-                            Optimized Insulation Design:</h1>
-                        <br>
-                        <p>The silo walls are designed with high-efficiency insulation that not only preserves 
-                            the asphalt's temperature but also minimizes heat loss, reducing energy consumption and
-                             ensuring the material stays at the ideal temperature for longer, even in extreme weather 
-                             conditions.
-                        </p><br>
-                    </div>
-                    <div class="bg-white p-4 font-bold rounded-2xl">
-                        <h1 class="text-base md:text-lg text-black">
-                            Enhanced Loading and Unloading Efficiency:</h1>
-                        <br>
-                        <p>Triaso silos are designed with an optimized loading and unloading system that allows for 
-                            faster material transfer, reducing wait times and improving overall throughput. This feature
-                             enhances productivity by streamlining the flow of materials during operations.
-                        </p><br>
-                    </div>
+                <div class="col-span-3 flex flex-col items-center justify-center gap-6 h-full">
+                    <AcordeonItem client:only title='Optimized Insulation Design:' content="The silo walls are designed with high-efficiency insulation that not only preserves the asphalt's temperature but also minimizes heat loss, reducing energy consumption and ensuring the material stays at the ideal temperature for longer, even in extreme weather conditions."/>
+                    <AcordeonItem client:only title='Enhanced Loading and Unloading Efficiency:' content="Triaso silos are designed with an optimized loading and unloading system that allows for faster material transfer, reducing wait times and improving overall throughput. This feature enhances productivity by streamlining the flow of materials during operations."/>
                 </div>
-            </div>
-            <div class="w-full grid grid-cols-1 md:grid-cols-5 justify-center items-center gap-6 font-bold">
-                <div class="md:ml-36 lg:ml-36 mx-8 bg-white md:col-span-2 rounded-2xl p-4 flex flex-col items-center justify-center">
-                    <Image src={silo1} alt="Silo Cone Image" class="w-full h-auto"/>
-                    <br>
-                    <h2 class="text-black w-full text-start">Silo Cone</h2>
-                    <p>
-                        Our silo cones are designed with a steep 66° angle to ensure full
-                         cross-sectional flow. This geometry guarantees first-in/first-out discharge,
-                          eliminates material buildup on the walls, and prevents mix segregation.
-                           The result: clean, consistent flow with every load.
-                    </p>
-                </div>
-                <div class="w-full flex flex-col gap-6  md:col-span-3">
-                    <div class="bg-white p-4 rounded-2xl md:mr-36 lg:mr-36 mr-8">
-                        <p>
-                            Both the self-erecting and stationary silos share the same key features and 
-                            advantages, offering unmatched efficiency, durability, and flexibility. The
-                             primary difference lies in their functionality: the self-erecting silo 
-                             provides the convenience of automated setup, making it ideal for projects 
-                             requiring quick relocation, while the stationary silo offers greater capacity,
-                              making it the perfect choice for larger, long-term operations. Both options
-                               ensure optimal performance, easy integration with asphalt plants, and a 
-                               robust design for reliable operation in demanding conditions.
-                        </p>
-                    </div>
-                    <div class="p-4 bg-white rounded-2xl flex md:flex-row flex-col">
-                        <div class="flex flex-col items-start justify-center">
-                            <h2 class="text-black">Even Distribution Without <br> Segregation</h2>
-                            <p>
-                                Triaso® silos use a top-mounted batcher that collects a full load of mix before 
-                                discharging it in one motion through overlapping clam-style gates. These gates open 
-                                rapidly and guide the mix to fall centered, distributing it evenly across the silo 
-                                floor. Their cutting action reduces wear and avoids material buildup. This method
-                                 prevents segregation, ensures uniform layering, and maintains the mix’s quality 
-                                 during storage.
-                            </p>
-                        </div>
-                        <Image src={silo2} alt="Silo Use Image" class="max-w-[250px] h-auto"/>
-
-                    </div>
-                </div>
-            </div>
-            <div class="flex p-4 bg-white rounded-2xl px-4 md:mx-36 w-4/6 items-start justify-start">
-                <div class="font-bold">
-                    <h2 class="text-black">Sealed from Top to Bottom</h2><br>
-                    <p>
-                        To prevent premature hardening, the silo is fully sealed during storage. 
-                        This airtight design blocks air exposure, preserving the mix’s quality and
-                         delaying oxidation.
-                    </p>
-                </div>
-                <Image src={silo3} alt="Silo Sealed Image" class="max-w-[250px] h-auto ml-4 rounded-2xl"/>
             </div>
          </div>
          <!-- Third Section -->
           <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
-            <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full px-8 md:px-36">
-                <div class="bg-white rounded-2xl p-4 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full py-10">
+                <div class="bg-white border-2 border-black rounded-r-2xl p-4 w-full md:pl-52 py-10">
                     <p>
                         The silos are built with durable, easy-to-maintain components that require
                          minimal upkeep. Their robust construction and simple design reduce the need
@@ -307,8 +200,8 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
                         year-round.
                     </p>
                 </div>
-                <div class="w-full">
-                    <img src="" alt="">
+                <div class="w-full flex justify-center">
+                    <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full gap-6">
@@ -320,39 +213,13 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
                     </p>
                     <Whatsbtn />
                 </div>
-                <div class="w-full col-span-2 flex flex-col items-center justify-center gap-6">
-                    <div class="flex gap-6 w-full">
-                        <Card>
-                            <h2 class="text-black">Quick Replacement Parts Availability:
-                            </h2>
-                            <p>
-                                To ensure minimal downtime, the silos are designed with standard, easily 
-                                replaceable parts. This reduces lead time for repairs and helps maintain smooth
-                                 operations without extended interruptions.
-                            </p>
-                        </Card>
-                        <Card>
-                            <h2 class="text-black">Corrosion-Resistant Coating:
-                            </h2>
-                            <p>
-                                Equipped with aspecialized corrosion-resistant coating that protects against wear and tear 
-                                from weather elements and chemicals, ensuring durability and functionality even in harsh 
-                                environments.
-                            </p>
-                        </Card>
-                    </div>
-                    <Card>
-                        <h2 class="text-black">
-                            High-Quality Materials, Manufactured In-House:
-                        </h2>
-                        </h2>
-                        <p>
-                            Our silos are constructed using premium materials sourced directly by us, ensuring superior 
-                            quality and long-lasting performance. By manufacturing every component in-house, we maintain
-                             strict quality control standards, guaranteeing that each silo meets the highest industry
-                              standards for durability, efficiency, and reliability.
-                        </p>
-                    </Card>
+                <div class="w-full col-span-2 flex flex-col items-center justify-center gap-6 md:pr-52">
+                    <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
+                </AcordeonItem>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch items-center justify-center mt-10 px-4 md:px-36 w-full">
