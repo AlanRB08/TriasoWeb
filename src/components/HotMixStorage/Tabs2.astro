@@ -3,6 +3,8 @@ import Card from "../unitComponents/Card.astro"
 import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import Image from "astro/components/Image.astro";
 import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
+import HMSilo from "../../assets/images/HotMix/HMSilo.mp4";
+import { sequence } from "astro:middleware";
 ---
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -16,80 +18,64 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                 SELF-ERECTING SILO
             </button>
         </div>
-        <div class="py-4 px-8">
+        <div class="py-4">
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
-                <div class="grid grid-cols-1 md:grid-cols-5 w-full pr-4 md:pr-36 justify-center items-center mt-20">
-                    <div class="col-span-2 h-full w-full">
-                        <img src="" alt="">
-                        <h1>video</h1>
-                    </div>
-                    <div class="col-span-3 w-full">
-                        <p>
-                            The semi-stationary is the ultimate silo, designed to offer unparalleled 
+                <div class="w-full">
+                    <p>
+                        The semi-stationary is the ultimate silo, designed to offer unparalleled 
                             efficiency, flexibility, and durability for asphalt storage. Combining advanced 
                             technology with robust construction, this silo provides seamless operation in
                              both stationary and mobile setups. Engineered for high performance, it ensures 
                              maximum productivity while maintaining the highest standards of quality and 
                              safety. Whether for large-scale projects or relocatable needs, the Ultimate 
                              Silo delivers unmatched reliability and convenience.
-                        </p><br>
-                        <p class="text-xl md:text-2xl w-full text-end">
-                            50, 100 and 132 <br> Short Tons capacity  
-                        </p><br>
-                        <div class="w-full">
-                            <h2 class="text-2xl md:text-3xl w-full">Option for portability</h2><br>
-                            <p class="text-grisP">
-                                The semi-stationary silo offers an option for portability, allowing easy transport of 
-                                the drag slat conveyor along with the silo in just one trip. Equipped with a fifth wheel pin, 
-                                brakes, and lamps, it ensures safe and efficient transportation. Anchor points are provided to
-                                 securely mount the drag slat conveyor during transit. Rear hinged legs provide stability, that
-                                  can be lifted with a crane for installation.
-                            </p><br>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                            <Card>
-                                <h2 class="text-lg md:text-xl">Mountable in low-boy</h2><br>
-                                <ul class="pl-6 list-disc font-thin">
-                                    <li>With protections to be transported without damage.</li>
-                                    <li>With lifting points for maneuvers of lifting with a crane. </li>
-                                </ul>
-                            </Card>
-                            <Card>
-                                <h2 class="text-lg md:text-xl">Gate with pneumatic system to release the hot mix to the trucks</h2><br>
-                                <p class="font-thin">Does not include compressor and air tank, it uses 
-                                    the air system from the asphalt plant. </p>
-                            </Card>
-                        </div><br>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                            <Card>
-                                <h2 class="text-lg md:text-xl">With support structure, high enough to accommodate dump trucks </h2>
-                            </Card>
-                            <Card>
-                                <h2 class="text-lg md:text-xl">With opening and closing control to be integrated into the Asphalt plant console</h2>
-                            </Card>
-                        </div>
-                    </div>
+                    </p>
                 </div>
-                <Image src={semiSilo} alt="Semi Stationary Silos" class="w-1/2 self-end mr-32"/>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center md:px-36 w-full">
-                    <Card className="max-w-[350px] bg-white p-4 rounded-2xl">
-                        <h2 class="text-lg md:text-xl">
-                            Visual and audible alarm for maximum mix level
-                        </h2><br>
-                        <p class="font-thin">
-                            Visual and audible alarms to alert the operator and personnel when 
-                            the silo is full, preventing the conveyor from overloading
+                <div class="w-full flex justify-center">
+                    <video src={HMSilo} autoplay controls loop class="w-[50vw]"></video>
+                </div>
+                <div class="w-full text-center">
+                    <h1 class="text-blueMain text-2xl md:text-3xl font-bold">50,100,150 and 200 Tons capacity</h1>
+                </div>
+                <div class="w-full bg-[#2b2b2b] text-white px-8 md:px-52 py-10">
+                    <div class="w-full">
+                        <h1 class="font-bold text-2xl md:text-3xl">Option for portability</h1><br>
+                        <p class="text-base md:text-lg">
+                            The semi-stationary silo offers an option for portability, allowing easy transport of the
+                             drag slat conveyor along with the silo in just one trip. Equipped with a fifth wheel pin, 
+                             brakes, and lamps, it ensures safe and efficient transportation. Anchor points are provided 
+                             to securely mount the drag slat conveyor during transit. Rear hinged legs provide stability, 
+                             that can be lifted with a crane for installation.
                         </p>
-                    </Card>
-                    <Card className="max-w-[350px] bg-white p-4 rounded-2xl h-full">
-                        <h2 class="text-lg md:text-xl">
-                            Sonic sensor to indicate mix level inside the silo
-                        </h2><br>
-                        <p class="font-thin">
-                            Real-time display of hot mix level on the operator console.
-                        </p>
-                    </Card>
+                    </div>
+                    <div class="w-full">
+                        <img src={semiSilo.src} alt="">
+                    </div>
+                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 my-10">
+                        <div class="w-full p-8 border-white rounded-2xl border-2">
+                           <h2 class="text-2xl md:text-3xl">Mountable in low-boy</h2>
+                            <ul class="list-disc ml-6 font-thin text-base md:text-lg">
+                                <li>With protections to be transported without damage.</li>
+                                <li>With lifting points for maneuvers of lifting with a crane. </li>
+                            </ul>
+                        </div> 
+                        <div class="w-full p-8 border-white rounded-2xl border-2">
+                           <h2 class="text-2xl md:text-3xl">Gate with pneumatic system to release the hot mix to the trucks</h2>
+                            <p class="text-base md:text-lg font-thin">
+                                Does not include compressor and air tank, it uses the air system from the asphalt plant. 
+                            </p>
+                        </div> 
+                        <div class="w-full p-8 border-white rounded-2xl border-2">
+                           <h2 class="text-2xl md:text-3xl">With support structure, high enough to accommodate dump trucks </h2>
+                        </div> 
+                        <div class="w-full p-8 border-white rounded-2xl border-2">
+                           <h2 class="text-2xl md:text-3xl">With opening and closing control to be integrated into the Asphalt plant console</h2>
+                        </div> 
+                    </div>
+                    <div>
+                        <h1>VIDEO</h1>
+                    </div>
                 </div>
              </div>
         <!-- Second Section -->
