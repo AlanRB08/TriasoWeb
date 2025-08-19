@@ -15,6 +15,7 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import tank from "../../assets/images/AsphaltStorage/SliderStorage/P-3f.webp";
 import AcordeonItem from '../unitComponents/AcordeonItem';
 import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
+import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -96,25 +97,33 @@ import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
                         </p>
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
-                    <div class="w-full bg-bgBeige grid grid-cols-1 md:grid-cols-2 py-10 px-8 md:px-52">
-                        <div class="w-full text-center text-black">
-                            <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
-                            <p class="text-base md:text-lg">
-                                Visual and audible alarms to alert the operator and personnel when the silo is fully, preventing tghe conveyor from overloading
-                            </p>
-                        </div>
-                        <div class="w-full text-center text-black">
-                            <h1 class="font-bold text-black text-xl md:text-2xl">Sonic sensor to indicate mix level inside the silo</h1><br>
-                            <p class="text-base md:text-lg">
-                                Real-time display of hot mix level on the operator console.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-full flex flex-col justify-center items-center relative">
-                        <img src={tank.src} alt="" class="w-[50vw]">
-                        <div class="w-full bg-bgMain h-[30px]">
+                    <div class="w-full bg-bgBeige -skew-y-2">
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2">
+                            <div class="w-full text-center text-black ">
+                                <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
+                                <p class="text-base md:text-lg">
+                                    Visual and audible alarms to alert the operator and personnel when the silo is fully, preventing tghe conveyor from overloading
+                                </p>
+                            </div>
+                            <div class="w-full text-center text-black ">
+                                <h1 class="font-bold text-black text-xl md:text-2xl">Sonic sensor to indicate mix level inside the silo</h1><br>
+                                <p class="text-base md:text-lg">
+                                    Real-time display of hot mix level on the operator console.
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="w-full relative">
+                    <!-- Imagen -->
+                        <img src={semiSilo.src} alt="Semi silo" 
+                            class="w-[60vw] mx-auto relative z-10 -mb-10">
+                        
+                        <!-- Sección blanca -->
+                        <div class="w-full bg-bgMain h-[80px] relative z-0"></div>
+                    </div>
+
+
                     
                 </div>
              </div>
@@ -138,38 +147,59 @@ import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
                             plant setup.
                         </p>
                     </div>
-                    <div class="w-full bg-white p-10">
-                        <img src={silo1.src} alt="" class="max-w-[300px]">
+                    <div class="w-full bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-6 rounded-2xl font-bold">
+                        <div class="w-full">
+                            <img src={silo1.src} alt="" class="max-w-[300px]">
+                        </div>
+                        <div class="w-full">
+                            <h1 class="text-xl md:text-2xl text-black">Silo Cone</h1>
+                            <p>
+                                Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. 
+                                This geometry guarantees first-in/first-out discharge, eliminates material buildup on the walls, 
+                                and prevents mix segregation. The result: clean, consistent flow with every load.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <video src={HTAdv} controls autoplay loop></video>
+                    <video src={HTAdv} autoplay loop></video>
                 </div>
             </div>
-            <div class="w-full bg-[#727272] px-8 md:px-52 grid grid-cols-1 md:grid-cols-2">
-                <div class="w-full flex flex-col justify-center items-center gap-3 my-10 text-white px-20">
-                    <h1 class="text-xl md:text-2xl text-center font-bold">Sealed from Top <br> to Bottom</h1>
-                    <p>
-                        To prevent premature hardening, the silo is fully sealed during storage. This airtight design blocks air exposure, 
-                        preserving the mix’s quality and delaying oxidation.
+            <div class="w-full min-h-[50vh] bg-[#727272] px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
+  
+                <!-- Columna 1 -->
+                <div class="flex flex-col justify-center items-center text-white gap-4 text-center">
+                    <h1 class="text-xl md:text-2xl font-bold">
+                    Sealed from Top <br> to Bottom
+                    </h1>
+                    <p class="text-sm md:text-base leading-relaxed">
+                    To prevent premature hardening, the silo is fully sealed during storage. 
+                    This airtight design blocks air exposure, preserving the mix’s quality 
+                    and delaying oxidation.
                     </p>
-                    <div class="w-full bg-white">
-                        <img src={silo3.src} alt="">
+                    <div class="w-full overflow-hidden flex justify-center">
+                        <img src={silo3.src} alt="Sealed Silo" class="w-[200px] md:w-[350px] bg-white">
                     </div>
                 </div>
-                <div class="w-full flex flex-col justify-center items-center gap-3 my-10 text-white px-20">
-                    <h1 class="text-xl md:text-2xl text-center font-bold">Even Distribution <br> without Segregation</h1>
-                    <div class="w-full bg-white">
-                        <img src={silo2.src} alt="">
+
+                <!-- Columna 2 -->
+                <div class="flex flex-col justify-center items-center text-white gap-4 text-center">
+                    <h1 class="text-xl md:text-2xl font-bold">
+                    Even Distribution <br> without Segregation
+                    </h1>
+                    <div class="w-full overflow-hidden flex justify-center">
+                        <img src={silo2.src} alt="Sealed Silo" class="w-[200px] md:w-[350px] bg-white">
                     </div>
-                    <p>
-                        Triaso® silos use a top-mounted batcher that collects a full load of mix before discharging it in one motion through
-                        overlapping clam-style gates. These gates open rapidly and guide the mix to fall centered, distributing it evenly across the silo floor.
-                        Their cutting action reduces wear and avoids material buildup. 
+                    <p class="text-sm md:text-base leading-relaxed">
+                    Triaso® silos use a top-mounted batcher that collects a full load of mix before discharging 
+                    it in one motion through overlapping clam-style gates. These gates open rapidly and guide 
+                    the mix to fall centered, distributing it evenly across the silo floor. Their cutting action 
+                    reduces wear and avoids material buildup.
                     </p>
-                    
                 </div>
-            </div>
+
+                </div>
+
             <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 px-8 md:px-36">
                 <div class="col-span-1 flex flex-col justify-center items-center md:items-start gap-1 font-bold">
                     <img src={fiberGlass.src} alt="" class="max-h-[500px] w-[150px]">

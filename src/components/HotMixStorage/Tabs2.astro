@@ -4,7 +4,9 @@ import img4 from '../../assets/images/AsphaltPlant/silos2.png';
 import Image from "astro/components/Image.astro";
 import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
 import HMSilo from "../../assets/images/HotMix/HMSilo.mp4";
-import { sequence } from "astro:middleware";
+import HTSilo2 from "../../assets/images/HotMix/HMSilo2.mp4";
+import HMinclinado from "../../assets/images/HotMix/HMinclinado.mp4";
+import Logo from "../../assets/logos/LogoTriasoMX.svg";
 ---
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
@@ -21,7 +23,7 @@ import { sequence } from "astro:middleware";
         <div class="py-4">
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
-                <div class="w-full">
+                <div class="w-full px-8 md:px-52">
                     <p>
                         The semi-stationary is the ultimate silo, designed to offer unparalleled 
                             efficiency, flexibility, and durability for asphalt storage. Combining advanced 
@@ -73,71 +75,172 @@ import { sequence } from "astro:middleware";
                            <h2 class="text-2xl md:text-3xl">With opening and closing control to be integrated into the Asphalt plant console</h2>
                         </div> 
                     </div>
-                    <div>
-                        <h1>VIDEO</h1>
-                    </div>
+                </div>
+                <div class="w-full ">
+                    <video src={HTSilo2} autoplay loop></video>
                 </div>
              </div>
         <!-- Second Section -->
-         <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold md:px-36" data-tab-content="tab2">
-            <h1>VIDEO</h1>
-            <p>
-                Engineered for efficiency and reliability, our hot mix storage silos ensure optimal asphalt 
-                quality and streamlined operations. Designed with advanced technology and durable materials,
-                 these silos provide precise control, easy mobility, and seamless integration with your 
-                 asphalt plant systems, making them an essential asset for any paving project.
-            </p>
-            <div class="w-full grid grid-cols-1 md:grid-cols-3">
-                <div class="col-span-2">
-                    <p>
-                        No cranes required for installation. Triaso self-erecting silo is designed and manufactured for 
-                        easy transportation, allowing installation without cranes.
-                    </p>
-                </div>
-                <div class="col-span-1 flex gap-10">
-                    <img src="" alt="">
-                    <h2 class="text-xl md:text-2xl">
-                        50 and 100 <br>
-                        Short Tons <br>capacity
-                    </h2>
-                </div>
+         <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
+            <div class="w-full px-8 md:px-52">
+                <p>
+                    Engineered for efficiency and reliability, our hot mix storage silos ensure optimal asphalt quality and streamlined operations.
+                     Designed with advanced technology and durable materials, these silos provide precise control, easy mobility, 
+                     and seamless integration with your asphalt plant systems, making them an essential asset for any paving project.
+                </p>
             </div>
-            <h2 class="text-black text-lg md:text-xl w-full text-start">Self-erecting system</h2>
-            <p>
-                The self-erecting silo is equipped with telescopic hydraulic cylinders, enabling
-                 quick and efficient lifting. With a setup time of just 10 minutes, it ensures rapid 
-                 deployment. The hydraulic locking bolts provide secure vertical and horizontal positioning, 
-                 delivering stability and precision during operation.
-            </p>
-            <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start md:gap-4">
-                <img src={img4.src} alt="" class="rounded-2xl w-full col-span-1">
-                <div class="flex flex-col gap-10 w-full col-span-2">
-                    <div class="col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4 justify-start items-start">
-                        <div class="flex flex-col gap-2 col-span-1 md:col-span-3 md:flex-row w-full">
-                            <div class="bg-white rounded-2xl p-4 self-start">
-                                <p>Telescopic hydraulic cylinders for lifting.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-4 self-start">
-                                <p>Telescopic hydraulic cylinders for lifting.</p>
-                            </div>
-                            <div class="bg-white rounded-2xl p-4 self-start">
-                                <p>Telescopic hydraulic cylinders for lifting.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="text-black text-xl md:text-2xl">
-                            The most versatile and mobile silo on the market.
-                        </h2> <br>
-                        <p>
-                            This self-erecting silo revolutionizes mobility and installation with its innovative hydraulic 
-                            system. Designed for effortless relocation, it can be fully set up in just 10 minutes.
-                             The hydraulic locking bolts ensure secure placement, making it the ultimate choice for fast, 
-                             stable, and adaptable asphalt storage solutions.
+            <div class="w-full px-8 md:px-52">
+                <video src={HMinclinado} autoplay loop></video>
+            </div>  
+            <div class="w-full px-8 md:px-52">
+                <h1 class="text-blueMain text-2xl md:text-3xl text-center">
+                    The Triaso team understands that proper material handling and hot-mix storage are key to optimal performance and durability
+                </h1>
+            </div>
+            <div class="w-full px-8 md:px-52">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2">
+                    <div>
+                        <h2 class="text-blueMain text-xl md:text-2xl font-bold">Self-erecting system</h2>
+                        <br>
+                        <p class="font-thin text-base md:text-lg">
+                            The self-erecting silo is equipped with telescopic hydraulic cylinders,
+                             enabling quick and efficient lifting. With a setup time of just 10 minutes,
+                              it ensures rapid deployment. The hydraulic locking bolts provide secure vertical and horizontal positioning,
+                               delivering stability and precision during operation.
                         </p>
                     </div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
                 </div>
-            </div>        
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-3 gap-10">
+                <Card>
+                    <img src="" alt="">
+                    <h2 class="text-center text-xl md:text-2xl">Telescopic hydraulic cylinders for lifting</h2>
+                </Card>
+                <Card>
+                    <img src="" alt="">
+                    <h2 class="text-center text-xl md:text-2xl">Lifting time of 10 minutes</h2>
+                </Card>
+                <Card>
+                    <img src="" alt="">
+                    <h2 class="text-center text-xl md:text-2xl">Vertical and horizontal positioning with hydraulic locking bolts</h2>
+                </Card>
+            </div>
+            <div class="w-full px-8 md:px-52 flex justify-center">
+                <h1 class="text-blueMain text-2xl md:text-3xl">50 and 100 Short Tons capacity</h1>
+            </div> 
+            <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
+                <div class="w-full relative h-[250px]">
+                    <div class="w-full flex justify-between items-center px-8 md:px-52">
+                    <h2 class="text-xl md:text-2xl relative z-20 font-bold">
+                        Difference between Self -erecting and Semi-stationary
+                    </h2>
+                    <button class="z-20" id="dropdown-button">
+                        <svg
+                        id="dropdown-arrow"
+                        width="64px"
+                        height="64px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        color="#ca1c1c"
+                        stroke-width="1.5"
+                        >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM16.0303 10.9697L12.5303 7.46967C12.2374 7.17678 11.7626 7.17678 11.4697 7.46967L7.96967 10.9697C7.67678 11.2626 7.67678 11.7374 7.96967 12.0303C8.26256 12.3232 8.73744 12.3232 9.03033 12.0303L11.25 9.81066V16C11.25 16.4142 11.5858 16.75 12 16.75C12.4142 16.75 12.75 16.4142 12.75 16V9.81066L14.9697 12.0303C15.2626 12.3232 15.7374 12.3232 16.0303 12.0303C16.3232 11.7374 16.3232 11.2626 16.0303 10.9697Z"
+                            fill="#ca1c1c"
+                        ></path>
+                        </svg>
+                    </button>
+                    </div>
+                    <br />
+                    <p class="px-8 md:px-52 font-thin text-base md:text-lg relative z-20">
+                    Both the self-erecting and stationary silos share the same key features
+                    and advantages, offering unmatched efficiency, durability, and
+                    flexibility. The primary difference lies in their functionality.
+                    </p>
+                    <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full" />
+                </div>
+                <!-- Div oculto que se despliega -->
+                <div
+                    class="w-full flex flex-col gap-10 px-8 md:px-52 transition-all duration-300 overflow-hidden"
+                    id="extradiv"
+                    style="max-height: 0"
+                >
+                    <div class="w-full list-inside md:mb-0 md:opacity-100">
+                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="w-full flex flex-col gap-3 px-10">
+                        <h2 class="text-xl md:text-2xl text-center">Semi-stationary Silo</h2>
+                        <p class="font-thin text-base md:text-lg">
+                            The stationary silo offers greater capacity, making it the perfect
+                            choice for larger, long-term operations.
+                        </p>
+                        </div>
+                        <div class="w-full flex flex-col gap-3 px-10">
+                        <h2 class="text-xl md:text-2xl text-center">Self-erecting Silo</h2>
+                        <p class="font-thin text-base md:text-lg">
+                            The self-erecting silo provides the convenience of automated setup,
+                            making it ideal for projects requiring quick relocation.
+                        </p>
+                        </div>
+                    </div><br>
+                    <div class="w-full px-10">
+                        <p class="text-base md:text-lg font-thin text-center">
+                        Both options ensure optimal performance, easy integration with asphalt
+                        plants, and a robust design for reliable operation in demanding
+                        conditions.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <!-- Otro contenido -->
+                <div class="w-full px-8 md:px-64 flex flex-col gap-6 justify-center my-10">
+                    <div class="w-full px-8 md:px-52 flex justify-between gap-10">
+                    <div>
+                        <img src="" alt="" />
+                    </div>
+                    <div class="w-full">
+                        <h1 class="text-2xl md:text-3xl">
+                        No cranes required for installation
+                        </h1>
+                        <br />
+                        <p class="text-base md:text-lg">
+                        Triaso self-erecting silo is designed and manufactured for easy
+                        transportation, allowing installation without cranes.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="w-full px-8 md:px-52 flex justify-between gap-10">
+                    <div class="w-full">
+                        <h1 class="text-2xl md:text-3xl">
+                        The most versatile and mobile silo on the market.
+                        </h1>
+                    </div>
+                    <div>
+                        <img src="" alt="" />
+                    </div>
+                    </div>
+                    <div class="w-full">
+                    <p class="font-thin text-base md:text-lg">
+                        This self-erecting silo revolutionizes mobility and installation with
+                        its innovative hydraulic system. Designed for effortless relocation, it
+                        can be fully set up in just 10 minutes. The hydraulic locking bolts
+                        ensure secure placement, making it the ultimate choice for fast, stable,
+                        and adaptable asphalt storage solutions.
+                    </p>
+                    </div>
+                </div>
+            </div>  
          </div>
         </div>    
     </div>
@@ -161,6 +264,7 @@ import { sequence } from "astro:middleware";
   
 </style>
 <script is:inline>
+
     (function initTabs() {
       document.querySelectorAll('section[data-tabs]').forEach(tabSection => {
         const tabButtons = tabSection.querySelectorAll('.tab-button');
@@ -193,5 +297,32 @@ tabContents.forEach(content => {
         });
       });
     })();
-    </script>
+</script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.getElementById("extradiv");
+    const arrow = document.getElementById("dropdown-arrow");
+    const button = document.getElementById("dropdown-button");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        const isClosed =
+          dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
+
+        if (isClosed) {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          arrow.style.transform = "rotate(180deg)";
+        } else {
+          dropdown.style.maxHeight = "0px";
+          arrow.style.transform = "rotate(0deg)";
+        }
+      });
+    }
+  });
+</script>
+<style is:inline>
+    #dropdown-arrow {
+        transition: transform 0.3s ease;
+    }
+</style>
     

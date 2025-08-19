@@ -3,74 +3,79 @@ import Card from "../unitComponents/Card.astro"
 ---
 <div class="w-full px-8 md:px-32 font-bold text-grisT mt-20">
     <h1 class="text-2xl md:text-3xl">SLAT CONVEYOR</h1> <br>
-    <p class="text-grisT">
+    <p class="text-grisT text-base md:text-lg">
         The slat conveyor is a critical component in asphalt storage systems, responsible for 
         efficiently transferring hot mix from the drum or pugmill to the top of the silo. Built 
         for durability and consistent performance, it ensures heat retention and mix integrity 
         throughout the process.
     </p>
-    <Card title=`Chain with a 4" pitch` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-        <div class="h-0.5 w-full px-6 bg-blueMain">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-20 my-20 justify-center">
+        <div class="w-full flex flex-col gap-6">
+            <div class="w-full flex gap-3 justify-center items-center bg-white shadow-md rounded-r-2xl">
+                <div class="w-2 bg-redBg h-full"></div>
+                <div class="w-full py-4">
+                    <h2 class="text-base md:text-lg text-black">Chain with a 4" pitch</h2><br>
+                    <p class="text-sm md:text-base font-thin">
+                        The 4” pitch chain is a key component of the elevator, designed for heavy-duty operation.
+                         With a tensile strength of 50,000 lbs (22,700 kg) and floating-type chain guides to prevent jams,
+                          it ensures smooth and reliable performance, durability, efficiency, and minimal maintenance.
+                    </p>
+                </div>
+            </div>      
+            <div class="w-full flex gap-3 justify-center items-center bg-white shadow-md rounded-r-2xl">
+                <div class="w-2 bg-redBg h-full"></div>
+                <div class="w-full py-4">
+                    <h2 class="text-base md:text-lg text-black">Optional Sensors</h2><br>
+                    <p class="text-sm md:text-base font-thin">
+                        Chain tension sensors and overload protection for safe and automated operation.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full flex gap-3 justify-center items-center bg-white shadow-md rounded-r-2xl">
+                <div class="w-2 bg-redBg h-full"></div>
+                <div class="w-full py-4">
+                    <h2 class="text-base md:text-lg text-black">Sealed and insulated</h2><br>
+                    <p class="text-sm md:text-base font-thin">
+                        Reduces dust escape and protects the mix from environmental contamination.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full flex gap-3 justify-center items-center bg-white shadow-md rounded-r-2xl">
+                <div class="w-2 bg-redBg h-full"></div>
+                <div class="w-full py-4">
+                    <h2 class="text-base md:text-lg text-black">Efficient drive system</h2><br>
+                    <p class="text-sm md:text-base font-thin">
+                        Equipped with an industrial-grade motor and gearbox for reliable operation.
+                    </p>
+                </div>
+            </div>
         </div>
-        <p>
-            The 4” pitch chain is a key component of the elevator, designed for heavy-duty 
-            operation. With a tensile strength of 50,000 lbs (22,700 kg) and floating-type chain 
-            guides to prevent jams, it ensures smooth and reliable performance, durability, 
-            efficiency, and minimal maintenance.
-        </p>
-    </Card>
-    <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-6 mt-6">
-        <Card title=`Optional sensors` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-blueMain">
+        <div class="w-2/3 flex flex-col gap-6">
+            <div class="w-full flex flex-col gap-2">
+                <h1 class="text-2xl md:text-3xl text-black"><span class="text-redBg">Heavy</span>-duty construction</h1>
+                <p class="text-base md:text-lg font-thin text-black">
+                    Reinforced steel paddles mounted on dual chains, capable of handling abrasive and high-temperature materials.
+                </p>
             </div>
-            <p>
-                Chain tension sensors and overload protection for safe and automated operation.
-            </p>
-        </Card>
-        <Card title=`Sealed and insulated` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-blueMain">
+            <div class="w-full flex flex-col gap-2">
+                <h1 class="text-2xl md:text-3xl text-black"><span class="text-redBg">Heat</span> retention</h1>
+                <p class="text-base md:text-lg font-thin text-black">
+                    Enclosed body design minimizes temperature loss during vertical transport.
+                </p>
             </div>
-            <p>
-                Reduces dust escape and protects the mix from environmental contamination.
-            </p>
-        </Card>
-        <Card title=`Efficient drive system` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-blueMain">
+            <div class="w-full flex flex-col gap-2">
+                <h1 class="text-2xl md:text-3xl text-black"><span class="text-redBg">Smooth</span> material flow</h1>
+                <p class="text-base md:text-lg font-thin text-black">
+                    Optimized paddle spacing and discharge angle prevent material buildup and segregation.
+                </p>
             </div>
-            <p>
-                Equipped with an industrial-grade motor and gearbox for reliable operation.
-            </p>
-        </Card>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 mt-6">
-        <Card title=`Heavy-duty construction` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-redBg">
+            <div class="w-full flex flex-col gap-2">
+                <h1 class="text-2xl md:text-3xl text-black"><span class="text-redBg">Maintenance</span> access</h1>
+                <p class="text-base md:text-lg font-thin text-black">
+                    Top inspection doors allow quick cleaning and maintenance access.
+                </p>
             </div>
-            <p>
-                Reinforced steel paddles mounted on dual chains, capable of handling abrasive and high-temperature materials.
-            </p>
-        </Card>
-        <Card title=`Smooth material flow` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-redBg">
-            </div>
-            <p>
-                Optimized paddle spacing and discharge angle prevent material buildup and segregation.
-            </p>
-        </Card>
-        <Card title=`Heat retention` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-redBg">
-            </div>
-            <p>
-                Enclosed body design minimizes temperature loss during vertical transport.
-            </p>
-        </Card>
-        <Card title=`Maintenance access` contentClass="px-6 flex flex-col justify-center items-center gap-3">
-            <div class="h-0.5 w-full px-6 bg-redBg">
-            </div>
-            <p>
-                Top inspection doors allow quick cleaning and maintenance access.
-            </p>
-        </Card>
+        </div>
     </div>
 
 </div>
