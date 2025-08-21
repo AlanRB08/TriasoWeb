@@ -8,6 +8,10 @@ import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.png";
 import ASCustom from "../AsphaltStorage/ASCustom.astro";
+import ASMainVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
+import ASControl from "../../assets/images/AsphaltStorage/ASControl.png";
+import ASHoses from "../../assets/images/AsphaltStorage/ASHoses.png";
+import ASLevelSensor from "../../assets/images/AsphaltStorage/ASLevelSensor.png";
 
 const iconos = [
   { src: '/Gallery/sliderHotMix/1.png', title: 'Preservation of Quality',texto:'Perservation of quality and integrity of the asphlt.' },
@@ -22,32 +26,6 @@ const iconos = [
     { src: '/Gallery/sliderHotMix/10.png', title: 'Customizable' ,texto:'Adaptable features to meet specific project requirements and operational goals.'},
   // agrega hasta 16 o más imágenes
 ];
-const tanksSlides = [
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  },
-  {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  }
-];
 ---
 <section class="w-full flex flex-col items-center justify-center mt-20 md:mt-40 font-bold">
     <div class="w-full px-8 md:px-32">
@@ -61,6 +39,7 @@ const tanksSlides = [
            these tanks deliver the durability and functionality you need for both small projects and large-scale operations.
     </p>
     <div class="w-full px-8 md:px-32">
+      <video src={ASMainVideo}  autoplay></video>
       <h1 class="text-center text-2xl md:text-3xl text-blueMain">Consistent Heat, Consistent Mix</h1>
     </div>
     
@@ -95,8 +74,8 @@ const tanksSlides = [
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
-                      <div>
-                        <img src="" alt="">
+                      <div class="w-full flex justify-center">
+                        <img src={ASControl.src} alt="" class="w-1/2 rounded-2xl">
                       </div>
                       <div class="w-full flex flex-col gap-6 my-10">
                         <h2 class="text-xl md:text-2xl">Control System</h2>
@@ -113,17 +92,18 @@ const tanksSlides = [
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
                         <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2">
-                            <div class="w-full text-center text-black ">
-                                <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
-                                <p class="text-base md:text-lg">
-                                    Visual and audible alarms to alert the operator and personnel when the silo is fully, preventing tghe conveyor from overloading
+                            <div class="w-full text-black ">
+                                <h1 class="font-bold text-black text-xl md:text-2xl text-center">Triaso Asphalt Level Sensor</h1><br>
+                                <p class="text-base md:text-lg font-thin">
+                                    Asphalt level sensor with guided wave radar technology, designed for continuous and accurate monitoring in real-time. <br>
+                                    Asphalt volume in the tank (accuracy with a margin of error of 11.3 liters in 60,000 liters).
                                 </p>
+                                <ul class="list-disc ml-6 text-base md:text-lg font-thin">
+                                  <li>Consumption and refill history of asphalt.</li>
+                                </ul>
                             </div>
-                            <div class="w-full text-center text-black ">
-                                <h1 class="font-bold text-black text-xl md:text-2xl">Sonic sensor to indicate mix level inside the silo</h1><br>
-                                <p class="text-base md:text-lg">
-                                    Real-time display of hot mix level on the operator console.
-                                </p>
+                            <div class="w-full text-center text-black flex justify-center">
+                                <img src={ASLevelSensor.src} alt="" class="w-1/2 rounded-xl">
                             </div>
                         </div>
                     </div>
@@ -143,13 +123,13 @@ const tanksSlides = [
            into a stainless steel hose. This hose is connected to the asphalt plant, where the liquid asphalt is efficiently
             guided by gravity into the plant’s asphalt inlet.
         </p>
-        <div class="w-full">
-          <img src="" alt="">
+        <div class="w-full flex justify-center">
+          <img src={ASHoses.src} alt="" class="w-1/2 rounded-xl">
         </div>
       </div>
       <div class="w-full flex gap-6 pr-8 md:pr-52 bg-white rounded-l-2xl border-black border-2 py-8">
-        <div class="w-full pl-8">
-          <img src={fiberGlass.src} alt="">
+        <div class="w-full pl-8 h-full">
+          <img src={fiberGlass.src} alt="" class="h-full">
         </div>
         <div>
           <h2 class="text-lg md:text-xl">Two inches fiberglass insulation</h2><br>
@@ -163,5 +143,4 @@ const tanksSlides = [
       </div>
     </div>
     <ASCustom></ASCustom>
-    <GallerySlider client:only slides={tanksSlides} visibleThumbs={4}/>
 </section>
