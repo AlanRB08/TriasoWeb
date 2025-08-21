@@ -8,6 +8,8 @@ import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
 import GallerySlider from "../unitComponents/GallerySlider";
 import type { slide } from "astro:transitions";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
+import ModalButton from "../unitComponents/ModalButton.astro";
+import hotoil from '../../assets/images/AsphaltStorage/hotoil.jpg';
 
 
 const tanksSlides = [
@@ -69,7 +71,7 @@ const tanksSlides2 = [
         </div>
         <div class="py-4 flex justify-center items-center">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
                 <div class="w-full px-8 md:px-52">
                   <p class="text-justify">
                     Designed for precise temperature control, the oil heater ensures uniform heat distribution through advanced thermal oil 
@@ -79,30 +81,71 @@ const tanksSlides2 = [
                 </div><br>
                 <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
                 <div class="w-full px-8 md:px-72 grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div class="w-full bg-grisT flex flex-col gap-6 p-8 rounded-xl">
+                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={oil1.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-white text-xl md:text-2xl">Oil Heater</h1>
-                      <button>
-                          <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" stroke-width="1.6"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6 2.25C2.85442 2.25 2.25 2.85441 2.25 3.6V20.4C2.25 21.1456 2.85441 21.75 3.6 21.75H20.4C21.1456 21.75 21.75 21.1456 21.75 20.4V3.6C21.75 2.85442 21.1456 2.25 20.4 2.25H3.6ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9V11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15V12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z" fill="#ffffff"></path></svg>
-                      </button>
+                      <h1 class="text-black text-xl md:text-2xl">Oil Heater</h1>
+                      <ModalButton>
+                        <h3 slot="title" class="text-xl md:text-2xl">Oil Heater</h3>
+                        <img slot="image" src={oil1.src} alt="custom" />
+                        <div slot="content">
+                          <ul class="list-disc pl-5">
+                            <li> With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.</li>
+                            <li>Includes a high-efficiency 2” diameter coil system inside the asphalt tank.</li>
+                            <li>Connections for asphalt tankers with coil heating systems.</li>
+                            <li>Thermally insulated with ceramic fiber.</li>
+                            <li>Stainless steel exterior sheet covering.</li>
+                            <li>Equipped with a diesel burner.</li>
+                            <li>Automatic on/off control based on temperature.</li>
+                            <li>Two operating modes: Automatic and Manual.</li>
+                            <li>Digital thermometers with programmable set point for burner activation and shutoff.</li>
+                            <li>Siemens PLC-based control system.</li>
+                            <li>100-liter (26.4-gallon) thermal oil expansion tank.</li>
+                            <li>100% duty cycle.</li>
+                            <li>Includes safety systems and automatic shutdown in case of errors.</li>
+                          </ul>
+                        </div>
+                      </ModalButton>
+                    </div>
+                    <div class="w-full">
+                      <p class="font-thin text-sm md:text-base">
+                        It is the superior alternative to an old-style chamber or direct-fired heaters. 
+                        Designed with efficient sections of coil, the Hot Oil Heat Exchanger provides up to 200%
+                         more surface area than convection heaters.
+                      </p>
                     </div>
                   </div>
-                  <div class="w-full bg-grisT flex flex-col gap-6 p-8 rounded-xl">
+                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
-                      <img src={oil1.src} alt="">
+                      <img src={hotoil.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-white text-xl md:text-2xl">Hot Oil Coils</h1>
-                      <button id="openModalBtn" class="bg-blue-700 hover:bg-blue-600 p-3 rounded-lg transition">
-                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" stroke-width="1.6"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6 2.25C2.85442 2.25 2.25 2.85441 2.25 3.6V20.4C2.25 21.1456 2.85441 21.75 3.6 21.75H20.4C21.1456 21.75 21.75 21.1456 21.75 20.4V3.6C21.75 2.85442 21.1456 2.25 20.4 2.25H3.6ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9V11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15V12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z" fill="#ffffff"></path></svg>
-                      </button>
+                      <h1 class="text-black text-xl md:text-2xl">Hot Oil Coils</h1>
+                      <ModalButton>
+                        <h3 slot="title" class="text-xl md:text-2xl">Hot Oil Coils</h3>
+                        <img slot="image" src={hotoil.src} alt="custom" />
+                        <div slot="content">
+                          Our asphalt storage tanks are equipped with coils through which hot oil circulates, ensuring even and
+                           efficient heating of the asphalt. The hot oil passes through the coils, preventing solidification and 
+                           maintaining the asphalt at the ideal temperature for use. <br> This system provides reliable performance, 
+                           reduces energy consumption, and allows for precise temperature control. The design helps minimize wear 
+                           and tear, contributing to a longer lifespan of the tank while ensuring optimal asphalt consistency and 
+                           readiness for operation.
+                        </div>
+                      </ModalButton>
+                    </div>
+                    <div class="w-full">
+                      <p class="font-thin text-sm md:text-base">
+                        It is the superior alternative to an old-style chamber or direct-fired heaters. 
+                        Designed with efficient sections of coil, the Hot Oil Heat Exchanger provides up to 200%
+                         more surface area than convection heaters.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 pr-0 md:pr-32">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 px-8 md:px-52">
                     <Card>
                         <h3>Precision Temperature Control:</h3>
                         <p class="font-thin">
@@ -131,28 +174,7 @@ const tanksSlides2 = [
                         </p>
                     </Card>
                 </div>
-                 <div id="modalOverlay" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-    <div class="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md relative">
-      
-      <!-- Botón cerrar -->
-      <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-      
-      <h2 class="text-xl font-semibold mb-4">Oil Heater</h2>
-      <p class="text-gray-700">• With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.
- • Includes a high-efficiency 2” diameter coil system inside the asphalt tank.
- • Connections for asphalt tankers with coil heating systems.
- • Thermally insulated with ceramic fiber.
- • Stainless steel exterior sheet covering.
- • Equipped with a diesel burner.
- • Automatic on/off control based on temperature.
- • Two operating modes: Automatic and Manual.
- • Digital thermometers with programmable set point for burner activation and shutoff.
- • Siemens PLC-based control system.
- • 100-liter (26.4-gallon) thermal oil expansion tank.
- • 100% duty cycle.
- • Includes safety systems and automatic shutdown in case of errors.</p>
-    </div>
-  </div>
+                
   </div>
                 
              </div>
@@ -163,7 +185,45 @@ const tanksSlides2 = [
                   This method provides fast, efficient heating with minimal energy loss.
                 </p>
                 <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
+                 <div class="w-full px-8 md:px-72 grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                    <div class="w-full flex justify-center">
+                      <img src={oil1.src} alt="">
+                    </div>
+                    <div class="w-full flex justify-between items-center">
+                      <h1 class="text-black text-xl md:text-2xl">Direct Fire Heating Burner</h1>
+                      <ModalButton>
+                        <h3 slot="title" class="text-xl md:text-2xl">Direct Fire Heating Burner</h3>
+                        <img slot="image" src={oil1.src} alt="custom" />
+                        <div slot="content">
+                          El calentamiento de fuego directo funciona en base de un quemador de diesel que iradía calor a un 
+                          tubo dentro del tanque de asfalto,
+                           el cuál tiene dos tubos secundarios par airradiar su calor con mejor distribución y 
+                           los gases salen por los vapor condensers
+                        </div>
+                      </ModalButton>
+                    </div>
                     
+                  </div>
+                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                    <div class="w-full flex justify-center">
+                      <img src={hotoil.src} alt="">
+                    </div>
+                    <div class="w-full flex justify-between items-center">
+                      <h1 class="text-black text-xl md:text-2xl">Vapor condensers</h1>
+                      <ModalButton>
+                        <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
+                        <img slot="image" src={hotoil.src} alt="custom" />
+                        <div slot="content">
+                          Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage and heating,
+                           preventing emissions from escaping into the environment. Installed on the tank’s vent line, they cool down
+                            hot vapors into liquid form, reducing odor, improving safety, and ensuring compliance with environmental regulations.
+                        </div>
+                      </ModalButton>
+                    </div>
+                    
+                  </div>
+                </div>   
             </div>
         </div>
            
