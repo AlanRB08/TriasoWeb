@@ -1,0 +1,97 @@
+---
+export interface Props {
+  /** Texto del botón */
+  buttonText?: string;
+  /** URL de la imagen en la modal */
+  imgSrc?: string;
+  /** Alt de la imagen */
+  imgAlt?: string;
+  /** Título para la modal (si no usas slot "title") */
+  title?: string;
+  /** Contenido (si no usas slot "content") */
+  content?: string;
+}
+
+const {
+  buttonText = "Ver más",
+  imgSrc = "https://picsum.photos/seed/astro/800/450",
+  imgAlt = "Imagen de ejemplo",
+  title = "Título de ejemplo",
+  content = "Este es el contenido de la modal. Puedes pasar props o usar slots para personalizarlo.",
+} = Astro.props as Props;
+---
+
+
+<div class="inline-block" data-modal-root>
+  <button
+    type="button"
+    class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 hover:shadow-md transition active:scale-[0.99] text-gray-900"
+    data-open
+    aria-haspopup="dialog"
+    onclick="this.closest('[data-modal-root]').querySelector('dialog').showModal()"
+  >
+    <span class="shrink-0">
+      <slot name="icon">
+        <!-- SVG por defecto -->
+        <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#14427c" stroke-width="2.2"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 10.75C12.4142 10.75 12.75 11.0858 12.75 11.5V16.5C12.75 16.9142 12.4142 17.25 12 17.25C11.5858 17.25 11.25 16.9142 11.25 16.5V11.5C11.25 11.0858 11.5858 10.75 12 10.75ZM12.5675 8.00075C12.8446 7.69287 12.8196 7.21865 12.5117 6.94156C12.2038 6.66446 11.7296 6.68942 11.4525 6.99731L11.4425 7.00842C11.1654 7.3163 11.1904 7.79052 11.4983 8.06761C11.8062 8.34471 12.2804 8.31975 12.5575 8.01186L12.5675 8.00075Z" fill="#14427c"></path></svg>
+      </slot>
+    </span>
+    
+  </button>
+
+  <dialog
+    class="backdrop:bg-black/50 rounded-2xl p-0 w-[min(92vw,44rem)]"
+    role="dialog"
+    aria-labelledby="modal-title"
+    aria-modal="true"
+    onclick="if (event.target === this) this.close()"
+  >
+    <div class="bg-white rounded-2xl overflow-hidden">
+      <!-- Imagen -->
+      <div class="relative aspect-[16/9] bg-gray-100">
+        <slot name="image">
+          <img
+            src={imgSrc}
+            alt={imgAlt}
+            class="absolute inset-0 w-full object-cover"
+            loading="lazy"
+          />
+        </slot>
+        <button
+          type="button"
+          class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/90 ring-1 ring-black/10 hover:bg-white"
+          title="Cerrar"
+          aria-label="Cerrar"
+          data-close
+          onclick="this.closest('dialog')?.close()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Cuerpo -->
+      <div class="p-5 md:p-6">
+        <div class="mb-2">
+          <slot name="title">
+            <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-black">{title}</h3>
+          </slot>
+        </div>
+        <div class="prose prose-sm max-w-none text-gray-700">
+          <slot name="content">{content}</slot>
+        </div>
+        <div class="mt-5 flex justify-end gap-2">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 rounded-xl px-4 py-2 ring-1 ring-black hover:shadow-sm bg-gray-50"
+            data-close
+            onclick="this.closest('dialog')?.close()"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</div>
