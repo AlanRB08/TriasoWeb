@@ -8,7 +8,7 @@ import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
 import GallerySlider from "../unitComponents/GallerySlider";
 import type { slide } from "astro:transitions";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
-import sideP from '../../assets/images/DrumMixers/sideP.png';
+
 
 const tanksSlides = [
   {
@@ -69,54 +69,38 @@ const tanksSlides2 = [
         </div>
         <div class="py-4 flex justify-center items-center">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold pl-0 md:pl-32" data-tab-content="tab1">
-                <p class="px-8 text-justify">
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+                <div class="w-full px-8 md:px-52">
+                  <p class="text-justify">
                     Designed for precise temperature control, the oil heater ensures uniform heat distribution through advanced thermal oil 
                     circulation. Its robust construction supports continuous operation, making it ideal for demanding applications that require
                      consistent performance and energy efficiency.
-                </p><br>
+                  </p>
+                </div><br>
                 <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-[3%] relative mb-20">
-                    <img src={redT.src} alt="" class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 z-0 max-w-[300px]">
-                    <div class="w-full flex flex-col gap-10 justify-between items-center z-10">
-                        <Card>
-                            <h2 class="text-blueMain">Oil Heater option available instead of direct-fire heating system in asphalt storage tanks.</h2>
-                            <br>
-                            <ul class="list-disc ml-6 font-thin">
-                                <li>With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.</li>
-                                <li>Includes a high-efficiency 2” diameter coil system inside the asphalt tank.</li>
-                                <li>Connections for asphalt tankers with coil heating systems.</li>
-                                <li>Thermally insulated with ceramic fiber.</li>
-                                <li>Stainless steel exterior sheet covering.</li>
-                                <li>Equipped with a diesel burner.</li>
-                                <li>Automatic on/off control based on temperature.</li>
-                                <li>Two operating modes: Automatic and Manual.</li>
-                                <li>Digital thermometers with programmable set point for burner activation and shutoff.</li>
-                                <li>Siemens PLC-based control system.</li>
-                                <li>100-liter (26.4-gallon) thermal oil expansion tank.</li>
-                                <li>100% duty cycle.</li>
-                                <li>Includes safety systems and automatic shutdown in case of errors.</li>
-                            </ul>
-                        </Card>
-                        <div class="w-full flex flex-col justify-center items-center gap-3">
-                            <div class="h-0.5 bg-blueMain w-[250px]"></div>
-                            <div class="h-0.5 bg-redBg w-[250px] mr-20"></div>
-                        </div>
+                <div class="w-full px-8 md:px-72 grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div class="w-full bg-grisT flex flex-col gap-6 p-8 rounded-xl">
+                    <div class="w-full flex justify-center">
+                      <img src={oil1.src} alt="">
                     </div>
-                    <div class="w-full flex flex-col gap-10 z-10">
-                        <div class="w-full pr-0 md:pr-32">
-                            <img src={oil1.src} alt="" class="max-w-[450px] w-full">
-                        </div>
-                        <div class="bg-blueMain p-4 md:pr-52 md:rounded-l-2xl">
-                            <h2 class="text-white text-xl md:text-2xl">24/7 customer service</h2>
-                            <br>
-                            <p class="text-grisSubP font-normal">Our team is available around the clock, 
-                                ready to assist you at any time, even on weekends and holidays.
-                            </p>
-                            <br>
-                            <Whatsbtn />
-                        </div>
+                    <div class="w-full flex justify-between items-center">
+                      <h1 class="text-white text-xl md:text-2xl">Oil Heater</h1>
+                      <button>
+                          <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" stroke-width="1.6"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6 2.25C2.85442 2.25 2.25 2.85441 2.25 3.6V20.4C2.25 21.1456 2.85441 21.75 3.6 21.75H20.4C21.1456 21.75 21.75 21.1456 21.75 20.4V3.6C21.75 2.85442 21.1456 2.25 20.4 2.25H3.6ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9V11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15V12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z" fill="#ffffff"></path></svg>
+                      </button>
                     </div>
+                  </div>
+                  <div class="w-full bg-grisT flex flex-col gap-6 p-8 rounded-xl">
+                    <div class="w-full flex justify-center">
+                      <img src={oil1.src} alt="">
+                    </div>
+                    <div class="w-full flex justify-between items-center">
+                      <h1 class="text-white text-xl md:text-2xl">Hot Oil Coils</h1>
+                      <button id="openModalBtn" class="bg-blue-700 hover:bg-blue-600 p-3 rounded-lg transition">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" stroke-width="1.6"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6 2.25C2.85442 2.25 2.25 2.85441 2.25 3.6V20.4C2.25 21.1456 2.85441 21.75 3.6 21.75H20.4C21.1456 21.75 21.75 21.1456 21.75 20.4V3.6C21.75 2.85442 21.1456 2.25 20.4 2.25H3.6ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9V11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15V12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z" fill="#ffffff"></path></svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 pr-0 md:pr-32">
                     <Card>
@@ -147,26 +131,30 @@ const tanksSlides2 = [
                         </p>
                     </Card>
                 </div>
-                <div class="w-full md:pr-32 bg-bgBeige p-4 grid grid-cols-1 md:grid-cols-2">
-                    <div class="w-full">
-                        <h2>Hot Oil Coils</h2>
-                        <div>
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                    <div class="w-full text-justify">  
-                        <p>
-                            Our asphalt storage tanks are equipped with coils through which hot oil circulates, ensuring even and efficient heating 
-                            of the asphalt. The hot oil passes through the coils, preventing solidification and maintaining the asphalt at the ideal
-                             temperature for use. 
-                        </p><br>
-                        <p>
-                            This system provides reliable performance, reduces energy consumption, and allows for precise temperature control. 
-                            The design helps minimize wear and tear, contributing to a longer lifespan of the tank while ensuring optimal asphalt
-                             consistency and readiness for operation.
-                        </p>
-                    </div>
-                </div>
+                 <div id="modalOverlay" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md relative">
+      
+      <!-- Botón cerrar -->
+      <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+      
+      <h2 class="text-xl font-semibold mb-4">Oil Heater</h2>
+      <p class="text-gray-700">• With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.
+ • Includes a high-efficiency 2” diameter coil system inside the asphalt tank.
+ • Connections for asphalt tankers with coil heating systems.
+ • Thermally insulated with ceramic fiber.
+ • Stainless steel exterior sheet covering.
+ • Equipped with a diesel burner.
+ • Automatic on/off control based on temperature.
+ • Two operating modes: Automatic and Manual.
+ • Digital thermometers with programmable set point for burner activation and shutoff.
+ • Siemens PLC-based control system.
+ • 100-liter (26.4-gallon) thermal oil expansion tank.
+ • 100% duty cycle.
+ • Includes safety systems and automatic shutdown in case of errors.</p>
+    </div>
+  </div>
+  </div>
+                
              </div>
         <!-- Second Section -->
             <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
@@ -175,70 +163,10 @@ const tanksSlides2 = [
                   This method provides fast, efficient heating with minimal energy loss.
                 </p>
                 <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
-                <div class="w-full mx-32 bg-bgBeige p-8 grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-                    <div>
-                      <img src="" alt="">
-                    </div>
-                    <div>
-                      <h2>Direct Fire Heating Burner</h2>
-                      <br>
-                      <p>
-                        Direct fire heating works on the basis of a diesel burner that would irradiate heat to a tube inside the asphalt tank, which 
-                        has two secondary tubes to irradiate its heat with better distribution and the gases exit through the steam condensers.
-                      </p>
-                    </div>
-                </div>
-                <div class="w-full flex gap-20">
-                    <div class="bg-blueMain p-4 rounded-r-2xl pl-32">
-                        <h2 class="text-white text-xl md:text-2xl">24/7 customer service</h2>
-                        <br>
-                        <p class="text-grisSubP font-normal">Our team is available around the clock, 
-                            ready to assist you at any time, even on weekends and holidays.
-                        </p>
-                        <br>
-                        <Whatsbtn />
-                    </div>
-                  
-                  <div class="w-full rounded-2xl bg-white p-4 flex gap-10 mr-32">
-                    <div>
-                      <h2>Vapor condensers</h2><br>
-                      <p>
-                        Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage and heating, preventing emissions 
-                        from escaping into the environment. Installed on the tank’s vent line, they cool down hot vapors into liquid form, reducing odor,
-                        improving safety, and ensuring compliance with environmental regulations.
-                      </p>
-                    </div>
-                    <div>
-                      <img src="" alt="">
-                    </div>
-                  </div>
-                </div>        
+                    
             </div>
         </div>
-        <div class="w-full md:px-32 flex flex-col px-8 gap-10">
-          <div class="w-full flex justify-between font-bold text-2xl md:text-3xl">
-            <div>
-              <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
-              <SeparatorBlue></SeparatorBlue>
-            </div>
-            <div>
-              <h1 class="text-end text-blueMain">
-                ENHANCE YOUR COMPANY IMAGE <br>
-                WITH TRIASO DESIGN
-              </h1>
-            </div>
-          </div>
-          <p class="font-bold text-grisT text-base md:text-lg text-justify">
-            Triaso’s aesthetic side panels are designed not just for visual appeal, but to elevate the professional image of your equipment and 
-            company. These original side panels provide a clean, modern look that reflects quality and attention to detail—leaving a strong impression
-             on clients, inspectors, and the public, but also protect internal components from dust, weather, and debris. Ideal for projects in urban
-              or high-visibility areas, they reinforce your brand’s commitment to excellence and enhance the overall presentation of your asphalt
-               storage tank.
-          </p>
-          <div>
-            <img src={sideP.src} alt="">
-          </div>
-        </div>    
+           
     </div>
 </section>
 <style is:global>
@@ -294,4 +222,26 @@ tabContents.forEach(content => {
       });
     })();
     </script>
+    <script is:inline>
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const modalOverlay = document.getElementById("modalOverlay");
+
+    // Abrir modal
+    openModalBtn.addEventListener("click", () => {
+      modalOverlay.classList.remove("hidden");
+    });
+
+    // Cerrar modal
+    closeModalBtn.addEventListener("click", () => {
+      modalOverlay.classList.add("hidden");
+    });
+
+    // Cerrar modal al hacer clic fuera del contenido
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.add("hidden");
+      }
+    });
+  </script>
     

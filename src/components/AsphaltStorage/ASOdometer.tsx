@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Odometer from 'react-odometerjs';
 import 'odometer/themes/odometer-theme-default.css';
 import single from '../../assets/images/IntegralAsphalt/single.png';
+import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.png";
 
 const ASOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -85,7 +86,7 @@ const ASOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
-            <img src={single.src} alt="" />
+            <img src={ASOdom.src} alt="" />
           </div>
         </div>
       </div>

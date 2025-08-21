@@ -56,7 +56,7 @@ const MiniGallery: React.FC<SliderProps> = ({
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {slides.map((slide, index) => (
-                <div key={index} className="w-full flex-shrink-0 relative">
+                <div key={index} className="w-full flex-shrink-0 relative rounded-xl">
                   <img
                     src={slide.img.src}
                     alt={`slide-${index}`}

@@ -4,57 +4,25 @@ import img5 from '../../assets/images/AsphaltPlant/agitators1.png';
 import img1 from '../../assets/images/AsphaltStorage/ATG1.png';
 import img3 from '../../assets/images/AsphaltStorage/ATG2.png';
 import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
+import img6 from '../../assets/images/AsphaltStorage/ASafety.jpg';
+import ASGallery from './ASGallery.astro';
+import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
+import sideP from '../../assets/images/DrumMixers/sideP.png';
 
 ---
 <section class="w-full mt-10 flex flex-col gap-10">
-    <div class="w-full bg-bgBeige p-4 px-4 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
-        <div>
-            <h2 class="text-lg md:text-xl">Asphalt Hoses</h2><br>
-            <p class="text-grisT">
-                When the asphalt pump pushes the asphalt, it reaches a desired height, 
-                and the pipe directs the asphalt into a stainless steel hose. This hose is connected to the asphalt plant,
-                 where the liquid asphalt is efficiently guided by gravity into the plant’s asphalt inlet.
-            </p>
-        </div>
-        <div>
-            <img src='' alt="">
-        </div>
+     <div class="w-full space-y-3 my-6">
+        <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
+        <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:px-32">
-        <div class="w-full flex flex-col gap-4">
-            <h1 class="font-bold text-xl md:text-2xl px-8">AGITATORS FOR ADDITIVE <br>AND POLYMERS</h1>
-            <div class="bg-white flex flex-col gap-6 md:rounded-2xl lg:text-lg text-base p-4">
-                <h2>Designed for a homogeneous mixture of additives and polymers,
-                     the agitator ensures uniform distribution of all components 
-                     within the asphalt.</h2>
-                <ul class="font-normal">
-                    <li class="list-disc ml-4">Two 5 Hp agitators for:</li>
-                    <li>
-                        <ul class="ml-4">
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Speeding up heating and homogenizing asphalt temperature.</li>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating type 2 polymers: natural latex, SBR, neoprene, etc.</li>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating additives such as:</li>
-                        
-                        <ol class="ml-8">
-                            <li>Rejuvenator for recycled asphalts.</li>
-                            <li> Asphalt softener.</li>
-                            <li>For warm mix applications.</li>
-                            <li> Adhesion promoter.</li>
-                            <li> Etc.</li>
-                        </ol>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Maintaining homogeneity in polymer-modified asphalts.</li>
-                    </ul>
-                    </li>
-                </ul>
-                <div class="w-full rounded-2xl px-5">
-                    <Image src={img5} alt="" class="rounded-2xl h-full md:h-[350px]"/>
-                </div>
-            </div>
-            <div class="w-full">
-                <img src={img2.src} alt="">
-            </div>
+    <div class="w-full flex justify-end px-8 md:px-52 rounded-xl">
+        <img src={img6.src} alt="" class="w-3/4 rounded-xl">
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-52">
+        <div>
+            <img src="" alt="">
         </div>
-        <div class="w-full flex flex-col gap-10 md:gap-20 px-8">
+        <div class="w-full flex flex-col gap-6">
             <h1 class="font-bold text-xl md:text-2xl text-redBg">SAFETY AND COMPLIANCE IN DESIGN <br>AND TRANSPORT</h1>
             <div class="w-full">
                 <h2 class="font-bold">DOT-Compliant Design for Safe Transport</h2><br>
@@ -74,6 +42,19 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
                       standards.
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="w-full flex justify-end px-8 md:px-52 rounded-xl">
+        <img src={img6.src} alt="" class="w-3/4 rounded-xl">
+    </div>
+    <div>
+    <ASGallery />   
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:px-32">
+        <div class="w-full flex flex-col gap-4">
+            <h1 class="font-bold text-xl md:text-2xl px-8">OPCIONAL</h1>         
+        </div>
+        <div class="w-full flex flex-col gap-10 md:gap-20 px-8">       
             <div class="w-full bg-blueMain text-white p-4 rounded-2xl">
                 <div class="p-4 flex justify-center items-center" id="slider-container"
                 data-img1={img1.src} 
@@ -97,38 +78,32 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
                     </p>
                 </div>
             </div>
-            <div class="w-full p-4 flex flex-col gap-4 font-bold">
-                <h2 class="text-xl md:text-2xl">
-                    Triaso® Vertical Asphalt Storage Tanks
-                </h2>
-                <div class="flex flex-col gap-10 text-grisT text-justify">
-                    <p>
-                    Triaso® vertical tanks are built for space efficiency and superior thermal performance. 
-                    Their upright configuration minimizes the asphalt surface exposed to air, significantly reducing 
-                    oxidation—particularly important when storing polymer-modified asphalts at high temperatures for extended
-                    periods.
-                    </p>
-                    <p>
-                    Equipped with high-efficiency internal coils and thick industrial-grade insulation, these tanks effectively
-                    retain heat, reduce energy consumption, and maintain a consistent product temperature, even in extreme 
-                    climates. Optional electric heaters can be added to meet specific operational needs or product requirements.
-                    </p>
-                    <p>
-                    Each tank includes OSHA-compliant safety features such as a caged ladder, top manhole access, anti-slip 
-                    diamond-plate deck, full perimeter handrails, and kickplates to ensure safe operation and maintenance access.
-                    </p>
-                    <p>
-                    At ground level, all valves, gauges, and connections are easily accessible, making loading, unloading,
-                    and temperature monitoring fast and secure. Standard models include a digital temperature controller, 
-                    and configurations can be customized with mixers, level indicators, vapor condensers, and other accessories 
-                    to match the demands of your application.
-                    </p>
-                </div>
-            </div>
-            
-        </div>
-        
+        </div>     
     </div>
+    <div class="w-full md:px-52 flex flex-col px-8 gap-10">
+          <div class="w-full flex justify-between font-bold text-2xl md:text-3xl">
+            <div>
+              <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
+              <SeparatorBlue></SeparatorBlue>
+            </div>
+            <div>
+              <h1 class="text-end text-blueMain">
+                ENHANCE YOUR COMPANY IMAGE <br>
+                WITH TRIASO DESIGN
+              </h1>
+            </div>
+          </div>
+          <p class="font-bold text-grisT text-base md:text-lg text-justify">
+            Triaso’s aesthetic side panels are designed not just for visual appeal, but to elevate the professional image of your equipment and 
+            company. These original side panels provide a clean, modern look that reflects quality and attention to detail—leaving a strong impression
+             on clients, inspectors, and the public, but also protect internal components from dust, weather, and debris. Ideal for projects in urban
+              or high-visibility areas, they reinforce your brand’s commitment to excellence and enhance the overall presentation of your asphalt
+               storage tank.
+          </p>
+          <div>
+            <img src={sideP.src} alt="">
+          </div>
+    </div> 
 
 </section>
 <script is:inline>
