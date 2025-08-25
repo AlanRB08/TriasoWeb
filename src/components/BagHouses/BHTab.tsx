@@ -1,5 +1,6 @@
 // src/components/Tabs.tsx
 import { useState } from "react";
+import Separator from "../unitComponents/Separator.astro";
 
 const images = [
   { id: 0, src: "/Gallery/baghouses1.png", alt: "Imagen 1" },
@@ -35,6 +36,7 @@ export default function Tab() {
         Self-contained, integrated dust control systems for effective air filtration and particle capture in asphalt plants—configurable 
         for both portable and stationary setups.
         </p>
+        
       </div>
 
       <img
