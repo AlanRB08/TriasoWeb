@@ -1,21 +1,11 @@
 ---
 import oil from '../../assets/images/AsphaltPlant/oil1.png';
 import ItemsSlider from '../LandinPage/ItemsSlider';
+import img1 from '../../assets/images/OilHeaters/21.png';
+import img2 from '../../assets/images/OilHeaters/23.png';
+import img3 from '../../assets/images/OilHeaters/24.png';
 
-const images1 = [
-  { src: '/Gallery/sliderHotMix/1.png', title: 'Preservation of Quality',texto:'Preservation of quality and integrity of the asphalt.' },
-  { src: '/Gallery/sliderHotMix/2.png', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
-  { src: '/Gallery/sliderHotMix/3.png', title: 'Versatile Storage Options' ,texto:'Long-duration thermal retention, ensuring it remains liquid and high-quality for extended periods.'},
-  { src: '/Gallery/sliderHotMix/4.png', title: 'Mobility' ,texto:'Triaso asphalt tanks allow quick setup without heavy machinery, ideal for relocatable operations.'},
-  { src: '/Gallery/sliderHotMix/5.png', title: 'Durability' ,texto:'Built with reinforcerd material, thermally insulated cylinders, and corrosion-resistant finishes.'},
-  { src: '/Gallery/sliderHotMix/6.png', title: 'Seamless Integration',texto:'Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.' },
-  { src: '/Gallery/sliderHotMix/7.png', title: 'Enhanced Safety' ,texto:'Equipped with guards, alarms, and visual indicators to protect personnel and equipment.'},
-  { src: '/Gallery/sliderHotMix/8.png', title: 'Cost-Effective' ,texto:'Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.'},
-  { src: '/Gallery/sliderHotMix/9.png', title: 'Improved Company Image' ,texto:'Industrial aesthetics elevate the visual appeal of your operation.'},
-  { src: '/Gallery/sliderHotMix/10.png', title: 'Customizable' ,texto:'Adaptable features to meet specific project requirements and operational goals.'}
 
-  // agrega hasta 16 o más imágenes
-];
 ---
 <section class="w-full mt-20 md:mt-32 font-bold text-grisT flex flex-col gap-10">
     <div class="px-8 md:px-32 w-fit">
@@ -34,15 +24,70 @@ const images1 = [
         </p>
     </div>
     <div class="w-full px-8 md:px-32 flex justify-center">
-        <img src={oil.src} alt="">
+        <img src={oil.src} alt="" class="">
     </div>
     <div class="w-full px-8 md:px-32 text-center">
-        <h2 class="text-black text-lg md:text-xl">Simplifying Operations with Triaso Intelligent Features</h2><br>
-        <p class="text-base md:text-lg">
+        <h2 class="text-blueMain text-xl md:text-3xl">Simplifying Operations with Triaso Intelligent Features</h2><br>
+        <p class="text-base md:text-lg text-grisT">
             Beyond storage, our tanks are equipped with user-friendly features like automated monitoring systems, real-time data tracking, 
             and efficient unloading mechanisms. 
             These technologies help streamline operations, reduce maintenance, and enhance productivity across the board.
         </p>
     </div>
-    <ItemsSlider images={images1} client:only></ItemsSlider>
+    <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-6 px-8 md:px-32">
+        <div class="w-full flex flex-col justify-center">
+            <div class="w-full flex justify-center">
+                <img src={img1.src} alt="" class="w-[180px]">
+            </div>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                Triaso asphalt storage tanks allow 
+            </p>
+            <h2 class="text-grisT text-xl md:text-2xl">quick setup</h2>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                without heavy machinery, ideal for relocatable operations
+            </p>
+        </div>
+        <div class="w-full flex flex-col justify-center">
+            <div class="w-full flex justify-center">
+                <img src={img2.src} alt="" class="w-[180px]">
+            </div>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                Preservation of 
+
+            </p>
+            <h2 class="text-grisT text-xl md:text-2xl">Quality</h2>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                and integrity of the asphlt
+            </p>
+        </div>
+        <div class="w-full flex flex-col justify-center">
+            <div class="w-full flex justify-center">
+                <img src={img3.src} alt="" class="w-[180px]">
+            </div>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                Streamlines delivery with
+            </p>
+            <h2 class="text-grisT text-xl md:text-2xl">automated weighing 
+</h2>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                ticket printing, and precise material 
+            </p>
+            <h2 class="text-grisT text-xl md:text-2xl">flow control
+
+</h2>
+        </div>
+        <div class="w-full flex flex-col justify-center">
+            <div class="w-full flex justify-center">
+                <img src={img1.src} alt="" class="w-[180px]">
+            </div>
+            <h2 class="text-grisT text-xl md:text-2xl">Long-duration
+ </h2>
+            <p class="text-base md:text-lg text-grisT font-thin">
+                thermal retention, ensuring it remains liquid and high-quality for
+            </p>
+            <h2 class="text-grisT text-xl md:text-2xl">extended periods
+ </h2>
+        </div>
+    </div>
+    
 </section>
