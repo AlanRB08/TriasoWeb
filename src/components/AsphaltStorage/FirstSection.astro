@@ -44,8 +44,8 @@ const iconos = [
     </div>
     
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[10%] items-center justify-center mt-10">
-        <div class="text-grisT flex flex-col h-full gap-3 md:gap-10 text-justify bg-white border-2 border-black rounded-r-2xl px-8 md:pl-32">
-          <h2 class="mt-20 text-lg md:text-xl text-start w-full text-black">Versatile and Efficient Asphalt Storage Solutions</h2>
+        <div class="text-grisT flex flex-col h-full gap-3 md:gap-10 text-justify bg-white border-2 border-black rounded-r-2xl px-8 md:pl-32 py-10">
+          <h2 class="text-lg md:text-xl text-start w-full text-black">Versatile and Efficient Asphalt Storage Solutions</h2>
             <p>Our tanks are engineered for versatility and ease of use across various asphalt storage needs. With advanced
                  features such as efficient heating systems and precise temperature control, they ensure that asphalt remains
                   at its ideal consistency. Whether you're working with standard or modified asphalt, these tanks provide the
@@ -70,12 +70,12 @@ const iconos = [
     <ASOdometer client:only></ASOdometer>
     <ItemsSlider client:only images={iconos}/>
     <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
-                    <div class="w-full relative h-[250px]">
+                    <div class="w-full relative h-[100px] md:h-[250px]">
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
                       <div class="w-full flex justify-center">
-                        <img src={ASControl.src} alt="" class="w-1/2 rounded-2xl">
+                        <img src={ASControl.src} alt="" class="w-full lg:w-3/4 rounded-2xl">
                       </div>
                       <div class="w-full flex flex-col gap-6 my-10">
                         <h2 class="text-xl md:text-2xl">Control System</h2>
@@ -103,7 +103,7 @@ const iconos = [
                                 </ul>
                             </div>
                             <div class="w-full text-center text-black flex justify-center">
-                                <img src={ASLevelSensor.src} alt="" class="w-1/2 rounded-xl">
+                                <img src={ASLevelSensor.src} alt="" class="w-full lg:w-3/4 rounded-xl">
                             </div>
                         </div>
                     </div>
@@ -118,20 +118,20 @@ const iconos = [
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 my-10">
       <div class="w-full flex flex-col gap-6 pl-8 md:pl-52">
         <h2 class="text-xl md:text-2xl">Asphalt Hoses</h2>
-        <p class="text-base md:text-lg">
+        <p class="text-base md:text-lg text-grisT">
           When the asphalt pump pushes the asphalt, it reaches a desired height, and the pipe directs the asphalt
            into a stainless steel hose. This hose is connected to the asphalt plant, where the liquid asphalt is efficiently
             guided by gravity into the plant’s asphalt inlet.
         </p>
         <div class="w-full flex justify-center">
-          <img src={ASHoses.src} alt="" class="w-1/2 rounded-xl">
+          <img src={ASHoses.src} alt="" class="w-3/4 rounded-xl">
         </div>
       </div>
       <div class="w-full flex gap-6 pr-8 md:pr-52 bg-white rounded-l-2xl border-black border-2 py-8">
         <div class="w-full pl-8 h-full">
-          <img src={fiberGlass.src} alt="" class="h-full">
+          <img src={fiberGlass.src} alt="" class="w-[150px] h-auto">
         </div>
-        <div>
+        <div class="w-full">
           <h2 class="text-lg md:text-xl">Two inches fiberglass insulation</h2><br>
           <p class="text-base md:text-lg font-thin">
             Our asphalt storage tanks feature six-inch fiberglass insulation, designed for superior performance
