@@ -19,7 +19,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b relative">
+    <div className="border-b relative w-full">
         <div className="bg-blueMain absolute left-0 h-full w-2">
         </div>
       <button
@@ -48,7 +48,7 @@ type AccordionProps = {
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
-    <div className="w-[80vw] md:w-[50vw] mx-auto border rounded-lg shadow flex flex-col">
+    <div className="w-[90vw] md:w-[50vw] mx-auto border rounded-lg shadow flex flex-col">
       {items.map((item, index) => (
         <AccordionItem key={index} {...item} />
       ))}
