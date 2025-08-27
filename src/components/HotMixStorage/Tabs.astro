@@ -37,7 +37,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT" data-tab-content="tab1">
                 <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center ">
-                    <div class="bg-white p-4 font-bold rounded-r-2xl px-8 md:px-36 border-2 border-black">
+                    <div class="bg-white p-4 font-bold md:rounded-r-2xl px-8 md:px-36 md:border-2 border-black order-2 md:order-1">
                         <p>Offers automated, precise control for weighing and delivering hot mix, reducing the risk of
                              human error and increasing operational efficiency.
                         </p><br>
@@ -52,17 +52,17 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                              conditions.
                         </p>
                     </div>
-                    <div class="w-full h-auto flex justify-center items-center px-8 md:px-36">
+                    <div class="w-full h-auto flex justify-center items-center px-8 md:px-36 order-1 md:order-2">
                         <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                     </div>
                 </div>
                 <TwoColumnSection
                 leftBg="bg-redBg"
-  rightBg="bg-blueMain"
-  imageSrc={Tred.src}
-  imageAlt="Red T icon"
-  imageWidth="150px"
-                >
+                rightBg="bg-blueMain"
+                imageSrc={Tred.src}
+                imageAlt="Red T icon"
+                imageWidth="150px"
+                                >
                     <div slot="left" class="flex flex-col justify-center gap-3">
                         <h1 class="text-xl md:text-2xl">Versatil Setup</h1>
                         <p class="text-base md:text-lg">
@@ -79,7 +79,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                     </div>
                 </TwoColumnSection>
 
-                <div class="w-full px-12 md:px-52 flex flex-col justify-center gap-2">
+                <div class="w-full md:px-52 flex flex-col justify-center gap-2">
                  <Collapsable client:only/>   
                 </div>
                 <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
@@ -88,7 +88,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                            User Friendly Interface
                         </h2>
                         <br>
-                        <p class="px-8 md:px-52 font-thin text-base md:text-lg relative z-20">
+                        <p class="px-8 md:px-52 font-thin text-sm md:text-base relative z-20">
                             Created to offer plant operators a deeper understanding of their operation, this cloud-based platform
                              stores all production data remotely and securely. It gives you the freedom to access detailed
                               performance analytics from any location and any device—whether you're in the office, on the 
@@ -98,7 +98,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
-                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2">
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2 gap-3 md:gap-10">
                             <div class="w-full text-center text-black ">
                                 <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
                                 <p class="text-base md:text-lg">
@@ -117,7 +117,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                     <div class="w-full relative">
                     <!-- Imagen -->
                         <img src={semiSilo.src} alt="Semi silo" 
-                            class="w-[60vw] mx-auto relative z-10 -mb-10">
+                            class="w-[90vw] md:w-[60vw] mx-auto relative z-10 -mb-10">
                         
                         <!-- Sección blanca -->
                         <div class="w-full bg-bgMain h-[80px] relative z-0"></div>
@@ -130,16 +130,16 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
         <!-- Second Section -->
          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
             <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
-                <div class="w-full flex flex-col justify-start items-center gap-6">
+                <div class="w-full flex flex-col justify-start items-center gap-6 order-2 md:order-1">
                     <div class="bg-white p-4 font-bold rounded-2xl">
                         <h1 class="text-lg md:text-2xl text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
                         <br>
-                        <p>Hot mix storage silos are essential for maintaining the quality and 
+                        <p class="text-base md:text-lg">Hot mix storage silos are essential for maintaining the quality and 
                             efficiency of asphalt production and delivery operations. They offer a
                             range of benefits, from preserving the integrity of the asphalt mix to
                             streamlining logistics and enhancing overall productivity.
                         </p><br>
-                        <p>
+                        <p class="text-base md:text-lg">
                             gned with durability and advanced technology, these silos ensure reliable 
                             performance under demanding conditions while reducing operational costs and 
                             downtime. Whether for stationary or mobile use, a silo provides unmatched 
@@ -147,13 +147,13 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                             plant setup.
                         </p>
                     </div>
-                    <div class="w-full bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-6 rounded-2xl font-bold">
+                    <div class="w-full bg-white p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-2xl font-bold">
                         <div class="w-full">
-                            <img src={silo1.src} alt="" class="max-w-[300px]">
+                            <img src={silo1.src} alt="" class="w-full md:max-w-[300px]">
                         </div>
                         <div class="w-full">
                             <h1 class="text-xl md:text-2xl text-black">Silo Cone</h1>
-                            <p>
+                            <p class="text-base md:text-lg">
                                 Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. 
                                 This geometry guarantees first-in/first-out discharge, eliminates material buildup on the walls, 
                                 and prevents mix segregation. The result: clean, consistent flow with every load.
@@ -161,8 +161,9 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                         </div>
                     </div>
                 </div>
-                <div>
-                    <video src={HTAdv} autoplay loop></video>
+                <div class="w-full order-1 md:order-2">
+                    <video src={HTAdv} autoplay loop playsinline 
+                    webkit-playsinline ></video>
                 </div>
             </div>
             <div class="w-full min-h-[50vh] bg-[#727272] px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
@@ -215,7 +216,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
          <!-- Third Section -->
           <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
             <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full py-10">
-                <div class="bg-white border-2 border-black rounded-r-2xl p-4 w-full md:pl-52 py-10">
+                <div class="bg-white md:border-2 md:border-black md:rounded-r-2xl p-4 w-full md:pl-52 py-10 order-2 md:order-1">
                     <p>
                         The silos are built with durable, easy-to-maintain components that require
                          minimal upkeep. Their robust construction and simple design reduce the need
@@ -230,7 +231,7 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                         year-round.
                     </p>
                 </div>
-                <div class="w-full flex justify-center">
+                <div class="w-full flex justify-center order-1 md:order-2">
                     <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                 </div>
             </div>
@@ -243,13 +244,13 @@ import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
                     </p>
                     <Whatsbtn />
                 </div>
-                <div class="w-full col-span-2 flex flex-col items-center justify-center gap-6 md:pr-52">
+                <div class="w-full col-span-2 flex flex-col items-center justify-center gap-6 md:pr-52 px-8 mb-5 md:mb-0">
                     <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
-                </AcordeonItem>
+                    </AcordeonItem>
+                    <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
+                    </AcordeonItem>
+                    <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
+                    </AcordeonItem>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch items-center justify-center mt-10 px-4 md:px-36 w-full">
