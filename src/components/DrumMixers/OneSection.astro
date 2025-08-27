@@ -10,10 +10,11 @@ import reinfo from '../../assets/images/DrumMixers/extrareinfo.jpg';
 import obracivil from "../../assets/images/DrumMixers/obracivil.jpg";
 import obracivil2 from "../../assets/images/DrumMixers/obracivil2.jpg";
 import Image from 'astro/components/Image.astro';
-import TComponent from '../unitComponents/TComponent.astro';
+import Tred from '../../assets/images/AsphaltStorage/redT.png';
+import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
 import AcordeonItem from '../unitComponents/AcordeonItem';
 ---
-<div class="w-full flex flex-col items-center justify-center font-bold my-20">
+<div class="w-full flex flex-col items-center justify-center font-bold mt-10">
     <div class="lg:px-52 px-8">
         <h1 class="text-redBg text-xl md:text-3xl">The One and Always</h1><br>
         
@@ -21,8 +22,8 @@ import AcordeonItem from '../unitComponents/AcordeonItem';
     <div class="w-full lg:px-52 px-8">
         <img src={obracivil.src} alt="" class="rounded-2xl"/>
     </div>
-    <div class="w-full flex lg:px-52 px-8 my-10">
-        <div class="w-full px-20">
+    <div class="w-full flex flex-col md:flex-row lg:px-52 px-8 my-10">
+        <div class="w-full md:px-20">
             <h2 class="text-black text-lg md:text-xl">Engineered for Demanding Producers. Built for Performance.</h2><br>
             <p class="text-grisT text-base md:text-lg text-justify">At Triaso, we know that no two asphalt operations are alike. That’s why our plants
              aren’t off-the-shelf solutions—they’re precision-engineered systems tailored to 
@@ -73,7 +74,30 @@ import AcordeonItem from '../unitComponents/AcordeonItem';
              of Hot Mix <br> for All Paving Projects in Your Region
         </h2>
     <Image src={img3} alt="" class="mt-10"/>
-    <TComponent />
+    <TwoColumnSection
+    leftBg="bg-redBg"
+  rightBg="bg-blueMain"
+  imageSrc={Tred.src}
+  imageAlt="Red T icon"
+  imageWidth="150px"
+    >
+        <div slot="left" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">STATIONARY DRUM MIXERS</h1>
+            <p class="text-base md:text-lg">
+                Durable and easy to move, the drum mixers are built for long-term use with heavy steel supports 
+                that eliminate the need for concrete foundations.
+            </p>
+        </div>
+        <div slot="right" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">
+                MOBILE DRUM MIXERS
+            </h1>
+            <p class="text-base md:text-lg">
+                Perfect for remote job sites, these mixers provide quick setup,
+                 portability, and high-output production while remaining cost-effective.
+            </p>
+        </div>
+  </TwoColumnSection>
     <div class="w-full px-8 md:px-52 flex flex-col gap-3 my-10">
         <AcordeonItem title='Extra-reinforced front shield' content='The Triaso® drum is fully sealed at both ends with extra reinforcement to maintain internal temperatures and maximize combustion efficiency. Heavy-duty steel and EPDM rubber seals prevent the entry of cold air, improving fuel economy and ensuring consistent, high-quality asphalt mixes. The entire drum is sealed to prevent the entry of unwanted cold air, maintaining optimal internal temperatures and combustion efficiency. This airtight design includes an extra-reinforced front shield and sealing components made of heavy-duty steel or EPDM rubber. These materials provide long-lasting durability, resist high temperatures, and ensure that no external air disrupts the controlled environment inside the drum, improving fuel efficiency and mix quality.' client:only/>
         <AcordeonItem title='Optimized Insulation Design' content='The drum mixer is built with high-efficiency mineral wool insulation that maintains consistent internal temperatures throughout the drying and mixing process. This insulation minimizes heat loss, reduces fuel consumption, and ensures the asphalt mix stays at optimal temperature—delivering reliable performance even in demanding weather conditions.' client:only/>
