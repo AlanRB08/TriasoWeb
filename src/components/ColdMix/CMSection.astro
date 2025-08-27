@@ -1,18 +1,21 @@
 ---
-
+import Logo from "../../assets/logos/LogoTriasoUs.png";
 ---
-<div class="w-full grid grid-cols-1 md:grid-cols-2 items-center justify-center font-bold text-white bg-blueMain px-8 md:px-32">
-    <div class="p-6 m-4 bg-grisT rounded-2xl h-[200px]">
+<div class="w-full grid grid-cols-1 md:grid-cols-2 items-center justify-center font-bold text-white bg-blueMain px-8 md:px-32 relative gap-3 md:gap-10 py-5 md:py-0">
+    <div class="p-6 m-4 bg-grisT rounded-2xl h-full xl:h-[200px] z-10">
         <h2 class="text-lg md:text-xl">Low Operating Costs</h2><br>
         <p class="text-grisSubP">Without the need for burners or thermal oil systems, cold mix plants
              offer significantly reduced fuel and maintenance expenses. Their simple mechanical 
              systems also mean less downtime and faster return on investment for municipalities
               and contractors alike.</p>
     </div>
-    <div class="p-6 m-4 bg-grisT rounded-2xl h-[200px]">
+    <div class="p-6 m-4 bg-grisT rounded-2xl h-full xl:h-[200px] z-10">
         <h2 class="text-lg md:text-xl">On-Demand Asphalt Production</h2><br>
         <p class="text-grisSubP">Cold mix plants offer the flexibility to produce asphalt on-site and 
             as needed, reducing reliance on external suppliers. This minimizes delays and ensures
              the mix is always fresh and ready to use, especially valuable in remote locations or</p>
+    </div>
+    <div class="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
+        <img src={Logo.src} alt="">
     </div>
 </div>

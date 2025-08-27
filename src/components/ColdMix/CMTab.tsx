@@ -17,7 +17,7 @@ export default function CMTab() {
             aria-label='Tab Selector'
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center border-b-2 md:pr-4 w-3/4 text-sm md:text-base ${
+            className={`text-center border-b-2 md:pr-4 w-full px-5 md:mx-10 text-base md:text-xl ${
               activeIndex === index 
                 ? "border-redBg text-black font-bold" 
                 : "border-transparent text-grisT font-normal"
@@ -36,7 +36,7 @@ export default function CMTab() {
         ))}
       </div>
 
-      <div className="w-full h-[400px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="w-full h-full md:h-[400px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}

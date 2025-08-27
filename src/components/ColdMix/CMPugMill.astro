@@ -3,10 +3,11 @@ import Image from "astro/components/Image.astro"
 import img2 from '../../assets/images/ColdMix/pugmill2.png';
 import img3 from '../../assets/images/ColdMix/pugmill3.png';
 import GallerySlider from "../unitComponents/GallerySlider";
-import TComponent from "../unitComponents/TComponent.astro";
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import AcordeonItem from "../unitComponents/AcordeonItem";
 import img6 from '../../assets/images/AsphaltPlant/elevator1.png';
 import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
+import Tred from '../../assets/images/AsphaltStorage/redT.png';
 
 const binSlides = [
 {
@@ -44,19 +45,43 @@ const binSlides = [
 ]
 ---
 <div class="w-full font-bold flex flex-col justify-center items-center mt-[20vh]">
-    <TComponent/>
+    <TwoColumnSection
+    leftBg="bg-redBg"
+  rightBg="bg-blueMain"
+  imageSrc={Tred.src}
+  imageAlt="Red T icon"
+  imageWidth="150px"
+    >
+        <div slot="left" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
+            <p class="text-base md:text-lg">
+                Manufacturing highly protable self-contained, and integrated models, Triaso® baghouses
+                operates at an air to cloth ratio as high as 8:1.
+            </p>
+        </div>
+        <div slot="right" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">
+                Different Types of Filter Bags and Their Specific Applications:
+            </h1>
+            <ul class="text-base md:text-lg">
+                <li>Polyester</li>
+                <li>Nomex</li>
+                <li>Polyamide (P84)</li>
+            </ul>
+        </div>
+  </TwoColumnSection>
     <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
-        <div class="col-span-2 flex justify-center">
-            <Image src={binUnit1} alt="" class="w-1/2 md:w-full"/>
+        <div class="col-span-2 flex justify-start md:justify-center">
+            <Image src={binUnit1} alt="" class="w-3/4 md:w-full"/>
         </div>
         <div class="col-span-3 flex flex-col items-start h-full justify-center md:pr-52 pr-8 md:pl-0 pl-8">
             <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>Cold Mix <br>Asphalt Plants</h1><br>
-            <p class="text-lg md:text-xl font-thin text-grisT text-justify">Our cold mix are equipped with advanced dosing systems designed for optimal
+            <p class="text-base md:text-lg font-thin text-grisT text-justify">Our cold mix are equipped with advanced dosing systems designed for optimal
                  precision and reliability. These systems ensure accurate material flow and
                   distribution, meeting the demands of even the most stringent project
                    requirements.
             </p><br>
-            <div class="w-full flex flex-col gap-6 pr-10">
+            <div class="w-full flex flex-col gap-3 md:gap-6 pr-5 md:pr-10">
                 <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
                 </AcordeonItem>
                 <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
@@ -72,10 +97,10 @@ const binSlides = [
             </div>
         </div>
     </div>
-    <div class="w-full md:w-1/2 px-8 md:px-32">
+    <div class="w-full md:w-1/2 px-8 md:px-32 py-10">
         <Image src={img2} alt={'Front PugMill Image'}/>
     </div>
-    <div class="w-full flex flex-col justify-center items-center gap-10 px-8 md:px-32">
+    <div class="w-full flex flex-col justify-center items-center gap-10 px-8 md:px-32 py-10">
         <h1 class="text-blueMain text-xl md:text-2xl">Discover the Magic Behind our Pugmill</h1>
         <p class="text-base md:text-lg text-grisP">
             The pugmill is a crucial component in cold mix plants, designed to effectively blend a variety of materials, including aggregates,
@@ -157,13 +182,13 @@ const binSlides = [
                 </div>
             </div>
        </div>
-    <div class="w-full bg-blueMain px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 py-10">
+    <div class="w-full bg-blueMain px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 py-10 mb-5">
         <div>
             <img src="" alt="">
         </div>
-        <div class="w-full px-10">
-            <h1 class="text-3xl md:text-4xl text-white">High portable equipment</h1><br>
-            <p class="text-lg md:text-xl text-grisP">We understand the importance of getting your equipment up and running as quickly as possible.
+        <div class="w-full md:px-10">
+            <h1 class="text-2xl md:text-4xl text-white">High portable equipment</h1><br>
+            <p class="text-base md:text-lg text-grisSubP">We understand the importance of getting your equipment up and running as quickly as possible.
                  Our Triaso equipment is designed for fast installation and startup.</p>
         </div>
     </div>
