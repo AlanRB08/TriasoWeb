@@ -60,20 +60,20 @@ export default function BinSelector() {
               Without Aesthetic Side Panels
             </button>
           </div>
-          <div className="flex items-center justify-center h-[650px]">
+          <div className="flex items-center justify-center w-full md:h-[650px]">
             <img
               src={currentImage}
               alt={`Bins ${selectedBins} - ${panelType}`}
-              className="max-w-[1100px]"
+              className="md:max-w-[1100px]"
             />
           </div>
-          <div className="flex bg-white rounded-2xl py-2">
-            <p className='font-bold text-base md:text-lg py-2 px-4'>Bin units:</p>
+          <div className="flex bg-white rounded-2xl py-2 justify-center items-center">
+            <p className='font-bold text-base md:text-lg py-2 md:px-4'>Bin units:</p>
           {binOptions.map((num) => (
             <button
               key={num}
               onClick={() => setSelectedBins(num)}
-              className={`mx-5 px-5 py-2 text-base md:text-lg font-bold rounded-full ${
+              className={`mx-3 md:mx-5 px-3 md:px-5 h-full py-1 md:py-2 text-base md:text-lg font-bold rounded-full ${
                 selectedBins === num
                   ? 'bg-blueMain text-white'
                   : 'bg-white text-black'

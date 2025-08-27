@@ -119,10 +119,34 @@ import Tred from '../../assets/images/AsphaltStorage/redT.png';
 import Separator from "../unitComponents/Separator.astro";
 import sideP from '../../assets/images/DrumMixers/sideP.png';
 import LearnBtn from "../unitComponents/LearnBtn.astro";
-import TComponent from "../unitComponents/TComponent.astro";
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 ---
 <div class='w-full flex flex-col justify-center items-center gap-10'>
-    <TComponent/>
+  <TwoColumnSection
+    leftBg="bg-redBg"
+  rightBg="bg-blueMain"
+  imageSrc={Tred.src}
+  imageAlt="Red T icon"
+  imageWidth="150px"
+    >
+        <div slot="left" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
+            <p class="text-base md:text-lg">
+                Manufacturing highly protable self-contained, and integrated models, Triaso® baghouses
+                operates at an air to cloth ratio as high as 8:1.
+            </p>
+        </div>
+        <div slot="right" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">
+                Different Types of Filter Bags and Their Specific Applications:
+            </h1>
+            <ul class="text-base md:text-lg">
+                <li>Polyester</li>
+                <li>Nomex</li>
+                <li>Polyamide (P84)</li>
+            </ul>
+        </div>
+  </TwoColumnSection>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 overflow-visible px-8 md:px-52">
       <div class="w-full">
 
@@ -139,7 +163,7 @@ import TComponent from "../unitComponents/TComponent.astro";
           </div>
       </div>
   </div>
-  <div class="w-full px-8 md:px-52 text-3xl md:text-4xl font-bold">
+  <div class="w-full px-8 md:px-52 text-2xl md:text-4xl font-bold">
     <div class="w-full flex justify-between">
       <div>
         <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
