@@ -6,7 +6,7 @@ import baghouse2 from '../../assets/images/DrumMixers/baghouse2.png';
 import Image from 'astro/components/Image.astro';
 import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
 ---
-<div class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20">
+<div class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20 gap-6">
     <h1 class="w-full text-start px-8 md:px-52 text-2xl md:text-4xl mb-10">INTEGRATED BAGHOUSES</h1>
     <div class="w-full px-8 md:px-52">
         <SeparatorBlue/>
@@ -18,7 +18,7 @@ import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
              for industries like asphalt plants and aggregate processing, baghouses offer reliable, long-lasting performance.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full">
-        <div class="px-8 md:pl-52 bg-white border-black border-2 rounded-r-2xl py-10">
+        <div class="px-8 md:pl-52 bg-white border-black border-2 md:rounded-r-2xl py-10">
             <h2 class="text-black text-xl md:text-2xl">Ranging from 4,000 to 90,000 ACFM Capacity</h2>
             <p>The baghouses are highly efficient at capturing fine particles,<span class="text-black"> achieving up
                  to 99.99% filtration</span>. Total and homogeneous return of fines to the asphalt mix 
@@ -28,12 +28,12 @@ import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
                  ensures cleaner air, contributing to a greener, more eco-conscious workplace.</p>
         </div>
         <div class="flex flex-col items-center justify-center px-8 md:pr-52">
-            <Image src={baghouse} alt="" class="w-1/2"/>
+            <Image src={baghouse} alt="" class="w-3/4 md:w-1/2"/>
         </div>
     </div>
     <div class="w-full flex flex-col md:flex-row text-white my-10">
         <Image src={baghouse2} alt="" class="w-full h-auto md:h-[250px] object-cover"/>
-        <div class="bg-blueMain px-4 md:px-8 md:pr-52 py-6 md:py-0 flex flex-col items-center justify-center rounded-l-2xl">
+        <div class="bg-blueMain px-4 md:px-8 md:pr-52 py-6 md:py-0 flex flex-col items-center justify-center md:rounded-l-2xl">
             <h2 class="text-xl md:text-2xl mb-4">
                 Mechanism of baghouses available in pulse jet and reverse jet
             </h2>
