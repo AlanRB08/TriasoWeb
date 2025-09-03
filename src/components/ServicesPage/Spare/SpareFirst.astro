@@ -1,0 +1,25 @@
+---
+import Separator from "../../unitComponents/Separator.astro"
+import Boxes from "../../../assets/images/Boxes.jpg";
+---
+<section class="w-full px-8 md:px-52 mt-32">
+    <div class="w-full flex flex-col items-end">
+        <h1 class="text-3xl md:text-5xl font-bold text-grisT">SPARE PARTS</h1>
+        <div>
+            <Separator/>
+        </div>
+    </div>
+    <div class="w-full flex flex-col gap-10 font-bold">
+        <p class="text-base md:text-lg text-grisT">
+            Triaso spare parts are precisely engineered to deliver optimal performance, extending both component 
+            lifespan and overall equipment durability. With unmatched quality and reliability, they help maintain peak 
+            efficiency while minimizing downtime. <br>
+            We understand the importance of keeping your equipment running non-stop. The operation of many other machines 
+            depends on the reliability of your asphalt plant. <br>
+            Strict quality control ensures the operation of your asphalt plant with low maintenance for many years.
+        </p>
+        <div class="w-full">
+            <img src={Boxes.src} alt="">
+        </div>
+    </div>
+</section>

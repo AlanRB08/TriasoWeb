@@ -125,7 +125,7 @@ export const menuItems = [
     children : [
       {
         title : "SPARE PARTS",
-        url : "/service/spare-parts",
+        url : "/Spare",
       },
       {
         title : "COSTUME DESIGN",
