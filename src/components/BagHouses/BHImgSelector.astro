@@ -7,6 +7,8 @@ import img1 from '../../assets/images/DrumMixers/baghouse.png';
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import BHCustom from "./BHCustom.astro";
+import BHoppers from "../../assets/images/BagHouses/BHoppers.png";
+import BHVideo from "../../assets/images/BagHouses/BHVideo.mp4";
 const tanksSlides = [
   {
     image: 'src/assets/images/BagHouses/GallerySlider/BHG1.webp',
@@ -160,10 +162,10 @@ const tanksSlides = [
         <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32">
-        <div>
-            <img src="" alt="">
+        <div class="w-full flex justify-center">
+            <video class="w-1/2" src={BHVideo} autoplay></video>
         </div>
-        <div class="w-full rounded-2xl p-4 bg-white text-justify text-base px-8 md:text-lg text-grisT">
+        <div class="w-full rounded-2xl p-4 bg-white text-justify text-base px-8 md:text-lg text-grisT flex flex-col justify-center">
             <p>
                 The Triaso Extractor is designed to effectively manage airflow and ensure optimal gas filtration in the asphalt plant. 
                 With its curved blade fan, the extractor pulls gases through the system while maintaining efficient air circulation. By 
@@ -215,10 +217,10 @@ const tanksSlides = [
                     <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
                 </div>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div>
-                        <img src="" alt="">
+                    <div class="w-full flex justify-center">
+                        <img src={BHoppers.src} alt="" class="rounded-2xl w-3/4">
                     </div>
-                    <div>
+                    <div class="w-full flex justify-center items-center">
                         <p class="text-grisT text-base md:text-lg">
                             The finer dust particles are directed into the baghouse through a strategically placed high side inlet.
                             This ensures horizontal and downward airflow, preventing fine dust from being re-entrained into the system.

@@ -2,6 +2,7 @@
 import Separator from "../unitComponents/Separator.astro";
 import img1 from '../../assets/images/AsphaltPlant/drum3.png';
 import Image from "astro/components/Image.astro";
+import tolvasV from "../../assets/images/BinUnits/tolvasVideo.mp4";
 ---
 <div class="w-full flex flex-col items-start justify-center mt-20">
     <div class="px-8 md:px-52">
@@ -28,5 +29,7 @@ import Image from "astro/components/Image.astro";
             </div>
         </div>
     </div>
-    <h1>VIDEO</h1>
+    <div class="w-full flex justify-center">
+        <video class="w-4/5" src={tolvasV} autoplay></video>
+    </div>
 </div>
