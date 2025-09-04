@@ -120,6 +120,8 @@ import Separator from "../unitComponents/Separator.astro";
 import sideP from '../../assets/images/DrumMixers/sideP.png';
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
+import BUFeeders from "../../assets/images/BinUnits/BUFeeders.jpg";
+import binHigh from "../../assets/images/BinUnits/binHigh.jpg";
 ---
 <div class='w-full flex flex-col justify-center items-center gap-10'>
   <TwoColumnSection
@@ -149,11 +151,11 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
   </TwoColumnSection>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 overflow-visible px-8 md:px-52">
       <div class="w-full">
-
+          
       </div>
       <div class="w-full flex flex-col gap-10">
           <div>
-              <img src="" alt="">
+              <img src={BUFeeders.src} alt="" class="rounded-2xl">
           </div>
           <div class="w-full flex flex-col justify-center">
               <h1 class="text-lg md:text-xl font-bold">Belt Feeders with Rubberized Pulleys </h1>
@@ -180,6 +182,18 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
       <div class="max-w-[250px]">
         <LearnBtn/>
       </div>
+    </div>
+  </div>
+  <div class="w-full bg-[url(/fondoAsp.png)] px-8 md:px-52 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="text-white font-bold flex flex-col justify-center">
+      <h1 class="text-2xl md:text-3xl">Highly portable equipment </h1><br>
+      <p class="text-base md:text-lg">
+        We understand the importance of getting your equipment up and running as quickly as possible.
+         Our Triaso equipment is designed for fast installation and startup.
+      </p>
+    </div>
+    <div class="w-full">
+      <img src={binHigh.src} alt="" class="w-4/5 rounded-2xl">
     </div>
   </div>
     <div class="w-full">
