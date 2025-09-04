@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/tolva1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/tolva2.png", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/CMTLevel.png", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/CMGLevel.png", alt: "Imagen 2" },
 ];
 
 export default function CMTab() {
@@ -17,7 +17,7 @@ export default function CMTab() {
             aria-label='Tab Selector'
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center border-b-2 md:pr-4 w-full px-5 md:mx-10 text-base md:text-xl ${
+            className={`text-center border-b-2 md:pr-4 w-1/2 px-5 md:mx-10 text-base md:text-xl ${
               activeIndex === index 
                 ? "border-redBg text-black font-bold" 
                 : "border-transparent text-grisT font-normal"
@@ -35,7 +35,7 @@ export default function CMTab() {
           </button>
         ))}
       </div>
-
+        <br />
       <div className="w-full h-full md:h-[400px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
