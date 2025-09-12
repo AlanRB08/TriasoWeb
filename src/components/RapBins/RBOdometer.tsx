@@ -1,0 +1,89 @@
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+
+const RPOdometer = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const [value, setValue] = useState(0);
+  const [value1, setValue1] = useState(0);
+  const [value2, setValue2] = useState(0);
+  const [value4, setValue4] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Reinicia valores antes de animar
+          setValue(0);
+          setValue1(0);
+          setValue2(0);
+          setValue4(0);
+
+          setTimeout(() => {
+            setValue(10);
+            setValue1(20);
+            setValue2(18);
+            setValue4(25);
+          }, 300); // Pequeño retraso para asegurar reinicio
+        }
+      },
+      {
+        threshold: 0.5, // cuando el 50% sea visible
+      }
+    );
+
+    const current = sectionRef.current;
+    if (current) observer.observe(current);
+
+    return () => {
+      if (current) observer.unobserve(current);
+    };
+  }, []);
+
+  return (
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
+        <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+              <Odometer value={value} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
+              <Odometer value={value4} format="(,ddd)" duration={2000} />
+              <p className="text-sm font-normal ml-3">Tph</p>
+            </div>
+            <p className="text-grisP">RAP feeding capacity</p>
+          </div>
+
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+              <Odometer value={value1} format="(,ddd)" duration={2000} />
+              <p className="text-sm font-normal ml-3">M Tons</p>
+            </div>
+            <p className="text-grisP">RAP capacity</p>
+          </div>
+
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+              <Odometer value={value2} format="(,ddd)" duration={2000} />
+              <p className="text-sm font-normal ml-3">inches</p>
+            </div>
+            <p className="text-grisP text-start w-full">Dosing belt</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <img src={single.src} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className='my-20'>
+        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Your best business begins here</h1>
+      </div>
+    </div>
+  );
+};
+
+export default RPOdometer;

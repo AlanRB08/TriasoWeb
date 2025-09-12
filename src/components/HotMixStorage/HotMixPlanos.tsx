@@ -10,7 +10,15 @@ import HMainS1 from '../../assets/images/HotMix/Silo50-Comp.Assy-R.png';
 import HMainBS1 from '../../assets/images/HotMix/Silo50-Comp.Assy.png';
 import HLeftBS1 from '../../assets/images/HotMix/Silosf50-1.png';
 import HRightBS1 from '../../assets/images/HotMix/Silosf50-3.png';
-import HLeftBS2 from '../../assets/images/HotMix/Siloae100-1.png';
+import HRL50 from "../../assets/images/HotMix/Silo-SF50TBpL.png";
+import HRL100 from "../../assets/images/HotMix/Silo-SF100TBpL.png";
+import HRL150 from "../../assets/images/HotMix/Silo-SF150TBpL.png";
+import HRL200 from "../../assets/images/HotMix/Silo-SF200TBpL.png";
+import HRR50 from "../../assets/images/HotMix/Silo-SF50TBpFn.png";
+import HRR100 from "../../assets/images/HotMix/Silo-SF100TBpFn.png";
+import HRR150 from "../../assets/images/HotMix/Silo-SF150TBpFn.png";
+import HRR200 from "../../assets/images/HotMix/Silo-SF200TBpFn.png";
+import HLeftBS2 from '../../assets/images/HotMix/Siloae100-1.png'
 import HRightBS2 from '../../assets/images/HotMix/Siloae100-3.png';
 import HMainBS2 from '../../assets/images/HotMix/Siloae100-2.png';
 import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
@@ -46,6 +54,20 @@ const HotMixPlanos = () => {
   '200tons': HMainBR4.src,
   // Agrega más versiones aquí
 };
+ const imageMap2: Record<VersionType, string> = {
+  '50tons': HRL50.src,
+  '100tons': HRL100.src,
+  '150tons': HRL150.src,
+  '200tons': HRL200.src,
+  // Agrega más versiones aquí
+};
+ const imageMap3: Record<VersionType, string> = {
+  '50tons': HRR50.src,
+  '100tons': HRR100.src,
+  '150tons': HRR150.src,
+  '200tons': HRR200.src,
+  // Agrega más versiones aquí
+};
 
 //ESTADOS DE LOS DROPWDOWNS
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -62,6 +84,8 @@ const HotMixPlanos = () => {
   });
 
 const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
+const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
+const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
 
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
@@ -1064,7 +1088,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                         </div>
                         <div className='w-[500px] flex items-center justify-center'>
                             <img 
-                                src={tolva2F1.src} 
+                                src={selectedImage2} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
@@ -1169,11 +1193,7 @@ const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
                             </div>
                         </div>
                         <div className='h-[525px] flex justify-center items-center'>
-                        {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L1.src} alt="Dinámica con paneles" className=''/>
-                            ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className=''/>
-                            )}
+                            <img src={selectedImage3} alt="" className='w-full h-full' />
                         </div>
                     </div>
 

@@ -1,58 +1,130 @@
 ---
 import rap from '../../assets/images/DrumMixers/rap.png';
-import linea from '../../assets/images/RapBins/lineas.png';
+import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import AcordeonItem from '../unitComponents/AcordeonItem';
+import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
 ---
-<section class="w-full mt-20 font-bold">
+<section class="w-full font-bold">
+    <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT">
+
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT px-8 md:px-52">
+        <div class="w-full col-span-1">
+            <img src={rap.src} alt="" class="w-3/4">
+        </div>
+        <div class="w-full col-span-2 text-white flex flex-col justify-center">
+            <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br>
+            <p class="text-base md:text-lg font-thin">
+                The specialized drum collar is designed to ensure the controlled and efficient entry 
+                of Recycled Asphalt Pavement (RAP) into the mixing zone. Fed directly from the RAP bins through
+                 a dedicated conveyor, the material enters the drum smoothly and precisely.
+            </p>
+        </div>
+    </div>
+    <div class="w-full px-8 md:px-52 bg-grisT text-white">
+        <h1 class="text-end text-xl md:text-2xl font-bold">RAP ENTRY FLIGHTS</h1>
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT px-8 md:px-52">
+        <div class="w-full col-span-1">
+            <p class="text-base md:text-lg font-thin text-white">
+                For recycled asphalt pavement (RAP), dedicated RAP entry flights are used, to gently introduce RAP into the hot 
+                aggregate stream. Their shape allows short, even drops that maximize heat transfer while minimizing blue smoke and
+                 material buildup.
+            </p>
+        </div>
+        <div class="w-full col-span-2 text-white flex flex-col justify-center">
+            
+             <img src=´´ alt="" class="w-3/4">
+        </div>
+    </div>
+    <div class="w-full bg-grisT px-8 md:px-52 py-10">
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
     <div class="w-full flex flex-col justify-end items-end space-y-2">
         <div class="h-0.5 w-1/3 bg-blueMain"></div>
         <div class="h-0.5 w-1/5 bg-redBg"></div>
     </div>
-    <div class="w-full px-8 md:px-32">
-        <h1 class="text-2xl md:text-3xl text-blueMain text-center">Ranging capacity from 10 to 25 Tph</h1>
-    </div>
-    <div class="w-full flex gap-10 px-8 md:px-32 mt-20">
-        <div class="w-full">
-            <h2 class="text-lg md:text-xl">RAP Collar</h2><br>
-            <p class="font-thin text-base md:text-lg">
-                Built to withstand the abrasive nature of RAP, these feeders are constructed with high-strength materials that reduce wear 
-                and extend service life. Their calibrated design ensures that RAP enters the drum mixer's collar at the optimal rate, preventing 
-                surges or blockages that could affect mixing efficiency. This precise feeding mechanism helps maintain consistent asphalt quality
-                 while optimizing fuel and material consumption.
-            </p>
-        </div>
-        <div class="w-full flex justify-center">
-            <img src={rap.src} alt="" class="w-1/2">
-        </div>
-    </div>
-    <div class="w-full px-8 md:px-32">
-        <img src="" alt="">
+    <div class="text-center text-2xl md:text-3xl font-bold text-redBg">
+        <h1>With Triaso, Become the Exclusive Provider of Hot Mix for <br> All Paving Projects in Your Region</h1>
     </div>
     <div>
         <img src="" alt="">
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="w-full md:pl-32 font-thin text-base md:text-lg flex flex-col gap-6">
-            <p>
-                Equipped with large-capacity RAP bins, Triaso® RAP Feeders accommodate high-volume material loads
-                 while ensuring even distribution. The system is designed to prevent material buildup, ensuring a steady and 
-                 uniform flow into the drum mixer without disruptions.
-            </p>
-            <div class="w-full flex flex-col justify-start items-start space-y-2">
-                <div class="h-0.5 w-1/3 bg-redBg"></div>
-                <div class="h-0.5 w-1/3 bg-blueMain ml-10"></div>
-            </div>
-            <p>
-                By incorporating Triaso® RAP Feeders, asphalt plants can enhance RAP utilization, improve mix consistency, 
-                and support sustainable production by efficiently reintegrating recycled materials into the asphalt mix.
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52">
+        <div>
+            <h2 class="text-xl md:text-2xl font-bold">We undestand the importance to keep your equipment running non-stop</h2><br>
+            <p class="text-base md:text-lg font-thin">Equipped with large-capacity RAP bins, Triaso® RAP Feeders accommodate high-volume material loads while
+                 ensuring even distribution. The system is designed to prevent material buildup, ensuring a steady and
+                  uniform flow into the drum mixer without disruptions.
             </p>
         </div>
-        <div class="text-white bg-blueMain rounded-2xl">
-            <div class="p-8">
-                <h2 class="text-xl md:text-2xl">Available in 10 or 25-ton capacity bins</h2><br>
-                <p class="font-thin text-lg md:text-xl">With configurations of one, two, or three RAP bin units</p>
-            </div>
-            <img src={linea.src} alt="">
+        <div>
+            <img src="" alt="">
         </div>
+    </div>
+    <div>
+        <img src="" alt="">
+    </div>
+   <TwoColumnSection
+                leftBg="bg-redBg"
+                rightBg="bg-blueMain"
+                imageSrc={Tred.src}
+                imageAlt="Red T icon"
+                imageWidth="150px"
+                >
+                    <div slot="left" class="flex flex-col justify-center gap-3">
+                        <h1 class="text-xl md:text-2xl">INCORPORATING RAP FEEDERS</h1>
+                        <p class="text-base md:text-lg">
+                            By incorporating Triaso® RAP Feeders, asphalt plants can enhance RAP utilization, improve mix consistency,
+                             and support sustainable production by efficiently reintegrating recycled materials into the asphalt mix.
+                        </p>
+                    </div>
+                    <div slot="right" class="flex flex-col justify-center gap-3">
+                        <h1 class="text-xl md:text-2xl">
+                           AVAILABLE IN 10 OR 25-TONS
+                        </h1>
+                        <p class="text-base md:text-lg">
+                            With configurations of one, two, or three RAP bin units
+                        </p>
+                    </div>
+    </TwoColumnSection>
+    <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
+        <div class="col-span-2 flex justify-center">
+            <img src={binUnit1.src} alt="" class="w-1/2 md:w-full"/>
+        </div>
+        <div class="col-span-3 flex flex-col items-start h-full justify-center md:pr-52 pr-8 md:pl-0 pl-8">
+            <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>RAP feeders</h1><br>
+            <p class="text-lg md:text-xl font-thin text-grisT text-justify">
+                Our RAP bins are equipped with advanced dosing systems designed 
+                for optimal precision and reliability.
+                These systems ensure accurate material flow and distribution, meeting the demands of even the most stringent project
+                requirements.
+            </p><br>
+            <div class="w-full flex flex-col gap-6 pr-10">
+                <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Automated Controls" content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Anti-Clogging Mechanism" content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow.">
+                </AcordeonItem>
+                <AcordeonItem client:only title="Energy-Efficient Operation" content="Engineered to optimize power usage, reducing operational costs while maintaining high performance.">
+                </AcordeonItem>
+            </div>
+            <div class="text-lg md:text-xl font-thin text-grisT text-justify py-10">
+                <p>
+                    These features make our RAP bin dosing systems essential for operations that require precise and
+                     efficient incorporation of recycled asphalt pavement into the production process.
+                </p>
+            </div>
+        </div>
+
     </div>
 
 </section>
