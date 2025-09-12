@@ -1,7 +1,11 @@
 ---
 import PAFirstSection from "../components/PowderAd/PAFirstSection.astro";
+import PAOdometer from "../components/PowderAd/PAOdometer";
+import PASecondSection from "../components/PowderAd/PASecondSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Powder Additives Page">
     <PAFirstSection></PAFirstSection>
+    <PAOdometer client:only></PAOdometer>
+    <PASecondSection></PASecondSection>
 </Layout>
