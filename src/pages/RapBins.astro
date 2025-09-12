@@ -5,9 +5,13 @@ import RBCollar from "../components/RapBins/RBCollar.astro";
 import RBGSection from "../components/RapBins/RBGSection.astro";
 import RBPlanos from "../components/RapBins/RBPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
+import RBOdometer from "../components/RapBins/RBOdometer";
+import RBCustom from "../components/RapBins/RBCustom.astro";
 ---
 <Layout title="Rap Bins Page">
     <RBFSection></RBFSection>
+    <RBOdometer client:only></RBOdometer>
+    <RBCustom></RBCustom>
     <RBCollar></RBCollar>
     <RBGSection/>
     <RBPlanos client:only />
