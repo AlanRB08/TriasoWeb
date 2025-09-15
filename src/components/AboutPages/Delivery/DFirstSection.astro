@@ -1,0 +1,50 @@
+---
+import Deliver1 from "../../../assets/images/About/Delivery/Deliver1.jpg";
+import Deliver2 from "../../../assets/images/About/Delivery/Deliver2.webp";
+import Deliver3 from "../../../assets/images/About/Delivery/Deliver3.jpg";
+import Separator from "../../unitComponents/Separator.astro";
+---
+<section class="w-full mt-28 text-grisT font-bold px-8 md:px-52">
+    <div class="w-full flex justify-end">
+        <div class="border-b-2 border-b-grisT inline-block justify-end">
+            <h1 class="text-end text-3xl md:text-4xl">
+                DELIVERY AND INSTALLATION
+            </h1>
+        </div>
+    </div>
+    <div class="w-full my-16 text-base md:text-lg">
+        <p>
+           Efficient delivery and professional installation are key to getting your asphalt plant up and running without delays.
+            At Triaso, we 
+           combine decades of experience with precise logistics to ensure your equipment arrives safely and on time.
+
+        </p><br>
+        <p>
+            Our specialized team handles every installation with strict technical standards, guaranteeing reliable operation from day one.
+             By minimizing setup time and ensuring every component is correctly installed, we help you achieve maximum productivity
+              and long-term performance with confidence.
+        </p>
+    </div>
+    <div class="w-full">
+        <img src={Deliver1.src} alt="" class="w-3/4 rounded-2xl">
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 justify-center items-center">
+        <div class="font-bold">
+            <h2 class="text-redBg text-xl md:text-2xl">
+                Worldwide installations
+            </h2>
+            <Separator></Separator>
+            <p class="text-grisT text-base md:text-lg">
+                Our specialized technicians have traveled around the world to install and maintain our equipment. In the delivery
+                 of your equipment, we include, without additional charge, a team of specialized technicians who command and take 
+                 responsibility for the installation, start of production and training of the operators.
+            </p>
+        </div>
+        <div class="w-full flex justify-center">
+            <img src={Deliver2.src} alt="" class="w-3/4 rounded-2xl">
+        </div>
+    </div>
+    <div class="w-full">
+        <img src={Deliver3.src} alt="" class="w-3/4 rounded-2xl">
+    </div>
+</section>

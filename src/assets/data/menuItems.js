@@ -167,11 +167,11 @@ export const menuItems = [
       },
       {
         title : "MANUFACTURE",
-        url : "/about/manufacture",
+        url : "/Manufacture",
       },
       {
         title : "DELIVERY AND INSTALLATION",
-        url : "/about/delivery-and-installation",
+        url : "/Delivery",
       },
       {
         title : "SOME TIPS FOR BUYING AN EQUIPMENT",
