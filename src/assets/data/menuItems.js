@@ -137,7 +137,7 @@ export const menuItems = [
       },
       {
         title : "REHABILITATION",
-        url : "/service/rehabilitation",
+        url : "/Rehabilitation",
       }
     ]
   },
