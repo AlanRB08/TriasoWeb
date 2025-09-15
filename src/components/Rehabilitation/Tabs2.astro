@@ -1,0 +1,162 @@
+---
+import Card from "../unitComponents/Card.astro";
+---
+<section class="w-full flex flex-col items-center justify-center gap-4 bg-grisT px-8 md:px-52" data-tabs>
+    <div class="flex flex-col items-center justify-center gap-4 mt-8">
+        <div class="flex items-center justify-around w-full gap-4 px-8">
+            <button class="text-xl md:text-2xl tab-button py-2 md:px-4 font-bold focus:outline-none"
+            data-tab="tab1" aria-selected="true">
+                Direct Support and Evaluation
+            </button>
+            <button class="tab-button py-2 md:px-4 font-bold text-xl md:text-2xl focus:outline-none"
+            data-tab="tab2" aria-selected="false">
+                Focus on Compliance and Safety
+            </button>
+        </div>
+        <div class="py-4">
+            <!-- First Section -->
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                            On-site or remote evaluations
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black">
+                            Contact us for a no-obligation assessment from our specialists.
+                        </p>
+                    </Card>
+                     <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                            Full guidance from start to finish
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black">
+                           Whether it’s a quick fix or a full modernization, our experts will guide you through every step.
+                        </p>
+                    </Card>
+                </div>
+                <div>
+                     <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                            Factory-level quality in your existing plant
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black px-20">
+                            We apply the same standards used in our new equipment <br> manufacturing to every rehabilitation project.
+                        </p>
+                    </Card>
+                </div>
+             </div>
+        <!-- Second Section -->
+            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                            Regulatory compliance
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black">
+                            We update your equipment to meet the latest environmental and safety regulations.
+                        </p>
+                    </Card>
+                     <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                           Improved operator safety
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black">
+                           We enhance guarding, controls, and protection systems for safer plant operation.
+                        </p>
+                    </Card>
+                </div>
+                <div>
+                     <Card>
+                        <h2 class="text-center font-bold text-xl md:text-2xl text-black">
+                            Cleaner emissions
+                        </h2><br>
+                        <p class="text-center font-thin text-base md:text-lg text-black w-full px-20">
+                            We can integrate emissions control systems like <br> baghouses or scrubbers to meet modern standards.
+                        </p>
+                    </Card>
+                </div>
+            </div>
+        </div>    
+    </div>
+</section>
+<style is:inline>
+  /* Estilos para los tabs activos */
+  .tab-button[aria-selected="true"] {
+    color: #6b97c6;
+    border-bottom: 2px solid var(--rojo-btn);
+  }
+  
+  .tab-button[aria-selected="false"] {
+    color: white;
+    border-bottom: 2px solid white;
+  }
+  
+  .tab-button:hover:not([aria-selected="true"]) {
+    color: #6b97c6;
+    border-bottom: 2px solid var(--rojo-btn);
+  }
+  
+</style>
+<script is:inline>
+
+    (function initTabs() {
+      document.querySelectorAll('section[data-tabs]').forEach(tabSection => {
+        const tabButtons = tabSection.querySelectorAll('.tab-button');
+        const tabContents = tabSection.querySelectorAll('.tab-content');
+    
+        // Ocultar todos menos el primero
+        const selectedTab = tabSection.querySelector('.tab-button[aria-selected="true"]');
+const selectedTabId = selectedTab?.getAttribute('data-tab');
+
+tabContents.forEach(content => {
+  const contentTabId = content.getAttribute('data-tab-content');
+  content.classList.toggle('hidden', contentTabId !== selectedTabId);
+});
+
+    
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+    
+            tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+            button.setAttribute('aria-selected', 'true');
+    
+            tabContents.forEach(content => {
+              content.classList.add('hidden');
+            });
+    
+            const activeContent = tabSection.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
+            if (activeContent) activeContent.classList.remove('hidden');
+          });
+        });
+      });
+    })();
+</script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.getElementById("extradiv");
+    const arrow = document.getElementById("dropdown-arrow");
+    const button = document.getElementById("dropdown-button");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        const isClosed =
+          dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
+
+        if (isClosed) {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          arrow.style.transform = "rotate(180deg)";
+        } else {
+          dropdown.style.maxHeight = "0px";
+          arrow.style.transform = "rotate(0deg)";
+        }
+      });
+    }
+  });
+</script>
+<style is:inline>
+    #dropdown-arrow {
+        transition: transform 0.3s ease;
+    }
+</style>
+    
