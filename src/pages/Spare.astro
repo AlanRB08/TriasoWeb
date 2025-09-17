@@ -3,11 +3,13 @@ import CustomerBanner from "../components/ServicesPage/Spare/CustomerBanner.astr
 import SpareFirst from "../components/ServicesPage/Spare/SpareFirst.astro";
 import SpareAni from "../components/ServicesPage/Spare/SpareAni.astro";
 import Layout from "../layouts/Layout.astro";
+import SpareGallery from "../components/ServicesPage/Spare/SpareGallery";
 ---
 
 <Layout title="Spare Page">
     <SpareFirst/>
     <CustomerBanner/>
     <SpareAni/>
+    <SpareGallery client:only></SpareGallery>
     
 </Layout>

@@ -132,31 +132,5 @@ tabContents.forEach(content => {
       });
     })();
 </script>
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.getElementById("extradiv");
-    const arrow = document.getElementById("dropdown-arrow");
-    const button = document.getElementById("dropdown-button");
 
-    if (button) {
-      button.addEventListener("click", () => {
-        const isClosed =
-          dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
-
-        if (isClosed) {
-          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-          arrow.style.transform = "rotate(180deg)";
-        } else {
-          dropdown.style.maxHeight = "0px";
-          arrow.style.transform = "rotate(0deg)";
-        }
-      });
-    }
-  });
-</script>
-<style is:inline>
-    #dropdown-arrow {
-        transition: transform 0.3s ease;
-    }
-</style>
     
