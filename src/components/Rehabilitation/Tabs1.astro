@@ -5,24 +5,24 @@ import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.png";
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
         <div class="flex items-center justify-around w-full gap-4 px-8 md:px-52">
-            <button class="text-xl md:text-2xl tab-button py-2 md:px-4 font-bold focus:outline-none"
+            <button class="text-xl md:text-2xl tab-button-1 py-2 md:px-4 font-bold focus:outline-none"
             data-tab="tab1" aria-selected="true">
                 Asphalt Plants
             </button>
-            <button class="tab-button py-2 md:px-4 font-bold text-xl md:text-2xl focus:outline-none"
+            <button class="tab-button-1 py-2 md:px-4 font-bold text-xl md:text-2xl focus:outline-none"
             data-tab="tab2" aria-selected="false">
                 Rock Crushers
             </button>
         </div>
         <div class="py-4">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
+            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
                 <div class="w-full px-8 md:px-52">
                     <img src={Rehab1.src} alt="">
                 </div>
              </div>
         <!-- Second Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
+            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content-1 text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
             <div class="w-full px-8 md:px-52">
                     <img src={Rehab2.src} alt="">
                 </div>
@@ -32,17 +32,17 @@ import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.png";
 </section>
 <style is:inline>
   /* Estilos para los tabs activos */
-  .tab-button[aria-selected="true"] {
+  .tab-button-1[aria-selected="true"] {
     color: var(--rojo-btn);
     border-bottom: 2px solid var(--rojo-btn);
   }
   
-  .tab-button[aria-selected="false"] {
+  .tab-button-1[aria-selected="false"] {
     color: var(--gris-titulos);
     border-bottom: 2px solid var(--gris-titulos);
   }
   
-  .tab-button:hover:not([aria-selected="true"]) {
+  .tab-button-1:hover:not([aria-selected="true"]) {
     color: var(--rojo-btn);
     border-bottom: 2px solid var(--rojo-btn);
   }
@@ -52,11 +52,11 @@ import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.png";
 
     (function initTabs() {
       document.querySelectorAll('section[data-tabs]').forEach(tabSection => {
-        const tabButtons = tabSection.querySelectorAll('.tab-button');
-        const tabContents = tabSection.querySelectorAll('.tab-content');
+        const tabButtons = tabSection.querySelectorAll('.tab-button-1');
+        const tabContents = tabSection.querySelectorAll('.tab-content-1');
     
         // Ocultar todos menos el primero
-        const selectedTab = tabSection.querySelector('.tab-button[aria-selected="true"]');
+        const selectedTab = tabSection.querySelector('.tab-button-1[aria-selected="true"]');
 const selectedTabId = selectedTab?.getAttribute('data-tab');
 
 tabContents.forEach(content => {
@@ -76,38 +76,12 @@ tabContents.forEach(content => {
               content.classList.add('hidden');
             });
     
-            const activeContent = tabSection.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
+            const activeContent = tabSection.querySelector(`.tab-content-1[data-tab-content="${tabId}"]`);
             if (activeContent) activeContent.classList.remove('hidden');
           });
         });
       });
     })();
 </script>
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.getElementById("extradiv");
-    const arrow = document.getElementById("dropdown-arrow");
-    const button = document.getElementById("dropdown-button");
 
-    if (button) {
-      button.addEventListener("click", () => {
-        const isClosed =
-          dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
-
-        if (isClosed) {
-          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-          arrow.style.transform = "rotate(180deg)";
-        } else {
-          dropdown.style.maxHeight = "0px";
-          arrow.style.transform = "rotate(0deg)";
-        }
-      });
-    }
-  });
-</script>
-<style is:inline>
-    #dropdown-arrow {
-        transition: transform 0.3s ease;
-    }
-</style>
     
