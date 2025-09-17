@@ -129,7 +129,7 @@ export const menuItems = [
       },
       {
         title : "COSTUME DESIGN",
-        url : "/service/costume-design",
+        url : "/CustomDesign",
       },
       {
         title : "MAINTENANCE",
