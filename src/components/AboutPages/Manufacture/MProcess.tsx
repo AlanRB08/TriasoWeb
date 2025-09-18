@@ -18,16 +18,6 @@ const MProcess = () => {
                 By manufacturing the majority of our components,<br /> we achieve significant advantages
             </h2>
         </div>
-        <div className='w-full bg-white p-10'>
-            <div className='flex flex-col gap-2 w-full'>
-                <div className='bg-redBg inline-block'>
-                    A
-                </div>
-            </div>
-            <div className='w-full'>
-                <img src="" alt="" />
-            </div>
-        </div>
 
     </section>
   )
