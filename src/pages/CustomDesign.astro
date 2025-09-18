@@ -1,7 +1,45 @@
 ---
 import CDFirstSection from "../components/ServicesPage/CustomDesign/CDFirstSection.astro";
+import GallerySlider from "../components/unitComponents/GallerySlider";
 import Layout from "../layouts/Layout.astro";
+import CDG1 from "../assets/images/Service/CustomDesign/Gallery/CDG1.png";
+
+const Slides= [
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG1.png',
+        caption:'lncorporador de hule de llanta al asfalto de 60 Tph'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG2.png',
+        caption:'lncorporador de hule de llanta al asfalto de 60 Tph'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG3.png',
+        caption:'lncorporador de hule de llanta al asfalto de 60 Tph'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG4.png',
+        caption:'lncorporador de hule de llanta al asfalto de 60 Tph'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG5.png',
+        caption:'Tanque de reacción de hule de llanta con asfalto de 30,000 galones (114M3)'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG6.png',
+        caption:'Tanque de reacción de hule de llanta con asfalto de 30,000 galones (114M3)'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG7.png',
+        caption:'Tanque de reacción de hule de llanta con asfalto de 30,000 galones (114M3)'
+    },
+    {
+        image:'src/assets/images/Service/CustomDesign/Gallery/CDG8.png',
+        caption:'Tanque de reacción de hule de llanta con asfalto de 30,000 galones (114M3)'
+    }
+]
 ---
 <Layout title="Custom Design Page">
     <CDFirstSection></CDFirstSection>
+    <GallerySlider client:only slides={Slides} visibleThumbs={4}></GallerySlider>
 </Layout>

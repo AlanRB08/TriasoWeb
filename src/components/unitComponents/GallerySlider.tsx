@@ -127,7 +127,7 @@ export default function GallerySlider({ slides, visibleThumbs = 5 }: ImageSlider
     <>
       {/* Vista normal */}
       <div 
-        className={`w-full bg-white p-4 rounded shadow max-w-5xl mx-auto ${isFullscreen ? 'hidden' : 'block'}`} 
+        className={`w-full my-16 bg-white p-4 rounded shadow max-w-5xl mx-auto ${isFullscreen ? 'hidden' : 'block'}`} 
         ref={sliderRef}
       >
         {/* Título */}
