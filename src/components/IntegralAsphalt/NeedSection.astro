@@ -10,17 +10,17 @@ import Image from 'astro/components/Image.astro';
     <div class="bg-white flex flex-col items-center justify-center rounded-md p-8 mb-10">
         <h1 class="text-2xl lg:text-4xl text-center mt-4 mb-8">Everything you need in a single unit.</h1>
         <div class="grid grid-cols-1 lg:grid-cols-2 justify-center items-start gap-10">
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden h-[350px]">
-            <Image src={logo1} alt="" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
-            <div class="relative z-10">
-                <h1 class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT">Perfect for small projects, patching, and premixed seals.</h1>
-                <p class="font-normal text-grisT text-justify">Perfect for small-scale jobs like patching, resurfacing,
-                    and premixed seals. Its compact design and efficient operation make it 
-                    ideal for quick, cost-effective asphalt production on demand.
-                </p>
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
+                <Image src={logo1} alt="" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
+                <div class="relative z-10">
+                    <h1 class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT">Perfect for small projects, patching, and premixed seals.</h1>
+                    <p class="font-normal text-grisT text-justify">Perfect for small-scale jobs like patching, resurfacing,
+                        and premixed seals. Its compact design and efficient operation make it 
+                        ideal for quick, cost-effective asphalt production on demand.
+                    </p>
+                </div>
             </div>
-            </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden h-[350px]">
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
                 <Image src={logo2} alt="" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
                 <div class="relative z-10">
                 <h1 class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT">
@@ -33,7 +33,7 @@ import Image from 'astro/components/Image.astro';
                 </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden h-[350px]">
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
                 <Image src={logo3} alt="" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
                 <div class="relative z-10">
                 <h1 class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT">
@@ -44,7 +44,7 @@ import Image from 'astro/components/Image.astro';
                     it meets strict environmental standards while delivering high performance.</p>
                     </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center h-[350px]">
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]">
                 <Image src={logo4} alt="" class="w-1/2"/>
                 <div class="relative z-10">
                 <h1 class="text-grisT lg:text-2xl text-lg">Continuous production <br> for 10 hours</h1>
@@ -52,7 +52,7 @@ import Image from 'astro/components/Image.astro';
                 </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden h-[350px]">
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
                 <Image src={logo5} alt="" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
                 <div class="relative z-10">
                 <h1 class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT">
@@ -66,7 +66,7 @@ import Image from 'astro/components/Image.astro';
                 </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center h-[350px]">
+            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]">
                 <h1 class="lg:text-2xl text-lg text-grisT">
                     Drum Mixer Flights</h1>
                 <p class="border-b-2 border-b-redBg pb-4 mb-4 font-normal text-grisT">Conventional flights, as in any standard-capacity drum mixer</p>
