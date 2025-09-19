@@ -16,61 +16,70 @@ const SpareGallery = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentImg, setCurrentImg] = useState("");
     const ItemGallery = [
-         {title:"Reductores",
+         {title:"REDUCTORES",
             image : img1
         },
-         {title:"Motores eléctricos",
+         {title:"MOTORES ELECTRICOS",
             image : img2
         },
-         {title:"Bandas",
+         {title:"BANDAS",
             image : img3
         },
-         {title:"Rodillos",
+         {title:"RODILLOS",
             image : img4
         },
-         {title:"Partes de cadenas de elevadores",
+         {title:"PARTES DE CADENAS DE ELEVADORES",
             image : img5
         },
-         {title:"Poleas",
+         {title:"POLEAS",
             image : img6
         },
-         {title:"Aros de tambores",
+         {title:"AROS DE TAMBORES",
             image : img7
         },
-         {title:"Roles",
+         {title:"ROLES",
             image : img8
         },
-         {title:"Partes de control",
+         {title:"PARTES DE CONTROL",
             image : img9
         },
-         {title:"Partes eléctricas",
+         {title:"PARTES ELECTRICAS",
             image : img10
         },
-         {title:"Válvulas Triaso",
+         {title:"VÁLVULAS TRIASO",
             image : img11
         },
-         {title:"Exportación de refacciones",
+         {title:"EXPORTACIÓN DE REFACCIONES",
             image : img12
         }
     ]
   return (
     <div className="w-full px-8 md:px-72 grid grid-cols-2 md:grid-cols-3 gap-10 py-10">
       {ItemGallery.map((element, i) => (
-        <div
-          key={i}
-          className="w-full bg-white cursor-pointer shadow hover:scale-105 transition-transform"
-          onClick={() => {
-            setCurrentImg(element.image.src);
-            setIsOpen(true);
-          }}
-        >
-          <img src={element.image.src} alt={element.title} className="w-full h-auto" />
-          <div className="w-full p-3 bg-blueMain">
-            <h2 className="text-base md:text-lg font-bold text-white">
-              {element.title}
-            </h2>
-          </div>
-        </div>
+        <div className="w-full bg-white flex cursor-pointer shadow hover:scale-105 transition-transform"
+  onClick={() => {
+    setCurrentImg(element.image.src);
+    setIsOpen(true);
+  }}
+>
+  <div className="w-2 self-stretch bg-blueMain text-blueMain px-2"></div>
+
+  <div className="w-full relative group">
+    <img 
+      src={element.image.src} 
+      alt={element.title} 
+      className="w-full h-auto z-10" 
+      loading="lazy"
+    />
+    <div className="w-full h-full flex items-center justify-center bg-black/50 absolute top-0 z-20 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+      <h1 className="text-xs md:text-sm text-white font-bold text-center">
+        {element.title}
+      </h1>
+    </div>
+  </div>
+</div>
+
       ))}
 
       {/* Modal */}
