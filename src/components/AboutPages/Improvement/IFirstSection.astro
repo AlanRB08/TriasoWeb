@@ -2,6 +2,10 @@
 import Card from "../../unitComponents/Card.astro";
 import LearnBtn from "../../unitComponents/LearnBtn.astro";
 import Planos from "../../../assets/images/planos.webp";
+import IAD1 from "../../../assets/images/About/Improvement/IAD1.jpg";
+import IAD2 from "../../../assets/images/About/Improvement/IAD2.jpg";
+import IAD3 from "../../../assets/images/About/Improvement/IAD3.jpg";
+import IAD4 from "../../../assets/images/About/Improvement/IAD4.jpg";
 ---
 
 <section class="w-full">
@@ -54,26 +58,26 @@ import Planos from "../../../assets/images/planos.webp";
     <div class="w-full grid grid-cols-4 gap-10 px-8 font-bold text-black text-base md:text-lg my-16">
         <Card>
             <h3 class="text-center">Dust flow in a baghouse</h3>
-            <div>
-                <img src="" alt="">
+            <div class="w-full">
+                <img src={IAD1.src} alt="" class="min-w-full min-h-[250px]">
             </div>
         </Card>
         <Card>
             <h3 class="text-center">Dust flow in a baghouse</h3>
-            <div>
-                <img src="" alt="">
+            <div class="w-full">
+                <img src={IAD2.src} alt="" class="min-w-full min-h-[250px]">
             </div>
         </Card>
         <Card>
             <h3 class="text-center">Dust flow in a baghouse</h3>
-            <div>
-                <img src="" alt="">
+            <div class="w-full">
+                <img src={IAD3.src} alt="" class="min-w-full min-h-[250px]">
             </div>
         </Card>
         <Card>
             <h3 class="text-center">Dust flow in a baghouse</h3>
-            <div>
-                <img src="" alt="">
+            <div class="w-full">
+                <img src={IAD4.src} alt="" class="min-w-full max-h-[250px]">
             </div>
         </Card>
     </div>
