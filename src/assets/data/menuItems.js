@@ -133,7 +133,7 @@ export const menuItems = [
       },
       {
         title : "MAINTENANCE",
-        url : "/service/maintenance",
+        url : "/Maintenance",
       },
       {
         title : "REHABILITATION",
