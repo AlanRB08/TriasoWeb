@@ -2,8 +2,10 @@
 import Baghouses from "../AsphaltPlants/Baghouses.astro";
 import Card from "../unitComponents/Card.astro";
 import GallerySlider from "../unitComponents/GallerySlider";
-import Separator from "../unitComponents/Separator.astro";
-import img1 from '../../assets/images/DrumMixers/baghouse.png';
+import img1 from "../../assets/images/BagHouses/BHProv4.png";
+import img2 from "../../assets/images/BagHouses/BHProv5.png";
+import img3 from "../../assets/images/BagHouses/BHProv1.png";
+import img4 from "../../assets/images/BagHouses/BHProv2.jpeg";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import BHCustom from "./BHCustom.astro";
@@ -35,8 +37,8 @@ const tanksSlides = [
             Your best business begins with us
         </h1>
     </div>
-    <div class="w-full">
-        <img src="" alt="">
+    <div class="w-full px-8 md:px-52">
+        <img src={img1.src} alt="" class="w-3/5">
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 md:px-52">
         <div>
@@ -51,7 +53,7 @@ const tanksSlides = [
             </p>
         </div>
         <div>
-            <img src="" alt="">
+            <img src={img2.src} alt="">
         </div>
     </div>
     <TwoColumnSection
@@ -113,7 +115,7 @@ const tanksSlides = [
                 </p>
             </div>
             <div>
-                <img src="" alt="">
+                <img src={img3.src} alt="">
             </div>
         </div>
         <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -163,7 +165,7 @@ const tanksSlides = [
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32">
         <div class="w-full flex justify-center">
-            <video class="w-1/2" src={BHVideo} autoplay></video>
+            <video class="w-1/2" src={BHVideo} autoplay muted playsinline></video>
         </div>
         <div class="w-full rounded-2xl p-4 bg-white text-justify text-base px-8 md:text-lg text-grisT flex flex-col justify-center">
             <p>
@@ -245,7 +247,7 @@ const tanksSlides = [
             <div>
                 <h2 class="text-lg md:text-xl">Fines Return System</h2><br>
                 <div>
-                    <img src="" alt="">
+                    <img src={img4.src} alt="">
                 </div>
             </div>
         </div>
