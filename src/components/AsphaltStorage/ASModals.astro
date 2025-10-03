@@ -6,6 +6,7 @@ import img2 from '../../assets/images/AsphaltPlant/tanqueV.png';
 import ModalButton from '../unitComponents/ModalButton.astro';
 import tanque360 from "../../assets/images/AsphaltStorage/Tqe60.png";
 import oil1 from '../../assets/images/AsphaltPlant/agitators1.png';
+import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 ---
 <div class="w-full flex flex-col gap-10">
     <div class="w-full px-8 md:px-52">
@@ -75,13 +76,30 @@ import oil1 from '../../assets/images/AsphaltPlant/agitators1.png';
     <div class="w-full px-8 md:px-52">
         <h1 class="text-redBg text-2xl md:text-3xl font-bold text-center">Set the Standard in Asphalt Production</h1>
     </div>
-    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <div class="w-full">
             <img src={img2.src} alt="">
         </div>
-        <div>
-
-        </div>
+        <AcordeonItemCol title="Triaso® Vertical Asphalt Storage Tanks" bg-Color="bg-bgMain" subText="Triaso® vertical tanks are built for space efficiency and superior thermal performance. Their upright configuration minimizes the asphalt surface exposed to air, significantly reducing oxidation—particularly important when storing polymer-modified asphalts at high temperatures for extended periods." client:only>
+          <div class="w-full py-6 font-bold text-grisT text-sm md:text-base">
+            <p>
+              Equipped with high-efficiency internal coils and thick industrial-grade insulation, these tanks
+               effectively retain heat, reduce energy consumption, and maintain a consistent product temperature, 
+               even in extreme climates. Optional electric heaters can be added to meet specific operational needs
+                or product requirements.
+            </p><br>
+            <p>
+              Each tank includes OSHA-compliant safety features such as a caged ladder, top manhole access, anti-slip
+               diamond-plate deck, full perimeter handrails, and kickplates to ensure safe operation and maintenance access.
+            </p><br>
+            <p>
+              At ground level, all valves, gauges, and connections are easily accessible, making loading, unloading,
+               and temperature monitoring fast and secure. Standard models include a digital temperature controller,
+                and configurations can be customized with mixers, level indicators, vapor condensers, and other accessories
+                 to match the demands of your application.
+            </p>
+          </div>
+        </AcordeonItemCol>
     </div>
     <TwoColumnSection
                 leftBg="bg-redBg"

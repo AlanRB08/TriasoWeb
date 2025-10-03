@@ -1,6 +1,5 @@
 ---
-import Baghouses from "../AsphaltPlants/Baghouses.astro";
-import Card from "../unitComponents/Card.astro";
+import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import GallerySlider from "../unitComponents/GallerySlider";
 import img1 from "../../assets/images/BagHouses/BHProv4.png";
 import img2 from "../../assets/images/BagHouses/BHProv5.png";
@@ -11,6 +10,8 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import BHCustom from "./BHCustom.astro";
 import BHoppers from "../../assets/images/BagHouses/BHoppers.png";
 import BHVideo from "../../assets/images/BagHouses/BHVideo.mp4";
+import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
+
 const tanksSlides = [
   {
     image: 'src/assets/images/BagHouses/GallerySlider/BHG1.webp',
@@ -31,17 +32,18 @@ const tanksSlides = [
 ];
 ---
 
-<div class="w-full flex flex-col justify-center items-center font-bold md:mt-20 gap-10">
+<div class="w-full flex flex-col justify-center items-center font-bold md:mt-20">
     <div class="w-full flex justify-center">
         <h1 class="text-redBg text-2xl md:text-4xl">
             Your best business begins with us
         </h1>
     </div>
-    <div class="w-full px-8 md:px-52">
-        <img src={img1.src} alt="" class="w-3/5">
-    </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 md:px-52">
-        <div>
+    
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 md:px-52 items-center justify-center py-10">
+        <div class="w-full">
+            <div class="w-full">
+                <img src={img1.src} alt="" class="w-full">
+            </div>
             <h2 class="text-grisT text-lg md:text-xl">
                 Continuous cleaning system
             </h2><br>
@@ -52,9 +54,15 @@ const tanksSlides = [
                 filtration and optimal bag performance.
             </p>
         </div>
-        <div>
-            <img src={img2.src} alt="">
+        <div class="w-full">
+            <div class="w-full h-[200px]">
+
+            </div>
+            <div class="w-full">
+                <img src={img2.src} alt="" class="rounded-lg w-4/5">
+            </div>
         </div>
+        
     </div>
     <TwoColumnSection
                 leftBg="bg-redBg"
@@ -81,12 +89,12 @@ const tanksSlides = [
                         </ul>
                     </div>
     </TwoColumnSection>
-    <div class="w-full flex justify-center">
+    <div class="w-full flex justify-center py-10">
         <h1 class="text-blueMain text-2xl md:text-3xl">
             Mechanism of baghouses available in pulse jet and reverse jet
         </h1>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-32">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-32 py-10">
         <div>
             <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br>
             <p class="text-grisT font-thin text-base md:text-lg">
@@ -103,11 +111,11 @@ const tanksSlides = [
         </div>
     </div>
     <div class="w-full bg-grisT px-8 md:px-52 text-white py-10 flex flex-col gap-6">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
                 <h2 class="text-xl md:text-2xl">
                     Triaso Supersonic Nozzle
-                </h2>
+                </h2><br>
                 <p class="text-base md:text-lg font-thin">
                     Our supersonic nozzles are 3D printed in-house using carbon alloy materials for
                      exceptional resistance to impacts, high temperatures, and vibrations. Ensuring highly efficient
@@ -118,26 +126,46 @@ const tanksSlides = [
                 <img src={img3.src} alt="">
             </div>
         </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-                <h2 class="text-xl md:text-2xl font-thin">
-                    Typical Venturi System
-                </h2>
-                <div>
-                    <img src="" alt="">
+        
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52 bg-bgBeige items-start">
+            <AcordeonItemCol title="Typical Venturi System" bgColor="bg-bgBeige" image={img2.src} client:only>
+                <div class="w-full py-10 text-sm md:text-base text-grisT">
+                    <p>
+                        In venturi-based filtration systems, the airflow design introduces multiple inefficiencies
+                         that affect both dust collection and system durability. The high-speed airflow exiting the
+                          venturi creates a low-pressure zone at the upper section of the filter bag, pulling dust toward 
+                          that area. This causes uneven accumulation and reduces filtration capacity. Over time, fine particles 
+                          become embedded deep within the fabric, making cleaning less effective.
+                    </p><br>
+                    <p>
+                        Another issue is the placement of the cleaning air pulse near the bag opening. This location limits
+                         its ability to draw in additional air that could improve dust removal. Meanwhile, the narrow venturi
+                          forces filtered air to accelerate rapidly into the plenum, creating upward airflow that resists the
+                          cleaning pulse. As a result, stronger air blasts are needed, increasing energy use and putting mechanical
+                           stress on the bags—leading to faster wear and reduced lifespan.
+                    </p>
                 </div>
-                <button>+</button>
-            </div>
-            <div>
-                <h2 class="text-xl md:text-2xl font-thin">
-                    Triaso High Ratio System
-                </h2>
-                <div>
-                    <img src="" alt="">
+            </AcordeonItemCol>
+            <AcordeonItemCol title="Triaso High Ratio System" bgColor="bg-bgBeige" image={img2.src} client:only>
+                <div class="w-full py-10 text-sm md:text-base text-grisT">
+                    <p>
+                        The new series baghouse improves dust removal by completely redesigning the airflow process. 
+                        Instead of relying on a traditional venturi system, it uses a supersonic converging-diverging 
+                        nozzle to generate the cleaning air jet. This shift in design allows for the induction of more 
+                        secondary air, enhancing the cleaning efficiency. The removal of the venturi also reduces the throat
+                        velocity at the bag’s inlet, preventing the negative pressure that typically leads to dust buildup at
+                         the top of the filter bag.
+
+                    </p><br>
+                    <p>
+                        By fully utlization of the bag mouth, the cleaning air jet expands evenly, minimizing the likelihood 
+                        of dust cake blowout. Leading to a more uniform bag inflation, resulting in a more effective cleaning
+                         cycle and reduced wear on the fabric. As a result, the Triaso Model only requires half the filter area
+                          compared to traditional venturi systems, enabling Triaso to offer high performance in a more compact form.
+                    </p>
                 </div>
-                <button>+</button>
-            </div>
-        </div>
+            </AcordeonItemCol>
     </div>
     <div class="w-full">
         <h2 class="text-blueMain text-2xl md:text-3xl text-center">
@@ -145,8 +173,8 @@ const tanksSlides = [
         </h2>
     </div>
     <div class="w-full px-8 md:px-52">
-        <div>
-            <img src="" alt="">
+        <div class="w-full flex justify-center">
+            <video src={DMVideo} autoplay loop muted playsinline class="w-3/4"></video>
         </div>
         <p class="text-base md:text-lg font-thin">
             The gas stream enters the baghouse’s inlet chamber after passing through the primary dust collector. 
@@ -159,11 +187,11 @@ const tanksSlides = [
    
     
     
-    <div class="w-full flex flex-col justify-start px-8 md:px-32">
+    <div class="w-full flex flex-col justify-start px-8 md:px-32 py-10">
         <h1 class="text-xl md:text-2xl">Triaso Exhaust System</h1><br>
         <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32 py-10">
         <div class="w-full flex justify-center">
             <video class="w-1/2" src={BHVideo} autoplay muted playsinline></video>
         </div>
@@ -180,7 +208,7 @@ const tanksSlides = [
             </p>
         </div>
     </div>
-    <div class="w-full md:px-32 px-8 text-base md:text-lg">
+    <div class="w-full md:px-32 px-8 text-base md:text-lg py-10">
         <p>
             The finer dust particles are directed into the baghouse through a strategically placed high side inlet. This ensures horizontal 
             and downward airflow, preventing fine dust from being re-entrained into the system. A knockout chamber decelerates airflow,
@@ -218,7 +246,7 @@ const tanksSlides = [
                 <div>
                     <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
                     <div class="w-full flex justify-center">
                         <img src={BHoppers.src} alt="" class="rounded-2xl w-3/4">
                     </div>
@@ -236,18 +264,23 @@ const tanksSlides = [
             </div>
         </div>
         
-        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white">
+        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
             <div>
                 <p class="font-thin text-base md:text-lg text-justify">
                     Once the baghouse collects fine particles in the hoppers, a screw conveyor transfers the fines back
                      into the drum mixer. This return is carefully timed and positioned—right where the liquid asphalt is
                       injected—ensuring the fines are immediately coated and bonded into the mix.
+                </p><br>
+                <p class="font-thin text-base md:text-lg text-justify">
+                    By reintegrating the fines at this specific point, the system prevents them from becoming airborne again,
+                     reduces material loss, and improves the quality and durability of the asphalt. This efficient recovery not
+                      only enhances environmental performance but also maximizes resource use for a more cost-effective operation.
                 </p>
             </div>
-            <div>
+            <div class="w-full">
                 <h2 class="text-lg md:text-xl">Fines Return System</h2><br>
-                <div>
-                    <img src={img4.src} alt="">
+                <div class="w-full flex justify-center">
+                    <img src={img4.src} alt="" class="rounded-lg w-3/4">
                 </div>
             </div>
         </div>
