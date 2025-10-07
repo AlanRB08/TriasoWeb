@@ -7,6 +7,7 @@ import img5 from '../../assets/images/AsphaltPlant/drum1.png';
 import img6 from '../../assets/images/AsphaltPlant/elevator1.png';
 import img7 from '../../assets/images/AsphaltPlant/drum2.png';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
+import videoProv from "../../assets/images/DrumMixers/PlaC140ET.mp4";
 import Image from 'astro/components/Image.astro';
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -69,78 +70,24 @@ import Image from 'astro/components/Image.astro';
         <h1>AQUI VIDEO 1</h1>
         <h1>AQUI VIDEO 2</h1>
     </div>
-    <div class="w-full flex flex-col items-center justify-center mt-20">
-        <h1 class="text-2xl md:text-4xl text-blueMain mb-10 w-full text-start px-8 md:px-52">Elevator</h1>
-        <div class="w-full grid grid-cols-2 lg:grid-cols-5 md:gap-8 px-8 md:px-52">
-            <div class="flex flex-col col-span-2 gap-8">
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start justify-center p-4">
-                    <h1 class="text-black mb-4">Hinged and Integrated Elevator</h1>
-                    <p class="text-grisT text-base lg:text-lg">This hinged elevator is fully assembled on its own chassis, allowing for immediate installation 
-                        and reducing on-site assembly time. Its structural design is intended to integrate directly
-                         with the mix discharge system without the need for additional adjustments.</p>
-                </div>
-                <Image src={img3} alt=""/>
+    <div class="md:mx-52 mx-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl">
+        <h2 class="text-2xl md:text-3xl">Retractable Elevator for Efficient Transport and Operation
+            </h2>
+        <div class="">
+            <div class="w-full flex justify-center">
+                <video src={videoProv} autoplay muted playsinline class="w-3/5"></video>
             </div>
-            <div class="flex flex-col col-span-3 items-center gap-10">
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
-                    <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
-                    <p class="text-grisT text-base lg:text-lg">The 4” pitch chain is a key component of the elevator, 
-                        designed for heavy-duty operation.  <span style="color:black;">With a tensile strength of 50,000 lbs (22,700 kg)</span>
-                         and <span style="color: black;">floating-type chain</span> guides to prevent jams, it ensures smooth and reliable performance, 
-                         durability, efficiency, and minimal maintenance.</p>
-                </div>
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
-                    <h1 class="text-black mb-4">Self-aligning bearings</h1>
-                    <p class="text-grisT text-base lg:text-lg">Self-aligning bearings in the straight elevator ensure
-                         smooth operation by automatically adjusting to misalignments.
-                         This reduces wear, extends lifespan, and enhances reliability in heavy-duty applications.</p>
-                </div>
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
-                    <p class="text-grisT text-base lg:text-lg">With a <span style="color:black;">15 Hp to a 50 Hp motor</span>, the straight elevator
-                         delivers enhanced power for heavy-duty applications. It supports a<span style="color:black;"> maximum speed increase 
-                         to 377 ft/min, boosting capacity to 500 TPH</span>. At a standard chain<span style="color:black;"> speed from 120 ft/min to 
-                         377 ft/min</span>, the system maintains a <span style="color:black"> drag capacity from 160 TPH to 500 TPH</span>, ensuring efficient
-                          and reliable material handling.</p>
-                </div>
-
-            </div>
+            <p class="text-grisT text-justify">
+                Triaso’s vertical elevator is designed with a retractable configuration that complies 
+                with DOT transportation height limits, ensuring safe and legal road transport. 
+                Once the drum mixer is installed on-site, the elevator extends to its full operational height,
+                 allowing for efficient material transfer with minimal setup time. 
+                 This smart design improves logistics while maintaining high performance during loading and 
+                 discharge.
+            </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 h-full">
-            <div class="flex items-start justify-start gap-10 col-span-1">
-                <Image src={img6} alt="" class="h-[300px] md:h-[500px]"/>   
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 col-span-2 justify-center items-start gap-10 md:gap-20 px-8 md:pr-52">
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h2>It can hold up</h2>
-                    <h1 class="text-black text-lg md:text-2xl">0.5 cubic meters</h1>
-                    <h2>of material.</h2>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Automatic opening</h1>
-                    <h2>controlled by time regulates the opening </h2>
-                    <h1 class="text-black text-lg md:text-2xl">via a timer.
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
-                    <h2>in the console centralizes system management. </h2>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
-                    <h2>with a</h2>
-                    <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Automatic or manual opening</h1>
-                    <h2>allows operation either manually or automatically</h2>
-                    
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">7.5 Hp air <br>compressor with a 293-liter air tank</h1>
-                    <h2>supplies air for pneumatic operation</h2>
-                </div>
-            </div>
-       </div>
     </div>
+    
     
     <div class="w-full flex flex-col items-center justify-center mt-20 px-8 lg:px-52">
         <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8">
