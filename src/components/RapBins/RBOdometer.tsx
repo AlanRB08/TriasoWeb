@@ -59,10 +59,12 @@ const RPOdometer = () => {
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+              <Odometer value={value} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">M Tons</p>
             </div>
-            <p className="text-grisP">RAP capacity</p>
+            <p className="text-start text-grisP">RAP capacity</p>
           </div>
 
           <div className="flex flex-col items-center justify-center">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Odometer from 'react-odometerjs';
 import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/IntegralAsphalt/single.png';
+import single from '../../assets/images/BinUnits/ProvBU1.jpg';
 
 const BOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -78,9 +78,9 @@ const BOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" />
+            <img src={single.src} alt="" className='rounded-lg'/>
           </div>
           <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
             All Technical Details

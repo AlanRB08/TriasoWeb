@@ -17,8 +17,8 @@ export default function AcordeonItemCol({ title, children, bgColor = "bg-white" 
   };
 
   return (
-    <div className={`${bgColor} rounded-2xl flex flex-col justify-center p-4 w-full`}>
-      <div className="flex justify-between items-center">
+    <div className={`${bgColor} rounded-2xl flex flex-col justify-center items-center p-4 w-full`}>
+      <div className="flex justify-between items-center gap-10">
         <h2 className="text-black text-lg md:text-xl font-bold">{title}</h2>
         <button
           onClick={toggleAccordion}
@@ -68,7 +68,7 @@ export default function AcordeonItemCol({ title, children, bgColor = "bg-white" 
           )}
         </button>
       </div>
-       <div className="px-10">
+       <div className="px-10 max-w-[350px]">
           <img src={image} alt="" />
         </div>
         {
