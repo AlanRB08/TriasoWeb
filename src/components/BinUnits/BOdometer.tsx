@@ -88,7 +88,7 @@ const BOdometer = () => {
         </div>
       </div>
       <div className='my-20'>
-        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Portable and relocatable systems designed to adapt to any location at any time</h1>
+        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Portable and relocatable systems designed to adapt to any site, anytime</h1>
       </div>
     </div>
   );

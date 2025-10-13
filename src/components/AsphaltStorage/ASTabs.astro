@@ -72,7 +72,7 @@ const tanksSlides2 = [
         <div class="py-4 flex justify-center items-center">
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
-                <div class="w-full px-8 md:px-52">
+                <div class="w-full px-8 lg:px-52">
                   <p class="text-justify">
                     Designed for precise temperature control, the oil heater ensures uniform heat distribution through an efficient thermal oil circulation system.
                      Its heavy-duty construction allows continuous operation, making it suitable for demanding that require consistent
@@ -80,13 +80,13 @@ const tanksSlides2 = [
                   </p>
                 </div><br>
                 <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
-                <div class="w-full px-8 md:px-72 grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                <div class="w-full px-8 lg:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={oil1.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-black text-xl md:text-2xl">Oil Heater</h1>
+                      <h1 class="text-white text-xl md:text-2xl">Oil Heater</h1>
                       <ModalButton>
                         <h3 slot="title" class="text-xl md:text-2xl">Oil Heater</h3>
                         <img slot="image" src={oil1.src} alt="custom" />
@@ -109,20 +109,14 @@ const tanksSlides2 = [
                         </div>
                       </ModalButton>
                     </div>
-                    <div class="w-full">
-                      <p class="font-thin text-sm md:text-base">
-                        It is the superior alternative to an old-style chamber or direct-fired heaters. 
-                        Designed with efficient sections of coil, the Hot Oil Heat Exchanger provides up to 200%
-                         more surface area than convection heaters.
-                      </p>
-                    </div>
+                    
                   </div>
-                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={hotoil.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-black text-xl md:text-2xl">Hot Oil Coils</h1>
+                      <h1 class="text-white text-xl md:text-2xl">Hot Oil Coils</h1>
                       <ModalButton>
                         <h3 slot="title" class="text-xl md:text-2xl">Hot Oil Coils</h3>
                         <img slot="image" src={hotoil.src} alt="custom" />
@@ -140,13 +134,7 @@ const tanksSlides2 = [
                         </div>
                       </ModalButton>
                     </div>
-                    <div class="w-full">
-                      <p class="font-thin text-sm md:text-base">
-                        It is the superior alternative to an old-style chamber or direct-fired heaters. 
-                        Designed with efficient sections of coil, the Hot Oil Heat Exchanger provides up to 200%
-                         more surface area than convection heaters.
-                      </p>
-                    </div>
+                    
                   </div>
                 </div>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 px-8 md:px-52">
@@ -189,43 +177,42 @@ const tanksSlides2 = [
                   This method provides fast, efficient heating with minimal energy loss.
                 </p>
                 <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
-                 <div class="w-full px-8 md:px-72 grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                 <div class="w-full px-8 lg:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={oil1.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-black text-xl md:text-2xl">Direct Fire Heating Burner</h1>
+                      <h1 class="text-white text-xl md:text-2xl">Direct Fire Heating Burner</h1>
                       <ModalButton>
                         <h3 slot="title" class="text-xl md:text-2xl">Direct Fire Heating Burner</h3>
                         <img slot="image" src={oil1.src} alt="custom" />
                         <div slot="content">
-                          El calentamiento de fuego directo funciona en base de un quemador de diesel que iradía calor a un 
-                          tubo dentro del tanque de asfalto,
-                           el cuál tiene dos tubos secundarios par airradiar su calor con mejor distribución y 
-                           los gases salen por los vapor condensers
+                          El calentamiento de fuego directo funciona en base de un quemador de diesel que iradía calor a un tubo 
+                          dentro del tanque de asfalto, el cuál tiene dos tubos secundarios par airradiar su calor con mejor 
+                          distribución y los gases salen por los vapor condensers
                         </div>
                       </ModalButton>
                     </div>
                     
                   </div>
-                  <div class="w-full bg-grisSubP flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
+                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={hotoil.src} alt="">
                     </div>
                     <div class="w-full flex justify-between items-center">
-                      <h1 class="text-black text-xl md:text-2xl">Vapor condensers</h1>
+                      <h1 class="text-white text-xl md:text-2xl">Vapor condensers</h1>
                       <ModalButton>
                         <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
                         <img slot="image" src={hotoil.src} alt="custom" />
                         <div slot="content">
-                          Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage and heating,
-                           preventing emissions from escaping into the environment. Installed on the tank’s vent line, they cool down
-                            hot vapors into liquid form, reducing odor, improving safety, and ensuring compliance with environmental regulations.
+                          Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage
+                           and heating, preventing emissions from escaping into the environment. Installed on the tank’s
+                            vent line, they cool down hot vapors into liquid form, reducing odor, improving safety, and
+                             ensuring compliance with environmental regulations.
                         </div>
                       </ModalButton>
                     </div>
-                    
                   </div>
                 </div>   
             </div>

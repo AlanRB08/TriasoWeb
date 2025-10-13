@@ -2,7 +2,7 @@
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import GallerySlider from "../unitComponents/GallerySlider";
 import img1 from "../../assets/images/BagHouses/BHProv4.png";
-import img2 from "../../assets/images/BagHouses/BHProv5.png";
+import img2 from "../../assets/images/BagHouses/BHProv6.png";
 import img3 from "../../assets/images/BagHouses/BHProv1.png";
 import img4 from "../../assets/images/BagHouses/BHProv2.jpeg";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
@@ -41,10 +41,10 @@ const tanksSlides = [
         </h1>
     </div>
     
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 md:px-52 items-center justify-center py-10">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 lg:px-52 items-center justify-center py-10">
         <div class="w-full">
             <div class="w-full">
-                <img src={img1.src} alt="" class="w-full">
+                <img src={img2.src} alt="" class="w-full rounded-lg">
             </div>
             <h2 class="text-grisT text-lg md:text-xl">
                 Continuous cleaning system
@@ -91,12 +91,12 @@ const tanksSlides = [
                         </ul>
                     </div>
     </TwoColumnSection>
-    <div class="w-full flex justify-center py-10">
+    <div class="w-full flex justify-center py-10 px-8 text-center">
         <h1 class="text-blueMain text-2xl md:text-3xl">
             Mechanism of baghouses available in pulse jet and reverse jet
         </h1>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-32 py-10">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 lg:px-52 py-10">
         <div>
             <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br>
             <p class="text-grisT font-thin text-base md:text-lg">
@@ -112,7 +112,7 @@ const tanksSlides = [
             </p>
         </div>
     </div>
-    <div class="w-full bg-grisT px-8 md:px-52 text-white py-10 flex flex-col gap-6">
+    <div class="w-full bg-grisT px-8 lg:px-52 text-white flex flex-col gap-6">
         <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
                 <h2 class="text-xl md:text-2xl">
@@ -125,12 +125,12 @@ const tanksSlides = [
                 </p>
             </div>
             <div>
-                <img src={img3.src} alt="">
+                <img src={img1.src} alt="">
             </div>
         </div>
         
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52 bg-bgBeige items-start">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 lg:px-52 bg-bgBeige items-start">
             <AcordeonItemCol title="Typical Venturi System" bgColor="bg-bgBeige" image={img5.src} client:only>
                 <div class="w-full py-10 text-sm md:text-base text-grisT">
                     <p>
@@ -169,12 +169,12 @@ const tanksSlides = [
                 </div>
             </AcordeonItemCol>
     </div>
-    <div class="w-full">
+    <div class="w-full px-8 text-center">
         <h2 class="text-blueMain text-2xl md:text-3xl text-center">
             Total and homogeneous return of fines to the asphalt mix to optimize its quality and pavement life.
         </h2>
     </div>
-    <div class="w-full px-8 md:px-52">
+    <div class="w-full px-8 lg:px-52">
         <div class="w-full flex justify-center">
             <video src={DMVideo} autoplay loop muted playsinline class="w-3/4"></video>
         </div>
@@ -189,7 +189,7 @@ const tanksSlides = [
    
     
     
-    <div class="w-full flex flex-col justify-start px-8 md:px-32 py-10">
+    <div class="w-full flex flex-col justify-start px-8 lg:px-52 py-10">
         <h1 class="text-xl md:text-2xl">Triaso Exhaust System</h1><br>
         <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
     </div>
@@ -224,7 +224,7 @@ const tanksSlides = [
     </div>
     
     <div class="w-full">
-        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
+        <div class="w-full px-8 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
             <div class="w-full text-white">
                 <h2 class="text-lg md:text-xl">Durable Construction</h2><br>
                 <p class="font-thin text-base md:text-lg text-justify">
@@ -249,12 +249,12 @@ const tanksSlides = [
         <div class="absolute inset-0 bg-bgBeige -skew-y-2"></div>
 
         <!-- Contenido -->
-        <div class="relative px-8 md:px-32 py-10">
+        <div class="relative px-8 lg:px-32 py-10">
             <div>
             <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
             </div>
 
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
+            <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 py-10">
             <!-- Imagen -->
             <div class="w-full flex justify-center">
                 <img src={BHoppers.src} alt="Baghouse Hoppers" class="rounded-2xl w-3/4" />
@@ -274,8 +274,8 @@ const tanksSlides = [
             </div>
         </div>
         </div>      
-        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
-            <div>
+        <div class="w-full px-8 lg:px-32 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
+            <div class="order-2 lg:order-1">
                 <p class="font-thin text-base md:text-lg text-justify">
                     After the baghouse collects fine particles in the hoppers, a screw conveyor transfers them back to the drum mixer.
                      The return point is precisely timed and located at the liquid asphalt injection zone, ensuring the fines are 
@@ -287,7 +287,7 @@ const tanksSlides = [
                       only enhances environmental performance but also maximizes resource use for a more cost-effective operation.
                 </p>
             </div>
-            <div class="w-full">
+            <div class="w-full order-1 lg:order-2">
                 <h2 class="text-lg md:text-xl">Fines Return System</h2><br>
                 <div class="w-full flex justify-center">
                     <img src={img4.src} alt="" class="rounded-lg w-3/4">

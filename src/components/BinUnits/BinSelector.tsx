@@ -84,28 +84,30 @@ export default function BinSelector() {
           ))}
           </div>
       </div>
-      <div className='w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 lg:px-52'>
+      <div className='w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 md:px-20 lg:px-52'>
           <h1 className='text-white font-bold text-2xl md:text-3xl text-center'>Specifications and Characteristics</h1><br />
           <div className='w-full grid grid-cols-1 md:grid-cols-2 justify-center'>
             <div>
               <p>
-              With dimensions and aggregate dosing systems that comply with construction regulations
+              Dimensions and aggregate dosing systems that comply with construction regulations
               <ul className='list-disc ml-6'>
                 <li>DOT</li>
                 <li>OSHA</li>
                 <li>EPA</li>
                 <li>UL Wiring</li>
               </ul><br />
-              Built with high-strength steel to withstand heavy loads and resist deformation under tough working conditions. <br /><br />
+              Built from high-strength steel to withstand heavy loads and resist deformation under demanding working conditions. <br /><br />
               Designed for quick and smooth unloading to maintain continuous workflow and minimize downtime.
               </p>
             </div>
             <div>
               <p>
-              High-quality equipment built for durability and efficient asphalt production. Featuring reinforced steel structures and 
-              integrated vibration systems, Triaso® bin units ensure steady aggregate flow, minimal clogging, and reduced wear. Designed 
-              for continuous operation, they deliver consistent, reliable performance with low maintenance—even under the toughest jobsite conditions. <br /><br />
-              Equipped with precision-controlled aggregate dosing mechanisms to ensure accurate material distribution.
+             High-quality equipment built for durability and efficient hot-mix production. Featuring reinforced
+              steel structures and integrated vibration systems, our bin units ensure steady aggregate flow, 
+              minimal clogging, and reduced wear. Designed for continuous operation, they deliver consistent, 
+              reliable performance with low maintenance—even under the toughest jobsite conditions. <br /><br />
+              Equipped with precision-controlled aggregate dosing mechanisms they guarantee accurate and 
+              uniform material dosing throughout production process.
               </p>
             </div>
           </div>

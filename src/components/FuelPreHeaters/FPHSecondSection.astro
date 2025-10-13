@@ -5,10 +5,11 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import FPH1 from "../../assets/images/FuelPreHeaters/FPH1.png";
 import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
+import FPH3 from "../../assets/images/FuelPreHeaters/FPH3.png";
 ---
 
 <section class="w-full font-bold mt-20 flex flex-col">
-    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2">
+    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="w-full flex flex-col gap-10">
             <div class="w-full">
                 <video src={BProv1} autoplay muted loop class="w-full rounded-lg"></video>
@@ -16,14 +17,14 @@ import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
             <div class="w-full">
                 <h1 class="text-center font-bold text-2xl md:text-3xl">No Smoke <br>No Residue <br> No Early Failure</h1><br>
                 <p class="text-base md:text-lg font-thin text-grisT">
-                    Unheated fuel often leads to incomplete combustion, generating smoke and leaving unburned droplets.
-                     These contaminate the asphalt mix, reduce pavement life, and create environmental and odor issues. 
-                     Preheating prevents all of this.
+                    Unheated fuel often results in incomplete combustion, producing smoke and leaving unburned droplets. 
+                    These contaminate the asphalt mix, shorten pavement life, and create environmental and odor issues.
+                     Preheating eliminates all of these issues .
                 </p>
             </div>
         </div>
-        <div class="w-full flex items-center">
-            <img src="" alt="">
+        <div class="w-full flex items-end">
+            <img src={FPH3.src} alt="" class="rounded-lg">
         </div>
     </div>
     <TwoColumnSection
@@ -36,9 +37,9 @@ import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
                     <div slot="left" class="flex flex-col justify-center gap-3">
                         <h1 class="text-xl md:text-2xl">Protects Your Plant Components</h1>
                         <p class="text-base md:text-lg">
-                            Incomplete combustion causes soot buildup in the burner, clogs in the baghouse,
-                             and even potential damage to the dryer drum. The preheater ensures complete burning,
-                              keeping your system clean and reducing maintenance needs.
+                            Incomplete combustion causes soot buildup in the burner, clogging in the baghouse, and even potential
+                             damage to the drum mixer. The preheater ensures complete combustion, keeping the system clean and 
+                             significantly  reducing maintenance needs.
                         </p>
                     </div>
                     <div slot="right" class="flex flex-col justify-center gap-3">
@@ -46,9 +47,9 @@ import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
                             Use Low-Cost Fuels Without <br> Sacrificing Efficiency
                         </h1>
                         <p class="text-base md:text-lg">
-                            Heavy or low-grade fuels are harder to burn without preheating. With a Triaso® fuel
-                             preheater, you can use more affordable fuels and still achieve clean combustion—cutting
-                              operational costs without risking performance.
+                            Combustion with heavy or low-grade fuels is harder without preheating. With fuel preheater, 
+                            burners can use more affordable fuels while still achieve clean combustion—reducing operational 
+                            costs without compromising performance.
                         </p>
                     </div>
     </TwoColumnSection>
@@ -63,9 +64,9 @@ import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
             <div class="w-full text-white">
                 <h2 class="text-xl md:text-2xl font-bold">Lower Emissions, Cleaner Operation</h2><br>
                 <p class="text-base md:text-lg font-thin">
-                    Proper atomization through preheating minimizes harmful emissions like CO, unburned hydrocarbons,
-                     and NOx. It’s a cleaner, more responsible way to operate—especially important in regions with strict
-                      environmental regulations.
+                    Proper atomization through preheating minimizes emissions such as CO2, unburned hydrocarbons, 
+                    and NOx. It’s a cleaner and more responsible way to operate—especially important in regions 
+                    with strict environmental regulations.
                 </p>
             </div>
             <div class="w-full text-white">
@@ -140,15 +141,18 @@ import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.png";
                 Problems Caused by Not Preheating Low-Cost Fuels
             </h2><br>
             <p class="text-grisT text-lg md:text-xl">
-                Low-cost fuels that are not preheated cause and worsen the following serious problems:
+                Low-cost fuels that are not preheated cause and intensify the following serious problems:
             </p>
         </div>
         <div class="w-4/5 bg-white rounded-2xl p-4 self-center text-lg md:text-xl text-grisT flex justify-center">
             <ul class="list-disc ml-6">
                 <li>Unburned microdroplets lead to a significant waste of fuel</li>
-                <li>The asphalt mix becomes contaminated with unburned fuel</li>
+                <li>The hot-mix becomes contaminated with unburned fuel</li>
                 <li>This contamination causes the asphalt pavement to have a much shorter service life</li>
                 <li>Additionally, the atmosphere is polluted by gases from incomplete combustion</li>
+                <ul class="list-disc ml-6">
+                    <li>Paying environmental fees for operating polluting equipment.</li>
+                </ul>
             </ul>
         </div>
     </div>

@@ -91,7 +91,7 @@ const BHOdometer = () => {
           
         </div>
       </div>
-      <div className='w-full py-10 lg:px-52'>
+      <div className='w-full py-10'>
         <h2 className='text-2xl md:text-4xl text-grisT font-bold text-center'>
           The baghouses are highly efficient at capturing fine particles, <span className='text-black'>achieving up to 99.99% filtration</span>. 
         </h2>

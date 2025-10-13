@@ -11,7 +11,7 @@ export default function Tab() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4 md:px-32">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4 px-8 lg:px-52">
       <div className="flex lg:flex-col items-stretch justify-around gap-4 md:gap-10">
         {images.map((img, index) => (
           <button
@@ -42,7 +42,7 @@ export default function Tab() {
       <img
         src={images[activeIndex].src}
         alt={images[activeIndex].alt}
-        className="border-2 border-blueMain rounded-2xl h-[350px] w-full"
+        className="border-2 border-blueMain rounded-2xl max-h-[350px] w-full object-contain"
       />
     </div>
   );
