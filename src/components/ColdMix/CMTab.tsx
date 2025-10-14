@@ -10,10 +10,11 @@ export default function CMTab() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 md:px-52">
+    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 lg:px-52">
       <div className="grid grid-cols-2 w-full justify-center items-center text-center">
         {images.map((img, index) => (
-          <button
+          <div className="w-full flex justify-center">
+            <button
             aria-label='Tab Selector'
             key={index}
             onClick={() => setActiveIndex(index)}
@@ -33,6 +34,7 @@ export default function CMTab() {
               </>
             ):null}
           </button>
+          </div>
         ))}
       </div>
         <br />

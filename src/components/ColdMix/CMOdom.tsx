@@ -46,7 +46,7 @@ const CMOdom = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+    <div ref={sectionRef} className="w-full px-8 lg:px-20 xl:px-52 my-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
