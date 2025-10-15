@@ -17,14 +17,104 @@ import tab2Main from '../../assets/images/DrumMixers/tab2Main.png';
 import tab2Left from '../../assets/images/DrumMixers/tab2L.png';
 import tab6Main from '../../assets/images/DrumMixers/tab6M.png';
 
-
-
+const cabinSize = [
+    {
+        length: 434.71,
+        width: 222.93,
+        height: 309.34
+    }
+]
+const toggleConfig = [
+    {
+        id:'1',
+        dimensions:{
+            width: 287.06,
+            height: 705.37,
+            length: 1868.09,
+            drumLenght: 653.41,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 80,
+            humidity5: 110,
+        }
+    },
+    {
+        id:'2',
+        dimensions:{
+            width: 299.09,
+            height: 705.37,
+            length: 2007.70,
+            drumLenght: 898.95,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 110,
+            humidity5: 150,
+        }
+    },
+    {
+        id:'3',
+        dimensions:{
+            width: 309.40,
+            height: 705.37,
+            length: 2127.37,
+            drumLenght: 1109.42,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 140,
+            humidity5: 180,
+        }
+    },
+    {
+        id:'4',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2037.62,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 200,
+            humidity5: 270,
+        }
+    },
+    {
+        id:'5',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2037.62,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 300,
+            humidity5: 400,
+        }
+    },
+    {
+        id:'6',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2044.96,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 400,
+            humidity5: 540,
+        }
+    }
+]
 gsap.registerPlugin(ScrollTrigger);
 
 const DrumMixPlanos = () => {
   //tabs states
   const [activeTab, setActiveTab] = useState(3);
-
   //animation 
   const boxRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
@@ -35,10 +125,10 @@ const DrumMixPlanos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
-
+    // valor de cm a pies
+const cmToFeet = 0.0328084;
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
-
   //ESTADOS DE LOS DROPWDOWNS
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     C1_1: false,
@@ -57,30 +147,13 @@ const DrumMixPlanos = () => {
     C5_1: false,
     C5_2: false,
   });
+  //ACTIVE DATA 
+  const activeData = toggleConfig.find(item => item.id === activeTab.toString());
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
-    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
-
-  // Función que busca elementos con data-metric/data-imperial y los actualiza
-  const updateElements = (currentUnit: "metric" | "imperial") => {
-    const elements = document.querySelectorAll("[data-metric][data-imperial]");
-    elements.forEach((element) => {
-      const value = element.getAttribute(`data-${currentUnit}`);
-      if (value) {
-        element.textContent = value;
-      }
-    });
-  };
-
-  // Efecto para actualizar al cargar (opcional)
-  useEffect(() => {
-    updateElements(unit);
-  }, []);
-
-
  useEffect(() => {
   const box = boxRef.current;
   const target = nextSectionRef.current;
@@ -199,8 +272,6 @@ const DrumMixPlanos = () => {
   };
 }, [activeTab]);
 
-
-
   return (
     <div className='w-full flex flex-col items-center justify-center'>
       <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">
@@ -240,8 +311,6 @@ const DrumMixPlanos = () => {
           />
         </div>
       </div>
-
-
       <div 
       ref={clipTargetRef}
         id='sectionNueva'  
@@ -581,7 +650,11 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -638,7 +711,11 @@ const DrumMixPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                            <p className='text-white text-lg'>
+                                 {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -687,7 +764,11 @@ const DrumMixPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
