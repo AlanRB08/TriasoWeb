@@ -1515,7 +1515,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1572,7 +1576,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                                 <div className='my-3'>
-                                    <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                    <p className='text-white text-lg' >
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                     <div className='bg-white w-[1px] h-full relative'>
@@ -1621,7 +1629,11 @@ const cmToFeet = 0.0328084;
                                             </div>
                                         </div>
                                     </div>
-                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                     <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                         <div className='bg-white h-[1px] w-full relative'>
                                             <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1675,15 +1687,25 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
-                                            <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                            <p >
+                                                {unit === 'metric'
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Width:</h1>
-                                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                            <p>{unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height:</h1>
-                                            <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                 </div>
                                         
@@ -1708,7 +1730,9 @@ const cmToFeet = 0.0328084;
                                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <div className='flex justify-between'>
                                                 <h1>Total length (including hitch):</h1>
-                                                <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                                <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Axle configuration:</h1>
@@ -1716,19 +1740,33 @@ const cmToFeet = 0.0328084;
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Fifth-wheel hitch height:</h1>
-                                                <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                                <p>
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Total width:</h1>
-                                                <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                                <p>
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Total height:</h1>
-                                                <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                                <p data-imperial='731.29 cm' data-metric='23.99 ft'>{unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Transportation height:</h1>
-                                                <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                                <p data-imperial='427.57 cm' data-metric='14.02 ft'>
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -1754,11 +1792,11 @@ const cmToFeet = 0.0328084;
                                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <div className='flex justify-between'>
                                                 <h1>3% humidity:</h1>
-                                                <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                                <p data-imperial='389.2 cm' data-metric='12.94 ft'>110 Tph</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>5% humidity:</h1>
-                                                <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                                <p data-imperial='128 cm' data-metric='4.2 ft'>150 Tph</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1901,7 +1939,11 @@ const cmToFeet = 0.0328084;
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                         <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                             <div className='bg-white h-[1px] w-full relative'>
                                                 <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1958,7 +2000,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                     <div className='my-3'>
-                                        <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                        <p className='text-white text-lg'>
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                         <div className='bg-white w-[1px] h-full relative'>
@@ -2007,7 +2053,11 @@ const cmToFeet = 0.0328084;
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                         <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                             <div className='bg-white h-[1px] w-full relative'>
                                                 <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -2108,187 +2158,187 @@ const cmToFeet = 0.0328084;
         {activeTab === 3 && (
                     <div className='flex flex-col items-center justify-center' ref={containerRef}>
                         <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-                    <div className='flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FLIGHTS</h1>
-                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                ...prev,
-                                C1_1: !prev.C1_1
-                                }))}>
-                                    <svg width="28px" height="28px"
-                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                    className={`transition-transform duration-300 transform ${
-                                        openSections.C1_1 ? "rotate-180" : ""
-                                    }`}>
-                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Inlet Flights</li>
-                                <li>Drying Veiling Flights</li>
-                                <li>Radiation Flights</li>
-                                <li>Heating Flights</li>
-                                <li>Mixing Flights</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                ...prev,
-                                C1_2: !prev.C1_2
-                                }))}>
-                                    <svg width="28px" height="28px"
-                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                    className={`transition-transform duration-300 transform ${
-                                        openSections.C1_2 ? "rotate-180" : ""
-                                    }`}>
-                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Fully automatic or manual operation</li>
-                                <li>Digital temperature monitoring and regulation</li>
-                                <li>Independent controls for each plant component</li>
-                                <li>Simple and intuitive interface</li>
-                                <li>Control system designed for field reliabilit</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C1_3: !prev.C1_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C1_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial-grade motors and components</li>
-                                <li>Simple wiring system for easy maintenance</li>
-                                <li>Weather-protected electrical connections</li>
-                                <li>Pulley and bushing transmission system</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                    <div className='col-span-2 flex items-start justify-center w-full min-h-[600px] order-1 md:order-2'>
-                        
-                    </div>
-                    <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3 gap-0 md:gap-10' id='column2' ref={columnGrid2}>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BURNER SYSTEM</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_1: !prev.C2_1
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_1 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>
-                                    <div className='flex justify-between w-full'>
-                                    <h1>Modulating burner:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
+                            <div className='flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1' id='column1' ref={columnGrid1}>
+                                <div className='flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0'>
+                                    <div className='w-full flex justify-between border-b border-b-white'>
+                                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FLIGHTS</h1>
+                                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                        ...prev,
+                                        C1_1: !prev.C1_1
+                                        }))}>
+                                            <svg width="28px" height="28px"
+                                            stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                            className={`transition-transform duration-300 transform ${
+                                                openSections.C1_1 ? "rotate-180" : ""
+                                            }`}>
+                                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                     </div>
-                                </li>
-                                <li>Fueled with total-air control system</li>
-                                <li className='list-none'>
-                                    <ul className='ml-6'>
-                                    <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                                    before:w-2 before:rounded-full before:border before:border-white 
-                                    before:bg-transparent">Diesel</li>
-                                        <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
-                                    before:w-2 before:rounded-full before:border before:border-white 
-                                    before:bg-transparent">Gas</li>
+                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>Inlet Flights</li>
+                                        <li>Drying Veiling Flights</li>
+                                        <li>Radiation Flights</li>
+                                        <li>Heating Flights</li>
+                                        <li>Mixing Flights</li>
                                     </ul>
-                                </li>
-                                <li>UV sensors for flame monitoring</li>
-                                <li>Separate pilot and main flame system</li>
-                                <li>Fuel filtration and safety regulation system</li>
-                            </ul>
-                        </div>
-                        <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
+                                </div>
+                                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BAGHOUSE CAPACITY</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_2: !prev.C2_2
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_2 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
+                                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                        ...prev,
+                                        C1_2: !prev.C1_2
+                                        }))}>
+                                            <svg width="28px" height="28px"
+                                            stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                            className={`transition-transform duration-300 transform ${
+                                                openSections.C1_2 ? "rotate-180" : ""
+                                            }`}>
+                                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>Fully automatic or manual operation</li>
+                                        <li>Digital temperature monitoring and regulation</li>
+                                        <li>Independent controls for each plant component</li>
+                                        <li>Simple and intuitive interface</li>
+                                        <li>Control system designed for field reliabilit</li>
+                                    </ul>
                                 </div>
-                                <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
-                                    <div className='flex justify-between'>
-                                        <h1>ACFM:</h1>
-                                        <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Filtering Area:</h1>
-                                        <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
-                                    </div>
-                                    <div className='flex justify-between'>
-                                        <h1>Fiberglass insulation:</h1>
-                                        <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
-                                    </div>
+                                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                                    <div className='w-full flex justify-between border-b border-b-white'>
+                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                            ...prev,
+                                            C1_3: !prev.C1_3
+                                            }))}>
+                                                <svg width="28px" height="28px"
+                                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                                className={`transition-transform duration-300 transform ${
+                                                    openSections.C1_3 ? "rotate-180" : ""
+                                                }`}>
+                                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>Industrial-grade motors and components</li>
+                                        <li>Simple wiring system for easy maintenance</li>
+                                        <li>Weather-protected electrical connections</li>
+                                        <li>Pulley and bushing transmission system</li>
+                                    </ul>
                                 </div>
+                                
                             </div>
-                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                                <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
+                            <div className='col-span-2 flex items-start justify-center w-full min-h-[600px] order-1 md:order-2'>
+                                
+                            </div>
+                            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3 gap-0 md:gap-10' id='column2' ref={columnGrid2}>
+                                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                                    <div className='w-full flex justify-between border-b border-b-white'>
+                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BURNER SYSTEM</h1>
+                                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                            ...prev,
+                                            C2_1: !prev.C2_1
+                                            }))}>
+                                                <svg width="28px" height="28px"
+                                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                                className={`transition-transform duration-300 transform ${
+                                                    openSections.C2_1 ? "rotate-180" : ""
+                                                }`}>
+                                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>
+                                            <div className='flex justify-between w-full'>
+                                            <h1>Modulating burner:</h1>
+                                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
+                                            </div>
+                                        </li>
+                                        <li>Fueled with total-air control system</li>
+                                        <li className='list-none'>
+                                            <ul className='ml-6'>
+                                            <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                                            before:w-2 before:rounded-full before:border before:border-white 
+                                            before:bg-transparent">Diesel</li>
+                                                <li className="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2
+                                            before:w-2 before:rounded-full before:border before:border-white 
+                                            before:bg-transparent">Gas</li>
+                                            </ul>
+                                        </li>
+                                        <li>UV sensors for flame monitoring</li>
+                                        <li>Separate pilot and main flame system</li>
+                                        <li>Fuel filtration and safety regulation system</li>
+                                    </ul>
                                 </div>
-                                <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>High-resistance structure for long-term operation</li>
-                                <li>Bolted components with anti-corrosion coating</li>
-                                <li>Thermal insulation reduces surface temperature</li>
-                                <li>Reinforced structure for heavy-duty use</li>
-                                <li>Labyrinth seals to reduce air loss and heat escape</li>
-                                <li>Galvanized bolts and electrostatic paint for durability with strong adhesion</li>
-                            </ul>
-                        </div>
-                    
-                    </div>
+                                <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
+                                        <div className='w-full flex justify-between border-b border-b-white'>
+                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BAGHOUSE CAPACITY</h1>
+                                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                            ...prev,
+                                            C2_2: !prev.C2_2
+                                            }))}>
+                                                <svg width="28px" height="28px"
+                                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                                className={`transition-transform duration-300 transform ${
+                                                    openSections.C2_2 ? "rotate-180" : ""
+                                                }`}>
+                                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
+                                            <div className='flex justify-between'>
+                                                <h1>ACFM:</h1>
+                                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                            </div>
+                                            <div className='flex justify-between'>
+                                                <h1>Filtering Area:</h1>
+                                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                            </div>
+                                            <div className='flex justify-between'>
+                                                <h1>Fiberglass insulation:</h1>
+                                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                        <div className='w-full flex justify-between border-b border-b-white'>
+                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                            ...prev,
+                                            C2_3: !prev.C2_3
+                                            }))}>
+                                                <svg width="28px" height="28px"
+                                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                                className={`transition-transform duration-300 transform ${
+                                                    openSections.C2_3 ? "rotate-180" : ""
+                                                }`}>
+                                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>High-resistance structure for long-term operation</li>
+                                        <li>Bolted components with anti-corrosion coating</li>
+                                        <li>Thermal insulation reduces surface temperature</li>
+                                        <li>Reinforced structure for heavy-duty use</li>
+                                        <li>Labyrinth seals to reduce air loss and heat escape</li>
+                                        <li>Galvanized bolts and electrostatic paint for durability with strong adhesion</li>
+                                    </ul>
+                                </div>
+                            
+                            </div>
                         </div>
                         <div className='flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap'>
                         <div className='flex flex-col items-center justify-center shrink-0 min-w-[272px]'>
@@ -2315,7 +2365,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -2372,7 +2426,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                                 <div className='my-3'>
-                                    <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                                    <p className='text-white text-lg'>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                     <div className='bg-white w-[1px] h-full relative'>
@@ -2421,7 +2479,11 @@ const cmToFeet = 0.0328084;
                                             </div>
                                         </div>
                                     </div>
-                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                                    <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                     <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                         <div className='bg-white h-[1px] w-full relative'>
                                             <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -2474,15 +2536,27 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
-                                            <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Width:</h1>
-                                            <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                            <p >
+                                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height:</h1>
-                                            <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                            <p >
+                                                {unit === 'metric'
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                 </div>
                                         
@@ -2507,7 +2581,11 @@ const cmToFeet = 0.0328084;
                                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <div className='flex justify-between'>
                                                 <h1>Total length (including hitch):</h1>
-                                                <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                                <p >
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Axle configuration:</h1>
@@ -2515,19 +2593,35 @@ const cmToFeet = 0.0328084;
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Fifth-wheel hitch height:</h1>
-                                                <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                                <p >
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Total width:</h1>
-                                                <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                                <p >
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Total height:</h1>
-                                                <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                                <p >
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Transportation height:</h1>
-                                                <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                                <p >
+                                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -2553,11 +2647,11 @@ const cmToFeet = 0.0328084;
                                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <div className='flex justify-between'>
                                                 <h1>3% humidity:</h1>
-                                                <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                                <p data-imperial='389.2 cm' data-metric='12.94 ft'>140 Tph</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>5% humidity:</h1>
-                                                <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                                <p data-imperial='128 cm' data-metric='4.2 ft'>180 Tph</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2700,7 +2794,11 @@ const cmToFeet = 0.0328084;
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                         <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                             <div className='bg-white h-[1px] w-full relative'>
                                                 <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -2757,7 +2855,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                     <div className='my-3'>
-                                        <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                        <p className='text-white text-lg' >
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                         <div className='bg-white w-[1px] h-full relative'>
@@ -2806,7 +2908,11 @@ const cmToFeet = 0.0328084;
                                                 </div>
                                             </div>
                                         </div>
-                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                        <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                            {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                         <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                             <div className='bg-white h-[1px] w-full relative'>
                                                 <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -2858,15 +2964,21 @@ const cmToFeet = 0.0328084;
                                     <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
-                                            <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                            <p >{unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Width:</h1>
-                                            <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                            <p >{unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height:</h1>
-                                            <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                            <p >{unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3114,7 +3226,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -3171,7 +3287,11 @@ const cmToFeet = 0.0328084;
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -3220,7 +3340,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -3273,15 +3397,27 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                    <p>     
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                         </div>
                                 
@@ -3306,7 +3442,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>Total length (including hitch):</h1>
-                                        <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Axle configuration:</h1>
@@ -3314,19 +3454,35 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Fifth-wheel hitch height:</h1>
-                                        <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total width:</h1>
-                                        <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total height:</h1>
-                                        <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Transportation height:</h1>
-                                        <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -3352,11 +3508,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
-                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                        <p>200 Tph</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>5% humidity:</h1>
-                                        <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                        <p>270 Tph</p>
                                     </div>
                                 </div>
                             </div>
@@ -3499,7 +3655,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -3556,7 +3716,11 @@ const cmToFeet = 0.0328084;
                                 </div>
                             </div>
                             <div className='my-3'>
-                                <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                <p className='text-white text-lg'>
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                 <div className='bg-white w-[1px] h-full relative'>
@@ -3605,7 +3769,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -3657,15 +3825,27 @@ const cmToFeet = 0.0328084;
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -3913,7 +4093,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                 {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -3970,7 +4154,11 @@ const cmToFeet = 0.0328084;
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                            <p className='text-white text-lg' >
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -4019,7 +4207,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -4072,15 +4264,27 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                    <p>
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                         </div>
                                 
@@ -4105,7 +4309,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>Total length (including hitch):</h1>
-                                        <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                        <p >
+                                             {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Axle configuration:</h1>
@@ -4113,19 +4321,33 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Fifth-wheel hitch height:</h1>
-                                        <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                        <p >
+                                             {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total width:</h1>
-                                        <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                        <p >
+                                             {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total height:</h1>
-                                        <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                        <p >
+                                             {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Transportation height:</h1>
-                                        <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                        <p > {unit === 'metric'
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                     </div>
                                 </div>
                             </div>
@@ -4151,11 +4373,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
-                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>300 Tph</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>5% humidity:</h1>
-                                        <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                        <p data-imperial='128 cm' data-metric='4.2 ft'>400 Tph</p>
                                     </div>
                                 </div>
                             </div>
@@ -4298,7 +4520,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                     {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -4355,7 +4581,11 @@ const cmToFeet = 0.0328084;
                                 </div>
                             </div>
                             <div className='my-3'>
-                                <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                <p className='text-white text-lg'>
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                 <div className='bg-white w-[1px] h-full relative'>
@@ -4404,7 +4634,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -4456,15 +4690,21 @@ const cmToFeet = 0.0328084;
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <p >{unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <p >{unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                    <p >{unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                             </div>
                         </div>
@@ -4712,7 +4952,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -4769,7 +5013,11 @@ const cmToFeet = 0.0328084;
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='705.37 cm' data-metric='23.14 ft'>23.14 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -4818,7 +5066,11 @@ const cmToFeet = 0.0328084;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,868.09 cm' data-metric='61.28 ft'>61.28 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -4871,15 +5123,21 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                    <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                    <p>{unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                    <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                         </div>
                                 
@@ -4904,7 +5162,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>Total length (including hitch):</h1>
-                                        <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                        <p >
+                                            {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Axle configuration:</h1>
@@ -4912,19 +5174,27 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Fifth-wheel hitch height:</h1>
-                                        <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                        <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total width:</h1>
-                                        <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                        <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total height:</h1>
-                                        <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                        <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Transportation height:</h1>
-                                        <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                        <p >{unit === 'metric'
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                     </div>
                                 </div>
                             </div>
@@ -4950,11 +5220,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
-                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>400 Tph</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>5% humidity:</h1>
-                                        <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                        <p data-imperial='128 cm' data-metric='4.2 ft'>540 Tph</p>
                                     </div>
                                 </div>
                             </div>
@@ -5097,7 +5367,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -5154,7 +5428,11 @@ const cmToFeet = 0.0328084;
                                 </div>
                             </div>
                             <div className='my-3'>
-                                <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                <p className='text-white text-lg'>
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                 <div className='bg-white w-[1px] h-full relative'>
@@ -5203,7 +5481,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                    {unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -5255,15 +5537,21 @@ const cmToFeet = 0.0328084;
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>{unit === 'metric'
+                                ? `${cabinSize[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>{unit === 'metric'
+                                ? `${cabinSize[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>{unit === 'metric'
+                                ? `${cabinSize[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                             </div>
                         </div>
