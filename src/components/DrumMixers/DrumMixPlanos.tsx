@@ -312,10 +312,10 @@ const cmToFeet = 0.0328084;
         </div>
       </div>
       <div 
-      ref={clipTargetRef}
-        id='sectionNueva'  
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
-      >
+        ref={clipTargetRef}
+            id='sectionNueva'  
+            className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        >
         <header className='mt-10 text-white' ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>
           <div className='flex items-center justify-center mt-10'>
@@ -434,10 +434,7 @@ const cmToFeet = 0.0328084;
           500-650 Tph
         </button>*/}
       </div>
-
       </div>
-      
-
       {/* Contenido de los tabs */}
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 1 && (
@@ -821,15 +818,27 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='653.41 cm' data-metric='21.42ft'>21.42 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                        ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                        ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>8.67 ft</p>
+                                    <p data-imperial='264.31 cm' data-metric='8.67 ft'>
+                                        {unit === 'metric'
+                                        ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                         </div>
                                 
@@ -854,7 +863,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>Total length (including hitch):</h1>
-                                        <p data-imperial='2,127.37 cm' data-metric='69.79 ft'>69.79 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                        ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Axle configuration:</h1>
@@ -862,19 +875,35 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Fifth-wheel hitch height:</h1>
-                                        <p data-imperial='140.00 cm' data-metric='4.59 ft'>4.59 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                        ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total width:</h1>
-                                        <p data-imperial='287.06 cm' data-metric='9.41 ft'>9.41 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                        ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Total height:</h1>
-                                        <p data-imperial='731.29 cm' data-metric='23.99 ft'>23.99 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                        ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Transportation height:</h1>
-                                        <p data-imperial='427.57 cm' data-metric='14.02 ft'>14.02 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                        ? `${activeData?.dimensions.transportationHeight?.toFixed(1) ?? ''} cm`
+                                        : `${((activeData?.dimensions.transportationHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -900,11 +929,11 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                     <div className='flex justify-between'>
                                         <h1>3% humidity:</h1>
-                                        <p data-imperial='389.2 cm' data-metric='12.94 ft'>180 Tph</p>
+                                        <p>80 Tph</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>5% humidity:</h1>
-                                        <p data-imperial='128 cm' data-metric='4.2 ft'>140 Tph</p>
+                                        <p>110 Tph</p>
                                     </div>
                                 </div>
                             </div>
@@ -1047,7 +1076,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                    {unit === 'metric'
+                                        ? `${cabinSize[0].width ?? ''} cm`
+                                        : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1104,7 +1137,11 @@ const cmToFeet = 0.0328084;
                                 </div>
                             </div>
                             <div className='my-3'>
-                                <p className='text-white text-lg' data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                <p className='text-white text-lg'>
+                                    {unit === 'metric'
+                                        ? `${cabinSize[0].height ?? ''} cm`
+                                        : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                                 <div className='bg-white w-[1px] h-full relative'>
@@ -1153,7 +1190,11 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                 </div>
-                                <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                    {unit === 'metric'
+                                        ? `${cabinSize[0].length ?? ''} cm`
+                                        : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                                 <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                     <div className='bg-white h-[1px] w-full relative'>
                                         <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1205,15 +1246,27 @@ const cmToFeet = 0.0328084;
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='434.71 cm' data-metric='14.26 ft'>14.26 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                        ? `${cabinSize[0].length ?? ''} cm`
+                                        : `${((cabinSize[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='222.93 cm' data-metric='7.31 ft'>7.31 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                        ? `${cabinSize[0].width ?? ''} cm`
+                                        : `${((cabinSize[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='309.34 cm' data-metric='10.14 ft'>10.14 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                        ? `${cabinSize[0].height ?? ''} cm`
+                                        : `${((cabinSize[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                             </div>
                         </div>
