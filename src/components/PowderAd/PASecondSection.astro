@@ -1,8 +1,24 @@
 ---
 import CardSection from "../IntegralAsphalt/CardSection.astro";
+import PAPlanos from "./PAPlanos";
 ---
 
 <section>
+    <div class="w-full bg-blueMain px-8 lg:px-52 grid grid-cols-1 lg:grid-cols-2 gap-10 py-10">
+        <div>
+            <img src="" alt="">
+        </div>
+        <div class="font-bold text-white">
+            <h2 class="text-2xl md:text-3xl">
+                Bin lids
+            </h2><br>
+            <p class="text-base md:text-lg">
+                Built-in bin lids keep the powder dry and protected from dust and other 
+                contaminants in industrial environments. — maintaining material integrity 
+                even on windy days.
+            </p>
+        </div>
+    </div>
     <div class="py-10">
         <h1 class="text-center font-bold text-blueMain text-2xl md:text-3xl">Choose life-lasting components for long-term performance and return on investment</h1>
     </div>
@@ -37,5 +53,6 @@ import CardSection from "../IntegralAsphalt/CardSection.astro";
             <img src="" alt="">
         </div>
     </div>
+    <PAPlanos client:only ></PAPlanos>
     <CardSection></CardSection>
 </section>

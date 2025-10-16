@@ -16,6 +16,65 @@ import standarLeft from '../../assets/images/IntegralAsphalt/standarleft.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const drumMixer = [
+    {
+        length: 300,
+        width: 112.32
+    }
+];
+const asphalTank = [
+    {
+        length: 389.2,
+        width: 128,
+        height: 158.50,
+        capcity: "6,000"
+    }
+];
+const binUnit = [
+    {
+        length: 317,
+        width: 190.5,
+        height: 160,
+        capcity: "8 ton"
+    }
+];
+const toggleConfig = [
+    {
+        id:'1',
+        dimensions:{
+            width: 292.10,
+            height: 394.47,
+            length: 762.00,
+            support: "Stationary legs",
+            chasisWidth: 266.70 ,
+        }
+    },
+    {
+        id:'2',
+        dimensions:{
+            width: 311.5,
+            height: 388.75,
+            length: 891.65,
+            support: "Pre-set stationary legs",
+            chasisWidth: 304.8 ,
+            wheel:'Eight 16" tires',
+            axleConfig: "Dual 8-lug axles"
+        }
+    },
+    {
+        id:'3',
+        dimensions:{
+            width: 290.5,
+            height: 421,
+            length: 876,
+            support: "Pre-set stationary legs",
+            chasisWidth: 254 ,
+            wheel:'11-22.5 tires',
+            axleConfig: "Dual 8-lug axles",
+            fifthWheel: 130.45
+        }
+    }
+]
 const PlanoSection = () => {
   //tabs states
   const [activeTab, setActiveTab] = useState(3);
@@ -48,26 +107,14 @@ const PlanoSection = () => {
     C5_2: false,
     C5_3: false,
   });
+   // valor de cm a pies
+const cmToFeet = 0.0328084;
+  const activeData = toggleConfig.find(item => item.id === activeTab.toString());
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
-    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
-  // Función que busca elementos con data-metric/data-imperial y los actualiza
-  const updateElements = (currentUnit: "metric" | "imperial") => {
-    const elements = document.querySelectorAll("[data-metric][data-imperial]");
-    elements.forEach((element) => {
-      const value = element.getAttribute(`data-${currentUnit}`);
-      if (value) {
-        element.textContent = value;
-      }
-    });
-  };
-  // Efecto para actualizar al cargar (opcional)
-  useEffect(() => {
-    updateElements(unit);
-  }, []);
   //clipath
   useEffect(() => {
     const box = boxRef.current;
@@ -558,7 +605,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -615,7 +666,11 @@ gsap.set(img, {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <p className='text-white text-lg' >
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -664,7 +719,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' >
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -715,23 +774,41 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Total length (including hitch):</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Support:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {activeData?.dimensions.support ?? ''} 
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Chassis width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.chasisWidth?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.chasisWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                             </div>
                     </div>
@@ -757,15 +834,27 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p >
+                                         {unit === 'metric'
+                                ? `${drumMixer[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
@@ -808,19 +897,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].capcity ?? ''} L`
+                                : `${((asphalTank[0].capcity ?? 0) )} L`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>STORAGE TANK</h1>
@@ -853,19 +958,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${binUnit[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p >
+                                        {unit === 'metric'
+                                ? `${binUnit[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].capcity ?? ''}`
+                                : `${((binUnit[0].capcity ?? 0) )}`}
+                                    </p>
                                 </div>
                             </div>
                     </div>
@@ -873,7 +994,6 @@ gsap.set(img, {
             </div>
           
         )}
-
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
@@ -1107,7 +1227,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1164,7 +1288,11 @@ gsap.set(img, {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1213,7 +1341,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1264,23 +1396,57 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Total length (including hitch):</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle Configuration:</h1>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.axleConfig ?? ''} `
+                                : `${((activeData?.dimensions.axleConfig ?? 0) )} `}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Support:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.support ?? ''} `
+                                : `${((activeData?.dimensions.support ?? 0) )} `}
+                                    </p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transport wheels:</h1>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel ?? ''} `
+                                : `${((activeData?.dimensions.wheel ?? 0) )} `}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Chassis width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.chasisWidth?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.chasisWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>{unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}</p>
                                 </div>
                             </div>
                     </div>
@@ -1306,15 +1472,27 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                         {unit === 'metric'
+                                ? `${drumMixer[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
@@ -1357,19 +1535,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].capcity ?? ''} L`
+                                : `${((asphalTank[0].capcity ?? 0) )} L`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>STORAGE TANK</h1>
@@ -1402,19 +1596,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].capcity ?? ''} `
+                                : `${((binUnit[0].capcity ?? 0) )} `}
+                                    </p>
                                 </div>
                             </div>
                     </div>
@@ -1654,7 +1864,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='292.10 cm' data-metric='9.58 ft'>9.58 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1711,7 +1925,11 @@ gsap.set(img, {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='394.47 cm' data-metric='12.94 ft'>12.94 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1760,7 +1978,11 @@ gsap.set(img, {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='762.00 cm' data-metric='25.00 ft'>25.00 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1811,23 +2033,78 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <div className='flex justify-between'>
                                     <h1>Total length (including hitch):</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Axle configuration:</h1>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.axleConfig ?? ''}`
+                                : `${((activeData?.dimensions.axleConfig ?? 0) )} `}
+                                    </p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Fifth-wheel hitch height:</h1>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.fifthWheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.fifthWheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Support:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        <div className='flex justify-between'>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.support ?? ''} `
+                                : `${((activeData?.dimensions.support ?? 0) )} `}
+                                    </p>
+                                </div>
+                                    </p>
+                                </div>
+                                <div className='flex justify-between'>
+                                    <h1>Transport wheels:</h1>
+                                    
+                                        <div className='flex justify-between'>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel ?? ''} `
+                                : `${((activeData?.dimensions.wheel ?? 0) )} `}
+                                    </p>
+                                    </div>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Chassis width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        <div className='flex justify-between'>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.chasisWidth?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.chasisWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
+                                </div>
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Total height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                             </div>
                     </div>
@@ -1853,15 +2130,27 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${drumMixer[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FLIGHTS</h1>
@@ -1904,19 +2193,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((asphalTank[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${asphalTank[0].capcity ?? ''} L`
+                                : `${((asphalTank[0].capcity ?? 0) )} L`}
+                                    </p>
                                 </div><br />
                                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>STORAGE TANK</h1>
@@ -1949,19 +2254,35 @@ gsap.set(img, {
                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>9.88 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Width:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Height:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                    </p>
                                 </div>
                                 <div className='flex justify-between'>
                                     <h1>Capacity:</h1>
-                                    <p data-imperial='112.32 cm' data-metric='3.68 ft'>3.68 ft</p>
+                                    <p>
+                                        {unit === 'metric'
+                                ? `${binUnit[0].capcity ?? ''} `
+                                : `${((binUnit[0].capcity ?? 0) )} `}
+                                    </p>
                                 </div>
                             </div>
                     </div>

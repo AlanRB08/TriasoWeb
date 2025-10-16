@@ -1,11 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
-import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
-import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
-import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
-import tolva2F1 from '../../assets/images/BinUnits/tolva2F1.png';
 import HMainS1 from '../../assets/images/HotMix/Silo50-Comp.Assy-R.png';
 import HMainBS1 from '../../assets/images/HotMix/Silo50-Comp.Assy.png';
 import HLeftBS1 from '../../assets/images/HotMix/Silosf50-1.png';
@@ -109,7 +104,6 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
   useEffect(() => {
     updateElements(unit);
   }, []);
-
  useEffect(() => {
   console.log('Current values:', { activeTab, activeVersion });
   const box = boxRef.current;
@@ -643,13 +637,13 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             {
                                 activeVersion === '50tons' ? (
                                     <img 
-                                    src={HLeftBS1.src} 
+                                    src={HLeftBS2.src} 
                                     alt="" 
                                     className='max-w-full max-h-full object-contain'
                                 />
                                 ):(
                                     <img 
-                                src={HRightBS1.src} 
+                                src={HLeftBS2.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
