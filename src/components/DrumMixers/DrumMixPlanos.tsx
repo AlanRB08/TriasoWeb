@@ -23,7 +23,7 @@ const cabinSize = [
         width: 222.93,
         height: 309.34
     }
-]
+];
 const toggleConfig = [
     {
         id:'1',
@@ -109,7 +109,7 @@ const toggleConfig = [
             humidity5: 540,
         }
     }
-]
+];
 gsap.registerPlugin(ScrollTrigger);
 
 const DrumMixPlanos = () => {

@@ -30,7 +30,96 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-
+const singleUnit = [
+    {
+        length: 365.75,
+        width: 268.22,
+        height: 201.17,
+        capacity: "20 tons",
+    }
+]
+const toggleConfig = [
+    {
+        id:'1',
+        dimensions:{
+            width: 268.22,
+            height: 381.00,
+            length: 722.37,
+            axleConfig: "One Axle",
+            wheel:134.11,
+        }
+    },
+    {
+        id:'2',
+        dimensions:{
+            width: 299.09,
+            height: 705.37,
+            length: 2007.70,
+            drumLenght: 898.95,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 110,
+            humidity5: 150,
+        }
+    },
+    {
+        id:'3',
+        dimensions:{
+            width: 309.40,
+            height: 705.37,
+            length: 2127.37,
+            drumLenght: 1109.42,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 140,
+            humidity5: 180,
+        }
+    },
+    {
+        id:'4',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2037.62,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 200,
+            humidity5: 270,
+        }
+    },
+    {
+        id:'5',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2037.62,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 300,
+            humidity5: 400,
+        }
+    },
+    {
+        id:'6',
+        dimensions:{
+            width: 310.00,
+            height: 509.68,
+            length: 2044.96,
+            drumLenght: 1280.48,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 400,
+            humidity5: 540,
+        }
+    }
+]
 const BinPlanosSection = () => {
     //logica de cambio de imagenes
     const [activeVersion, setActiveVersion] = useState('withPanels');

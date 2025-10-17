@@ -155,7 +155,7 @@ export const menuItems = [
       },
       {
         title : "ADVANTAGES",
-        url : "/about/advantages",
+        url : "/Advantages",
       },
       {
         title : "HIGH QUALITY",

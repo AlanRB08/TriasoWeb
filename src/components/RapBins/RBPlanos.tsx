@@ -5,21 +5,51 @@ import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
 import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
 import tolva2L2 from '../../assets/images/BinUnits/tolva2L2.png';
 import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
-import tolva2F1 from '../../assets/images/BinUnits/tolva2F1.png';
-import tolva2Main from '../../assets/images/BinUnits/tolva2Main.png';
 import tolva1L2 from '../../assets/images/BinUnits/tolva1L2.png';
 import tolva1L1 from '../../assets/images/BinUnits/tolva1L1.png';
 import tolva1F from '../../assets/images/BinUnits/tolva1F.png';
 import tolva1Main from '../../assets/images/BinUnits/tolva1Main.png';
-import tolva3L2 from '../../assets/images/BinUnits/tolva3L2.png';
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-
+const singleUnit = [
+    {
+        length: 365.75,
+        width: 268.22,
+        height: 201.17,
+        capacity: "20 tons"
+    }
+];
+const toggleConfig = [
+    {
+        id:'1',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 722.37,
+            drumLenght: 653.41,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 80,
+            humidity5: 110,
+        }
+    },
+    {
+        id:'2',
+        dimensions:{
+            width: 299.09,
+            height: 705.37,
+            length: 2007.70,
+            drumLenght: 898.95,
+            drumHeight: 264.31 ,
+            transportationHeight: 424.57,
+            wheel:140.0,
+            humidity3: 110,
+            humidity5: 150,
+        }
+    }
+];
 const RBPlanos = () => {
     //logica de cambio de imagenes
     const [activeVersion, setActiveVersion] = useState('withPanels');
