@@ -1,113 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import caseta1 from '../../assets/images/DrumMixers/caseta1.png';
-import caseta2 from '../../assets/images/DrumMixers/caseta2.png';
 import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.png';
 import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
-import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
-import tab6Left from '../../assets/images/DrumMixers/tab6Left.png';
-import tab5Main from '../../assets/images/DrumMixers/tab5Main.png';
-import tab5Left from '../../assets/images/DrumMixers/tab5Left.png';
-import tab5Right from '../../assets/images/DrumMixers/tab5Right.png';
 import tab1Main from '../../assets/images/DrumMixers/tab1Main.png';
 import tab1Left from '../../assets/images/DrumMixers/tab1Left.png';
-import tab1Right from '../../assets/images/DrumMixers/tab5Right.png';
-import tab2Main from '../../assets/images/DrumMixers/tab2Main.png';
-import tab2Left from '../../assets/images/DrumMixers/tab2L.png';
-import tab6Main from '../../assets/images/DrumMixers/tab6M.png';
 
-const cabinSize = [
-    {
-        length: 434.71,
-        width: 222.93,
-        height: 309.34
-    }
-]
 const toggleConfig = [
     {
-        id:'1',
-        dimensions:{
-            width: 287.06,
-            height: 705.37,
-            length: 1868.09,
-            drumLenght: 653.41,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 80,
-            humidity5: 110,
-        }
-    },
-    {
-        id:'2',
-        dimensions:{
-            width: 299.09,
-            height: 705.37,
-            length: 2007.70,
-            drumLenght: 898.95,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 110,
-            humidity5: 150,
-        }
-    },
-    {
-        id:'3',
-        dimensions:{
-            width: 309.40,
-            height: 705.37,
-            length: 2127.37,
-            drumLenght: 1109.42,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 140,
-            humidity5: 180,
-        }
-    },
-    {
-        id:'4',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2037.62,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 200,
-            humidity5: 270,
-        }
-    },
-    {
-        id:'5',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2037.62,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 300,
-            humidity5: 400,
-        }
-    },
-    {
-        id:'6',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2044.96,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 400,
-            humidity5: 540,
-        }
+        width: 86,
+        height: 108.7,
+        length: 82,
     }
 ]
 gsap.registerPlugin(ScrollTrigger);
@@ -147,8 +50,7 @@ const cmToFeet = 0.0328084;
     C5_1: false,
     C5_2: false,
   });
-  //ACTIVE DATA 
-  const activeData = toggleConfig.find(item => item.id === activeTab.toString());
+
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
@@ -384,7 +286,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>Specifically designed for use with Triaso burners.</li>
                                         <li>Compatible with alternate fuels for efficient combustion.</li>
                                         <li>Prevents contamination of the mix with fuel residues.</li>
@@ -407,7 +309,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>In-line electric resistance of 13.5 kW.</li>
                                         <li>Heats fuel up to 40 °C with a flow of 840 liters per hour.</li>
                                         <li>Safety feature prevents activation if no fuel is present in the pipeline.</li>
@@ -431,7 +333,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>Industrial-grade motors and components</li>
                                         <li>Simple wiring system for easy maintenance</li>
                                         <li>Weather-protected electrical connections</li>
@@ -459,7 +361,7 @@ const cmToFeet = 0.0328084;
                                                 </svg>
                                             </button>
                                         </div>
-                                        <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <ul className={`font-thin transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <li>Integrated strainer for internal fuel filtration.</li>
                                             <li>Removes impurities larger than mesh 100.</li>
                                             <li>Easy to clean, no tools required.</li>
@@ -541,8 +443,8 @@ const cmToFeet = 0.0328084;
                             </div>
                             <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
                                 {unit === 'metric'
-                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].width.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
@@ -602,8 +504,8 @@ const cmToFeet = 0.0328084;
                                 <div className='my-3'>
                                     <p className='text-white text-lg'>
                                         {unit === 'metric'
-                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
                                     </p>
                                 </div>
                                 <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
@@ -655,8 +557,8 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
                                         {unit === 'metric'
-                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
                                     </p>
                                     <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                         <div className='bg-white h-[1px] w-full relative'>
@@ -712,24 +614,24 @@ const cmToFeet = 0.0328084;
                                             <h1>Length:</h1>
                                             <p>
                                                 {unit === 'metric'
-                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].length?.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].length ?? 0) * cmToFeet).toFixed(1)} ft`}
                                             </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Width:</h1>
                                             <p >
                                                 {unit === 'metric'
-                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].width?.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].width ?? 0) * cmToFeet).toFixed(1)} ft`}
                                             </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height:</h1>
                                             <p >
                                                 {unit === 'metric'
-                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig[0].height?.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig[0].height ?? 0) * cmToFeet).toFixed(1)} ft`}
                                             </p>
                                         </div>
                                 </div>

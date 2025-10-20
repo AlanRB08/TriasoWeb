@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import M1 from "../../assets/images/ColdMix/Planos/M2.png";
+import M2 from "../../assets/images/ColdMix/Planos/M3.png";
 import FW from "../../assets/images/ColdMix/Planos/FW.png";
 import FL from "../../assets/images/ColdMix/Planos/FL.png";
 import A2GLA from '../../assets/images/ColdMix/Planos/2GLA.png';
@@ -18,25 +20,237 @@ import A3TLA from '../../assets/images/ColdMix/Planos/3TLA.png';
 import A3TLW from '../../assets/images/ColdMix/Planos/3TLW.png';
 import A3TWA from '../../assets/images/ColdMix/Planos/3TWA.png';
 import A3TWW from '../../assets/images/ColdMix/Planos/3TWW.png';
-import tolva3L1 from '../../assets/images/BinUnits/tolva3L1.png';
 import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
-import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
-import tolva2L2 from '../../assets/images/BinUnits/tolva2L2.png';
-import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
-import tolva2F1 from '../../assets/images/BinUnits/tolva2F1.png';
-import tolva2Main from '../../assets/images/BinUnits/tolva2Main.png';
-import tolva1L2 from '../../assets/images/BinUnits/tolva1L2.png';
-import tolva1L1 from '../../assets/images/BinUnits/tolva1L1.png';
-import tolva1F from '../../assets/images/BinUnits/tolva1F.png';
-import tolva1Main from '../../assets/images/BinUnits/tolva1Main.png';
-import tolva3L2 from '../../assets/images/BinUnits/tolva3L2.png';
-
 
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
+const toggleConfig = [
+    {
+        id:"2-withPanels-groundLevel-legs",
+        dimensions:{
+            width: 268.22,
+            height: 381.00,
+            length: 1463.00,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120.0,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:"2-withPanels-groundLevel-wheels",
+        dimensions:{
+            width: 268.22,
+            height: 381.00,
+            length: 1463.00,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120.0,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withPanels-truckLevel-legs',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 1894.58,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365.0,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withPanels-truckLevel-wheels',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 1894.58,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365.0,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withoutPanels-groundLevel-legs',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1280,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withoutPanels-groundLevel-wheels',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1463,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withoutPanels-truckLevel-legs',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 1887.27,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'2-withoutPanels-truckLevel-wheels',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 1887.27,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withPanels-groundLevel-legs',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1826,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withPanels-groundLevel-wheels',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1826,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withoutPanels-groundLevel-legs',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1591,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withoutPanels-groundLevel-wheels',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 1826,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 120,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withPanels-truckLevel-legs',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 2359,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withPanels-truckLevel-wheels',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 2359,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withoutPanels-truckLevel-legs',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 2297,
+            config: "On-Legs",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    },
+    {
+        id:'3-withoutPanels-truckLevel-wheels',
+        dimensions:{
+            width: 284.50,
+            height: 458,
+            length: 2297,
+            config: "One Axle",
+            wheel:140.0,
+            totalHeight: 458.00,
+            dischargeHeight: 365,
+            feeding: 45.72,
+            collector: 60.96
+        }
+    }
+]
 
 const CMPlanos = () => {
     //logica de cambio de imagenes
@@ -45,7 +259,8 @@ const CMPlanos = () => {
     const [mountedVersion, setMountedVersion] = useState('legs');
   //tabs states
   const [activeTab, setActiveTab] = useState(3);
-
+// valor de cm a pies
+    const cmToFeet = 0.0328084;
   //combinaciones de las imagenes
   const imageMap = {
     "2-withPanels-groundLevel-legs": A2GLA,
@@ -67,7 +282,6 @@ const CMPlanos = () => {
   }
   const key = `${activeTab}-${activeVersion}-${dischargeVersion}-${mountedVersion}`;
     const selectedImage = imageMap[key as keyof typeof imageMap];
-
   //animation 
   const boxRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
@@ -79,6 +293,7 @@ const CMPlanos = () => {
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
 
+  const activeData = toggleConfig.find(item => item.id === key);
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
 
@@ -86,7 +301,6 @@ const CMPlanos = () => {
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
-    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
   //ESTADOS DE LOS DROPWDOWNS
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -102,24 +316,6 @@ const CMPlanos = () => {
     C4_2: false,
     C4_3: false,
   });
-
-  // Función que busca elementos con data-metric/data-imperial y los actualiza
-  const updateElements = (currentUnit: "metric" | "imperial") => {
-    const elements = document.querySelectorAll("[data-metric][data-imperial]");
-    elements.forEach((element) => {
-      const value = element.getAttribute(`data-${currentUnit}`);
-      if (value) {
-        element.textContent = value;
-      }
-    });
-  };
-
-  // Efecto para actualizar al cargar (opcional)
-  useEffect(() => {
-    updateElements(unit);
-  }, []);
-
-
  useEffect(() => {
   const box = boxRef.current;
   const target = nextSectionRef.current;//target original
@@ -234,9 +430,6 @@ const CMPlanos = () => {
     clearTimeout(refreshTimer);
   };
 }, [activeTab]);
-
-
-
   return (
     <div className='w-full flex flex-col items-center justify-center'>
       <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">
@@ -255,10 +448,10 @@ const CMPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[120px] h-[560px]"
+             z-20 w-[90px] h-[770px]"
         >
           <img
-            src={tolva3Blue.src}
+            src={M2.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
@@ -511,7 +704,7 @@ const CMPlanos = () => {
                 </div>
             </div>
             <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva2Main.src} alt="" className='w-[200px] h-[600px]' />
+                <img src={M1.src} alt="" className='w-[115px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
@@ -693,7 +886,11 @@ const CMPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -718,11 +915,11 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                        <div className='w-[200px] min-h-[253px] flex items-center justify-center'>
                         {mountedVersion === 'wheels' ? (
-                                <img src={FW.src} alt="Mounted on wheels" className='h-[353px] w-[744px]'/>
+                                <img src={FW.src} alt="Mounted on wheels" className='w-[200px] min-h-[253px]'/>
                             ) : (
-                                <img src={FL.src} alt="Mounted on legs" className='h-[353px] w-[744px]'/>
+                                <img src={FL.src} alt="Mounted on legs" className='w-[200px] min-h-[253px]'/>
                             )}
                         </div>
                     </div>
@@ -750,7 +947,11 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='381 cm' data-metric='12.75 ft'>12.75 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -799,7 +1000,11 @@ const CMPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='722.37 cm' data-metric='23.7 ft'>23.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -824,8 +1029,8 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
-                        <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                        <div className='h-[353px] min-w-[744px] flex justify-center items-center'>
+                        <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[353px] min-w-[744px]'/>
                         </div>
                     </div>
                 </div>
@@ -850,19 +1055,27 @@ const CMPlanos = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
-                                <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Width:</h1>
-                                <p data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height:</h1>
-                                <p data-imperial='201.17 cm' data-metric='6.6 ft'>6.6 ft</p>
-                            </div>
-                            <div className='flex justify-between'>
-                                <h1>Capacity:</h1>
-                                <p>20 tons</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -886,23 +1099,43 @@ const CMPlanos = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
-                                <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Axle configuration: </h1>
-                                <p>One Axle</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.config ?? ''} `
+                                : `${((activeData?.dimensions.config ?? 0))} `}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fifth-wheel hitch height:</h1>
-                                <p data-imperial='134.11 cm' data-metric='4.4 ft'>4.4 ft</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Total Height:</h1>
-                                <p data-imperial='260.00 cm' data-metric='8.5 ft'>8.5 ft</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.totalHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.totalHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Discharge height (from ground):</h1>
-                                <p data-imperial='381.00 cm' data-metric='12.5 ft'>12.5 ft</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.dischargeHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.dischargeHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                        
@@ -927,41 +1160,21 @@ const CMPlanos = () => {
                         <div className={`w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
                             <div className='flex justify-between'>
                                 <h1>Feeding belt width:</h1>
-                                <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.feeding?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.feeding ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Collector belt width: </h1>
-                                <p>One Axle</p>
+                                <p>
+                                     {unit === 'metric'
+                                ? `${activeData?.dimensions.collector?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.collector ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div className='text-white font-normal flex flex-col gap-4'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PUGMILL MIXING SYSTEM</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C4_4: !prev.C4_4
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C4_4 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_4 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Twin-shaft horizontal pugmill </li>
-                        <li> High-resistance steel liners</li>
-                        <li> Interchangeable paddles</li>
-                        <li>Adjustable mixing time</li>
-                        <li>Direct discharge gate to stockpile or truck</li>
-                        <li>Driven by 10–15 HP electric motor</li>
-                        <li>Speed reducer transmission</li>
-
-                    </ul>
                     </div>
                 </div>
             </div>
@@ -1023,7 +1236,7 @@ const CMPlanos = () => {
                     </ul>
                 </div>
             </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-[628px] order-1 md:order-2'>
+            <div className='col-span-2 flex items-start justify-center w-full min-h-[900px] order-1 md:order-2'>
                 
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
@@ -1205,7 +1418,11 @@ const CMPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                 {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1271,7 +1488,11 @@ const CMPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='381 cm' data-metric='12.75 ft'>12.75 ft</p>
+                            <p className='text-white text-lg'>
+                                 {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1320,7 +1541,11 @@ const CMPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='722.37 cm' data-metric='23.7 ft'>23.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                 {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1345,15 +1570,15 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[253px] w-[744px] flex justify-center items-center'>
-                            <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
+                        <div className='h-[253px] min-w-[744px] flex justify-center items-center'>
+                            <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[253px] min-w-[744px]'/>
                         </div>
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full md:mt-10 md:gap-10'>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>SINGLE UNIT DIMENSIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DIMENSIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_1: !prev.C4_1
@@ -1371,19 +1596,27 @@ const CMPlanos = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
-                                <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Width:</h1>
-                                <p data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height:</h1>
-                                <p data-imperial='201.17 cm' data-metric='6.6 ft'>6.6 ft</p>
-                            </div>
-                            <div className='flex justify-between'>
-                                <h1>Capacity:</h1>
-                                <p>20 tons</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1407,30 +1640,50 @@ const CMPlanos = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
-                                <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Axle configuration: </h1>
-                                <p>One Axle</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.config ?? ''} `
+                                : `${((activeData?.dimensions.config ?? 0))}`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fifth-wheel hitch height:</h1>
-                                <p data-imperial='134.11 cm' data-metric='4.4 ft'>4.4 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
-                                <h1>Total width:</h1>
-                                <p data-imperial='260.00 cm' data-metric='8.5 ft'>8.5 ft</p>
+                                <h1>Total height:</h1>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.totalHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.totalHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
-                                <h1>Height with bins in operation:</h1>
-                                <p data-imperial='381.00 cm' data-metric='12.5 ft'>12.5 ft</p>
+                                <h1>Discharge height:</h1>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.dischargeHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.dischargeHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                        
                     </div>
-                    <div className='text-white font-normal col-span-1 md:col-span-2 flex flex-col gap-4'>
+                    <div className='text-white font-normal col-span-1 flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BIN OPTIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_3: !prev.C4_3
@@ -1445,27 +1698,23 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
-                            <ul className='ml-6 list-disc'>
-                                    <li>Grizzlies</li>
-                                    <li>Bin level indicators</li>
-                                    <li>Adjustable depth control gates</li>
-                                    <li>Cable trays</li>
-                                    <li>Bulkheads (available in full height)</li>
-                                    <li>Self-relieving feeder throats</li>
-                                    <li>Bin dividers</li>
-                                    <li>Walkways</li>
-                                </ul>
-                                <ul className='ml-6 list-disc'>
-                                    <li>Bin covers</li>
-                                    <li>Built-in retaining walls</li>
-                                    <li>Air cannons</li>
-                                    <li>Moisture probes</li>
-                                    <li>Wire mesh guarding</li>
-                                    <li>Bin vibrators</li>
-                                    <li>Bin extensions</li>
-                                    <li>Built-in scalping screens</li>
-                                </ul>
+                        <div className={`flex flex-col w-full justify-around items-start transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
+                            <div className='flex justify-between'>
+                                <h1>Feeding belt width:</h1>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.feeding?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.feeding ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Collector belt width:</h1>
+                                <p>
+                                    {unit === 'metric'
+                                ? `${activeData?.dimensions.collector ?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.collector ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

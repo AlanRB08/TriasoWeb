@@ -22,7 +22,68 @@ import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.png';
 import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
 
 gsap.registerPlugin(ScrollTrigger);
-
+const toggleConfig = [
+    {
+        id:'12',
+        dimensions:{
+            width: 338.38,
+            height: 424.34,
+            length: 1281.50,
+            tanklenght: 704,
+            tangheight:274.10,
+            capacity:45000,
+            wheel:149.50
+        }
+    },
+    {
+        id:'15',
+        dimensions:{
+            width: 344.45,
+            height: 424.34,
+            length: 1498.75,
+            tanklenght: 921,
+            tangheight:274.10,
+            capacity:60000,
+            wheel:149.50
+        }
+    },
+    {
+        id:'20',
+        dimensions:{
+            width: 358.85,
+            height: 424.34,
+            length: 1726.26,
+            tanklenght: 1149,
+            tangheight:274.10,
+            capacity:45000,
+            wheel:149.50
+        }
+    },
+    {
+        id:'25',
+        dimensions:{
+            width: 371.47,
+            height: 424.34,
+            length: 2000.38,
+            tanklenght: 1423.56,
+            tangheight:274.10,
+            capacity:100000,
+            wheel:149.50
+        }
+    },
+    {
+        id:'30',
+        dimensions:{
+            width: 384.09,
+            height: 424.34,
+            length: 2274.51,
+            tanklenght: 1697.51,
+            tangheight:274.10,
+            capacity:120000,
+            wheel:149.50
+        }
+    }
+]
 const HotMixPlanos = () => {
     //logica de cambio de imagenes
     const [activeVersion, setActiveVersion] = useState('50tons');
@@ -39,7 +100,7 @@ const HotMixPlanos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
-
+    const cmToFeet = 0.0328084;
   //RENDERIZADO CONDICIONAL DE IMAGENES
   type VersionType = '50tons' | '100tons' | '150tons' | '200tons';
   const imageMap: Record<VersionType, string> = {
@@ -88,22 +149,7 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
-    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
-  // Función que busca elementos con data-metric/data-imperial y los actualiza
-  const updateElements = (currentUnit: "metric" | "imperial") => {
-    const elements = document.querySelectorAll("[data-metric][data-imperial]");
-    elements.forEach((element) => {
-      const value = element.getAttribute(`data-${currentUnit}`);
-      if (value) {
-        element.textContent = value;
-      }
-    });
-  };
-  // Efecto para actualizar al cargar (opcional)
-  useEffect(() => {
-    updateElements(unit);
-  }, []);
  useEffect(() => {
   console.log('Current values:', { activeTab, activeVersion });
   const box = boxRef.current;
