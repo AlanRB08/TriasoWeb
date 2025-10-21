@@ -20,67 +20,116 @@ import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
 import HMainBR2 from '../../assets/images/HotMix/Silo-SF100TBpS.png';
 import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.png';
 import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
+import HML50 from "../../assets/images/HotMix/50L.png";
+import HMR50 from "../../assets/images/HotMix/50R.png";
+import HML100 from "../../assets/images/HotMix/100L.png";
+import HMR100 from "../../assets/images/HotMix/100R.png";
 
 gsap.registerPlugin(ScrollTrigger);
+const slatConveyor = {
+    length: 1667.25,
+    width: 67.05,
+    heightErec: 1286.25,
+    chain: 981.45,
+    heightDischarge: 980.80,
+    angle: "48.6°"
+
+}
 const toggleConfig = [
     {
-        id:'12',
+        id:'1-50tons',
         dimensions:{
-            width: 338.38,
-            height: 424.34,
-            length: 1281.50,
-            tanklenght: 704,
-            tangheight:274.10,
-            capacity:45000,
-            wheel:149.50
+            width: 301.752,
+            height: 1304.544,
+            length: 2011.68,
+            chasisLenght: 1459.992,
+            transporWidth:365.76,
+            axleConfig: "Doble Axle",
+            wheel:124.968,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"50 tons",
+            truckHeight: 368.808,
         }
     },
     {
-        id:'15',
+        id:'1-100tons',
         dimensions:{
-            width: 344.45,
-            height: 424.34,
-            length: 1498.75,
-            tanklenght: 921,
-            tangheight:274.10,
-            capacity:60000,
-            wheel:149.50
+            width: 350.52,
+            height: 1584.96,
+            length: 2011.68,
+            chasisLenght: 1459.992,
+            transporWidth:365.76,
+            axleConfig: "Doble Axle",
+            wheel:124.968,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"50 tons",
+            truckHeight: 212,
         }
     },
     {
-        id:'20',
+        id:'2-50tons',
         dimensions:{
-            width: 358.85,
-            height: 424.34,
-            length: 1726.26,
-            tanklenght: 1149,
-            tangheight:274.10,
-            capacity:45000,
-            wheel:149.50
+            width: 3543,
+            height: 16954,
+            length: 16245,
+            chasisLenght: 0,
+            transporWidth:0,
+            axleConfig: "Double",
+            wheel:140,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"50 tons",
+            truckHeight: 3688,
         }
     },
     {
-        id:'25',
+        id:'2-100tons',
         dimensions:{
-            width: 371.47,
-            height: 424.34,
-            length: 2000.38,
-            tanklenght: 1423.56,
-            tangheight:274.10,
-            capacity:100000,
-            wheel:149.50
+            width: 3602,
+            height: 19842,
+            length: 18923,
+            chasisLenght: 0,
+            transporWidth:0,
+            axleConfig: "Double",
+            wheel:140,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"100 tons",
+            truckHeight: 3688,
         }
     },
     {
-        id:'30',
+        id:'2-150tons',
         dimensions:{
-            width: 384.09,
-            height: 424.34,
-            length: 2274.51,
-            tanklenght: 1697.51,
-            tangheight:274.10,
-            capacity:120000,
-            wheel:149.50
+            width: 3630,
+            height: 21366,
+            length: 20478,
+            chasisLenght: 0,
+            transporWidth:0,
+            axleConfig: "Double",
+            wheel:140,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"150 tons",
+            truckHeight: 3688,
+        }
+    },
+    {
+        id:'2-200tons',
+        dimensions:{
+            width: 3672,
+            height: 25260,
+            length: 24662,
+            chasisLenght: 0,
+            transporWidth:0,
+            axleConfig: "Double",
+            wheel:140,
+            support: "Steel legs with base plates for anchor bolting",
+            wheels: '16" highway-rated tires',
+            capacity:"200 tons",
+            truckHeight: 3688,
         }
     }
 ]
@@ -142,7 +191,9 @@ const HotMixPlanos = () => {
 const selectedImage = imageMap[activeVersion as VersionType] || HLeftBS1.src;
 const selectedImage2 = imageMap2[activeVersion as VersionType] || HLeftBS1.src;
 const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
-
+//KEY
+const key = `${activeTab}-${activeVersion}`;
+const activeData = toggleConfig.find(item => item.id === key);
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
   // Función para alternar unidades
@@ -629,7 +680,7 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                         </ul>
                     </div>
                 </div>
-                <div className='flex justify-start md:justify-center items-end my-10 gap-0 md:gap-20 w-full overflow-x-auto'>
+                <div className='flex justify-start md:justify-center items-end my-10 gap-6 w-full overflow-x-auto'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
@@ -654,7 +705,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -679,17 +734,17 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[500px] flex items-center justify-center'>
+                        <div className='h-[400px] min-w-[650px] w-full flex items-center justify-center'>
                             {
                                 activeVersion === '50tons' ? (
                                     <img 
-                                    src={HLeftBS2.src} 
+                                    src={HML50.src} 
                                     alt="" 
                                     className='max-w-full max-h-full object-contain'
                                 />
                                 ):(
                                     <img 
-                                src={HLeftBS2.src} 
+                                src={HML100.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
@@ -697,7 +752,7 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             }
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[525px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[400px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -721,7 +776,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -770,7 +829,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -795,17 +858,17 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[525px] flex justify-center items-center'>
+                        <div className='h-[400px] min-w-[150px] w-full flex justify-center items-center'>
                         {
                                 activeVersion === '50tons' ? (
                                     <img 
-                                    src={HRightBS1.src} 
+                                    src={HMR50.src} 
                                     alt="" 
                                     className='max-w-full max-h-full object-contain'
                                 />
                                 ):(
                                     <img 
-                                src={HRightBS2.src} 
+                                src={HMR100.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
@@ -836,15 +899,27 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                     <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p data-imperial='301.75 cm' data-metric='9.9 ft'>9.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p data-imperial='545.59 cm' data-metric='17.9 ft'>17.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Storage Capacity:</h1>
-                            <p>50 tons</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.capacity ?? ''} `
+                                : `${((activeData?.dimensions.capacity ?? 0) )}`}
+                            </p>
                         </div>
                     </div>
                     </div>
@@ -868,43 +943,83 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                     <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <div className='flex justify-between'>
                             <h1>Total length (including transport skid):</h1>
-                            <p data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Chassis length:</h1>
-                            <p data-imperial='1,459.99 cm' data-metric='47.9 ft'>47.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.chasisLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.chasisLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Transportation width:</h1>
-                            <p data-imperial='365.76 cm' data-metric='12 ft'>12 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.transporWidth?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transporWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total width:</h1>
-                            <p data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Axle configuration: </h1>
-                            <p>Doble Axle</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.axleConfig ?? ''} `
+                                : `${((activeData?.dimensions.axleConfig ?? 0))}`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Fifth-wheel hitch <br className='block md:hidden'></br>height(if pre-mounted):</h1>
-                            <p data-imperial='124.96 cm' data-metric='4.1 ft'>4.1 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Support system: </h1>
-                            <p className='text-end md:text-start'>Steel legs with base plates <br className='block md:hidden'></br> for anchor bolting</p>
+                            <p className='text-end md:text-start'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.support ?? ''} `
+                                : `${((activeData?.dimensions.support ?? 0) )}`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Wheels: </h1>
-                            <p>16" highway-rated tires</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.wheels ?? ''} `
+                                : `${((activeData?.dimensions.wheels ?? 0) )} `}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Truck height dischange:</h1>
-                            <p data-imperial='368.80 cm' data-metric='12.1 ft'>12.1 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.truckHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.truckHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total height (heighest point):</h1>
-                            <p data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                     </div>
                     </div>
@@ -931,27 +1046,49 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             <div className='text-white font-normal col-span-1'>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
-                                            <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${slatConveyor.length?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Width:</h1>
-                                            <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${slatConveyor.width?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height (erected):</h1>
-                                            <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${slatConveyor.heightErec?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.heightErec ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Chain pitch:</h1>
-                                            <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${slatConveyor.chain?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.chain ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height (discharge height):</h1>
-                                            <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
+                                            <p>
+                                                {unit === 'metric'
+                                ? `${slatConveyor.heightDischarge?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.heightDischarge ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                            </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Angle of inclination:</h1>
-                                            <p>48.6°</p>
+                                            <p>{unit === 'metric'
+                                ? `${slatConveyor.angle ?? ''} `
+                                : `${((slatConveyor.angle ?? 0) )}`}</p>
                                         </div>
                             </div>
                             <div className='flex flex-col text-white col-span-1 md:col-span-2 w-full justify-center'>
@@ -1075,8 +1212,8 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                         <li>DOT-compliant lighting and reflective markings for transport visibility</li>
                     </ul>
                 </div>
-            </div>
-                <div className='flex justify-center items-end my-10'>
+                </div>
+                <div className='flex justify-start md:justify-center items-end my-10 gap-6 w-full overflow-x-auto'>
                     <div className='flex flex-col items-center justify-center'>
                         <div className='flex items-center justify-center w-full h-[60px]'>
                             <div className='border-dotted border-l border-l-white h-full w-full flex items-center justify-center'>
@@ -1101,7 +1238,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1126,7 +1267,7 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[500px] flex items-center justify-center'>
+                        <div className='h-[400px] min-w-[450px] flex items-center justify-center'>
                             <img 
                                 src={selectedImage2} 
                                 alt="" 
@@ -1134,7 +1275,7 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[525px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[400px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1158,7 +1299,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1207,7 +1352,11 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1232,8 +1381,8 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[525px] flex justify-center items-center'>
-                            <img src={selectedImage3} alt="" className='w-full h-full' />
+                        <div className='h-[400px] min-w-[150px] flex justify-center items-center'>
+                            <img src={selectedImage3} alt="" className='w-auto h-[400px]' />
                         </div>
                     </div>
 
@@ -1243,46 +1392,86 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>SINLGE MAIN BODY <br /> DIMENSIONS</h1>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
-                            <p data-imperial='301.75 cm' data-metric='9.9 ft'>9.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Height:</h1>
-                            <p data-imperial='545.59 cm' data-metric='17.9 ft'>17.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Storage Capacity:</h1>
-                            <p>50 tons</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.capacity ?? ''} `
+                                : `${((activeData?.dimensions.capacity ?? 0) )} `}
+                            </p>
                         </div>
                     </div>
                     <div className='text-white font-normal col-span-2'>
                         <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
                         <div className='flex justify-between'>
                             <h1>Total length (including transport skid):</h1>
-                            <p data-imperial='1,941.57 cm' data-metric='63.7 ft'>63.7 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Chassis length:</h1>
-                            <p data-imperial='1,459.99 cm' data-metric='47.9 ft'>47.9 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.chasisLenght?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.chasisLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Transportation width:</h1>
-                            <p data-imperial='365.76 cm' data-metric='12 ft'>12 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.transporWidth?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.transporWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total width:</h1>
-                            <p data-imperial='350.52 cm' data-metric='11.5 ft'>11.5 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Axle configuration: </h1>
-                            <p>Doble Axle</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.axleConfig ?? ''} `
+                                : `${((activeData?.dimensions.axleConfig ?? 0) )} `}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
-                            <p data-imperial='124.96 cm' data-metric='4.1 ft'>4.1 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Support system: </h1>
-                            <p>Steel legs with base plates for anchor bolting</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.support ?? ''}`
+                                : `${((activeData?.dimensions.support ?? 0) )} `}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Wheels: </h1>
@@ -1290,11 +1479,19 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                         </div>
                         <div className='flex justify-between'>
                             <h1>Truck height dischange:</h1>
-                            <p data-imperial='368.80 cm' data-metric='12.1 ft'>12.1 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.truckHeight?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.truckHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='flex justify-between'>
                             <h1>Total height (heighest point):</h1>
-                            <p data-imperial='1,304.54 cm' data-metric='42.8 ft'>42.8 ft</p>
+                            <p>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1305,23 +1502,43 @@ const selectedImage3 = imageMap3[activeVersion as VersionType] || HLeftBS1.src;
                             <div className='text-white font-normal col-span-1'>
                                     <div className='flex justify-between'>
                                         <h1>Length:</h1>
-                                        <p data-imperial='1,667.25 cm' data-metric='54.7 ft'>54.7 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                ? `${slatConveyor.length?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Width:</h1>
-                                        <p data-imperial='67.05 cm' data-metric='2.2 ft'>2.2 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                ? `${slatConveyor.width?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Height (erected):</h1>
-                                        <p data-imperial='1,286.25 cm' data-metric='42.2 ft'>42.2 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                ? `${slatConveyor.heightErec?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.heightErec ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Chain pitch:</h1>
-                                        <p data-imperial='981.45 cm' data-metric='32.2 ft'>32.2 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                ? `${slatConveyor.chain?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.chain ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Height (discharge height):</h1>
-                                        <p data-imperial='980.8 cm' data-metric='32.17 ft'>32.17 ft</p>
+                                        <p>
+                                            {unit === 'metric'
+                                ? `${slatConveyor.heightDischarge?.toFixed(1) ?? ''} cm`
+                                : `${((slatConveyor.heightDischarge ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                        </p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Angle of inclination:</h1>

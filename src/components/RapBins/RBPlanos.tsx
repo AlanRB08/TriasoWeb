@@ -605,7 +605,7 @@ const RBPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                        <div className='w-[200px] h-[250px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -613,7 +613,7 @@ const RBPlanos = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[250px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -711,11 +711,11 @@ const RBPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[250px] min-w-[500px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva1L2.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva1L2.src} alt="Dinámica con paneles" className='h-[250px] w-auto'/>
                             ) : (
-                                <img src={tolva1L1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva1L1.src} alt="Dinámica sin paneles" className='h-[250px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -1088,7 +1088,7 @@ const RBPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[200px] h-[253px] flex items-center justify-center'>
+                        <div className='w-[200px] h-[250px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -1194,11 +1194,11 @@ const RBPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[253px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[250px] min-w-[600px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[250px] w-auto'/>
                             ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[250px] w-auto'/>
                             )}
                         </div>
                     </div>

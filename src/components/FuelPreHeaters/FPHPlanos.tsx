@@ -267,11 +267,11 @@ const cmToFeet = 0.0328084;
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 3 && (
                     <div className='flex flex-col items-center justify-center' ref={containerRef}>
-                        <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+                        <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
                             <div className='flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1' id='column1' ref={columnGrid1}>
                                 <div className='flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DESIGN & OPERATION</h1>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN & OPERATION</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
                                         C1_1: !prev.C1_1
@@ -286,7 +286,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>Specifically designed for use with Triaso burners.</li>
                                         <li>Compatible with alternate fuels for efficient combustion.</li>
                                         <li>Prevents contamination of the mix with fuel residues.</li>
@@ -294,7 +294,7 @@ const cmToFeet = 0.0328084;
                                 </div>
                                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>HEATING & SYSTEM</h1>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>HEATING & SYSTEM</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
                                         C1_2: !prev.C1_2
@@ -309,7 +309,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>In-line electric resistance of 13.5 kW.</li>
                                         <li>Heats fuel up to 40 °C with a flow of 840 liters per hour.</li>
                                         <li>Safety feature prevents activation if no fuel is present in the pipeline.</li>
@@ -318,7 +318,7 @@ const cmToFeet = 0.0328084;
                                 </div>
                                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                                 <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
                                         C1_2: !prev.C1_2
@@ -333,7 +333,7 @@ const cmToFeet = 0.0328084;
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>Industrial-grade motors and components</li>
                                         <li>Simple wiring system for easy maintenance</li>
                                         <li>Weather-protected electrical connections</li>
@@ -346,7 +346,7 @@ const cmToFeet = 0.0328084;
                             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3 gap-0 md:gap-10' id='column2' ref={columnGrid2}>
                                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FILTRATION SYSTEM</h1>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FILTRATION SYSTEM</h1>
                                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                             ...prev,
                                             C2_1: !prev.C2_1
@@ -361,7 +361,7 @@ const cmToFeet = 0.0328084;
                                                 </svg>
                                             </button>
                                         </div>
-                                        <ul className={`font-thin transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <ul className={`font-thin transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                             <li>Integrated strainer for internal fuel filtration.</li>
                                             <li>Removes impurities larger than mesh 100.</li>
                                             <li>Easy to clean, no tools required.</li>
@@ -369,7 +369,7 @@ const cmToFeet = 0.0328084;
                                 </div>
                                 <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
                                         <div className='w-full flex justify-between border-b border-b-white'>
-                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
                                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                             ...prev,
                                             C2_2: !prev.C2_2
@@ -384,7 +384,7 @@ const cmToFeet = 0.0328084;
                                                 </svg>
                                             </button>
                                         </div>
-                                        <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
+                                        <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                                             <li>Includes all required piping and valves for operation.</li>
                                             <li>Independent components for quick and low-cost maintenance.</li>
                                             <li>Reliable and durable design for continuous operation.</li>
@@ -392,7 +392,7 @@ const cmToFeet = 0.0328084;
                                 </div>
                                 <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
                                         <div className='w-full flex justify-between border-b border-b-white'>
-                                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                             ...prev,
                                             C2_2: !prev.C2_2
@@ -407,7 +407,7 @@ const cmToFeet = 0.0328084;
                                                 </svg>
                                             </button>
                                         </div>
-                                        <ul className={`transition-all duration-500 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
+                                        <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                                             <li>Thermal insulation to reduce external surface temperature.</li>
                                             <li>Corrosion-resistant construction for extended service life.</li>
                                             <li>Bolted joints and coated surfaces for durability.</li>
@@ -594,7 +594,7 @@ const cmToFeet = 0.0328084;
                                 <div className='grid grid-cols-1 md:grid-cols-2 w-full md:gap-10'>
                                     <div className='text-white font-normal flex flex-col gap-4'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DIMENSIONS</h1>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DIMENSIONS</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C3_1: !prev.C3_1
@@ -609,7 +609,7 @@ const cmToFeet = 0.0328084;
                                         </svg>
                                     </button>
                                 </div>
-                                <div className={`transition-all duration-500 overflow-hidden ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
                                             <p>

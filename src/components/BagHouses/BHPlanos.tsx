@@ -281,9 +281,9 @@ gsap.set(img, {
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
                 <div className='flex flex-col w-full h-full items-start justify-between gap-0 order-2 md:order-1' id='column1' ref={columnGrid1}>
-                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_1: !prev.C1_1
@@ -298,7 +298,7 @@ gsap.set(img, {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Easy bag replacement with quick-change frames.</li>
                             <li>Factory-installed bag powder, no startup waiting time.</li>
                             <li>Access doors and inspection hatches for fast servicing</li>
@@ -307,9 +307,9 @@ gsap.set(img, {
                             <li>Energy savings through improved cleaning efficiency and reduced backpressure.</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -324,7 +324,7 @@ gsap.set(img, {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Thermal insulation with 2" fiberglass to prevent overcooling.</li>
                             <li>Heat resistance up to 204 °C continuous / 220 °C peak with Nomex bags.</li>
                             <li>Up to 260 °C peak with P84 polyimide bags.</li>
@@ -338,9 +338,9 @@ gsap.set(img, {
                 <div className='col-span-2 flex items-start mb-6 md:mb-0 justify-center w-full h-[588px] order-1 md:order-2'>
                 </div>
                 <div className='flex flex-col items-start justify-between w-full h-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
-                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DESIGN & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -355,16 +355,16 @@ gsap.set(img, {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Foldable support legs and transport skids for fast setup.</li>
                             <li>Exhaust fan with curved blades: quieter and more efficient.</li>
                             <li>Gas extractor with centrifugal separation, removes ~70% of dust load before reaching bags.</li>
                             <li>Knockout chamber and internal baffles ensure smooth airflow and bag protection.</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_2: !prev.C2_2
@@ -379,7 +379,7 @@ gsap.set(img, {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Siemens motors and industrial-grade components.</li>
                             <li>DHeavy-duty wiring, polarized for safe grounding.</li>
                             <li>Quick-connect plugs with weather protection and clear labeling.</li>
@@ -393,7 +393,7 @@ gsap.set(img, {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 mt-0 md:mt-10 justify-center items-start'>
                     <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FILTRATION SYSTEM</h1>
+                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FILTRATION SYSTEM</h1>
                                 <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                 ...prev,
                                 C3_1: !prev.C3_1
@@ -408,7 +408,7 @@ gsap.set(img, {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <li>99.99% filtration efficiency from startup.</li>
                                 <li>Supersonic 3D-printed carbon alloy nozzles for. cleaning pulses.</li>
                                 <li>Pulse jet cleaning cycles, programmable via PLC.</li>
@@ -416,9 +416,9 @@ gsap.set(img, {
                                 <li>Self-contained, integrated systems for portable or stationary plants.</li>
                             </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-2  w-full md:px-44 self-center'>
+                    <div className='flex flex-col items-start justify-center gap-4 text-white col-span-2  w-full px-0 md:px-10 lg:px-36 self-center'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARDS</h1>
+                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                                 <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                 ...prev,
                                 C3_2: !prev.C3_2
@@ -433,7 +433,7 @@ gsap.set(img, {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <li>EPA</li>
                                 <li>OSHA</li>
                                 <li>DOT</li>
@@ -442,7 +442,7 @@ gsap.set(img, {
                     </div>
                     <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                                 <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                 ...prev,
                                 C3_3: !prev.C3_3
@@ -457,7 +457,7 @@ gsap.set(img, {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <li>Designed for relocation.</li>
                                 <li>Low-profile body for easy transport and stability</li>
                                 <li>Transportable on flatbed trailer.</li>

@@ -733,7 +733,7 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                        <div className='min-w-[272px] h-[300px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -741,7 +741,7 @@ const BinPlanosSection = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[300px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -839,11 +839,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[300px] min-w-[644px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva1L2.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva1L2.src} alt="Dinámica con paneles" className='h-[300px] w-auto'/>
                             ) : (
-                                <img src={tolva1L1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva1L1.src} alt="Dinámica sin paneles" className='h-[300px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -970,7 +970,6 @@ const BinPlanosSection = () => {
             </div>
           
         )}
-
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
@@ -1234,15 +1233,15 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[272px] h-[353px] flex items-center justify-center'>
+                        <div className='min-w-[272px] h-[300px] flex items-center justify-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva1F.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva1F.src} alt="Dinámica con paneles" className='h-[300px] w-auto'/>
                             ) : (
-                                <img src={tolva2F1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva2F1.src} alt="Dinámica sin paneles" className='h-[300px] w-auto'/>
                             )}
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[300px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1340,11 +1339,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[300px] min-w-[810px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva2L2.src} alt="Dinámica con paneles" className='h-[300px] w-auto'/>
                             ) : (
-                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[353px] w-[744px]'/>
+                                <img src={tolva2L1.src} alt="Dinámica sin paneles" className='h-[300px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -1734,7 +1733,7 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[200px] h-[253px] flex items-center justify-center'>
+                        <div className='min-w-[222px] h-[250px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -1742,7 +1741,7 @@ const BinPlanosSection = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[253px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[250px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1840,11 +1839,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[253px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[250px] min-w-[900px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva3L2.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva3L2.src} alt="Dinámica con paneles" className='h-[250px] w-auto'/>
                             ) : (
-                                <img src={tolva3L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva3L1.src} alt="Dinámica sin paneles" className='h-[250px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -2234,15 +2233,15 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[200px] h-[253px] flex items-center justify-center'>
+                        <div className='min-w-[150px] h-[200px] flex items-center justify-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva1F.src} alt="Dinámica con paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva1F.src} alt="Dinámica con paneles" className='h-[200px] w-auto'/>
                             ) : (
-                                <img src={tolva4F1.src} alt="Dinámica sin paneles" className='h-[253px] w-[744px]'/>
+                                <img src={tolva4F1.src} alt="Dinámica sin paneles" className='h-[200px] w-auto'/>
                             )}
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[253px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[200px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -2340,11 +2339,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[253px] w-[744px] flex justify-center items-center'>
+                        <div className='h-[200px] min-w-[800px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva4L2.src} alt="Dinámica con paneles" className='h-[253px] w-[780px]'/>
+                                <img src={tolva4L2.src} alt="Dinámica con paneles" className='h-[200px] w-auto'/>
                             ) : (
-                                <img src={tolva4L1.src} alt="Dinámica sin paneles" className='h-[253px] w-[780px]'/>
+                                <img src={tolva4L1.src} alt="Dinámica sin paneles" className='h-[200px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -2734,7 +2733,7 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[180px] h-[225px] flex items-center justify-center'>
+                        <div className='min-w-[155px] h-[175px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -2742,7 +2741,7 @@ const BinPlanosSection = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[225px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[175px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -2840,11 +2839,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[225px] w-[800px] flex justify-center items-center'>
+                        <div className='h-[175px] min-w-[900px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva5L2.src} alt="Dinámica con paneles" className='h-[225px] w-[800px]'/>
+                                <img src={tolva5L2.src} alt="Dinámica con paneles" className='h-[175px] w-auto'/>
                             ) : (
-                                <img src={tolva5L1.src} alt="Dinámica sin paneles" className='h-[225px] w-[800px]'/>
+                                <img src={tolva5L1.src} alt="Dinámica sin paneles" className='h-[175px] w-auto'/>
                             )}
                         </div>
                     </div>
@@ -3234,7 +3233,7 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[160px] h-[200px] flex items-center justify-center'>
+                        <div className='w-[140px] h-[155px] flex items-center justify-center'>
                             <img 
                                 src={tolva1F.src} 
                                 alt="" 
@@ -3242,7 +3241,7 @@ const BinPlanosSection = () => {
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[200px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[155px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -3340,11 +3339,11 @@ const BinPlanosSection = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[200px] w-[800px] flex justify-center items-center'>
+                        <div className='h-[155px] min-w-[900px] flex justify-center items-center'>
                         {activeVersion === 'withPanels' ? (
-                                <img src={tolva6L2.src} alt="Dinámica con paneles" className='h-[200px] w-[800px]'/>
+                                <img src={tolva6L2.src} alt="Dinámica con paneles" className='h-[155px] w-auto'/>
                             ) : (
-                                <img src={tolva6L1.src} alt="Dinámica sin paneles" className='h-[200px] w-[800px]'/>
+                                <img src={tolva6L1.src} alt="Dinámica sin paneles" className='h-[155px] w-auto'/>
                             )}
                         </div>
                     </div>

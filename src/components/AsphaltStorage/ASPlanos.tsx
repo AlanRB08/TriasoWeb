@@ -8,6 +8,7 @@ import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
 import HMainBR2 from '../../assets/images/HotMix/Silo-SF100TBpS.png';
 import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.png';
 import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
+import AS12Main from "../../assets/images/AsphaltStorage/AS12Main.png";
 import ATR1 from '../../assets/images/AsphaltStorage/ATR1.png';
 import ATR2 from '../../assets/images/AsphaltStorage/ATR2.png';
 import ATR3 from '../../assets/images/AsphaltStorage/ATR3.png';
@@ -296,7 +297,7 @@ console.log('activeData', activeData);
              z-20 w-[120px] h-[600px]"
         >
           <img
-            src={HMainBS1.src}
+            src={AS12.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen de fondo"
             style={{
@@ -307,7 +308,7 @@ console.log('activeData', activeData);
           />
           <img
             ref={imgRef}
-            src={HMainS1.src}
+            src={AS12Main.src}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
@@ -412,7 +413,7 @@ console.log('activeData', activeData);
       {/* Contenido de los tabs */}
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
       {activeTab === 1 && (
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center'>
                     <div className='flex flex-col items-start justify-start gap-0 md:gap-4 h-full col-span-1 w-full order-2 md:order-1 mt-10 md:mt-0' id='column1' ref={columnGrid1}>
                         <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>

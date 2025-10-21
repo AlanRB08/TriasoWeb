@@ -626,11 +626,11 @@ const CMPlanos = () => {
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
-                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING SYSTEM</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_1: !prev.C1_1
@@ -645,7 +645,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>                       
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>                       
                         <li>Aggregate bin with adjustable discharge gate</li>
                         <li>Feeding conveyor with vulcanized belt</li>
                         <li>Manual or motorized flow control</li>
@@ -654,7 +654,7 @@ const CMPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -669,7 +669,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Digital or manual control panel</li>
                         <li>VFD for dosing and mixing adjustment</li>
                         <li>Recipe memory (if digital system selected)</li>
@@ -679,7 +679,7 @@ const CMPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -694,7 +694,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>All moving parts with perforated metal guards</li>
                         <li>Non-slip working areas</li>
                         <li>Corrosion-resistant paint</li>
@@ -709,7 +709,7 @@ const CMPlanos = () => {
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -724,7 +724,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Reinforced materials for heavy-duty operation</li>
                         <li>Low-profile structure for stable and efficient transport</li>
                         <li>Pre-set height support legs, foldable for transport</li>
@@ -735,7 +735,7 @@ const CMPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_2: !prev.C2_2
@@ -750,7 +750,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Siemens motors and electrical components</li>
                         <li>Heavy-duty wiring with grounded connections</li>
                         <li>Quick-connect terminals with weather protection</li>
@@ -761,7 +761,7 @@ const CMPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -776,7 +776,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Mounted on steel frame with telescopic legs or fixed supports</li>
                         <li>Heavy-duty structure with reinforced joints</li>
                         <li>Galvanized bolts and electrostatic paint</li>
@@ -788,7 +788,7 @@ const CMPlanos = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>EMULSION AND ADDITIVES INJECTION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>EMULSION AND ADDITIVES INJECTION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -803,7 +803,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Bitumen/emulsion pump with frequency inverter</li>
                             <li>Flowmeter for precision dosing</li>
                             <li>Optional water/additive tank with pump</li>
@@ -812,7 +812,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH <br /> INDUSTRY STANDARDS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -827,7 +827,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`list-disc ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>
                                 EPA
                             </li>
@@ -838,7 +838,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -853,7 +853,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Modular and compact for transport</li>
                             <li> Quick assembly without foundation</li>
                             <li> Disassemblable for relocation</li>
@@ -915,15 +915,15 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[200px] min-h-[253px] flex items-center justify-center'>
+                        <div className='h-[250px] min-w-[180px] flex items-center justify-center'>
                         {mountedVersion === 'wheels' ? (
-                                <img src={FW.src} alt="Mounted on wheels" className='w-[200px] min-h-[253px]'/>
+                                <img src={FW.src} alt="Mounted on wheels" className='h-[250px] w-auto' />
                             ) : (
-                                <img src={FL.src} alt="Mounted on legs" className='w-[200px] min-h-[253px]'/>
+                                <img src={FL.src} alt="Mounted on legs" className='h-[250px] w-auto'/>
                             )}
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[353px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[250px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1029,15 +1029,15 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[353px] min-w-[744px] flex justify-center items-center'>
-                        <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[353px] min-w-[744px]'/>
+                        <div className='h-[250px] min-w-[800px] flex justify-center items-center'>
+                        <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[250px] min-w-auto'/>
                         </div>
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full md:mt-10 md:gap-10'>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>TANK DIMENSIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>TANK DIMENSIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_1: !prev.C4_1
@@ -1052,7 +1052,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
                                 <p>
@@ -1081,7 +1081,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_2: !prev.C4_2
@@ -1096,7 +1096,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
                                 <p>
@@ -1142,7 +1142,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DISCHARGE <br />SYSTEM</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DISCHARGE <br />SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_3: !prev.C4_3
@@ -1157,7 +1157,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
+                        <div className={`w-full justify-center text-sm lg:text-base ml-2 lg:ml-6 items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
                             <div className='flex justify-between'>
                                 <h1>Feeding belt width:</h1>
                                 <p>
@@ -1447,7 +1447,7 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-[200px] h-[253px] flex items-center justify-center'>
+                        <div className='h-[220px] min-w-[140px] flex items-center justify-center'>
                             {
                                 mountedVersion === 'legs' ?
                                 <img 
@@ -1464,7 +1464,7 @@ const CMPlanos = () => {
                             
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[253px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[220px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1570,8 +1570,8 @@ const CMPlanos = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[253px] min-w-[744px] flex justify-center items-center'>
-                            <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[253px] min-w-[744px]'/>
+                        <div className='h-[220px] min-w-[800px] flex justify-center items-center'>
+                            <img src={selectedImage.src} alt="Dinámica con paneles" className='h-[220px] w-auto'/>
                         </div>
                     </div>
                 </div>
