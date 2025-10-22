@@ -1,5 +1,6 @@
 ---
 import Tabs from './Tabs';
+import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -56,7 +57,9 @@ import Tabs from './Tabs';
         </div>
     </div>
     <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
-        <h1>VIDEO</h1>
+        <div>
+            <video src={DMVideo} autoplay muted></video>
+        </div>
         <button class="bg-redBg rounded-full 
         font-normal max-w-[200px] text-white py-1 px-4 
         text-sm md:text-lg hover:bg-redBgHover">Learn more</button>

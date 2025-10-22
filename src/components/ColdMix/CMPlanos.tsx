@@ -20,7 +20,7 @@ import A3TLA from '../../assets/images/ColdMix/Planos/3TLA.png';
 import A3TLW from '../../assets/images/ColdMix/Planos/3TLW.png';
 import A3TWA from '../../assets/images/ColdMix/Planos/3TWA.png';
 import A3TWW from '../../assets/images/ColdMix/Planos/3TWW.png';
-import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
+import tolva3Main from '../../assets/images/ColdMix/Planos/CMain.png';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -448,7 +448,7 @@ const CMPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[90px] h-[770px]"
+             z-20 w-[90px] min-h-[740px]"
         >
           <img
             src={M2.src}
@@ -628,7 +628,7 @@ const CMPlanos = () => {
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -652,7 +652,7 @@ const CMPlanos = () => {
                         <li>Optional vibrator for consistent discharge</li>  
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -677,7 +677,7 @@ const CMPlanos = () => {
                         <li>Pre-wired system for plug-and-play setup</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -707,7 +707,7 @@ const CMPlanos = () => {
                 <img src={M1.src} alt="" className='w-[115px] h-auto' />
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -733,7 +733,7 @@ const CMPlanos = () => {
                         <li>Electrostatic paint for long-lasting durability</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -759,7 +759,7 @@ const CMPlanos = () => {
                         <li>110V internal system for controls and lighting (optional)</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -810,7 +810,7 @@ const CMPlanos = () => {
                             <li>Integrated pipe and filter system</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -1142,7 +1142,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DISCHARGE <br />SYSTEM</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_3: !prev.C4_3
@@ -1182,11 +1182,11 @@ const CMPlanos = () => {
         )}
         {activeTab === 3 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
-                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
+                <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_1: !prev.C1_1
@@ -1201,7 +1201,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Fine material flow sensor with low-level alarm</li>
                         <li>Vibrators on fine bins to ensure consistent feed</li>
                         <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
@@ -1210,9 +1210,9 @@ const CMPlanos = () => {
                         <li>Seamless integration with cold or hot mix asphalt plants</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -1227,7 +1227,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Galvanized bolts and anti-corrosion coating</li>
                         <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
                         <li>Electrostatic paint finish for durability</li>
@@ -1240,9 +1240,9 @@ const CMPlanos = () => {
                 
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -1257,16 +1257,16 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Reinforced steel chassis for heavy-duty operation</li>
                         <li>Trapezoidal bin design for better material flow</li>
                         <li>Foldable support legs</li>
                         <li>Removable transport skids</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_2: !prev.C2_2
@@ -1281,16 +1281,16 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Industrial Siemens motors</li>
                         <li>Grounded electrical wiring</li>
                         <li>Quick-connect terminals with weather protection</li>
                         <li>Motor control center with Siemens VFDs</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -1305,7 +1305,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Diesel burner with automatic temperature control</li>
                         <li>Two operating modes: Manual and Automatic</li>
                         <li>Digital thermometers with programmable set points</li>
@@ -1318,7 +1318,7 @@ const CMPlanos = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -1333,16 +1333,16 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Fifth-wheel hitch for secure towing</li>
                             <li>Integrated braking and lighting system</li>
                             <li>DOT-compliant for road transport</li>
                             <li>Support legs for parking and stability</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -1357,7 +1357,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
                                     <p>Up to 650 TPH</p>
@@ -1370,7 +1370,7 @@ const CMPlanos = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -1385,7 +1385,7 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>EPA</li>
                             <li>OSHA</li>
                             <li>DOT</li>

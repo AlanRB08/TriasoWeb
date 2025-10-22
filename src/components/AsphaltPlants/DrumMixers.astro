@@ -8,6 +8,10 @@ import img7 from '../../assets/images/AsphaltPlant/drum2.png';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
 import videoProv from "../../assets/images/DrumMixers/PlaC140ET.mp4";
 import Image from 'astro/components/Image.astro';
+import Video1 from "../../assets/images/landingVideo.mp4";
+import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
+import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
+import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
     <div class="flex flex-col items-center justify-center mt-10 md:mt-20 text-white">
@@ -51,7 +55,9 @@ import Image from 'astro/components/Image.astro';
     <div class="w-full flex flex-col items-center justify-center mt-20 text-black px-8 lg:px-52">
         <h1 class="text-xl md:text-3xl text-center md:mb-10">Asphalt plants for the smallest jobs to large projects</h1>
         <h2 class="text-lg md:text-2xl text-center text-grisT">Discover all asphalt plants ranges and models ></h2>
-        <h1>AQUI VA UN VIDEO</h1>
+        <div>
+            <video src={Video1} autoplay muted></video>
+        </div>
     </div>
     <div class="w-full flex flex-col items-center justify-center mt-20 text-black lg:px-52">
         <h1 class="text-2xl md:text-3xl text-start mb-5 w-full px-8">
@@ -66,15 +72,19 @@ import Image from 'astro/components/Image.astro';
         <h1 class="text-lg md:text-xl text-blueMain px-8">Learn more of our <span class="text-redBg">incredible</span> 10 Tph Asphalt Plants ></h1>
     </div>
     <div class="flex flex-col items-center justify-center mt-20 px-8 md:px-52 w-full">
-        <h1>AQUI VIDEO 1</h1>
-        <h1>AQUI VIDEO 2</h1>
+        <div>
+            <video src={Video2} autoplay muted></video>
+        </div>
+        <div>
+            <video src={Video3} autoplay muted></video>
+        </div>
     </div>
     <div class="md:mx-52 mx-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl">
         <h2 class="text-2xl md:text-3xl">Retractable Elevator for Efficient Transport and Operation
             </h2>
         <div class="">
             <div class="w-full flex justify-center">
-                <video src={videoProv} autoplay muted playsinline class="w-3/5"></video>
+                <video src={Video4} autoplay muted playsinline class="w-3/5"></video>
             </div>
             <p class="text-grisT text-justify">
                 Triaso’s vertical elevator is designed with a retractable configuration that complies 

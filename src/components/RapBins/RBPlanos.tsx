@@ -20,33 +20,38 @@ const singleUnit = [
         capacity: "20 tons"
     }
 ];
+const structure = [
+    {
+        length: 1088.14,
+        axleConfi: "One Axle",
+        wheel: 134.11,
+        width: 260,
+        height: 381,
+    }
+];
 const toggleConfig = [
     {
         id:'1',
         dimensions:{
             width: 268.22,
             height: 381,
-            length: 722.37,
-            drumLenght: 653.41,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 80,
-            humidity5: 110,
+            length: 722.37
         }
     },
     {
         id:'2',
         dimensions:{
-            width: 299.09,
-            height: 705.37,
-            length: 2007.70,
-            drumLenght: 898.95,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 110,
-            humidity5: 150,
+            width: 268.22,
+            height: 381,
+            length: 1088.14,  
+        }
+    },
+    {
+        id:'3',
+        dimensions:{
+            width: 268.22,
+            height: 381,
+            length: 957.90,  
         }
     }
 ];
@@ -66,7 +71,8 @@ const RBPlanos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
-
+// valor de cm a pies
+    const cmToFeet = 0.0328084;
   //SWITCH LOGIC
   const [unit, setUnit] = useState<"metric" | "imperial">("metric");
 
@@ -74,8 +80,8 @@ const RBPlanos = () => {
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
-    updateElements(newUnit); // Actualiza los elementos en el DOM
   };
+  const activeData = toggleConfig.find(item => item.id === activeTab.toString());
   //ESTADOS DE LOS DROPWDOWNS
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     C1_1: false,
@@ -90,23 +96,6 @@ const RBPlanos = () => {
     C4_2: false,
     C4_3: false,
   });
-
-  // Función que busca elementos con data-metric/data-imperial y los actualiza
-  const updateElements = (currentUnit: "metric" | "imperial") => {
-    const elements = document.querySelectorAll("[data-metric][data-imperial]");
-    elements.forEach((element) => {
-      const value = element.getAttribute(`data-${currentUnit}`);
-      if (value) {
-        element.textContent = value;
-      }
-    });
-  };
-
-  // Efecto para actualizar al cargar (opcional)
-  useEffect(() => {
-    updateElements(unit);
-  }, []);
-
 
  useEffect(() => {
   const box = boxRef.current;
@@ -222,8 +211,6 @@ const RBPlanos = () => {
     clearTimeout(refreshTimer);
   };
 }, [activeTab]);
-
-
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
@@ -363,7 +350,7 @@ const RBPlanos = () => {
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -380,7 +367,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>18" variable-speed dosing belt</li>
                         <li>Fine motor control down to 1 rpm for accurate flow</li>
                         <li>Rubber-coated head pulley for reliable grip</li>
@@ -392,7 +379,7 @@ const RBPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -407,7 +394,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Variable-speed dosing system integrated with plant control console</li>
                         <li>Digital interface for dosage adjustment and monitoring</li>
                         <li>Real-time feedback of flow rate for precision control</li>
@@ -420,9 +407,9 @@ const RBPlanos = () => {
                 <img src={tolva1Main.src} alt="" className='w-[240px] h-[600px]' />
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -437,7 +424,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Extra-reinforced steel structure</li>
                         <li>Trapezoidal bin design for better material flow</li>
                         <li>Low-profile frame for easy relocation</li>
@@ -447,9 +434,9 @@ const RBPlanos = () => {
                         <li>Steel pulleys for heavy-duty power transmission</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -464,16 +451,16 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Compact and low-profile structure designed for easy transportation and relocation</li>
                         <li>Mounted on wheels:</li>
-                        <ul className='ml-6'>
+                        <ul className='ml-2 lg:ml-6'>
                             <li>Equipped with a fifth-wheel hitch for secure towing</li>
                             <li>Integrated braking and lighting system for safe road transport</li>
                             <li>Dual-axle configuration ensures stability and even load distribution</li>
                         </ul>
                         <li>Mounted on legs:</li>
-                        <ul className='ml-6'>
+                        <ul className='ml-2 lg:ml-6'>
                             <li>Support legs pre-set at working height for fast and stable on-site setup</li>
                         </ul>
                     </ul>
@@ -483,7 +470,7 @@ const RBPlanos = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -498,16 +485,16 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Perforated guards for moving parts</li>
                             <li>Built-in skirtboards to contain material</li>
                             <li>Hooks for safety tensioners</li>
                             <li>120-gallon air tank for air cannon operation</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -522,7 +509,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>EPA</li>
                             <li>OSHA</li>
                             <li>DOT</li>
@@ -531,7 +518,7 @@ const RBPlanos = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -546,7 +533,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Siemens™ motors and electrical components</li>
                             <li>Polarized cabling with weather-sealed connections</li>
                             <li>CEMA-standard pulleys and idlers</li>
@@ -580,7 +567,11 @@ const RBPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -637,7 +628,11 @@ const RBPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='381 cm' data-metric='12.75 ft'>12.75 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -686,7 +681,11 @@ const RBPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='722.37 cm' data-metric='23.7 ft'>23.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -723,7 +722,7 @@ const RBPlanos = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full md:mt-10 md:gap-10'>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>SINGLE UNIT DIMENSIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>SINGLE UNIT DIMENSIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_1: !prev.C4_1
@@ -738,7 +737,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
                                 <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
@@ -759,7 +758,7 @@ const RBPlanos = () => {
                     </div>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_2: !prev.C4_2
@@ -774,7 +773,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
                                 <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
@@ -800,7 +799,7 @@ const RBPlanos = () => {
                     </div>
                     <div className='text-white font-normal col-span-1 md:col-span-2 flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BIN OPTIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>BIN OPTIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_3: !prev.C4_3
@@ -815,8 +814,8 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
-                            <ul className='ml-6 list-disc'>
+                        <div className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
+                            <ul className='ml-2 lg:ml-6 list-disc'>
                                     <li>Grizzlies</li>
                                     <li>Bin level indicators</li>
                                     <li>Adjustable depth control gates</li>
@@ -826,7 +825,7 @@ const RBPlanos = () => {
                                     <li>Bin dividers</li>
                                     <li>Walkways</li>
                                 </ul>
-                                <ul className='ml-6 list-disc'>
+                                <ul className='ml-2 lg:ml-6 list-disc'>
                                     <li>Bin covers</li>
                                     <li>Built-in retaining walls</li>
                                     <li>Air cannons</li>
@@ -846,9 +845,9 @@ const RBPlanos = () => {
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-            <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
+            <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_1: !prev.C1_1
@@ -863,7 +862,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>18" variable-speed dosing belt</li>
                         <li>Fine motor control down to 1 rpm for accurate flow</li>
                         <li>Rubber-coated head pulley for reliable grip</li>
@@ -875,7 +874,7 @@ const RBPlanos = () => {
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -890,7 +889,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Variable-speed dosing system integrated with plant control console</li>
                         <li>Digital interface for dosage adjustment and monitoring</li>
                         <li>Real-time feedback of flow rate for precision control</li>
@@ -903,9 +902,9 @@ const RBPlanos = () => {
                 
             </div>
             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
-            <div className='flex flex-col items-start justify-center gap-4 text-white'>
+            <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -920,7 +919,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Extra-reinforced steel structure</li>
                         <li>Trapezoidal bin design for better material flow</li>
                         <li>Low-profile frame for easy relocation</li>
@@ -930,9 +929,9 @@ const RBPlanos = () => {
                         <li>Steel pulleys for heavy-duty power transmission</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white'>
+                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_3: !prev.C2_3
@@ -947,16 +946,16 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Compact and low-profile structure designed for easy transportation and relocation</li>
                         <li>Mounted on wheels:</li>
-                        <ul className='ml-6'>
+                        <ul className='ml-2 lg:ml-6'>
                             <li>Equipped with a fifth-wheel hitch for secure towing</li>
                             <li>Integrated braking and lighting system for safe road transport</li>
                             <li>Dual-axle configuration ensures stability and even load distribution</li>
                         </ul>
                         <li>Mounted on legs:</li>
-                        <ul className='ml-6'>
+                        <ul className='ml-2 lg:ml-6'>
                             <li>Support legs pre-set at working height for fast and stable on-site setup</li>
                         </ul>
                     </ul>
@@ -966,7 +965,7 @@ const RBPlanos = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                 <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -981,16 +980,16 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Perforated guards for moving parts</li>
                             <li>Built-in skirtboards to contain material</li>
                             <li>Hooks for safety tensioners</li>
                             <li>120-gallon air tank for air cannon operation</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -1005,7 +1004,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>EPA</li>
                             <li>OSHA</li>
                             <li>DOT</li>
@@ -1014,7 +1013,7 @@ const RBPlanos = () => {
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -1029,7 +1028,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Siemens™ motors and electrical components</li>
                             <li>Polarized cabling with weather-sealed connections</li>
                             <li>CEMA-standard pulleys and idlers</li>
@@ -1063,7 +1062,11 @@ const RBPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1120,7 +1123,11 @@ const RBPlanos = () => {
                             </div>
                         </div>
                         <div className='my-3'>
-                            <p className='text-white text-lg' data-imperial='381 cm' data-metric='12.75 ft'>12.75 ft</p>
+                            <p className='text-white text-lg'>
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                            </p>
                         </div>
                         <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
@@ -1169,7 +1176,17 @@ const RBPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-white lg:text-lg text-base w-full text-center mx-4' data-imperial='722.37 cm' data-metric='23.7 ft'>23.7 ft</p>
+                            <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
+                                {activeVersion === 'withPanels' ? (
+                                unit === 'metric'
+                                ? `${(957.90).toFixed(1) ?? ''} cm`
+                                : `${(((957.90)) * cmToFeet).toFixed(1)} ft`
+                            ) : (
+                                unit === 'metric'
+                                ? `${(1088.14).toFixed(1) ?? ''} cm`
+                                : `${(((1088.14)) * cmToFeet).toFixed(1)} ft`
+                            )}
+                            </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
                                     <div className='absolute right-0 top-1/2 transform -translate-y-1/2'>
@@ -1206,7 +1223,7 @@ const RBPlanos = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-start w-full md:mt-10 md:gap-10'>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>SINGLE UNIT DIMENSIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>SINGLE UNIT DIMENSIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_1: !prev.C4_1
@@ -1221,7 +1238,7 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`texttransition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
                                 <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
