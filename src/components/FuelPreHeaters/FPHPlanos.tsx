@@ -3,8 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.png';
 import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
-import tab1Main from '../../assets/images/DrumMixers/tab1Main.png';
-import tab1Left from '../../assets/images/DrumMixers/tab1Left.png';
+import tab1Main from '../../assets/images/DrumMixers/tab1Main.webp';
+import tab1Left from '../../assets/images/DrumMixers/tab1Left.webp';
 
 const toggleConfig = [
     {
