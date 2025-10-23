@@ -166,27 +166,14 @@ const cmToFeet = 0.0328084;
   
 
   if (!box || !target || !otro || !img|| !clipTarget|| !options || !col1 || !col2) return;
+    let scrollTrig: ScrollTrigger | undefined;
+  
 
-
-  if (activeTab !== 3) {
-    gsap.set(box, {
-      y: 0,
-      opacity: 0,
-      display: 'none',
-    });
-    gsap.set(img, {
-      clipPath: 'inset(100% 0% 0% 0%)', // Oculta completamente la imagen
-      opacity: 0,
-    });
-    return;
-  }
-
-  gsap.set(box, {
-    opacity: 1,
-    display: 'block',
-  });
-
-   // Cálculo de posiciones absolutas
+   
+    const updatePositions = () => {
+        requestAnimationFrame(()=>{
+            scrollTrig?.kill();
+        // Cálculo de posiciones absolutas
     const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
     const boxHeight = box.offsetHeight;
     const boxBottomAbs = boxTopAbs + boxHeight;
@@ -203,10 +190,11 @@ const cmToFeet = 0.0328084;
     const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
     
     const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-  const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-  const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+    const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
+    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+  
 
-  const scrollTrig = ScrollTrigger.create({
+  scrollTrig = ScrollTrigger.create({
     id: 'boxScroll',
     trigger: box,
     start: 'top+=70 20%',
@@ -261,14 +249,47 @@ const cmToFeet = 0.0328084;
         ease: 'none',
         duration: 0.8,
       });
+      
     }
+    
   });
+  ScrollTrigger.refresh();
+        })
+    };
+  if (activeTab !== 3) {
+    gsap.set(box, {
+      y: 0,
+      opacity: 0,
+      display: 'none',
+    });
+    gsap.set(img, {
+      clipPath: 'inset(100% 0% 0% 0%)', // Oculta completamente la imagen
+      opacity: 0,
+    });
+    return;
+  }else{
+    gsap.set(box, {
+    opacity: 1,
+    display: 'block',
+  });
+  updatePositions();
+  
+  }
 
+  
+    // --- Listeners para recalcular ---
+  const handleResize = () => updatePositions();
+  const handleLayoutChange = () => updatePositions();
+
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('layoutChange', handleLayoutChange);
   const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
 
   return () => {
     scrollTrig?.kill(); // <-- evita error si no existe
     clearTimeout(refreshTimer);
+    window.removeEventListener('resize', handleResize);
+    window.removeEventListener('layoutChange', handleLayoutChange);
   };
 }, [activeTab]);
 

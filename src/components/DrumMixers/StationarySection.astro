@@ -122,6 +122,8 @@ import Image from "astro/components/Image.astro";
 
     if (button) {
       button.addEventListener("click", () => {
+        console.log("si se lanza el evento cada que se hace click");
+        window.dispatchEvent(new Event("layoutChange"));
         if (!dropdown || !arrow) return;
 
         const isClosed = dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
