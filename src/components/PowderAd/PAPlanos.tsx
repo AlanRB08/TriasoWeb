@@ -3,19 +3,19 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import caseta1 from '../../assets/images/DrumMixers/caseta1.webp';
 import caseta2 from '../../assets/images/DrumMixers/caseta2.webp';
-import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.png';
-import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
-import tab6Right from '../../assets/images/DrumMixers/tab6Right.png';
-import tab6Left from '../../assets/images/DrumMixers/tab6Left.png';
-import tab5Main from '../../assets/images/DrumMixers/tab5Main.png';
-import tab5Left from '../../assets/images/DrumMixers/tab5Left.png';
-import tab5Right from '../../assets/images/DrumMixers/tab5Right.png';
+import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.webp';
+import tab3Right from '../../assets/images/DrumMixers/tab3Right.webp';
+import tab6Right from '../../assets/images/DrumMixers/tab6Right.webp';
+import tab6Left from '../../assets/images/DrumMixers/tab6Left.webp';
+import tab5Main from '../../assets/images/DrumMixers/tab5Main.webp';
+import tab5Left from '../../assets/images/DrumMixers/tab5Left.webp';
+import tab5Right from '../../assets/images/DrumMixers/tab5Right.webp';
 import tab1Main from '../../assets/images/DrumMixers/tab1Main.webp';
 import tab1Left from '../../assets/images/DrumMixers/tab1Left.webp';
-import tab1Right from '../../assets/images/DrumMixers/tab5Right.png';
-import tab2Main from '../../assets/images/DrumMixers/tab2Main.png';
-import tab2Left from '../../assets/images/DrumMixers/tab2L.png';
-import tab6Main from '../../assets/images/DrumMixers/tab6M.png';
+import tab1Right from '../../assets/images/DrumMixers/tab5Right.webp';
+import tab2Main from '../../assets/images/DrumMixers/tab2Main.webp';
+import tab2Left from '../../assets/images/DrumMixers/tab2L.webp';
+import tab6Main from '../../assets/images/DrumMixers/tab6M.webp';
 
 const cabinSize = [
     {

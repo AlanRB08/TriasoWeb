@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.png';
-import tab3Right from '../../assets/images/DrumMixers/tab3Right.png';
+import tab3Main2 from '../../assets/images/DrumMixers/tab3Main2.webp';
+import tab3Right from '../../assets/images/DrumMixers/tab3Right.webp';
 import tab1Main from '../../assets/images/DrumMixers/tab1Main.webp';
 import tab1Left from '../../assets/images/DrumMixers/tab1Left.webp';
 
