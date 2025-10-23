@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Odometer from 'react-odometerjs';
 import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/BagHouses/BHProv3.jpg';
+import single from '../../assets/images/BagHouses/BHProv3.webp';
 
 const BHOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);

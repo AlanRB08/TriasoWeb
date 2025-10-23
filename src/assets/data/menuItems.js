@@ -25,7 +25,7 @@ export const menuItems = [
           children : [ 
             {
               title : "BIN UNITS",
-              url : "/products/asphalt-plants/bins/bin-units",
+              url : "/BinUnits",
             },
             {
               title : "RAP BINS",
@@ -39,7 +39,7 @@ export const menuItems = [
         },
         {
           title : "HEATING SYSTEMS",
-          url : "/products/asphalt-plants/heating-systems",
+          url : "/Burners",
           children : [
             {
               title : "BURNERS",
@@ -71,49 +71,49 @@ export const menuItems = [
       },
       {
         title : "ROCK CRUSHERS",
-        url : "/products/rock-crushers",
+        url : "/",
         children : [
           {
             title : "JAW CRUSHERS",
-            url : "/products/rock-crushers/jaw-crushers",
+            url : "/",
           },
           {
             title : "CONE CRUSHERS",
-            url : "/products/rock-crushers/conical-crushers",
+            url : "/",
           },
           {
             title : "INTEGRAL EQUIPPED CRUSHERS",
-            url : "/products/rock-crushers/integral-equipped-crushers",
+            url : "/",
           },
           {
             title : "BALL MILLS",
-            url : "/products/rock-crushers/ball-mills",
+            url : "/",
           },
           {
             title : "MINI CRUSHERS",
-            url : "/products/rock-crushers/mini-crushers",
+            url : "/",
           },
           {
             title : "CONVEYORS",
-            url : "/products/rock-crushers/conveyors",
+            url : "/",
           },
           {
             title : "FEEDERS",
-            url : "/products/rock-crushers/feeders",
+            url : "/",
             children : [
               {
                 title : "BELT FEEDERS",
-                url : "/products/rock-crushers/feeders/belt-feeders",
+                url : "/",
               },
               {
                 title : "VIBRATORY FEEDERS",
-                url : "/products/rock-crushers/feeders/vibratory-feeders",
+                url : "/",
               }
             ]
           },
           {
             title : "VIBRATORY SCREENS",
-            url : "/products/rock-crushers/vibratory-screens",
+            url : "/",
           }
         ]
       },
@@ -143,15 +143,15 @@ export const menuItems = [
   },
   {
     title : "ABOUT",
-    url : "/about",
+    url : "/",
     children : [
       {
         title : "ABOUT US",
-        url : "/about/about-us",
+        url : "/",
       },
       {
         title : "NEWS ROOM",
-        url : "/about/news-room",
+        url : "/",
       },
       {
         title : "ADVANTAGES",
@@ -159,7 +159,7 @@ export const menuItems = [
       },
       {
         title : "HIGH QUALITY",
-        url : "/about/high-quality",
+        url : "/",
       },
       {
         title : "IMPROVMENT AND DESIGN",
@@ -175,21 +175,21 @@ export const menuItems = [
       },
       {
         title : "SOME TIPS FOR BUYING AN EQUIPMENT",
-        url : "/about/tips",
+        url : "/",
         children : [
           {
             title : "ASPHALT PLANTS",
-            url : "/about/tips/asphalt-plants",
+            url : "/",
           },
           {
             title : "ROCK CRUSHERS",
-            url : "/about/tips/rock-crushers",
+            url : "/",
           }
         ]
       },
       {
         title : "ROCK CRUSHERS CONFIGURATION",
-        url : "/about/rock-crushers-configuration"
+        url : "/"
       },
       {
         title : "RAP RECYCLED ASPHALT PAVEMENT",
@@ -199,14 +199,14 @@ export const menuItems = [
   },
   {
     title : "EXPOS",
-    url : "/expos",
+    url : "/",
   },
   {
     title : "VIDEOS",
-    url : "/videos",
+    url : "/",
   },
   {
     title : "CONTACT",
-    url : "/contact",
+    url : "/",
   }
 ]
