@@ -17,6 +17,53 @@ import tab2Main from '../../assets/images/DrumMixers/tab2Main.webp';
 import tab2Left from '../../assets/images/DrumMixers/tab2L.webp';
 import tab6Main from '../../assets/images/DrumMixers/tab6M.webp';
 
+const newSizes = [
+    {
+        id:'1',
+        dimensions:{
+            burner: 24,
+            ACFM: 5907,
+            motor: 6,
+            ACFM2: 14000,
+            area: 24,
+            bags: 168
+        }
+    },
+    {
+        id:'2',
+        dimensions:{
+            burner: 33,
+            ACFM: 7700,
+            motor: 8,
+            ACFM2: 19250,
+            area: 33,
+            bags: 224
+        }
+    },
+     {
+        id:'3',
+        dimensions:{
+            burner: 42,
+            ACFM: 8900,
+            motor: 10,
+            ACFM2: 22000,
+            area: 37,
+            bags: 280
+        }
+    },
+    {
+        id:'4',
+        dimensions:{
+            burner: 60,
+            ACFM: 10740,
+            motor: 10,
+            ACFM2: 22000,
+            area: 37,
+            bags: 280
+        }
+    },
+    
+]
 const cabinSize = [
     {
         length: 434.71,
@@ -31,7 +78,7 @@ const toggleConfig = [
             width: 287.06,
             height: 705.37,
             length: 1868.09,
-            drumLenght: 653.41,
+            drumLenght: 731.50,
             drumHeight: 264.31 ,
             transportationHeight: 424.57,
             wheel:140.0,
@@ -45,7 +92,7 @@ const toggleConfig = [
             width: 299.09,
             height: 705.37,
             length: 2007.70,
-            drumLenght: 898.95,
+            drumLenght: 640.10,
             drumHeight: 264.31 ,
             transportationHeight: 424.57,
             wheel:140.0,
@@ -59,8 +106,8 @@ const toggleConfig = [
             width: 309.40,
             height: 705.37,
             length: 2127.37,
-            drumLenght: 1109.42,
-            drumHeight: 264.31 ,
+            drumLenght: 853,
+            drumHeight: 264.31,
             transportationHeight: 424.57,
             wheel:140.0,
             humidity3: 140,
@@ -417,7 +464,7 @@ const cmToFeet = 0.0328084;
               : 'text-white bg-transparent border-white'
           }`}
         >
-          200-270 Tph
+          200-240 Tph
         </button>
         {/* Botón 5 */}
         <button
@@ -560,11 +607,23 @@ const cmToFeet = 0.0328084;
                             </button>
                         </div>
                         <ul className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>
-                            <div className='flex justify-between w-full'>
+                        <li className='flex justify-between'>
+                            
                             <h1>Modulating burner:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                            </div>
+                            <p>24 million BTU/hr</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>ACFM:</h1>
+                            <p>5,907</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>Motor capacity:</h1>
+                            <p>6 hp</p>
+                            
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className='list-none'>
@@ -602,15 +661,19 @@ const cmToFeet = 0.0328084;
                         <div className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                             <div className='flex justify-between'>
                                 <h1>ACFM:</h1>
-                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                <p >14,000</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Filtering Area:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                <p >24m3</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fiberglass insulation:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                <p>2"</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Bags:</h1>
+                                <p >168</p>
                             </div>
                         </div>
                     </div>
@@ -1427,11 +1490,23 @@ const cmToFeet = 0.0328084;
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>
-                                    <div className='flex justify-between w-full'>
+                                <li className='flex justify-between w-full'>
+                                    
                                     <h1>Modulating burner:</h1>
-                                    <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                                    </div>
+                                    <p>33 million BTU/hr</p>
+                                    
+                                </li>
+                                <li className='flex justify-between w-full'>
+                                    
+                                    <h1>ACFM:</h1>
+                                    <p>7,700</p>
+                                    
+                                </li>
+                                <li className='flex justify-between w-full'>
+                                    
+                                    <h1>Motor capacity:</h1>
+                                    <p>8 hp</p>
+                                    
                                 </li>
                                 <li>Fueled with total-air control system</li>
                                 <li className='list-none'>
@@ -1469,15 +1544,19 @@ const cmToFeet = 0.0328084;
                                 <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                                     <div className='flex justify-between'>
                                         <h1>ACFM:</h1>
-                                        <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                        <p>19,250</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Filtering Area:</h1>
-                                        <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                        <p >33 m3</p>
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>Fiberglass insulation:</h1>
-                                        <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                        <p >2"</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <h1>Bags:</h1>
+                                        <p >224</p>
                                     </div>
                                 </div>
                             </div>
@@ -2277,11 +2356,23 @@ const cmToFeet = 0.0328084;
                                             </button>
                                         </div>
                                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                        <li>
-                                            <div className='flex justify-between w-full'>
+                                        <li className='flex justify-between w-full'>
+                                            
                                             <h1>Modulating burner:</h1>
-                                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                                            </div>
+                                            <p>42 million BTU/hr</p>
+                                            
+                                        </li>
+                                        <li className='flex justify-between w-full'>
+                                            
+                                            <h1>ACFM:</h1>
+                                            <p>8,900</p>
+                                            
+                                        </li>
+                                        <li className='flex justify-between w-full'>
+                                            
+                                            <h1>Motor capacity:</h1>
+                                            <p>10 hp</p>
+                                            
                                         </li>
                                         <li>Fueled with total-air control system</li>
                                         <li className='list-none'>
@@ -2319,16 +2410,22 @@ const cmToFeet = 0.0328084;
                                         <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                                             <div className='flex justify-between'>
                                                 <h1>ACFM:</h1>
-                                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                                <p >22,000</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Filtering Area:</h1>
-                                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                                <p>37 m3</p>
                                             </div>
                                             <div className='flex justify-between'>
                                                 <h1>Fiberglass insulation:</h1>
-                                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                                <p >2"</p>
                                             </div>
+                                            <li className='flex justify-between w-full'>
+                                            
+                                            <h1>Bags:</h1>
+                                            <p>280</p>
+                                            
+                                        </li>
                                         </div>
                                     </div>
                                 <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
@@ -3138,11 +3235,23 @@ const cmToFeet = 0.0328084;
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>
-                            <div className='flex justify-between w-full'>
+                        <li className='flex justify-between w-full'>
+                            
                             <h1>Modulating burner:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                            </div>
+                            <p>60 million BTU/hr</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>ACFM:</h1>
+                            <p>10,740</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>Motor capacity:</h1>
+                            <p>15 hp</p>
+                            
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className='list-none'>
@@ -3180,15 +3289,19 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                             <div className='flex justify-between'>
                                 <h1>ACFM:</h1>
-                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                <p >35,000</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Filtering Area:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                <p >52 m3</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fiberglass insulation:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                <p >2"</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Bags:</h1>
+                                <p >392</p>
                             </div>
                         </div>
                     </div>
@@ -3532,7 +3645,7 @@ const cmToFeet = 0.0328084;
                                     </div>
                                     <div className='flex justify-between'>
                                         <h1>5% humidity:</h1>
-                                        <p>270 Tph</p>
+                                        <p>240 Tph</p>
                                     </div>
                                 </div>
                             </div>
@@ -4005,11 +4118,23 @@ const cmToFeet = 0.0328084;
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>
-                            <div className='flex justify-between w-full'>
+                        <li className='flex justify-between w-full'>
+                            
                             <h1>Modulating burner:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                            </div>
+                            <p>90 million BTU/hr</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>ACFM:</h1>
+                            <p>12,960</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>Motor capacity:</h1>
+                            <p>18 hp</p>
+                            
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className='list-none'>
@@ -4047,15 +4172,19 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                             <div className='flex justify-between'>
                                 <h1>ACFM:</h1>
-                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                <p>35,000</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Filtering Area:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                <p >52 m3</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fiberglass insulation:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                <p>2"</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Bags:</h1>
+                                <p >392</p>
                             </div>
                         </div>
                     </div>
@@ -4864,11 +4993,23 @@ const cmToFeet = 0.0328084;
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>
-                            <div className='flex justify-between w-full'>
+                        <li className='flex justify-between w-full'>
+                            
                             <h1>Modulating burner:</h1>
-                            <p data-imperial='300.00 cm' data-metric='9.88 ft'>XXXX million BTU/hr</p>
-                            </div>
+                            <p>120 million BTU/hr</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>ACFM:</h1>
+                            <p>15,550</p>
+                            
+                        </li>
+                        <li className='flex justify-between w-full'>
+                            
+                            <h1>Motor capacity:</h1>
+                            <p>21 hp</p>
+                            
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className='list-none'>
@@ -4906,15 +5047,19 @@ const cmToFeet = 0.0328084;
                         <div className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
                             <div className='flex justify-between'>
                                 <h1>ACFM:</h1>
-                                <p data-imperial='300.00 cm' data-metric='9.88 ft'>35 Tph</p>
+                                <p >35,000</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Filtering Area:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>XXXX</p>
+                                <p >52 m3</p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fiberglass insulation:</h1>
-                                <p data-imperial='112.32 cm' data-metric='3.68 ft'>2"</p>
+                                <p >2"</p>
+                            </div>
+                            <div className='flex justify-between'>
+                                <h1>Bags:</h1>
+                                <p >392</p>
                             </div>
                         </div>
                     </div>

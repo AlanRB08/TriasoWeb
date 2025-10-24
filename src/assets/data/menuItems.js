@@ -1,7 +1,7 @@
 export const menuItems = [
   {
     title : "PRODUCTS",
-    url : "/products",
+    url : "/",
     children : [
       {
         title : "ASPHALT PLANTS",
@@ -121,7 +121,7 @@ export const menuItems = [
   },
   {
     title : "SERVICE",
-    url : "/service",
+    url : "/",
     children : [
       {
         title : "SPARE PARTS",

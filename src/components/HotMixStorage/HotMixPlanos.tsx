@@ -71,9 +71,9 @@ const toggleConfig = [
     {
         id:'2-50tons',
         dimensions:{
-            width: 3543,
-            height: 16954,
-            length: 16245,
+            width: 354.3,
+            height: 1695.4,
+            length: 1624.4,
             chasisLenght: 0,
             transporWidth:0,
             axleConfig: "Double",
@@ -81,15 +81,15 @@ const toggleConfig = [
             support: "Steel legs with base plates for anchor bolting",
             wheels: '16" highway-rated tires',
             capacity:"50 tons",
-            truckHeight: 3688,
+            truckHeight: 368.8,
         }
     },
     {
         id:'2-100tons',
         dimensions:{
-            width: 3602,
-            height: 19842,
-            length: 18923,
+            width: 360.2,
+            height: 1984.2,
+            length: 1892.3,
             chasisLenght: 0,
             transporWidth:0,
             axleConfig: "Double",
@@ -97,15 +97,15 @@ const toggleConfig = [
             support: "Steel legs with base plates for anchor bolting",
             wheels: '16" highway-rated tires',
             capacity:"100 tons",
-            truckHeight: 3688,
+            truckHeight: 368.8,
         }
     },
     {
         id:'2-150tons',
         dimensions:{
             width: 3630,
-            height: 21366,
-            length: 20478,
+            height: 2136.6,
+            length: 2047.8,
             chasisLenght: 0,
             transporWidth:0,
             axleConfig: "Double",
@@ -113,15 +113,15 @@ const toggleConfig = [
             support: "Steel legs with base plates for anchor bolting",
             wheels: '16" highway-rated tires',
             capacity:"150 tons",
-            truckHeight: 3688,
+            truckHeight: 368.8,
         }
     },
     {
         id:'2-200tons',
         dimensions:{
-            width: 3672,
-            height: 25260,
-            length: 24662,
+            width: 367.2,
+            height: 2526,
+            length: 2466.2,
             chasisLenght: 0,
             transporWidth:0,
             axleConfig: "Double",
@@ -129,7 +129,7 @@ const toggleConfig = [
             support: "Steel legs with base plates for anchor bolting",
             wheels: '16" highway-rated tires',
             capacity:"200 tons",
-            truckHeight: 3688,
+            truckHeight: 368.8,
         }
     }
 ]
@@ -470,11 +470,11 @@ const activeData = toggleConfig.find(item => item.id === key);
       <div className="w-full mt-20 mb-10" id='tabsSection' ref={nextSectionRef}>
       {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center'>
-                <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-center w-full'>
             <div className='flex flex-col items-start justify-start gap-0 md:gap-4 h-full col-span-1 w-full order-2 md:order-1 mt-10 md:mt-0' id='column1' ref={columnGrid1}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C1_1: !prev.C1_1
@@ -489,7 +489,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-4 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Fully automatic or manual operation</li>
                             <li>Digital temperature monitoring and regulation</li>
                             <li>Simple and intuitive interface</li>
@@ -504,7 +504,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C1_2: !prev.C1_2
@@ -519,7 +519,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Top inlet with rubber seal and rain cover</li>
                         <li>1 m³ batch discharge chamber</li>
                         <li>Pneumatic gates: fast-release and waste bypass</li>
@@ -540,7 +540,7 @@ const activeData = toggleConfig.find(item => item.id === key);
             <div className='flex flex-col items-start justify-start h-full gap-0 md:gap-4 w-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C2_1: !prev.C2_1
@@ -555,7 +555,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>Fully insulated walls – up to 72 hrs heat retention</li>
                         <li>Rain shield and anti-segregation batch chamber</li>
                         <li>Built-in safety railings and OSHA-compliant platform</li>
@@ -570,9 +570,9 @@ const activeData = toggleConfig.find(item => item.id === key);
                         <li>Accessory lifting hooks for crane handling</li>
                     </ul>
                 </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>DURABILITY & SAFETY</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C2_2: !prev.C2_2
@@ -587,7 +587,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>High-resistance structure for long-term operation</li>
                         <li>Protected by electrostatic paint with strong adhesion</li>
                         <li>Bolted components with anti-corrosion coating</li>
@@ -604,7 +604,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                             <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -619,7 +619,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 </svg>
                             </button>
                         </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                 <li>Industrial-grade motors and components</li>
                                 <li>Simple wiring system for easy maintenance</li>
                                 <li>Pulley and bushing transmission system</li>
@@ -632,7 +632,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1 md:col-span-2 px-0 md:px-20'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPLIANCE WITH INDUSTRY <br /> STANDARDS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY <br /> STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -647,7 +647,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>EPA</li>
                             <li>OSHA</li>
                             <li>DOT</li>
@@ -656,7 +656,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                     </div>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_3: !prev.C3_3
@@ -671,7 +671,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 </svg>
                             </button>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Designed for occasional relocation with crane support</li>
                             <li>Transportable in sections on flatbed trailer</li>
                             <li>Setup requires crane or hoisting equipment</li>
@@ -881,7 +881,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                 <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-start w-full mt-10 gap-3 md:gap-10'>
                     <div className='text-white font-normal col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>SILO DIMENSIONS</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>SILO DIMENSIONS</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C4_1: !prev.C4_1
@@ -896,7 +896,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                    <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <div className='flex justify-between'>
                             <h1>Width:</h1>
                             <p>
@@ -925,7 +925,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                     </div>
                     <div className='text-white font-normal col-span-1 md:col-span-2 w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C4_2: !prev.C4_2
@@ -940,7 +940,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                     </div>
-                    <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                    <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <div className='flex justify-between'>
                             <h1>Total length (including transport skid):</h1>
                             <p>
@@ -982,7 +982,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </p>
                         </div>
                         <div className='flex justify-between'>
-                            <h1>Fifth-wheel hitch <br className='block md:hidden'></br>height(if pre-mounted):</h1>
+                            <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
                             <p>
                                 {unit === 'metric'
                                 ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ''} cm`
@@ -1027,7 +1027,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                 <div className='grid grid-cols-1 md:grid-cols-4 justify-center items-start w-full mt-3 md:mt-10 gap-0 md:gap-10'>
                     <div className='text-white font-normal col-span-1 md:col-span-3 w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                        <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING SLAT CONVEYOR</h1>
+                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING SLAT CONVEYOR</h1>
                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                         ...prev,
                         C5_1: !prev.C5_1
@@ -1042,7 +1042,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                             </svg>
                         </button>
                         </div>
-                        <div className={`grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 md:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1 ? "max-h-[600px] opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100`}>
+                        <div className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 gap-6 lg:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1 ? "max-h-[600px] opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100`}>
                             <div className='text-white font-normal col-span-1'>
                                         <div className='flex justify-between'>
                                             <h1>Length:</h1>
@@ -1092,7 +1092,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                         </div>
                             </div>
                             <div className='flex flex-col text-white col-span-1 md:col-span-2 w-full justify-center'>
-                                    <ul className='ml-6 list-disc w-full'>
+                                    <ul className='ml-2 lg:ml-6 list-disc w-full'>
                                         <li>Transported together with the silo on the same chassis</li>
                                         <li>Installed and dismantled on-site using a crane</li>
                                         <li>Independent structure, not fixed to the silo frame</li>
@@ -1116,8 +1116,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                 <div className='grid grid-cols-4 justify-center items-center'>
             <div className='flex flex-col items-start justify-start gap-4 h-full' id='column1' ref={columnGrid1}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
-                        <ul className='ml-6 list-disc'>
+                        <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>CONTROL & OPERATION</h1>
+                        <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                             <li>Fully automatic or manual operation</li>
                             <li>Digital temperature monitoring and regulation</li>
                             <li>Simple and intuitive interface</li>
@@ -1131,8 +1131,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                         </ul>
                     </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
-                    <ul className='ml-6 list-disc'>
+                    <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>FEEDING & DISCHARGE SYSTEM</h1>
+                    <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                         <li>Top inlet with rubber seal and rain cover</li>
                         <li>1 m³ batch discharge chamber</li>
                         <li>Pneumatic gates: fast-release and waste bypass</li>
@@ -1145,8 +1145,8 @@ const activeData = toggleConfig.find(item => item.id === key);
             </div>
             <div className='flex flex-col items-start justify-start h-full gap-4 col-span-1' id='column2' ref={columnGrid2}>
                 <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                    <ul className='ml-6 list-disc'>
+                    <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>CONSTRUCTION & DESIGN</h1>
+                    <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                         <li>Fully insulated walls – up to 72 hrs heat retention</li>
                         <li>Rain shield and anti-segregation batch chamber</li>
                         <li>Built-in safety railings and OSHA-compliant platform</li>
@@ -1162,8 +1162,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
-                    <ul className='ml-6 list-disc'>
+                    <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>DURABILITY & SAFETY</h1>
+                    <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                         <li>High-resistance structure for long-term operation</li>
                         <li>Protected by electrostatic paint with strong adhesion</li>
                         <li>Bolted components with anti-corrosion coating</li>
@@ -1181,8 +1181,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-10'>
                 <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                        <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                        <ul className='ml-6 list-disc'>
+                        <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                        <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                             <li>Industrial-grade motors and components</li>
                             <li>Simple wiring system for easy maintenance</li>
                             <li>Pulley and bushing transmission system</li>
@@ -1194,8 +1194,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                         </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white col-span-2 px-20'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARS</h1>
-                    <ul className='ml-6 list-disc'>
+                    <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>COMPLIANCE WITH INDUSTRY <br />STANDARS</h1>
+                    <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                         <li>EPA</li>
                         <li>OSHA</li>
                         <li>DOT</li>
@@ -1203,8 +1203,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                    <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>PORTABILITY</h1>
-                    <ul className='ml-6 list-disc'>
+                    <h1 className='font-bold lg:text-xl text-base border-b border-b-white w-full pb-3'>PORTABILITY</h1>
+                    <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc'>
                         <li>Designed for occasional relocation with crane support</li>
                         <li>Transportable in sections on flatbed trailer</li>
                         <li>Setup requires crane or hoisting equipment</li>
@@ -1416,8 +1416,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                         </div>
                     </div>
                     <div className='text-white font-normal col-span-2'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
-                        <div className='flex justify-between'>
+                        <h1 className='lg:text-xl text-base border-b border-b-white w-full pb-3 mb-3'>CHASSIS & STRUCTURE</h1>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Total length (including transport skid):</h1>
                             <p>
                                 {unit === 'metric'
@@ -1425,7 +1425,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        {/*<div className='flex justify-between'>
                             <h1>Chassis length:</h1>
                             <p>
                                 {unit === 'metric'
@@ -1440,8 +1440,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 ? `${activeData?.dimensions.transporWidth?.toFixed(1) ?? ''} cm`
                                 : `${((activeData?.dimensions.transporWidth ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
-                        </div>
-                        <div className='flex justify-between'>
+                        </div>*/}
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Total width:</h1>
                             <p>
                                 {unit === 'metric'
@@ -1449,7 +1449,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Axle configuration: </h1>
                             <p>
                                 {unit === 'metric'
@@ -1457,7 +1457,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.axleConfig ?? 0) )} `}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
                             <p>
                                 {unit === 'metric'
@@ -1465,7 +1465,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Support system: </h1>
                             <p>
                                 {unit === 'metric'
@@ -1473,11 +1473,11 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.support ?? 0) )} `}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Wheels: </h1>
                             <p>16" highway-rated tires</p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Truck height dischange:</h1>
                             <p>
                                 {unit === 'metric'
@@ -1485,7 +1485,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 : `${((activeData?.dimensions.truckHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                         </div>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between text-sm lg:text-base'>
                             <h1>Total height (heighest point):</h1>
                             <p>
                                 {unit === 'metric'
@@ -1497,9 +1497,9 @@ const activeData = toggleConfig.find(item => item.id === key);
                 </div>
                 <div className='grid grid-cols-4 justify-center items-start w-full mt-10 gap-10'>
                     <div className='text-white font-normal col-span-3'>
-                        <h1 className='lg:text-xl text-lg border-b border-b-white w-full pb-3 mb-3'>FEDDING SLAT CONVEYOR</h1>
-                        <div className='grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-20'>
-                            <div className='text-white font-normal col-span-1'>
+                        <h1 className='lg:text-xl text-base border-b border-b-white w-full pb-3 mb-3'>FEDDING SLAT CONVEYOR</h1>
+                        <div className='grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-6 lg:gap-20'>
+                            <div className='text-white font-normal col-span-1 text-sm lg:text-base'>
                                     <div className='flex justify-between'>
                                         <h1>Length:</h1>
                                         <p>
@@ -1546,7 +1546,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                     </div>
                             </div>
                             <div className='flex flex-col gap-4 text-white col-span-1 md:col-span-2 w-full justify-center'>
-                                <ul className='ml-6 list-disc w-full'>
+                                <ul className='text-sm lg:text-base ml-2 lg:ml-6 list-disc w-full'>
                                     <li>Transported together with the silo on the same chassis</li>
                                     <li>Installed and dismantled on-site using a crane</li>
                                     <li>Independent structure, not fixed to the silo frame</li>

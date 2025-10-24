@@ -2127,7 +2127,7 @@ gsap.set(img, {
                                     </svg>
                                 </button>
                             </div>
-                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
+                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1 ? "max-h-[650px] opacity-1 mb-4" : "max-h-0 opacity-0"}`}>
                                 <div className='flex justify-between'>
                                     <h1>Length:</h1>
                                     <p>
@@ -2162,7 +2162,7 @@ gsap.set(img, {
                                         <li>Mixing Flights</li>
                                     </ul>
                                 </div><br />
-                                <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                                <div className='flex flex-col items-start justify-start gap-4 text-white h-full'>
                                     <h1 className='font-bold lg:text-xl text-lg border-b border-b-white w-full pb-3'>MIXING & FEEDING SYSTEM</h1>
                                     <ul className='ml-6 list-disc'>
                                         <li>External pugmill mixer (5 HP motor, Hardox pads, single shaft)</li>
