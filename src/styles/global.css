@@ -23,6 +23,13 @@
 .bgplane{
     background-image: url('../assets/images/IntegralAsphalt/fondopatron.png');
 }
+video {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    background-color: #000;
+  }
+  
 /*  {
     outline: 1px solid red !important;
   }*/
