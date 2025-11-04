@@ -162,6 +162,10 @@ export const menuItems = [
         url : "/",
       },
       {
+        title : "AESTHETIC SIDE PANELS",
+        url : "/AestheticSide",
+      },
+      {
         title : "IMPROVMENT AND DESIGN",
         url : "/Improvement",
       },
