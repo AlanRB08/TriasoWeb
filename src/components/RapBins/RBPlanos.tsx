@@ -369,17 +369,15 @@ const RBPlanos = () => {
                         </div>
                     <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                         <li>18" variable-speed dosing belt</li>
-                        <li>Fine motor control down to 1 rpm for accurate flow</li>
                         <li>Rubber-coated head pulley for reliable grip</li>
-                        <li>Trapezoidal discharge gate for smooth material flow</li>
                         <li>Flow sensor triggers air cannons to avoid clogging</li>
                         <li>24" wide conveyor belt for smoother low-speed transport</li>
-                        <li>Polyethylene scraper and onboard vibrator prevent material build-up</li>
+                        <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
                     </ul>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-4 text-white'>
                 <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2

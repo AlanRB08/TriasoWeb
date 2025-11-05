@@ -300,16 +300,15 @@ gsap.set(img, {
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <li>Easy bag replacement with quick-change frames.</li>
-                            <li>Factory-installed bag powder, no startup waiting time.</li>
                             <li>Access doors and inspection hatches for fast servicing</li>
-                            <li>Galvanized bolts for rust-free durability and easy disassembly.</li>
-                            <li>Reduced wear and extended bag life due to optimized airflow design.</li>
-                            <li>Energy savings through improved cleaning efficiency and reduced backpressure.</li>
+                            <li>Factory-installed bag powder — no startup waiting time.</li>
+                            <li>99.99% filtration and energy-efficient cleaning from startup</li>
+                            <li>Self-contained, integrated systems for portable or stationary plants.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CLEANING OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C1_2: !prev.C1_2
@@ -325,13 +324,22 @@ gsap.set(img, {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Thermal insulation with 2" fiberglass to prevent overcooling.</li>
-                            <li>Heat resistance up to 204 °C continuous / 220 °C peak with Nomex bags.</li>
-                            <li>Up to 260 °C peak with P84 polyimide bags.</li>
-                            <li>Protective sheet metal guards with perforations for operator safety.</li>
-                            <li>Automatic exhaust damper with electric actuator for overtemperature protection.</li>
-                            <li>Cold-air window system prevents bag damage in overheating conditions.</li>
-                            <li>Chimney with ecological test ports for environmental monitoring.</li>
+                            <li>Manual or automatic operation</li>
+                            <li className='list-none'>
+                              <ul className='list-disc ml-10'>
+                                <li>
+                                  Exhaust damper with electric actuator for overtemperature protection.
+                                </li>
+                                <li>
+                                  Pulse jet cleaning cycles.
+                                </li>
+                              </ul>
+                            </li>
+                            <li>Gas extractor with centrifugal separation removes up to 70% of dust before filtration.</li>
+                            <li>Knockout chamber and internal baffles ensure smooth airflow and bag protection.</li>
+                            <li>Exhaust fan with curved blades operates quietly and efficiently</li>
+                            <li>Supersonic 3D-printed carbon-alloy nozzles for pulse-jet cleaning.</li>
+                            <li>Uniform fines return into the drum mixer.</li>
                         </ul>
                     </div>
                 </div>
@@ -340,7 +348,7 @@ gsap.set(img, {
                 <div className='flex flex-col items-start justify-between w-full h-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
                     <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN & OPERATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C2_1: !prev.C2_1
@@ -356,10 +364,21 @@ gsap.set(img, {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Foldable support legs and transport skids for fast setup.</li>
-                            <li>Exhaust fan with curved blades: quieter and more efficient.</li>
-                            <li>Gas extractor with centrifugal separation, removes ~70% of dust load before reaching bags.</li>
-                            <li>Knockout chamber and internal baffles ensure smooth airflow and bag protection.</li>
+                            <li>Fully automatic or manual operation</li>
+                            <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                            <li className='list-none'>
+                              <ul className='list-disc ml-10'>
+                                <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                              </ul>
+                            </li>
+                            <li>Alarm and interlock system for out-of-range conditions.</li>
+                            <li>Independent, intuitive controls designed for field reliability.</li>
+                            <li>Adaptable to existing asphalt plant control infrastructure</li>
+                            <li className='list-none'>
+                              <ul className='list-disc ml-10'>
+                                <li>Seamless integration to central control systems</li>
+                              </ul>
+                            </li>
                         </ul>
                     </div>
                     <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
@@ -380,12 +399,11 @@ gsap.set(img, {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Siemens motors and industrial-grade components.</li>
-                            <li>DHeavy-duty wiring, polarized for safe grounding.</li>
-                            <li>Quick-connect plugs with weather protection and clear labeling.</li>
-                            <li>Oversized Browning reducers and steel pulleys with bushing system.</li>
-                            <li>Integrated PLC control system with configurable cleaning programs.</li>
-                            <li>Touch-screen interface for cycle adjustment and monitoring.</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                 </div>
@@ -393,7 +411,7 @@ gsap.set(img, {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 mt-0 md:mt-10 justify-center items-start'>
                     <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FILTRATION SYSTEM</h1>
+                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
                                 <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                 ...prev,
                                 C3_1: !prev.C3_1
@@ -409,11 +427,19 @@ gsap.set(img, {
                                 </button>
                             </div>
                             <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>99.99% filtration efficiency from startup.</li>
-                                <li>Supersonic 3D-printed carbon alloy nozzles for. cleaning pulses.</li>
-                                <li>Pulse jet cleaning cycles, programmable via PLC.</li>
-                                <li>Uniform fines return into the drum mixer.</li>
-                                <li>Self-contained, integrated systems for portable or stationary plants.</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                <li>Aesthetic side panels for professional image</li>
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li>
+                                  <ul>
+                                    <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                  </ul>
+                                </li>
+                                <li>Thermal insulation with 2" fiberglass to prevent overcooling.</li>
+                                <li>Labyrinth seals reduce air and heat loss.</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Heat resistance up to 204 °C continuous / 220 °C peak with Nomex bags.</li>
+                                <li>Up to 260 °C peak with P84 polyimide bags.</li>
                             </ul>
                     </div>
                     <div className='flex flex-col items-start justify-center gap-4 text-white col-span-2  w-full px-0 md:px-10 lg:px-36 self-center'>
@@ -458,13 +484,14 @@ gsap.set(img, {
                                 </button>
                             </div>
                             <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Designed for relocation.</li>
-                                <li>Low-profile body for easy transport and stability</li>
-                                <li>Transportable on flatbed trailer.</li>
-                                <li>Setup no requires crane or hoisting equipment.</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                <li>Mounted on standard transport chassis with triple axles and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
                                 <li>Bolt-on support legs for fast on-site assembly.</li>
                                 <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
-                                <li>Transport via flatbed or container-style chassis.</li>
                             </ul>
                     </div>
                 </div>

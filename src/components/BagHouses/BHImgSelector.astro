@@ -3,7 +3,7 @@ import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import GallerySlider from "../unitComponents/GallerySlider";
 import img1 from "../../assets/images/BagHouses/BHProv4.webp";
 import img2 from "../../assets/images/BagHouses/BHProv6.webp";
-import img3 from "../../assets/images/BagHouses/BHProv1.webp";
+import single from '../../assets/images/DrumMixers/baghouse.webp';
 import img4 from "../../assets/images/BagHouses/BHProv2.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
@@ -14,6 +14,7 @@ import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import img5 from "../../assets/images/BagHouses/venturiSys.webp";
 import img6 from "../../assets/images/BagHouses/ratioSys.webp";
 import img7 from "../../assets/images/BagHouses/BHProv7.webp";
+import OSection from "../unitComponents/OSection.astro";
 
 const tanksSlides = [
   {
@@ -67,6 +68,7 @@ const tanksSlides = [
         </div>
         
     </div>
+    <OSection/>
     <TwoColumnSection
                 leftBg="bg-redBg"
   rightBg="bg-blueMain"
@@ -114,7 +116,7 @@ const tanksSlides = [
         </div>
     </div>
     <div class="w-full bg-grisT px-8 lg:px-52 text-white flex flex-col gap-6">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-6">
             <div>
                 <h2 class="text-xl md:text-2xl">
                     Triaso Supersonic Nozzle
@@ -125,8 +127,8 @@ const tanksSlides = [
                       fine particle collection in the baghouse.
                 </p>
             </div>
-            <div>
-                <img src={img1.src} alt="">
+            <div class="w-full flex justify-center items-center">
+                <img src={single.src} alt="" class="w-1/2">
             </div>
         </div>
         
