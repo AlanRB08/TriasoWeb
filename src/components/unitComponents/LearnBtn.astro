@@ -1,20 +1,24 @@
 ---
 export interface Props {
-        text?: string;
-        className?: string;
-        href?: string;
-        isExternal?: boolean;
+  text?: string;
+  className?: string;
+  href?: string;
+  isExternal?: boolean;
 }
+
 const {
-        text= "Learn More",
-        className = "bg-redBg hover:bg-redBgHover",
-        href = "#",
-        isExternal= false
-}= Astro.props
+  text = "Learn More",
+  className = "bg-redBg hover:bg-transparent hover:text-redBg",
+  href = "#",
+  isExternal = false
+} = Astro.props
 ---
-<a href={href}
-class=`text-white mt-10 text-sm md:text-lg font-normal rounded-full py-1 px-4 ${className}`
-target={isExternal ? "_blank" : "_self"}
-rel={isExternal ? "noopener noreferrer" : undefined}>
-{text}
+
+<a
+  href={href}
+  class={`text-white mt-10 text-xs md:text-sm font-normal border-2 border-redBg rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg ${className}`}
+  target={isExternal ? "_blank" : "_self"}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+>
+  {text}
 </a>
