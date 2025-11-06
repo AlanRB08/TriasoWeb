@@ -10,6 +10,7 @@ import img3 from "../../assets/images/RapBins/RAProv2.png";
 import RAProv5 from "../../assets/images/RapBins/RAProv5.png";
 import video from "../../assets/images/RapBins/ProvVideo1.mp4";
 import OSection from '../unitComponents/OSection.astro';
+import rapFlight from "../../assets/images/DrumMixers/a21.jpg";
 ---
 <section class="w-full font-bold">
     <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT">
@@ -31,16 +32,15 @@ import OSection from '../unitComponents/OSection.astro';
     <div class="w-full px-8 lg:px-52 bg-grisT text-white">
         <h1 class="text-end text-xl md:text-2xl font-bold">RAP ENTRY FLIGHTS</h1>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT px-8 lg:px-52">
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT px-8 lg:px-52 justify-center items-center pt-6">
         <div class="w-full col-span-1">
             <p class="text-base md:text-lg font-thin text-white">
                 For recycled asphalt pavement (RAP), dedicated entry flights are used, to gently introduce RAP into the hot aggregate stream.
                  Its design allows short, uniform drops that optimize heat transfer while minimizing blue smoke and preventing material buildup.
             </p>
         </div>
-        <div class="w-full col-span-2 text-white flex flex-col justify-center">
-            
-             <img src=´´ alt="" class="w-3/4">
+        <div class="w-full col-span-2 text-white flex flex-col justify-center items-end">
+             <img src={rapFlight.src} alt="" class="w-3/4 rounded-lg">
         </div>
     </div>
     <div class="w-full bg-grisT px-8 md:px-52 py-10 flex justify-center">

@@ -1,26 +1,26 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import tolva3Main from '../../assets/images/BinUnits/tolva3Main.png';
-import tolva3Blue from '../../assets/images/BinUnits/tolva3Blue.png';
+import RAPMain from "../../assets/images/RapBins/RAPMain.png";
+import RAPMain2 from "../../assets/images/RapBins/RAPMainBlue.png";
 import tolva2L2 from '../../assets/images/BinUnits/tolva2L2.png';
 import tolva2L1 from '../../assets/images/BinUnits/tolva2L1.png';
 import tolva1L2 from '../../assets/images/BinUnits/tolva1L2.png';
 import tolva1L1 from '../../assets/images/BinUnits/tolva1L1.png';
 import tolva1F from '../../assets/images/BinUnits/tolva1F.png';
+import tolva2F1 from "../../assets/images/BinUnits/tolva2F1.png";
 import tolva1Main from '../../assets/images/BinUnits/tolva1Main.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const singleUnit = [
+const singleUnit = 
     {
         length: 365.75,
         width: 268.22,
         height: 201.17,
         capacity: "20 tons"
-    }
-];
-const structure = [
+    };
+const structure = 
     {
         length: 1088.14,
         axleConfi: "One Axle",
@@ -28,14 +28,15 @@ const structure = [
         width: 260,
         height: 381,
     }
-];
+;
 const toggleConfig = [
     {
         id:'1',
         dimensions:{
             width: 268.22,
             height: 381,
-            length: 722.37
+            length: 722.37,
+            tph:60
         }
     },
     {
@@ -43,7 +44,8 @@ const toggleConfig = [
         dimensions:{
             width: 268.22,
             height: 381,
-            length: 1088.14,  
+            length: 1088.14,
+            tph:120  
         }
     },
     {
@@ -51,7 +53,8 @@ const toggleConfig = [
         dimensions:{
             width: 268.22,
             height: 381,
-            length: 957.90,  
+            length: 957.90, 
+            tph:120 
         }
     }
 ];
@@ -230,22 +233,22 @@ const RBPlanos = () => {
           className="text-white font-bold
            flex items-center justify-center
             rounded will-change-transform transform-gpu
-             z-20 w-[120px] h-[560px]"
+             z-20 w-[180px] h-[560px]"
         >
           <img
-            src={tolva3Blue.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={RAPMain2.src}
+            className="absolute top-0 left-0 w-full h-full object-contain"
             alt="Imagen de fondo"
             style={{
-      display: activeTab === 3 ? 'block' : 'none',
-      opacity: activeTab === 3 ? 1 : 0,
-      visibility: activeTab === 3 ? 'visible' : 'hidden',
+      display: activeTab === 2 ? 'block' : 'none',
+      opacity: activeTab === 2 ? 1 : 0,
+      visibility: activeTab === 2 ? 'visible' : 'hidden',
     }}
           />
           <img
             ref={imgRef}
-            src={tolva3Main.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={RAPMain.src}
+            className="absolute top-0 left-0 w-full h-full object-contain"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
           />
@@ -349,126 +352,146 @@ const RBPlanos = () => {
         {activeTab === 1 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_1: !prev.C1_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_1: !prev.C1_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>18" variable-speed dosing belt</li>
+                                <li>Rubber-coated head pulley for reliable grip</li>
+                                <li>Flow sensor triggers air cannons to avoid clogging</li>
+                                <li>24" feeding conveyor wide conveyor belt for smoother low-speed transport</li>
+                                <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
+                            </ul>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>18" variable-speed dosing belt</li>
-                        <li>Rubber-coated head pulley for reliable grip</li>
-                        <li>Flow sensor triggers air cannons to avoid clogging</li>
-                        <li>24" wide conveyor belt for smoother low-speed transport</li>
-                        <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_2: !prev.C1_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_2: !prev.C1_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {activeVersion === 'withPanels' ? (
+                                    <li>Aesthetic side panels for professional image</li>
+                                ) : (
+                                    null
+                                )}
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>120-gallon air tank for air cannon operation</li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Variable-speed dosing system integrated with plant control console</li>
-                        <li>Digital interface for dosage adjustment and monitoring</li>
-                        <li>Real-time feedback of flow rate for precision control</li>
-                        <li>Adaptable to existing asphalt plant control infrastructure</li>
-                        <li>Fully compatible with cold or hot mix asphalt plants, with seamless integration to central control systems</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={tolva1Main.src} alt="" className='w-[240px] h-[600px]' />
-            </div>
-            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_1: !prev.C2_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
+                        <img src={tolva1Main.src} alt="" className='w-[240px] h-[600px]' />
+                    </div>
+                    <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_1: !prev.C2_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                    </ul>
+                                </li>
+                                <li>Alarm and interlock system for out-of-range conditions.</li>
+                                <li>Independent, intuitive controls designed for field reliability.</li>
+                                <li>Adaptable to existing asphalt plant control infrastructure</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Seamless integration to central control systems</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Extra-reinforced steel structure</li>
-                        <li>Trapezoidal bin design for better material flow</li>
-                        <li>Low-profile frame for easy relocation</li>
-                        <li>Galvanized bolts for corrosion resistance</li>
-                        <li>Automotive-grade electrostatic paint</li>
-                        <li>Oversized Browning™ gear reducers</li>
-                        <li>Steel pulleys for heavy-duty power transmission</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_3: !prev.C2_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_3: !prev.C2_3
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_3 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <li>Designed for relocation</li>
+                                    <li>Built-in fifth wheel means no lowboy is required.</li>
+                                    <li className='list-none'>
+                                        <ul className='list-disc ml-10'>
+                                            <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                    <li>Pull-type hitch with safety coupling and brake system.</li>
+                                    <li>Setup requires no crane or hoisting equipment.</li>
+                                    <li>Bolt-on support legs for fast on-site assembly.</li>
+                                    <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
+                                </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Compact and low-profile structure designed for easy transportation and relocation</li>
-                        <li>Mounted on wheels:</li>
-                        <ul className='ml-2 lg:ml-6'>
-                            <li>Equipped with a fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system for safe road transport</li>
-                            <li>Dual-axle configuration ensures stability and even load distribution</li>
-                        </ul>
-                        <li>Mounted on legs:</li>
-                        <ul className='ml-2 lg:ml-6'>
-                            <li>Support legs pre-set at working height for fast and stable on-site setup</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
+                    </div>
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -484,13 +507,42 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Perforated guards for moving parts</li>
-                            <li>Built-in skirtboards to contain material</li>
-                            <li>Hooks for safety tensioners</li>
-                            <li>120-gallon air tank for air cannon operation</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_3: !prev.C3_3
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_3 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full text-sm lg:text-base list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <div className='w-full flex justify-between'>
+                                <p>
+                                    Maximum feeding capacity:
+                                </p>
+                                <p>
+                                    Up to 60 TPH
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -514,31 +566,7 @@ const RBPlanos = () => {
                             <li>UL wiring</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_3: !prev.C3_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Siemens™ motors and electrical components</li>
-                            <li>Polarized cabling with weather-sealed connections</li>
-                            <li>CEMA-standard pulleys and idlers</li>
-                            <li>Weather-resistant quick-connect terminals</li>
-                            <li>Motor control center with Siemens VFDs</li>
-                        </ul>
-                    </div>
+                    
                 </div>
                 <div className='flex w-full justify-start md:justify-center items-end my-10 overflow-x-auto'>
                     <div className='flex flex-col items-center justify-center'>
@@ -738,15 +766,27 @@ const RBPlanos = () => {
                         <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
-                                <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.length?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Width:</h1>
-                                <p data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.width?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height:</h1>
-                                <p data-imperial='201.17 cm' data-metric='6.6 ft'>6.6 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.height?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Capacity:</h1>
@@ -774,7 +814,11 @@ const RBPlanos = () => {
                         <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
-                                <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.length?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Axle configuration: </h1>
@@ -782,15 +826,27 @@ const RBPlanos = () => {
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fifth-wheel hitch height:</h1>
-                                <p data-imperial='134.11 cm' data-metric='4.4 ft'>4.4 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.wheel?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Total width:</h1>
-                                <p data-imperial='260.00 cm' data-metric='8.5 ft'>8.5 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.width?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height with bins in operation:</h1>
-                                <p data-imperial='381.00 cm' data-metric='12.5 ft'>12.5 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.height?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                        
@@ -842,128 +898,146 @@ const RBPlanos = () => {
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center'>
-            <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-            <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_1: !prev.C1_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_1: !prev.C1_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>18" variable-speed dosing belt</li>
+                                <li>Rubber-coated head pulley for reliable grip</li>
+                                <li>Flow sensor triggers air cannons to avoid clogging</li>
+                                <li>24" feeding conveyor wide conveyor belt for smoother low-speed transport</li>
+                                <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
+                            </ul>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>18" variable-speed dosing belt</li>
-                        <li>Fine motor control down to 1 rpm for accurate flow</li>
-                        <li>Rubber-coated head pulley for reliable grip</li>
-                        <li>Trapezoidal discharge gate for smooth material flow</li>
-                        <li>Flow sensor triggers air cannons to avoid clogging</li>
-                        <li>24" wide conveyor belt for smoother low-speed transport</li>
-                        <li>Polyethylene scraper and onboard vibrator prevent material build-up</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_2: !prev.C1_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_2: !prev.C1_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {activeVersion === 'withPanels' ? (
+                                    <li>Aesthetic side panels for professional image</li>
+                                ) : (
+                                    null
+                                )}
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>120-gallon air tank for air cannon operation</li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Variable-speed dosing system integrated with plant control console</li>
-                        <li>Digital interface for dosage adjustment and monitoring</li>
-                        <li>Real-time feedback of flow rate for precision control</li>
-                        <li>Adaptable to existing asphalt plant control infrastructure</li>
-                        <li>Fully compatible with cold or hot mix asphalt plants, with seamless integration to central control systems</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-[628px] order-1 md:order-2'>
-                
-            </div>
-            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
-            <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_1: !prev.C2_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2 min-h-[600px]'>
+                        
+                    </div>
+                    <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_1: !prev.C2_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                    </ul>
+                                </li>
+                                <li>Alarm and interlock system for out-of-range conditions.</li>
+                                <li>Independent, intuitive controls designed for field reliability.</li>
+                                <li>Adaptable to existing asphalt plant control infrastructure</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Seamless integration to central control systems</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Extra-reinforced steel structure</li>
-                        <li>Trapezoidal bin design for better material flow</li>
-                        <li>Low-profile frame for easy relocation</li>
-                        <li>Galvanized bolts for corrosion resistance</li>
-                        <li>Automotive-grade electrostatic paint</li>
-                        <li>Oversized Browning™ gear reducers</li>
-                        <li>Steel pulleys for heavy-duty power transmission</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_3: !prev.C2_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_3: !prev.C2_3
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_3 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                    <li>Designed for relocation</li>
+                                    <li>Built-in fifth wheel means no lowboy is required.</li>
+                                    <li className='list-none'>
+                                        <ul className='list-disc ml-10'>
+                                            <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                    <li>Pull-type hitch with safety coupling and brake system.</li>
+                                    <li>Setup requires no crane or hoisting equipment.</li>
+                                    <li>Bolt-on support legs for fast on-site assembly.</li>
+                                    <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
+                                </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Compact and low-profile structure designed for easy transportation and relocation</li>
-                        <li>Mounted on wheels:</li>
-                        <ul className='ml-2 lg:ml-6'>
-                            <li>Equipped with a fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system for safe road transport</li>
-                            <li>Dual-axle configuration ensures stability and even load distribution</li>
-                        </ul>
-                        <li>Mounted on legs:</li>
-                        <ul className='ml-2 lg:ml-6'>
-                            <li>Support legs pre-set at working height for fast and stable on-site setup</li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
+                    </div>
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
-                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -979,13 +1053,42 @@ const RBPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Perforated guards for moving parts</li>
-                            <li>Built-in skirtboards to contain material</li>
-                            <li>Hooks for safety tensioners</li>
-                            <li>120-gallon air tank for air cannon operation</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
+                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
+                    <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_3: !prev.C3_3
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_3 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden w-full text-sm lg:text-base list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <div className='w-full flex justify-between'>
+                                <p>
+                                    Maximum feeding capacity:
+                                </p>
+                                <p>
+                                    Up to 120 TPH
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-col justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -1009,31 +1112,7 @@ const RBPlanos = () => {
                             <li>UL wiring</li>
                         </ul>
                     </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_3: !prev.C3_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Siemens™ motors and electrical components</li>
-                            <li>Polarized cabling with weather-sealed connections</li>
-                            <li>CEMA-standard pulleys and idlers</li>
-                            <li>Weather-resistant quick-connect terminals</li>
-                            <li>Motor control center with Siemens VFDs</li>
-                        </ul>
-                    </div>
+                    
                 </div>
                 <div className='flex w-full justify-start md:justify-center items-end my-10 overflow-x-auto'>
                     <div className='flex flex-col items-center justify-center'>
@@ -1091,13 +1170,13 @@ const RBPlanos = () => {
                         </div>
                         <div className='w-[200px] h-[250px] flex items-center justify-center'>
                             <img 
-                                src={tolva1F.src} 
+                                src={tolva2F1.src} 
                                 alt="" 
                                 className='max-w-full max-h-full object-contain'
                             />
                         </div>
                     </div>
-                    <div className='flex flex-col items-center justify-end w-[90px] h-[253px]'>
+                    <div className='flex flex-col items-center justify-end w-[90px] h-[250px]'>
                         <div className='border-dotted border-t border-t-white w-full h-full flex items-center justify-center'>
                             <div className='bg-white w-[1px] h-full relative'>
                                 <div className='absolute top-0 left-1/2 transform -translate-x-1/2'>
@@ -1175,15 +1254,9 @@ const RBPlanos = () => {
                                 </div>
                             </div>
                             <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
-                                {activeVersion === 'withPanels' ? (
-                                unit === 'metric'
-                                ? `${(957.90).toFixed(1) ?? ''} cm`
-                                : `${(((957.90)) * cmToFeet).toFixed(1)} ft`
-                            ) : (
-                                unit === 'metric'
-                                ? `${(1088.14).toFixed(1) ?? ''} cm`
-                                : `${(((1088.14)) * cmToFeet).toFixed(1)} ft`
-                            )}
+                                {unit === 'metric'
+                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
+                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
@@ -1236,18 +1309,30 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`texttransition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Length:</h1>
-                                <p data-imperial='365.75 cm' data-metric='12.0 ft'>12.0 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.length?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Width:</h1>
-                                <p data-imperial='268.22 cm' data-metric='8.8 ft'>8.8 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.width?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height:</h1>
-                                <p data-imperial='201.17 cm' data-metric='6.6 ft'>6.6 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${singleUnit?.height?.toFixed(1) ?? ''} cm`
+                                        : `${((singleUnit?.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Capacity:</h1>
@@ -1257,7 +1342,7 @@ const RBPlanos = () => {
                     </div>
                     <div className='text-white font-normal flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CHASSIS & STRUCTURE</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_2: !prev.C4_2
@@ -1272,10 +1357,14 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                 <h1>Total length (including hitch):</h1>
-                                <p data-imperial='1088.14 cm' data-metric='23.27 ft'>23.27 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.length?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Axle configuration: </h1>
@@ -1283,22 +1372,34 @@ const RBPlanos = () => {
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Fifth-wheel hitch height:</h1>
-                                <p data-imperial='134.11 cm' data-metric='4.4 ft'>4.4 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.wheel?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.wheel ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Total width:</h1>
-                                <p data-imperial='260.00 cm' data-metric='8.5 ft'>8.5 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.width?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                             <div className='flex justify-between'>
                                 <h1>Height with bins in operation:</h1>
-                                <p data-imperial='381.00 cm' data-metric='12.5 ft'>12.5 ft</p>
+                                <p>
+                                    {unit === 'metric'
+                                        ? `${structure?.height?.toFixed(1) ?? ''} cm`
+                                        : `${((structure?.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                </p>
                             </div>
                         </div>
                        
                     </div>
                     <div className='text-white font-normal col-span-1 md:col-span-2 flex flex-col gap-4'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>BIN OPTIONS</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>BIN OPTIONS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C4_3: !prev.C4_3
@@ -1313,8 +1414,8 @@ const RBPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
-                            <ul className='ml-6 list-disc'>
+                        <div className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 `}>
+                            <ul className='ml-2 lg:ml-6 list-disc'>
                                     <li>Grizzlies</li>
                                     <li>Bin level indicators</li>
                                     <li>Adjustable depth control gates</li>
@@ -1324,7 +1425,7 @@ const RBPlanos = () => {
                                     <li>Bin dividers</li>
                                     <li>Walkways</li>
                                 </ul>
-                                <ul className='ml-6 list-disc'>
+                                <ul className='ml-2 lg:ml-6 list-disc'>
                                     <li>Bin covers</li>
                                     <li>Built-in retaining walls</li>
                                     <li>Air cannons</li>
