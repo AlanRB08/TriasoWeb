@@ -24,92 +24,19 @@ const cabinSize = [
         height: 309.34
     }
 ]
-const toggleConfig = [
+const toggleConfig = 
     {
         id:'1',
-        dimensions:{
-            width: 287.06,
-            height: 705.37,
-            length: 1868.09,
-            drumLenght: 653.41,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 80,
-            humidity5: 110,
-        }
-    },
-    {
-        id:'2',
         dimensions:{
             width: 299.09,
             height: 705.37,
             length: 2007.70,
-            drumLenght: 898.95,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 110,
-            humidity5: 150,
+            dosing: 315,
+            feeding: 350 ,
+            screw: 106.68,
+            height2:121.92
         }
-    },
-    {
-        id:'3',
-        dimensions:{
-            width: 309.40,
-            height: 705.37,
-            length: 2127.37,
-            drumLenght: 1109.42,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 140,
-            humidity5: 180,
-        }
-    },
-    {
-        id:'4',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2037.62,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 200,
-            humidity5: 270,
-        }
-    },
-    {
-        id:'5',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2037.62,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 300,
-            humidity5: 400,
-        }
-    },
-    {
-        id:'6',
-        dimensions:{
-            width: 310.00,
-            height: 509.68,
-            length: 2044.96,
-            drumLenght: 1280.48,
-            drumHeight: 264.31 ,
-            transportationHeight: 424.57,
-            wheel:140.0,
-            humidity3: 400,
-            humidity5: 540,
-        }
-    }
-]
+    };
 gsap.registerPlugin(ScrollTrigger);
 
 const PAPlanos = () => {
@@ -148,7 +75,7 @@ const cmToFeet = 0.0328084;
     C5_2: false,
   });
   //ACTIVE DATA 
-  const activeData = toggleConfig.find(item => item.id === activeTab.toString());
+  
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
@@ -369,7 +296,7 @@ const cmToFeet = 0.0328084;
                             <div className='flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1' id='column1' ref={columnGrid1}>
                                 <div className='flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN & OPERATION</h1>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSING SYSTEM</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
                                         C1_1: !prev.C1_1
@@ -387,9 +314,10 @@ const cmToFeet = 0.0328084;
                                     <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                                         <li>Screw feeder manufactured with 1045 steel</li>
                                         <li>Variable speed dosing screw, adjustable from 3 to 7 kg/min</li>
-                                        <li>Dosing control directly from the plant control console</li>
+                                        <li>Vibrator to ensure consistent feed</li>
+                                        <li>Low-level alarm sensor</li>
                                         <li>Direct discharge into the mixing drum</li>
-                                        <li>Integrated feeding hopper</li>
+                                        <li>Vibrators in fine aggregate bin to ensure consistent feed</li>
                                     </ul>
                                 </div>
                                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
@@ -410,11 +338,52 @@ const cmToFeet = 0.0328084;
                                         </button>
                                     </div>
                                     <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                        <li>Siemens motors: 3 Hp (dosing) and 1.5 Hp (feeding)</li>
-                                        <li>Industrial Siemens electrical components</li>
-                                        <li>Heavy-duty wiring, polarized for safe grounding</li>
-                                        <li>Power transmissions with oversized Browning reducer for heavy-duty operation</li>
-                                        <li>Steel pulleys with bushing mounting system</li>
+                                        <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                                        <li className='list-none'>
+                                            <ul className='list-disc ml-10'>
+                                                <li>Siemens motors: 3 Hp (dosing) and 1.5 Hp (feeding)</li>
+                                            </ul>
+                                        </li>
+                                        <li>Simplified wiring system for easy maintenance.</li>
+                                        <li>Weather-protected electrical connections.</li>
+                                        <li>Pulley-and-bushing drive system.</li>
+                                        <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
+                                    </ul>
+                                </div>
+                                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                                <div className='w-full flex justify-between border-b border-b-white'>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                        ...prev,
+                                        C1_3: !prev.C1_3
+                                        }))}>
+                                            <svg width="28px" height="28px"
+                                            stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                            className={`transition-transform duration-300 transform ${
+                                                openSections.C1_3 ? "rotate-180" : ""
+                                            }`}>
+                                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>Designed for relocation</li>
+                                        <li>Option for:</li>
+                                        <li className='list-none'>
+                                            <ul className='list-disc ml-10'>
+                                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                                <li className='list-none'>
+                                                    <ul className='list-disc ml-6'>
+                                                        <li>Bilt-in fifth wheel means no lowboy is required.</li>
+                                                        <li>Pull-type hitch with safety coupling and brake system.</li>
+                                                        <li>Bolt-on support legs for fast on-site assembly.</li>
+                                                        <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Setup requires no crane or hoisting equipment.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -424,7 +393,7 @@ const cmToFeet = 0.0328084;
                             <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3 gap-0 md:gap-10' id='column2' ref={columnGrid2}>
                                 <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                             ...prev,
                                             C2_1: !prev.C2_1
@@ -440,10 +409,21 @@ const cmToFeet = 0.0328084;
                                             </button>
                                         </div>
                                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                            <li>Galvanized bolts for durability, easy removal, and rust-free surfaces</li>
-                                            <li>Automotive-grade electrostatic baked paint, with strong adhesion and long-lasting color</li>
-                                            <li>Easy disassembly and transport</li>
-                                            <li>Independent feeding and dosing sections for quick, low-cost maintenance</li>
+                                            <li>Fully automatic or manual operation</li>
+                                            <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                            <li>
+                                                <ul>
+                                                    <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Alarm and interlock system for out-of-range conditions.</li>
+                                            <li>Independent, intuitive controls designed for field reliability.</li>
+                                            <li>Adaptable to existing asphalt plant control infrastructure</li>
+                                            <li className='list-none'>
+                                                <ul className='list-disc ml-10'>
+                                                    <li>Seamless integration to central control systems</li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                 </div>
                                 <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
@@ -464,10 +444,38 @@ const cmToFeet = 0.0328084;
                                             </button>
                                         </div>
                                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
-                                            <li>Reinforced design and heavy-gauge materials for heavy-duty operation</li>
-                                            <li>High corrosion resistance and extended color life</li>
-                                            <li>Protective sheet metal guards with circular perforations</li>
-                                            <li>Safety elements to protect both equipment and personnel</li>
+                                            <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                            <li>Bolted components with anti-corrosion coating</li>
+                                            <li className='list-none'>
+                                                <ul className='list-disc ml-10'>
+                                                    <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Dust-resistant housing protects control module.</li>
+                                        </ul>
+                                    </div>
+                                    <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
+                                        <div className='w-full flex justify-between border-b border-b-white'>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                            ...prev,
+                                            C2_3: !prev.C2_3
+                                            }))}>
+                                                <svg width="28px" height="28px"
+                                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                                className={`transition-transform duration-300 transform ${
+                                                    openSections.C2_3 ? "rotate-180" : ""
+                                                }`}>
+                                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
+                                            <li>EPA</li>
+                                            <li>OSHA</li>
+                                            <li>DOT</li>
+                                            <li>UL wiring</li>
                                         </ul>
                                     </div>
                             </div>
@@ -498,9 +506,9 @@ const cmToFeet = 0.0328084;
                                 </div>
                             </div>
                             <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
-                                {unit === 'metric'
-                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                 {unit === 'metric'
+                                ? `${toggleConfig?.dimensions.width.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
                             </p>
                             <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                 <div className='bg-white h-[1px] w-full relative'>
@@ -560,8 +568,8 @@ const cmToFeet = 0.0328084;
                                 <div className='my-3'>
                                     <p className='text-white text-lg'>
                                         {unit === 'metric'
-                                ? `${activeData?.dimensions.height?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig?.dimensions.height.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.height ?? 0) * cmToFeet).toFixed(1)} ft`}
                                     </p>
                                 </div>
                                 <div className='border-dotted border-b border-b-white w-full h-full flex items-center justify-center'>
@@ -612,9 +620,9 @@ const cmToFeet = 0.0328084;
                                         </div>
                                     </div>
                                     <p className='text-white lg:text-lg text-base w-full text-center mx-4'>
-                                        {unit === 'metric'
-                                ? `${activeData?.dimensions.length?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                         {unit === 'metric'
+                                ? `${toggleConfig?.dimensions.length.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.length ?? 0) * cmToFeet).toFixed(1)} ft`}
                                     </p>
                                     <div className='border-dotted border-r border-r-white h-full w-full flex items-center justify-center'>
                                         <div className='bg-white h-[1px] w-full relative'>
@@ -670,32 +678,33 @@ const cmToFeet = 0.0328084;
                                             <h1>Length:</h1>
                                             <p>
                                                 {unit === 'metric'
-                                ? `${activeData?.dimensions.drumLenght?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.drumLenght ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                ? `${toggleConfig?.dimensions.dosing.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.dosing ?? 0) * cmToFeet).toFixed(1)} ft`} (dosing section)<br></br>
+                                 {unit === 'metric'
+                                ? `${toggleConfig?.dimensions.feeding.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.feeding ?? 0) * cmToFeet).toFixed(1)} ft`} (feeding section)
                                             </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Screw Diameter::</h1>
                                             <p >
-                                                {unit === 'metric'
-                                ? `${activeData?.dimensions.width?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.width ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                 {unit === 'metric'
+                                ? `${toggleConfig?.dimensions.screw.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.screw ?? 0) * cmToFeet).toFixed(1)} ft`}
                                             </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Height:</h1>
                                             <p >
-                                                {unit === 'metric'
-                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                 {unit === 'metric'
+                                ? `${toggleConfig?.dimensions.height2.toFixed(1) ?? ''} cm`
+                                : `${((toggleConfig?.dimensions.dosing ?? 0) * cmToFeet).toFixed(1)} ft`}
                                             </p>
                                         </div>
                                         <div className='flex justify-between'>
                                             <h1>Bin Capacity:</h1>
                                             <p >
-                                                {unit === 'metric'
-                                ? `${activeData?.dimensions.drumHeight?.toFixed(1) ?? ''} cm`
-                                : `${((activeData?.dimensions.drumHeight ?? 0) * cmToFeet).toFixed(1)} ft`}
+                                                2.6 m³ (level filled)
                                             </p>
                                         </div>
                                 </div>
