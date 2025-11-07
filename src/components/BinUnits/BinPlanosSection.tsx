@@ -518,11 +518,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -567,7 +577,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -583,35 +593,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>      
@@ -619,7 +612,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -635,10 +628,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -661,11 +655,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 60 TPH</p>
                             </div>
                         </div>
                     </div>
@@ -1029,11 +1019,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -1078,7 +1078,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -1094,35 +1094,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -1130,7 +1113,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -1146,10 +1129,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -1172,11 +1156,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 120 TPH</p>
                             </div>
                         </div>
                     </div>
@@ -1540,11 +1520,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -1589,7 +1579,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -1605,35 +1595,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -1641,7 +1614,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -1657,10 +1630,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -1683,11 +1657,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 180 TPH</p>
                             </div>
                         </div>
                     </div>
@@ -2051,11 +2021,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -2100,7 +2080,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -2116,35 +2096,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -2152,7 +2115,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -2168,10 +2131,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -2194,11 +2158,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 240 TPH</p>
                             </div>
                         </div>
                     </div>
@@ -2562,11 +2522,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -2611,7 +2581,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -2627,35 +2597,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -2663,7 +2616,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -2679,10 +2632,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -2705,11 +2659,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 300 TPH</p>
                             </div>
                         </div>
                     </div>
@@ -3073,11 +3023,21 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Galvanized bolts and anti-corrosion coating</li>
-                                <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                                <li>Electrostatic paint finish for durability</li>
-                                <li>Anti-slip aluminum panels for operator safety</li>
-                                <li>Perforated guards and OSHA-compliant protections</li>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {
+                                    activeVersion === "withPanels" ? (
+                                        <li>Aesthetic side panels for professional image</li>
+                                    ) : (null)
+                                }
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
                             </ul>
                         </div>
                     </div>
@@ -3122,7 +3082,7 @@ const BinPlanosSection = () => {
                         </div>
                         <div className='flex flex-col items-start justify-center gap-4 text-white'>
                         <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
                                     <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                     ...prev,
                                     C2_2: !prev.C2_2
@@ -3138,35 +3098,18 @@ const BinPlanosSection = () => {
                                     </button>
                                 </div>
                                 <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial Siemens motors</li>
-                                <li>Grounded electrical wiring</li>
-                                <li>Quick-connect terminals with weather protection</li>
-                                <li>Motor control center with Siemens VFDs</li>
-                            </ul>
-                        </div>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                                    <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>CONTROL & OPERATION</h1>
-                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                    ...prev,
-                                    C2_3: !prev.C2_3
-                                    }))}>
-                                        <svg width="28px" height="28px"
-                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                        className={`transition-transform duration-300 transform ${
-                                            openSections.C2_3 ? "rotate-180" : ""
-                                        }`}>
-                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Diesel burner with automatic temperature control</li>
-                                <li>Two operating modes: Manual and Automatic</li>
-                                <li>Digital thermometers with programmable set points</li>
-                                <li>Siemens PLC-based control system</li>
-                                <li>100 L thermal oil expansion tank</li>
+                                <li>Designed for relocation</li>
+                                <li>Built-in fifth wheel means no lowboy is required.</li>
+                                <li className="list-none">
+                                    <ul className="list-disc ml-10">
+                                        <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                    </ul>
+                                </li>
+                                <li>Mounted on standard transport chassis with one axle and 16” highway-rated wheels.</li>
+                                <li>Pull-type hitch with safety coupling and brake system.</li>
+                                <li>Setup requires no crane or hoisting equipment.</li>
+                                <li>Bolt-on support legs for fast on-site assembly.</li>
+                                <li>DOT-compliant lighting and reflective markings for transport visibility.</li>
                             </ul>
                         </div>
                     </div>
@@ -3174,7 +3117,7 @@ const BinPlanosSection = () => {
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-lg w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -3190,10 +3133,11 @@ const BinPlanosSection = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                            <li>Simplified wiring system for easy maintenance.</li>
+                            <li>Weather-protected electrical connections.</li>
+                            <li>Pulley-and-bushing drive system.</li>
+                            <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-36'>
@@ -3216,11 +3160,7 @@ const BinPlanosSection = () => {
                         <div className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
                             <div className='flex justify-between'>
                                     <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
+                                    <p>Up to 360 TPH</p>
                             </div>
                         </div>
                     </div>
