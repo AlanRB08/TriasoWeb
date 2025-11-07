@@ -627,163 +627,213 @@ const CMPlanos = () => {
         {activeTab === 2 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
-            <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING SYSTEM</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_1: !prev.C1_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_1: !prev.C1_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>                       
+                                <li>18" variable-speed dosing belt</li>
+                                <li>Rubber-coated head pulley for reliable grip</li>
+                                <li>Vibrators in fine aggregate bin to ensure consistent feed</li>
+                                <li>Fine material flow sensor with low-level alarm</li>
+                                <li>24" feeding conveyor wide conveyor belt for smoother low-speed transport</li>
+                                <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
+                            </ul>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>                       
-                        <li>Aggregate bin with adjustable discharge gate</li>
-                        <li>Feeding conveyor with vulcanized belt</li>
-                        <li>Manual or motorized flow control</li>
-                        <li>Optional vibrator for consistent discharge</li>  
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_2: !prev.C1_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_2: !prev.C1_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {activeVersion === "withPanels" ? (<li>Aesthetic side panels for professional image</li>):(null)}
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Digital or manual control panel</li>
-                        <li>VFD for dosing and mixing adjustment</li>
-                        <li>Recipe memory (if digital system selected)</li>
-                        <li>Centralized emergency stop</li>
-                        <li>Pre-wired system for plug-and-play setup</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_2: !prev.C1_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>All moving parts with perforated metal guards</li>
-                        <li>Non-slip working areas</li>
-                        <li>Corrosion-resistant paint</li>
-                        <li>Low-maintenance components</li>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PUGMILL MIXING SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_2: !prev.C1_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Twin-shaft horizontal pugmill</li>
+                                <li>High-resistance steel liners</li>
+                                <li>Interchangeable paddles</li>
+                                <li>Adjustable mixing time</li>
+                                <li>Direct discharge gate to stockpile or truck</li>
+                                <li>Driven by 10–15 HP electric motor</li>
+                                <li>Speed reducer transmission</li>
 
-                    </ul>
-                </div>
-            </div>
-            <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
-                <img src={M1.src} alt="" className='w-[115px] h-auto' />
-            </div>
-            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_1: !prev.C2_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Reinforced materials for heavy-duty operation</li>
-                        <li>Low-profile structure for stable and efficient transport</li>
-                        <li>Pre-set height support legs, foldable for transport</li>
-                        <li>Transport skids for quick coupling and parking</li>
-                        <li>Galvanized bolts and corrosion-resistant hardware</li>
-                        <li>Electrostatic paint for long-lasting durability</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_2: !prev.C2_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full h-full order-1 md:order-2'>
+                        <img src={M1.src} alt="" className='w-[115px] h-auto' />
+                    </div>
+                    <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3'>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_1: !prev.C2_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                    </ul>
+                                </li>
+                                <li>Alarm and interlock system for out-of-range conditions.</li>
+                                <li>Independent, intuitive controls designed for field reliability.</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Siemens motors and electrical components</li>
-                        <li>Heavy-duty wiring with grounded connections</li>
-                        <li>Quick-connect terminals with weather protection</li>
-                        <li>Steel pulley system with bushing-mounted transmissions</li>
-                        <li>Industrial-grade gear reducers for mixer and feeders</li>
-                        <li>110V internal system for controls and lighting (optional)</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CHASSIS & STRUCTURE</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_3: !prev.C2_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_2: !prev.C2_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                                <li>Simplified wiring system for easy maintenance.</li>
+                                <li>Weather-protected electrical connections.</li>
+                                <li>Pulley-and-bushing drive system.</li>
+                                <li>External fuel lines, sensors, and signal cabling pre-installed</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Mounted on steel frame with telescopic legs or fixed supports</li>
-                        <li>Heavy-duty structure with reinforced joints</li>
-                        <li>Galvanized bolts and electrostatic paint</li>
-                        <li>Lifting lugs and base skids for easy transport and assembly</li>
-                    </ul>
-                </div>
-            </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_3: !prev.C2_3
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_3 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                    className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${
+                                        openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"
+                                    } md:max-h-full md:opacity-100 md:block`}
+                                    >
+                                    <li className='ml-6'>Designed for relocation</li>
+
+                                    {mountedVersion !== "legs" ? (
+                                        <li>
+                                        <ul className="list-disc ml-6">
+                                            <li>Built-in fifth wheel means no lowboy is required.</li>
+
+                                            <li className='list-none'>
+                                            <ul className="list-disc ml-10">
+                                                <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            Mounted on standard transport chassis with one axle and 16”
+                                            highway-rated wheels.
+                                            </li>
+
+                                            <li>Pull-type hitch with safety coupling and brake system.</li>
+                                            <li>Setup requires no crane or hoisting equipment.</li>
+                                            <li>Bolt-on support legs for fast on-site assembly.</li>
+                                            <li>
+                                            DOT-compliant lighting and reflective markings for transport
+                                            visibility.
+                                            </li>
+                                        </ul>
+                                        </li>
+                                    ) : (
+                                        <li>
+                                        <ul className="list-disc ml-6">
+                                            <li>Mounted on a standard chassis supported by legs</li>
+                                            <li>Bolt-on support legs for fast on-site assembly.</li>
+                                            <li>Quick assembly without foundation</li>
+                                        </ul>
+                                        </li>
+                                    )}
+                                    </ul>
+
+                        </div>
+                    </div>
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
@@ -834,30 +884,6 @@ const CMPlanos = () => {
                             <li>OSHA</li>
                             <li>DOT</li>
                             <li>UL wiring</li>
-                        </ul>
-                    </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_3: !prev.C3_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Modular and compact for transport</li>
-                            <li> Quick assembly without foundation</li>
-                            <li> Disassemblable for relocation</li>
-                            <li> Option to mount on trailer chassis</li>
                         </ul>
                     </div>
                 </div>
@@ -1183,142 +1209,218 @@ const CMPlanos = () => {
         {activeTab === 3 && (
             <div className='flex flex-col items-center justify-center' ref={containerRef}>
                 <div className='flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full'>
-            <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_1: !prev.C1_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                    <div className='flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1' id='column1' ref={columnGrid1}>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white col-span-1 w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>FEEDING & DOSIGN SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_1: !prev.C1_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>18" variable-speed dosing belt</li>
+                                <li>Rubber-coated head pulley for reliable grip</li>
+                                <li>Vibrators in fine aggregate bin to ensure consistent feed</li>
+                                <li>Fine material flow sensor with low-level alarm</li>
+                                <li>24" feeding conveyor wide conveyor belt for smoother low-speed transport</li>
+                                <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
+                            </ul>
                         </div>
-                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Fine material flow sensor with low-level alarm</li>
-                        <li>Vibrators on fine bins to ensure consistent feed</li>
-                        <li>Rubber-coated head pulleys and CEMA-standard rollers</li>
-                        <li>Drum made from high-temp resistant alloyed steel</li>
-                        <li>Collector belt receives material from all bins for final dosing</li>
-                        <li>Seamless integration with cold or hot mix asphalt plants</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C1_2: !prev.C1_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C1_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_2: !prev.C1_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                {activeVersion === "withPanels" ? (<li>Aesthetic side panels for professional image</li>):(null)}
+                                <li>Bolted components with anti-corrosion coating</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                    </ul>
+                                </li>
+                                <li>Belt cleaners for longer belt lifespan</li>
+                                <li>Dust-resistant housing protects control module.</li>
+                                <li>Built-in skirtboards to contain material</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Galvanized bolts and anti-corrosion coating</li>
-                        <li>Polyurethane and urethane belt cleaners for longer belt lifespan</li>
-                        <li>Electrostatic paint finish for durability</li>
-                        <li>Anti-slip aluminum panels for operator safety</li>
-                        <li>Perforated guards and OSHA-compliant protections</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='col-span-2 flex items-start justify-center w-full min-h-[900px] order-1 md:order-2'>
-                
-            </div>
-            <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_1: !prev.C2_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PUGMILL MIXING SYSTEM</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C1_3: !prev.C1_3
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C1_3 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Twin-shaft horizontal pugmill</li>
+                                <li>High-resistance steel liners</li>
+                                <li>Interchangeable paddles</li>
+                                <li>Adjustable mixing time</li>
+                                <li>Direct discharge gate to stockpile or truck</li>
+                                <li>Driven by 10–15 HP electric motor</li>
+                                <li>Speed reducer transmission</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Reinforced steel chassis for heavy-duty operation</li>
-                        <li>Trapezoidal bin design for better material flow</li>
-                        <li>Foldable support legs</li>
-                        <li>Removable transport skids</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_2: !prev.C2_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        
+                    </div>
+                    <div className='col-span-2 flex items-start justify-center w-full min-h-[900px] order-1 md:order-2'>
+                        
+                    </div>
+                    <div className='flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3' id='column2' ref={columnGrid2}>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_1: !prev.C2_1
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_1 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Fully automatic or manual operation</li>
+                                <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                <li className='list-none'>
+                                    <ul className='list-disc ml-10'>
+                                        <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                    </ul>
+                                </li>
+                                <li>Alarm and interlock system for out-of-range conditions.</li>
+                                <li>Independent, intuitive controls designed for field reliability.</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Industrial Siemens motors</li>
-                        <li>Grounded electrical wiring</li>
-                        <li>Quick-connect terminals with weather protection</li>
-                        <li>Motor control center with Siemens VFDs</li>
-                    </ul>
-                </div>
-                <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C2_3: !prev.C2_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C2_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_2: !prev.C2_2
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_2 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                                <li>Simplified wiring system for easy maintenance.</li>
+                                <li>Weather-protected electrical connections.</li>
+                                <li>Pulley-and-bushing drive system.</li>
+                                <li>External fuel lines, sensors, and signal cabling pre-installed</li>
+                            </ul>
                         </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                        <li>Diesel burner with automatic temperature control</li>
-                        <li>Two operating modes: Manual and Automatic</li>
-                        <li>Digital thermometers with programmable set points</li>
-                        <li>Siemens PLC-based control system</li>
-                        <li>100 L thermal oil expansion tank</li>
-                    </ul>
-                </div>
-            </div>
+                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                                    <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                                    <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                                    ...prev,
+                                    C2_3: !prev.C2_3
+                                    }))}>
+                                        <svg width="28px" height="28px"
+                                        stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                        className={`transition-transform duration-300 transform ${
+                                            openSections.C2_3 ? "rotate-180" : ""
+                                        }`}>
+                                            <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                    className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${
+                                        openSections.C2_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"
+                                    } md:max-h-full md:opacity-100 md:block`}
+                                    >
+                                    <li className='ml-6'>Designed for relocation</li>
+
+                                    {mountedVersion !== "legs" ? (
+                                        <li>
+                                        <ul className="list-disc ml-6">
+                                            <li>Built-in fifth wheel means no lowboy is required.</li>
+
+                                            <li className='list-none'>
+                                            <ul className="list-disc ml-10">
+                                                <li>Also transportable on lowboy or flatbed trailer if preferred.</li>
+                                            </ul>
+                                            </li>
+
+                                            <li>
+                                            Mounted on standard transport chassis with one axle and 16”
+                                            highway-rated wheels.
+                                            </li>
+
+                                            <li>Pull-type hitch with safety coupling and brake system.</li>
+                                            <li>Setup requires no crane or hoisting equipment.</li>
+                                            <li>Bolt-on support legs for fast on-site assembly.</li>
+                                            <li>
+                                            DOT-compliant lighting and reflective markings for transport
+                                            visibility.
+                                            </li>
+                                        </ul>
+                                        </li>
+                                    ) : (
+                                        <li>
+                                        <ul className="list-disc ml-6">
+                                            <li>Mounted on a standard chassis supported by legs</li>
+                                            <li>Bolt-on support legs for fast on-site assembly.</li>
+                                            <li>Quick assembly without foundation</li>
+                                        </ul>
+                                        </li>
+                                    )}
+                                    </ul>
+
+                        </div>
+                    </div>
                 </div>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-stretch items-start mt-0 md:mt-10'>
                     <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>EMULSION AND ADDITIVES INJECTION</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_1: !prev.C3_1
@@ -1334,15 +1436,15 @@ const CMPlanos = () => {
                             </button>
                         </div>
                         <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>Fifth-wheel hitch for secure towing</li>
-                            <li>Integrated braking and lighting system</li>
-                            <li>DOT-compliant for road transport</li>
-                            <li>Support legs for parking and stability</li>
+                            <li>Bitumen/emulsion pump with frequency inverter</li>
+                            <li>Flowmeter for precision dosing</li>
+                            <li>Optional water/additive tank with pump</li>
+                            <li>Integrated pipe and filter system</li>
                         </ul>
                     </div>
                     <div className='flex flex-col justify-start gap-4 text-white col-span-2 px-0 md:px-10 lg:px-36'>
                     <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                             ...prev,
                             C3_2: !prev.C3_2
@@ -1357,36 +1459,10 @@ const CMPlanos = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <div className='flex justify-between'>
-                                    <h1>Maximum feeding capacity:</h1>
-                                    <p>Up to 650 TPH</p>
-                            </div>
-                            <div className='flex justify-between text-end'>
-                                    <h1>Feeding system:</h1>
-                                    <p>Variable-speed dosing belts <br /> with fine motor control adjustment for precise dosing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                    <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>OPERATING CONFIGURATION</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_3: !prev.C3_3
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_3 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>EPA</li>
+                        <ul className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <li>
+                                EPA
+                            </li>
                             <li>OSHA</li>
                             <li>DOT</li>
                             <li>UL wiring</li>
