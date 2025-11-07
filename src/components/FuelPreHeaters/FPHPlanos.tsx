@@ -271,7 +271,7 @@ const cmToFeet = 0.0328084;
                             <div className='flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1' id='column1' ref={columnGrid1}>
                                 <div className='flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN & OPERATION</h1>
+                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DESIGN</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
                                         C1_1: !prev.C1_1
@@ -321,22 +321,24 @@ const cmToFeet = 0.0328084;
                                         <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
                                         <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                         ...prev,
-                                        C1_2: !prev.C1_2
+                                        C1_3: !prev.C1_3
                                         }))}>
                                             <svg width="28px" height="28px"
                                             stroke-width="1.5" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg" color="#000000"
                                             className={`transition-transform duration-300 transform ${
-                                                openSections.C1_2 ? "rotate-180" : ""
+                                                openSections.C1_3 ? "rotate-180" : ""
                                             }`}>
                                                 <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                             </svg>
                                         </button>
                                     </div>
-                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                        <li>Industrial-grade motors and components</li>
-                                        <li>Simple wiring system for easy maintenance</li>
-                                        <li>Weather-protected electrical connections</li>
+                                    <ul className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                        <li>Industrial-grade motors, components, and Siemens wiring.</li>
+                                        <li>Simplified wiring system for easy maintenance.</li>
+                                        <li>Weather-protected electrical connections.</li>
+                                        <li>Pulley-and-bushing drive system.</li>
+                                        <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -369,7 +371,7 @@ const cmToFeet = 0.0328084;
                                 </div>
                                 <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
                                         <div className='w-full flex justify-between border-b border-b-white'>
-                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>MAINTENANCE & ADVANTAGES</h1>
+                                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONTROL & OPERATION</h1>
                                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
                                             ...prev,
                                             C2_2: !prev.C2_2
@@ -385,9 +387,17 @@ const cmToFeet = 0.0328084;
                                             </button>
                                         </div>
                                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
-                                            <li>Includes all required piping and valves for operation.</li>
-                                            <li>Independent components for quick and low-cost maintenance.</li>
-                                            <li>Reliable and durable design for continuous operation.</li>
+                                            <li>Fully automatic or manual operation</li>
+                                            <li>Digital monitoring of all operating parameters, with real-time supervision and historical data reports.</li>
+                                            <li>
+                                                <ul>
+                                                    <li>Remote monitoring system accessible from computers, tablets, and smartphones.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Alarm and interlock system for out-of-range conditions.</li>
+                                            <li>Independent, intuitive controls designed for field reliability.</li>
+                                            <li>Adaptable to existing asphalt plant control infrastructure</li>
+                                            <li>Seamless integration to central control systems</li>
                                         </ul>
                                 </div>
                                 <div className='text-white font-normal w-full flex flex-col gap-4 justify-between h-full'>
@@ -408,10 +418,16 @@ const cmToFeet = 0.0328084;
                                             </button>
                                         </div>
                                         <ul className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block md:mb-0`}>
-                                            <li>Thermal insulation to reduce external surface temperature.</li>
-                                            <li>Corrosion-resistant construction for extended service life.</li>
-                                            <li>Bolted joints and coated surfaces for durability.</li>
-                                            <li>Electrostatic paint finish with strong adhesion.</li>
+                                            <li>High-strength, reinforced structure for long-term heavy-duty operation</li>
+                                            <li>Bolted components with anti-corrosion coating</li>
+                                            <li>
+                                                <ul>
+                                                    <li>Galvanized bolts and electrostatic paint ensure long-lasting durability and excellent adhesion.</li>
+                                                </ul>
+                                            </li>
+                                            <li>Thermal insulation minimizes heat and surface temperature.</li>
+                                            <li>Labyrinth seals reduce air and heat loss.</li>
+                                            <li>Dust-resistant housing protects control module.</li>
                                         </ul>
                                 </div>
                             </div>
