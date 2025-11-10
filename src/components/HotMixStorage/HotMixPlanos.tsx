@@ -525,6 +525,32 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 <li>Load cell integration with programmable logic</li>
                             </ul>
                         </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_1: !prev.C3_1
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_1 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Siemens motors / industrial-grade wiring</li>
+                                <li>Pulley and bushing transmission system</li>
+                                <li>External fuel lines, sensors, and cabling included</li>
+                            </ul>
+                        </div>
                     </div>
                     <div className='col-span-1 md:col-span-2 flex items-start justify-center w-full h-[600px] order-1 md:order-2'>
                         {
@@ -537,38 +563,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                         }
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-0 md:gap-4 w-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                                <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                                <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                ...prev,
-                                C2_1: !prev.C2_1
-                                }))}>
-                                    <svg width="28px" height="28px"
-                                    stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                    className={`transition-transform duration-300 transform ${
-                                        openSections.C2_1 ? "rotate-180" : ""
-                                    }`}>
-                                        <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Fully insulated walls – up to 72 hrs heat retention</li>
-                                <li>Rain shield and anti-segregation batch chamber</li>
-                                <li>Built-in safety railings and OSHA-compliant platform</li>
-                                <li>Aesthetic side panels for professional image</li>
-                                <li>Reinforced materials for heavy-duty operation</li>
-                                <li>Low-profile structure for stable and efficient transport</li>
-                                <li>Pre-set height support legs, foldable for transport</li>
-                                <li>Transport skids for quick coupling and parking</li>
-                                <li>Galvanized bolts and corrosion-resistant hardware</li>
-                                <li>Electrostatic paint for long-lasting durability</li>
-                                <li>Transport via flatbed or container-style chassis</li>
-                                <li>Accessory lifting hooks for crane handling</li>
-                            </ul>
-                        </div>
+                        
                         <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                             <div className='w-full flex justify-between border-b border-b-white'>
                                 <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
@@ -601,60 +596,7 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 <li>Exterior stainless steel lining.</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-0 md:mt-10'>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_1: !prev.C3_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial-grade motors and components</li>
-                                <li>Simple wiring system for easy maintenance</li>
-                                <li>Weather-protected electrical connections</li>
-                                <li>Siemens motors / industrial-grade wiring</li>
-                                <li>Pulley and bushing transmission system</li>
-                                <li>External fuel lines, sensors, and cabling included</li>
-                            </ul>
-                    </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1 md:col-span-2 px-0 md:px-20'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY <br /> STANDARDS</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_2: !prev.C3_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>EPA</li>
-                            <li>OSHA</li>
-                            <li>DOT</li>
-                            <li>UL wiring</li>
-                        </ul>
-                    </div>
-                    <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -683,6 +625,31 @@ const activeData = toggleConfig.find(item => item.id === key);
                             <li>Bolt-on support legs for fast on-site assembly</li>
                             <li>DOT-compliant lighting and reflective markings for transport visibility</li>
                         </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_2: !prev.C3_2
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_2 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <li>EPA</li>
+                            <li>OSHA</li>
+                            <li>DOT</li>
+                            <li>UL wiring</li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
                 <div className='flex justify-start md:justify-center items-end my-10 gap-6 w-full overflow-x-auto'>
@@ -1173,43 +1140,38 @@ const activeData = toggleConfig.find(item => item.id === key);
                                 <li>Load cell integration with programmable logic</li>
                             </ul>
                         </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                            <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_1: !prev.C3_1
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_1 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                                <li>Industrial-grade motors and components</li>
+                                <li>Simple wiring system for easy maintenance</li>
+                                <li>Weather-protected electrical connections</li>
+                                <li>Siemens motors / industrial-grade wiring</li>
+                                <li>Pulley and bushing transmission system</li>
+                                <li>External fuel lines, sensors, and cabling included</li>
+                            </ul>
+                    </div>
                     </div>
                     <div className='col-span-1 md:col-span-2 flex items-start justify-center w-full h-[600px] order-1 md:order-2'>
                         <img src={selectedImage} alt="Selected image" className='w-[120px] h-[600px]' />
                     </div>
                     <div className='flex flex-col items-start justify-start h-full gap-0 md:gap-4 w-full col-span-1 order-3 md:order-3' id='column2' ref={columnGrid2}>
-                        <div className='flex flex-col items-start justify-center gap-4 text-white w-full'>
-                                    <div className='w-full flex justify-between border-b border-b-white'>
-                                        <h1 className='font-bold lg:text-xl text-base w-full pb-3'>CONSTRUCTION & DESIGN</h1>
-                                        <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                                        ...prev,
-                                        C2_1: !prev.C2_1
-                                        }))}>
-                                            <svg width="28px" height="28px"
-                                            stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                            className={`transition-transform duration-300 transform ${
-                                                openSections.C2_1 ? "rotate-180" : ""
-                                            }`}>
-                                                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                        <li>Fully insulated walls – up to 72 hrs heat retention</li>
-                                        <li>Rain shield and anti-segregation batch chamber</li>
-                                        <li>Built-in safety railings and OSHA-compliant platform</li>
-                                        <li>Aesthetic side panels for professional image</li>
-                                        <li>Reinforced materials for heavy-duty operation</li>
-                                        <li>Low-profile structure for stable and efficient transport</li>
-                                        <li>Pre-set height support legs, foldable for transport</li>
-                                        <li>Transport skids for quick coupling and parking</li>
-                                        <li>Galvanized bolts and corrosion-resistant hardware</li>
-                                        <li>Electrostatic paint for long-lasting durability</li>
-                                        <li>Transport via flatbed or container-style chassis</li>
-                                        <li>Accessory lifting hooks for crane handling</li>
-                                    </ul>
-                                </div>
+                        
                         <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
                                     <div className='w-full flex justify-between border-b border-b-white'>
                                         <h1 className='font-bold lg:text-xl text-base w-full pb-3'>DURABILITY & SAFETY</h1>
@@ -1241,64 +1203,8 @@ const activeData = toggleConfig.find(item => item.id === key);
                                         <li>Dust-resistant housing protects control module.</li>
                                         <li>Exterior stainless steel lining.</li>
                                     </ul>
-                                </div>
-                        
-                        
-                    </div>
-            
-                </div>
-                <div className='w-full grid grid-cols-1 md:grid-cols-4 justify-between mt-0 md:mt-10'>
-                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
-                            <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPONENTS & ELECTRICAL</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_1: !prev.C3_1
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_1 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
                         </div>
-                            <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                                <li>Industrial-grade motors and components</li>
-                                <li>Simple wiring system for easy maintenance</li>
-                                <li>Weather-protected electrical connections</li>
-                                <li>Siemens motors / industrial-grade wiring</li>
-                                <li>Pulley and bushing transmission system</li>
-                                <li>External fuel lines, sensors, and cabling included</li>
-                            </ul>
-                    </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1 md:col-span-2 px-0 md:px-20'>
-                        <div className='w-full flex justify-between border-b border-b-white'>
-                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY <br /> STANDARDS</h1>
-                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
-                            ...prev,
-                            C3_2: !prev.C3_2
-                            }))}>
-                                <svg width="28px" height="28px"
-                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" color="#000000"
-                                className={`transition-transform duration-300 transform ${
-                                    openSections.C3_2 ? "rotate-180" : ""
-                                }`}>
-                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
-                            <li>EPA</li>
-                            <li>OSHA</li>
-                            <li>DOT</li>
-                            <li>UL wiring</li>
-                        </ul>
-                    </div>
-                <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
+                         <div className='flex flex-col items-start justify-start gap-4 text-white col-span-1'>
                         <div className='w-full flex justify-between border-b border-b-white'>
                             <h1 className='font-bold lg:text-xl text-base w-full pb-3'>PORTABILITY</h1>
                             <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
@@ -1327,7 +1233,34 @@ const activeData = toggleConfig.find(item => item.id === key);
                             <li>Bolt-on support legs for fast on-site assembly</li>
                             <li>DOT-compliant lighting and reflective markings for transport visibility</li>
                         </ul>
+                        </div>
+                        <div className='flex flex-col items-start justify-start gap-4 text-white w-full'>
+                        <div className='w-full flex justify-between border-b border-b-white'>
+                            <h1 className='font-bold lg:text-xl text-base w-full pb-3'>COMPLIANCE WITH INDUSTRY STANDARDS</h1>
+                            <button className='block md:hidden' onClick={() => setOpenSections(prev => ({
+                            ...prev,
+                            C3_2: !prev.C3_2
+                            }))}>
+                                <svg width="28px" height="28px"
+                                stroke-width="1.5" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" color="#000000"
+                                className={`transition-transform duration-300 transform ${
+                                    openSections.C3_2 ? "rotate-180" : ""
+                                }`}>
+                                    <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2 ? "max-h-96 opacity-1 mb-4" : "max-h-0 opacity-0"} md:max-h-full md:opacity-100 md:block`}>
+                            <li>EPA</li>
+                            <li>OSHA</li>
+                            <li>DOT</li>
+                            <li>UL wiring</li>
+                        </ul>
+                        </div>
+                        
                     </div>
+            
                 </div>
                 <div className='flex justify-start md:justify-center items-end my-10 gap-6 w-full overflow-x-auto'>
                     <div className='flex flex-col items-center justify-center'>
