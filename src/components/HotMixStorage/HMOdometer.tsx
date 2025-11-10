@@ -24,7 +24,7 @@ const HMOdometer = () => {
           setTimeout(() => {
             setValue(50);
             setValue1(200);
-            setValue2(1);
+            setValue2(10);
             setValue4(72);          
           }, 300); // Pequeño retraso para asegurar reinicio
         }
@@ -59,9 +59,9 @@ const HMOdometer = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
-              <p className="text-sm font-normal ml-3">M/3</p>
+              <p className="text-sm font-normal ml-3">mins</p>
             </div>
-            <p className="text-grisP">Receiving bin</p>
+            <p className="text-grisP">Set-up time</p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
