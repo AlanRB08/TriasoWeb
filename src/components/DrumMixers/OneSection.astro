@@ -17,15 +17,15 @@ import AcordeonItemCol from '../unitComponents/AcordeonItemCol';
 import OSection from "../unitComponents/OSection.astro";
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold mt-10">
-    <div class="lg:px-52 px-8">
-        <h1 class="text-redBg text-xl md:text-3xl">The One and Always</h1><br>
+    <div class="max-w-7xl px-8 mx-auto">
+        <h1 class="text-redBg text-xl md:text-3xl text-center">The One and Always</h1><br>
         
     </div>
-    <div class="w-full lg:px-52 px-8">
+    <div class="max-w-7xl px-8 mx-auto">
         <img src={obracivil.src} alt="" class="rounded-lg w-3/5"/>
     </div>
-    <div class="w-full flex flex-col md:flex-row lg:px-52 px-8 my-10 items-center">
-        <div class="w-full md:px-20">
+    <div class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row my-10 items-center gap-6">
+        <div class="w-full">
             <h2 class="text-black text-lg md:text-xl">Engineered for Demanding Producers. Built for Performance.</h2><br>
             <p class="text-grisT text-base md:text-lg text-justify">At Triaso, we know that no two asphalt operations are alike.
                  That’s why our plants are precision-engineered to match each producer’s unique requirements.
@@ -41,16 +41,16 @@ import OSection from "../unitComponents/OSection.astro";
             <img src={obracivil2.src} alt="" class="rounded-2xl"/>
         </div>
     </div>
-    <div class="w-full lg:px-52 px-8">
+    <div class="max-w-7xl px-8 mx-auto">
         <img src={DMProv1.src} alt="" class="rounded-lg w-3/5"/>
     </div>
-    <div class="w-full flex flex-col gap-3 my-10">
+    <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
         <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Precision where it matters. </h2>
         <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Strength that lasts. </h2>
         <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Flexibility when it counts. </h2>
         <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">That’s the Triaso promise. </h2>
     </div>
-    <div class="lg:mx-52 mx-8 p-4 px-10 flex flex-col items-center justify-center bg-white rounded-2xl relative">
+    <div class="p-4 flex flex-col max-w-7xl px-8 mx-auto items-center justify-center bg-white rounded-2xl relative">
         <h2 class="text-2xl md:text-3xl my-6">Retractable Drag Slat for Efficient Transport and Operation
         </h2>
         <div class="z-20">
@@ -141,7 +141,7 @@ import OSection from "../unitComponents/OSection.astro";
     <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">With Triaso, Become the Exclusive Provider
              of Hot Mix <br> for All Paving Projects in Your Region
         </h2>
-    <Image src={img3} alt="" class="mt-10"/>
+    <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto"/>
     <OSection/>
     <TwoColumnSection
     leftBg="bg-redBg"
@@ -167,7 +167,7 @@ import OSection from "../unitComponents/OSection.astro";
             </p>
         </div>
   </TwoColumnSection>
-    <div class="w-full px-8 lg:px-52 flex flex-col gap-3 my-10">
+    <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
         <AcordeonItemCol title='Extra-reinforced front shield'  client:only>
             <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
                 <div class="w-full flex justify-center">

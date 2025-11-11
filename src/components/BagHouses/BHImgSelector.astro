@@ -43,7 +43,7 @@ const tanksSlides = [
         </h1>
     </div>
     
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 lg:px-52 items-center justify-center py-10">
+    <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center py-10">
         <div class="w-full">
             <div class="w-full">
                 <img src={img2.src} alt="" class="w-full rounded-lg">
@@ -99,7 +99,7 @@ const tanksSlides = [
             Mechanism of baghouses available in pulse jet and reverse jet
         </h1>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 lg:px-52 py-10">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl px-8 mx-auto py-10">
         <div>
             <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br>
             <p class="text-grisT font-thin text-base md:text-lg">
@@ -115,8 +115,8 @@ const tanksSlides = [
             </p>
         </div>
     </div>
-    <div class="w-full bg-grisT px-8 lg:px-52 text-white flex flex-col gap-6">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-6">
+    <div class="w-full bg-grisT text-white flex flex-col gap-6">
+        <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-6">
             <div>
                 <h2 class="text-xl md:text-2xl">
                     Triaso Supersonic Nozzle
@@ -133,7 +133,8 @@ const tanksSlides = [
         </div>
         
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 lg:px-52 bg-bgBeige items-start">
+    <div class="w-full bg-bgBeige">
+        <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 bg-bgBeige items-start">
             <AcordeonItemCol title="Typical Venturi System" bgColor="bg-bgBeige" image={img5.src} client:only>
                 <div class="w-full py-10 text-sm md:text-base text-grisT">
                     <p>
@@ -172,12 +173,13 @@ const tanksSlides = [
                 </div>
             </AcordeonItemCol>
     </div>
+    </div><br>
     <div class="w-full px-8 text-center">
         <h2 class="text-blueMain text-2xl md:text-3xl text-center">
             Total and homogeneous return of fines to the asphalt mix to optimize its quality and pavement life.
         </h2>
     </div>
-    <div class="w-full px-8 lg:px-52">
+    <div class="max-w-7xl px-8 mx-auto">
         <div class="w-full flex justify-center">
             <video src={DMVideo} autoplay loop muted playsinline class="w-3/4"></video>
         </div>
@@ -192,11 +194,11 @@ const tanksSlides = [
    
     
     
-    <div class="w-full flex flex-col justify-start px-8 lg:px-52 py-10">
+    <div class="w-full flex flex-col justify-start max-w-7xl px-8 mx-auto py-10">
         <h1 class="text-xl md:text-2xl">Triaso Exhaust System</h1><br>
         <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32 py-10">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-7xl px-8 mx-auto py-10">
         <div class="w-full flex justify-center">
             <video class="w-1/2" src={BHVideo} autoplay muted playsinline></video>
         </div>
@@ -214,7 +216,7 @@ const tanksSlides = [
             </p>
         </div>
     </div>
-    <div class="w-full md:px-32 px-8 text-base md:text-lg py-10">
+    <div class="max-w-7xl px-8 mx-auto text-base md:text-lg py-10">
         <p>
             The finer dust particles are directed into the baghouse through a strategically placed high side inlet. This ensures horizontal 
             and downward airflow, preventing fine dust from being re-entrained into the system. A knockout chamber decelerates airflow,
@@ -226,8 +228,8 @@ const tanksSlides = [
         </p>
     </div>
     
-    <div class="w-full">
-        <div class="w-full px-8 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
+    <div class="w-full bg-blueMain">
+        <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
             <div class="w-full text-white">
                 <h2 class="text-lg md:text-xl">Durable Construction</h2><br>
                 <p class="font-thin text-base md:text-lg text-justify">
@@ -249,35 +251,35 @@ const tanksSlides = [
         </div>
         <div class="w-full relative overflow-hidden bg-blueMain">
         <!-- Fondo skew -->
-        <div class="absolute inset-0 bg-bgBeige -skew-y-2"></div>
+            <div class="absolute inset-0 bg-bgBeige -skew-y-2"></div>
 
-        <!-- Contenido -->
-        <div class="relative px-8 lg:px-32 py-10">
-            <div>
-            <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
-            </div>
+            <!-- Contenido -->
+                <div class="relative max-w-7xl px-8 mx-auto py-10">
+                    <div>
+                        <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
+                    </div>
 
-            <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 py-10">
-            <!-- Imagen -->
-            <div class="w-full flex justify-center">
-                <img src={BHoppers.src} alt="Baghouse Hoppers" class="rounded-2xl w-3/4" />
-            </div>
+                    <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 py-10">
+                    <!-- Imagen -->
+                    <div class="w-full flex justify-center">
+                        <img src={BHoppers.src} alt="Baghouse Hoppers" class="rounded-2xl w-3/4" />
+                    </div>
 
-            <!-- Texto -->
-            <div class="w-full flex justify-center items-center">
-                <p class="text-grisT text-base md:text-lg">
-                Fine dust particles enter the baghouse through a high side inlet designed for controlled horizontal
-                and downward airflow. This configuration prevents re-entrainment of fine material. A knockout chamber
-                slows the airflow, allowing heavier particles to settle in the hopper, while internal baffles 
-                distribute air evenly and protect the filter bags from abrasion.<br />
-                This design improves air quality, increases filtration efficiency, 
-                and reduces maintenance, ensuring reliable and consistent performance.
-                </p>
+                    <!-- Texto -->
+                    <div class="w-full flex justify-center items-center">
+                        <p class="text-grisT text-base md:text-lg">
+                        Fine dust particles enter the baghouse through a high side inlet designed for controlled horizontal
+                        and downward airflow. This configuration prevents re-entrainment of fine material. A knockout chamber
+                        slows the airflow, allowing heavier particles to settle in the hopper, while internal baffles 
+                        distribute air evenly and protect the filter bags from abrasion.<br />
+                        This design improves air quality, increases filtration efficiency, 
+                        and reduces maintenance, ensuring reliable and consistent performance.
+                        </p>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>      
-        <div class="w-full px-8 lg:px-32 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
+        <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
             <div class="order-2 lg:order-1">
                 <p class="font-thin text-base md:text-lg text-justify">
                     After the baghouse collects fine particles in the hoppers, a screw conveyor transfers them back to the drum mixer.

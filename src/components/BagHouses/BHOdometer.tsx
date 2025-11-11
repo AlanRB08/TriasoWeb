@@ -49,7 +49,7 @@ const BHOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+    <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-20">
       
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">

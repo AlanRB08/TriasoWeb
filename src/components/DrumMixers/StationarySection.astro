@@ -9,13 +9,13 @@ import Image from "astro/components/Image.astro";
 
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10">
-        <div class="w-full relative">
-            <h2 class="px-8 lg:px-52 text-xl md:text-2xl relative z-20">
+    <div class="bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 w-full">
+        <div class="max-w-7xl px-8 mx-auto relative">
+            <h2 class="text-xl md:text-2xl relative z-20">
                 Always matching your project
             </h2>
             <br>
-            <p class="px-8 lg:px-52 font-thin text-base md:text-lg relative z-20">
+            <p class="font-thin text-base md:text-lg relative z-20">
                 We give you options to match your project demands—offering drum shells in 5/16", 3/8" or 1/2" thicknesses. 
                 Every shell, no matter the gauge, is manufactured in-house using high-strength A-572 alloy steel to ensure consistent
                 durability and performance.
@@ -23,7 +23,7 @@ import Image from "astro/components/Image.astro";
             <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white px-8 lg:px-52 z-20 gap-10 md:gap-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20">
             <div class="flex flex-col items-center justidy-center py-6">
                 <img src="" alt="">
                 <h2 class="w-full text-start text-xl md:text-2xl">TRUNNIONS</h2><br>
@@ -35,20 +35,22 @@ import Image from "astro/components/Image.astro";
                 <h2 class="w-full text-start text-xl md:text-2xl">DRUM TIRES</h2><br>
                 <p>Forged from high-strength alloy steel and precisely machined to ensure reliable support and quiet,
                      consistent operation.
-</p>
+                    </p>
             </div>
         </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 lg:px-52 bg-gradient-to-b from-[#2b2b2b] to-[#727272]">
-            <div class="flex justify-center my-5">
-                <img src={rap.src} alt="" class="w-2/5">
-            </div>
-            <div class="w-full flex flex-col items-center justify-center">
-                <h2 class="w-full text-start text-2xl md:text-3xl">RAP COLLAR & BIN</h2><br>
-                <p class="text-justify text-base md:text-lg font-light">
-                    The drum collar is engineered to provide the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
-                     into the mixing zone. Fed directly from the RAP bin via a dedicated conveyor, the material enters the drum 
-                     smoothly and uniformly.
-                </p>
+        <div class="w-full bg-gradient-to-b from-[#2b2b2b] to-[#727272]">
+            <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
+                <div class="flex justify-center my-5">
+                    <img src={rap.src} alt="" class="w-2/5">
+                </div>
+                <div class="w-full flex flex-col items-center justify-center">
+                    <h2 class="w-full text-start text-2xl md:text-3xl">RAP COLLAR & BIN</h2><br>
+                    <p class="text-justify text-base md:text-lg font-light">
+                        The drum collar is engineered to provide the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
+                        into the mixing zone. Fed directly from the RAP bin via a dedicated conveyor, the material enters the drum 
+                        smoothly and uniformly.
+                    </p>
+                </div>
             </div>
         </div>
         <div class="w-full bg-[#727272] flex justify-center">
@@ -59,7 +61,7 @@ import Image from "astro/components/Image.astro";
         </button>
         </div>
         <div class="w-full transition-all duration-300 overflow-hidden bg-[#727272] px-8 lg:px-52" id="extradiv" style="max-height: 0">
-            <div class="text-white w-full list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light">
+            <div class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light">
                 <p>
                 Strategically positioned, the collar introduces RAP downstream of the burner flame, avoiding excessive heat 
                 exposure that could damage 
@@ -79,7 +81,7 @@ import Image from "astro/components/Image.astro";
             </div>
         </div>
     </div>
-    <div class="w-full px-8 lg:px-52 text-2xl md:text-4xl font-bold my-10">
+    <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
         <div class="w-full flex justify-between">
         <div class="w-full">
             <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
@@ -98,8 +100,8 @@ import Image from "astro/components/Image.astro";
         </div>
         </div>
   </div>
-  <div class="w-full my-10 px-8 lg:px-80 rounded-2xl">
-    <div class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[65vh] relative">
+  <div class="max-w-7xl px-8 mx-auto my-10 rounded-2xl">
+    <div class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[600px] relative">
         <h1 class="text-2xl md:text-3xl text white z-20">THE MOST VERSATILE AND MOBILE DRUM MIX ON THE MARKET</h1>
         <p class="text-lg md:text-xl text white font-thin italic z-20">
             "Triaso asphalt plants have proven to be reliable, efficient, and built to last. 

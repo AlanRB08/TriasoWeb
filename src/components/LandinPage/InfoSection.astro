@@ -5,7 +5,7 @@ import img3 from "../../assets/images/maquina2.webp";
 import Image from "astro/components/Image.astro";
 ---
 <section class="w-full mt-10 md:mt-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 2xl:px-52 mx-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 px-8">
         <div class="flex flex-col items-start justify-between">
             <Image src={img1} alt="" class="order-3 md:order-1"/>
             <div class="order-1 md:order-2">
@@ -41,21 +41,19 @@ import Image from "astro/components/Image.astro";
             <div class="flex justify-center items-center w-full">
                 <div class="bg-redBg rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
                     <h1 class="text-white font-bold text-2xl md:text-3xl">Seamless Integration with <br>Other Systems</h1>
-                <br>
-                <p class="text-grisSubP text-sm md:text-lg font-bold">
-                    Triaso® equipment integrates seamlessly with other machinery, 
-                    ensuring smooth transitions between production stages. 
-                    This compatibility supports uninterrupted operations and optimizes workflow efficiency throughout your facility.
-                </p>
+                    <br>
+                    <p class="text-grisSubP text-sm md:text-lg font-bold">
+                        Triaso® equipment integrates seamlessly with other machinery, 
+                        ensuring smooth transitions between production stages. 
+                        This compatibility supports uninterrupted operations and optimizes workflow efficiency throughout your facility.
+                    </p>
                 </div>
             </div>
             <!-- -->
             <div class="w-full">
                 <Image src={img3} alt="" class="object-cover w-full"/>
-
             </div>
-
-            </div>
-        </div>  
+    </div>
+          
 
 </section>
