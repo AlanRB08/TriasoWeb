@@ -11,7 +11,7 @@ export default function TabsIntegral() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 md:px-52">
+    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 max-w-7xl mx-auto px-8">
       <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
         {images.map((img, index) => (
           <button

@@ -41,8 +41,8 @@ const items  = [
 ]
 ---
 
-<div class="w-full flex flex-col items-center justify-around font-bold">
-    <div class="grid grid-cols-4 md:grid-cols-7 items-stretch justify-items-center md:justify-between gap-1 md:gap-4 mt-8 px-4 md:px-8 lg:px-52 text-grisP">
+<div class="w-full max-w-7xl px-8 mx-auto flex flex-col items-center justify-around font-bold">
+    <div class="grid grid-cols-4 md:grid-cols-7 items-stretch justify-items-center md:justify-between gap-1 md:gap-4 mt-8 text-grisP">
         <!-- Primera fila - siempre 4 elementos -->
         <button aria-label="Drum Mixers link" class="text-xs md:text-base py-2 md:px-4 font-bold focus:outline-none border-b border-b-grisT">
             Drum Mixers
@@ -90,7 +90,7 @@ const items  = [
             Cold Mix <br> Plants
         </button>
     </div>
-    <div class="w-full text-justify font-bold text-base md:text-xl px-8 lg:px-52 text-grisT mt-10">
+    <div class="w-full text-justify font-bold text-base md:text-xl text-grisT mt-10">
         <p>With models ranging from 10 to 500 tons per hour, Triaso asphalt plants 
             combine quality, high-quality materials, and a sophisticated design to 
             enhance our clients' corporate image. They deliver superior performance, 
@@ -109,7 +109,7 @@ const items  = [
         </p>
 
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 lg:mt-20 px-8 lg:px-52 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 lg:mt-20 w-full">
         {items.map((item, index) => (
             <div class={`flex flex-col items-center justify-center text-center 
                 ${items.length % 2 !== 0 && index === items.length - 1 ? 
@@ -119,7 +119,7 @@ const items  = [
             </div>
         ))}
     </div>
-    <div class="w-full flex flex-col items-center md:px-52 px-8 justify-center mt-20 text-black text-base text-center md:text-xl">
+    <div class="w-full flex flex-col items-center justify-center mt-20 text-black text-base text-center md:text-xl">
         <h1>With Triaso, Become the Exclusive Provider of Hot Mix for 
             All Paving Projects in Your Region</h1>
         <img src={img1.src} alt="">

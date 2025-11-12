@@ -32,7 +32,7 @@ const MiniGallery: React.FC<SliderProps> = ({
   }, [slides.length, interval, autoSlide]);
 
   return (
-    <div className='relative'>
+    <div className='relative w-full max-w-7xl mx-auto px-8'>
       {/* Botones Mobil*/}
       <button
                 aria-label="Previous"

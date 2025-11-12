@@ -56,9 +56,9 @@ const tanksSlides2 = [
   }
 ];
 ---
-<section class="w-full flex mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
+<section class="max-w-7xl px-8 mx-auto flex mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
     <div class="flex flex-col items-center justify-center w-full gap-4 mt-8">
-        <div class="flex items-center justify-around w-full gap-4 px-8">
+        <div class="flex items-center justify-around w-full gap-4">
             <button class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
             data-tab="tab1" aria-selected="true">
                 Oil Heating
@@ -71,7 +71,7 @@ const tanksSlides2 = [
         <div class="py-4 flex justify-center items-center">
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
-                <div class="w-full px-8 lg:px-52">
+                <div class="w-full">
                   <p class="text-justify">
                     Designed for precise temperature control, the oil heater ensures uniform heat distribution through an efficient thermal oil circulation system.
                      Its heavy-duty construction allows continuous operation, making it suitable for demanding that require consistent
@@ -79,7 +79,7 @@ const tanksSlides2 = [
                   </p>
                 </div><br>
                 <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
-                <div class="w-full px-8 lg:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={oil1.src} alt="">
@@ -136,7 +136,7 @@ const tanksSlides2 = [
                     
                   </div>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6 px-8 md:px-52">
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6">
                     <Card>
                         <h3>Precision Temperature Control:</h3>
                         <p class="font-thin">
@@ -171,12 +171,12 @@ const tanksSlides2 = [
              </div>
         <!-- Second Section -->
             <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
-                <p class="px-8 md:px-52 text-center">
+                <p class="text-center">
                   Triaso® direct fire heating is designed to heat up the asphalt. A burner is mounted directly beneath the tank, transferring heat through a steel plate into the asphalt.
                   This method provides fast, efficient heating with minimal energy loss.
                 </p>
                 <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
-                 <div class="w-full px-8 lg:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
                     <div class="w-full flex justify-center">
                       <img src={oil1.src} alt="">

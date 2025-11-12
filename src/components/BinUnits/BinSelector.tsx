@@ -36,8 +36,8 @@ export default function BinSelector() {
 
   return (
     <div className="bg-gray-100 flex flex-col gap-6 text-black w-full mt-10">
-      <h1 className="text-3xl md:text-4xl  font-bold text-center px-8 lg:px-52">From two to six bins units</h1>
-      <div className='w-full flex flex-col gap-10 justify-center items-center px-8 lg:px-52'>
+      <h1 className="text-3xl md:text-4xl  font-bold text-center px-8">From two to six bins units</h1>
+      <div className='w-full flex flex-col gap-10 justify-center items-center max-w-7xl px-8 mx-auto'>
           <div className='w-full flex gap-10 justify-center'>
               <button
               onClick={() => setPanelType('aesthetic')}
@@ -86,7 +86,7 @@ export default function BinSelector() {
       </div>
       <div className='w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 md:px-20 lg:px-52'>
           <h1 className='text-white font-bold text-2xl md:text-3xl text-center'>Specifications and Characteristics</h1><br />
-          <div className='w-full grid grid-cols-1 md:grid-cols-2 justify-center'>
+          <div className='w-full grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl px-8 mx-auto'>
             <div>
               <p>
               Dimensions and aggregate dosing systems that comply with construction regulations

@@ -20,7 +20,7 @@ import OSection from '../unitComponents/OSection.astro';
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
-        <div class="flex items-center justify-around w-full gap-4 px-8 md:px-36">
+        <div class="flex items-center justify-around w-full gap-4 max-w-7xl mx-auto px-8">
             <button class="text-xs md:text-base tab-button-1 py-2 md:px-4 font-bold focus:outline-none"
                     data-tab="tab1" aria-selected="true"> <!-- Cambiado a true -->
                 Computerization
@@ -81,19 +81,19 @@ import OSection from '../unitComponents/OSection.astro';
                     </div>
                 </TwoColumnSection>
 
-                <div class="w-full md:px-52 flex flex-col justify-center gap-2">
+                <div class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center gap-2">
                  <Collapsable client:only/>   
                 </div>
-                <div class="w-full px-8 lg:px-52 flex justify-center">
+                <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
                     <img src={HMI.src} alt="" class="w-4/5">
                 </div>
                 <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
-                    <div class="w-full relative h-[250px]">
-                        <h2 class="px-8 md:px-52 text-xl md:text-2xl relative z-20 font-bold">
+                    <div class="w-full max-w-7xl mx-auto px-8 relative h-[250px]">
+                        <h2 class="text-xl md:text-2xl relative z-20 font-bold">
                            User Friendly Interface
                         </h2>
                         <br>
-                        <p class="px-8 md:px-52 font-thin text-sm md:text-base relative z-20">
+                        <p class="font-thin text-sm md:text-base relative z-20">
                             Created to offer plant operators a deeper understanding of their operation, this cloud-based platform
                              stores all production data remotely and securely. It gives you the freedom to access detailed
                               performance analytics from any location and any device—whether you're in the office, on the 
@@ -103,7 +103,7 @@ import OSection from '../unitComponents/OSection.astro';
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
-                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2 gap-3 md:gap-10">
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl mx-auto px-8 skew-y-2 gap-3 md:gap-10">
                             <div class="w-full text-center text-black ">
                                 <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
                                 <p class="text-base md:text-lg">
@@ -134,7 +134,7 @@ import OSection from '../unitComponents/OSection.astro';
              </div>
         <!-- Second Section -->
          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
-            <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center max-w-7xl mx-auto px-8">
                 <div class="w-full flex flex-col justify-start items-center gap-6 order-2 md:order-1">
                     <div class="bg-white p-4 font-bold rounded-2xl">
                         <h1 class="text-lg md:text-2xl text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
@@ -207,7 +207,7 @@ import OSection from '../unitComponents/OSection.astro';
 
                 </div>
 
-            <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 px-8 md:px-36">
+            <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 max-w-7xl mx-auto px-8">
                 <div class="col-span-1 flex flex-col justify-center items-center md:items-start gap-1 font-bold">
                     <img src={fiberGlass.src} alt="" class="max-h-[500px] w-[150px]">
                     <h2 class="text-blueMain text-xl">Six inches</h2>
@@ -259,46 +259,6 @@ import OSection from '../unitComponents/OSection.astro';
                     </AcordeonItem>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch items-center justify-center mt-10 px-4 md:px-36 w-full">
-                <!-- Primer Card -->
-                <div class="bg-[url('/Gallery/drum-mixer.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
-                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
-                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">MANUFACTURE</h1>
-                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
-                      We manufacture directly without subcontractors, ensuring that every part meets our strict quality standards.
-                    </p>
-                    <div class="mt-3 md:mt-4">
-                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
-                    </div>
-                  </div>
-                </div>
-              
-                <!-- Segundo Card -->
-                <div class="bg-[url('/Gallery/Boxes.webp')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
-                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
-                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">SPARE PARTS</h1>
-                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
-                      Triaso spare parts are precisely designed to ensure optimal performance, extending both the lifespan of the part and the overall equipment.
-                    </p>
-                    <div class="mt-3 md:mt-4">
-                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
-                    </div>
-                  </div>
-                </div>
-              
-                <!-- Tercer Card -->
-                <div class="bg-[url('/Gallery/customdes.png')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
-                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
-                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">CUSTOM DESIGN</h1>
-                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
-                      In addition to our standardized designs, we specialize in providing customized solutions tailored to meet the specific needs of our clients.
-                    </p>
-                    <div class="mt-3 md:mt-4">
-                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
-                    </div>
-                  </div>
-                </div>
-              </div>
           </div>
         </div>    
     </div>

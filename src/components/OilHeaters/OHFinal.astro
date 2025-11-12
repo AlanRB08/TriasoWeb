@@ -31,11 +31,11 @@ const images1 = [
 ---
 
 <section class="w-full flex flex-col justify-center gap-10">
-    <div class="w-full my-10">
-        <div class="w-full px-8 md:px-52">
+    <div class="w-full max-w-7xl mx-auto px-8 my-10">
+        <div class="w-full">
             <img src={img9.src} alt="" class="w-1/2">
         </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-32 gap-10">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
                 <h2 class="text-blueMain text-xl md:text-2xl font-bold">Different Applications</h2>
                 <p class="text-grisT text-base md:text-lg font-bold">
@@ -50,7 +50,9 @@ const images1 = [
         </div>
     </div>
     <div class="w-full px-8 md:px-52 bg-bgBeige py-10">
-        <h2 class="text-black text-2xl md:text-3xl font-bold">Gallery</h2>
+        <div class="w-full max-w-7xl mx-auto px-8">
+            <h2 class="text-black text-2xl md:text-3xl font-bold">Gallery</h2>
+        </div>
         <MiniGallery slides={gallerySlides}
                 autoSlide={false}
                 heightClass="h-[150px] md:h-[500px]"

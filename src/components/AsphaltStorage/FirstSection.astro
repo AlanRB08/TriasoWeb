@@ -28,11 +28,11 @@ const iconos = [
 ];
 ---
 <section class="w-full flex flex-col items-center justify-center mt-20 md:mt-40 font-bold">
-    <div class="w-full px-8 md:px-32">
+    
+    <div class="w-full max-w-7xl px-8 mx-auto">
         <h1 class="text-2xl md:text-3xl">Triaso® Asphalt <br> Storage Tanks</h1>
         <Separator />
-    </div>
-    <p class="font-bold text-grisT px-8 md:px-32 text-start">
+        <p class="font-bold text-grisT text-start">
        Triaso® asphalt tanks are engineered to store and maintain asphalt under 
        optimal conditions, ensuring consistent quality and performance. Built 
        with heavy-duty materials and high-efficiency insulation, they keep asphalt 
@@ -40,6 +40,8 @@ const iconos = [
        these tanks provide the durability and functionality required  for both small
         projects and large-scale operations.
     </p>
+    </div>
+    
     <div class="max-w-7xl px-8 mx-auto">
       <video src={ASMainVideo}  autoplay></video>
       <h1 class="text-center text-2xl md:text-3xl text-blueMain">Consistent Heat, Consistent Mix</h1>
@@ -72,11 +74,11 @@ const iconos = [
     </div>
     <ASOdometer client:only></ASOdometer>
     <ItemsSlider client:only images={iconos}/>
-    <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
+    <div class="w-full bg-gradient-to-t from-[#727272] to-[#393939] text-white flex flex-col justify-center pt-10 h-full">
                     <div class="w-full relative h-[100px] md:h-[250px]">
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
-                    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                       <div class="w-full flex justify-center">
                         <img src={ASControl.src} alt="" class="w-full lg:w-3/4 rounded-2xl">
                       </div>
@@ -92,7 +94,7 @@ const iconos = [
                       </div>
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
-                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2 items-center">
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl px-8 mx-auto skew-y-2 items-center">
                             <div class="w-full text-black ">
                                 <h1 class="font-bold text-black text-xl md:text-2xl text-center">Triaso Asphalt Level Sensor</h1><br>
                                 <p class="text-base md:text-lg font-thin">
@@ -109,7 +111,7 @@ const iconos = [
                         </div>
                     </div>
                     
-                    <div class="w-full px-8 md:px-52 py-20 flex flex-col gap-10 bg-gradient-to-t from-[#727272] to-[#393939]">
+                    <div class="max-w-7xl px-8 mx-auto py-20 flex flex-col gap-10">
                         <h2 class="text-center text-2xl md:text-3xl">Simplifying Operations with Triaso Intelligent Features</h2>
                         <p class="text-base md:text-lg font-thin">Beyond storage, our tanks are equipped with user-friendly features
                            like automated monitoring systems, real-time data tracking, and efficient unloading mechanisms. These technologies 

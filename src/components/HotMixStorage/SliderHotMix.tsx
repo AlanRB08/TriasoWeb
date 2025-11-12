@@ -59,7 +59,7 @@ export default function SliderHotMix({ images }: Props) {
   };
 
   return (
-    <div className="w-full mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 md:px-44 mb-10">
+    <div className="w-full max-w-7xl mx-auto px-8 y-10 bg-bgMain mt-10 md:mt-20 relative mb-10">
       {/* Desktop navigation buttons */}
       {!isMobile && (
         <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">

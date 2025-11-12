@@ -12,10 +12,10 @@ import MiniGallery from '../unitComponents/MiniGallery';
 const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{img:img6},{img:img7},{img:img8},]
 ---
 <div class="w-full bg-grisT py-10">
-    <div class="w-full px-8 lg:px-52">
+    <div class="max-w-7xl px-8 mx-auto">
         <h2 class="text-2xl md:text-3xl text-white font-bold">Applications</h2>
     </div>
-    <div class="w-full font-bold text-white p-10 rounded-t-2xl grid grid-cols-1 md:grid-cols-2 gap-10 px-8 lg:px-52">
+    <div class="w-full font-bold text-white p-10 rounded-t-2xl grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl px-8 mx-auto">
             <div class="w-full">
                 <h3>Asphalt Mixing</h3>
                 <ul class="list-disc ml-6 font-thin">
@@ -45,7 +45,7 @@ const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{i
                 </ul>
             </div>         
     </div>
-    <div class="w-full bg-grisT px-8 lg:px-52">
+    <div class="w-full bg-grisT max-w-7xl px-8 mx-auto">
         <h2 class="font-bold text-white text-2xl px-4 md:text-3xl">Gallery</h2><br>
         <MiniGallery slides={gallerySlides}
                 autoSlide={false}
