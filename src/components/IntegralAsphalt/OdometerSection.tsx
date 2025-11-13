@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/IntegralAsphalt/single.png';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/IntegralAsphalt/single.png";
 
 const OdometerSection = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -74,7 +74,9 @@ const OdometerSection = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million BTU/hr</p>
             </div>
-            <p className="text-grisP text-start w-full">Modulating burner capacity</p>
+            <p className="text-grisP text-start w-full">
+              Modulating burner capacity
+            </p>
           </div>
         </div>
 

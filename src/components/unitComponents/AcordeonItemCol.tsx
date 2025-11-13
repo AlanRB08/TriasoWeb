@@ -4,11 +4,17 @@ type AccordionProps = {
   title: string;
   children: ReactNode;
   bgColor?: string;
-  image?:string; 
-  subText?:string; 
+  image?: string;
+  subText?: string;
 };
 
-export default function AcordeonItemCol({ title, children, bgColor = "bg-white" , image="", subText=""}: AccordionProps) {
+export default function AcordeonItemCol({
+  title,
+  children,
+  bgColor = "bg-white",
+  image = "",
+  subText = "",
+}: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -17,7 +23,9 @@ export default function AcordeonItemCol({ title, children, bgColor = "bg-white" 
   };
 
   return (
-    <div className={`${bgColor} rounded-2xl flex flex-col justify-around p-4 w-full`}>
+    <div
+      className={`${bgColor} rounded-2xl flex flex-col justify-around p-4 w-full`}
+    >
       <div className="flex justify-between items-center gap-10">
         <h2 className="text-black text-lg md:text-xl font-bold">{title}</h2>
         <button
@@ -68,17 +76,15 @@ export default function AcordeonItemCol({ title, children, bgColor = "bg-white" 
           )}
         </button>
       </div>
-       <div className="px-10 max-w-[350px]">
-          <img src={image} alt="" />
+      <div className="px-10 max-w-[350px]">
+        <img src={image} alt="" />
+      </div>
+      {subText && (
+        <div className="w-full py-6 font-bold text-grisT text-sm md:text-base">
+          <p>{subText}</p>
         </div>
-        {
-          subText && <div className="w-full py-6 font-bold text-grisT text-sm md:text-base">
-          <p>
-            {subText}
-          </p>
-        </div>   
-        }
-        
+      )}
+
       <div
         ref={contentRef}
         className={`accordion-content w-full transition-all duration-300 overflow-hidden ${

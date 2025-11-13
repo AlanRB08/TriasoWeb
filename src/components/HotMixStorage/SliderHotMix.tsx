@@ -104,8 +104,10 @@ export default function SliderHotMix({ images }: Props) {
               : "gap-4 transition-transform duration-500 ease-in-out"
           }`}
           style={{
-            transform: isMobile ? undefined : `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
-            cursor: isMobile ? (isDragging ? 'grabbing' : 'grab') : 'auto',
+            transform: isMobile
+              ? undefined
+              : `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+            cursor: isMobile ? (isDragging ? "grabbing" : "grab") : "auto",
           }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -118,9 +120,9 @@ export default function SliderHotMix({ images }: Props) {
                 isMobile ? "snap-start pl-2" : "px-2"
               } bg-white p-2 rounded-2xl`}
               style={{
-                width: isMobile ? '85%' : `calc(25% - 16px)`,
-                minWidth: isMobile ? '85%' : `calc(25% - 16px)`,
-                scrollSnapAlign: isMobile ? 'start' : undefined,
+                width: isMobile ? "85%" : `calc(25% - 16px)`,
+                minWidth: isMobile ? "85%" : `calc(25% - 16px)`,
+                scrollSnapAlign: isMobile ? "start" : undefined,
               }}
             >
               <div className="px-4">
@@ -133,7 +135,7 @@ export default function SliderHotMix({ images }: Props) {
                   {img.title}
                 </div>
               </div>
-              
+
               <div className="font-normal text-grisT text-sm md:text-base px-4">
                 {img.texto}
               </div>

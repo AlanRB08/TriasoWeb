@@ -42,39 +42,39 @@ export default function GallerySlider({ images }: Props) {
       <h1 className="text-3xl md:text-4xl text-white mb-4 px-8">GALLERY</h1>
       {/* Botones solo en desktop */}
       {!isMobile && (
-          <div className="absolute bottom-2 right-4 flex gap-2 justify-end">
-            <button
-              aria-label="Previous slide"
-              onClick={prevSlide}
-              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-            >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M15 6L9 12L15 18"
-                  stroke="#393939"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <button
-              aria-label="Next slide"
-              onClick={nextSlide}
-              className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-            >
-              <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 6L15 12L9 18"
-                  stroke="#393939"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
+        <div className="absolute bottom-2 right-4 flex gap-2 justify-end">
+          <button
+            aria-label="Previous slide"
+            onClick={prevSlide}
+            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
+          >
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="#393939"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Next slide"
+            onClick={nextSlide}
+            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
+          >
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#393939"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
       {/* Contenedor deslizable */}
       <div className="relative overflow-hidden w-full h-[300px]">
         <div
@@ -86,7 +86,9 @@ export default function GallerySlider({ images }: Props) {
           }`}
           style={{
             transform: isMobile ? undefined : `translateX(${offset}%)`,
-            width: isMobile ? "100%" : `${(images.length / itemsPerPage) * 100}%`,
+            width: isMobile
+              ? "100%"
+              : `${(images.length / itemsPerPage) * 100}%`,
           }}
         >
           {images.map((img, i) => (
@@ -111,8 +113,6 @@ export default function GallerySlider({ images }: Props) {
             </div>
           ))}
         </div>
-
-        
       </div>
 
       {/* Modal para imagen ampliada */}

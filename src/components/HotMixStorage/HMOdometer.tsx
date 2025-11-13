@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/HotMix/HMProv1.png';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/HotMix/HMProv1.png";
 
 const HMOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -25,7 +25,7 @@ const HMOdometer = () => {
             setValue(50);
             setValue1(200);
             setValue2(10);
-            setValue4(72);          
+            setValue4(72);
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },

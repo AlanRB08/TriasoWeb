@@ -19,13 +19,16 @@ export default function Tab() {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center md:text-start font-normal p-4 rounded-xl md:pr-4 md:w-8/12 text-sm md:text-base ${
-              activeIndex === index ? "border-red-500 text-white bg-blueMain" : "border-transparent bg-white text-grisT"
+              activeIndex === index
+                ? "border-red-500 text-white bg-blueMain"
+                : "border-transparent bg-white text-grisT"
             }`}
           >
             {index === 0 ? (
               <>
-                Mounted on the same <br/>
-                chassis <span className="hidden md:inline">as the drum mixer</span>
+                Mounted on the same <br />
+                chassis{" "}
+                <span className="hidden md:inline">as the drum mixer</span>
               </>
             ) : (
               "Self-contained"
@@ -33,10 +36,10 @@ export default function Tab() {
           </button>
         ))}
         <p className="font-bold text-grisT text-base md:text-lg">
-        Self-contained, integrated dust control systems for effective air filtration and particle capture in asphalt plants—configurable 
-        for both portable and stationary setups.
+          Self-contained, integrated dust control systems for effective air
+          filtration and particle capture in asphalt plants—configurable for
+          both portable and stationary setups.
         </p>
-        
       </div>
 
       <img

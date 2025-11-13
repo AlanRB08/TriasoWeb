@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/IntegralAsphalt/single.png';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/IntegralAsphalt/single.png";
 import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.png";
 
 const ASOdometer = () => {
@@ -31,8 +31,8 @@ const ASOdometer = () => {
             setValue1(30);
             setValue2(220);
             setValue4(1);
-            setValue5(2); 
-            setValue6(4);           
+            setValue5(2);
+            setValue6(4);
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },
@@ -60,7 +60,9 @@ const ASOdometer = () => {
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">thousand gallons</p>
             </div>
-            <p className="text-black font-thin text-start w-full">Asphalt storage capacity</p>
+            <p className="text-black font-thin text-start w-full">
+              Asphalt storage capacity
+            </p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
@@ -68,7 +70,9 @@ const ASOdometer = () => {
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">°C</p>
             </div>
-            <p className="text-black font-thin text-start w-full">Maximum achievable temperature</p>
+            <p className="text-black font-thin text-start w-full">
+              Maximum achievable temperature
+            </p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
@@ -80,7 +84,9 @@ const ASOdometer = () => {
               <Odometer value={value6} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million</p>
             </div>
-            <p className="text-black font-thin text-start w-full">Btu/hr capacity</p>
+            <p className="text-black font-thin text-start w-full">
+              Btu/hr capacity
+            </p>
           </div>
         </div>
 

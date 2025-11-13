@@ -15,29 +15,27 @@ export default function CMTab() {
         {images.map((img, index) => (
           <div className="w-full flex justify-center">
             <button
-            aria-label='Tab Selector'
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`text-center border-b-2 md:pr-4 w-1/2 px-5 md:mx-10 text-base md:text-xl ${
-              activeIndex === index 
-                ? "border-redBg text-black font-bold" 
-                : "border-transparent text-grisT font-normal"
-            }`}
-          >
-            {index === 0 ? (
-              <>
-                Discharge at truck level 
-              </>
-            ) : index === 1 ? (
-              <>
-                <span> Discharge at ground level </span>
-              </>
-            ):null}
-          </button>
+              aria-label="Tab Selector"
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`text-center border-b-2 md:pr-4 w-1/2 px-5 md:mx-10 text-base md:text-xl ${
+                activeIndex === index
+                  ? "border-redBg text-black font-bold"
+                  : "border-transparent text-grisT font-normal"
+              }`}
+            >
+              {index === 0 ? (
+                <>Discharge at truck level</>
+              ) : index === 1 ? (
+                <>
+                  <span> Discharge at ground level </span>
+                </>
+              ) : null}
+            </button>
           </div>
         ))}
       </div>
-        <br />
+      <br />
       <div className="w-full h-full md:h-[400px] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}

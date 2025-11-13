@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SliderAesthetic = () => {
   const sidePanels = [
@@ -38,7 +38,6 @@ const SliderAesthetic = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-4 items-center bg-white rounded-2xl shadow-md">
-      
       {/* Imagen */}
       <div className="relative w-full flex justify-center">
         <img

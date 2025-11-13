@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/IntegralAsphalt/single.png';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/IntegralAsphalt/single.png";
 import img1 from "../../assets/images/RapBins/RAProv4.png";
 
 const RPOdometer = () => {
@@ -82,8 +82,10 @@ const RPOdometer = () => {
           </div>
         </div>
       </div>
-      <div className='my-20'>
-        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Your best business begins here</h1>
+      <div className="my-20">
+        <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
+          Your best business begins here
+        </h1>
       </div>
     </div>
   );

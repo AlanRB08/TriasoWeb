@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/BinUnits/ProvBU1.jpg';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/BinUnits/ProvBU1.jpg";
 
 const BOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -74,21 +74,26 @@ const BOdometer = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million BTU/hr</p>
             </div>
-            <p className="text-grisP text-start w-full">Modulating burner capacity</p>
+            <p className="text-grisP text-start w-full">
+              Modulating burner capacity
+            </p>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" className='rounded-lg'/>
+            <img src={single.src} alt="" className="rounded-lg" />
           </div>
           <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
             All Technical Details
           </button>
         </div>
       </div>
-      <div className='my-20'>
-        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Portable and relocatable systems designed to adapt to any site, anytime</h1>
+      <div className="my-20">
+        <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
+          Portable and relocatable systems designed to adapt to any site,
+          anytime
+        </h1>
       </div>
     </div>
   );

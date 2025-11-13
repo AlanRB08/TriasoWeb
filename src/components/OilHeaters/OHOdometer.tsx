@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/OilHeaters/OHProv1.png';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/OilHeaters/OHProv1.png";
 
 const OHOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -83,7 +83,9 @@ const OHOdometer = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">gallons</p>
             </div>
-            <p className="text-grisP text-start w-full">Thermal oil expansion tank</p>
+            <p className="text-grisP text-start w-full">
+              Thermal oil expansion tank
+            </p>
           </div>
         </div>
 

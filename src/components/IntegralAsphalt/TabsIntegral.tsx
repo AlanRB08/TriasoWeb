@@ -15,29 +15,37 @@ export default function TabsIntegral() {
       <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
         {images.map((img, index) => (
           <button
-            aria-label='Tab Selector'
+            aria-label="Tab Selector"
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
-              activeIndex === index 
-                ? "border-redBg text-black font-bold" 
+              activeIndex === index
+                ? "border-redBg text-black font-bold"
                 : "border-transparent text-grisT font-normal"
             }`}
           >
             {index === 0 ? (
               <>
-                Standard chassis <span className="hidden md:inline">for <br />mobility of empty plant</span>
+                Standard chassis{" "}
+                <span className="hidden md:inline">
+                  for <br />
+                  mobility of empty plant
+                </span>
               </>
             ) : index === 1 ? (
               <>
-                <span className="hidden md:inline"> All mounted on a </span> Lightweight chassis <br /> <span className="hidden md:inline"> with support legs </span>
+                <span className="hidden md:inline"> All mounted on a </span>{" "}
+                Lightweight chassis <br />{" "}
+                <span className="hidden md:inline"> with support legs </span>
               </>
-            
             ) : (
               <>
-                Reinforced chassis  <span className="hidden md:inline">for full- <br /> loaded plant mobility</span>
+                Reinforced chassis{" "}
+                <span className="hidden md:inline">
+                  for full- <br /> loaded plant mobility
+                </span>
               </>
-               // Texto para el nuevo tab
+              // Texto para el nuevo tab
             )}
           </button>
         ))}

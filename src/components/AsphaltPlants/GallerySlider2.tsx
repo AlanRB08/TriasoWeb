@@ -31,17 +31,27 @@ export default function GallerySlider2({ images }: Props) {
 
   const nextSlide = () => {
     if (windowWidth >= 768) {
-      setCurrentIndex((prev) => (prev + 1 > images.length - itemsPerPage ? 0 : prev + 1));
+      setCurrentIndex((prev) =>
+        prev + 1 > images.length - itemsPerPage ? 0 : prev + 1
+      );
     } else if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: sliderRef.current.offsetWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({
+        left: sliderRef.current.offsetWidth,
+        behavior: "smooth",
+      });
     }
   };
 
   const prevSlide = () => {
     if (windowWidth >= 768) {
-      setCurrentIndex((prev) => (prev - 1 < 0 ? images.length - itemsPerPage : prev - 1));
+      setCurrentIndex((prev) =>
+        prev - 1 < 0 ? images.length - itemsPerPage : prev - 1
+      );
     } else if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -sliderRef.current.offsetWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({
+        left: -sliderRef.current.offsetWidth,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -71,30 +81,40 @@ export default function GallerySlider2({ images }: Props) {
 
   return (
     <div className="w-full mx-auto pt-8 pb-2 mt-10 md:mt-20 md:border md:border-grisSubP">
-      <div 
+      <div
         ref={sliderRef}
-        className={`relative w-full ${windowWidth < 768 ? 'overflow-x-auto snap-x snap-mandatory' : 'overflow-hidden'}`}
+        className={`relative w-full ${
+          windowWidth < 768
+            ? "overflow-x-auto snap-x snap-mandatory"
+            : "overflow-hidden"
+        }`}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        style={{ 
-          cursor: isDragging ? 'grabbing' : 'grab',
-          WebkitOverflowScrolling: 'touch' // Mejor scroll en iOS
+        style={{
+          cursor: isDragging ? "grabbing" : "grab",
+          WebkitOverflowScrolling: "touch", // Mejor scroll en iOS
         }}
       >
         <div
           ref={containerRef}
-          className={`flex ${windowWidth < 768 ? 'w-max' : 'transition-transform duration-300 ease-out'}`}
+          className={`flex ${
+            windowWidth < 768
+              ? "w-max"
+              : "transition-transform duration-300 ease-out"
+          }`}
           style={{
-            transform: windowWidth < 768 ? 'none' : `translateX(${offset}%)`,
+            transform: windowWidth < 768 ? "none" : `translateX(${offset}%)`,
           }}
         >
           {images.map((img, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 ${windowWidth < 768 ? 'snap-start px-4 w-[85vw]' : 'px-2'}`}
-              style={{ 
-                width: windowWidth < 768 ? '85vw' : `${100 / itemsPerPage}%`,
+              className={`flex-shrink-0 ${
+                windowWidth < 768 ? "snap-start px-4 w-[85vw]" : "px-2"
+              }`}
+              style={{
+                width: windowWidth < 768 ? "85vw" : `${100 / itemsPerPage}%`,
               }}
               onClick={() => setModalIndex(i)}
             >
@@ -105,32 +125,61 @@ export default function GallerySlider2({ images }: Props) {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                 />
               </div>
-              
             </div>
           ))}
         </div>
-
-        
       </div>
       {/* Botones de navegación - solo visible en desktop */}
       {windowWidth >= 768 && (
-          <div className="text-end mr-4 flex gap-2 justify-end mt-4">
-            <button
-              aria-label="Previous slide"
-              onClick={prevSlide}
-              className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
+        <div className="text-end mr-4 flex gap-2 justify-end mt-4">
+          <button
+            aria-label="Previous slide"
+            onClick={prevSlide}
+            className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
+          >
+            <svg
+              width="24px"
+              height="24px"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#000000"
             >
-              <svg width="24px" height="24px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M15 6L9 12L15 18" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </button>
-            <button
-              aria-label="Next slide"
-              onClick={nextSlide}
-              className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="#393939"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+          <button
+            aria-label="Next slide"
+            onClick={nextSlide}
+            className="bg-white/80 hover:bg-white/30 text-black py-1 px-3 rounded-md shadow-sm"
+          >
+            <svg
+              width="24px"
+              height="24px"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#000000"
             >
-              <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M9 6L15 12L9 18" stroke="#393939" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </button>
-          </div>
-        )}
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="#393939"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      )}
 
       {/* Modal para imagen ampliada */}
       {modalIndex !== null && (

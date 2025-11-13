@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Odometer from 'react-odometerjs';
-import 'odometer/themes/odometer-theme-default.css';
-import single from '../../assets/images/DrumMixers/baghouse.webp';
+import React, { useEffect, useState, useRef } from "react";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import single from "../../assets/images/DrumMixers/baghouse.webp";
 
 const BHOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +11,7 @@ const BHOdometer = () => {
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
   const [value4, setValue4] = useState(0);
-    const [value5, setValue5] = useState(0);
+  const [value5, setValue5] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,7 +50,6 @@ const BHOdometer = () => {
 
   return (
     <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-20">
-      
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -80,20 +79,22 @@ const BHOdometer = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">tph</p>
             </div>
-            <p className="text-grisP text-start w-full">Baghouses for asphalt plants ranges</p>
+            <p className="text-grisP text-start w-full">
+              Baghouses for asphalt plants ranges
+            </p>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <div className='w-3/5'>
-            <img src={single.src} alt="" className='rounded-lg'/>
+          <div className="w-3/5">
+            <img src={single.src} alt="" className="rounded-lg" />
           </div>
-          
         </div>
       </div>
-      <div className='w-full py-10'>
-        <h2 className='text-2xl md:text-4xl text-grisT font-bold text-center'>
-          The baghouses are highly efficient at capturing fine particles, <span className='text-black'>achieving up to 99.99% filtration</span>. 
+      <div className="w-full py-10">
+        <h2 className="text-2xl md:text-4xl text-grisT font-bold text-center">
+          The baghouses are highly efficient at capturing fine particles,{" "}
+          <span className="text-black">achieving up to 99.99% filtration</span>.
         </h2>
       </div>
     </div>

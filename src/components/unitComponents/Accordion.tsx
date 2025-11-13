@@ -20,8 +20,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
 
   return (
     <div className="border-b relative w-full">
-        <div className="bg-blueMain absolute left-0 h-full w-2">
-        </div>
+      <div className="bg-blueMain absolute left-0 h-full w-2"></div>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center p-4 text-left"
@@ -36,7 +35,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
         style={{ maxHeight: height }}
         className="overflow-hidden transition-all duration-500 ease-in-out"
       >
-        <div className="p-4 text-black font-thin text-base md:text-lg">{content}</div>
+        <div className="p-4 text-black font-thin text-base md:text-lg">
+          {content}
+        </div>
       </div>
     </div>
   );
