@@ -4,13 +4,21 @@ import img2 from '../../assets/images/AsphaltPlant/render3.webp';
 import img4 from '../../assets/images/AsphaltPlant/render6.webp';
 import img5 from '../../assets/images/AsphaltPlant/drum1.webp';
 import img7 from '../../assets/images/AsphaltPlant/drum2.webp';
+import img8 from '../../assets/images/AsphaltPlant/bin1.webp';
+import img9 from '../../assets/images/AsphaltPlant/bin2.webp';
 import LearnBtn from '../unitComponents/LearnBtn.astro';
-import videoProv from "../../assets/images/DrumMixers/PlaC140ET.mp4";
+import logo from "../../assets/logos/triasoLogo.webp";
 import Image from 'astro/components/Image.astro';
 import Video1 from "../../assets/images/landingVideo.mp4";
 import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
 import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
 import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
+import rap from "../../assets/images/DrumMixers/rap.webp";
+import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
+import HeroS2 from "../../../public/HeroS2.png";
+import ASPanels from '../unitComponents/ASPanels.astro';
+import pugmillVideo from "../../assets/images/ColdMix/PGMC.mp4";
+import pugmill from "../../assets/images/ColdMix/pugmill3.png";
 ---
 <div class="w-full flex flex-col items-center justify-center font-bold">
     <div class="flex flex-col items-center justify-center mt-10 md:mt-20 text-white">
@@ -30,10 +38,10 @@ import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
                     <h1 class="">DRUM MIXER</h1>
                 </div>
                 <p class="text-grisSubP text-base md:text-lg text-justify">
-                    High-quality drum mixers designed for durability and efficient asphalt blending. 
-                    Featuring heat-resistant alloy steel drums and low air velocity systems, they ensure 
-                    energy efficiency, minimal fine loss, and reduced maintenance, all while delivering 
-                    consistent and reliable results in demanding conditions.
+                    Heavy-duty drum mixers engineered for continuous operation and precise asphalt blending. 
+                    Built with heat-resistant alloy steel and optimized air-flow design, they achieve uniform drying,
+                     minimal fines loss, and maximum fuel efficiency — ensuring long service life and consistent performance 
+                     under demanding conditions
                 </p>
             </div>
         </div>
@@ -64,6 +72,26 @@ import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
               class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
             ></video>
           </div>
+    </div>
+    <div class="w-full bg-grisT flex flex-col justify-center items-center">
+        <img src={logo.src} alt="" class="max-w-7xl"><br>
+        <div class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center min-h-[900px]">
+            <h1 class="text-white text-2xl lg:text-4xl font-bold text-start">Fully Portable</h1>
+            <br>
+            <p class="text-base lg:text-lg text-white font-thin">
+                All components of our asphalt plants are engineered for complete transportability,
+                allowing for efficient and quick setup. 
+                Their robust structure enables a smooth, hassle-free installation directly on-site.
+            </p><br>
+            <p class="text-base lg:text-lg text-white font-thin">
+                We design our equipment with an integrated fifth wheel, eliminating 
+                the need for a low-boy or a flatbed trailer during transport.
+            </p>
+            <p class="text-base lg:text-lg text-white font-thin">
+                The complete asphalt plant can be transported in only three trailer loads,
+                simplifying logistics and reducing setup time.
+            </p>
+        </div>
     </div>
     <div class="w-full max-w-7xl mx-auto px-8 flex flex-col items-center justify-center mt-20 text-black">
         <h1 class="text-2xl md:text-3xl text-start mb-5 w-full">
@@ -100,44 +128,114 @@ import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
           </div>
     </div>
     <div class="max-w-7xl mx-auto px-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl">
-        <h2 class="text-2xl md:text-3xl">Retractable Elevator for Efficient Transport and Operation
+        <h2 class="text-2xl md:text-3xl">Retractable Drag Slat for Efficient Transport and Operation
             </h2>
         <div class="">
             <div class="w-full flex justify-center">
                 <video src={Video4} autoplay muted playsinline class="w-3/5"></video>
             </div>
             <p class="text-grisT text-justify">
-                Triaso’s vertical elevator is designed with a retractable configuration that complies 
-                with DOT transportation height limits, ensuring safe and legal road transport. 
-                Once the drum mixer is installed on-site, the elevator extends to its full operational height,
-                 allowing for efficient material transfer with minimal setup time. 
-                 This smart design improves logistics while maintaining high performance during loading and 
-                 discharge.
+                The vertical drag slat features a retractable configuration that complies with DOT transportation height limits,
+                ensuring safe and legal road transport. Once the drum mixer is installed on-site, the elevator extends to its full 
+                operational height, allowing efficient material discharge into truck with minimal setup time. This smart design
+                 improves logistics while maintaining high performance during loading and discharge operations.
             </p>
         </div>
     </div>
-    
-    
+    <div class="w-full bg-gradient-to-b from-grisT to-bgMain">
+        <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 justify-center items-center">
+            <div class="w-full flex justify-center">
+                <img src={rap.src} alt="" class="w-3/5">
+            </div>
+            <div class="w-full text-white">
+                <h1 class="font-bold text-2xl lg:text-4xl">RAP COLLAR & BIN</h1>
+                <p class="font-thin text-base lg:text-lg">Our RAP system can incorporate</p>
+                <h2 class="font-bold text-lg lg:text-2xl">up to 50%</h2> 
+                <p>of recycled asphalt pavement</p>
+                <br>
+                <p class="font-thin text-base lg:text-lg">
+                    The drum collar is engineered to provide the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
+                     into the mixing zone. Fed directly from the RAP bin via a dedicated conveyor, the material enters the drum
+                      smoothly and uniformly.
+                </p>
+            </div>
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8 text-center">
+            <p class="font-thin text-base lg:text-lg">
+                For very 10% of RAP, <br>
+                the cost of hot-mix production
+            </p>
+            <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
+            <p class="font-thin text-base lg:text-lg">
+                By recycling up to 50% RAP woth our plants,<br>
+                you can achieve approximately 35% savings in hot-mix production costs.
+            </p>
+        </div>
+    </div>
+    <div class="w-full max-w-7xl mx-auto px-8 text-end py-10">
+        <h2 class="text-xl lg:text-3xl font-bold">RAP ENTRY FLIGHTS</h2>
+    </div>
+    <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center">
+        <div class="w-full">
+            <h2 class="text-base md:text-lg font-bold">DRUM MIX MODIFICATION FOR RAP</h2><br>
+            <p class="text-base md:text-lg font-thin">
+                RAP is introduced through a collar located at an intermediate point of the drum, before the mixing zone.
+                 From this point on, the material never comes into direct contact with the burner flame.
+                 <br>
+                  The dedicated RAP flight are engineered to provide balanced heat distribution, smooth material flow,
+                   and reduced blue smoke or buildup. 
+            </p>
+        </div>
+        <div>
+            <img src={rapEntry.src} alt="">
+        </div>
+    </div>
+    <div class="w-full">
+        <div class="w-full flex justify-center">
+            <LearnBtn/>
+        </div>
+        <img src={HeroS2.src} alt="" class="w-full">
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-10 gap-10 max-w-7xl mx-auto px-8">
+         <Image src={img8} alt="" class="hidden md:block"></Image>
+        <div class="flex flex-col text-grisT items-center justify-center">
+            <h1 class="lg:text-2xl text-xl mb-4 text-start w-full">RAP BINS</h1>
+            <p class="lg:text-lg text-base mb-4 text-justify">Triaso® RAP Bins are designed to efficiently handle and transport recycled 
+                asphalt pavement (RAP) in asphalt plants. Built for durability, they ensure 
+                a consistent and reliable flow of material, enabling seamless integration 
+                into your plant's production process. With their robust construction, Triaso® 
+                RAP Feeders can handle the heavy, abrasive nature of RAP, reducing downtime and 
+                ensuring high operational efficiency.</p>
+                <Image src={img8} alt="" class="block md:hidden"/>
+            <LearnBtn />
+        </div>
+    </div>
+    <ASPanels/>
     <div class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8">
+        <h1 class="text-3xl md:text-4xl text-redBg">Hot-mix 
+            <span class="text-3xl md:text-4xl text-black">Pugmill</span>
+        </h1>
+        <div>
+            <video src={pugmillVideo} autoplay muted></video>
+        </div>
         <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8">
             <div class="flex flex-col items-start justify-center gap-4">
-                <h1 class="text-3xl md:text-4xl text-redBg">Hot-mix</h1>
-                <h1 class="text-3xl md:text-4xl text-black mb-4">Pugmill</h1>
+                
                 <p class="text-base md:text-lg text-grisP text-justify">
-                    The pugmill is an essential component at the end of the drum mix process,
-                     where the hot mix is finalized to ensure a homogeneous and high-quality blend. This 
-                     is achieved through two robust shafts equipped with flights that thoroughly mix the material,
-                      providing consistency and uniformity.
+                    The pugmill is a key component at the final stage of the drum mix process, where the hot
+                     mix is thoroughly blended to achieve a uniform and high-quality result. Equipped with two
+                      heavy-duty shafts and precisely engineered mixing flights, it ensures complete homogenization
+                       and consistency throughout the material.
+
                 </p>
                 <Image src={img2} alt="" class="block md:hidden my-4"/>
                 <p class="text-base md:text-lg text-grisP text-justify">
-                    Its durable construction ensures smooth operation
-                       and long-term reliability, while its efficient mixing mechanism allows precise control 
-                       over the final mix. Designed for easy maintenance and operation, the pugmill delivers consistent
-                        performance in demanding industrial environments.
+                    Built for durability and continuous operation, its robust structure and efficient mixing system 
+                    provide precise control over the final blend. Designed for ease of maintenance and reliable performance, 
+                    the Triaso® pugmill delivers long-lasting efficiency even under the most demanding production conditions.
                 </p>
             </div>
-            <Image src={img2} alt="" class="hidden md:block"/>
+            <Image src={pugmill} alt="" class="hidden md:block"/>
         </div>
         <LearnBtn />
 
