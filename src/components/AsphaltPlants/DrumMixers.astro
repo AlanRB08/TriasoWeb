@@ -1,14 +1,14 @@
 ---
-import img1 from '../../assets/images/AsphaltPlant/render2.webp';
-import img2 from '../../assets/images/AsphaltPlant/render3.webp';
-import img4 from '../../assets/images/AsphaltPlant/render6.webp';
-import img5 from '../../assets/images/AsphaltPlant/drum1.webp';
-import img7 from '../../assets/images/AsphaltPlant/drum2.webp';
-import img8 from '../../assets/images/AsphaltPlant/bin1.webp';
-import img9 from '../../assets/images/AsphaltPlant/bin2.webp';
-import LearnBtn from '../unitComponents/LearnBtn.astro';
+import img1 from "../../assets/images/AsphaltPlant/render2.webp";
+import img2 from "../../assets/images/AsphaltPlant/render3.webp";
+import img4 from "../../assets/images/AsphaltPlant/render6.webp";
+import img5 from "../../assets/images/AsphaltPlant/drum1.webp";
+import img7 from "../../assets/images/AsphaltPlant/drum2.webp";
+import img8 from "../../assets/images/AsphaltPlant/bin1.webp";
+import img9 from "../../assets/images/AsphaltPlant/bin2.webp";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
 import logo from "../../assets/logos/triasoLogo.webp";
-import Image from 'astro/components/Image.astro';
+import Image from "astro/components/Image.astro";
 import Video1 from "../../assets/images/landingVideo.mp4";
 import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
 import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
@@ -16,313 +16,381 @@ import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import rap from "../../assets/images/DrumMixers/rap.webp";
 import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
 import HeroS2 from "../../../public/HeroS2.png";
-import ASPanels from '../unitComponents/ASPanels.astro';
+import ASPanels from "../unitComponents/ASPanels.astro";
 import pugmillVideo from "../../assets/images/ColdMix/PGMC.mp4";
 import pugmill from "../../assets/images/ColdMix/pugmill3.png";
+import SlidersCarrusel from "../IntegralAsphalt/SlidersCarrusel";
+import OSection from "../unitComponents/OSection.astro";
+
+const images2 = [
+  {
+    src: "/Gallery/counterflow.png",
+    title: "Counterflow drum mixer",
+    texto: `<span style="color:black">The counterflow drum mixer</span>, located at the center of the chassis, is engineered for efficient heat transfer and minimal fines loss, ensuring consistent asphalt mix quality. Its robust construction and advanced sealing minimize air infiltration and reduce maintenance. Designed specifically for the 10 Tph plant, it delivers reliable performance in a compact, cost-effective system.`,
+  },
+  {
+    src: "/Gallery/externalpugmill.png",
+    title: "External pugmill mixer",
+    texto: `<span style="color:black">The external pugmill mixer</span>, mounted directly below the drum outlet, ensures superior final mixing of the asphalt. This added stage guarantees a more homogeneous and consistent mix by thoroughly blending materials before discharge. Driven by a 5 hp motor with a robust gearbox, it features interchangeable wear-resistant paddles for long service life and easy maintenance.`,
+  },
+  {
+    src: "/Gallery/aggregatesbin.png",
+    title: "Aggregates bin",
+    texto: `<span style="color:black">The aggregates bin</span> is designed to store pre-dosed material ready for asphalt production. Its trapezoidal discharge and smooth belt operation ensure steady, controlled flow to the drying system. Equipped with a lagged head pulley for improved belt grip, it supports consistent feeding for reliable mix quality throughout the process.`,
+  },
+  {
+    src: "/Gallery/tank.png",
+    title: "Asphalt tank",
+    texto: `<span style="color:black">The asphalt tank </span>is designed for efficient storage and heating, ensuring a steady asphalt supply at the ideal production temperature. With a 140,000 Btu/hr burner and integrated agitator, it enables fast heating and quick start-up. A 2" pump with a 2 hp motor ensures smooth flow, optimizing plant performance.`,
+  },
+  {
+    src: "/Gallery/electricgen.png",
+    title: "Electric Generator",
+    texto: `<span style="color:black">The electric generator </span>provides consistent, reliable power for the entire asphalt plant. With 20 kW continuous and 22 kW emergency capacity, it supports all electrical components seamlessly. Powered by a 35 hp Cummins diesel engine and a 110-liter fuel tank, it offers extended runtime with low maintenance.`,
+  },
+  {
+    src: "/Gallery/controlgabinet.png",
+    title: "Control Cabinet",
+    texto: `<span style="color:black">The control cabinet </span>centralizes the operation of the entire plant, offering intuitive management of all key components—from aggregate feeding to asphalt injection. Built with industrial-grade components, it ensures reliable performance in demanding environments. Its user-friendly interface allows precise control of temperature, material flow, and mixer timing, streamlining production and reducing operator error.`,
+  },
+  {
+    src: "/Gallery/fueltank.png",
+    title: "Fuel Tank",
+    texto: `<span style="color:black">The fuel tank</span>, positioned behind the asphalt tank, has a 750-liter capacity and supplies diesel to the burner system. Its placement ensures easy access for refueling while maintaining a compact layout within the plant. Built for durability and continuous operation, it supports extended production runs without interruption.`,
+  },
+
+  {
+    src: "/Gallery/burner.png",
+    title: "Burner",
+    texto: `<span style="color:black">The burner </span>optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.`,
+  },
+  {
+    src: "/Gallery/burner.png",
+    title: "Burner",
+    texto: `<span style="color:black">The burner </span>optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.`,
+  },
+
+  // agrega hasta 16 o más imágenes
+];
 ---
+
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="flex flex-col items-center justify-center mt-10 md:mt-20 text-white">
-        <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-4">
-            <div class="hidden justify-start items-end md:flex h-full">
-                <Image src={img5} alt="" class="w-[80%]"/>
-            </div>
-            <div class="hidden md:flex-col items-start justify-start pt-4 md:flex">
-                <h1 class="md:text-4xl text-2xl text-black text-center w-full">Two Year Warranty</h1>
-                <br>
-                <p class="md:text-2xl text-lg text-grisT text-center w-full">We stand behind our top-tier quality with the <br>
-                highest warranty in the market</p>
-            </div>
-            <div class="flex flex-col items-start justify-start gap-4 bg-blueMain md:rounded-t-2xl p-8 md:h-full">
-                <div class="text-xl md:text-4xl w-full text-start">
-                    <h1 class="text-redBg">TRIASO® </h1>
-                    <h1 class="">DRUM MIXER</h1>
-                </div>
-                <p class="text-grisSubP text-base md:text-lg text-justify">
-                    Heavy-duty drum mixers engineered for continuous operation and precise asphalt blending. 
-                    Built with heat-resistant alloy steel and optimized air-flow design, they achieve uniform drying,
-                     minimal fines loss, and maximum fuel efficiency — ensuring long service life and consistent performance 
-                     under demanding conditions
-                </p>
-            </div>
-        </div>
-        <div class="w-full bg-blueMain p-6">
-            <h1 class="text-xl md:text-4xl">RANGING FROM 10 TO 500 TPH</h1>
-        </div>
-        <div class="block md:hidden">
-            <Image src={img7} alt="" class="w-1/2"/>
-            <div class="flex-col flex md:hidden items-start justify-start pt-4">
-                <h1 class="md:text-4xl text-2xl text-black text-center w-full">Two Year Warranty</h1>
-                <br>
-                <p class="md:text-2xl text-lg text-grisT text-center w-full">We stand behind our top-tier quality with the <br>
-                highest warranty in the market</p>
-            </div>
-
-        </div>
-    </div>
-    <div class="w-full flex flex-col items-center justify-center mt-20 text-black max-w-7xl mx-auto px-8">
-        <h1 class="text-xl md:text-3xl text-center md:mb-10">Asphalt plants for the smallest jobs to large projects</h1>
-        <h2 class="text-lg md:text-2xl text-center text-grisT">Discover all asphalt plants ranges and models ></h2>
-        <div class="relative overflow-hidden bg-black transform-gpu">
-            <video
-            src={Video1}
-              autoplay
-              muted
-              loop
-              playsinline
-              class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-            ></video>
-          </div>
-    </div>
-    <div class="w-full bg-grisT flex flex-col justify-center items-center">
-        <img src={logo.src} alt="" class="max-w-7xl"><br>
-        <div class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center min-h-[900px]">
-            <h1 class="text-white text-2xl lg:text-4xl font-bold text-start">Fully Portable</h1>
-            <br>
-            <p class="text-base lg:text-lg text-white font-thin">
-                All components of our asphalt plants are engineered for complete transportability,
-                allowing for efficient and quick setup. 
-                Their robust structure enables a smooth, hassle-free installation directly on-site.
-            </p><br>
-            <p class="text-base lg:text-lg text-white font-thin">
-                We design our equipment with an integrated fifth wheel, eliminating 
-                the need for a low-boy or a flatbed trailer during transport.
-            </p>
-            <p class="text-base lg:text-lg text-white font-thin">
-                The complete asphalt plant can be transported in only three trailer loads,
-                simplifying logistics and reducing setup time.
-            </p>
-        </div>
-    </div>
-    <div class="w-full max-w-7xl mx-auto px-8 flex flex-col items-center justify-center mt-20 text-black">
-        <h1 class="text-2xl md:text-3xl text-start mb-5 w-full">
-            Integral 10 Tph <br> Asphalt Plants
+  <div
+    class="flex flex-col items-center justify-center mt-10 md:mt-20 text-white"
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-4"
+    >
+      <div class="hidden justify-start items-end md:flex h-full">
+        <Image src={img5} alt="" class="w-[80%]" />
+      </div>
+      <div class="hidden md:flex-col items-start justify-start pt-4 md:flex">
+        <h1 class="md:text-4xl text-2xl text-black text-center w-full">
+          Two Year Warranty
         </h1>
-        <h2 class="text-lg md:text-2xl text-start w-full px-8">Ideal for municipal jobs and road maintenance</h2>
-        <p class="mt-5 text-blueMain text-base md:text-xl px-8">
-            Reduces production costs for small-volume asphalt manufacturing by optimizing startups, 
-            minimizing fuel consumption, and lowering labor and transportation expenses.
+        <br />
+        <p class="md:text-2xl text-lg text-grisT text-center w-full">
+          We stand behind our top-tier quality with the <br />
+          highest warranty in the market
         </p>
-        <Image src={img1} alt=""/>
-        <h1 class="text-lg md:text-xl text-blueMain px-8">Learn more of our <span class="text-redBg">incredible</span> 10 Tph Asphalt Plants ></h1>
-    </div>
-    <div class="flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8 w-full">
-        <div class="relative overflow-hidden bg-black transform-gpu">
-            <video
-            src={Video2}
-              autoplay
-              muted
-              loop
-              playsinline
-              class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-            ></video>
-          </div>
-        <div class="relative overflow-hidden bg-black transform-gpu">
-            <video
-            src={Video3}
-              autoplay
-              muted
-              loop
-              playsinline
-              class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-            ></video>
-          </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl">
-        <h2 class="text-2xl md:text-3xl">Retractable Drag Slat for Efficient Transport and Operation
-            </h2>
-        <div class="">
-            <div class="w-full flex justify-center">
-                <video src={Video4} autoplay muted playsinline class="w-3/5"></video>
-            </div>
-            <p class="text-grisT text-justify">
-                The vertical drag slat features a retractable configuration that complies with DOT transportation height limits,
-                ensuring safe and legal road transport. Once the drum mixer is installed on-site, the elevator extends to its full 
-                operational height, allowing efficient material discharge into truck with minimal setup time. This smart design
-                 improves logistics while maintaining high performance during loading and discharge operations.
-            </p>
+      </div>
+      <div
+        class="flex flex-col items-start justify-start gap-4 bg-blueMain md:rounded-t-2xl p-8 md:h-full"
+      >
+        <div class="text-xl md:text-4xl w-full text-start">
+          <h1 class="text-redBg">TRIASO®</h1>
+          <h1 class="">DRUM MIXER</h1>
         </div>
+        <p class="text-grisSubP text-base md:text-lg text-justify">
+          Heavy-duty drum mixers engineered for continuous operation and precise
+          asphalt blending. Built with heat-resistant alloy steel and optimized
+          air-flow design, they achieve uniform drying, minimal fines loss, and
+          maximum fuel efficiency — ensuring long service life and consistent
+          performance under demanding conditions
+        </p>
+      </div>
     </div>
-    <div class="w-full bg-gradient-to-b from-grisT to-bgMain">
-        <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 justify-center items-center">
-            <div class="w-full flex justify-center">
-                <img src={rap.src} alt="" class="w-3/5">
-            </div>
-            <div class="w-full text-white">
-                <h1 class="font-bold text-2xl lg:text-4xl">RAP COLLAR & BIN</h1>
-                <p class="font-thin text-base lg:text-lg">Our RAP system can incorporate</p>
-                <h2 class="font-bold text-lg lg:text-2xl">up to 50%</h2> 
-                <p>of recycled asphalt pavement</p>
-                <br>
-                <p class="font-thin text-base lg:text-lg">
-                    The drum collar is engineered to provide the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
-                     into the mixing zone. Fed directly from the RAP bin via a dedicated conveyor, the material enters the drum
-                      smoothly and uniformly.
-                </p>
-            </div>
-        </div>
-        <div class="w-full max-w-7xl mx-auto px-8 text-center">
-            <p class="font-thin text-base lg:text-lg">
-                For very 10% of RAP, <br>
-                the cost of hot-mix production
-            </p>
-            <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
-            <p class="font-thin text-base lg:text-lg">
-                By recycling up to 50% RAP woth our plants,<br>
-                you can achieve approximately 35% savings in hot-mix production costs.
-            </p>
-        </div>
+    <div class="w-full bg-blueMain p-6">
+      <h1 class="text-xl md:text-4xl">RANGING FROM 10 TO 500 TPH</h1>
     </div>
-    <div class="w-full max-w-7xl mx-auto px-8 text-end py-10">
-        <h2 class="text-xl lg:text-3xl font-bold">RAP ENTRY FLIGHTS</h2>
+    <div class="block md:hidden">
+      <Image src={img7} alt="" class="w-1/2" />
+      <div class="flex-col flex md:hidden items-start justify-start pt-4">
+        <h1 class="md:text-4xl text-2xl text-black text-center w-full">
+          Two Year Warranty
+        </h1>
+        <br />
+        <p class="md:text-2xl text-lg text-grisT text-center w-full">
+          We stand behind our top-tier quality with the <br />
+          highest warranty in the market
+        </p>
+      </div>
     </div>
-    <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center">
-        <div class="w-full">
-            <h2 class="text-base md:text-lg font-bold">DRUM MIX MODIFICATION FOR RAP</h2><br>
-            <p class="text-base md:text-lg font-thin">
-                RAP is introduced through a collar located at an intermediate point of the drum, before the mixing zone.
-                 From this point on, the material never comes into direct contact with the burner flame.
-                 <br>
-                  The dedicated RAP flight are engineered to provide balanced heat distribution, smooth material flow,
-                   and reduced blue smoke or buildup. 
-            </p>
-        </div>
-        <div>
-            <img src={rapEntry.src} alt="">
-        </div>
+  </div>
+  <div
+    class="w-full flex flex-col items-center justify-center mt-20 text-black max-w-7xl mx-auto px-8"
+  >
+    <h1 class="text-xl md:text-3xl text-center md:mb-10">
+      Asphalt plants for the smallest jobs to large projects
+    </h1>
+    <h2 class="text-lg md:text-2xl text-center text-grisT">
+      Discover all asphalt plants ranges and models >
+    </h2>
+    <div class="relative overflow-hidden bg-black transform-gpu">
+      <video
+        src={Video1}
+        autoplay
+        muted
+        loop
+        playsinline
+        class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
+      ></video>
     </div>
+  </div>
+  <div class="w-full bg-grisT flex flex-col justify-center items-center">
+    <img src={logo.src} alt="" class="max-w-7xl" /><br />
+    <div
+      class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center min-h-[900px]"
+    >
+      <h1 class="text-white text-2xl lg:text-4xl font-bold text-start">
+        Fully Portable
+      </h1>
+      <br />
+      <p class="text-base lg:text-lg text-white font-thin">
+        All components of our asphalt plants are engineered for complete
+        transportability, allowing for efficient and quick setup. Their robust
+        structure enables a smooth, hassle-free installation directly on-site.
+      </p><br />
+      <p class="text-base lg:text-lg text-white font-thin">
+        We design our equipment with an integrated fifth wheel, eliminating the
+        need for a low-boy or a flatbed trailer during transport.
+      </p>
+      <p class="text-base lg:text-lg text-white font-thin">
+        The complete asphalt plant can be transported in only three trailer
+        loads, simplifying logistics and reducing setup time.
+      </p>
+    </div>
+  </div>
+  <div
+    class="w-full flex flex-col items-center justify-start text-black bg-[url(/HeroIntegral.png)] bg-no-repeat bg-center bg-cover min-h-[350px] md:min-h-[700px]"
+  >
+    <div class="w-full max-w-7xl mx-auto px-8 py-10">
+      <h1 class="text-2xl md:text-3xl text-start mb-5 w-full font-bold">
+        Integral 10 Tph <br /> Asphalt Plants
+      </h1>
+      <h2 class="text-lg md:text-xl text-start w-full font-semibold text-grisT">
+        Ideal for municipal jobs and road maintenance
+      </h2>
+      <p class="mt-5 text-grisT text-base md:text-lg font-thin">
+        Full-Scale Technology in a Compact Format
+      </p>
+    </div>
+  </div>
+  <div class="pt-10">
+    <h2 class="text-center font-bold text-black text-xl md:text-4xl">
+      Everything in a single unit
+    </h2>
+  </div>
+  <SlidersCarrusel client:load images={images2} />
+  <div class="py-10 w-full text-center">
+    <h2 class="text-center font-bold text-blueMain text-xl md:text-3xl">
+      Sell at a lower price, attract more customers, and achieve higher profits
+    </h2><br />
+    <a href="" class="font-semibold text-black text-sm md:text-base text-center"
+      >Learn more about our 10 TPH asphalt plants >
+    </a>
+  </div>
+  <div
+    class="max-w-7xl mx-auto px-8 p-4 flex flex-col items-center justify-center bg-white rounded-2xl"
+  >
+    <h2 class="text-2xl md:text-3xl">
+      Retractable Drag Slat for Efficient Transport and Operation
+    </h2>
+    <div class="">
+      <div class="w-full flex justify-center">
+        <video src={Video4} autoplay muted playsinline class="w-3/5"></video>
+      </div>
+      <p class="text-grisT text-justify">
+        The vertical drag slat features a retractable configuration that
+        complies with DOT transportation height limits, ensuring safe and legal
+        road transport. Once the drum mixer is installed on-site, the elevator
+        extends to its full operational height, allowing efficient material
+        discharge into truck with minimal setup time. This smart design improves
+        logistics while maintaining high performance during loading and
+        discharge operations.
+      </p>
+    </div>
+  </div>
+  <div class="w-full bg-gradient-to-b from-grisT to-bgMain">
+    <div
+      class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 justify-center items-center"
+    >
+      <div class="w-full flex justify-center">
+        <img src={rap.src} alt="" class="w-3/5" />
+      </div>
+      <div class="w-full text-white">
+        <h1 class="font-bold text-2xl lg:text-4xl">RAP COLLAR & BIN</h1>
+        <p class="font-thin text-base lg:text-lg">
+          Our RAP system can incorporate
+        </p>
+        <h2 class="font-bold text-lg lg:text-2xl">up to 50%</h2>
+        <p>of recycled asphalt pavement</p>
+        <br />
+        <p class="font-thin text-base lg:text-lg">
+          The drum collar is engineered to provide the controlled and efficient
+          entry of Recycled Asphalt Pavement (RAP) into the mixing zone. Fed
+          directly from the RAP bin via a dedicated conveyor, the material
+          enters the drum smoothly and uniformly.
+        </p>
+      </div>
+    </div>
+    <div class="w-full max-w-7xl mx-auto px-8 text-center">
+      <p class="font-thin text-base lg:text-lg">
+        For very 10% of RAP, <br />
+        the cost of hot-mix production
+      </p>
+      <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
+      <p class="font-thin text-base lg:text-lg">
+        By recycling up to 50% RAP woth our plants,<br />
+        you can achieve approximately 35% savings in hot-mix production costs.
+      </p>
+    </div>
+  </div>
+  <div class="w-full max-w-7xl mx-auto px-8 text-end py-10">
+    <h2 class="text-xl lg:text-3xl font-bold">RAP ENTRY FLIGHTS</h2>
+  </div>
+  <div
+    class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center"
+  >
     <div class="w-full">
-        <div class="w-full flex justify-center">
-            <LearnBtn/>
-        </div>
-        <img src={HeroS2.src} alt="" class="w-full">
+      <h2 class="text-base md:text-lg font-bold">
+        DRUM MIX MODIFICATION FOR RAP
+      </h2><br />
+      <p class="text-base md:text-lg font-thin">
+        RAP is introduced through a collar located at an intermediate point of
+        the drum, before the mixing zone. From this point on, the material never
+        comes into direct contact with the burner flame.
+        <br />
+        The dedicated RAP flight are engineered to provide balanced heat distribution,
+        smooth material flow, and reduced blue smoke or buildup.
+      </p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-10 gap-10 max-w-7xl mx-auto px-8">
-         <Image src={img8} alt="" class="hidden md:block"></Image>
-        <div class="flex flex-col text-grisT items-center justify-center">
-            <h1 class="lg:text-2xl text-xl mb-4 text-start w-full">RAP BINS</h1>
-            <p class="lg:text-lg text-base mb-4 text-justify">Triaso® RAP Bins are designed to efficiently handle and transport recycled 
-                asphalt pavement (RAP) in asphalt plants. Built for durability, they ensure 
-                a consistent and reliable flow of material, enabling seamless integration 
-                into your plant's production process. With their robust construction, Triaso® 
-                RAP Feeders can handle the heavy, abrasive nature of RAP, reducing downtime and 
-                ensuring high operational efficiency.</p>
-                <Image src={img8} alt="" class="block md:hidden"/>
-            <LearnBtn />
-        </div>
+    <div>
+      <img src={rapEntry.src} alt="" />
     </div>
-    <ASPanels/>
-    <div class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8">
-        <h1 class="text-3xl md:text-4xl text-redBg">Hot-mix 
-            <span class="text-3xl md:text-4xl text-black">Pugmill</span>
-        </h1>
-        <div>
-            <video src={pugmillVideo} autoplay muted></video>
-        </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8">
-            <div class="flex flex-col items-start justify-center gap-4">
-                
-                <p class="text-base md:text-lg text-grisP text-justify">
-                    The pugmill is a key component at the final stage of the drum mix process, where the hot
-                     mix is thoroughly blended to achieve a uniform and high-quality result. Equipped with two
-                      heavy-duty shafts and precisely engineered mixing flights, it ensures complete homogenization
-                       and consistency throughout the material.
-
-                </p>
-                <Image src={img2} alt="" class="block md:hidden my-4"/>
-                <p class="text-base md:text-lg text-grisP text-justify">
-                    Built for durability and continuous operation, its robust structure and efficient mixing system 
-                    provide precise control over the final blend. Designed for ease of maintenance and reliable performance, 
-                    the Triaso® pugmill delivers long-lasting efficiency even under the most demanding production conditions.
-                </p>
-            </div>
-            <Image src={pugmill} alt="" class="hidden md:block"/>
-        </div>
-        <LearnBtn />
-
+  </div>
+  <div class="w-full">
+    <div class="w-full flex justify-center">
+      <LearnBtn />
     </div>
-    <div class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8">
-        <h1 class="lg:text-4xl text-2xl text-grisT w-full text-end mb-10">CONTROL SYSTEM</h1>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10"> 
-            <Image src={img4} alt="Control System" class="rounded-2xl order-2 lg:order-1"/>
-            <p class="lg:text-lg text-base text-grisT text-justify order-1 lg:order-2">At Triaso, we don’t believe in standardized solutions—especially when it comes to our 
-                control systems. We recognize that each client operates under unique conditions, with 
-                specific priorities in automation, data handling, usability, and investment. 
-                That’s why every control cabin we build is tailored to fit those distinct requirements.
-                 From interface design to functional integration,
-                 we carefully configure each system to match the operational goals and workflow of 
-                 every customer.</p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10"> 
-            <div class="flex flex-col items-center justify-center gap-4">
-                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4">
-                    <h1 class="text-black mb-4">Visualization and control of materials consumption (current and cumulative).</h1>
-                    <p class="text-grisT font-normal">Enables real-time monitoring of 
-                        material usage, while tracking total consumption over time for accurate
-                         records and optimized production.
-                    </p>
-                    <br>
-                    <ol class="list-disc font-normal text-sm lg:text-base text-grisT ml-8">
-                        <li>Asphalt</li>
-                        <li>Aggregates</li>
-                        <li>Fuel Consumption</li>
-                        <li>Water Usage</li>
-                        <li>Recycled Asphalt Pavement (RAP)</li>
-                        <li>Additives</li>
-                    </ol>
-                </div>
-                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
-                    <h2>Customizable production management with storage for thousands of recipes.</h2>
-                </div>
-                <div class="text-sm lg:text-base flex text-start justify-center p-4 gap-10 text-grisT">
-                    <div>
-                        <h1 class="text-black lg:text-2xl text-xl">Versatile Setup</h1>
-                        <p>Works seamlessly in a dedicated control cabin or 
-                            under a protective roof.</p>
-                    </div>
-                    <div>
-                        <h1 class="text-black lg:text-2xl text-xl">Quick Adjustments</h1>
-                        <p>Allows rapid changes to recipes or control 
-                            settings to match project requirements.</p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="flex flex-col items-center gap-10 text-grisT">
-                
-                <p class="lg:text-lg text-base text-justify">Offering a practical and efficient way to achieve total control over your asphalt
-                     plant operations. With advanced monitoring and automation, it simplifies the
-                      management of key processes such as temperature control, material dosing, and production 
-                      rates. Designed to adapt to different setups, it ensures reliable performance 
-                      while prioritizing safety and ease of use.</p>
-                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
-                    <h2>Walls and roof made of 16-gauge sheet metal with insulated panels.</h2>
-                    <br>
-                    <p class="font-normal">Provides durability and thermal insulation, ensuring structural 
-                        strength while maintaining a controlled interior environment.</p>
-                        <br>
-                    <ol class="list-disc ml-8">
-                        <li>Built with reinforced materials for heavy-duty use.</li>
-                        <li>Panoramic windows for enhanced visibility.</li>
-                    </ol>
-                </div>
-                
-
-            </div>
-        </div>
+    <img src={HeroS2.src} alt="" class="w-full" />
+  </div>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-10 gap-10 max-w-7xl mx-auto px-8"
+  >
+    <Image src={img8} alt="" class="hidden md:block" />
+    <div class="flex flex-col text-grisT items-center justify-center">
+      <h1 class="lg:text-2xl text-xl mb-4 text-start w-full">RAP BINS</h1>
+      <p class="lg:text-lg text-base mb-4 text-justify">
+        Triaso® RAP Bins are designed to efficiently handle and transport
+        recycled asphalt pavement (RAP) in asphalt plants. Built for durability,
+        they ensure a consistent and reliable flow of material, enabling
+        seamless integration into your plant's production process. With their
+        robust construction, Triaso® RAP Feeders can handle the heavy, abrasive
+        nature of RAP, reducing downtime and ensuring high operational
+        efficiency.
+      </p>
+      <Image src={img8} alt="" class="block md:hidden" />
+      <LearnBtn />
     </div>
-    <div class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8 font-bold">
-        <h1 class="text-lg md:text-2xl mb-4">User-Friendly Interface</h1>
-        <h2 class="text-base md:text-lg text-grisT mb-4 font-normal md:mb-20">Simplifies configuration adjustments for operators with minimal downtime.</h2>
-        <p class="text-sm md:text-base text-grisT mb-4 md:mb-16 text-justify">Created to offer plant operators a deeper understanding of their operation,
-             this cloud-based platform stores all production data remotely and securely.
-              It gives you the freedom to access detailed performance analytics from any 
-              location and any device—whether you're in the office, on the road, or at a job 
-              site. With real-time access to trends, logs, and operational metrics, decision-making
-               becomes faster, more informed, and fully independent of your physical location.
+  </div>
+  <ASPanels />
+  <div
+    class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8"
+  >
+    <h1 class="text-3xl md:text-4xl text-redBg">
+      Hot-mix
+      <span class="text-3xl md:text-4xl text-black">Pugmill</span>
+    </h1>
+    <div>
+      <video src={pugmillVideo} autoplay muted></video>
+    </div>
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8"
+    >
+      <div class="flex flex-col items-start justify-center gap-4">
+        <p class="text-base md:text-lg text-grisP text-justify">
+          The pugmill is a key component at the final stage of the drum mix
+          process, where the hot mix is thoroughly blended to achieve a uniform
+          and high-quality result. Equipped with two heavy-duty shafts and
+          precisely engineered mixing flights, it ensures complete
+          homogenization and consistency throughout the material.
         </p>
-        <button class="bg-redBg rounded-full 
-        font-normal max-w-[200px] text-white py-1 px-4 
-        text-sm md:text-lg hover:bg-redBgHover" aria-label="Let´s get started">Let´s Get Started</button>
+        <Image src={img2} alt="" class="block md:hidden my-4" />
+        <p class="text-base md:text-lg text-grisP text-justify">
+          Built for durability and continuous operation, its robust structure
+          and efficient mixing system provide precise control over the final
+          blend. Designed for ease of maintenance and reliable performance, the
+          Triaso® pugmill delivers long-lasting efficiency even under the most
+          demanding production conditions.
+        </p>
+      </div>
+      <Image src={pugmill} alt="" class="hidden md:block" />
     </div>
+    <LearnBtn />
+  </div>
+  <div
+    class="w-full bg-[url(/HeroCabin.png)] bg-cover bg-no-repeat bg-center my-10 py-20"
+  >
+    <div class="w-full max-w-7xl mx-auto px-8">
+      <div class="w-full">
+        <h1 class="lg:text-4xl text-2xl text-white w-full text-end mb-10">
+          CONTROL CABIN
+        </h1>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="text-white">
+            <h2 class="font-bold text-sm md:text-base">
+              Walls and roof made of 16-gauge sheet metal with insulated panels.
+            </h2>
+            <p class="font-thin text-sm md:text-base">
+              Provides durability and thermal insulation, ensuring structural
+              strength while maintaining a controlled interior environment.
+            </p>
+          </div>
+          <div class="w-full text-white">
+            <p class="text-sm md:text-base font-thin">
+              Towable control cabin designed for quick, safe, and practical
+              installation at any job site.
+            </p><br />
+            <p class="text-sm md:text-base font-thin">
+              Prepared for the installation of cameras, digital log systems, or
+              real-time office connection, according to customer requirements.
+            </p><br />
+            <p class="text-sm md:text-base font-thin">
+              Our control system is designed to be operated by a single person,
+              reducing labor costs and simplifying plant operation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+  >
+    <div>
+      <img src="" alt="" />
+    </div>
+    <div>
+      <h1 class="font-bold text-black text-xl md:text-2xl">MANUAL OPERATION</h1>
+      <br />
+      <p class="font-thin text-base md:text-lg">
+        We understand the importance of full operational control. That’s why our
+        system includes a complete manual operation mode. We don’t depend on a
+        fully automated setup—if a component stops working, the plant can
+        continue running manually without interrupting production
+      </p>
+    </div>
+  </div>
+  <OSection />
 </div>

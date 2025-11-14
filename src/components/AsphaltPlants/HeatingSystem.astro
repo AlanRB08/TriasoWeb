@@ -1,111 +1,178 @@
 ---
-import img1 from '../../assets/images/AsphaltPlant/oil1.webp';
-import LearnBtn from '../unitComponents/LearnBtn.astro';
-import Image from 'astro/components/Image.astro';
+import img1 from "../../assets/images/AsphaltPlant/oil1.webp";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
+import Image from "astro/components/Image.astro";
 import BurnerVideo from "../../assets/images/Burners/burnerVideo.mp4";
+import flag from "../../assets/images/Burners/flag.svg";
+import ficha from "../../assets/images/Burners/ficha.png";
+import wordIcon from "../../assets/images/Burners/world.png";
+import batchIcon from "../../assets/images/Burners/batch.png";
+import preHeat from "../../assets/images/Burners/preHeat.png";
 ---
-<div class="flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8 font-bold">
-    <h1 class="text-center md:text-end text-3xl md:text-4xl w-full text-grisT mb-10">Heating Systems</h1>
-    <section class="flex flex-col items-center justify-center">
-    <div class="text-3xl md:text-4xl font-bold w-full text-start">
-        <h1 class="">Triaso® 'Total air'</h1>
-        <h1 class="text-red-600">Burners</h1>
-        <div class="mt-4 mb-6 flex">
-            <div class="w-20 h-0.5 bg-red-500"></div>
-            <div class="w-20 h-0.5 bg-gray-300"></div>
-        </div>
-    </div>
-    <div class="flex flex-col items-center justify-center">
-        <video src={BurnerVideo} autoplay class="w-1/2"></video>
-        <h2 class="font-bold text-center">From 6 to 125 million Btu/Hr, with preheater and filter</h2>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
-        <div class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP">
-            <p>Our burners regulate <strong class="text-black">100% of the air for combustion</strong> without 
-            relying on the drum's exhaust system. This ensures total 
-            combustion and <strong class="text-black">100% fuel utilization</strong>, effectively preventing 
-            various types of problems.
-            </p>
-            <ul class="pl-4 pt-4">
-                <li class="list-disc">Atmospheric pollution.</li>
-                <li class="list-disc">Contamination of the asphalt mix with unburned fuel.</li>
-                <li class="list-disc">Clogging in the baghouse and a high risk of fire.</li>
-            </ul>
-        </div>
-        <div class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP">
-            <p><strong class="text-black">Low NOx emissions </strong>(nitrogen oxides), a greenhouse gas that is highly regulated in most regions. 
-                It can be equipped with a flame protection system to reduce NOx to levels allowed by the 
-                authorities in your region.
-            </p>
-            <ul class="pl-4 pt-4">
-                <li class="list-disc">Sealed installation, without cold air inlets, saving the fuel used to heat it, allowing for precise and efficient carburation.</li>
-                <li class="list-disc">Efficiency is not affected by changes in weather temperature throughout the day.</li>
-                
-            </ul>
-        </div>
-    </div>
-    <button class="bg-redBg hover:redBgHover max-w-[130px] text-white mt-5 rounded-2xl py-1 px-4" aria-label="Learn more about our Heating System">Learn more</button>
-    
-    </section>
-    <div class="flex flex-col items-center justify-center mt-10">
-        <h1 class="lg:text-3xl text-xl w-full text-start mb-4">OIL HEATERS</h1>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div class="flex flex-col gap-4 border-t-black border-t">
-                <p class="text-grisT lg:text-lg text-base mt-4 text-justify">Designed for precise temperature control, 
-                    the oil heater ensures uniform heat distribution through advanced thermal oil circulation.
-                     Its robust construction supports continuous operation, making it ideal for demanding applications
-                      that require consistent performance and energy efficiency.</p>
-                <Image src={img1} alt=""/>
-            </div>
-            <div class="flex flex-col gap-4 p-6 bg-white rounded-2xl items-start justify-start h-min">
-                <h1 class="text-blueMain lg:text-xl text-lg">Oil Heater option available instead of direct-fire heating system in asphalt 
-                    storage tanks.</h1>
-                <ol class="lg:text-base text-sm font-normal pl-8 list-disc 2xl:px-20 leading-7">
-                    <li>With heating capacities of 1,000,000 and 2,400,000 Btu/Hr.</li>
-                    <li>Includes a high-efficiency 2” diameter coil system inside the asphalt tank.</li>
-                    <li>Connections for asphalt tankers with coil heating systems.</li>
-                    <li>Thermally insulated with ceramic fiber.</li>
-                    <li>Stainless steel exterior sheet covering.</li>
-                    <li>Equipped with a diesel burner.</li>
-                    <li>Automatic on/off control based on temperature.</li>
-                    <li>Two operating modes: Automatic and Manual.</li>
-                    <li>Digital thermometers with programmable set point for burner activation and shutoff.</li>
-                    <li>Siemens PLC-based control system.</li>
-                    <li>100-liter (26.4-gallon) thermal oil expansion tank.</li>
-                    <li>100% duty cycle.</li>
-                    <li>Includes safety systems and automatic shutdown in case of errors.</li>
-                </ol>
 
-            </div>
-
-        </div>
-
+<div class="flex flex-col items-center justify-center mt-20 font-bold">
+  <section class="flex flex-col items-center justify-center w-full">
+    <div
+      class="text-3xl md:text-4xl font-bold w-full text-start max-w-7xl mx-auto px-8"
+    >
+      <h1 class="text-grisT">BURNERS</h1>
+      <div class="mt-4 mb-6 flex">
+        <div class="w-20 h-0.5 bg-red-500"></div>
+        <div class="w-20 h-0.5 bg-gray-300"></div>
+      </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-44 mt-10 text-grisT lg:text-lg text-base">
-        <div class="bg-white rounded-2xl p-4">
-            <h1>Precision Temperature Control</h1>
-            <p class="font-normal">Maintains exact temperatures with a tolerance of ±1°C, 
-                ensuring optimal conditions for material processing.
-            </p>
-        </div>
-        <div class="bg-white rounded-2xl p-4">
-            <h1>Customizable Heating Capacity: </h1>
-            <p class="font-normal">Tailored to meet specific project needs, 
-                from small-scale operations to large industrial requirements.
-            </p>
-        </div>
-        <div class="bg-white rounded-2xl p-4">
-            <h1>High-Efficiency Burners:</h1>
-            <p class="font-normal">Equipped with low-NOx burners that reduce emissions while maximizing fuel efficiency.
-            </p>
-        </div>
-        <div class="bg-white rounded-2xl p-4">
-            <h1>Thermal Oil Circulation System: </h1>
-            <p class="font-normal">Ensures even heat distribution across the entire system,
-                 preventing hot spots and material degradation.
-            </p>
-        </div>
+    <div
+      class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 w-full"
+    >
+      <video src={BurnerVideo} autoplay class="w-1/2"></video>
+      <h2 class="font-bold text-center">
+        From 6 to 125 million Btu/Hr, with preheater and filter
+      </h2>
     </div>
-    <LearnBtn />
-    
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 max-w-7xl mx-auto px-8 w-full"
+    >
+      <div
+        class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+      >
+        <p>
+          Our burners regulate <strong class="text-black"
+            >100% of the air for combustion</strong
+          > without relying on the drum's exhaust system. This ensures total combustion
+          and <strong class="text-black">100% fuel utilization</strong>,
+          effectively preventing various types of problems.
+        </p>
+        <ul class="pl-4 pt-4">
+          <li class="list-disc">Atmospheric pollution.</li>
+          <li class="list-disc">
+            Contamination of the asphalt mix with unburned fuel.
+          </li>
+          <li class="list-disc">
+            Clogging in the baghouse and a high risk of fire.
+          </li>
+        </ul>
+      </div>
+      <div
+        class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+      >
+        <p>
+          <strong class="text-black">Low NOx emissions </strong>(nitrogen
+          oxides), a greenhouse gas that is highly regulated in most regions. It
+          can be equipped with a flame protection system to reduce NOx to levels
+          allowed by the authorities in your region.
+        </p>
+        <ul class="pl-4 pt-4">
+          <li class="list-disc">
+            Sealed installation, without cold air inlets, saving the fuel used
+            to heat it, allowing for precise and efficient carburation.
+          </li>
+          <li class="list-disc">
+            Efficiency is not affected by changes in weather temperature
+            throughout the day.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button
+      class="bg-redBg hover:redBgHover max-w-[130px] text-white mt-5 rounded-2xl py-1 px-4"
+      aria-label="Learn more about our Heating System">Learn more</button
+    >
+    <div
+      class="w-full bg-[url(/newBanner.png)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-20 mt-10"
+    >
+      <div class="w-full flex justify-center">
+        <img src={flag.src} alt="" class="w-[200px]" />
+      </div>
+      <p class="text-white font-bold text-lg lg:text-xl">
+        Our latest burner innovation features an oxygen sensor that
+        automatically regulates excess oxygen to no more than 3%, eliminating
+        the need for manual fuel carburization adjustment when relocating the
+        equipment. Thanks to our self-carburizing system, NOx levels remain even
+        lower.
+      </p>
+    </div>
+    <div class="w-full bg-[url(/HeroFH.png)] bg-no-repeat bg-center bg-cover">
+      <div class="w-full max-w-7xl mx-auto px-8 py-10">
+        <h2 class="font-bold text-white text-xl md:text-2xl">
+          FUEL PREHEATERS
+        </h2>
+      </div>
+
+      <div
+        class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10"
+      >
+        <div class="w-full text-white font-thin text-base md:text-lg">
+          <p>
+            With our preheaters, we reduce fuel viscosity, ensuring proper
+            atomization and clean combustion — without delays or the need for
+            external heat sources.
+          </p>
+        </div>
+        <div
+          class="w-full text-white font-thin text-base md:text-lg flex justify-center items-start gap-10"
+        >
+          <img src={ficha.src} alt="" class="w-[60px] h-[60px]" />
+          <p>
+            We raise fuel temperature up to 40 °C, even with flow rates up to
+            840 liters per hour.
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10 max-w-7xl mx-auto px-8 items-center"
+      >
+        <div class="w-full bg-blueMain p-6 text-white rounded-lg h-[200px]">
+          <h2 class="font-bold text-base md:text-lg">
+            Problems caused by not preheating low-cost fuels:
+          </h2>
+          <ul class="list-disc ml-6 text-sm md:text-base">
+            <li>Unburned microdroplets cause significant fuel loss.</li>
+            <li>
+              The hot-mix asphalt becomes contaminated with unburned fuel.
+            </li>
+            <li>
+              This contamination drastically reduces the pavement's lifespan.
+            </li>
+            <li>
+              Additionally, the atmosphere is affected by gases from incomplete
+              combustion.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full flex justify-center items-center">
+          <img src={preHeat.src} alt="" class="w-1/2" />
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-bgBeige py-10">
+      <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-2 gap-10">
+        <div class="w-full">
+          <div class="w-3/5 flex gap-6 justify-center items-center">
+            <img src={wordIcon.src} alt="" class="w-[60px] h-[60px]" />
+            <h2 class="text-base md:text-lg font-bold text-black">
+              Efficient and environmentally responsible
+            </h2>
+          </div><br />
+          <p class="font-thin text-grisT">
+            You get lower fuel consumption and cleaner operation, producing
+            fewer NOx emissions without compromising performance.
+          </p>
+        </div>
+        <div class="w-full">
+          <div class="w-3/5 flex gap-6 justify-center items-center">
+            <img src={batchIcon.src} alt="" class="w-[60px] h-[60px]" />
+            <h2 class="text-base md:text-lg font-bold text-black">
+              Included in every plant, not as a costly add-on
+            </h2>
+          </div><br />
+          <p class="font-thin text-grisT">
+            Other brands offer total-air burners and preheaters as expensive
+            extras. At Triaso®, we include them as standard equipment in every
+            plant configuration — because clean combustion shouldn’t be
+            optional.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

@@ -2,20 +2,64 @@
 import CustomBins from "../components/BinUnits/CustomBins.astro";
 import IntroSection from "../components/BinUnits/IntroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import IntegrateControl from '../components/BinUnits/IntegrateControl.astro';
+import IntegrateControl from "../components/BinUnits/IntegrateControl.astro";
 import BinGallery from "../components/BinUnits/BinGallery.astro";
-import BinSelector from '../components/BinUnits/BinSelector';
+import BinSelector from "../components/BinUnits/BinSelector";
 import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import BOdometer from "../components/BinUnits/BOdometer";
 ---
-<Layout title='Bin Units'>
-    <IntroSection />
-    <BinSelector client:only/>
-    <BOdometer client:only/>
-    <CustomBins />
-    <IntegrateControl />
-    <BinGallery />
-    <BinPlanosSection client:only/>
-    <CardSection />
+
+<Layout title="Bin Units">
+  <IntroSection />
+  <BinSelector client:only />
+  <div
+    class="w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 md:px-20 lg:px-52"
+  >
+    <h1 class="text-white font-bold text-2xl md:text-3xl text-center">
+      Specifications and Characteristics
+    </h1>
+    <br />
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl px-8 mx-auto"
+    >
+      <div>
+        <p>
+          Dimensions and aggregate dosing systems that comply with construction
+          regulations
+          <ul class="list-disc ml-6">
+            <li>DOT</li>
+            <li>OSHA</li>
+            <li>EPA</li>
+            <li>UL Wiring</li>
+          </ul>
+          <br />
+          Built from high-strength steel to withstand heavy loads and resist deformation
+          under demanding working conditions. <br />
+          <br />
+          Designed for quick and smooth unloading to maintain continuous workflow
+          and minimize downtime.
+        </p>
+      </div>
+      <div>
+        <p>
+          High-quality equipment built for durability and efficient hot-mix
+          production. Featuring reinforced steel structures and integrated
+          vibration systems, our bin units ensure steady aggregate flow, minimal
+          clogging, and reduced wear. Designed for continuous operation, they
+          deliver consistent, reliable performance with low maintenance—even
+          under the toughest jobsite conditions. <br />
+          <br />
+          Equipped with precision-controlled aggregate dosing mechanisms they guarantee
+          accurate and uniform material dosing throughout production process.
+        </p>
+      </div>
+    </div>
+  </div>
+  <BOdometer client:only />
+  <CustomBins />
+  <IntegrateControl />
+  <BinGallery />
+  <BinPlanosSection client:only />
+  <CardSection />
 </Layout>

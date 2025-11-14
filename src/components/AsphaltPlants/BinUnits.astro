@@ -1,140 +1,134 @@
 ---
-import img2 from '../../assets/images/maquina2.webp';
-import img3 from '../../assets/images/AsphaltPlant/bin1.webp';
-import img4 from '../../assets/images/AsphaltPlant/bin2.webp';
-import img5 from '../../assets/images/AsphaltPlant/drum3.webp';
-import LearnBtn from '../unitComponents/LearnBtn.astro';
-import Image from 'astro/components/Image.astro';
+import img2 from "../../assets/images/maquina2.webp";
+import bin2 from "../../assets/images/AsphaltPlant/bin2.webp";
+import img3 from "../../assets/images/AsphaltPlant/bin1.webp";
+import img4 from "../../assets/images/AsphaltPlant/bin2.webp";
+import img5 from "../../assets/images/AsphaltPlant/drum3.webp";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
+import Image from "astro/components/Image.astro";
 import Video1 from "../../assets/images/BinUnits/tolvasVideo.mp4";
-import AcordeonItem from '../unitComponents/AcordeonItem';
-import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
+import AcordeonItem from "../unitComponents/AcordeonItem";
+import binUnit1 from "../../assets/images/BinUnits/binUnit1.png";
+import BinSelector from "../BinUnits/BinSelector";
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 ---
-<div class="w-full flex flex-col items-center justify-center font-bold mt-0 md:mt-20">
-    <div class="bg-blueMain text-white gap-4 flex flex-col md:flex md:flex-row w-full justify-between items-center px-4 pt-4 md:p-8">
-        <h1 class="lg:text-4xl text-2xl text-start w-full">From 10 or 20 tons</h1>
-        <Image src={img5} alt="" class="md:w-[50%]"/>
-    </div>
-    <div class="justify-end grid grid-cols-12">
-        <div class="hidden lg:block col-span-4"></div>
-        <div class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-3 bg-blueMain lg:rounded-b-2xl px-4 pb-4 pt-2 md:p-8">
-            <div class="col-span-1">
-            <h1 class="lg:text-4xl text-xl text-redBg">
-            TRIASO®<br> <span class="text-white">BIN UNITS</span>
-            </h1>
-            </div>
-            <div class="col-span-2">
-                <p class="lg:text-lg text-base text-grisSubP">High-quality equipment built for durability and efficient material handling.
-                With reinforced steel structures and advanced vibration systems, they ensure optimal performance, 
-                minimal wear, and reduced maintenance, while delivering consistent, reliable results in demanding
-                environments.
-            </p>
-            </div>
-        </div>
-        <div class="col-span-1 hidden lg:block"></div>
-    </div>
-    <div class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 lg:text-lg text-base font-normal mt-10">
-        <h1 class="text-center text-grisT">Triaso® Bin Units are essential for efficient material handling in various industrial
-             applications. Designed for optimal storage and transfer of aggregates,
-              they ensure reliable performance in demanding environments. Ideal for asphalt plants,
-               aggregate processing, and related applications, these units feature durable construction
-                and customizable configurations. They provide smooth material flow, low maintenance, 
-                and long-lasting performance, making them perfect for the asphalt industry.
+
+<div
+  class="w-full flex flex-col items-center justify-center font-bold mt-0 md:mt-20"
+>
+  <div
+    class="bg-blueMain text-white gap-4 flex flex-col md:flex md:flex-row w-full justify-between items-center px-4 pt-4 md:p-8"
+  >
+    <h1 class="lg:text-4xl text-2xl text-start w-full">From 10 or 20 tons</h1>
+    <Image src={img5} alt="" class="md:w-[50%]" />
+  </div>
+  <div class="justify-end grid grid-cols-12">
+    <div class="hidden lg:block col-span-4"></div>
+    <div
+      class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-3 bg-blueMain lg:rounded-b-2xl px-4 pb-4 pt-2 md:p-8"
+    >
+      <div class="col-span-1">
+        <h1 class="lg:text-4xl text-xl text-redBg">
+          TRIASO®<br />
+          <span class="text-white">BIN UNITS</span>
         </h1>
-        <div>
-            <video src={Video1} autoplay muted></video>
-        </div>
+      </div>
+      <div class="col-span-2">
+        <p class="lg:text-lg text-base text-grisSubP">
+          High-quality equipment built for durability and efficient material
+          handling. With reinforced steel structures and advanced vibration
+          systems, they ensure optimal performance, minimal wear, and reduced
+          maintenance, while delivering consistent, reliable results in
+          demanding environments.
+        </p>
+      </div>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-5 md:gap-10 items-start justify-center max-w-7xl mx-auto px-8">
-        <div class="col-span-2 flex justify-start md:justify-center">
-            <Image src={binUnit1} alt="" class="w-3/4 md:w-full"/>
-        </div>
-        <div class="col-span-3 flex flex-col items-start h-full justify-center md:pl-0">
-            <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>Bin Units</h1><br>
-            <p class="text-lg md:text-xl font-thin text-grisT text-justify">Our bin units are equipped with advanced dosing systems designed for optimal
-                 precision and reliability. These systems ensure accurate material flow and
-                  distribution, meeting the demands of even the most stringent project
-                   requirements.
-            </p><br>
-            <div class="w-full flex flex-col gap-3 md:gap-6">
-                <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Automated Controls" content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Anti-Clogging Mechanism" content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Energy-Efficient Operation" content="Engineered to optimize power usage, reducing operational costs while maintaining high performance.">
-                </AcordeonItem>
-            </div>
-        </div>
-
+    <div class="col-span-1 hidden lg:block"></div>
+  </div>
+  <div
+    class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 lg:text-lg text-base font-normal mt-10"
+  >
+    <h1 class="text-center text-redBg text-2xl md:text-3xl font-bold">
+      Portable and relocatable systems designed to adapt to any site, anytime
+    </h1>
+    <BinSelector />
+  </div>
+  <div
+    class="flex flex-col md:grid md:grid-cols-2 justify-center my-5 md:my-10"
+  >
+    <div class="flex justify-center items-center w-full">
+      <div class="bg-blueMain md:rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
+        <h1 class="text-white font-bold text-2xl md:text-3xl">
+          Seamless Integration with <br />Other Systems
+        </h1>
+        <br />
+        <p class="text-grisSubP text-sm md:text-lg font-bold">
+          Triaso® asphalt plants are designed to integrate seamlessly with
+          bins, conveyors, asphalt tanks, etc. This enables synchronized
+          operations and a consistent flow of hot-mix across your processing
+          system.
+        </p>
+      </div>
     </div>
-    <div class="flex flex-col md:grid md:grid-cols-2 justify-center my-5 md:my-10">
-        <div class="flex justify-center items-center w-full">
-            <div class="bg-blueMain md:rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
-                <h1 class="text-white font-bold text-2xl md:text-3xl">Seamless Integration with <br>Other Systems</h1>
-                <br>
-                <p class="text-grisSubP text-sm md:text-lg font-bold">
-                    Triaso® asphalt plants are designed to integrate seamlessly with bins, conveyors, asphalt tanks, 
-                    etc. 
-                    This enables synchronized operations and a consistent flow of hot-mix across your processing
-                     system.
-                </p>
-            </div>
-        </div>
-        <div class="w-full">
-                <Image src={img2} alt="" class="object-cover w-full"/>
-        </div>
+    <div class="w-full">
+      <Image src={img2} alt="" class="object-cover w-full" />
     </div>
-    <div class="flex flex-col items-center justify-center mt-10 max-w-7xl mx-auto px-8 text-black gap-10">
-        <h1 class="lg:text-3xl text-lg">Fully Customizable Bin Units</h1>
-        <div class="grid grid-cols-2 gap-0 md:gap-10 lg:gap-44">
-            <ul class="pl-8 list-disc text-sm md:text-lg">
-                <li>Grizzlies</li>
-                <li>Bin level indicators</li>
-                <li>Adjustable depth control gates</li>
-                <li>Cable trays</li>
-                <li>Bulkheads <span class="hidden md:block">(available in full height)</span></li>
-                <li>Self-relieving feeder throats</li>
-                <li>Bin dividers</li>
-                <li>Walkways</li>
-            </ul>
-            <ul class="pl-8 list-disc text-sm md:text-lg">
-                <li>Bin covers</li>
-                <li>Built-in retaining walls</li>
-                <li>Air cannons</li>
-                <li>Moisture probes</li>
-                <li>Wire mesh guarding</li>
-                <li>Bin vibrators</li>
-                <li>Bin extensions</li>
-                <li>Built-in scalping screens</li>
-            </ul>
-        </div>
-        <LearnBtn />
+  </div>
+  <div
+    class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-center"
+  >
+    <video src={Video1} autoplay muted></video>
+    <LearnBtn />
+  </div>
+  <div
+    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl px-8 mx-auto py-10 items-center justify-center"
+  >
+    <div>
+      <img src={bin2.src} alt="" />
     </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center jsutify-center mt-10 lg:gap-44">
-        <div class="bg-blueMain p-8 lg:rounded-r-2xl">
-            <h1 class="text-white lg:text-3xl text-xl">Optimized for Efficiency and Safety</h1><br>
-            <p class="text-grisSubP lg:text-lg text-base text-justify">Triaso® Bin Units are engineered not only for efficiency but also for safety. 
-                Their design includes features that minimize the risk of material spillage or buildup, 
-                contributing to a safer working environment. Easy-to-operate discharge mechanisms and 
-                strategically placed access points ensure that maintenance and material loading can be 
-                performed safely and efficiently, reducing downtime and enhancing workplace safety standards.</p>
-        </div>
-        <div class="bg-grisT p-8 lg:rounded-l-2xl">
-            <h1 class="text-white lg:text-3xl text-xl">Efficient Bulk Storage</h1><br>
-            <p class="text-grisSubP lg:text-lg text-base text-justify">Triaso® Bin Units provide an efficient
-                 and organized way to store bulk materials, ensuring quick and easy access for loading and 
-                 transfer. With their large capacities, these units are ideal for storing aggregates, 
-                 recycled materials, and other bulk substances in a compact and organized manner, 
-                 for asphalt plants, they help to streamline material handling, reducing storage space 
-                 requirements while maintaining high operational efficiency.
-                </p>
-        </div>
-
+    <div>
+      <h2 class="font-bold text-grisT text-lg md:text-xl">
+        Powder Additives Feeders
+      </h2><br />
+      <p class="font-semibold text-grisP text-base md:text-lg">
+        Triaso® Powder Additives Feeders provide efficient and reliable storage
+        and dispensing of powder-based materials. Designed for easy integration
+        with your existing systems, they ensure consistent flow and precise
+        dosing of additives, improving overall production efficiency with
+        minimal maintenance.
+      </p><br />
+      <LearnBtn />
     </div>
+  </div>
+  <TwoColumnSection
+    leftBg="bg-blueMain"
+    rightBg="bg-redBg"
+    imageSrc={Tred.src}
+    imageAlt="Red T icon"
+    imageWidth="150px"
+  >
+    <div slot="left" class="flex flex-col justify-center gap-3">
+      <h1 class="text-xl md:text-2xl">Optimized for Efficiency and Safety</h1>
+      <p class="text-base md:text-lg">
+        Triaso® Bin Units are engineered for both efficiency and safety. Their
+        design minimizes the risk of material spillage and buildup, ensuring a
+        cleaner and safer work environment. Easy-to-operate discharge systems
+        and strategically positioned access points allow maintenance and
+        material loading to be performed safely and efficiently, reducing
+        downtime and reinforcing workplace safety standards.
+      </p>
+    </div>
+    <div slot="right" class="flex flex-col justify-center gap-3">
+      <h1 class="text-xl md:text-2xl">Efficient Bulk Storage</h1>
+      <p class="text-base md:text-lg">
+        Triaso® Bin Units provide an efficient and organized solution for
+        storing bulk materials, ensuring quick and easy access for loading and
+        transfer. Their large capacities make them ideal for aggregates,
+        recycled materials, and other bulk substances. In asphalt plants, they
+        optimize material handling, reduce storage space requirements, and
+        maintain high operational efficiency.
+      </p>
+    </div>
+  </TwoColumnSection>
 </div>

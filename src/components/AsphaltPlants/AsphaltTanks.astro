@@ -1,113 +1,117 @@
 ---
-import Image from 'astro/components/Image.astro';
-import img2 from '../../assets/images/AsphaltPlant/Aislamiento.webp';
-import img3 from '../../assets/images/AsphaltPlant/tanqueV.webp';
-import img4 from '../../assets/images/AsphaltPlant/tanks1.webp';
-import img5 from '../../assets/images/AsphaltPlant/agitators1.webp';
-
+import Image from "astro/components/Image.astro";
+import img2 from "../../assets/images/AsphaltPlant/Aislamiento.webp";
+import img3 from "../../assets/images/AsphaltPlant/tanqueV.webp";
+import img4 from "../../assets/images/AsphaltPlant/tanks1.webp";
+import img5 from "../../assets/images/AsphaltPlant/agitators1.webp";
+import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.png";
+import ASVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
-<div class="w-full flex flex-col items-center justify-center font-bold max-w-7xl mx-auto px-8 mt-20">
-    <h1 class="text-xl md:text-4xl">Asphalt Storage Tanks</h1>
-    <div class="w-full flex flex-col items-start justify-center mt-10 p-8 md:p-10 text-grisT bg-white md:rounded-2xl">
-        <h1 class="text-xl md:text-3xl text-black md:mb-4">Options</h1>
-        <div class="flex flex-col xl:flex-row items-start justify-between gap-8 w-full">
-            <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                <h1>Exterior</h1>
-                <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                    <li>OSHA-compliant railings</li>
-                    <li>Aesthetic side panels</li>
-                </ul>
-            </div>
-            <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                <h1>General System</h1>
-                <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                    <li>Vapor condensers</li>
-                    <li>Manual valves</li>
-                </ul>
-            </div>
-             <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                <h1 class="text-white hidden md:block">General System</h1>
-                <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                    <li>Vapor condensers</li>
-                    <li>Manual valves</li>
-                </ul>
-            </div>
-            <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                <h1>Heating Systems</h1>
-                <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                    <li>Direct fire</li>
-                    <li>
-                        <ul class="text-base md:text-lg font-normal pl-8 list-disc text-grisP">
-                            <li>Heating with LP gas (propane)</li>
-                            <li>Heating with diesel</li>   
-                        </ul>
-                    </li>
-                    <li>Oil heater</li>
-                    <li>Heat transfer</li>
-                </ul>
-            </div>
-        </div>
-        <h1 class="text-lg lg:text-2xl mb-4">Incorporators and agitators</h1>
-        <ul class="flex list-disc w-full gap-1 md:gap-10 pl-8 font-normal flex-col md:flex-row">
-            <li>Rubber incorporators</li>
-            <li>Agitators for any application</li>
-            <li>Incorporators for all types of polymers</li>
-        </ul>
-        <Image src={img4} alt="" class="mt-4 hidden md:block"/>
-    </div>
-    <Image src={img4} alt="" class="mt-4 block md:hidden"/>
-    <div class="grid grid-cols-1 xl:grid-cols-2 justify-center items-start gap-8 mt-20">
-        <div class="flex flex-col items-start justify-center text-base lg:text-lg text-grisT gap-4">
-            <h1 class="text-black text-xl lg:text-2xl mb-4">AGITATORS FOR ADDITIVES <br> AND POLYMERS</h1>
-            <div class="bg-white flex flex-col gap-4 rounded-2xl lg:text-lg text-base p-4">
-                <h2>Designed for a homogeneous mixture of additives and polymers,
-                     the agitator ensures uniform distribution of all components 
-                     within the asphalt.</h2>
-                <ul class="font-normal">
-                    <li class="list-disc ml-4">Two 5 Hp agitators for:</li>
-                    <li>
-                        <ul class="ml-4">
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Speeding up heating and homogenizing asphalt temperature.</li>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating type 2 polymers: natural latex, SBR, neoprene, etc.</li>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Incorporating additives such as:</li>
-                        
-                        <ol class="ml-8">
-                            <li>Rejuvenator for recycled asphalts.</li>
-                            <li> Asphalt softener.</li>
-                            <li>For warm mix applications.</li>
-                            <li> Adhesion promoter.</li>
-                            <li> Etc.</li>
-                        </ol>
-                        <li class="relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:border before:border-grisT before:bg-transparent">Maintaining homogeneity in polymer-modified asphalts.</li>
-                    </ul>
-                    </li>
-                </ul>
-                <Image src={img5} alt="" class="rounded-2xl mx-5 object-cover"/>
-            </div>
-            <div class="grid grid-cols-3">
-                <div class="col-spa-1 flex items-center">
-                    <Image src={img2} alt="" class="h-[90%]"/>
-                </div>
-                <div class="col-span-2 bg-white rounded-2xl p-4">
-                    <h1 class="text-black">Two inches fiberglass insulation</h1><br>
-                    <p class="text-justify">Our asphalt storage tanks feature Two-inch fiberglass insulation,
-                         designed for superior performance in minimizing heat loss and maintaining 
-                         consistent temperatures. This durable, energy-efficient insulation ensures 
-                         your asphalt remains at the optimal temperature, ready for use. Additionally, 
-                         the exterior is reinforced with a stainless steel sheet lining, providing enhanced
-                          durability and protection against harsh external conditions.</p>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col justify-start text-base lg:text-lg text-grisT h-[100%]">
-            <div class="bg-grisT text-white rounded-2xl p-4 md:p-8 w-full">
-              <h1 class="text-xl lg:text-4xl">Fully Versatile and <br> Customizable</h1>
-              <p class="text-grisSubP mt-4">Our asphalt tanks are designed to meet your specific needs. We can fully customize them,
-                from color and capacity to the type of heating system and intended use. Whether you need a 
-                standard solution or a tailor-made design, we ensure your tank is built to fit your exact
-                 requirements—with the option of stationary vertical asphalt tanks or mobile asphalt tanks.</p>
-            </div>
-            <Image src={img3} alt="" class="w-full md:h-[100%] self-center mt-4 md:mt-0"/>
+
+<div
+  class="w-full flex flex-col items-center justify-center font-bold max-w-7xl mx-auto px-8 mt-20"
+>
+  <h1 class="text-xl md:text-4xl py-10">Asphalt Storage Tanks</h1>
+  <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
+      <div class="flex flex-col items-start justify-center gap-10 md:gap-20">
+        <div class="flex flex-col items-center justify-center">
+          <div
+            class="flex text-5xl font-normal justify-start items-baseline w-full"
+          >
+            12
+            <h1>-</h1>
+            3
+            <p class="text-sm font-normal ml-3">thousand gallons</p>
           </div>
+          <p class="text-black font-thin text-start w-full">
+            Asphalt storage capacity
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+          <div
+            class="flex text-5xl font-normal justify-start items-baseline w-full"
+          >
+            220
+            <p class="text-sm font-normal ml-3">°C</p>
+          </div>
+          <p class="text-black font-thin text-start w-full">
+            Maximum achievable temperature
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+          <div
+            class="flex text-5xl font-normal justify-start items-baseline w-full gap-2"
+          >
+            1
+            <p>&</p>
+            2.4
+            <p>.</p>
+            <p class="text-sm font-normal ml-3">million</p>
+          </div>
+          <p class="text-black font-thin text-start w-full">Btu/hr capacity</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center">
+        <div>
+          <img src={ASOdom.src} alt="" />
+        </div>
+      </div>
     </div>
+    <div
+      class="w-full bg-[url(/BgAST.png)] bg-cover bg-no-repeat bg-center p-10"
+    >
+      <h2 class="font-bold text-white text-xl md:text-2xl">
+        Fully Customizable Asphalt Storage Tanks
+      </h2><br />
+      <div class="w-full grid grid-cols-2 gap-6">
+        <div class="w-full text-sm md:text-base">
+          <h3 class="font-bold text-white">Heating System</h3>
+          <ul class="list-disc ml-6 font-thin text-white">
+            <li>Direct fire</li>
+            <li class="list-none">
+              <ul class="list-disc ml-10">
+                <li>Heating with LP gas (propane)</li>
+                <li>Heating with diesel</li>
+              </ul>
+            </li>
+            <li>Oil heater</li>
+          </ul>
+        </div>
+        <div class="w-full text-sm md:text-base">
+          <h3 class="font-bold text-white">Exterior</h3>
+          <ul class="list-disc ml-6 font-thin text-white">
+            <li>OSHA-compliant railings</li>
+            <li>Aesthetic side panels</li>
+            <li>On legs or on wheels</li>
+          </ul>
+        </div>
+        <div class="w-full text-sm md:text-base">
+          <h3 class="font-bold text-white">Incorporators and agitators</h3>
+          <ul class="list-disc ml-6 font-thin text-white">
+            <li>Rubber incorporators</li>
+            <li>Incorporators for all types of polymers</li>
+            <li>Agitators for any application</li>
+          </ul>
+        </div>
+        <div class="w-full text-sm md:text-base">
+          <h3 class="font-bold text-white">General System</h3>
+          <ul class="list-disc ml-6 font-thin text-white">
+            <li>Vapor condensers</li>
+            <li>Manual valves</li>
+            <li>With submersible pump</li>
+            <li>Computerized control system</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex flex-col justify-center items-center">
+    <video src={ASVideo} autoplay muted></video><br />
+    <LearnBtn />
+  </div>
 </div>
