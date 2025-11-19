@@ -11,6 +11,13 @@ import siloSealed from "../../assets/images/HotMix/siloSealed.png";
 import siloUse from "../../assets/images/HotMix/siloUse.png";
 import siloCone from "../../assets/images/HotMix/siloCone.png";
 import selfSilo from "../../assets/images/HotMix/HMinclinado.mp4";
+import stationarySilo from "../../assets/images/AsphaltPlant/silos3.webp";
+
+import arrowIcon from "../../assets/images/HotMix/icon1.png";
+import timeIcon from "../../assets/images/HotMix/icon2.png";
+import lockIcon from "../../assets/images/HotMix/icon3.png";
+import noCrane from "../../assets/images/HotMix/icon4.png"
+import siloIcon from "../../assets/images/HotMix/icon5.png"
 ---
 
 <div
@@ -69,7 +76,7 @@ import selfSilo from "../../assets/images/HotMix/HMinclinado.mp4";
                 </div>
             </div>
         </div>
-        
+
         <div class="flex flex-col gap-6">
             <div
                 class="flex flex-col sm:flex-row justify-between bg-[#fffaeb] p-5 rounded-md gap-4"
@@ -124,69 +131,121 @@ import selfSilo from "../../assets/images/HotMix/HMinclinado.mp4";
         </div>
     </div>
 
-
-    <div class="flex flex-col items-center justify-center">
-        <h1 class="lg:text-4xl text-2xl text-end w-full mb-8 mt-10">
-            SELF-ERECTING SYSTEM
-        </h1>
-        <p class="lg:text-lg text-base mb-4 text-justify md:text-start">
-            The self-erecting silo is equipped with telescopic hydraulic
-            cylinders, enabling quick and efficient lifting. With a setup time
-            of just 10 minutes, it ensures rapid deployment. The hydraulic
-            locking bolts provide secure vertical and horizontal positioning,
-            delivering stability and precision during operation.
-        </p>
-        <div
-            class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start md:gap-4"
-        >
-            <Image src={img4} alt="" class="rounded-2xl w-full col-span-1" />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div>
+            <div class="flex flex-col">
+                <p class="text-end text-2xl">STATIONARY SILO</p>
+                <Image src={stationarySilo} alt="Stationary silo" />
+            </div>
+        </div>
+        <div>
             <div
-                class="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4 justify-start items-start"
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center items-stretch max-w-6xl mx-auto"
             >
                 <div
-                    class="flex flex-col gap-2 col-span-1 md:col-span-3 md:flex-row"
+                    class="w-full max-w-[240px] mx-auto max-h-[280px] bg-white p-5 rounded-md flex flex-col items-center text-center shadow-sm"
                 >
-                    <div class="bg-white rounded-2xl p-4 self-start">
-                        <p>Telescopic hydraulic cylinders for lifting.</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 self-start">
-                        <p>Telescopic hydraulic cylinders for lifting.</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-4 self-start">
-                        <p>Telescopic hydraulic cylinders for lifting.</p>
-                    </div>
+                    <Image
+                        src={arrowIcon}
+                        alt="Arrow icon"
+                        class="w-20 md:w-24 lg:w-28 object-contain"
+                    />
+                    <p class="mt-4 text-md md:text-base font-medium">
+                        Telescopic hydraulic cylinders for lifting.
+                    </p>
                 </div>
+
                 <div
-                    class="flex flex-col items-center justify-center w-fit col-span-1 md:hidden"
+                    class="w-full max-w-[240px] mx-auto max-h-[280px] bg-white p-5 rounded-md flex flex-col items-center text-center shadow-sm"
                 >
-                    <Image src={img2} alt="" class="w-[80%]" />
-                    <h1 class="lg:text-3xl text-xl text-blueMain text-center">
-                        Six inches
-                    </h1>
-                    <h2 class="lg:text-2xl text-lg text-black text-center">
-                        fiberglass insulation
-                    </h2>
+                    <Image
+                        src={timeIcon}
+                        alt="Watch"
+                        class="w-20 md:w-24 lg:w-28 object-contain"
+                    />
+                    <p class="mt-4 text-md md:text-base font-medium">
+                        Lifting time of 10 minutes
+                    </p>
+                </div>
+
+                <div
+                    class="w-full max-w-[240px] mx-auto max-h-[280px] bg-white p-5 rounded-md flex flex-col items-center text-center shadow-sm"
+                >
+                    <Image
+                        src={lockIcon}
+                        alt="Lock"
+                        class="w-20 md:w-24 lg:w-28 object-contain"
+                    />
+                    <p class="mt-4 text-md md:text-base font-medium">
+                        Vertical and horizontal positioning with hydraulic
+                        locking bolts
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex flex-col items-center justify-center">
-        <h1 class="lg:text-4xl text-2xl text-end w-full mb-8 md:mt-0 mt-10">
-            SEMI-STATIONARY SILO
-        </h1>
-        <p class="lg:text-lg text-base mb-4 text-justify">
-            The semi-stationary is the ultimate silo, designed to offer
-            unparalleled efficiency, flexibility, and durability for asphalt
-            storage. Combining advanced technology with robust construction,
-            this silo provides seamless operation in both stationary and mobile
-            setups. Engineered for high performance, it ensures maximum
-            productivity while maintaining the highest standards of quality and
-            safety. Whether for large-scale projects or relocatable needs, the
-            Ultimate Silo delivers unmatched reliability and convenience.
-        </p>
-        <div class="grid grid-cols-1 lg:grid-cols-4">
-            <div class="col-span-1"></div>
-            <Image src={img5} alt="" class="col-span-3" />
+</div>
+<div class="bg-[#383838] w-full">
+    <div class="mx-auto">
+        <div class=" text-white p-8 md:p-12">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+            >
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    <div
+                        class="border-2 border-white rounded-xl p-6 flex items-center h-full"
+                    >
+                        <p class="font-bold text-lg leading-tight">
+                            With support structure, high enough to accommodate
+                            dump trucks
+                        </p>
+                    </div>
+                    <div
+                        class="border-2 border-white rounded-xl p-6 flex flex-col justify-center h-full"
+                    >
+                        <p class="font-bold text-lg leading-tight mb-4">
+                            Gate with pneumatic system to release the hot mix to
+                            the trucks
+                        </p>
+                        <p class="text-xs text-gray-300 leading-snug">
+                            Does not include compressor and air tank, it uses
+                            the air system from the asphalt plant.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-8 lg:pl-12">
+                    <div class="flex items-center gap-6">
+                        <div class="shrink-0">
+                            <Image
+                                src={noCrane}
+                                alt="No cranes"
+                                class="w-20 h-20 object-contain"
+                            />
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold">
+                            No cranes required for installation
+                        </h3>
+                    </div>
+                    <div class="flex items-center justify-between gap-6">
+                        <h2
+                            class="text-2xl font-bold leading-tight"
+                        >
+                            The most versatile and mobile silo on the market.
+                        </h2>
+                        <div class="shrink-0">
+                            <Image
+                                src={siloIcon}
+                                alt="Silo"
+                                class="w-20 h-20 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="flex justify-center">
+    <LearnBtn/>
 </div>
