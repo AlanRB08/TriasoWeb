@@ -25,7 +25,7 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 w-full"
     >
       <video src={BurnerVideo} autoplay class="w-1/2"></video>
-      <h2 class="font-bold text-center">
+      <h2 class="font-bold text-center my-5">
         From 6 to 125 million Btu/Hr, with preheater and filter
       </h2>
     </div>
@@ -33,41 +33,49 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10 max-w-7xl mx-auto px-8 w-full"
     >
       <div
-        class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+        class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs text-grisPPP"
       >
-        <p>
-          Our burners regulate <strong class="text-black"
-            >100% of the air for combustion</strong
-          > without relying on the drum's exhaust system. This ensures total combustion
-          and <strong class="text-black">100% fuel utilization</strong>,
-          effectively preventing various types of problems.
+        <h2 class="text-black font-bold text-center">Low NOx emissions</h2>
+        <div class="border-t-2 border-black my-2"></div>
+        <p class="text-center lg:text-justify md:text-justify">
+          <strong class="text-[#14437d]">Low NOx emissions </strong>(nitrogen
+          oxides) are achieved, minimizing the release of this greenhouse gas,
+          which is strictly regulated in many regions, mainly in urban areas.
+          The system can be equipped with a flame protection module that further
+          reduces NOx levels, reaching near-zero emissions.
+          <br />
+          By achieving total combustion, several issues are avoided:
         </p>
-        <ul class="pl-4 pt-4">
+        <ul class="pl-4 pt-4 text-[#14437d] text-center lg:text-justify md:text-justify">
           <li class="list-disc">Atmospheric pollution.</li>
           <li class="list-disc">
-            Contamination of the asphalt mix with unburned fuel.
+            Contamination of the hot-mix with unburned fuel.
           </li>
           <li class="list-disc">
-            Clogging in the baghouse and a high risk of fire.
+            Baghouse clogging in the baghouse and a increased fire risk.
           </li>
         </ul>
       </div>
+
       <div
-        class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+        class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs text-grisPPP"
       >
-        <p>
-          <strong class="text-black">Low NOx emissions </strong>(nitrogen
-          oxides), a greenhouse gas that is highly regulated in most regions. It
-          can be equipped with a flame protection system to reduce NOx to levels
-          allowed by the authorities in your region.
+        <h2 class="text-black font-bold text-center">100% regulated air</h2>
+        <div class="border-t-2 border-black my-2"></div>
+        <p class="text-center lg:text-justify md:text-justify">
+          The burner regulates <strong class="text-[#c91c1c]"
+            >100% of the air for combustion</strong
+          > without relying on the drum's exhaust system. This ensures complete combustion
+          and <strong class="text-[#c91c1c]">100% fuel utilization.</strong>
         </p>
-        <ul class="pl-4 pt-4">
+        <ul class="pl-4 pt-4 text-center lg:text-justify md:text-justify">
           <li class="list-disc">
-            Sealed installation, without cold air inlets, saving the fuel used
-            to heat it, allowing for precise and efficient carburation.
+            A sealed installation prevents cold air from entering, that would
+            otherwise be used to heat it and allowing precise, efficient
+            combustion.
           </li>
           <li class="list-disc">
-            Efficiency is not affected by changes in weather temperature
+            Efficiency remains stable regardless of temperature changes
             throughout the day.
           </li>
         </ul>
@@ -83,7 +91,7 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       <div class="w-full flex justify-center">
         <img src={flag.src} alt="" class="w-[200px]" />
       </div>
-      <p class="text-white font-bold text-lg lg:text-xl">
+      <p class="text-white font-bold text-center lg:text-justify md:text-justify text-lg lg:text-xl">
         Our latest burner innovation features an oxygen sensor that
         automatically regulates excess oxygen to no more than 3%, eliminating
         the need for manual fuel carburization adjustment when relocating the
@@ -93,7 +101,7 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
     </div>
     <div class="w-full bg-[url(/HeroFH.png)] bg-no-repeat bg-center bg-cover">
       <div class="w-full max-w-7xl mx-auto px-8 py-10">
-        <h2 class="font-bold text-white text-xl md:text-2xl">
+        <h2 class="font-bold text-white text-center lg:text-start md:text-start text-xl md:text-2xl">
           FUEL PREHEATERS
         </h2>
       </div>
@@ -101,7 +109,7 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       <div
         class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10"
       >
-        <div class="w-full text-white font-thin text-base md:text-lg">
+        <div class="w-full text-white font-thin text-base text-center lg:text-start md:text-start md:text-lg">
           <p>
             With our preheaters, we reduce fuel viscosity, ensuring proper
             atomization and clean combustion — without delays or the need for
@@ -112,7 +120,7 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
           class="w-full text-white font-thin text-base md:text-lg flex justify-center items-start gap-10"
         >
           <img src={ficha.src} alt="" class="w-[60px] h-[60px]" />
-          <p>
+          <p class="text-center lg:text-start md:text-start">
             We raise fuel temperature up to 40 °C, even with flow rates up to
             840 liters per hour.
           </p>
@@ -121,8 +129,8 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       <div
         class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10 max-w-7xl mx-auto px-8 items-center"
       >
-        <div class="w-full bg-blueMain p-6 text-white rounded-lg h-[200px]">
-          <h2 class="font-bold text-base md:text-lg">
+        <div class="w-full bg-blueMain p-6 text-white rounded-lg h-auto ">
+          <h2 class="font-bold text-base text-center lg:text-start md:text-start md:text-lg">
             Problems caused by not preheating low-cost fuels:
           </h2>
           <ul class="list-disc ml-6 text-sm md:text-base">
@@ -145,27 +153,27 @@ import preHeat from "../../assets/images/Burners/preHeat.png";
       </div>
     </div>
     <div class="w-full bg-bgBeige py-10">
-      <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-2 gap-10">
+      <div class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-10">
         <div class="w-full">
-          <div class="w-3/5 flex gap-6 justify-center items-center">
+          <div class="w-3/5 flex gap-6 justify-center items-center mx-auto lg:mx-0 md:mx-0">
             <img src={wordIcon.src} alt="" class="w-[60px] h-[60px]" />
             <h2 class="text-base md:text-lg font-bold text-black">
               Efficient and environmentally responsible
             </h2>
           </div><br />
-          <p class="font-thin text-grisT">
+          <p class="font-thin text-grisT text-center lg:text-start md:text-start">
             You get lower fuel consumption and cleaner operation, producing
             fewer NOx emissions without compromising performance.
           </p>
         </div>
         <div class="w-full">
-          <div class="w-3/5 flex gap-6 justify-center items-center">
+          <div class="w-3/5 flex gap-6 justify-center items-center mx-auto lg:mx-0 md:mx-0">
             <img src={batchIcon.src} alt="" class="w-[60px] h-[60px]" />
             <h2 class="text-base md:text-lg font-bold text-black">
               Included in every plant, not as a costly add-on
             </h2>
           </div><br />
-          <p class="font-thin text-grisT">
+          <p class="font-thin text-grisT text-center lg:text-start md:text-start">
             Other brands offer total-air burners and preheaters as expensive
             extras. At Triaso®, we include them as standard equipment in every
             plant configuration — because clean combustion shouldn’t be
