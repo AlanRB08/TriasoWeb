@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/IntegralAsphalt/single.png";
 import img1 from "../../assets/images/RapBins/RAProv4.png";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const RPOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +51,11 @@ const RPOdometer = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -59,12 +70,19 @@ const RPOdometer = () => {
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+<<<<<<< HEAD
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">M Tons</p>
             </div>
             <p className="text-start text-grisP">RAP capacity</p>
+=======
+              <Odometer value={value1} format="(,ddd)" duration={2000} />
+              <p className="text-sm font-normal ml-3">M Tons</p>
+            </div>
+            <p className="text-grisP">RAP capacity</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
 
           <div className="flex flex-col items-center justify-center">
@@ -78,6 +96,7 @@ const RPOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
+<<<<<<< HEAD
             <img src={img1.src} alt="" />
           </div>
         </div>
@@ -86,6 +105,14 @@ const RPOdometer = () => {
         <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
           Your best business begins here
         </h1>
+=======
+            <img src={single.src} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className='my-20'>
+        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Your best business begins here</h1>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       </div>
     </div>
   );

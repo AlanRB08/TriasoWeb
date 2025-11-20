@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Hero1 from "../../assets/images/IntegralAsphalt/Hero1.jpg";
 import Hero2 from "../../assets/images/IntegralAsphalt/Hero2.jpg";
 import Hero3 from "../../assets/images/IntegralAsphalt/Hero3.jpg";
 import Hero4 from "../../assets/images/IntegralAsphalt/Hero4.jpg";
+=======
+import React, { useState, useEffect } from 'react';
+import Hero1 from '../../assets/images/IntegralAsphalt/Hero1.jpg';
+import Hero2 from '../../assets/images/IntegralAsphalt/Hero2.jpg';
+import Hero3 from '../../assets/images/IntegralAsphalt/Hero3.jpg';
+import Hero4 from '../../assets/images/IntegralAsphalt/Hero4.jpg';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const SliderHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const Sliders = [
     {
+<<<<<<< HEAD
       titulo: "Ideal for pothole repair programs",
       texto:
         "An efficient solution for pothole patching and road maintenance, with immediate production of asphalt mix directly on the job site.",
@@ -30,6 +39,30 @@ const SliderHero = () => {
       titulo: "Hassle-free transportation, unlimited production",
       texto:
         "This compact asphalt plant is designed to move easily over rough terrain and tight spaces, eliminating the logistical barriers that other equipment can’t overcome. Ideal for projects in remote or hard-to-reach locations.",
+=======
+      titulo: 'Ideal for pothole repair programs',
+      texto:
+        'An efficient solution for pothole patching and road maintenance, with immediate production of asphalt mix directly on the job site.',
+      img: Hero1,
+      
+    },
+    {
+      titulo: 'Zero emissions, ready to operate in any place',
+      texto:
+        'Designed to operate in the most inaccessible locations, this all-in-one asphalt plant easily handles the narrowest and most challenging roads.',
+      img: Hero2,
+    },
+    {
+      titulo: 'Mobility that drives your work',
+      texto:
+        'Thanks to its integrated design and optimized structure, this asphalt plant can be easily relocated without complex maneuvers or special equipment, allowing operations to start where others simply can’t reach.',
+      img: Hero3,
+    },
+    {
+      titulo: 'Hassle-free transportation, unlimited production',
+      texto:
+        'This compact asphalt plant is designed to move easily over rough terrain and tight spaces, eliminating the logistical barriers that other equipment can’t overcome. Ideal for projects in remote or hard-to-reach locations.',
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       img: Hero4,
     },
   ];
@@ -67,7 +100,11 @@ const SliderHero = () => {
 
       {/* Botones navegación */}
       <button
+<<<<<<< HEAD
         aria-label="Previous slide"
+=======
+        aria-label='Previous slide'
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full"
         onClick={() =>
           setCurrentSlide((currentSlide - 1 + Sliders.length) % Sliders.length)
@@ -76,7 +113,11 @@ const SliderHero = () => {
         ‹
       </button>
       <button
+<<<<<<< HEAD
         aria-label="Next slide"
+=======
+      aria-label='Next slide'
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full"
         onClick={() => setCurrentSlide((currentSlide + 1) % Sliders.length)}
       >
@@ -90,7 +131,11 @@ const SliderHero = () => {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full cursor-pointer ${
+<<<<<<< HEAD
               currentSlide === index ? "bg-blueMain" : "bg-white opacity-50"
+=======
+              currentSlide === index ? 'bg-blueMain' : 'bg-white opacity-50'
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             }`}
           />
         ))}

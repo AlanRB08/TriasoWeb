@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import img1 from "../../assets/images/AsphaltPlant/silos1.webp";
 import img2 from "../../assets/images/AsphaltPlant/Aislamiento.webp";
 import Image from "astro/components/Image.astro";
@@ -221,10 +222,92 @@ import siloIcon from "../../assets/images/HotMix/icon5.png";
                     >
                         Vertical and horizontal positioning
                     </p>
+=======
+import img1 from '../../assets/images/AsphaltPlant/silos1.jpg';
+import img2 from '../../assets/images/AsphaltPlant/Aislamiento.png';
+import Image from 'astro/components/Image.astro';
+import img4 from '../../assets/images/AsphaltPlant/silos2.png';
+import img5 from '../../assets/images/AsphaltPlant/silos3.png';
+import img6 from '../../assets/images/AsphaltPlant/segre1.png';
+import LearnBtn from '../unitComponents/LearnBtn.astro';
+---
+<div class="flex flex-col items-center justify-center px-8 lg:px-52 mt-10 md:mt-20 font-bold text-grisT">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <Image src={img1} alt="" class="hidden md:block"/>
+        <div class="p-4 flex flex-col items-center justify-center">
+            <h1 class="lg:text-4xl text-2xl text-redBg w-full text-start">Hot-Mix</h1>
+            <h1 class="lg:text-4xl text-2xl w-full text-start">Storage Silos</h1><br>
+            <p class="text-justify">
+                Relocatable and self-erecting silos offer flexible and efficient solutions
+                 for storage needs in industries such as construction and asphalt production. 
+                 These silos are designed for easy transportation and quick setup, making them 
+                 ideal for projects that require frequent relocation. With a self-erecting system,
+                  they minimize the need for heavy machinery during installation, reducing setup 
+                  time and labor costs.
+            </p>
+            <Image src={img1} alt="" class="block md:hidden"/>
+            <p class="text-justify">
+                Built to withstand harsh environments, 
+                  they ensure reliable storage capacity, optimal material protection, 
+                  and seamless integration into various operations, improving productivity and 
+                  reducing downtime.
+            </p>
+            <LearnBtn />
+        </div>
+
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-6">
+        <div class="hidden md:flex md:flex-col items-center justify-center col-span-1">
+            <Image src={img2} alt="" class="lg:w-full w-1/4"/>
+            <h1 class="lg:text-3xl text-xl text-blueMain text-start">Six inches</h1>
+            <h2 class="lg:text-2xl text-lg text-black text-start">fiberglass insulation</h2>
+        </div>
+        <div class="col-span-1"></div>
+        <div class="col-span-4 bg-white rounded-2xl grid grid-cols-1 lg:grid-cols-2 pl-8 py-8">
+            <div class="flex flex-col gap-4 pr-8">
+                <h1 class="lg:text-2xl text-xl text-black">Even Distribution Without Segregation</h1>
+                <p class="lg:text-base text-sm text-justify">Triaso® silos use a top-mounted batcher that collects a full load
+                     of mix before discharging it in one motion through overlapping clam-style gates.
+                      These gates open rapidly and guide the mix to fall centered, distributing it
+                       evenly across the silo floor. Their cutting action reduces wear and avoids
+                        material buildup. This method prevents segregation, ensures uniform layering,
+                         and maintains the mix’s quality during storage.</p>
+            </div>
+            <Image src={img6} alt="" class="self-start w-full h-auto max-h-[300px] lg:max-h-none object-contain"/>
+        </div>
+
+    </div>
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="lg:text-4xl text-2xl text-end w-full mb-8 mt-10">SELF-ERECTING SYSTEM</h1>
+        <p class="lg:text-lg text-base mb-4 text-justify md:text-start">The self-erecting silo is equipped with telescopic hydraulic cylinders, 
+            enabling quick and efficient lifting. With a setup time of just 10 minutes,
+             it ensures rapid deployment. The hydraulic locking bolts provide secure vertical
+              and horizontal positioning, delivering stability and precision during operation.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-start md:gap-4">
+            <Image src={img4} alt="" class="rounded-2xl w-full col-span-1"/>
+            <div class="col-span-2 grid grid-cols-2 md:grid-cols-3 gap-4 justify-start items-start">
+                <div class="flex flex-col gap-2 col-span-1 md:col-span-3 md:flex-row">
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 self-start">
+                        <p>Telescopic hydraulic cylinders for lifting.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center w-fit col-span-1 md:hidden">
+                    <Image src={img2} alt="" class="w-[80%]"/>
+                    <h1 class="lg:text-3xl text-xl text-blueMain text-center">Six inches</h1>
+                    <h2 class="lg:text-2xl text-lg text-black text-center">fiberglass insulation</h2>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
 <div class="bg-[#383838] w-full">
     <div class="mx-auto">
@@ -288,3 +371,23 @@ import siloIcon from "../../assets/images/HotMix/icon5.png";
 <div class="flex justify-center">
     <LearnBtn />
 </div>
+=======
+    <div class="flex flex-col items-center justify-center">
+        <h1 class="lg:text-4xl text-2xl text-end w-full mb-8 md:mt-0 mt-10">SEMI-STATIONARY SILO</h1>
+        <p class="lg:text-lg text-base mb-4 text-justify">The semi-stationary is the ultimate silo,
+             designed to offer unparalleled efficiency, flexibility, and durability for asphalt storage.
+              Combining advanced technology with robust construction, this silo provides seamless 
+              operation in both stationary and mobile setups. Engineered for high performance, 
+              it ensures maximum productivity while maintaining the highest standards of quality and safety. 
+              Whether for large-scale projects or relocatable needs, the Ultimate Silo delivers 
+              unmatched reliability and convenience.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-4">
+            <div class="col-span-1"></div>
+            <Image src={img5} alt="" class="col-span-3"/>
+        </div>
+        
+    </div>
+
+</div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

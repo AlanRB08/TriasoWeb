@@ -11,7 +11,11 @@ export default function Tab() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
+<<<<<<< HEAD
     <div className="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4">
+=======
+    <div className="w-full grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-8 mt-10 mb-4 md:px-32">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="flex lg:flex-col items-stretch justify-around gap-4 md:gap-10">
         {images.map((img, index) => (
           <button
@@ -19,16 +23,25 @@ export default function Tab() {
             key={index}
             onClick={() => setActiveIndex(index)}
             className={`text-center md:text-start font-normal p-4 rounded-xl md:pr-4 md:w-8/12 text-sm md:text-base ${
+<<<<<<< HEAD
               activeIndex === index
                 ? "border-red-500 text-white bg-blueMain"
                 : "border-transparent bg-white text-grisT"
+=======
+              activeIndex === index ? "border-red-500 text-white bg-blueMain" : "border-transparent bg-white text-grisT"
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             }`}
           >
             {index === 0 ? (
               <>
+<<<<<<< HEAD
                 Mounted on the same <br />
                 chassis{" "}
                 <span className="hidden md:inline">as the drum mixer</span>
+=======
+                Mounted on the same <br/>
+                chassis <span className="hidden md:inline">as the drum mixer</span>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
               </>
             ) : (
               "Self-contained"
@@ -36,16 +49,27 @@ export default function Tab() {
           </button>
         ))}
         <p className="font-bold text-grisT text-base md:text-lg">
+<<<<<<< HEAD
           Self-contained, integrated dust control systems for effective air
           filtration and particle capture in asphalt plants—configurable for
           both portable and stationary setups.
         </p>
+=======
+        Self-contained, integrated dust control systems for effective air filtration and particle capture in asphalt plants—configurable 
+        for both portable and stationary setups.
+        </p>
+        
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       </div>
 
       <img
         src={images[activeIndex].src}
         alt={images[activeIndex].alt}
+<<<<<<< HEAD
         className="border-2 border-blueMain rounded-2xl max-h-[350px] w-full object-contain"
+=======
+        className="border-2 border-blueMain rounded-2xl h-[350px] w-full"
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       />
     </div>
   );

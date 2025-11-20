@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.webp';
 import Whatsbtn from '../unitComponents/Whatsbtn.astro';
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
@@ -6,6 +7,15 @@ import HMI from "../../assets/images/HotMix/HMI.png";
 import LearnBtn from '../unitComponents/LearnBtn.astro';
 import Image from 'astro/components/Image.astro';
 import silo from '../../assets/images/AsphaltPlant/silos1.webp';
+=======
+import fiberGlass from '../../assets/images/AsphaltPlant/Aislamiento.png';
+import Whatsbtn from '../unitComponents/Whatsbtn.astro';
+import Logo from "../../assets/logos/LogoTriasoMX.svg";
+import Card from '../unitComponents/Card.astro';
+import LearnBtn from '../unitComponents/LearnBtn.astro';
+import Image from 'astro/components/Image.astro';
+import silo from '../../assets/images/AsphaltPlant/silos1.jpg';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 import silo1 from '../../assets/images/HotMix/siloCone.png';
 import silo2 from '../../assets/images/HotMix/siloUse.png';
 import silo3 from '../../assets/images/HotMix/siloSealed.png';
@@ -15,12 +25,20 @@ import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import tank from "../../assets/images/AsphaltStorage/SliderStorage/P-3f.webp";
 import AcordeonItem from '../unitComponents/AcordeonItem';
 import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
+<<<<<<< HEAD
 import semiSilo from '../../assets/images/AsphaltPlant/silos3.webp';
 import OSection from '../unitComponents/OSection.astro';
 ---
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
     <div class="flex flex-col items-center justify-center gap-4 mt-8">
         <div class="flex items-center justify-around w-full gap-4 max-w-7xl mx-auto px-8">
+=======
+import semiSilo from '../../assets/images/AsphaltPlant/silos3.png';
+---
+<section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
+    <div class="flex flex-col items-center justify-center gap-4 mt-8">
+        <div class="flex items-center justify-around w-full gap-4 px-8 md:px-36">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             <button class="text-xs md:text-base tab-button-1 py-2 md:px-4 font-bold focus:outline-none"
                     data-tab="tab1" aria-selected="true"> <!-- Cambiado a true -->
                 Computerization
@@ -39,6 +57,7 @@ import OSection from '../unitComponents/OSection.astro';
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT" data-tab-content="tab1">
                 <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center ">
                     <div class="bg-white p-4 font-bold md:rounded-r-2xl px-8 md:px-36 md:border-2 border-black order-2 md:order-1">
+<<<<<<< HEAD
                         <p>Offers automated, precise control for weighing and delivering hot mix,
                              reducing the risk of human error and increasing operational efficiency.
                         </p><br>
@@ -51,13 +70,30 @@ import OSection from '../unitComponents/OSection.astro';
                         <p>
                             Equipped with quick connection contacts for easy setup and maintenance,
                              along with protective signs to shield the electrical components from weather conditions.
+=======
+                        <p>Offers automated, precise control for weighing and delivering hot mix, reducing the risk of
+                             human error and increasing operational efficiency.
+                        </p><br>
+                        <p>
+                            The silo HMI can be connected to the asphalt plant’s computer using industrial protocols
+                             such as Ethernet Industrial, Modbus, and CANopen. If needed, a custom communication 
+                             interface can be integrated for additional protocol requirements.
+                        </p><br>
+                        <p>
+                            Equipped with quick connection contacts for easy setup and maintenance,
+                             along with protective signs to shield the electrical components from weather 
+                             conditions.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                     </div>
                     <div class="w-full h-auto flex justify-center items-center px-8 md:px-36 order-1 md:order-2">
                         <Image src={silo} alt="Silo Image" class={"max-w-[400px] max-h-[600px]"}/>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <OSection/>
+=======
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 <TwoColumnSection
                 leftBg="bg-redBg"
                 rightBg="bg-blueMain"
@@ -76,11 +112,16 @@ import OSection from '../unitComponents/OSection.astro';
                             Quick Adjustments
                         </h1>
                         <p class="text-base md:text-lg">
+<<<<<<< HEAD
                             Allows rapid adjustments to control settings or operating parameters to match project requirements.
+=======
+                            Allows rapid changes to recipes or control settings to match project requirements
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                     </div>
                 </TwoColumnSection>
 
+<<<<<<< HEAD
                 <div class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center gap-2">
                  <Collapsable client:only/>   
                 </div>
@@ -94,6 +135,18 @@ import OSection from '../unitComponents/OSection.astro';
                         </h2>
                         <br>
                         <p class="font-thin text-sm md:text-base relative z-20">
+=======
+                <div class="w-full md:px-52 flex flex-col justify-center gap-2">
+                 <Collapsable client:only/>   
+                </div>
+                <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
+                    <div class="w-full relative h-[250px]">
+                        <h2 class="px-8 md:px-52 text-xl md:text-2xl relative z-20 font-bold">
+                           User Friendly Interface
+                        </h2>
+                        <br>
+                        <p class="px-8 md:px-52 font-thin text-sm md:text-base relative z-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                             Created to offer plant operators a deeper understanding of their operation, this cloud-based platform
                              stores all production data remotely and securely. It gives you the freedom to access detailed
                               performance analytics from any location and any device—whether you're in the office, on the 
@@ -103,11 +156,19 @@ import OSection from '../unitComponents/OSection.astro';
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
+<<<<<<< HEAD
                         <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl mx-auto px-8 skew-y-2 gap-3 md:gap-10">
                             <div class="w-full text-center text-black ">
                                 <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
                                 <p class="text-base md:text-lg">
                                     Visual and audible alarms to alert the operator and personnel when the silo is full.
+=======
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2 gap-3 md:gap-10">
+                            <div class="w-full text-center text-black ">
+                                <h1 class="font-bold text-black text-xl md:text-2xl">Visual and audible alarm for maximum mix level</h1><br>
+                                <p class="text-base md:text-lg">
+                                    Visual and audible alarms to alert the operator and personnel when the silo is fully, preventing tghe conveyor from overloading
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                                 </p>
                             </div>
                             <div class="w-full text-center text-black ">
@@ -134,11 +195,16 @@ import OSection from '../unitComponents/OSection.astro';
              </div>
         <!-- Second Section -->
          <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
+<<<<<<< HEAD
             <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center max-w-7xl mx-auto px-8">
+=======
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center px-8 md:px-36">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 <div class="w-full flex flex-col justify-start items-center gap-6 order-2 md:order-1">
                     <div class="bg-white p-4 font-bold rounded-2xl">
                         <h1 class="text-lg md:text-2xl text-black">Essential Storage Solutions for Efficient Asphalt Operations</h1>
                         <br>
+<<<<<<< HEAD
                         <p class="text-base md:text-lg">They offer a range of benefits, from maintaining the quality of the
                              asphalt mix to improving logistics efficiency and plant productivity.
                         </p><br>
@@ -148,6 +214,19 @@ import OSection from '../unitComponents/OSection.astro';
                               practical flexibility and dependable operation, making it an essential element of any asphalt plant.
                               <br>
                               The result is a clean, consistent flow with every load.
+=======
+                        <p class="text-base md:text-lg">Hot mix storage silos are essential for maintaining the quality and 
+                            efficiency of asphalt production and delivery operations. They offer a
+                            range of benefits, from preserving the integrity of the asphalt mix to
+                            streamlining logistics and enhancing overall productivity.
+                        </p><br>
+                        <p class="text-base md:text-lg">
+                            gned with durability and advanced technology, these silos ensure reliable 
+                            performance under demanding conditions while reducing operational costs and 
+                            downtime. Whether for stationary or mobile use, a silo provides unmatched 
+                            convenience and adaptability, making it a critical component of any asphalt 
+                            plant setup.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                     </div>
                     <div class="w-full bg-white p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-2xl font-bold">
@@ -157,10 +236,16 @@ import OSection from '../unitComponents/OSection.astro';
                         <div class="w-full">
                             <h1 class="text-xl md:text-2xl text-black">Silo Cone</h1>
                             <p class="text-base md:text-lg">
+<<<<<<< HEAD
                                 Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This
                                  design guarantees first-in/first-out discharge, eliminates material buildup on the walls,
                                   and prevents material buildup along the walls, and minimizes mix segregation.
 
+=======
+                                Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. 
+                                This geometry guarantees first-in/first-out discharge, eliminates material buildup on the walls, 
+                                and prevents mix segregation. The result: clean, consistent flow with every load.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                             </p>
                         </div>
                     </div>
@@ -178,8 +263,14 @@ import OSection from '../unitComponents/OSection.astro';
                     Sealed from Top <br> to Bottom
                     </h1>
                     <p class="text-sm md:text-base leading-relaxed">
+<<<<<<< HEAD
                     To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure,
                      preserving the mix quality and delaying oxidation.
+=======
+                    To prevent premature hardening, the silo is fully sealed during storage. 
+                    This airtight design blocks air exposure, preserving the mix’s quality 
+                    and delaying oxidation.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                     </p>
                     <div class="w-full overflow-hidden flex justify-center">
                         <img src={silo3.src} alt="Sealed Silo" class="w-[200px] md:w-[350px] bg-white">
@@ -195,6 +286,7 @@ import OSection from '../unitComponents/OSection.astro';
                         <img src={silo2.src} alt="Sealed Silo" class="w-[200px] md:w-[350px] bg-white">
                     </div>
                     <p class="text-sm md:text-base leading-relaxed">
+<<<<<<< HEAD
                     The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single 
                     motion through overlapping clam-style gates.
                     <br><br>
@@ -202,20 +294,35 @@ import OSection from '../unitComponents/OSection.astro';
                     This design minimizes material segregation, reduces wear,
                      and prevents buildup within the cone area. 
 
+=======
+                    Triaso® silos use a top-mounted batcher that collects a full load of mix before discharging 
+                    it in one motion through overlapping clam-style gates. These gates open rapidly and guide 
+                    the mix to fall centered, distributing it evenly across the silo floor. Their cutting action 
+                    reduces wear and avoids material buildup.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                     </p>
                 </div>
 
                 </div>
 
+<<<<<<< HEAD
             <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 max-w-7xl mx-auto px-8">
+=======
+            <div class="w-full grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 px-8 md:px-36">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 <div class="col-span-1 flex flex-col justify-center items-center md:items-start gap-1 font-bold">
                     <img src={fiberGlass.src} alt="" class="max-h-[500px] w-[150px]">
                     <h2 class="text-blueMain text-xl">Six inches</h2>
                     <h2 class="text-lg">fiberglass insulation</h2>
                 </div>
                 <div class="col-span-3 flex flex-col items-center justify-center gap-6 h-full">
+<<<<<<< HEAD
                     <AcordeonItem client:only title='Optimized Insulation Design:' content="The silo walls are designed with high-efficiency insulation that not only preserves the hot-mix temperature but also minimizes heat loss, reducing energy consumption and ensuring the material stays at the ideal temperature for up to 72 hours — even in extreme weather conditions."/>
                     <AcordeonItem client:only title='Enhanced Loading and Unloading Efficiency:' content="The silos are designed with an optimized loading and unloading system that allows for faster material transfer, reducing wait times and improving overall throughput. This feature enhances productivity by streamlining the flow of materials during operations."/>
+=======
+                    <AcordeonItem client:only title='Optimized Insulation Design:' content="The silo walls are designed with high-efficiency insulation that not only preserves the asphalt's temperature but also minimizes heat loss, reducing energy consumption and ensuring the material stays at the ideal temperature for longer, even in extreme weather conditions."/>
+                    <AcordeonItem client:only title='Enhanced Loading and Unloading Efficiency:' content="Triaso silos are designed with an optimized loading and unloading system that allows for faster material transfer, reducing wait times and improving overall throughput. This feature enhances productivity by streamlining the flow of materials during operations."/>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 </div>
             </div>
          </div>
@@ -259,6 +366,49 @@ import OSection from '../unitComponents/OSection.astro';
                     </AcordeonItem>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch items-center justify-center mt-10 px-4 md:px-36 w-full">
+                <!-- Primer Card -->
+                <div class="bg-[url('/Gallery/drum-mixer.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">MANUFACTURE</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      We manufacture directly without subcontractors, ensuring that every part meets our strict quality standards.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Segundo Card -->
+                <div class="bg-[url('/Gallery/Boxes.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">SPARE PARTS</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      Triaso spare parts are precisely designed to ensure optimal performance, extending both the lifespan of the part and the overall equipment.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Tercer Card -->
+                <div class="bg-[url('/Gallery/customdes.png')] bg-cover bg-center bg-no-repeat rounded-2xl flex flex-col relative items-center justify-center border-2 border-black p-4 min-h-[300px] md:h-auto w-full">
+                  <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 rounded-2xl text-center">
+                    <h1 class="text-white text-xl md:text-2xl font-bold px-2">CUSTOM DESIGN</h1>
+                    <p class="text-grisSubP text-sm md:text-base mt-2 md:mt-3 px-2">
+                      In addition to our standardized designs, we specialize in providing customized solutions tailored to meet the specific needs of our clients.
+                    </p>
+                    <div class="mt-3 md:mt-4">
+                      <LearnBtn className="bg-blueMain text-sm md:text-base" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
         </div>    
     </div>

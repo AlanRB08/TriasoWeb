@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/ColdMix/CMProv4.png";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const CMOdom = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -46,7 +53,11 @@ const CMOdom = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-8 my-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -74,9 +85,13 @@ const CMOdom = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million BTU/hr</p>
             </div>
+<<<<<<< HEAD
             <p className="text-grisP text-start w-full">
               Modulating burner capacity
             </p>
+=======
+            <p className="text-grisP text-start w-full">Modulating burner capacity</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
         </div>
 

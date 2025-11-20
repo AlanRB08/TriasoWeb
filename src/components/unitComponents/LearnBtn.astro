@@ -1,5 +1,6 @@
 ---
 export interface Props {
+<<<<<<< HEAD
   text?: string;
   className?: string;
   href?: string;
@@ -22,3 +23,23 @@ const {
 >
   {text}
 </a>
+=======
+        text?: string;
+        className?: string;
+        href?: string;
+        isExternal?: boolean;
+}
+const {
+        text= "Learn More",
+        className = "bg-redBg hover:bg-redBgHover",
+        href = "#",
+        isExternal= false
+}= Astro.props
+---
+<a href={href}
+class=`text-white mt-10 text-sm md:text-lg font-normal rounded-full py-1 px-4 ${className}`
+target={isExternal ? "_blank" : "_self"}
+rel={isExternal ? "noopener noreferrer" : undefined}>
+{text}
+</a>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

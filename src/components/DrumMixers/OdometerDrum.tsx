@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import Image from "astro/components/Image.astro";
 import odoImg from "../../assets/images/DrumMixers/odometerImg.webp";
 import "odometer/themes/odometer-theme-default.css";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import Image from 'astro/components/Image.astro';
+import odoImg from '../../assets/images/DrumMixers/odometerImg.png';
+import 'odometer/themes/odometer-theme-default.css';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const OdometerDrum = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -50,7 +58,11 @@ const OdometerDrum = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="max-w-7xl mx-auto px-8 mt-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -68,9 +80,13 @@ const OdometerDrum = () => {
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">%</p>
             </div>
+<<<<<<< HEAD
             <p className="text-grisP">
               RAP (Recycled Asphalt Pavement) Incorporation
             </p>
+=======
+            <p className="text-grisP">RAP (Recycled Asphalt Pavement) Incorporation</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
 
           <div className="flex flex-col items-center justify-center">
@@ -79,12 +95,19 @@ const OdometerDrum = () => {
               <h1>.</h1>
               <Odometer value={value4} format="(,ddd)" duration={2000} />
               <h1>-</h1>
+<<<<<<< HEAD
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal md:ml-3">million BTU/hr</p>
             </div>
             <p className="text-grisP text-start w-full">
               Modulating burner capacity
             </p>
+=======
+              <Odometer value={value3} format="(,ddd)" duration={2000}/>
+              <p className="text-sm font-normal md:ml-3">million BTU/hr</p>
+            </div>
+            <p className="text-grisP text-start w-full">Modulating burner capacity</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
         </div>
 

@@ -11,6 +11,7 @@ export default function TabsIntegral() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
+<<<<<<< HEAD
     <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 max-w-7xl mx-auto px-8">
       <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
         {images.map((img, index) => (
@@ -21,11 +22,24 @@ export default function TabsIntegral() {
             className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
               activeIndex === index
                 ? "border-redBg text-black font-bold"
+=======
+    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 px-8 md:px-52">
+      <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
+        {images.map((img, index) => (
+          <button
+            aria-label='Tab Selector'
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
+              activeIndex === index 
+                ? "border-redBg text-black font-bold" 
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 : "border-transparent text-grisT font-normal"
             }`}
           >
             {index === 0 ? (
               <>
+<<<<<<< HEAD
                 Standard chassis{" "}
                 <span className="hidden md:inline">
                   for <br />
@@ -46,6 +60,20 @@ export default function TabsIntegral() {
                 </span>
               </>
               // Texto para el nuevo tab
+=======
+                Standard chassis <span className="hidden md:inline">for <br />mobility of empty plant</span>
+              </>
+            ) : index === 1 ? (
+              <>
+                <span className="hidden md:inline"> All mounted on a </span> Lightweight chassis <br /> <span className="hidden md:inline"> with support legs </span>
+              </>
+            
+            ) : (
+              <>
+                Reinforced chassis  <span className="hidden md:inline">for full- <br /> loaded plant mobility</span>
+              </>
+               // Texto para el nuevo tab
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             )}
           </button>
         ))}
@@ -60,4 +88,8 @@ export default function TabsIntegral() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

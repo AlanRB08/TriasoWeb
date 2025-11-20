@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/IntegralAsphalt/single.png";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const PAOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -25,7 +32,11 @@ const PAOdometer = () => {
             setValue(2);
             setValue1(10);
             setValue2(3);
+<<<<<<< HEAD
             setValue4(7);
+=======
+            setValue4(7);          
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },
@@ -43,7 +54,11 @@ const PAOdometer = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -68,12 +83,20 @@ const PAOdometer = () => {
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+<<<<<<< HEAD
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">hp</p>
             </div>
             <p className="text-grisP text-start w-full">
               rated capacity of the discharge motor
             </p>
+=======
+              
+              <Odometer value={value2} format="(,ddd)" duration={2000} />
+              <p className="text-sm font-normal ml-3">hp</p>
+            </div>
+            <p className="text-grisP text-start w-full">rated capacity of the discharge motor</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
         </div>
 

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import GallerySlider from "../unitComponents/GallerySlider";
 import img1 from "../../assets/images/BagHouses/BHProv4.webp";
@@ -16,6 +17,18 @@ import img6 from "../../assets/images/BagHouses/ratioSys.webp";
 import img7 from "../../assets/images/BagHouses/BHProv7.webp";
 import OSection from "../unitComponents/OSection.astro";
 
+=======
+import Baghouses from "../AsphaltPlants/Baghouses.astro";
+import Card from "../unitComponents/Card.astro";
+import GallerySlider from "../unitComponents/GallerySlider";
+import Separator from "../unitComponents/Separator.astro";
+import img1 from '../../assets/images/DrumMixers/baghouse.png';
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import BHCustom from "./BHCustom.astro";
+import BHoppers from "../../assets/images/BagHouses/BHoppers.png";
+import BHVideo from "../../assets/images/BagHouses/BHVideo.mp4";
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 const tanksSlides = [
   {
     image: 'src/assets/images/BagHouses/GallerySlider/BHG1.webp',
@@ -36,22 +49,35 @@ const tanksSlides = [
 ];
 ---
 
+<<<<<<< HEAD
 <div class="w-full flex flex-col justify-center items-center font-bold md:mt-20">
+=======
+<div class="w-full flex flex-col justify-center items-center font-bold md:mt-20 gap-10">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
     <div class="w-full flex justify-center">
         <h1 class="text-redBg text-2xl md:text-4xl">
             Your best business begins with us
         </h1>
     </div>
+<<<<<<< HEAD
     
     <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center py-10">
         <div class="w-full">
             <div class="w-full">
                 <img src={img2.src} alt="" class="w-full rounded-lg">
             </div>
+=======
+    <div class="w-full">
+        <img src="" alt="">
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-8 md:px-52">
+        <div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             <h2 class="text-grisT text-lg md:text-xl">
                 Continuous cleaning system
             </h2><br>
             <p class="text-grisT font-thin text-base md:text-lg">
+<<<<<<< HEAD
                 A continuous cleaning system that keeps the filter bags in operation at all times. Bursts of
                  compressed air are released through a super sonic nozzle, creating a pressure wave that rapidly
                   expands each bag and dislodges the dust cake from its surface. The released particles fall into
@@ -69,6 +95,18 @@ const tanksSlides = [
         
     </div>
     <OSection/>
+=======
+                A continuous cleaning system that keeps the filter bags online at all times. A burst of compressed air
+                is released through a super sonic nozzle, creating an airwave that rapidly inflates the bag and dislodges
+                the dust cake from its surface. The detached particles fall into the hopper below, ensuring uninterrupted
+                filtration and optimal bag performance.
+            </p>
+        </div>
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
     <TwoColumnSection
                 leftBg="bg-redBg"
   rightBg="bg-blueMain"
@@ -79,8 +117,13 @@ const tanksSlides = [
                     <div slot="left" class="flex flex-col justify-center gap-3">
                         <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
                         <p class="text-base md:text-lg">
+<<<<<<< HEAD
                             Manufacturing highly portable self-contained, and integrated models, 
                             Triaso® baghouses operate at an air-to-cloth ratio as high as 8:1.
+=======
+                            Manufacturing highly protable self-contained, and integrated models, Triaso® baghouses
+                             operates at an air to cloth ratio as high as 8:1.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                     </div>
                     <div slot="right" class="flex flex-col justify-center gap-3">
@@ -94,22 +137,36 @@ const tanksSlides = [
                         </ul>
                     </div>
     </TwoColumnSection>
+<<<<<<< HEAD
     <div class="w-full flex justify-center py-10 px-8 text-center">
+=======
+    <div class="w-full flex justify-center">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         <h1 class="text-blueMain text-2xl md:text-3xl">
             Mechanism of baghouses available in pulse jet and reverse jet
         </h1>
     </div>
+<<<<<<< HEAD
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl px-8 mx-auto py-10">
         <div>
             <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br>
             <p class="text-grisT font-thin text-base md:text-lg">
                 A cleaning system that directs low-pressure air in the opposite direction to remove dust from the filter bags, 
                 typically used in larger baghouses or high-dust applications.
+=======
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-8 md:px-32">
+        <div>
+            <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br>
+            <p class="text-grisT font-thin text-base md:text-lg">
+                A cleaning system that blows air in the opposite direction to remove dust from the filter bags,
+                 typically used in larger baghouses or high-dust applications.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             </p>
         </div>
         <div>
             <h2 class="text-center text-xl md:text-2xl">Pulse Jet</h2>
             <p class="text-grisT font-thin text-base md:text-lg">
+<<<<<<< HEAD
                 A cleaning system that uses short bursts of compressed air to dislodge dust and debris from the filter bags,
                  maintaining continuous airflow and filtration efficiency.
             </p>
@@ -121,12 +178,26 @@ const tanksSlides = [
                 <h2 class="text-xl md:text-2xl">
                     Triaso Supersonic Nozzle
                 </h2><br>
+=======
+                A cleaning system that uses compressed air bursts to dislodge dust and debris from the filter bags,
+                 maintaining continuous airflow.
+            </p>
+        </div>
+    </div>
+    <div class="w-full bg-grisT px-8 md:px-52 text-white py-10 flex flex-col gap-6">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl md:text-2xl">
+                    Triaso Supersonic Nozzle
+                </h2>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 <p class="text-base md:text-lg font-thin">
                     Our supersonic nozzles are 3D printed in-house using carbon alloy materials for
                      exceptional resistance to impacts, high temperatures, and vibrations. Ensuring highly efficient
                       fine particle collection in the baghouse.
                 </p>
             </div>
+<<<<<<< HEAD
             <div class="w-full flex justify-center items-center">
                 <img src={single.src} alt="" class="w-1/2">
             </div>
@@ -175,10 +246,39 @@ const tanksSlides = [
     </div>
     </div><br>
     <div class="w-full px-8 text-center">
+=======
+            <div>
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl md:text-2xl font-thin">
+                    Typical Venturi System
+                </h2>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <button>+</button>
+            </div>
+            <div>
+                <h2 class="text-xl md:text-2xl font-thin">
+                    Triaso High Ratio System
+                </h2>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+    <div class="w-full">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         <h2 class="text-blueMain text-2xl md:text-3xl text-center">
             Total and homogeneous return of fines to the asphalt mix to optimize its quality and pavement life.
         </h2>
     </div>
+<<<<<<< HEAD
     <div class="max-w-7xl px-8 mx-auto">
         <div class="w-full flex justify-center">
             <video src={DMVideo} autoplay loop muted playsinline class="w-3/4"></video>
@@ -188,12 +288,24 @@ const tanksSlides = [
             As it slows down, it flows beneath a protective barrier that shields the filter bags. in the clean
             air plenum draws the gas upward through the bags, causing fine particles to accumulate on thie outer
             surface while the cleaned air moves into the plenum and exits through the exhaust stack.
+=======
+    <div class="w-full px-8 md:px-52">
+        <div>
+            <img src="" alt="">
+        </div>
+        <p class="text-base md:text-lg font-thin">
+            The gas stream enters the baghouse’s inlet chamber after passing through the primary dust collector. 
+            As it slows down, it flows beneath a protective barrier that shields the filter bags. Negative pressure
+             from the clean air plenum draws the gas upward through the bags. Fine particles collect on the outer surface
+              of the bags, while the cleaned air passes into the plenum and exits through the exhaust stack.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         </p>
     </div>
     
    
     
     
+<<<<<<< HEAD
     <div class="w-full flex flex-col justify-start max-w-7xl px-8 mx-auto py-10">
         <h1 class="text-xl md:text-2xl">Triaso Exhaust System</h1><br>
         <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
@@ -217,6 +329,30 @@ const tanksSlides = [
         </div>
     </div>
     <div class="max-w-7xl px-8 mx-auto text-base md:text-lg py-10">
+=======
+    <div class="w-full flex flex-col justify-start px-8 md:px-32">
+        <h1 class="text-xl md:text-2xl">Triaso Exhaust System</h1><br>
+        <h2 class="text-lg md:text-xl text-redBg">Gas extractor with curved blade fan, more efficient and quieter.</h2>
+    </div>
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 md:px-32">
+        <div class="w-full flex justify-center">
+            <video class="w-1/2" src={BHVideo} autoplay></video>
+        </div>
+        <div class="w-full rounded-2xl p-4 bg-white text-justify text-base px-8 md:text-lg text-grisT flex flex-col justify-center">
+            <p>
+                The Triaso Extractor is designed to effectively manage airflow and ensure optimal gas filtration in the asphalt plant. 
+                With its curved blade fan, the extractor pulls gases through the system while maintaining efficient air circulation. By 
+                keeping external contaminants out, it helps maintain internal pressure at the necessary levels for consistent operation.
+            </p><br>
+            <p>
+                It operates using centrifugal force to separate dust from exhaust gases. As the gas enters, it spirals along the inner walls, 
+                where heavier particles are pushed outward. Approximately 70% of the total dust load falls to the bottom for collection, reducing 
+                the burden on the baghouse filters, improving efficiency, and extending their service life.
+            </p>
+        </div>
+    </div>
+    <div class="w-full md:px-32 px-8 text-base md:text-lg">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         <p>
             The finer dust particles are directed into the baghouse through a strategically placed high side inlet. This ensures horizontal 
             and downward airflow, preventing fine dust from being re-entrained into the system. A knockout chamber decelerates airflow,
@@ -228,6 +364,7 @@ const tanksSlides = [
         </p>
     </div>
     
+<<<<<<< HEAD
     <div class="w-full bg-blueMain">
         <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
             <div class="w-full text-white">
@@ -237,11 +374,23 @@ const tanksSlides = [
                     This durable construction ensures reliable performance under demanding conditions. By reducing wear
                      and minimizing maintenance needs, the design extends service life and provides consistent, long-term operation.
 
+=======
+    <div class="w-full">
+        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10">
+            <div class="w-full text-white">
+                <h2 class="text-lg md:text-xl">Durable Construction</h2><br>
+                <p class="font-thin text-base md:text-lg text-justify">
+                    Our bin units are engineered with wear-resistant materials that excel in handling abrasive and heavy loads. 
+                    This robust construction ensures the system remains reliable even under the harshest working conditions. By minimizing wear and tear,
+                    the design significantly reduces maintenance requirements and extends the system’s lifespan, providing a dependable solution for 
+                    long-term operations.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 </p>
             </div>
             <div class="w-full text-white">
                 <h2 class="text-lg md:text-xl">Customizable Settings</h2><br>
                 <p class="font-thin text-base md:text-lg text-justify">
+<<<<<<< HEAD
                     The dosing system provides flexible control to meet the specific requirements of each project. With options
                      for both manual and automatic adjustment, it allows precise regulation of material flow. This versatility 
                      ensures efficient handling of materials ranging from fine aggregates to coarse components, allowing smooth 
@@ -274,10 +423,37 @@ const tanksSlides = [
                         distribute air evenly and protect the filter bags from abrasion.<br />
                         This design improves air quality, increases filtration efficiency, 
                         and reduces maintenance, ensuring reliable and consistent performance.
+=======
+                    The dosing system offers unparalleled flexibility to accommodate the unique demands of each project. With options for both manual 
+                    and automatic adjustment, the system ensures precise control over material flow. This versatility allows seamless handling of a wide 
+                    range of materials, from fine aggregates to bulkier substances, optimizing efficiency and ensuring smooth integration into any 
+                    operational setup.
+                </p>
+            </div>
+        </div>
+        <div class="w-full -skew-y-2 overflow-hidden">
+            <div class="w-full bg-bgBeige px-8 md:px-32 py-10 skew-y-2">
+                <div>
+                    <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
+                </div>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="w-full flex justify-center">
+                        <img src={BHoppers.src} alt="" class="rounded-2xl w-3/4">
+                    </div>
+                    <div class="w-full flex justify-center items-center">
+                        <p class="text-grisT text-base md:text-lg">
+                            The finer dust particles are directed into the baghouse through a strategically placed high side inlet.
+                            This ensures horizontal and downward airflow, preventing fine dust from being re-entrained into the system.
+                            A knockout chamber decelerates airflow, allowing more material to drop into the hopper, while internal baffles
+                            ensure even air distribution and protect the bags from abrasion. <br>
+                            This design optimizes air quality, enhances filtration efficiency,
+                                and minimizes maintenance requirements, ensuring a more effective and reliable operation.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>      
         <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center">
             <div class="order-2 lg:order-1">
@@ -296,6 +472,22 @@ const tanksSlides = [
                 <h2 class="text-lg md:text-xl">Fines Return System</h2><br>
                 <div class="w-full flex justify-center">
                     <img src={img4.src} alt="" class="rounded-lg w-3/4">
+=======
+        </div>
+        
+        <div class="w-full px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white">
+            <div>
+                <p class="font-thin text-base md:text-lg text-justify">
+                    Once the baghouse collects fine particles in the hoppers, a screw conveyor transfers the fines back
+                     into the drum mixer. This return is carefully timed and positioned—right where the liquid asphalt is
+                      injected—ensuring the fines are immediately coated and bonded into the mix.
+                </p>
+            </div>
+            <div>
+                <h2 class="text-lg md:text-xl">Fines Return System</h2><br>
+                <div>
+                    <img src="" alt="">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                 </div>
             </div>
         </div>

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/DrumMixers/baghouse.webp";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const BHOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +18,11 @@ const BHOdometer = () => {
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
   const [value4, setValue4] = useState(0);
+<<<<<<< HEAD
   const [value5, setValue5] = useState(0);
+=======
+    const [value5, setValue5] = useState(0);
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,7 +60,12 @@ const BHOdometer = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+      
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -79,13 +95,18 @@ const BHOdometer = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">tph</p>
             </div>
+<<<<<<< HEAD
             <p className="text-grisP text-start w-full">
               Baghouses for asphalt plants ranges
             </p>
+=======
+            <p className="text-grisP text-start w-full">Baghouses for asphalt plants ranges</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-center">
+<<<<<<< HEAD
           <div className="w-3/5">
             <img src={single.src} alt="" className="rounded-lg" />
           </div>
@@ -95,6 +116,17 @@ const BHOdometer = () => {
         <h2 className="text-2xl md:text-4xl text-grisT font-bold text-center">
           The baghouses are highly efficient at capturing fine particles,{" "}
           <span className="text-black">achieving up to 99.99% filtration</span>.
+=======
+          <div>
+            <img src={single.src} alt="" />
+          </div>
+          
+        </div>
+      </div>
+      <div className='w-full py-10 lg:px-52'>
+        <h2 className='text-2xl md:text-4xl text-grisT font-bold text-center'>
+          The baghouses are highly efficient at capturing fine particles, <span className='text-black'>achieving up to 99.99% filtration</span>. 
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         </h2>
       </div>
     </div>

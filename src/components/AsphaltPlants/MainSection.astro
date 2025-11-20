@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import icon1 from "../../assets/images/AsphaltPlant/lowM.svg";
 import icon2 from "../../assets/images/AsphaltPlant/highP.svg";
 import icon3 from "../../assets/images/AsphaltPlant/highQ.svg";
@@ -168,3 +169,137 @@ const items = [
         </h1>
     </div>
 </div>
+=======
+import icon1 from '../../assets/images/AsphaltPlant/lowM.svg';
+import icon2 from '../../assets/images/AsphaltPlant/highP.svg';
+import icon3 from '../../assets/images/AsphaltPlant/highQ.svg';
+import icon4 from '../../assets/images/AsphaltPlant/ecoS.svg';
+import icon5 from '../../assets/images/AsphaltPlant/highPorta.svg';
+import icon6 from '../../assets/images/AsphaltPlant/ecoL.svg';
+import icon7 from '../../assets/images/AsphaltPlant/upT.svg';
+import icon8 from '../../assets/images/AsphaltPlant/cont.svg';
+import icon9 from '../../assets/images/AsphaltPlant/lowF.svg';
+import img1 from '../../assets/images/AsphaltPlant/render.png';
+const items  = [
+    {text: 'LOW MAINTENANCE',
+    img: icon1
+},{
+    text: 'HIGH PRODUCTIVITY',
+    img: icon2
+},
+{
+    text: 'HIGH QUALITY ASPHALT MIX',
+    img: icon3
+},{
+    text: 'ECOLOGICAL STANDARS',
+    img: icon4
+},{
+    text: 'HIGH PORTABLE',
+    img: icon5
+},{
+    text: 'ECONOMIC LONG-LASTING LIFE',
+    img: icon6
+},{
+    text: 'UP TO 40% RAP',
+    img: icon7
+},{
+    text: 'CONTINUOUS',
+    img: icon8
+},{
+    text: 'LOW FUEL CONSUMPTION',
+    img: icon9
+}
+]
+---
+
+<div class="w-full flex flex-col items-center justify-around font-bold">
+    <div class="grid grid-cols-4 md:grid-cols-7 items-stretch justify-items-center md:justify-between gap-1 md:gap-4 mt-8 px-4 md:px-8 lg:px-52 text-grisP">
+        <!-- Primera fila - siempre 4 elementos -->
+        <button aria-label="Drum Mixers link" class="text-xs md:text-base py-2 md:px-4 font-bold focus:outline-none border-b border-b-grisT">
+            Drum Mixers
+        </button>
+        <button aria-label="Baghouses link" class="border-b border-b-grisT tab-button py-2 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab2" aria-selected="false">
+            Baghouses
+        </button>
+        <button aria-label="Asphalt tanks link" class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab3" aria-selected="false">
+            Asphalt tanks
+        </button>
+        <button aria-label="Bins link" class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab4" aria-selected="false">
+            Bins
+        </button>
+        
+        <!-- Segunda fila - 3 elementos centrados -->
+        <div class="col-span-4 flex justify-center gap-1 md:hidden">
+            <button aria-label="Heating Systems link" class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Heating <br> Systems
+            </button>
+            <button aria-label="Hot-Mix Storage Silos link" class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Hot-Mix <br> Storage Silos
+            </button>
+            <button aria-label="Cold Mix Plants link" class="border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            data-tab="tab5" aria-selected="false">
+                Cold Mix <br> Plants
+            </button>
+        </div>
+        
+        <!-- Versión desktop - todos en una línea -->
+        <button aria-label="Heating Systems link" class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Heating <br> Systems
+        </button>
+        <button aria-label="Hot-Mix Storage Silos link" class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Hot-Mix <br> Storage Silos
+        </button>
+        <button aria-label="Cold Mix Plants link" class="hidden md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+        data-tab="tab5" aria-selected="false">
+            Cold Mix <br> Plants
+        </button>
+    </div>
+    <div class="w-full text-justify font-bold text-base md:text-xl px-8 lg:px-52 text-grisT mt-10">
+        <p>With models ranging from 10 to 500 tons per hour, Triaso asphalt plants 
+            combine quality, high-quality materials, and a sophisticated design to 
+            enhance our clients' corporate image. They deliver superior performance, 
+            high-quality hot mix asphalt, long-term cost efficiency, and compliance 
+            with the highest industry standards.</p>
+            <br>
+        <p>
+            We understand the importance of keeping your equipment running non-stop. 
+            The operation of many other machines depends on the reliability of your 
+            asphalt plant.
+        </p>
+        <br>
+        <p>
+           Strict quality control ensures the operation of your 
+           asphalt plant with low maintenance for many years. 
+        </p>
+
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10 lg:mt-20 px-8 lg:px-52 w-full">
+        {items.map((item, index) => (
+            <div class={`flex flex-col items-center justify-center text-center 
+                ${items.length % 2 !== 0 && index === items.length - 1 ? 
+                  'col-span-2 md:col-span-1' : ''}`}>  <!-- Cambio clave aquí -->
+                <img src={item.img.src} alt="" class="lg:w-28 w-20">
+                <p class="text-black text-base md:text-xl">{item.text}</p>
+            </div>
+        ))}
+    </div>
+    <div class="w-full flex flex-col items-center md:px-52 px-8 justify-center mt-20 text-black text-base text-center md:text-xl">
+        <h1>With Triaso, Become the Exclusive Provider of Hot Mix for 
+            All Paving Projects in Your Region</h1>
+        <img src={img1.src} alt="">
+        <h1 class="text-center">Our customers choose Triaso asphalt plants over other brands for their
+             high quality, 
+            reliability, and competitive pricing.</h1>
+    </div>
+    
+    
+    
+</div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

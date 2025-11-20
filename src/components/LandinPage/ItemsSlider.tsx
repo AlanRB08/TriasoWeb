@@ -59,7 +59,11 @@ export default function ItemsSlider({ images }: Props) {
   };
 
   return (
+<<<<<<< HEAD
     <div className="max-w-7xl mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 mb-10">
+=======
+    <div className="w-full mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 md:px-44 mb-10">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       {/* Desktop navigation buttons */}
       {!isMobile && (
         <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
@@ -79,7 +83,11 @@ export default function ItemsSlider({ images }: Props) {
             </svg>
           </button>
           <button
+<<<<<<< HEAD
             aria-label="Next slide"
+=======
+          aria-label="Next slide"
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             onClick={nextSlide}
             className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
           >
@@ -106,10 +114,15 @@ export default function ItemsSlider({ images }: Props) {
               : "gap-4 transition-transform duration-500 ease-in-out"
           }`}
           style={{
+<<<<<<< HEAD
             transform: isMobile
               ? undefined
               : `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
             cursor: isMobile ? (isDragging ? "grabbing" : "grab") : "auto",
+=======
+            transform: isMobile ? undefined : `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+            cursor: isMobile ? (isDragging ? 'grabbing' : 'grab') : 'auto',
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -122,9 +135,15 @@ export default function ItemsSlider({ images }: Props) {
                 isMobile ? "snap-start pl-2" : "px-2"
               } bg-white p-2 rounded-2xl`}
               style={{
+<<<<<<< HEAD
                 width: isMobile ? "85%" : `calc(25% - 16px)`,
                 minWidth: isMobile ? "85%" : `calc(25% - 16px)`,
                 scrollSnapAlign: isMobile ? "start" : undefined,
+=======
+                width: isMobile ? '85%' : `calc(25% - 16px)`,
+                minWidth: isMobile ? '85%' : `calc(25% - 16px)`,
+                scrollSnapAlign: isMobile ? 'start' : undefined,
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
               }}
             >
               <div className="px-4">
@@ -137,7 +156,11 @@ export default function ItemsSlider({ images }: Props) {
                   {img.title}
                 </div>
               </div>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
               <div className="font-normal text-grisT text-sm md:text-base px-4">
                 {img.texto}
               </div>
@@ -147,4 +170,8 @@ export default function ItemsSlider({ images }: Props) {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/BinUnits/ProvBU1.jpg";
+=======
+import React, { useEffect, useState, useRef } from 'react';
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
+import single from '../../assets/images/IntegralAsphalt/single.png';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 const BOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -46,7 +53,11 @@ const BOdometer = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20">
+=======
+    <div ref={sectionRef} className="w-full px-8 lg:px-52 mt-20">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -74,6 +85,7 @@ const BOdometer = () => {
               <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million BTU/hr</p>
             </div>
+<<<<<<< HEAD
             <p className="text-grisP text-start w-full">
               Modulating burner capacity
             </p>
@@ -83,17 +95,31 @@ const BOdometer = () => {
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
             <img src={single.src} alt="" className="rounded-lg" />
+=======
+            <p className="text-grisP text-start w-full">Modulating burner capacity</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <img src={single.src} alt="" />
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </div>
           <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
             All Technical Details
           </button>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="my-20">
         <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
           Portable and relocatable systems designed to adapt to any site,
           anytime
         </h1>
+=======
+      <div className='my-20'>
+        <h1 className='text-center text-3xl md:text-5xl text-redBg font-bold'>Portable and relocatable systems designed to adapt to any location at any time</h1>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       </div>
     </div>
   );

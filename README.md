@@ -1,5 +1,21 @@
 HEAD
+<<<<<<< HEAD
 # TriasoUS WebSite
+=======
+# Astro Starter Kit: Basics
+
+```sh
+npm create astro@latest -- --template basics
+```
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 
 ## 🚀 Project Structure
 
@@ -34,6 +50,13 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Puedes revisar la documentación de Astro
 
+<<<<<<< HEAD
 [Astro documentation](https://docs.astro.build).
 # TriasoWeb
 Sitio web informativo, de TRIASO.
+=======
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# TriasoWeb
+Sitio web informativo, de TRIASO.
+c808cb1016a79718d4c18133319531facb8e5ab7
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

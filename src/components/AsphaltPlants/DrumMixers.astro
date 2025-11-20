@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import img1 from "../../assets/images/AsphaltPlant/render2.webp";
 import img2 from "../../assets/images/AsphaltPlant/render3.webp";
 import img4 from "../../assets/images/AsphaltPlant/render6.webp";
@@ -483,3 +484,258 @@ const images2 = [
     </a>
   </div>
 </div>
+=======
+import img1 from '../../assets/images/AsphaltPlant/render2.png';
+import img2 from '../../assets/images/AsphaltPlant/render3.png';
+import img3 from '../../assets/images/AsphaltPlant/render5.png';
+import img4 from '../../assets/images/AsphaltPlant/render6.png';
+import img5 from '../../assets/images/AsphaltPlant/drum1.png';
+import img6 from '../../assets/images/AsphaltPlant/elevator1.png';
+import img7 from '../../assets/images/AsphaltPlant/drum2.png';
+import LearnBtn from '../unitComponents/LearnBtn.astro';
+import Image from 'astro/components/Image.astro';
+---
+<div class="w-full flex flex-col items-center justify-center font-bold">
+    <div class="flex flex-col items-center justify-center mt-10 md:mt-20 text-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-4">
+            <div class="hidden justify-end items-end md:flex h-full">
+                <Image src={img5} alt="" class="w-[100%]"/>
+            </div>
+            <div class="hidden md:flex-col items-start justify-start pt-4 md:flex">
+                <h1 class="md:text-4xl text-2xl text-black text-center w-full">Two Year Warranty</h1>
+                <br>
+                <p class="md:text-2xl text-lg text-grisT text-center w-full">We stand behind our top-tier quality with the <br>
+                highest warranty in the market</p>
+            </div>
+            <div class="flex flex-col items-start justify-start gap-4 bg-blueMain md:rounded-t-2xl p-8 md:h-full">
+                <div class="text-xl md:text-4xl w-full text-start">
+                    <h1 class="text-redBg">TRIASO® </h1>
+                    <h1 class="">DRUM MIXER</h1>
+                </div>
+                <p class="text-grisSubP text-base md:text-lg text-justify">
+                    High-quality drum mixers designed for durability and efficient asphalt blending. 
+                    Featuring heat-resistant alloy steel drums and low air velocity systems, they ensure 
+                    energy efficiency, minimal fine loss, and reduced maintenance, all while delivering 
+                    consistent and reliable results in demanding conditions.
+                </p>
+            </div>
+        </div>
+        <div class="w-full bg-blueMain p-6">
+            <h1 class="text-xl md:text-4xl">RANGING FROM 10 TO 500 TPH</h1>
+        </div>
+        <div class="block md:hidden">
+            <Image src={img7} alt="" class="w-1/2"/>
+            <div class="flex-col flex md:hidden items-start justify-start pt-4">
+                <h1 class="md:text-4xl text-2xl text-black text-center w-full">Two Year Warranty</h1>
+                <br>
+                <p class="md:text-2xl text-lg text-grisT text-center w-full">We stand behind our top-tier quality with the <br>
+                highest warranty in the market</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 text-black px-8 lg:px-52">
+        <h1 class="text-xl md:text-3xl text-center md:mb-10">Asphalt plants for the smallest jobs to large projects</h1>
+        <h2 class="text-lg md:text-2xl text-center text-grisT">Discover all asphalt plants ranges and models ></h2>
+        <h1>AQUI VA UN VIDEO</h1>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 text-black lg:px-52">
+        <h1 class="text-2xl md:text-3xl text-start mb-5 w-full px-8">
+            Integral 10 Tph <br> Asphalt Plants
+        </h1>
+        <h2 class="text-lg md:text-2xl text-start w-full px-8">Ideal for municipal jobs and road maintenance</h2>
+        <p class="mt-5 text-blueMain text-base md:text-xl px-8">
+            Reduces production costs for small-volume asphalt manufacturing by optimizing startups, 
+            minimizing fuel consumption, and lowering labor and transportation expenses.
+        </p>
+        <Image src={img1} alt=""/>
+        <h1 class="text-lg md:text-xl text-blueMain px-8">Learn more of our <span class="text-redBg">incredible</span> 10 Tph Asphalt Plants ></h1>
+    </div>
+    <div class="flex flex-col items-center justify-center mt-20 px-8 md:px-52 w-full">
+        <h1>AQUI VIDEO 1</h1>
+        <h1>AQUI VIDEO 2</h1>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20">
+        <h1 class="text-2xl md:text-4xl text-blueMain mb-10 w-full text-start px-8 md:px-52">Elevator</h1>
+        <div class="w-full grid grid-cols-2 lg:grid-cols-5 md:gap-8 px-8 md:px-52">
+            <div class="flex flex-col col-span-2 gap-8">
+                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start justify-center p-4">
+                    <h1 class="text-black mb-4">Hinged and Integrated Elevator</h1>
+                    <p class="text-grisT text-base lg:text-lg">This hinged elevator is fully assembled on its own chassis, allowing for immediate installation 
+                        and reducing on-site assembly time. Its structural design is intended to integrate directly
+                         with the mix discharge system without the need for additional adjustments.</p>
+                </div>
+                <Image src={img3} alt=""/>
+            </div>
+            <div class="flex flex-col col-span-3 items-center gap-10">
+                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
+                    <p class="text-grisT text-base lg:text-lg">The 4” pitch chain is a key component of the elevator, 
+                        designed for heavy-duty operation.  <span style="color:black;">With a tensile strength of 50,000 lbs (22,700 kg)</span>
+                         and <span style="color: black;">floating-type chain</span> guides to prevent jams, it ensures smooth and reliable performance, 
+                         durability, efficiency, and minimal maintenance.</p>
+                </div>
+                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <h1 class="text-black mb-4">Self-aligning bearings</h1>
+                    <p class="text-grisT text-base lg:text-lg">Self-aligning bearings in the straight elevator ensure
+                         smooth operation by automatically adjusting to misalignments.
+                         This reduces wear, extends lifespan, and enhances reliability in heavy-duty applications.</p>
+                </div>
+                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
+                    <p class="text-grisT text-base lg:text-lg">With a <span style="color:black;">15 Hp to a 50 Hp motor</span>, the straight elevator
+                         delivers enhanced power for heavy-duty applications. It supports a<span style="color:black;"> maximum speed increase 
+                         to 377 ft/min, boosting capacity to 500 TPH</span>. At a standard chain<span style="color:black;"> speed from 120 ft/min to 
+                         377 ft/min</span>, the system maintains a <span style="color:black"> drag capacity from 160 TPH to 500 TPH</span>, ensuring efficient
+                          and reliable material handling.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 h-full">
+            <div class="flex items-start justify-start gap-10 col-span-1">
+                <Image src={img6} alt="" class="h-[300px] md:h-[500px]"/>   
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 col-span-2 justify-center items-start gap-10 md:gap-20 px-8 md:pr-52">
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h2>It can hold up</h2>
+                    <h1 class="text-black text-lg md:text-2xl">0.5 cubic meters</h1>
+                    <h2>of material.</h2>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Automatic opening</h1>
+                    <h2>controlled by time regulates the opening </h2>
+                    <h1 class="text-black text-lg md:text-2xl">via a timer.
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
+                    <h2>in the console centralizes system management. </h2>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
+                    <h2>with a</h2>
+                    <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">Automatic or manual opening</h1>
+                    <h2>allows operation either manually or automatically</h2>
+                    
+                </div>
+                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
+                    <h1 class="text-black text-lg md:text-2xl">7.5 Hp air <br>compressor with a 293-liter air tank</h1>
+                    <h2>supplies air for pneumatic operation</h2>
+                </div>
+            </div>
+       </div>
+    </div>
+    
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 lg:px-52">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8">
+            <div class="flex flex-col items-start justify-center gap-4">
+                <h1 class="text-3xl md:text-4xl text-redBg">Hot-mix</h1>
+                <h1 class="text-3xl md:text-4xl text-black mb-4">Pugmill</h1>
+                <p class="text-base md:text-lg text-grisP text-justify">
+                    The pugmill is an essential component at the end of the drum mix process,
+                     where the hot mix is finalized to ensure a homogeneous and high-quality blend. This 
+                     is achieved through two robust shafts equipped with flights that thoroughly mix the material,
+                      providing consistency and uniformity.
+                </p>
+                <Image src={img2} alt="" class="block md:hidden my-4"/>
+                <p class="text-base md:text-lg text-grisP text-justify">
+                    Its durable construction ensures smooth operation
+                       and long-term reliability, while its efficient mixing mechanism allows precise control 
+                       over the final mix. Designed for easy maintenance and operation, the pugmill delivers consistent
+                        performance in demanding industrial environments.
+                </p>
+            </div>
+            <Image src={img2} alt="" class="hidden md:block"/>
+        </div>
+        <LearnBtn />
+
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52">
+        <h1 class="lg:text-4xl text-2xl text-grisT w-full text-end mb-10">CONTROL SYSTEM</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10"> 
+            <Image src={img4} alt="Control System" class="rounded-2xl order-2 lg:order-1"/>
+            <p class="lg:text-lg text-base text-grisT text-justify order-1 lg:order-2">At Triaso, we don’t believe in standardized solutions—especially when it comes to our 
+                control systems. We recognize that each client operates under unique conditions, with 
+                specific priorities in automation, data handling, usability, and investment. 
+                That’s why every control cabin we build is tailored to fit those distinct requirements.
+                 From interface design to functional integration,
+                 we carefully configure each system to match the operational goals and workflow of 
+                 every customer.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10"> 
+            <div class="flex flex-col items-center justify-center gap-4">
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4">
+                    <h1 class="text-black mb-4">Visualization and control of materials consumption (current and cumulative).</h1>
+                    <p class="text-grisT font-normal">Enables real-time monitoring of 
+                        material usage, while tracking total consumption over time for accurate
+                         records and optimized production.
+                    </p>
+                    <br>
+                    <ol class="list-disc font-normal text-sm lg:text-base text-grisT ml-8">
+                        <li>Asphalt</li>
+                        <li>Aggregates</li>
+                        <li>Fuel Consumption</li>
+                        <li>Water Usage</li>
+                        <li>Recycled Asphalt Pavement (RAP)</li>
+                        <li>Additives</li>
+                    </ol>
+                </div>
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
+                    <h2>Customizable production management with storage for thousands of recipes.</h2>
+                </div>
+                <div class="text-sm lg:text-base flex text-start justify-center p-4 gap-10 text-grisT">
+                    <div>
+                        <h1 class="text-black lg:text-2xl text-xl">Versatile Setup</h1>
+                        <p>Works seamlessly in a dedicated control cabin or 
+                            under a protective roof.</p>
+                    </div>
+                    <div>
+                        <h1 class="text-black lg:text-2xl text-xl">Quick Adjustments</h1>
+                        <p>Allows rapid changes to recipes or control 
+                            settings to match project requirements.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="flex flex-col items-center gap-10 text-grisT">
+                
+                <p class="lg:text-lg text-base text-justify">Offering a practical and efficient way to achieve total control over your asphalt
+                     plant operations. With advanced monitoring and automation, it simplifies the
+                      management of key processes such as temperature control, material dosing, and production 
+                      rates. Designed to adapt to different setups, it ensures reliable performance 
+                      while prioritizing safety and ease of use.</p>
+                <div class="bg-white rounded-2xl text-sm lg:text-base flex flex-col text-start justify-center p-4 text-grisT">
+                    <h2>Walls and roof made of 16-gauge sheet metal with insulated panels.</h2>
+                    <br>
+                    <p class="font-normal">Provides durability and thermal insulation, ensuring structural 
+                        strength while maintaining a controlled interior environment.</p>
+                        <br>
+                    <ol class="list-disc ml-8">
+                        <li>Built with reinforced materials for heavy-duty use.</li>
+                        <li>Panoramic windows for enhanced visibility.</li>
+                    </ol>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center mt-20 px-8 md:px-52 font-bold">
+        <h1 class="text-lg md:text-2xl mb-4">User-Friendly Interface</h1>
+        <h2 class="text-base md:text-lg text-grisT mb-4 font-normal md:mb-20">Simplifies configuration adjustments for operators with minimal downtime.</h2>
+        <p class="text-sm md:text-base text-grisT mb-4 md:mb-16 text-justify">Created to offer plant operators a deeper understanding of their operation,
+             this cloud-based platform stores all production data remotely and securely.
+              It gives you the freedom to access detailed performance analytics from any 
+              location and any device—whether you're in the office, on the road, or at a job 
+              site. With real-time access to trends, logs, and operational metrics, decision-making
+               becomes faster, more informed, and fully independent of your physical location.
+        </p>
+        <button class="bg-redBg rounded-full 
+        font-normal max-w-[200px] text-white py-1 px-4 
+        text-sm md:text-lg hover:bg-redBgHover" aria-label="Let´s get started">Let´s Get Started</button>
+    </div>
+</div>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

@@ -2,13 +2,20 @@
 import CustomBins from "../components/BinUnits/CustomBins.astro";
 import IntroSection from "../components/BinUnits/IntroSection.astro";
 import Layout from "../layouts/Layout.astro";
+<<<<<<< HEAD
 import IntegrateControl from "../components/BinUnits/IntegrateControl.astro";
 import BinGallery from "../components/BinUnits/BinGallery.astro";
 import BinSelector from "../components/BinUnits/BinSelector";
+=======
+import IntegrateControl from '../components/BinUnits/IntegrateControl.astro';
+import BinGallery from "../components/BinUnits/BinGallery.astro";
+import BinSelector from '../components/BinUnits/BinSelector';
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import BOdometer from "../components/BinUnits/BOdometer";
 ---
+<<<<<<< HEAD
 
 <Layout title="Bin Units">
   <IntroSection />
@@ -63,3 +70,15 @@ import BOdometer from "../components/BinUnits/BOdometer";
   <BinPlanosSection client:only />
   <CardSection />
 </Layout>
+=======
+<Layout title='Bin Units'>
+    <IntroSection />
+    <BinSelector client:only/>
+    <BOdometer client:only/>
+    <CustomBins />
+    <IntegrateControl />
+    <BinGallery />
+    <BinPlanosSection client:only/>
+    <CardSection />
+</Layout>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff

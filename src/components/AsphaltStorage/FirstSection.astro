@@ -6,7 +6,11 @@ import img1 from '../../assets/images/AsphaltStorage/versatil.png';
 import GallerySlider from "../unitComponents/GallerySlider";
 import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
+<<<<<<< HEAD
 import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.webp";
+=======
+import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.png";
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
 import ASCustom from "../AsphaltStorage/ASCustom.astro";
 import ASMainVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import ASControl from "../../assets/images/AsphaltStorage/ASControl.png";
@@ -28,6 +32,7 @@ const iconos = [
 ];
 ---
 <section class="w-full flex flex-col items-center justify-center mt-20 md:mt-40 font-bold">
+<<<<<<< HEAD
     
     <div class="w-full max-w-7xl px-8 mx-auto">
         <h1 class="text-2xl md:text-3xl">Triaso® Asphalt <br> Storage Tanks</h1>
@@ -60,6 +65,35 @@ const iconos = [
                    <p>
                 Their durable construction and easy operation make them suitable for continuous production 
                 and long-term service in demanding environments.
+=======
+    <div class="w-full px-8 md:px-32">
+        <h1 class="text-2xl md:text-3xl">Triaso® Asphalt <br> Storage Tanks</h1>
+        <Separator />
+    </div>
+    <p class="font-extralight px-8 md:px-32 text-center">
+        Our asphalt tanks are designed to store and maintain asphalt at optimal conditions,
+         ensuring consistent quality and performance. With robust construction and reliable insulation,
+          they keep asphalt ready for use in any application. Ideal for polymer-modified asphalt production,
+           these tanks deliver the durability and functionality you need for both small projects and large-scale operations.
+    </p>
+    <div class="w-full px-8 md:px-32">
+      <video src={ASMainVideo}  autoplay></video>
+      <h1 class="text-center text-2xl md:text-3xl text-blueMain">Consistent Heat, Consistent Mix</h1>
+    </div>
+    
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[10%] items-center justify-center mt-10">
+        <div class="text-grisT flex flex-col h-full gap-3 md:gap-10 text-justify bg-white border-2 border-black rounded-r-2xl px-8 md:pl-32 py-10">
+          <h2 class="text-lg md:text-xl text-start w-full text-black">Versatile and Efficient Asphalt Storage Solutions</h2>
+            <p>Our tanks are engineered for versatility and ease of use across various asphalt storage needs. With advanced
+                 features such as efficient heating systems and precise temperature control, they ensure that asphalt remains
+                  at its ideal consistency. Whether you're working with standard or modified asphalt, these tanks provide the
+                   reliability and durability required to support both small and large-scale production environments.</p>
+            
+                   <p>
+                Our tanks are versatile and can be used across a variety of industries such as road construction, roofing,
+                 and other large-scale applications that require consistent asphalt storage. Whether you’re working with hot 
+                 mix asphalt or other materials, our tanks provide the reliability you need for all your storage needs.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
             </p>
         </div>
         <div class="">
@@ -68,17 +102,30 @@ const iconos = [
     </div>
     <div class="w-full px-8 md:px-52 py-10">
       <h1 class="text-redBg text-2xl md:text-3xl text-center">
+<<<<<<< HEAD
         With Triaso, become the principal supplier of hot-mix for <br>
         all the paving projects in your region
+=======
+        With Triaso, Become the Exclusive Provider of Hot Mix for <br>
+        All Paving Projects in Your Region
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
       </h1>
     </div>
     <ASOdometer client:only></ASOdometer>
     <ItemsSlider client:only images={iconos}/>
+<<<<<<< HEAD
     <div class="w-full bg-gradient-to-t from-[#727272] to-[#393939] text-white flex flex-col justify-center pt-10 h-full">
                     <div class="w-full relative h-[100px] md:h-[250px]">
                         <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
                     </div>
                     <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+=======
+    <div class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full">
+                    <div class="w-full relative h-[100px] md:h-[250px]">
+                        <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
+                    </div>
+                    <div class="w-full px-8 md:px-52 grid grid-cols-1 md:grid-cols-2 gap-10">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                       <div class="w-full flex justify-center">
                         <img src={ASControl.src} alt="" class="w-full lg:w-3/4 rounded-2xl">
                       </div>
@@ -86,15 +133,28 @@ const iconos = [
                         <h2 class="text-xl md:text-2xl">Control System</h2>
                         <h3 class="text-lg md:text-xl">Computerized system to prevent asphalt theft during tanker reception and operation.</h3>
                         <p class="text-base md:text-lg font-thin">
+<<<<<<< HEAD
                           With automated asphalt controls to monitor asphalt consumption per ton of produced mix, preventing waste and theft.
                         </p>
                         <p class="text-base md:text-lg font-thin">
                           The system automatically stores data on delivered asphalt, detailing its real-time level, temperature, trends, and projections.
+=======
+                          With automated asphalt controls to monitor asphalt consumption per ton 
+                          of produced mix, preventing waste and theft.
+                        </p>
+                        <p class="text-base md:text-lg font-thin">
+                          Industrial mini-computer for monitoring and control, mounted on 
+                          the tank, ensuring real-time data tracking and operational security.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                         </p>
                       </div>
                     </div>
                     <div class="w-full bg-bgBeige -skew-y-2">
+<<<<<<< HEAD
                         <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl px-8 mx-auto skew-y-2 items-center">
+=======
+                        <div class="w-full grid grid-cols-1 md:grid-cols-2 py-20 px-8 md:px-52 skew-y-2">
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                             <div class="w-full text-black ">
                                 <h1 class="font-bold text-black text-xl md:text-2xl text-center">Triaso Asphalt Level Sensor</h1><br>
                                 <p class="text-base md:text-lg font-thin">
@@ -111,6 +171,7 @@ const iconos = [
                         </div>
                     </div>
                     
+<<<<<<< HEAD
                     <div class="max-w-7xl px-8 mx-auto py-20 flex flex-col gap-10">
                         <h2 class="text-center text-2xl md:text-3xl">Simplifying Operations with Triaso Intelligent Features</h2>
                         <p class="text-base md:text-lg font-thin">Beyond storage, our tanks are equipped with user-friendly features
@@ -118,15 +179,28 @@ const iconos = [
                            help streamline operations, reduce maintenance, and enhance productivity across the board. With real-time access to
                             trends, logs, and operational metrics, decision-making becomes faster, more informed, and fully independent of your 
                             physical location.</p>
+=======
+                    <div class="w-full px-8 md:px-52 py-20 flex flex-col gap-10 bg-gradient-to-t from-[#727272] to-[#393939]">
+                        <h2 class="text-center text-2xl md:text-3xl">Simplifying Operations with Triaso Intelligent Features</h2>
+                        <p class="text-base md:text-lg font-thin">Beyond storage, our tanks are equipped with user-friendly features like automated monitoring
+                           systems, real-time data tracking, and efficient unloading mechanisms. These technologies help streamline 
+                           operations, reduce maintenance, and enhance productivity across the board.</p>
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
                     </div>  
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 my-10">
       <div class="w-full flex flex-col gap-6 pl-8 md:pl-52">
         <h2 class="text-xl md:text-2xl">Asphalt Hoses</h2>
         <p class="text-base md:text-lg text-grisT">
+<<<<<<< HEAD
           When the asphalt pump is turned on, the material is transferred through a vertical pipe and into a 
           stainless-steel hose connected to the plant. From there, gravity assists the flow into the asphalt inlet,
            ensuring smooth and continuous delivery.
+=======
+          When the asphalt pump pushes the asphalt, it reaches a desired height, and the pipe directs the asphalt
+           into a stainless steel hose. This hose is connected to the asphalt plant, where the liquid asphalt is efficiently
+            guided by gravity into the plant’s asphalt inlet.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
         </p>
         <div class="w-full flex justify-center">
           <img src={ASHoses.src} alt="" class="w-3/4 rounded-xl">
@@ -137,6 +211,7 @@ const iconos = [
           <img src={fiberGlass.src} alt="" class="w-[150px] h-auto">
         </div>
         <div class="w-full">
+<<<<<<< HEAD
           <h2 class="text-lg md:text-xl">Three inches fiberglass insulation</h2><br>
           <p class="text-base md:text-lg font-thin">
             Our asphalt storage tanks feature three-inch fiberglass insulation, designed for 
@@ -144,6 +219,14 @@ const iconos = [
              energy-efficient insulation ensures your asphalt remains at the optimal temperature, ready for use. 
              Additionally, the exterior is reinforced with a stainless steel sheet lining, providing enhanced 
              durability and protection against harsh external conditions.
+=======
+          <h2 class="text-lg md:text-xl">Two inches fiberglass insulation</h2><br>
+          <p class="text-base md:text-lg font-thin">
+            Our asphalt storage tanks feature six-inch fiberglass insulation, designed for superior performance
+             in minimizing heat loss and maintaining consistent temperatures. This durable, energy-efficient insulation 
+             ensures your asphalt remains at the optimal temperature, ready for use. Additionally, the exterior is reinforced
+              with a stainless steel sheet lining, providing enhanced durability and protection against harsh external conditions.
+>>>>>>> adb791cd913f793db6b4099d114ff2cfb4734eff
           </p>
         </div>
       </div>
