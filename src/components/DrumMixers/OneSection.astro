@@ -3,272 +3,436 @@ import item1 from "../../assets/images/DrumMixers/extrareinfo.webp";
 import item2 from "../../assets/images/DrumMixers/plantaLim.webp";
 import item3 from "../../assets/images/DrumMixers/singlegift.gif";
 import item4 from "../../assets/images/DrumMixers/drumT.webp";
-import img3 from '../../assets/images/AsphaltPlant/render.webp';
+import img3 from "../../assets/images/AsphaltPlant/render.webp";
 import DMProv1 from "../../assets/images/DrumMixers/DMProv1.webp";
 import render5 from "../../assets/images/AsphaltPlant/render5.webp";
 import obracivil from "../../assets/images/DrumMixers/obracivil.webp";
 import obracivil2 from "../../assets/images/DrumMixers/obracivil2.webp";
-import Image from 'astro/components/Image.astro';
-import Tred from '../../assets/images/AsphaltStorage/redT.png';
-import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
-import img6 from '../../assets/images/DrumMixers/2.png';
+import Image from "astro/components/Image.astro";
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
+import img6 from "../../assets/images/DrumMixers/2.png";
 import Video1 from "../../assets/images/DrumMixers/DMVideo1.mp4";
-import AcordeonItemCol from '../unitComponents/AcordeonItemCol';
+import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import OSection from "../unitComponents/OSection.astro";
+import flag from "../../assets/images/Burners/flag.svg";
+import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg"
 ---
+
 <div class="w-full flex flex-col items-center justify-center font-bold mt-10">
     <div class="max-w-7xl px-8 mx-auto">
-        <h1 class="text-redBg text-xl md:text-3xl text-center">The One and Always</h1><br>
-        
+        <h1 class="text-redBg text-xl md:text-3xl text-center">
+            The One and Always
+        </h1><br />
     </div>
     <div class="max-w-7xl px-8 mx-auto">
-        <img src={obracivil.src} alt="" class="rounded-lg w-3/5"/>
+        <img src={obracivil.src} alt="" class="rounded-lg w-3/5" />
     </div>
-    <div class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row my-10 items-center gap-6">
+    <div
+        class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row my-10 items-center gap-6"
+    >
         <div class="w-full">
-            <h2 class="text-black text-lg md:text-xl">Engineered for Demanding Producers. Built for Performance.</h2><br>
-            <p class="text-grisT text-base md:text-lg text-justify">At Triaso, we know that no two asphalt operations are alike.
-                 That’s why our plants are precision-engineered to match each producer’s unique requirements.
-                  From heavy-duty construction designed for continuous operation to configurations that improve 
-                  efficiency and safety, every component serves a defined purpose.
-            <br><br>
-            With a range of capacities and fully customizable features, our plants adapt 
-            to your operation—not the other way around. Whether you're expanding capacity
-             or optimizing your process, Triaso delivers the flexibility, performance, and 
-             reliability you need to stay ahead in a competitive market.</p>
+            <h2 class="text-black text-lg md:text-xl">
+                Engineered for Demanding Producers. Built for Performance.
+            </h2><br />
+            <p class="text-grisT text-base md:text-lg text-justify">
+                At Triaso, we know that no two asphalt operations are alike.
+                That’s why our plants are precision-engineered to match each
+                producer’s unique requirements. From heavy-duty construction
+                designed for continuous operation to configurations that improve
+                efficiency and safety, every component serves a defined purpose.
+                <br /><br />
+                With a range of capacities and fully customizable features, our plants
+                adapt to your operation—not the other way around. Whether you're
+                expanding capacity or optimizing your process, Triaso delivers the
+                flexibility, performance, and reliability you need to stay ahead
+                in a competitive market.
+            </p>
         </div>
         <div>
-            <img src={obracivil2.src} alt="" class="rounded-2xl"/>
+            <img src={obracivil2.src} alt="" class="rounded-2xl" />
         </div>
     </div>
     <div class="max-w-7xl px-8 mx-auto">
-        <img src={DMProv1.src} alt="" class="rounded-lg w-3/5"/>
+        <img src={DMProv1.src} alt="" class="rounded-lg w-3/5" />
     </div>
     <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
-        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Precision where it matters. </h2>
-        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Strength that lasts. </h2>
-        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">Flexibility when it counts. </h2>
-        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">That’s the Triaso promise. </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">
+            Precision where it matters.
+        </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">
+            Strength that lasts.
+        </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">
+            Flexibility when it counts.
+        </h2>
+        <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">
+            That’s the Triaso promise.
+        </h2>
     </div>
-    <div class="p-4 flex flex-col max-w-7xl px-8 mx-auto items-center justify-center bg-white rounded-2xl relative">
-        <h2 class="text-2xl md:text-3xl my-6">Retractable Drag Slat for Efficient Transport and Operation
+    <div
+        class="p-4 flex flex-col max-w-7xl px-8 mx-auto items-center justify-center bg-white rounded-2xl relative"
+    >
+        <h2 class="text-2xl md:text-3xl my-6">
+            Retractable Drag Slat for Efficient Transport and Operation
         </h2>
         <div class="z-20">
             <div class="w-full flex justify-center">
-                <video src={Video1} autoplay muted playsinline class="w-3/5"></video>
+                <video src={Video1} autoplay muted playsinline class="w-3/5"
+                ></video>
             </div>
             <p class="text-grisT text-justify text-base md:text-lg mt-6">
-                The vertical drag slat features a retractable configuration that complies with DOT transportation height limits, 
-                ensuring safe and legal road transport. Once the drum mixer is installed on-site, the elevator extends to its full operational
-                 height, allowing efficient material discharge into truck with minimal setup time. This smart design improves logistics while
-                  maintaining high performance during loading and discharge operations.
+                The vertical drag slat features a retractable configuration that
+                complies with DOT transportation height limits, ensuring safe
+                and legal road transport. Once the drum mixer is installed
+                on-site, the elevator extends to its full operational height,
+                allowing efficient material discharge into truck with minimal
+                setup time. This smart design improves logistics while
+                maintaining high performance during loading and discharge
+                operations.
             </p>
         </div>
-        <div class="w-full flex flex-col items-center justify-center mt-20 z-20">
-            <h1 class="text-2xl md:text-4xl text-black mb-10 w-full text-start">Hinged and Integrated</h1>
+        <div
+            class="w-full flex flex-col items-center justify-center mt-20 z-20"
+        >
+            <h1 class="text-2xl md:text-4xl text-black mb-10 w-full text-start">
+                Hinged and Integrated
+            </h1>
             <p class="text-base md:text-lg font-thin text-grisT">
-                This hinged drag slat is fully assembled on its own chassis, allowing for immediate installation and reducing on-site assembly time.
-                 Its structural design is intended to integrate directly with the mix discharge system without the need for additional adjustments.
+                This hinged drag slat is fully assembled on its own chassis,
+                allowing for immediate installation and reducing on-site
+                assembly time. Its structural design is intended to integrate
+                directly with the mix discharge system without the need for
+                additional adjustments.
             </p>
-        <div class="w-full grid grid-cols-2 lg:grid-cols-5 md:gap-8 items-center">
-            <div class="flex flex-col col-span-2 gap-8">
-                <Image src={render5} alt=""/>
-            </div>
-            <div class="flex flex-col col-span-3 items-center gap-10">
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
-                    <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
-                    <p class="text-grisT text-base lg:text-lg">The 4” pitch chain is a key component of the elevator, 
-                        designed for heavy-duty operation.  <span style="color:black;">
-                            With a tensile strength of 50,000 lbs (22,700 kg) and floating-type chain</span>
-                              guides to prevent jams, ensuring smooth and reliable performance,
-                               durability, efficiency, and minimal maintenance.</p>
+            <div
+                class="w-full grid grid-cols-2 lg:grid-cols-5 md:gap-8 items-center"
+            >
+                <div class="flex flex-col col-span-2 gap-8">
+                    <Image src={render5} alt="" />
                 </div>
-                <div class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center">
-                    <h1 class="text-black mb-4">Self-aligning bearings</h1>
-                    <p class="text-grisT text-base lg:text-lg">
-                        Self-aligning bearings in the straight elevator ensure smooth operation by automatically compensating for misalignment.
-                         This reduces wear, extends service life, and improves reliability in heavy-duty applications.
-                    </p>
+                <div class="flex flex-col col-span-3 items-center gap-10">
+                    <div
+                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center"
+                    >
+                        <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
+                        <p class="text-grisT text-base lg:text-lg">
+                            The 4” pitch chain is a key component of the
+                            elevator, designed for heavy-duty operation. <span
+                                style="color:black;"
+                            >
+                                With a tensile strength of 50,000 lbs (22,700
+                                kg) and floating-type chain</span
+                            >
+                            guides to prevent jams, ensuring smooth and reliable
+                            performance, durability, efficiency, and minimal maintenance.
+                        </p>
                     </div>
-            </div>
-        </div>
-        <div class="flex flex-col justify-center items-center gap-4 mt-10 h-full">
-            <div class="grid grid-cols-2 justify-center items-start gap-10 md:gap-20">
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h2>It can hold up</h2>
-                    <h1 class="text-black text-lg md:text-2xl">0.5 cubic meters</h1>
-                    <h2>of material.</h2>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Automatic opening</h1>
-                    <h2>controlled by variables such as </h2>
-                    <h1 class="text-black text-lg md:text-2xl">time or weight.
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
-                    <h2>in the console centralizes system management. </h2>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
-                    <h2>with a</h2>
-                    <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">Automatic or manual opening</h1>
-                    <h2>allows operation either manually or automatically</h2>
-                    
-                </div>
-                <div class="flex flex-col items-start justify-center text-grisT md:text-lg text-base">
-                    <h1 class="text-black text-lg md:text-2xl">7.5 Hp air <br>compressor with a 293-liter air tank</h1>
-                    <h2>supplies air for pneumatic operation</h2>
+                    <div
+                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center"
+                    >
+                        <h1 class="text-black mb-4">Self-aligning bearings</h1>
+                        <p class="text-grisT text-base lg:text-lg">
+                            Self-aligning bearings in the straight elevator
+                            ensure smooth operation by automatically
+                            compensating for misalignment. This reduces wear,
+                            extends service life, and improves reliability in
+                            heavy-duty applications.
+                        </p>
+                    </div>
                 </div>
             </div>
-       </div>
+            <div
+                class="flex flex-col justify-center items-center gap-4 mt-10 h-full"
+            >
+                <div
+                    class="grid grid-cols-2 justify-center items-start gap-10 md:gap-20"
+                >
+                    <div
+                        class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                    >
+                        <h2>It can hold up</h2>
+                        <h1 class="text-black text-lg md:text-2xl">
+                            0.5 cubic meters
+                        </h1>
+                        <h2>of material.</h2>
+                    </div>
+                    <div
+                        class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                    >
+                        <h1 class="text-black text-lg md:text-2xl">
+                            Automatic opening
+                        </h1>
+                        <h2>controlled by variables such as</h2>
+                        <h1 class="text-black text-lg md:text-2xl">
+                            time or weight.
+                        </h1>
+                        <div
+                            class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                        >
+                            <h1 class="text-black text-lg md:text-2xl">
+                                Integrated control
+                            </h1>
+                            <h2>
+                                in the console centralizes system management.
+                            </h2>
+                        </div>
+                        <div
+                            class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                        >
+                            <h1 class="text-black text-lg md:text-2xl">
+                                Pneumatic opening
+                            </h1>
+                            <h2>with a</h2>
+                            <h1 class="text-black text-lg md:text-2xl">
+                                double-acting jack
+                            </h1>
+                        </div>
+                        <div
+                            class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                        >
+                            <h1 class="text-black text-lg md:text-2xl">
+                                Automatic or manual opening
+                            </h1>
+                            <h2>
+                                allows operation either manually or
+                                automatically
+                            </h2>
+                        </div>
+                        <div
+                            class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                        >
+                            <h1 class="text-black text-lg md:text-2xl">
+                                7.5 Hp air <br />compressor with a 293-liter air
+                                tank
+                            </h1>
+                            <h2>supplies air for pneumatic operation</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="p-4 flex flex-col max-w-7xl px-8 mx-auto items-center justify-center bg-white rounded-2xl relative"
+            >
+                <div class="w-full relative mt-10 pb-40 md:pb-60">
+                    <div class="w-full z-20 relative">
+                        <h2
+                            class="text-center text-2xl md:text-3xl text-blueMain"
+                        >
+                            Real-time data monitoring of hot-mix discharge into
+                            trucks
+                        </h2>
+                    </div>
+
+                    <div
+                        class="flex items-start justify-start gap-10 absolute bottom-0 left-[-220px] z-10 pointer-events-none"
+                    >
+                        <Image
+                            src={img6}
+                            alt=""
+                            class="w-[80%] max-w-[750px]"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-full z-20 my-10">
-            <h2 class="text-center text-2xl md:text-3xl text-blueMain">
-                Real-time data monitoring of hot-mix discharge into trucks
+        <div class="w-full space-y-3 my-6">
+            <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
+            <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
+        </div>
+        <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
+            With Triaso, Become the Exclusive Provider of Hot Mix <br /> for All
+            Paving Projects in Your Region
+        </h2>
+        <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto" />
+        <OSection />
+        <div>
+            <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
+                Lower fuel consumption than any other asphalt plant
             </h2>
         </div>
-        <div class="flex items-start justify-start gap-10 absolute bottom-0 left-0 z-10">
-                <Image src={img6} alt="" class="w-[80%] max-w-[750px]"/>   
-        </div>
-    </div>
-    <div class="w-full space-y-3 my-6">
-        <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
-        <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
-    </div>
-    <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">With Triaso, Become the Exclusive Provider
-             of Hot Mix <br> for All Paving Projects in Your Region
-        </h2>
-    <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto"/>
-    <OSection/>
-    <TwoColumnSection
-    leftBg="bg-redBg"
-  rightBg="bg-blueMain"
-  imageSrc={Tred.src}
-  imageAlt="Red T icon"
-  imageWidth="150px"
-    >
-        <div slot="left" class="flex flex-col justify-center gap-3">
-            <h1 class="text-xl md:text-2xl">STATIONARY DRUM MIXERS</h1>
-            <p class="text-base md:text-lg">
-                Durable and easy to transport, the drum mixers are designed for long-term operation, featuring heavy-duty steel supports 
-                that eliminate the need for concrete foundations.
-            </p>
-        </div>
-        <div slot="right" class="flex flex-col justify-center gap-3">
-            <h1 class="text-xl md:text-2xl">
-                MOBILE DRUM MIXERS
-            </h1>
-            <p class="text-base md:text-lg">
-                Perfect for remote job sites, these mixers offer quick setup, portability, and high production 
-                output—all while keeping operating costs low.
-            </p>
-        </div>
-  </TwoColumnSection>
-    <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
-        <AcordeonItemCol title='Extra-reinforced front shield'  client:only>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
+        <div class="">
+            <div
+                class="w-full bg-[url(/newBanner.png)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-20 mt-10"
+            >
                 <div class="w-full flex justify-center">
-                    <img src={item1.src} alt="" class="rounded-lg w-3/4"/>
+                    <img src={flag.src} alt="" class="w-[200px]" />
                 </div>
-                <div class="w-full">
-                    <p class="text-base md:text-lg text-grisT font-light">
-                    The Triaso® drum is fully sealed at both ends with extra reinforcement to maintain internal 
-                    temperatures and maximize combustion efficiency. Heavy-duty steel and EPDM rubber seals prevent 
-                    the entry of cold air, improving fuel economy and ensuring consistent, high-quality asphalt mixes.
-                     The entire drum is sealed to prevent the entry of unwanted cold air, maintaining optimal internal 
-                     temperatures and combustion efficiency. This airtight design includes an extra-reinforced front shield
-                      and sealing components made of heavy-duty steel or EPDM rubber. These materials provide long-lasting
-                       durability, resist high temperatures, and ensure that no external air disrupts the controlled environment 
-                       inside the drum, improving fuel efficiency and mix quality.'
-                    </p>
-                </div>
-            </div>
-        </AcordeonItemCol>
-        <AcordeonItemCol title='Optimized Insulation Design'  client:only>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
-                <div class="w-full">
-                    <p class="text-base md:text-lg text-grisT font-light">
-                    The drum mixer is built with high-efficiency mineral wool insulation that maintains consistent
-                     internal temperatures throughout the drying and mixing process. This insulation minimizes heat loss,
-                      reduces fuel consumption, and ensures the asphalt mix stays at optimal temperature—delivering reliable
-                       performance even in demanding weather conditions.
-                    </p>
-                </div>
-                <div class="w-full flex justify-center">
-                    <img src={item2.src} alt="" class="rounded-lg w-3/4"/>
-                </div>
-                
-            </div>
-        </AcordeonItemCol>
-        <AcordeonItemCol title='Single-Point Adjustment System'  client:only>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
-                <div class="w-full flex justify-center">
-                    <img src={item3.src} alt="" class="rounded-lg w-3/4"/>
-                </div>
-                <div class="w-full">
-                    <p class="text-base md:text-lg text-grisT font-light">
-                        Triaso® equips all its drum mixers with a centralized trunnion adjustment system designed for fast,
-                         precise alignment in the field. Each trunnion base includes a fixed central pivot that keeps the
-                          drum tire centered during adjustments, eliminating guesswork and preventing lateral drift. With 
-                          a single-point adjustment mechanism, operators can easily align the drum without needing to reposition
-                           multiple components. This system ensures smoother rotation, reduces wear on tires and trunnions, and
-                            simplifies maintenance—keeping your plant running efficiently with minimal downtime.
-                    </p>
-                </div>
-                
-                
-            </div>
-        </AcordeonItemCol>
-        <AcordeonItemCol title='Drum Tires & Trunnions'  client:only>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
-                <div class="w-full flex justify-center">
-                    <img src={item4.src} alt="" class="rounded-lg w-3/4"/>
-                </div>
-                <div class="w-full">
-                    <p class="text-base md:text-lg text-grisT font-light">
-                        At the heart of all our drum mixers is a heavy-duty trunnion drive system. Each drum is powered 
-                        by two high-efficiency electric motors, providing full control of the rotation system to optimize the behavior of the virgin aggregate curtain.
-                    </p>
-                </div>                
-            </div>
-            <div class="w-full text-base md:text-lg text-grisT font-light">
-                <p>
-                    Special high-carbon alloy steel trunnions and tires forged and normalized, with fixed central pivot roller
-                     bases to prevent lateral misalignment and facilitate drum flotation.
-                </p><br>
-                <p>
-                    The trunnions are forged, precision-machined, and heat-treated for maximum durability, and come equipped with
-                     industry-trusted bearings. Designed for smooth, stable rotation under all load conditions, this configuration
-                      delivers consistent performance while minimizing wear and maintenance over time.
+                <p
+                    class="text-white font-bold text-center lg:text-justify md:text-justify text-lg lg:text-xl"
+                >
+                    Our latest burner innovation features an oxygen sensor that
+                    automatically regulates excess oxygen to no more than 3%,
+                    eliminating the need for manual fuel carburization
+                    adjustment when relocating the equipment. Thanks to our
+                    self-carburizing system, NOx levels remain even lower.
                 </p>
             </div>
-        </AcordeonItemCol>
-        <AcordeonItemCol title='Triaso Thrust Rollers'  client:only>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5">
-                <div class="w-full">
-                    <p class="text-base md:text-lg text-grisT font-light">
-                        Triaso drum mixers rotate on solid one-piece forged steel tires, delivering the strength and 
-                        reliability needed for continuous operation. These tires are secured using bolt-on spring plate
-                         assemblies that flex with thermal expansion, preventing stress and distortion during high-temperature 
-                         cycles.
-                    </p><br>
-                    <h2 class="text-lg md:text-xl text-black font-bold">
-                        Built to Move. Designed to Last.
-                    </h2><br>
-                    <p class="text-base md:text-lg text-grisT font-light">
-                        To maintain precise alignment and stability during rotation, the system features individual guide rollers
-                         on every tire. This system ensures smooth, centered operation throughout the production process—reducing
-                          wear and preserving the integrity of the entire assembly. Rugged, responsive, and built for long-term performance.
-                    </p>
-                </div>   
-                <div class="w-full flex justify-center">
-                    <img src={item4.src} alt="" class="rounded-lg w-3/4"/>
-                </div>             
+        </div>
+        <TwoColumnSection
+            leftBg="bg-redBg"
+            rightBg="bg-blueMain"
+            imageSrc={Tred.src}
+            imageAlt="Red T icon"
+            imageWidth="150px"
+        >
+            <div slot="left" class="flex flex-col justify-center gap-3">
+                <h1 class="text-xl md:text-2xl">STATIONARY DRUM MIXERS</h1>
+                <p class="text-base md:text-lg">
+                    Durable and easy to transport, the drum mixers are designed
+                    for long-term operation, featuring heavy-duty steel supports
+                    that eliminate the need for concrete foundations.
+                </p>
             </div>
-        </AcordeonItemCol>
+            <div slot="right" class="flex flex-col justify-center gap-3">
+                <h1 class="text-xl md:text-2xl">MOBILE DRUM MIXERS</h1>
+                <p class="text-base md:text-lg">
+                    Perfect for remote job sites, these mixers offer quick
+                    setup, portability, and high production output—all while
+                    keeping operating costs low.
+                </p>
+            </div>
+        </TwoColumnSection>
+        <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
+            <AcordeonItemCol title="Extra-reinforced front shield" client:only>
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+                >
+                    <div class="w-full flex justify-center">
+                        <img src={item1.src} alt="" class="rounded-lg w-3/4" />
+                    </div>
+                    <div class="w-full">
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            The Triaso® drum is fully sealed at both ends with
+                            extra reinforcement to maintain internal
+                            temperatures and maximize combustion efficiency.
+                            Heavy-duty steel and EPDM rubber seals prevent the
+                            entry of cold air, improving fuel economy and
+                            ensuring consistent, high-quality asphalt mixes. The
+                            entire drum is sealed to prevent the entry of
+                            unwanted cold air, maintaining optimal internal
+                            temperatures and combustion efficiency. This
+                            airtight design includes an extra-reinforced front
+                            shield and sealing components made of heavy-duty
+                            steel or EPDM rubber. These materials provide
+                            long-lasting durability, resist high temperatures,
+                            and ensure that no external air disrupts the
+                            controlled environment inside the drum, improving
+                            fuel efficiency and mix quality.'
+                        </p>
+                    </div>
+                </div>
+            </AcordeonItemCol>
+            <AcordeonItemCol title="Optimized Insulation Design" client:only>
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+                >
+                    <div class="w-full">
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            The drum mixer is built with high-efficiency mineral
+                            wool insulation that maintains consistent internal
+                            temperatures throughout the drying and mixing
+                            process. This insulation minimizes heat loss,
+                            reduces fuel consumption, and ensures the asphalt
+                            mix stays at optimal temperature—delivering reliable
+                            performance even in demanding weather conditions.
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <img src={item2.src} alt="" class="rounded-lg w-3/4" />
+                    </div>
+                </div>
+            </AcordeonItemCol>
+            <AcordeonItemCol title="Single-Point Adjustment System" client:only>
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+                >
+                    <div class="w-full flex justify-center">
+                        <img src={item3.src} alt="" class="rounded-lg w-3/4" />
+                    </div>
+                    <div class="w-full">
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            Triaso® equips all its drum mixers with a
+                            centralized trunnion adjustment system designed for
+                            fast, precise alignment in the field. Each trunnion
+                            base includes a fixed central pivot that keeps the
+                            drum tire centered during adjustments, eliminating
+                            guesswork and preventing lateral drift. With a
+                            single-point adjustment mechanism, operators can
+                            easily align the drum without needing to reposition
+                            multiple components. This system ensures smoother
+                            rotation, reduces wear on tires and trunnions, and
+                            simplifies maintenance—keeping your plant running
+                            efficiently with minimal downtime.
+                        </p>
+                    </div>
+                </div>
+            </AcordeonItemCol>
+            <AcordeonItemCol title="Drum Tires & Trunnions" client:only>
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+                >
+                    <div class="w-full flex justify-center">
+                        <img src={item4.src} alt="" class="rounded-lg w-3/4" />
+                    </div>
+                    <div class="w-full">
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            At the heart of all our drum mixers is a heavy-duty
+                            trunnion drive system. Each drum is powered by two
+                            high-efficiency electric motors, providing full
+                            control of the rotation system to optimize the
+                            behavior of the virgin aggregate curtain.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full text-base md:text-lg text-grisT font-light">
+                    <p>
+                        Special high-carbon alloy steel trunnions and tires
+                        forged and normalized, with fixed central pivot roller
+                        bases to prevent lateral misalignment and facilitate
+                        drum flotation.
+                    </p><br />
+                    <p>
+                        The trunnions are forged, precision-machined, and
+                        heat-treated for maximum durability, and come equipped
+                        with industry-trusted bearings. Designed for smooth,
+                        stable rotation under all load conditions, this
+                        configuration delivers consistent performance while
+                        minimizing wear and maintenance over time.
+                    </p>
+                </div>
+            </AcordeonItemCol>
+            <AcordeonItemCol title="Triaso Thrust Rollers" client:only>
+                <div
+                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+                >
+                    <div class="w-full">
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            Triaso drum mixers rotate on solid one-piece forged
+                            steel tires, delivering the strength and reliability
+                            needed for continuous operation. These tires are
+                            secured using bolt-on spring plate assemblies that
+                            flex with thermal expansion, preventing stress and
+                            distortion during high-temperature cycles.
+                        </p><br />
+                        <h2 class="text-lg md:text-xl text-black font-bold">
+                            Built to Move. Designed to Last.
+                        </h2><br />
+                        <p class="text-base md:text-lg text-grisT font-light">
+                            To maintain precise alignment and stability during
+                            rotation, the system features individual guide
+                            rollers on every tire. This system ensures smooth,
+                            centered operation throughout the production
+                            process—reducing wear and preserving the integrity
+                            of the entire assembly. Rugged, responsive, and
+                            built for long-term performance.
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <img src={thrustrollers.src} alt="" class="rounded-lg w-3/4" />
+                    </div>
+                </div>
+            </AcordeonItemCol>
+        </div>
     </div>
-
 </div>
