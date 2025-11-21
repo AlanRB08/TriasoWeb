@@ -7,6 +7,7 @@ import Separator from "../unitComponents/SeparatorBlue.astro";
 import sideP from "../../assets/images/DrumMixers/sideP.webp";
 import drumTires from "../../assets/images/DrumMixers/drumtires.jpeg";
 import Image from "astro/components/Image.astro";
+import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -156,15 +157,82 @@ import Image from "astro/components/Image.astro";
                     environmentally conscious hot-mix production.
                 </p><br /><br />
             </div>
-            <div class="w-full max-w-7xl mx-auto px-5 text-center mb-5">
-                <p class="font-thin text-base lg:text-lg">
-                    For very 10% of RAP, <br />
-                    the cost of hot-mix production
-                </p>
-                <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
-            </div>
         </div>
     </div>
+    <div
+        class="w-full mx-auto px-10 text-center mb-5 bg-gradient-to-b from-[#727272] to-[#cfd0d1]"
+    >
+        <div class="mb-5">
+            <p class="font-thin text-base lg:text-lg">
+                For very 10% of RAP, <br />
+                the cost of hot-mix production
+            </p>
+            <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
+        </div>
+        <div>
+            <p class="font-thin text-base lg:text-lg">
+                By recycling up to 50% RAP with our plants,
+            </p>
+            <p class="font-thin text-base lg:text-lg mb-5">
+                you can achieve approximately 35% savings in hot-mix production
+                costs.
+            </p>
+        </div>
+    </div>
+
+    <div class="w-full max-w-7xl mx-auto px-8 py-10">
+        <h2
+            class="text-xl lg:text-3xl text-center md:text-end lg:text-end font-bold"
+        >
+            RAP ENTRY FLIGHTS
+        </h2>
+    </div>
+    <div
+        class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center"
+    >
+        <div class="w-full">
+            <h2
+                class="text-base text-center lg:text-start md:text-start md:text-lg font-bold"
+            >
+                DRUM MIX MODIFICATION FOR RAP
+            </h2><br />
+            <div class="text-center md:text-start lg:text-start">
+                <p class="text-base md:text-lg font-thin">
+                    RAP is introduced through a collar located at an
+                    intermediate point of the drum, before the mixing zone. From
+                    this point on, the material never comes into direct contact
+                    with the burner flame.
+                </p>
+                <p class="text-base font-thin md:text-lg mt-10">
+                    The dedicated RAP flight are engineered to provide balanced
+                    heat distribution, smooth material flow, and reduced blue
+                    smoke or buildup.
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <img
+                src={rapEntry.src}
+                alt="Rap Entry Flights"
+                class="rounded-md"
+            />
+        </div>
+    </div>
+
+    <div class="max-w-7xl px-8">
+        <p class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg">
+            This controlled triple-heating system allows a higher percentage of
+            RAP to be processed consistently, up to 50% incorporation while
+            maintaining uniform temperature, preserving the asphalt binder, and
+            ensuring consistent performance in the final hot-mix.
+        </p>
+    </div>
+
+    <div class="flex justify-center">
+        <LearnBtn/>
+    </div>
+
     <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
         <div class="w-full flex justify-between">
             <div class="w-full">

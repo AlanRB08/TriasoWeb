@@ -16,7 +16,7 @@ import Video1 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import OSection from "../unitComponents/OSection.astro";
 import flag from "../../assets/images/Burners/flag.svg";
-import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg"
+import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold mt-10">
@@ -236,203 +236,203 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg"
                 </div>
             </div>
         </div>
-        <div class="w-full space-y-3 my-6">
-            <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
-            <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
-        </div>
+    </div>
+    <div class="w-full space-y-3 my-6">
+        <div class="h-0.5 bg-redBg w-1/5 self-start"></div>
+        <div class="h-0.5 bg-blueMain w-1/4 pr-6 self-start"></div>
+    </div>
+    <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
+        With Triaso, Become the Exclusive Provider of Hot Mix <br /> for All Paving
+        Projects in Your Region
+    </h2>
+    <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto" />
+    <OSection />
+    <div>
         <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
-            With Triaso, Become the Exclusive Provider of Hot Mix <br /> for All
-            Paving Projects in Your Region
+            Lower fuel consumption than any other asphalt plant
         </h2>
-        <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto" />
-        <OSection />
-        <div>
-            <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
-                Lower fuel consumption than any other asphalt plant
-            </h2>
+    </div>
+    <div class="">
+        <div
+            class="w-full bg-[url(/newBanner.png)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-20 mt-10"
+        >
+            <div class="w-full flex justify-center">
+                <img src={flag.src} alt="" class="w-[200px]" />
+            </div>
+            <p
+                class="text-white font-bold text-center lg:text-justify md:text-justify text-lg lg:text-xl"
+            >
+                Our latest burner innovation features an oxygen sensor that
+                automatically regulates excess oxygen to no more than 3%,
+                eliminating the need for manual fuel carburization adjustment
+                when relocating the equipment. Thanks to our self-carburizing
+                system, NOx levels remain even lower.
+            </p>
         </div>
-        <div class="">
+    </div>
+    <TwoColumnSection
+        leftBg="bg-redBg"
+        rightBg="bg-blueMain"
+        imageSrc={Tred.src}
+        imageAlt="Red T icon"
+        imageWidth="150px"
+    >
+        <div slot="left" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">STATIONARY DRUM MIXERS</h1>
+            <p class="text-base md:text-lg">
+                Durable and easy to transport, the drum mixers are designed for
+                long-term operation, featuring heavy-duty steel supports that
+                eliminate the need for concrete foundations.
+            </p>
+        </div>
+        <div slot="right" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">MOBILE DRUM MIXERS</h1>
+            <p class="text-base md:text-lg">
+                Perfect for remote job sites, these mixers offer quick setup,
+                portability, and high production output—all while keeping
+                operating costs low.
+            </p>
+        </div>
+    </TwoColumnSection>
+    <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
+        <AcordeonItemCol title="Extra-reinforced front shield" client:only>
             <div
-                class="w-full bg-[url(/newBanner.png)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-20 mt-10"
+                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
             >
                 <div class="w-full flex justify-center">
-                    <img src={flag.src} alt="" class="w-[200px]" />
+                    <img src={item1.src} alt="" class="rounded-lg w-3/4" />
                 </div>
-                <p
-                    class="text-white font-bold text-center lg:text-justify md:text-justify text-lg lg:text-xl"
-                >
-                    Our latest burner innovation features an oxygen sensor that
-                    automatically regulates excess oxygen to no more than 3%,
-                    eliminating the need for manual fuel carburization
-                    adjustment when relocating the equipment. Thanks to our
-                    self-carburizing system, NOx levels remain even lower.
-                </p>
-            </div>
-        </div>
-        <TwoColumnSection
-            leftBg="bg-redBg"
-            rightBg="bg-blueMain"
-            imageSrc={Tred.src}
-            imageAlt="Red T icon"
-            imageWidth="150px"
-        >
-            <div slot="left" class="flex flex-col justify-center gap-3">
-                <h1 class="text-xl md:text-2xl">STATIONARY DRUM MIXERS</h1>
-                <p class="text-base md:text-lg">
-                    Durable and easy to transport, the drum mixers are designed
-                    for long-term operation, featuring heavy-duty steel supports
-                    that eliminate the need for concrete foundations.
-                </p>
-            </div>
-            <div slot="right" class="flex flex-col justify-center gap-3">
-                <h1 class="text-xl md:text-2xl">MOBILE DRUM MIXERS</h1>
-                <p class="text-base md:text-lg">
-                    Perfect for remote job sites, these mixers offer quick
-                    setup, portability, and high production output—all while
-                    keeping operating costs low.
-                </p>
-            </div>
-        </TwoColumnSection>
-        <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
-            <AcordeonItemCol title="Extra-reinforced front shield" client:only>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
-                >
-                    <div class="w-full flex justify-center">
-                        <img src={item1.src} alt="" class="rounded-lg w-3/4" />
-                    </div>
-                    <div class="w-full">
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            The Triaso® drum is fully sealed at both ends with
-                            extra reinforcement to maintain internal
-                            temperatures and maximize combustion efficiency.
-                            Heavy-duty steel and EPDM rubber seals prevent the
-                            entry of cold air, improving fuel economy and
-                            ensuring consistent, high-quality asphalt mixes. The
-                            entire drum is sealed to prevent the entry of
-                            unwanted cold air, maintaining optimal internal
-                            temperatures and combustion efficiency. This
-                            airtight design includes an extra-reinforced front
-                            shield and sealing components made of heavy-duty
-                            steel or EPDM rubber. These materials provide
-                            long-lasting durability, resist high temperatures,
-                            and ensure that no external air disrupts the
-                            controlled environment inside the drum, improving
-                            fuel efficiency and mix quality.'
-                        </p>
-                    </div>
-                </div>
-            </AcordeonItemCol>
-            <AcordeonItemCol title="Optimized Insulation Design" client:only>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
-                >
-                    <div class="w-full">
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            The drum mixer is built with high-efficiency mineral
-                            wool insulation that maintains consistent internal
-                            temperatures throughout the drying and mixing
-                            process. This insulation minimizes heat loss,
-                            reduces fuel consumption, and ensures the asphalt
-                            mix stays at optimal temperature—delivering reliable
-                            performance even in demanding weather conditions.
-                        </p>
-                    </div>
-                    <div class="w-full flex justify-center">
-                        <img src={item2.src} alt="" class="rounded-lg w-3/4" />
-                    </div>
-                </div>
-            </AcordeonItemCol>
-            <AcordeonItemCol title="Single-Point Adjustment System" client:only>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
-                >
-                    <div class="w-full flex justify-center">
-                        <img src={item3.src} alt="" class="rounded-lg w-3/4" />
-                    </div>
-                    <div class="w-full">
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            Triaso® equips all its drum mixers with a
-                            centralized trunnion adjustment system designed for
-                            fast, precise alignment in the field. Each trunnion
-                            base includes a fixed central pivot that keeps the
-                            drum tire centered during adjustments, eliminating
-                            guesswork and preventing lateral drift. With a
-                            single-point adjustment mechanism, operators can
-                            easily align the drum without needing to reposition
-                            multiple components. This system ensures smoother
-                            rotation, reduces wear on tires and trunnions, and
-                            simplifies maintenance—keeping your plant running
-                            efficiently with minimal downtime.
-                        </p>
-                    </div>
-                </div>
-            </AcordeonItemCol>
-            <AcordeonItemCol title="Drum Tires & Trunnions" client:only>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
-                >
-                    <div class="w-full flex justify-center">
-                        <img src={item4.src} alt="" class="rounded-lg w-3/4" />
-                    </div>
-                    <div class="w-full">
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            At the heart of all our drum mixers is a heavy-duty
-                            trunnion drive system. Each drum is powered by two
-                            high-efficiency electric motors, providing full
-                            control of the rotation system to optimize the
-                            behavior of the virgin aggregate curtain.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full text-base md:text-lg text-grisT font-light">
-                    <p>
-                        Special high-carbon alloy steel trunnions and tires
-                        forged and normalized, with fixed central pivot roller
-                        bases to prevent lateral misalignment and facilitate
-                        drum flotation.
-                    </p><br />
-                    <p>
-                        The trunnions are forged, precision-machined, and
-                        heat-treated for maximum durability, and come equipped
-                        with industry-trusted bearings. Designed for smooth,
-                        stable rotation under all load conditions, this
-                        configuration delivers consistent performance while
-                        minimizing wear and maintenance over time.
+                <div class="w-full">
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        The Triaso® drum is fully sealed at both ends with
+                        extra reinforcement to maintain internal temperatures
+                        and maximize combustion efficiency. Heavy-duty steel and
+                        EPDM rubber seals prevent the entry of cold air,
+                        improving fuel economy and ensuring consistent,
+                        high-quality asphalt mixes. The entire drum is sealed to
+                        prevent the entry of unwanted cold air, maintaining
+                        optimal internal temperatures and combustion efficiency.
+                        This airtight design includes an extra-reinforced front
+                        shield and sealing components made of heavy-duty steel
+                        or EPDM rubber. These materials provide long-lasting
+                        durability, resist high temperatures, and ensure that no
+                        external air disrupts the controlled environment inside
+                        the drum, improving fuel efficiency and mix quality.'
                     </p>
                 </div>
-            </AcordeonItemCol>
-            <AcordeonItemCol title="Triaso Thrust Rollers" client:only>
-                <div
-                    class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
-                >
-                    <div class="w-full">
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            Triaso drum mixers rotate on solid one-piece forged
-                            steel tires, delivering the strength and reliability
-                            needed for continuous operation. These tires are
-                            secured using bolt-on spring plate assemblies that
-                            flex with thermal expansion, preventing stress and
-                            distortion during high-temperature cycles.
-                        </p><br />
-                        <h2 class="text-lg md:text-xl text-black font-bold">
-                            Built to Move. Designed to Last.
-                        </h2><br />
-                        <p class="text-base md:text-lg text-grisT font-light">
-                            To maintain precise alignment and stability during
-                            rotation, the system features individual guide
-                            rollers on every tire. This system ensures smooth,
-                            centered operation throughout the production
-                            process—reducing wear and preserving the integrity
-                            of the entire assembly. Rugged, responsive, and
-                            built for long-term performance.
-                        </p>
-                    </div>
-                    <div class="w-full flex justify-center">
-                        <img src={thrustrollers.src} alt="" class="rounded-lg w-3/4" />
-                    </div>
+            </div>
+        </AcordeonItemCol>
+        <AcordeonItemCol title="Optimized Insulation Design" client:only>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+            >
+                <div class="w-full">
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        The drum mixer is built with high-efficiency mineral
+                        wool insulation that maintains consistent internal
+                        temperatures throughout the drying and mixing process.
+                        This insulation minimizes heat loss, reduces fuel
+                        consumption, and ensures the asphalt mix stays at
+                        optimal temperature—delivering reliable performance even
+                        in demanding weather conditions.
+                    </p>
                 </div>
-            </AcordeonItemCol>
-        </div>
+                <div class="w-full flex justify-center">
+                    <img src={item2.src} alt="" class="rounded-lg w-3/4" />
+                </div>
+            </div>
+        </AcordeonItemCol>
+        <AcordeonItemCol title="Single-Point Adjustment System" client:only>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+            >
+                <div class="w-full flex justify-center">
+                    <img src={item3.src} alt="" class="rounded-lg w-3/4" />
+                </div>
+                <div class="w-full">
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        Triaso® equips all its drum mixers with a centralized
+                        trunnion adjustment system designed for fast, precise
+                        alignment in the field. Each trunnion base includes a
+                        fixed central pivot that keeps the drum tire centered
+                        during adjustments, eliminating guesswork and preventing
+                        lateral drift. With a single-point adjustment mechanism,
+                        operators can easily align the drum without needing to
+                        reposition multiple components. This system ensures
+                        smoother rotation, reduces wear on tires and trunnions,
+                        and simplifies maintenance—keeping your plant running
+                        efficiently with minimal downtime.
+                    </p>
+                </div>
+            </div>
+        </AcordeonItemCol>
+        <AcordeonItemCol title="Drum Tires & Trunnions" client:only>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+            >
+                <div class="w-full flex justify-center">
+                    <img src={item4.src} alt="" class="rounded-lg w-3/4" />
+                </div>
+                <div class="w-full">
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        At the heart of all our drum mixers is a heavy-duty
+                        trunnion drive system. Each drum is powered by two
+                        high-efficiency electric motors, providing full control
+                        of the rotation system to optimize the behavior of the
+                        virgin aggregate curtain.
+                    </p>
+                </div>
+            </div>
+            <div class="w-full text-base md:text-lg text-grisT font-light">
+                <p>
+                    Special high-carbon alloy steel trunnions and tires forged
+                    and normalized, with fixed central pivot roller bases to
+                    prevent lateral misalignment and facilitate drum flotation.
+                </p><br />
+                <p>
+                    The trunnions are forged, precision-machined, and
+                    heat-treated for maximum durability, and come equipped with
+                    industry-trusted bearings. Designed for smooth, stable
+                    rotation under all load conditions, this configuration
+                    delivers consistent performance while minimizing wear and
+                    maintenance over time.
+                </p>
+            </div>
+        </AcordeonItemCol>
+        <AcordeonItemCol title="Triaso Thrust Rollers" client:only>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
+            >
+                <div class="w-full">
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        Triaso drum mixers rotate on solid one-piece forged
+                        steel tires, delivering the strength and reliability
+                        needed for continuous operation. These tires are secured
+                        using bolt-on spring plate assemblies that flex with
+                        thermal expansion, preventing stress and distortion
+                        during high-temperature cycles.
+                    </p><br />
+                    <h2 class="text-lg md:text-xl text-black font-bold">
+                        Built to Move. Designed to Last.
+                    </h2><br />
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        To maintain precise alignment and stability during
+                        rotation, the system features individual guide rollers
+                        on every tire. This system ensures smooth, centered
+                        operation throughout the production process—reducing
+                        wear and preserving the integrity of the entire
+                        assembly. Rugged, responsive, and built for long-term
+                        performance.
+                    </p>
+                </div>
+                <div class="w-full flex justify-center">
+                    <img
+                        src={thrustrollers.src}
+                        alt=""
+                        class="rounded-lg w-3/4"
+                    />
+                </div>
+            </div>
+        </AcordeonItemCol>
     </div>
 </div>
