@@ -296,7 +296,11 @@ const tanksSlides = [
             class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10"
         >
             <div>
-                <img src={damperImg.src} alt="Damper" class=" w-[70%] aspect-square rounded-md" />
+                <img
+                    src={damperImg.src}
+                    alt="Damper"
+                    class="w-[70%] aspect-square rounded-md"
+                />
             </div>
             <div class="flex flex-col space-y-10">
                 <h2 class="text-white text-2xl">Damper</h2>
@@ -339,45 +343,53 @@ const tanksSlides = [
             </div>
         </div>
         <div class="w-full relative overflow-hidden bg-blueMain">
-            <!-- Fondo skew -->
-            <div class="absolute inset-0 bg-bgBeige -skew-y-2"></div>
-
-            <!-- Contenido -->
-            <div class="relative max-w-7xl px-8 mx-auto py-10">
-                <div>
-                    <h2 class="text-xl md:text-2xl">Baghouses Fines Hoppers</h2>
-                </div>
-
+            <section
+                class="w-full bg-bgBeige transform skew-y-3 py-32 origin-left z-10 relative"
+            >
                 <div
-                    class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 py-10"
+                    class="transform -skew-y-3 relative max-w-7xl px-8 mx-auto"
                 >
-                    <!-- Imagen -->
-                    <div class="w-full flex justify-center">
-                        <img
-                            src={BHoppers.src}
-                            alt="Baghouse Hoppers"
-                            class="rounded-2xl w-3/4"
-                        />
+                    <div class="mb-8">
+                        <h2 class="text-xl md:text-2xl font-bold text-black">
+                            Baghouses Fines Hoppers
+                        </h2>
                     </div>
 
-                    <!-- Texto -->
-                    <div class="w-full flex justify-center items-center">
-                        <p class="text-grisT text-base md:text-lg">
-                            Fine dust particles enter the baghouse through a
-                            high side inlet designed for controlled horizontal
-                            and downward airflow. This configuration prevents
-                            re-entrainment of fine material. A knockout chamber
-                            slows the airflow, allowing heavier particles to
-                            settle in the hopper, while internal baffles
-                            distribute air evenly and protect the filter bags
-                            from abrasion.<br />
-                            This design improves air quality, increases filtration
-                            efficiency, and reduces maintenance, ensuring reliable
-                            and consistent performance.
-                        </p>
+                    <div
+                        class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                    >
+                        <div class="w-full flex justify-center">
+                            <img
+                                src={BHoppers.src}
+                                alt="Baghouse Hoppers"
+                                class="rounded-2xl w-full md:w-4/5 object-cover z-20 relative mr-0 lg:mr-32 md:mr-32"
+                            />
+                        </div>
+
+                        <div class="w-full">
+                            <p
+                                class="text-grisT text-base md:text-lg "
+                            >
+                                Fine dust particles enter the baghouse through a
+                                high side inlet designed for controlled
+                                horizontal and downward airflow. This
+                                configuration prevents re-entrainment of fine
+                                material. A knockout chamber slows the airflow,
+                                allowing heavier particles to settle in the
+                                hopper, while internal baffles distribute air
+                                evenly and protect the filter bags from
+                                abrasion.
+                                <br /><br />
+                                This design improves air quality, increases filtration
+                                efficiency, and reduces maintenance, ensuring reliable
+                                and consistent performance.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <div class="h-24 w-full bg-blueMain"></div>
         </div>
         <div
             class="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center"
