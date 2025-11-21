@@ -1,145 +1,308 @@
 ---
 import LearnBtn from "../unitComponents/LearnBtn.astro";
-import stationary from '../../assets/images/DrumMixers/stationary.webp';
-import rap from '../../assets/images/DrumMixers/rap.webp';
+import stationary from "../../assets/images/DrumMixers/stationary.webp";
+import rap from "../../assets/images/DrumMixers/rap.webp";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import Separator from "../unitComponents/SeparatorBlue.astro";
-import sideP from '../../assets/images/DrumMixers/sideP.webp';
+import sideP from "../../assets/images/DrumMixers/sideP.webp";
+import drumTires from "../../assets/images/DrumMixers/drumtires.jpeg";
 import Image from "astro/components/Image.astro";
-
+import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
 ---
+
 <div class="w-full flex flex-col items-center justify-center font-bold">
-    <div class="bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 w-full">
+    <div
+        class="bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 w-full"
+    >
         <div class="max-w-7xl px-8 mx-auto relative">
             <h2 class="text-xl md:text-2xl relative z-20">
                 Always matching your project
             </h2>
-            <br>
+            <br />
             <p class="font-thin text-base md:text-lg relative z-20">
-                We give you options to match your project demands—offering drum shells in 5/16", 3/8" or 1/2" thicknesses. 
-                Every shell, no matter the gauge, is manufactured in-house using high-strength A-572 alloy steel to ensure consistent
-                durability and performance.
+                We give you options to match your project demands—offering drum
+                shells in 5/16", 3/8" or 1/2" thicknesses. Every shell, no
+                matter the gauge, is manufactured in-house using high-strength
+                A-572 alloy steel to ensure consistent durability and
+                performance.
             </p>
-            <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full">
+            <img
+                src={Logo.src}
+                alt=""
+                class="absolute top-0 left-0 z-10 w-full"
+            />
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20"
+        >
             <div class="flex flex-col items-center justidy-center py-6">
-                <img src="" alt="">
-                <h2 class="w-full text-start text-xl md:text-2xl">TRUNNIONS</h2><br>
-                <p>Heavy-duty trunnions made from precision-machined steel and equipped with industrial 
-                    bearings for smooth, stable drum rotation.</p>
+                <img src="" alt="" />
+                <h2 class="w-full text-start text-xl md:text-2xl">
+                    TRUNNIONS
+                </h2><br />
+                <p>
+                    Heavy-duty trunnions made from precision-machined steel and
+                    equipped with industrial bearings for smooth, stable drum
+                    rotation.
+                </p>
             </div>
-            <div class="flex flex-col items-center justidy-center py-6 ">
-                <img src="" alt="">
-                <h2 class="w-full text-start text-xl md:text-2xl">DRUM TIRES</h2><br>
-                <p>Forged from high-strength alloy steel and precisely machined to ensure reliable support and quiet,
-                     consistent operation.
-                    </p>
+            <div class="flex flex-col items-center justidy-center py-6">
+                <img src={drumTires.src} alt="" class="w-full h-[300px]" />
+                <h2 class="w-full text-start text-xl md:text-2xl">
+                    DRUM TIRES
+                </h2><br />
+                <p>
+                    Forged from high-strength alloy steel and precisely machined
+                    to ensure reliable support and quiet, consistent operation.
+                </p>
             </div>
         </div>
-        <div class="w-full bg-gradient-to-b from-[#2b2b2b] to-[#727272]">
-            <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
-                <div class="flex justify-center my-5">
-                    <img src={rap.src} alt="" class="w-2/5">
+        <div class="w-full bg-gradient-to-b from-[#2b2b2b] to-[#727272] py-16">
+            <div
+                class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+            >
+                <div class="w-full flex justify-center">
+                    <img src={rap.src} alt="Rap System" class="w-2/5" />
                 </div>
-                <div class="w-full flex flex-col items-center justify-center">
-                    <h2 class="w-full text-start text-2xl md:text-3xl">RAP COLLAR & BIN</h2><br>
-                    <p class="text-justify text-base md:text-lg font-light">
-                        The drum collar is engineered to provide the controlled and efficient entry of Recycled Asphalt Pavement (RAP)
-                        into the mixing zone. Fed directly from the RAP bin via a dedicated conveyor, the material enters the drum 
+
+                <div class="w-full text-white flex flex-col gap-4">
+                    <h1
+                        class="font-bold text-2xl text-center md:text-start lg:text-4xl uppercase"
+                    >
+                        RAP COLLAR & BIN
+                    </h1>
+
+                    <div class="flex flex-col">
+                        <p
+                            class="font-thin text-base text-center md:text-start lg:text-lg"
+                        >
+                            Our RAP system can incorporate
+                        </p>
+                        <h2
+                            class="font-bold text-xl text-center md:text-start lg:text-3xl text-white my-1"
+                        >
+                            up to 50%
+                        </h2>
+                        <p
+                            class="font-thin text-base text-center md:text-start lg:text-lg"
+                        >
+                            of recycled asphalt pavement
+                        </p>
+                    </div>
+
+                    <p
+                        class="font-thin text-base text-center md:text-start lg:text-lg text-gray-200 mt-2 leading-relaxed"
+                    >
+                        The drum collar is engineered to provide the controlled
+                        and efficient entry of Recycled Asphalt Pavement (RAP)
+                        into the mixing zone. Fed directly from the RAP bin via
+                        a dedicated conveyor, the material enters the drum
                         smoothly and uniformly.
                     </p>
                 </div>
             </div>
         </div>
         <div class="w-full bg-[#727272] flex justify-center">
-            <button class="text-blueMain px-4 py-2 rounded-2xl text-6xl" onclick="toggleDropdown()" id="dropdown-button">
-            <svg width="84px" height="84px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" id="dropdown-arrow">
-                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-        </button>
+            <button
+                class="text-blueMain px-4 py-2 rounded-2xl text-6xl"
+                onclick="toggleDropdown()"
+                id="dropdown-button"
+            >
+                <svg
+                    width="84px"
+                    height="84px"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    color="#ffffff"
+                    id="dropdown-arrow"
+                >
+                    <path
+                        d="M6 9L12 15L18 9"
+                        stroke="#ffffff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </button>
         </div>
-        <div class="w-full transition-all duration-300 overflow-hidden bg-[#727272] px-8 lg:px-52" id="extradiv" style="max-height: 0">
-            <div class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light">
+        <div
+            class="w-full transition-all duration-300 overflow-hidden bg-[#727272] px-8 lg:px-52"
+            id="extradiv"
+            style="max-height: 0"
+        >
+            <div
+                class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light"
+            >
                 <p>
-                Strategically positioned, the collar introduces RAP downstream of the burner flame, avoiding excessive heat 
-                exposure that could damage 
-                the recycled material or cause blue smoke emissions.
-                </p><br>
+                    Strategically positioned, the collar introduces RAP
+                    downstream of the burner flame, avoiding excessive heat
+                    exposure that could damage the recycled material or cause
+                    blue smoke emissions.
+                </p><br />
                 <p>
-                    Its engineered shape promotes a steady, turbulence-free flow, allowing for even distribution 
-                    and thorough blending with superheated virgin aggregates. This results in a consistent final
-                     mix with improved cohesion and overall performance.
-
-                </p><br>
+                    Its engineered shape promotes a steady, turbulence-free
+                    flow, allowing for even distribution and thorough blending
+                    with superheated virgin aggregates. This results in a
+                    consistent final mix with improved cohesion and overall
+                    performance.
+                </p><br />
                 <p>
-                    By maintaining temperature control and maximizing contact between old and new materials,
-                     the drum collar plays a critical role in preserving RAP quality, increasing recycled content 
-                     percentages, and supporting both cost-effective and environmentally conscious hot-mix production.
-                </p><br><br>
+                    By maintaining temperature control and maximizing contact
+                    between old and new materials, the drum collar plays a
+                    critical role in preserving RAP quality, increasing recycled
+                    content percentages, and supporting both cost-effective and
+                    environmentally conscious hot-mix production.
+                </p><br /><br />
             </div>
         </div>
     </div>
-    <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
-        <div class="w-full flex justify-between">
-        <div class="w-full">
-            <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
-            <Separator/>
+    <div
+        class="w-full mx-auto px-10 text-center mb-5 bg-gradient-to-b from-[#727272] to-[#cfd0d1]"
+    >
+        <div class="mb-5">
+            <p class="font-thin text-base lg:text-lg">
+                For very 10% of RAP, <br />
+                the cost of hot-mix production
+            </p>
+            <h2 class="font-bold text-lg lg:text-2xl">decreases 7%</h2>
         </div>
-        <div class="text-end">
-            <h2 class="text-blueMain">
-            ENHANCE YOUR COMPANY IMAGE <br> WITH TRIASO DESIGN
-            </h2>
-        </div>
-        </div>
-        <div class="my-10 flex flex-col justify-center items-center gap-6">
-        <img src={sideP.src} alt="">
-        <div class="max-w-[250px]">
-            <LearnBtn/>
-        </div>
-        </div>
-  </div>
-  <div class="max-w-7xl px-8 mx-auto my-10 rounded-2xl">
-    <div class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[600px] relative">
-        <h1 class="text-2xl md:text-3xl text white z-20">THE MOST VERSATILE AND MOBILE DRUM MIX ON THE MARKET</h1>
-        <p class="text-lg md:text-xl text white font-thin italic z-20">
-            "Triaso asphalt plants have proven to be reliable, efficient, and built to last. 
-            Their performance and low operating costs have greatly improved our productivity. We highly recommend
-             Triaso to any company in the industry."
-        </p>
-        {/*<p class="text-lg md:text-xl text white font-thin italic z-20">
-            — Grupo Carso
-        </p>*/}
-        <div class="w-full h-full bg-black/80 absolute top-0 z-10 rounded-2xl">
+        <div>
+            <p class="font-thin text-base lg:text-lg">
+                By recycling up to 50% RAP with our plants,
+            </p>
+            <p class="font-thin text-base lg:text-lg mb-5">
+                you can achieve approximately 35% savings in hot-mix production
+                costs.
+            </p>
         </div>
     </div>
-  </div>    
+
+    <div class="w-full max-w-7xl mx-auto px-8 py-10">
+        <h2
+            class="text-xl lg:text-3xl text-center md:text-end lg:text-end font-bold"
+        >
+            RAP ENTRY FLIGHTS
+        </h2>
+    </div>
+    <div
+        class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center"
+    >
+        <div class="w-full">
+            <h2
+                class="text-base text-center lg:text-start md:text-start md:text-lg font-bold"
+            >
+                DRUM MIX MODIFICATION FOR RAP
+            </h2><br />
+            <div class="text-center md:text-start lg:text-start">
+                <p class="text-base md:text-lg font-thin">
+                    RAP is introduced through a collar located at an
+                    intermediate point of the drum, before the mixing zone. From
+                    this point on, the material never comes into direct contact
+                    with the burner flame.
+                </p>
+                <p class="text-base font-thin md:text-lg mt-10">
+                    The dedicated RAP flight are engineered to provide balanced
+                    heat distribution, smooth material flow, and reduced blue
+                    smoke or buildup.
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <img
+                src={rapEntry.src}
+                alt="Rap Entry Flights"
+                class="rounded-md"
+            />
+        </div>
+    </div>
+
+    <div class="max-w-7xl px-8">
+        <p class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg">
+            This controlled triple-heating system allows a higher percentage of
+            RAP to be processed consistently, up to 50% incorporation while
+            maintaining uniform temperature, preserving the asphalt binder, and
+            ensuring consistent performance in the final hot-mix.
+        </p>
+    </div>
+
+    <div class="flex justify-center">
+        <LearnBtn/>
+    </div>
+
+    <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
+        <div class="w-full flex justify-between">
+            <div class="w-full">
+                <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
+                <Separator />
+            </div>
+            <div class="text-end">
+                <h2 class="text-blueMain">
+                    ENHANCE YOUR COMPANY IMAGE <br /> WITH TRIASO DESIGN
+                </h2>
+            </div>
+        </div>
+        <div class="my-10 flex flex-col justify-center items-center gap-6">
+            <img src={sideP.src} alt="" />
+            <div class="max-w-[250px]">
+                <LearnBtn />
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl px-8 mx-auto my-10 rounded-2xl">
+        <div
+            class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[600px] relative"
+        >
+            <h1 class="text-2xl md:text-3xl text white z-20">
+                THE MOST VERSATILE AND MOBILE DRUM MIX ON THE MARKET
+            </h1>
+            <p class="text-lg md:text-xl text white font-thin italic z-20">
+                "Triaso asphalt plants have proven to be reliable, efficient,
+                and built to last. Their performance and low operating costs
+                have greatly improved our productivity. We highly recommend
+                Triaso to any company in the industry."
+            </p>
+            {
+                /*<p class="text-lg md:text-xl text white font-thin italic z-20">
+            — Grupo Carso
+        </p>*/
+            }
+            <div
+                class="w-full h-full bg-black/80 absolute top-0 z-10 rounded-2xl"
+            >
+            </div>
+        </div>
+    </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdown = document.getElementById("extradiv");
-    const arrow = document.getElementById("dropdown-arrow");
-    const button = document.getElementById("dropdown-button");
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.getElementById("extradiv");
+        const arrow = document.getElementById("dropdown-arrow");
+        const button = document.getElementById("dropdown-button");
 
-    if (button) {
-      button.addEventListener("click", () => {
-        console.log("si se lanza el evento cada que se hace click");
-        window.dispatchEvent(new Event("layoutChange"));
-        if (!dropdown || !arrow) return;
+        if (button) {
+            button.addEventListener("click", () => {
+                console.log("si se lanza el evento cada que se hace click");
+                window.dispatchEvent(new Event("layoutChange"));
+                if (!dropdown || !arrow) return;
 
-        const isClosed = dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
+                const isClosed =
+                    dropdown.style.maxHeight === "0px" ||
+                    !dropdown.style.maxHeight;
 
-        if (isClosed) {
-          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-          arrow.style.transform = "rotate(180deg)";
-        } else {
-          dropdown.style.maxHeight = "0px";
-          arrow.style.transform = "rotate(0deg)";
+                if (isClosed) {
+                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                    arrow.style.transform = "rotate(180deg)";
+                } else {
+                    dropdown.style.maxHeight = "0px";
+                    arrow.style.transform = "rotate(0deg)";
+                }
+            });
         }
-      });
-    }
-  });
+    });
 </script>
 <style>
     #dropdown-arrow {

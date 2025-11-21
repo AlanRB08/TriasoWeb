@@ -134,12 +134,12 @@ const toggleConfig = [
   {
     id: "5",
     dimensions: {
-      width: 310.0,
-      height: 509.68,
+      width: 390.0,
+      height: 505.19,
       length: 2037.62,
-      diameter: 219.456,
+      diameter: 259.08,
       drumLenght: 1280.48,
-      drumHeight: 264.31,
+      drumHeight: 259.08,
       transportationHeight: 424.57,
       wheel: 140.0,
       humidity3: 200,
@@ -149,10 +149,10 @@ const toggleConfig = [
   {
     id: "6",
     dimensions: {
-      width: 310.0,
+      width: 390.0,
       height: 509.68,
       length: 2044.96,
-      diameter: 259.08,
+      diameter: 289.56,
       drumLenght: 1280.48,
       drumHeight: 289.31,
       transportationHeight: 424.57,
@@ -164,12 +164,12 @@ const toggleConfig = [
   {
     id: "7",
     dimensions: {
-      width: 320.0,
+      width: 390.0,
       height: 510.24,
       length: 2129.12,
       diameter: 289.56,
       drumLenght: 1280.48,
-      drumHeight: 264.31,
+      drumHeight: 289.31,
       transportationHeight: 424.57,
       wheel: 140.0,
       humidity3: 400,
@@ -426,9 +426,8 @@ const DrumMixPlanos = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -457,11 +456,10 @@ const DrumMixPlanos = () => {
               {/* Botón 1 */}
               <button
                 onClick={() => setActiveTab(1)}
-                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
-                  activeTab === 1
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${activeTab === 1
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 80-110 Tph
               </button>
@@ -469,11 +467,10 @@ const DrumMixPlanos = () => {
               {/* Botón 2 */}
               <button
                 onClick={() => setActiveTab(2)}
-                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
-                  activeTab === 2
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${activeTab === 2
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 110-150 Tph
               </button>
@@ -481,11 +478,10 @@ const DrumMixPlanos = () => {
               {/* Botón 3 */}
               <button
                 onClick={() => setActiveTab(3)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
-                  activeTab === 3
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${activeTab === 3
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 140-180 Tph
               </button>
@@ -495,22 +491,20 @@ const DrumMixPlanos = () => {
               {/* Botón 4 */}
               <button
                 onClick={() => setActiveTab(4)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
-                  activeTab === 4
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${activeTab === 4
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 200-250 Tph
               </button>
               {/* Botón 5 */}
               <button
                 onClick={() => setActiveTab(5)}
-                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
-                  activeTab === 5
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${activeTab === 5
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 300-360 Tph
               </button>
@@ -518,22 +512,20 @@ const DrumMixPlanos = () => {
               {/* Botón 6 */}
               <button
                 onClick={() => setActiveTab(6)}
-                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${
-                  activeTab === 6
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-3xl md:rounded-full transition-all duration-300 ${activeTab === 6
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 400-480 Tph
               </button>
 
               <button
                 onClick={() => setActiveTab(7)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${
-                  activeTab === 7
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-3xl md:rounded-full ${activeTab === 7
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 500-600 Tph
               </button>
@@ -574,9 +566,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -589,16 +580,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -624,9 +615,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -639,11 +629,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -688,9 +677,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -703,16 +691,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all text-sm lg:text-base duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all text-sm lg:text-base duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Industrial-grade motors and components</li>
                         <li>Simple wiring system for easy maintenance</li>
                         <li>Weather-protected electrical connections</li>
                         <li>Pulley and bushing transmission system</li>
+                        <li>External fuel lines, sensors, and signal cabling pre-installed.</li>
                       </ul>
                     </div>
                   </div>
@@ -746,9 +734,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -761,23 +748,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between">
                           <h1>Modulating burner:</h1>
-                          <p>24 million BTU/hr</p>
+                          <p>20 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>5,907</p>
+                          <p>4,296</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>20 hp</p>
+                          <p>15 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -825,9 +811,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -840,11 +825,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <div className="flex justify-between">
                           <h1>ACFM:</h1>
@@ -852,7 +836,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>24m3</p>
+                          <p>18,00ft2</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -886,9 +870,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -901,11 +884,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -956,12 +938,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1020,12 +1001,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1077,12 +1057,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1141,9 +1120,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -1156,69 +1134,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`text-sm lg:text-base transition-all duration-500 overflow-hidden ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p data-imperial="264.31 cm" data-metric="8.67 ft">
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p data-imperial="264.31 cm" data-metric="8.67 ft">
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -1245,9 +1218,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -1260,24 +1232,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -1288,57 +1258,53 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Transportation height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.transportationHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions
-                                      .transportationHeight ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions
+                                    .transportationHeight ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -1367,9 +1333,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -1382,11 +1347,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -1424,9 +1388,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -1439,11 +1402,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`text-sm lg:text-base transition-all duration-500 md:mb-0 overflow-hidden ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -1476,9 +1438,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1491,11 +1452,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Driven by four 20 HP motors</li>
                         <li>
@@ -1538,9 +1498,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1553,11 +1512,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -1617,8 +1575,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -1679,8 +1637,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1734,8 +1692,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -1793,9 +1751,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1808,11 +1765,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -1820,8 +1776,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -1830,8 +1786,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -1840,8 +1796,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -1868,9 +1824,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1883,11 +1838,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -1940,9 +1894,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1955,16 +1908,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -1990,9 +1943,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2005,11 +1957,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -2056,9 +2007,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2071,11 +2021,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -2121,9 +2070,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2136,23 +2084,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>33 million BTU/hr</p>
+                          <p>27.5 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>7,700</p>
+                          <p>5,907</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>30 hp</p>
+                          <p>20 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -2200,9 +2147,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2215,11 +2161,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <div className="flex justify-between">
                           <h1>ACFM:</h1>
@@ -2227,7 +2172,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>33 m3</p>
+                          <p>24 m3</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -2261,9 +2206,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2276,11 +2220,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -2334,12 +2277,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2398,12 +2340,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -2455,12 +2396,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2520,9 +2460,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -2535,69 +2474,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -2624,9 +2558,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -2639,24 +2572,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -2667,57 +2598,53 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p data-imperial="731.29 cm" data-metric="23.99 ft">
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Transportation height:</h1>
                             <p data-imperial="427.57 cm" data-metric="14.02 ft">
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.transportationHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions
-                                      .transportationHeight ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions
+                                    .transportationHeight ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -2746,9 +2673,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -2761,11 +2687,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -2807,9 +2732,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -2822,11 +2746,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -2859,9 +2782,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2874,11 +2796,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Driven by four 30 HP motors</li>
                         <li>
@@ -2921,9 +2842,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2936,11 +2856,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -2998,8 +2917,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -3060,8 +2979,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -3115,8 +3034,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -3174,9 +3093,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3189,11 +3107,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -3237,9 +3154,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3252,11 +3168,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -3313,9 +3228,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3328,16 +3242,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -3363,9 +3277,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3378,11 +3291,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -3429,9 +3341,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3444,18 +3355,17 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
                           wiring.
                         </li>
-                        <li>Simple wiring system for easy maintenance</li>
-                        <li>Weather-protected electrical connections</li>
+                        <li>Simplified wiring system for easy maintenance.</li>
+                        <li>Weather-protected electrical connections.</li>
                         <li>Pulley-and-bushing drive system</li>
                         <li>
                           External fuel lines, sensors, and signal cabling
@@ -3492,9 +3402,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3507,23 +3416,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>42 million BTU/hr</p>
+                          <p>35 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>8,900</p>
+                          <p>7,518</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>40 hp</p>
+                          <p>25 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -3571,9 +3479,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3586,19 +3493,18 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <div className="flex justify-between">
                           <h1>ACFM:</h1>
-                          <p>22,000</p>
+                          <p>24,500</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>37 m3</p>
+                          <p>33 m3</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -3606,7 +3512,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <li className="flex justify-between w-full">
                           <h1>Bags:</h1>
-                          <p>280</p>
+                          <p>308</p>
                         </li>
                       </div>
                     </div>
@@ -3632,9 +3538,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3647,11 +3552,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -3703,12 +3607,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -3767,12 +3670,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -3824,12 +3726,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -3888,9 +3789,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -3903,69 +3803,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -3992,9 +3887,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -4007,24 +3901,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -4035,57 +3927,53 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Transportation height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.transportationHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions
-                                      .transportationHeight ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions
+                                    .transportationHeight ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -4114,9 +4002,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -4129,11 +4016,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -4175,9 +4061,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -4190,11 +4075,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -4227,9 +4111,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4242,13 +4125,12 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
-                        <li>Driven by four 40 HP motors</li>
+                        <li>Driven by two 40 HP motors</li>
                         <li>
                           Trunnion-driven system for reliable, continuous
                           operation
@@ -4289,9 +4171,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4304,11 +4185,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -4366,8 +4246,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -4428,8 +4308,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -4483,8 +4363,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -4542,9 +4422,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4557,11 +4436,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -4569,8 +4447,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -4579,8 +4457,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -4589,8 +4467,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -4617,9 +4495,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4632,11 +4509,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -4693,9 +4569,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4708,16 +4583,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -4743,9 +4618,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4758,11 +4632,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -4809,9 +4682,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4824,11 +4696,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -4878,9 +4749,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4893,23 +4763,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>42 million BTU/hr</p>
+                          <p>50 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>8,900</p>
+                          <p>10,740</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>50 hp</p>
+                          <p>40 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -4957,9 +4826,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4972,11 +4840,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <div className="flex justify-between">
                           <h1>ACFM:</h1>
@@ -5018,9 +4885,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -5033,11 +4899,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -5089,12 +4954,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -5153,12 +5017,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -5210,12 +5073,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -5274,9 +5136,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -5289,69 +5150,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -5378,9 +5234,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -5393,24 +5248,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -5421,57 +5274,53 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Transportation height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.transportationHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.transportationHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions
-                                      .transportationHeight ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions
+                                    .transportationHeight ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -5500,9 +5349,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -5515,11 +5363,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -5561,9 +5408,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -5576,11 +5422,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -5613,9 +5458,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -5628,13 +5472,12 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
-                        <li>Driven by four 50 HP motors</li>
+                        <li>Driven by two 50 HP motors</li>
                         <li>
                           Trunnion-driven system for reliable, continuous
                           operation
@@ -5675,9 +5518,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -5690,11 +5532,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -5752,8 +5593,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -5814,8 +5655,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -5869,8 +5710,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -5928,9 +5769,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -5943,11 +5783,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -5955,8 +5794,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -5965,8 +5804,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -5975,8 +5814,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -6003,9 +5842,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6018,11 +5856,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -6075,9 +5912,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6090,16 +5926,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -6125,9 +5961,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6140,11 +5975,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -6191,9 +6025,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6206,17 +6039,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
                           wiring.
                         </li>
-                        <li>Simple wiring system for easy maintenance</li>
+                        <li>Simplified wiring system for easy maintenance.</li>
                         <li>Weather-protected electrical connections</li>
                         <li>Pulley-and-bushing drive system</li>
                         <li>
@@ -6256,9 +6088,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6271,19 +6102,18 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>90 million BTU/hr</p>
+                          <p>75 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>12,960</p>
+                          <p>16,110</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
@@ -6335,9 +6165,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6350,11 +6179,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -6406,12 +6234,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -6470,12 +6297,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -6527,12 +6353,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -6591,9 +6416,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -6606,69 +6430,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -6695,9 +6514,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -6710,24 +6528,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -6738,42 +6554,39 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -6802,9 +6615,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -6817,11 +6629,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -6860,9 +6671,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -6875,11 +6685,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -6912,9 +6721,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6927,13 +6735,12 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
-                        <li>Driven by four 60 HP motors</li>
+                        <li>Driven by two 75 HP motors</li>
                         <li>
                           Trunnion-driven system for reliable, continuous
                           operation
@@ -6974,9 +6781,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -6989,11 +6795,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -7051,8 +6856,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -7113,8 +6918,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -7168,8 +6973,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -7227,9 +7032,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7242,11 +7046,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -7254,8 +7057,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -7264,8 +7067,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -7274,8 +7077,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -7302,9 +7105,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7317,11 +7119,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -7374,9 +7175,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7389,16 +7189,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -7424,9 +7224,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7439,11 +7238,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -7490,9 +7288,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7505,17 +7302,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors and components, and Siemens
                           wiring.
                         </li>
-                        <li>Simple wiring system for easy maintenance</li>
+                        <li>Simplified wiring system for easy maintenance.</li>
                         <li>Weather-protected electrical connections</li>
                         <li>Pulley-and-bushing transmission system</li>
                         <li>
@@ -7555,9 +7351,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7570,23 +7365,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>120 million BTU/hr</p>
+                          <p>100 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>15,550</p>
+                          <p>21,480</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>70 hp</p>
+                          <p>75 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -7634,9 +7428,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -7649,11 +7442,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -7705,12 +7497,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -7769,12 +7560,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -7826,12 +7616,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -7890,9 +7679,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -7905,69 +7693,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -7994,9 +7777,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -8009,24 +7791,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -8037,42 +7817,39 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -8101,9 +7878,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -8116,11 +7892,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -8162,9 +7937,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -8177,11 +7951,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -8214,9 +7987,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8229,13 +8001,12 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
-                        <li>Driven by four 70 HP motors</li>
+                        <li>Driven by two 100 HP motors</li>
                         <li>
                           Trunnion-driven system for reliable, continuous
                           operation
@@ -8277,9 +8048,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8292,11 +8062,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -8354,8 +8123,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -8416,8 +8185,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -8471,8 +8240,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -8530,9 +8299,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8545,11 +8313,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -8557,8 +8324,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -8567,8 +8334,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -8577,8 +8344,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -8605,9 +8372,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8620,11 +8386,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
@@ -8677,9 +8442,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8692,16 +8456,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Inlet Flights</li>
                         <li>Drying Veiling Flights</li>
                         <li>Radiation Flights</li>
                         <li>Heating Flights</li>
+                        <li>RAP Flights</li>
                         <li>Mixing Flights</li>
                       </ul>
                     </div>
@@ -8727,9 +8491,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8742,11 +8505,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -8793,9 +8555,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8808,19 +8569,18 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors and components, and Siemens
                           wiring.
                         </li>
-                        <li>Simple wiring system for easy maintenance</li>
-                        <li>Weather-protected electrical connections</li>
-                        <li>Pulley-and-bushing transmission system</li>
+                        <li>Simplified wiring system for easy maintenance.</li>
+                        <li>Weather-protected electrical connections.</li>
+                        <li>Pulley-and-bushing transmission system.</li>
                         <li>
                           External fuel lines, sensors, and signal cabling
                           pre-installed.
@@ -8858,9 +8618,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8873,23 +8632,22 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="flex justify-between w-full">
                           <h1>Modulating burner:</h1>
-                          <p>150 million BTU/hr</p>
+                          <p>125 million BTU/hr</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>ACFM:</h1>
-                          <p>20,250</p>
+                          <p>26,850</p>
                         </li>
                         <li className="flex justify-between w-full">
                           <h1>Motor capacity:</h1>
-                          <p>80 hp</p>
+                          <p>100 hp</p>
                         </li>
                         <li>Fueled with total-air control system</li>
                         <li className="list-none">
@@ -8937,9 +8695,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -8952,11 +8709,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -9008,12 +8764,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -9072,12 +8827,11 @@ const DrumMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -9129,12 +8883,11 @@ const DrumMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -9193,9 +8946,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -9208,69 +8960,64 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumLenght?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumLenght?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumLenght ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumLenght ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.drumHeight?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.drumHeight?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.drumHeight ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.drumHeight ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Diameter:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.diameter?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.diameter?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.diameter ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.diameter ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -9297,9 +9044,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_2 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -9312,24 +9058,22 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_2
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Total length (including hitch):</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.length?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.length?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.length ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.length ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
@@ -9340,42 +9084,39 @@ const DrumMixPlanos = () => {
                             <h1>Fifth-wheel hitch height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.wheel?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.wheel?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.wheel ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.wheel ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.width?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.width?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.width ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.width ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Total height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.height?.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${activeData?.dimensions.height?.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.height ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.height ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
@@ -9404,9 +9145,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_3 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -9419,11 +9159,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_3
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>3% humidity:</h1>
@@ -9465,9 +9204,8 @@ const DrumMixPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_5 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_5 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -9480,11 +9218,10 @@ const DrumMixPlanos = () => {
                           </button>
                         </div>
                         <ul
-                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                            openSections.C3_5
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_5
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <li>EPA</li>
                           <li>OSHA</li>
@@ -9517,9 +9254,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -9532,18 +9268,16 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
-                        <li>Driven by four 80 HP motors</li>
+                        <li>Driven by two 125 HP motors</li>
                         <li>
                           Trunnion-driven system for reliable, continuous
                           operation
                         </li>
-                        <li>Digital VFDs for precise speed adjustments</li>
                         <li>
                           Trunnions and tires forged, machined, and heat-treated
                           for durability.
@@ -9580,9 +9314,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C4_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -9595,11 +9328,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C4_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        }`}
+                        className={`transition-all duration-500 overflow-hidden md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C4_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          }`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -9657,8 +9389,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -9719,8 +9451,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -9774,8 +9506,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                           <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                             <div className="bg-white h-[1px] w-full relative">
@@ -9833,9 +9565,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -9848,11 +9579,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <div
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <div className="flex justify-between">
                           <h1>Length:</h1>
@@ -9860,8 +9590,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -9870,8 +9600,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -9880,8 +9610,8 @@ const DrumMixPlanos = () => {
                             {unit === "metric"
                               ? `${cabinSize[0].height?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (cabinSize[0].height ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (cabinSize[0].height ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                       </div>
@@ -9908,9 +9638,8 @@ const DrumMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C5_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -9923,11 +9652,10 @@ const DrumMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C5_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C5_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>7' x 10' control cabin, towable.</li>
                         <li>
