@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/DrumMixers/baghouse.webp";
+import bagHouseMain from "../../assets/images/BagHouses/bagHouseMain.png"
 
 const BHOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -87,7 +88,7 @@ const BHOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div className="w-3/5">
-            <img src={single.src} alt="" className="rounded-lg" />
+            <img src={bagHouseMain.src} alt="" className="rounded-lg" />
           </div>
         </div>
       </div>
