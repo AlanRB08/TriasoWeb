@@ -1,57 +1,95 @@
 ---
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
-import baghouse from '../../assets/images/DrumMixers/baghouse.webp';
-import baghouse2 from '../../assets/images/DrumMixers/baghouse2.webp';
-import Image from 'astro/components/Image.astro';
-import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
+import baghouse from "../../assets/images/DrumMixers/baghouse.webp";
+import baghouse2 from "../../assets/images/DrumMixers/baghouse2.webp";
+import Image from "astro/components/Image.astro";
+import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 ---
-<div class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20 gap-6">
-    <div class="max-w-7xl text-start">
-        <h1 class="w-full text-start px-8 text-2xl md:text-4xl lg:mb-10">INTEGRATED BAGHOUSES</h1>
+
+<div class="flex justify-center">
+    <div class="max-w-7xl flex flex-col text-grisT font-bold gap-6">
+        <div>
+            <h1 class="w-full text-start px-8 text-2xl md:text-4xl lg:mb-10">
+                INTEGRATED BAGHOUSES
+            </h1>
+        </div>
+        <div class="max-w-7xl px-8">
+            <SeparatorBlue />
+        </div>
+        <div class="max-w-7xl px-8">
+            <p class="text-base md:text-lg">
+                Baghouses are crucial for controlling dust and maintaining air
+                quality in industrial settings. They efficiently capture
+                particulate matter, ensuring compliance with environmental
+                standards and creating a safer work environment. Ideal for
+                industries like asphalt plants and aggregate processing,
+                baghouses offer reliable, long-lasting performance.
+            </p>
+        </div>
     </div>
-    <div class="max-w-7xl px-8">
-        <SeparatorBlue/>
-    </div>
-    <div class="max-w-7xl px-8">
-        <p class="text-base md:text-lg">Baghouses are crucial for controlling dust and maintaining air 
-            quality in industrial settings. They efficiently capture particulate matter, 
-            ensuring compliance with environmental standards and creating a safer work environment. Ideal
-             for industries like asphalt plants and aggregate processing, baghouses offer reliable, long-lasting performance.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full">
-        <div class="px-8 lg:pl-52 bg-white border-black border-2 md:rounded-r-2xl py-10">
-            <h2 class="text-black text-xl md:text-2xl">Ranging from 4,000 to 90,000 ACFM Capacity</h2><br>
-            <p>The baghouses are highly efficient at capturing fine particles,<span class="text-black"> achieving up
-                 to 99.99% filtration</span>. Total and homogeneous return of fines to the hot-mix 
-                 to optimize its quality and pavement life.</p><br>
-            <p>Their advanced filtration system ensures cleaner air, 
-                contributing to a greener, more eco-conscious workplace.</p>
+</div>
+
+<div
+    class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20 gap-6"
+>
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full"
+    >
+        <div
+            class="px-8 lg:pl-52 bg-white border-black border-2 md:rounded-r-2xl py-10"
+        >
+            <h2 class="text-black text-xl md:text-2xl">
+                Ranging from 4,000 to 90,000 ACFM Capacity
+            </h2><br />
+            <p>
+                The baghouses are highly efficient at capturing fine particles,<span
+                    class="text-black"
+                >
+                    achieving up to 99.99% filtration</span
+                >. Total and homogeneous return of fines to the hot-mix to
+                optimize its quality and pavement life.
+            </p><br />
+            <p>
+                Their advanced filtration system ensures cleaner air,
+                contributing to a greener, more eco-conscious workplace.
+            </p>
         </div>
         <div class="flex flex-col items-center justify-center px-8 lg:pr-52">
-            <Image src={baghouse} alt="" class="w-3/4 xl:w-1/2"/>
+            <Image src={baghouse} alt="" class="w-3/4 xl:w-1/2" />
         </div>
     </div>
     <div class="w-full flex flex-col md:flex-row text-white my-10">
-        <Image src={baghouse2} alt="" class="w-full h-auto md:h-[250px] object-cover"/>
-        <div class="bg-blueMain px-4 md:px-8 lg:pr-52 py-6 lg:py-0 flex flex-col items-center justify-center md:rounded-l-2xl">
+        <Image
+            src={baghouse2}
+            alt=""
+            class="w-full h-auto md:h-[250px] object-cover"
+        />
+        <div
+            class="bg-blueMain px-4 md:px-8 lg:pr-52 py-6 lg:py-0 flex flex-col items-center justify-center md:rounded-l-2xl"
+        >
             <h2 class="text-xl md:text-2xl mb-4">
                 Mechanism of baghouses available in pulse jet and reverse jet
             </h2>
             <p class="text-grisSubP mb-4 md:mb-0">
-                <span class="text-white">Pulse Jet:</span> A cleaning system that uses short bursts of compressed air to dislodge
-                 dust and debris from the filter bags, maintaining continuous airflow and filtration efficiency.
-            </p><br>
+                <span class="text-white">Pulse Jet:</span> A cleaning system that
+                uses short bursts of compressed air to dislodge dust and debris from
+                the filter bags, maintaining continuous airflow and filtration efficiency.
+            </p><br />
             <p class="text-grisSubP">
                 <span class="text-white">Reverse Air:</span>
-                A cleaning system that directs low-pressure air in the opposite direction to remove dust 
-                from the filter bags, typically used in larger baghouses or high-dust 
-                applications.
+                A cleaning system that directs low-pressure air in the opposite direction
+                to remove dust from the filter bags, typically used in larger baghouses
+                or high-dust applications.
             </p>
         </div>
     </div>
-    <div class="w-full flex justify-center items-center gap-10 px-8 md:px-52 bg-grisT py-10 bg-[url('/Gallery/telasDrum.png')]">
+    <div
+        class="w-full flex justify-center items-center gap-10 px-8 md:px-52 bg-grisT py-10 bg-[url('/Gallery/telasDrum.png')]"
+    >
         <div>
-            <h2 class="text-lg md:text-xl text-white">Different Types of Filter Bags and Their Specific Applications:</h2>
+            <h2 class="text-lg md:text-xl text-white">
+                Different Types of Filter Bags and Their Specific Applications:
+            </h2>
             <ul class="list-disc pl-6 text-grisSubP">
                 <li>Polyester</li>
                 <li>Nomex</li>
@@ -60,8 +98,7 @@ import SeparatorBlue from '../unitComponents/SeparatorBlue.astro';
         </div>
     </div>
     <div class="max-w-7xl px-8 mx-auto flex justify-center">
-        <video src={DMVideo} autoplay playsinline muted loop class="w-3/4"></video>
+        <video src={DMVideo} autoplay playsinline muted loop class="w-3/4"
+        ></video>
     </div>
-    
-       
 </div>
