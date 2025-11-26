@@ -32,12 +32,12 @@ export default function AsphaltComponent({ data }: Props) {
 
     return (
         <section className="w-full text-white bg-blueMain my-10">
-            <div className=" mx-auto flex items-center justify-between gap-12">
+            <div className="mx-auto flex justify-between gap-12">
                 <div className="max-w-xl">
                     <h1 className="text-4xl font-bold mb-4">{title}</h1>
                     <p className="text-lg font-thin opacity-80 mb-6">{subtitle}</p>
 
-                    <ul className="space-y-3 text-lg">
+                    <ul className="space-y-3 text-lg min-h-[500px]">
                         {items.map((item, i) => (
                             <li key={i}>
                                 • {item.label}
@@ -53,7 +53,7 @@ export default function AsphaltComponent({ data }: Props) {
                     </ul>
                 </div>
                 <div className="flex flex-col">
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl min-h-[500px] flex items-center justify-center">
                         <img
                             src={image?.src ?? image}
                             alt="Feature image"
