@@ -5,11 +5,12 @@ import BHOdometer from "../components/BagHouses/BHOdometer";
 import BHPlanos from "../components/BagHouses/BHPlanos";
 import Tab from '../components/BagHouses/BHTab';
 import Layout from "../layouts/Layout.astro";
+
 ---
 <Layout title="BagHouses Page">
     <BHFirst/>
     <BHOdometer client:only/>
     <Tab client:only/>
     <BHImgSelector/>
-    <BHPlanos client:only/>
+    <BHPlanos client:only/> 
 </Layout>
