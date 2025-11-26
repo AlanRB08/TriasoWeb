@@ -1,4 +1,4 @@
-import { useState, useRef, type ReactNode } from "react";
+import {useEffect, useState, useRef, type ReactNode } from "react";
 
 type AccordionProps = {
   title: string;
@@ -22,8 +22,27 @@ export default function AcordeonItemCol({
     setIsOpen(!isOpen);
   };
 
+ useEffect(() => {
+    const element = contentRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setIsOpen(false); 
+        }
+      },
+      { threshold: 0.2 } 
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
+      ref={contentRef}
       className={`${bgColor} rounded-2xl flex flex-col justify-around p-4 w-full`}
     >
       <div className="flex justify-between items-center gap-10">

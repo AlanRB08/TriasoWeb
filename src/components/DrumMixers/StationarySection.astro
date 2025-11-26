@@ -221,7 +221,9 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
     </div>
 
     <div class="max-w-7xl px-8">
-        <p class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg">
+        <p
+            class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg"
+        >
             This controlled triple-heating system allows a higher percentage of
             RAP to be processed consistently, up to 50% incorporation while
             maintaining uniform temperature, preserving the asphalt binder, and
@@ -230,7 +232,7 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
     </div>
 
     <div class="flex justify-center">
-        <LearnBtn/>
+        <LearnBtn />
     </div>
 
     <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
@@ -302,6 +304,21 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
                 }
             });
         }
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        dropdown.style.maxHeight = "0px";
+                        arrow.style.transform = "rotate(0deg)";
+                        window.dispatchEvent(new Event("layoutChange"));
+                    }
+                });
+            },
+            {
+                threshold: 0, 
+            },
+        );
+        observer.observe(button);
     });
 </script>
 <style>
