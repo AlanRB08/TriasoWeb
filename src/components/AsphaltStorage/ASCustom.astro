@@ -1,101 +1,379 @@
 ---
-import img1 from '../../assets/images/BinUnits/TolvaConfCompl.png';
-import Image from 'astro/components/Image.astro';
+import img1 from "../../assets/images/BinUnits/TolvaConfCompl.png";
+import Image from "astro/components/Image.astro";
 import img2 from "../../assets/images/AsphaltStorage/SliderStorage/P-3a.webp";
+import placeHolder from "../../assets/images/AsphaltStorage/Tqe60.png";
+import AsphaltComponent from "../unitComponents/AsphaltComponent";
+
+import stg1 from "../../assets/images/AsphaltStorage/TankImages/2.png"
+import stg2 from "../../assets/images/AsphaltStorage/TankImages/2.png"
+import stg3 from "../../assets/images/AsphaltStorage/TankImages/3.png"
+import stg4 from "../../assets/images/AsphaltStorage/TankImages/4.png"
+import stg5 from "../../assets/images/AsphaltStorage/TankImages/5.png"
+import stg6 from "../../assets/images/AsphaltStorage/TankImages/6.png"
+import stg7 from "../../assets/images/AsphaltStorage/TankImages/7.png"
+import stg8 from "../../assets/images/AsphaltStorage/TankImages/8.png"
+import stg9 from "../../assets/images/AsphaltStorage/TankImages/9.png"
+import stg10 from "../../assets/images/AsphaltStorage/TankImages/10.png"
+
+const sections = [
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["16,000 gallons"],
+            },
+        ],
+        image: stg1,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["16,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on legs"],
+            },
+        ],
+        image: stg2,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["24,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on legs"],
+            },
+        ],
+        image: stg3,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on legs"],
+            },
+        ],
+        image: stg4,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+        ],
+        image: stg5,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+            {
+                label: "Asphalt pumps & electric system",
+            },
+        ],
+        image: stg6,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+            {
+                label: "Asphalt pumps & electric system",
+            },
+            {
+                label: "Burner",
+                children: ["Gas or diesel system"],
+            },
+        ],
+        image: stg7,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+            {
+                label: "Asphalt pumps & electric system",
+            },
+            {
+                label: "Burner",
+                children: ["Gas or diesel system"],
+            },
+            {
+                label: "Asphalt level radar",
+            },
+        ],
+        image: stg8,
+    },
+    {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+            {
+                label: "Asphalt pumps & electric system",
+            },
+            {
+                label: "Burner",
+                children: ["Gas or diesel system"],
+            },
+            {
+                label: "Asphalt level radar",
+            },
+            {
+                label:"Superior catwalk"
+            }
+        ],
+        image: stg9,
+    },
+        {
+        title: "Completely versatile",
+        subtitle:
+            "From the less equipped to the most equipped asphalt storage tanks",
+        items: [
+            {
+                label: "Asphalt Storage Tank",
+                children: ["30,000 gallons"],
+            },
+            {
+                label: "Chasis configuration",
+                children: ["Mounted on wheels"],
+            },
+            {
+                label: "Asphalt pumps & electric system",
+            },
+            {
+                label: "Burner",
+                children: ["Gas or diesel system"],
+            },
+            {
+                label: "Asphalt level radar",
+            },
+            {
+                label:"Superior catwalk"
+            },
+            {
+                label:"Agitators for any application"
+            }
+        ],
+        image: stg10,
+    },
+];
 ---
-<div class="w-full flex flex-col items-center justify-center font-bold mt-10 bg-blueMain py-10">
+
+<div
+    class="w-full flex flex-col items-center justify-center font-bold mt-10 bg-blueMain py-10"
+>
     <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
         <div class="flex flex-col justify-center text-white">
-            <h1 class="text-2xl md:text-6xl w-full text-start">Fully Customizable <br> Asphalt Storage Tanks</h1><br>
-            <h1 class="text-xl md:text-3xl w-full text-start">Adaptable features to meet specific project <br>requirements and operational goals.</h1>
+            <h1 class="text-2xl md:text-6xl w-full text-start">
+                Fully Customizable <br /> Asphalt Storage Tanks
+            </h1><br />
+            <h1 class="text-xl md:text-3xl w-full text-start">
+                Adaptable features to meet specific project <br />requirements
+                and operational goals.
+            </h1>
         </div>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="p-8 flex items-center justify-center">
-                <Image src={img2} alt="Customizable Bin Unit Diagram" class="w-full"/>
+                <Image
+                    src={img2}
+                    alt="Customizable Bin Unit Diagram"
+                    class="w-full"
+                />
             </div>
         </div>
     </div>
-    
+
     <div class="">
-        <button class="text-blueMain px-4 py-2 rounded-2xl text-6xl" onclick="toggleDropdown()" id="dropdown-button">
-            <svg width="84px" height="84px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff" id="dropdown-arrow">
-                <path d="M6 9L12 15L18 9" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <button
+            class="text-blueMain px-4 py-2 rounded-2xl text-6xl"
+            onclick="toggleDropdown()"
+            id="dropdown-button"
+        >
+            <svg
+                width="84px"
+                height="84px"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#ffffff"
+                id="dropdown-arrow"
+            >
+                <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
             </svg>
         </button>
     </div>
-    
-    <div class="w-full transition-all duration-300 overflow-hidden" id="extradiv" style="max-height: 0">
-        <div class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100">
+
+    <div
+        class="w-full transition-all duration-300 overflow-hidden"
+        id="extradiv"
+        style="max-height: 0"
+    >
+        <div
+            class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100"
+        >
             <h1 class="w-full text-start text-xl md:text-3xl mb-6">Options</h1>
-            <div class="flex flex-col xl:flex-row items-start justify-between gap-8 w-full">
-                    <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                        <h1>Exterior</h1>
-                        <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                            <li>OSHA-compliant railings</li>
-                            <li>Aesthetic side panels</li>
-                            <li>On legs or on wheels</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                        <h1>General System</h1>
-                        <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                            <li>Vapor condensers</li>
-                            <li>Manual valves</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                        <br>
-                        <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                            <li>With submersible pump</li>
-                            <li>Computerized control system</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4">
-                        <h1>Heating Systems</h1>
-                        <ul class="text-base md:text-lg font-normal pl-8 list-disc">
-                            <li>Direct fire</li>
-                            <li class="list-none">
-                                <ul class="text-base md:text-lg font-normal pl-8 list-disc text-white">
-                                    <li>Heating with LP gas (propane)</li>
-                                    <li>Heating with diesel</li>   
-                                </ul>
-                            </li>
-                            <li>Oil heater</li>
-                            <li>Heat transfer</li>
-                        </ul>
-                    </div>
+            <div
+                class="flex flex-col xl:flex-row items-start justify-between gap-8 w-full"
+            >
+                <div
+                    class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4"
+                >
+                    <h1>Exterior</h1>
+                    <ul class="text-base md:text-lg font-normal pl-8 list-disc">
+                        <li>OSHA-compliant railings</li>
+                        <li>Aesthetic side panels</li>
+                        <li>On legs or on wheels</li>
+                    </ul>
+                </div>
+                <div
+                    class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4"
+                >
+                    <h1>General System</h1>
+                    <ul class="text-base md:text-lg font-normal pl-8 list-disc">
+                        <li>Vapor condensers</li>
+                        <li>Manual valves</li>
+                    </ul>
+                </div>
+                <div
+                    class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4"
+                >
+                    <br />
+                    <ul class="text-base md:text-lg font-normal pl-8 list-disc">
+                        <li>With submersible pump</li>
+                        <li>Computerized control system</li>
+                    </ul>
+                </div>
+                <div
+                    class="flex flex-col items-start justify-center text-xl md:text-2xl gap-4"
+                >
+                    <h1>Heating Systems</h1>
+                    <ul class="text-base md:text-lg font-normal pl-8 list-disc">
+                        <li>Direct fire</li>
+                        <li class="list-none">
+                            <ul
+                                class="text-base md:text-lg font-normal pl-8 list-disc text-white"
+                            >
+                                <li>Heating with LP gas (propane)</li>
+                                <li>Heating with diesel</li>
+                            </ul>
+                        </li>
+                        <li>Oil heater</li>
+                        <li>Heat transfer</li>
+                    </ul>
+                </div>
             </div>
-            <h1 class="text-lg lg:text-2xl mb-4">Incorporators and agitators</h1>
-            <ul class="flex list-disc w-full gap-1 md:gap-10 pl-8 font-normal flex-col md:flex-row">
+            <h1 class="text-lg lg:text-2xl mb-4">
+                Incorporators and agitators
+            </h1>
+            <ul
+                class="flex list-disc w-full gap-1 md:gap-10 pl-8 font-normal flex-col md:flex-row"
+            >
                 <li>Rubber incorporators</li>
                 <li>Agitators for any application</li>
                 <li>Incorporators for all types of polymers</li>
             </ul>
+
+            <AsphaltComponent client:only data={sections} />
         </div>
     </div>
 </div>
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdown = document.getElementById("extradiv");
-    const arrow = document.getElementById("dropdown-arrow");
-    const button = document.getElementById("dropdown-button");
+    document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.getElementById("extradiv");
+        const arrow = document.getElementById("dropdown-arrow");
+        const button = document.getElementById("dropdown-button");
 
-    if (button) {
-      button.addEventListener("click", () => {
-        if (!dropdown || !arrow) return;
+        if (button) {
+            button.addEventListener("click", () => {
+                if (!dropdown || !arrow) return;
 
-        const isClosed = dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
+                const isClosed =
+                    dropdown.style.maxHeight === "0px" ||
+                    !dropdown.style.maxHeight;
 
-        if (isClosed) {
-          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-          arrow.style.transform = "rotate(180deg)";
-        } else {
-          dropdown.style.maxHeight = "0px";
-          arrow.style.transform = "rotate(0deg)";
+                if (isClosed) {
+                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                    arrow.style.transform = "rotate(180deg)";
+                } else {
+                    dropdown.style.maxHeight = "0px";
+                    arrow.style.transform = "rotate(0deg)";
+                }
+            });
         }
-      });
-    }
-  });
+    });
 </script>
 <style>
     #dropdown-arrow {

@@ -3,7 +3,6 @@ import Image from "astro/components/Image.astro";
 import Separator from "../unitComponents/Separator.astro";
 import ItemsSlider from "../LandinPage/ItemsSlider";
 import img1 from "../../assets/images/AsphaltStorage/versatil.png";
-import img2 from "../../assets/images/AsphaltStorage/Tqe60.png"
 import GallerySlider from "../unitComponents/GallerySlider";
 import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
@@ -13,9 +12,7 @@ import ASMainVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import ASControl from "../../assets/images/AsphaltStorage/ASControl.png";
 import ASHoses from "../../assets/images/AsphaltStorage/ASHoses.png";
 import ASLevelSensor from "../../assets/images/AsphaltStorage/ASLevelSensor.png";
-import bannerAsphalt from "../../assets/images/AsphaltStorage/bannerAsphalt.png";
-import AsphaltComponent from "../../components/unitComponents/AsphaltComponent.astro";
-import { Children } from "react";
+import bannerAsphalt from "../../assets/images/AsphaltStorage/bannerStorage.png";
 
 const iconos = [
   {
@@ -81,8 +78,8 @@ const iconos = [
 ---
 
 <section class="w-full flex flex-col items-center justify-center font-bold">
-  <div class="w-full bg-cover">
-    <img src={bannerAsphalt.src} alt="Banner" class="w-full bg-cover" />
+  <div>
+    <img src={bannerAsphalt.src} alt="Banner" class="" />
   </div>
 
   <div class="w-full max-w-7xl px-8 mx-auto">
@@ -212,8 +209,10 @@ const iconos = [
       </p>
     </div>
   </div>
-  <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
-    <div class="w-full flex flex-col gap-6 pl-8 md:pl-52">
+  <div
+    class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 justify-center my-10"
+  >
+    <div class="w-[90%] mx-auto flex flex-col gap-6">
       <h2 class="text-xl md:text-2xl">Asphalt Hoses</h2>
       <p class="text-base md:text-lg text-grisT">
         When the L-shaped pump, which is submerged in the tank, is turned on,
@@ -225,11 +224,11 @@ const iconos = [
         <img src={ASHoses.src} alt="" class="w-full h-[75%] rounded-xl" />
       </div>
     </div>
-    <div class="w-full flex gap-6 pr-8 md:pr-56 rounded-l-2xl py-8">
-      <div class="w-full pl-8 h-full">
+    <div class="w-full flex flex-col md:flex-row lg:flex-row rounded-l-2xl">
+      <div class="flex flex-row justify-center items-start">
         <img src={fiberGlass.src} alt="" class="w-1/2 h-[85%]" />
       </div>
-      <div class="w-full">
+      <div class="lg:w-3/5 md:w-3/5 mx-auto">
         <h2 class="text-lg md:text-xl">
           Three inches fiberglass insulation
         </h2><br />
@@ -246,33 +245,4 @@ const iconos = [
     </div>
   </div>
   <ASCustom />
-
-  <AsphaltComponent
-    title="Completely versatile"
-    subtitle="From the less equiped to the most equipped asphalt storage tanks"
-    items={[
-      {
-        label: "Asphalt Storage Tank",
-        children: ["16,000 gallons"],
-      },
-      {
-        label: "Chasis configuration",
-        children: ["Mounted on wheel"],
-      },
-      {
-        label: "Asphalt pumps & electric system",
-      },
-      { label: "Burner", children: ["Gas or diesel system"] },
-      {
-        label: "Asphalt level radar",
-      },
-      {
-        label: "Superior catwalk ",
-      },
-      {
-        label: "Agitators for any application",
-      },
-    ]}
-    image={img2.src}
-  />
 </section>
