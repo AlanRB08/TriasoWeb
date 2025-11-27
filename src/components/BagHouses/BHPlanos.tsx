@@ -302,7 +302,7 @@ const BHPlanos = () => {
                 >
                     <img
                         src={bgPlanos.src}
-                        className="absolute top-[-40px] left-[-20px] w-full h-full"
+                        className="absolute top-[93px] left-[-93px] min-w-[365.625px] h-full object-cover"
                         alt="Imagen de fondo"
                         style={{
                             display: activeTab === 1 ? "block" : "none",
@@ -313,7 +313,7 @@ const BHPlanos = () => {
                     <img
                         ref={imgRef}
                         src={bgFront.src}
-                        className="absolute top-0 left-0 w-full h-full object-cover  "
+                        className="absolute top-[118px] left-[-50px] min-w-[365.625px] h-full object-cover  "
                         alt="Imagen superior"
                         style={{ clipPath: "inset(0% 0% 0% 0%)" }}
                     />
@@ -461,7 +461,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -836,59 +836,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
+                                        <div>
+                                            <div className="flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
@@ -963,7 +966,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className=" w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -1340,59 +1343,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
@@ -1467,7 +1473,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className=" w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -1844,59 +1850,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
@@ -1971,7 +1980,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -2348,59 +2357,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
@@ -2475,7 +2487,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -2852,59 +2864,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
@@ -2979,7 +2994,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -3356,58 +3371,60 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
@@ -3483,7 +3500,7 @@ const BHPlanos = () => {
                                         id="column1"
                                         ref={columnGrid1}
                                     >
-                                        <div className="flex flex-col items-start justify-center gap-4 text-white col-span-1">
+                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
                                             <div className="w-full flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
@@ -3860,59 +3877,62 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-start gap-4 text-white col-span-2">
-                                        <div className="w-full flex justify-between border-b border-b-white">
-                                            <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
-                                                COMPLIANCE WITH INDUSTRY STANDARS
-                                            </h1>
-                                            <button
-                                                className="block md:hidden"
-                                                onClick={() =>
-                                                    setOpenSections((prev) => ({
-                                                        ...prev,
-                                                        C3_2: !prev.C3_2,
-                                                    }))
-                                                }
-                                            >
-                                                <svg
-                                                    width="28px"
-                                                    height="28px"
-                                                    stroke-width="1.5"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
-                                                        }`}
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                        <div>
+                                            <div className="w-full flex justify-between border-b border-b-white">
+                                                <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
+                                                    COMPLIANCE WITH INDUSTRY STANDARS
+                                                </h1>
+                                                <button
+                                                    className="block md:hidden"
+                                                    onClick={() =>
+                                                        setOpenSections((prev) => ({
+                                                            ...prev,
+                                                            C3_2: !prev.C3_2,
+                                                        }))
+                                                    }
                                                 >
-                                                    <path
-                                                        d="M6 9L12 15L18 9"
-                                                        stroke="#ffffff"
+                                                    <svg
+                                                        width="28px"
+                                                        height="28px"
                                                         stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                                                ? "max-h-96 opacity-1 mb-4"
-                                                : "max-h-0 opacity-0"
-                                                } md:max-h-full md:opacity-100 md:block`}
-                                        >
-                                            <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        color="#000000"
+                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                            }`}
+                                                    >
+                                                        <path
+                                                            d="M6 9L12 15L18 9"
+                                                            stroke="#ffffff"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
+                                                    : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
-                                                <li>EPA.</li>
-                                                <li>OSHA.</li>
-                                                <li>DOT.</li>
-                                                <li>UL wiring.</li>
-                                            </ul>
+                                                <ul
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                        ? "max-h-96 opacity-1 mb-4"
+                                                        : "max-h-0 opacity-0"
+                                                        } md:max-h-full md:opacity-100 md:block`}
+                                                >
+                                                    <li>EPA.</li>
+                                                    <li>OSHA.</li>
+                                                    <li>DOT.</li>
+                                                    <li>UL wiring.</li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
                                         <div className="w-full flex justify-between border-b border-b-white">
