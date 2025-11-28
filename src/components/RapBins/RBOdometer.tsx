@@ -26,7 +26,7 @@ const RPOdometer = () => {
             setValue(10);
             setValue1(20);
             setValue2(18);
-            setValue4(25);
+            setValue4(120);
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },
@@ -86,6 +86,34 @@ const RPOdometer = () => {
         <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
           Your best business begins here
         </h1>
+      </div>
+
+      <div
+        className="w-full mx-auto px-5 text-center mb-5"
+      >
+        <div className="mb-5">
+          <p className="font-thin text-base lg:text-lg">
+            For very 10% of RAP, <br />
+            the cost of hot-mix production
+          </p>
+          <h2 className="font-bold text-lg lg:text-2xl">decreases 7%</h2>
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <button
+          className="
+    px-6 py-2 
+    border border-[#1c3d6e]
+    text-[#1c3d6e]
+    rounded-full 
+    hover:bg-[#1c3d6e]/10
+    transition-all
+  "
+        >
+          Learn more about RAP
+        </button>
+
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 ---
 import MiniGallery from "../unitComponents/MiniGallery";
+import heroIMG from "../../assets/images/OilHeaters/heroIMG.png"
 import img1 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS1.jpg';
 import img2 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS2.png';
 import img3 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS3.jpg';
@@ -11,6 +12,7 @@ import img8 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS8.j
 import img9 from "../../assets/images/AsphaltStorage/SliderStorage/P-3a.webp";
 import OHProv2 from "../../assets/images/OilHeaters/OHProv2.png";
 import ItemsSlider from "../LandinPage/ItemsSlider";
+
 
 
 const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{img:img6},{img:img7},{img:img8},];
@@ -31,6 +33,9 @@ const images1 = [
 ---
 
 <section class="w-full flex flex-col justify-center gap-10">
+    <div>
+        <img src={heroIMG.src} alt="" class="bg-cover w-full">
+    </div>
     <div class="w-full max-w-7xl mx-auto px-8 my-10">
         <div class="w-full">
             <img src={img9.src} alt="" class="w-1/2">

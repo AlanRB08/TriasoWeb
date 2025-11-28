@@ -1,21 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import caseta1 from "../../assets/images/DrumMixers/caseta1.webp";
-import caseta2 from "../../assets/images/DrumMixers/caseta2.webp";
-import tab3Main2 from "../../assets/images/DrumMixers/tab3Main2.webp";
-import tab3Right from "../../assets/images/DrumMixers/tab3Right.webp";
-import tab6Right from "../../assets/images/DrumMixers/tab6Right.webp";
-import tab6Left from "../../assets/images/DrumMixers/tab6Left.webp";
-import tab5Main from "../../assets/images/DrumMixers/tab5Main.webp";
-import tab5Left from "../../assets/images/DrumMixers/tab5Left.webp";
-import tab5Right from "../../assets/images/DrumMixers/tab5Right.webp";
-import tab1Main from "../../assets/images/DrumMixers/tab1Main.webp";
-import tab1Left from "../../assets/images/DrumMixers/tab1Left.webp";
-import tab1Right from "../../assets/images/DrumMixers/tab5Right.webp";
-import tab2Main from "../../assets/images/DrumMixers/tab2Main.webp";
-import tab2Left from "../../assets/images/DrumMixers/tab2L.webp";
-import tab6Main from "../../assets/images/DrumMixers/tab6M.webp";
+
+import imgSuperior from "../../assets/images/PowderA/planos/VSuperior.png";
+import imgPlano1 from "../../assets/images/PowderA/planos/BluePrint VS.png";
+import imgPlano2 from "../../assets/images/PowderA/planos/BluePrint VL.png";
+import imgPlano3 from "../../assets/images/PowderA/planos/BluePrint VT.png";
 
 const cabinSize = [
   {
@@ -230,8 +220,8 @@ const PAPlanos = () => {
              z-20 w-[250px] h-[600px]"
         >
           <img
-            src={tab1Main.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={imgPlano1.src}
+            className="absolute top-0 left-[-305px] min-w-[980px] "
             alt="Imagen de fondo"
             style={{
               display: activeTab === 3 ? "block" : "none",
@@ -241,8 +231,8 @@ const PAPlanos = () => {
           />
           <img
             ref={imgRef}
-            src={tab3Main2.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={imgSuperior.src}
+            className="absolute top-[-4px] left-[1px] min-w-[447px] "
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
           />
@@ -715,7 +705,7 @@ const PAPlanos = () => {
                 </div>
                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                   <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                    <div className="flex items-center justify-center w-[135px] h-[60px] self-start">
+                    <div className="flex items-center justify-center w-[135px] h-[60px] self-center ml-9">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -770,11 +760,11 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="w-[372px] h-[285px] flex items-center justify-center">
+                    <div className="w-[372px] h-[285px] mt-5 flex items-center justify-center">
                       <img
-                        src={tab1Left.src}
+                        src={imgPlano3.src}
                         alt=""
-                        className="max-w-full max-h-full object-contain"
+                        className="min-w-[600px] object-contain"
                       />
                     </div>
                   </div>
@@ -893,9 +883,9 @@ const PAPlanos = () => {
                     </div>
                     <div className="h-[285px] w-[744px] flex justify-center items-center">
                       <img
-                        src={tab3Right.src}
+                        src={imgPlano2.src}
                         alt=""
-                        className="h-full w-auto"
+                        className="max-h-80 w-auto"
                       />
                     </div>
                   </div>

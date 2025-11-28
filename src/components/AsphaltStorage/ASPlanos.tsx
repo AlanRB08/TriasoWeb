@@ -122,7 +122,6 @@ const ASPlanos = () => {
     C4_2: false,
     C4_3: false,
   });
-
   useEffect(() => {
     const box = boxRef.current;
     const target = nextSectionRef.current; //target original
@@ -248,6 +247,7 @@ const ASPlanos = () => {
     };
   }, [activeTab]);
 
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">
@@ -307,9 +307,8 @@ const ASPlanos = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -338,11 +337,10 @@ const ASPlanos = () => {
               {/* Botón 1 */}
               <button
                 onClick={() => (setActiveTab(1), setActiveVersion("12"))}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${
-                  activeTab === 1
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${activeTab === 1
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 12,000 GALLONS
               </button>
@@ -350,11 +348,10 @@ const ASPlanos = () => {
               {/* Botón 2 */}
               <button
                 onClick={() => (setActiveTab(2), setActiveVersion("16"))}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${
-                  activeTab === 2
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${activeTab === 2
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 16,000 GALLONS
               </button>
@@ -362,11 +359,10 @@ const ASPlanos = () => {
               {/* Botón 3 */}
               <button
                 onClick={() => (setActiveTab(3), setActiveVersion("20"))}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${
-                  activeTab === 3
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 3
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 20,000 GALLONS
               </button>
@@ -375,21 +371,19 @@ const ASPlanos = () => {
             <div className="flex gap-3 justify-center w-full md:px-32 items-center justify-items-center">
               <button
                 onClick={() => (setActiveTab(4), setActiveVersion("24"))}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${
-                  activeTab === 4
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 4
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 24,000 GALLONS
               </button>
               <button
                 onClick={() => (setActiveTab(5), setActiveVersion("30"))}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${
-                  activeTab === 5
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 5
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 30,000 GALLONS
               </button>
@@ -435,9 +429,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -450,11 +443,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Option for oil heater instead of direct-fire heating
@@ -496,9 +488,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -511,11 +502,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -562,9 +552,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -577,11 +566,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -635,9 +623,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -650,11 +637,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -684,9 +670,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -699,11 +684,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -740,9 +724,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -755,11 +738,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -807,9 +789,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -822,11 +803,10 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Maximum achievable temperature:</h1>
@@ -870,12 +850,11 @@ const ASPlanos = () => {
                         data-metric="8.8 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -938,12 +917,11 @@ const ASPlanos = () => {
                         data-metric="12.75 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -999,12 +977,11 @@ const ASPlanos = () => {
                         data-metric="23.7 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1061,9 +1038,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1076,50 +1052,46 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tanklenght?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tanklenght?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tanklenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tanklenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tangheight?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tangheight?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tangheight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tangheight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1150,9 +1122,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1165,22 +1136,20 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1191,36 +1160,33 @@ const ASPlanos = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1257,9 +1223,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1272,11 +1237,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Option for oil heater instead of direct-fire heating
@@ -1318,9 +1282,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1333,11 +1296,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -1384,9 +1346,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1399,11 +1360,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -1455,9 +1415,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1470,11 +1429,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -1504,9 +1462,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1519,11 +1476,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -1560,9 +1516,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1575,11 +1530,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -1627,9 +1581,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1642,11 +1595,10 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Maximum achievable temperature:</h1>
@@ -1690,12 +1642,11 @@ const ASPlanos = () => {
                         data-metric="8.8 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1758,12 +1709,11 @@ const ASPlanos = () => {
                         data-metric="12.75 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1819,12 +1769,11 @@ const ASPlanos = () => {
                         data-metric="23.7 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1881,9 +1830,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1896,50 +1844,46 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tanklenght?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tanklenght?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tanklenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tanklenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tangheight?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tangheight?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tangheight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tangheight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1970,9 +1914,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1985,22 +1928,20 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2011,36 +1952,33 @@ const ASPlanos = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2077,9 +2015,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2092,11 +2029,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Option for oil heater instead of direct-fire heating
@@ -2138,9 +2074,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2153,11 +2088,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -2204,9 +2138,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2219,11 +2152,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -2275,9 +2207,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2290,11 +2221,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -2324,9 +2254,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2339,11 +2268,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -2380,9 +2308,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2395,11 +2322,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -2447,9 +2373,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2462,11 +2387,10 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Maximum achievable temperature:</h1>
@@ -2510,12 +2434,11 @@ const ASPlanos = () => {
                         data-metric="8.8 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2578,12 +2501,11 @@ const ASPlanos = () => {
                         data-metric="12.75 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -2639,12 +2561,11 @@ const ASPlanos = () => {
                         data-metric="23.7 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2701,9 +2622,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2716,50 +2636,46 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tanklenght?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tanklenght?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tanklenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tanklenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tangheight?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tangheight?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tangheight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tangheight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2790,9 +2706,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2805,22 +2720,20 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2831,36 +2744,33 @@ const ASPlanos = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2897,9 +2807,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2912,11 +2821,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Option for oil heater instead of direct-fire heating
@@ -2958,9 +2866,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2973,11 +2880,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -3024,9 +2930,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3039,11 +2944,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -3095,9 +2999,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3110,11 +3013,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -3144,9 +3046,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3159,11 +3060,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -3200,9 +3100,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3215,11 +3114,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -3267,9 +3165,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3282,11 +3179,10 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Maximum achievable temperature:</h1>
@@ -3330,12 +3226,11 @@ const ASPlanos = () => {
                         data-metric="8.8 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -3398,12 +3293,11 @@ const ASPlanos = () => {
                         data-metric="12.75 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -3459,12 +3353,11 @@ const ASPlanos = () => {
                         data-metric="23.7 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -3521,9 +3414,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3536,50 +3428,46 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tanklenght?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tanklenght?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tanklenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tanklenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tangheight?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tangheight?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tangheight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tangheight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3610,9 +3498,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3625,22 +3512,20 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3651,36 +3536,33 @@ const ASPlanos = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -3717,9 +3599,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3732,11 +3613,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Option for oil heater instead of direct-fire heating
@@ -3778,9 +3658,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3793,11 +3672,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -3844,9 +3722,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3859,11 +3736,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -3915,9 +3791,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3930,11 +3805,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -3964,9 +3838,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -3979,11 +3852,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -4020,9 +3892,8 @@ const ASPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -4035,11 +3906,10 @@ const ASPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -4087,9 +3957,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -4102,11 +3971,10 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Maximum achievable temperature:</h1>
@@ -4150,12 +4018,11 @@ const ASPlanos = () => {
                         data-metric="8.8 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -4218,12 +4085,11 @@ const ASPlanos = () => {
                         data-metric="12.75 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -4279,12 +4145,11 @@ const ASPlanos = () => {
                         data-metric="23.7 ft"
                       >
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -4341,9 +4206,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -4356,50 +4220,46 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tanklenght?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tanklenght?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tanklenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tanklenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.tangheight?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.tangheight?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.tangheight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.tangheight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -4430,9 +4290,8 @@ const ASPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -4445,22 +4304,20 @@ const ASPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -4471,36 +4328,33 @@ const ASPlanos = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
