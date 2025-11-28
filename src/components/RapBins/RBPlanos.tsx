@@ -99,64 +99,79 @@ const RBPlanos = () => {
     C4_3: false,
   });
 
-  useEffect(() => {
-    const box = boxRef.current;
-    const target = nextSectionRef.current; //target original
-    const clipTarget = clipTargetRef.current; //target del clipath
-    const img = imgRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
+//La animación original se basaba en posiciones que se calculaban una sola vez y esto provocaba que el scrollTrigger se desfasara
+//Para resolver ese bug lo que hice fue encapsular toda la creación de scrollTrigger en una funcion la cual va a estar recalculando
+//desde 0 las posiciones, distancias y los puntos de inicio a fin de la animación, esta se estará ejecutando cada vez que el layout cambie.
 
-    if (
-      !box ||
-      !target ||
-      !clipTarget ||
-      !img ||
-      !otro ||
-      !options ||
-      !col1 ||
-      !col2
-    )
-      return;
+//Utilizo MutationObserver para estar activamente escuchando cambios en el DOM que alteren la altura de la página, si llega a pasar entonces
+//la animación se destruye y se reconstruye de manera controlada además de que, con un sistema de debounce, se evita recrear la animación muchas veces
+//en caso de que existan cambios consecutivos.
 
-    if (activeTab !== 2) {
-      gsap.set(box, {
-        y: 0,
-        opacity: 0,
-        display: "none",
-      });
-      return;
+//También cuando se detecten cambios de resize y orientación la animación se adaptará al tamaño de pantalla.
+const scrollTrigRef = useRef<any>(null);
+const observerRef = useRef<MutationObserver | null>(null);
+const recreateTimerRef = useRef<number | null>(null);
+
+const debounce = (fn: () => void, wait = 120) => {
+  return () => {
+    if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+    recreateTimerRef.current = window.setTimeout(() => {
+      recreateTimerRef.current = null;
+      fn();
+    }, wait);
+  };
+};
+
+useEffect(() => {
+  const box = boxRef.current;
+  const target = nextSectionRef.current; 
+  const clipTarget = clipTargetRef.current; 
+  const img = imgRef.current;
+  const otro = otroElemento.current;
+  const options = optionsRef.current;
+  const col1 = columnGrid1.current;
+  const col2 = columnGrid2.current;
+
+  if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
+    return;
+  }
+ //Función para el scrollTrigger
+  const createScrollTrigger = () => {
+    //Borra la animación vieja para que no existan triggers duplicados
+    try {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill?.();
+        scrollTrigRef.current = null;
+      }
+   
+      const existing = ScrollTrigger.getById?.("boxScroll");
+      existing?.kill?.();
+    } catch (e) {
+
     }
 
-    gsap.set(box, {
-      opacity: 1,
-      display: "block",
-    });
+    if (activeTab !== 2) return;
 
-    // Cálculo de posiciones absolutas
+    //Aquí se recalculan las posiciones basandonos en la altura nueva 
     const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
     const boxHeight = box.offsetHeight;
     const boxBottomAbs = boxTopAbs + boxHeight;
     const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-    const clipTargetTopAbs =
-      clipTarget.getBoundingClientRect().top + window.scrollY;
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
 
-    // Desplazamiento total (se mantiene con el target original)
     const distanceToMove = targetTopAbs - boxTopAbs;
 
-    // Nuevos cálculos para clipPath basado en clipTarget
     const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
     const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
     const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
     const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
 
-    const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-    const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-    const adjustedScrollDistance =
-      distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+    const scrollDistanceReductionFactor = 0.8;
+    const adjustedDistanceToMove = distanceToMove;
+    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+    const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
 
+    //Se vuelve a crear la animación desde 0
     const scrollTrig = ScrollTrigger.create({
       id: "boxScroll",
       trigger: box,
@@ -164,17 +179,12 @@ const RBPlanos = () => {
       end: `+=${adjustedScrollDistance}`,
       scrub: true,
       markers: false,
-      animation: gsap.to(box, {
-        y: adjustedDistanceToMove,
-        ease: "none",
-      }),
-      onUpdate: (self) => {
+      animation: anim,
+      onUpdate: (self: any) => {
         const p = self.progress;
-        // ClipPath interpolado usando clipTarget
         let clipProgress = 0;
         if (clipEndClamped > clipStartClamped) {
-          clipProgress =
-            (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
         }
         clipProgress = Math.max(0, Math.min(clipProgress, 1));
 
@@ -216,13 +226,56 @@ const RBPlanos = () => {
       },
     });
 
-    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+    scrollTrigRef.current = scrollTrig;
+  }; 
 
-    return () => {
-      scrollTrig?.kill(); // <-- evita error si no existe
-      clearTimeout(refreshTimer);
-    };
-  }, [activeTab]);
+    //Debounce para evitar reconstruir la animación de manera no controlada
+    //En caso de cambiar rápido solo se recalcula una vez 
+  const recreate = debounce(() => {
+    createScrollTrigger();
+    ScrollTrigger.refresh();
+  }, 120);
+
+  createScrollTrigger();
+
+  const mo = new MutationObserver((mutations) => {
+    recreate();
+  });
+  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+  observerRef.current = mo;
+
+  const onResize = debounce(() => {
+    recreate();
+  }, 120);
+
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", onResize);
+
+  return () => {
+    try {
+      //cuando se sale de la página se elimina la animación y se desconecta los listeners para evitar animaciones duplicadas
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill?.();
+        scrollTrigRef.current = null;
+      }
+
+      const existing = ScrollTrigger.getById?.("boxScroll");
+      existing?.kill?.();
+      if (recreateTimerRef.current) {
+        window.clearTimeout(recreateTimerRef.current);
+        recreateTimerRef.current = null;
+      }
+    } catch (e) {
+    }
+  };
+}, [activeTab]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
