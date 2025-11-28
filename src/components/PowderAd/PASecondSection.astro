@@ -1,34 +1,44 @@
 ---
 import CardSection from "../IntegralAsphalt/CardSection.astro";
 import PAPlanos from "./PAPlanos";
+import img1 from "../../assets/images/PowderA/binLids.png";
+import img2 from "../../assets/images/PowderA/powderA.png";
+import img3 from "../../assets/images/PowderA/tlvLoaded.png"
 ---
 
 <section>
-    <div class="w-full bg-blueMain px-8 lg:px-52 grid grid-cols-1 lg:grid-cols-2 gap-10 py-10">
+    <div
+        class="w-full bg-blueMain px-8 lg:px-52 grid grid-cols-1 lg:grid-cols-2 gap-10 py-10"
+    >
         <div>
-            <img src="" alt="">
+            <img src={img1.src} alt="Bin lids" class="w-4/5" />
         </div>
         <div class="font-bold text-white">
-            <h2 class="text-2xl md:text-3xl">
-                Bin lids
-            </h2><br>
+            <h2 class="text-2xl md:text-3xl">Bin lids</h2><br />
             <p class="text-base md:text-lg">
-                Built-in bin lids keep the powder dry and protected from dust and other 
-                contaminants in industrial environments. — maintaining material integrity 
-                even on windy days.
+                Built-in bin lids keep the powder dry and protected from dust
+                and other contaminants in industrial environments. — maintaining
+                material integrity even on windy days.
             </p>
         </div>
     </div>
     <div class="py-10">
-        <h1 class="text-center font-bold text-blueMain text-2xl md:text-3xl">Choose life-lasting components for long-term performance and return on investment</h1>
-    </div>
-    <div>
-        <img src="" alt="">
+        <h1 class="text-center font-bold text-blueMain text-2xl md:text-3xl">
+            Choose life-lasting components for long-term performance and return
+            on investment
+        </h1>
     </div>
     <div class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
         <div>
-            <h2 class="font-bold text-redBg text-xl md:text-2xl">Common Powder Additives <br> in Industrial Applications</h2>
-            <div class="bg-white rounded-2xl w-full p-8 grid grid-cols-2 gap-6 font-bold text-grisT text-base md:text-lg">
+            <div>
+                <img src={img2.src} alt="Powder Additives VT" class="w-4/5" />
+            </div>
+            <h2 class="font-bold text-redBg text-xl md:text-2xl">
+                Common Powder Additives <br /> in Industrial Applications
+            </h2>
+            <div
+                class="bg-white rounded-2xl w-full p-8 grid grid-cols-2 gap-6 font-bold text-grisT text-base md:text-lg"
+            >
                 <ul class="list-disc ml-6">
                     <li>Cellulose</li>
                     <li>Cement</li>
@@ -49,10 +59,10 @@ import PAPlanos from "./PAPlanos";
                 </ul>
             </div>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="flex justify-center items-end px-5 mb-0 lg:mb-[4.5rem] md:mb-[4.5rem]">
+            <img src={img3.src} alt="" />
         </div>
     </div>
-    <PAPlanos client:only ></PAPlanos>
-    <CardSection></CardSection>
+    <PAPlanos client:only />
+    <CardSection />
 </section>

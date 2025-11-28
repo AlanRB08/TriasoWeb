@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import single from "../../assets/images/IntegralAsphalt/single.png";
+import img1 from "../../assets/images/PowderA/odometerIMG.png"
 
 const PAOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -79,7 +80,7 @@ const PAOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
-            <img src={single.src} alt="" />
+            <img src={img1.src} alt="Powder Additives VL" />
           </div>
         </div>
       </div>
