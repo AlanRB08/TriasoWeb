@@ -302,7 +302,7 @@ const BHPlanos = () => {
                 >
                     <img
                         src={bgPlanos.src}
-                        className="absolute top-[93px] left-[-93px] min-w-[365.625px] h-full object-cover"
+                        className="absolute left-0 top-0 w-full h-full object-contain"
                         alt="Imagen de fondo"
                         style={{
                             display: activeTab === 1 ? "block" : "none",
@@ -313,7 +313,7 @@ const BHPlanos = () => {
                     <img
                         ref={imgRef}
                         src={bgFront.src}
-                        className="absolute top-[118px] left-[-50px] min-w-[365.625px] h-full object-cover  "
+                        className="absolute top-0 left-0 w-full h-full object-contain  "
                         alt="Imagen superior"
                         style={{ clipPath: "inset(0% 0% 0% 0%)" }}
                     />
@@ -1146,8 +1146,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -1653,8 +1653,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -2160,8 +2160,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -2667,8 +2667,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -3174,8 +3174,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -3680,8 +3680,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
