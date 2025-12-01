@@ -11,6 +11,8 @@ import RAProv5 from "../../assets/images/RapBins/RAProv5.png";
 import video from "../../assets/images/RapBins/ProvVideo1.mp4";
 import OSection from '../unitComponents/OSection.astro';
 import rapFlight from "../../assets/images/DrumMixers/a21.jpg";
+import heroIMG from "../../assets/images/RapBins/heroIMG.png";
+import img4 from "../../assets/images/RapBins/RapProv6.png"
 ---
 <section class="w-full font-bold">
     <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT">
@@ -46,15 +48,16 @@ import rapFlight from "../../assets/images/DrumMixers/a21.jpg";
                 <img src={rapFlight.src} alt="" class="w-3/4 rounded-lg">
             </div>
         </div>
-        <div class="w-full bg-grisT max-w-7xl px-8 mx-auto py-10 flex justify-center mb-6">
+        <div class="w-full bg-grisT max-w-7xl px-8 mx-auto py-10 flex justify-center">
             <div class="w-4/5">
                 <img src={img1.src} alt="">
             </div>
         </div>
     </div>
-    <div class="w-full flex flex-col justify-end items-end space-y-2">
-        <div class="h-0.5 w-1/3 bg-blueMain"></div>
-        <div class="h-0.5 w-1/5 bg-redBg"></div>
+
+
+    <div>
+        <img src={heroIMG.src} alt="Banner" class="bg-cover w-full">
     </div>
     <div class="text-center text-2xl md:text-3xl font-bold text-redBg py-16">
         <h1>With Triaso, Become the Exclusive Provider of Hot Mix for <br> All Paving Projects in Your Region</h1>
@@ -74,8 +77,8 @@ import rapFlight from "../../assets/images/DrumMixers/a21.jpg";
             <img src={img2.src} alt="" class="rounded-lg w-3/4">
         </div>
     </div>
-    <div class="w-full max-w-7xl px-8 mx-auto">
-        <img src={img3.src} alt="" class="w-3/5">
+    <div class="w-full max-w-7xl px-8 mx-auto mb-5">
+        <img src={img4.src} alt="" class="w-1/2 rounded-lg">
     </div>
     <OSection/>
    <TwoColumnSection

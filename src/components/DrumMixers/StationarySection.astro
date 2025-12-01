@@ -8,6 +8,7 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
 import drumTires from "../../assets/images/DrumMixers/drumtires.jpeg";
 import Image from "astro/components/Image.astro";
 import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
+import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -37,7 +38,7 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
             class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20"
         >
             <div class="flex flex-col items-center justidy-center py-6">
-                <img src="" alt="" />
+                <img src={trunnionImage.src} alt="Trunnions" class="w-full h-[300px]" />
                 <h2 class="w-full text-start text-xl md:text-2xl">
                     TRUNNIONS
                 </h2><br />
@@ -160,7 +161,7 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
         </div>
     </div>
     <div
-        class="w-full mx-auto px-10 text-center mb-5 bg-gradient-to-b from-[#727272] to-[#cfd0d1]"
+        class="w-full mx-auto px-10 text-center mb-5 bg-gradient-to-b from-[#737373] to-[#f4f5f6]"
     >
         <div class="mb-5">
             <p class="font-thin text-base lg:text-lg">
@@ -221,7 +222,9 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
     </div>
 
     <div class="max-w-7xl px-8">
-        <p class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg">
+        <p
+            class="text-base text-center lg:text-justify md:text-justify font-thin md:text-lg"
+        >
             This controlled triple-heating system allows a higher percentage of
             RAP to be processed consistently, up to 50% incorporation while
             maintaining uniform temperature, preserving the asphalt binder, and
@@ -230,7 +233,7 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
     </div>
 
     <div class="flex justify-center">
-        <LearnBtn/>
+        <LearnBtn />
     </div>
 
     <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
@@ -302,6 +305,21 @@ import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
                 }
             });
         }
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        dropdown.style.maxHeight = "0px";
+                        arrow.style.transform = "rotate(0deg)";
+                        window.dispatchEvent(new Event("layoutChange"));
+                    }
+                });
+            },
+            {
+                threshold: 0, 
+            },
+        );
+        observer.observe(button);
     });
 </script>
 <style>

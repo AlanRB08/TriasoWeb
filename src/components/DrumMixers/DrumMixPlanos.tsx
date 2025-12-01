@@ -223,148 +223,159 @@ const DrumMixPlanos = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
   };
+  
+  const scrollTrigRef = useRef<any>(null);
+  const observerRef = useRef<MutationObserver | null>(null);
+  const recreateTimerRef = useRef<number | null>(null);
+
+  const debounce = (fn: () => void, wait = 120) => {
+    return () => {
+      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+      recreateTimerRef.current = window.setTimeout(() => {
+        recreateTimerRef.current = null;
+        fn();
+      }, wait);
+    };
+  };
+
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current;
+    const target = nextSectionRef.current; 
+    const clipTarget = clipTargetRef.current; 
+    const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
-    const img = imgRef.current;
-    const clipTarget = clipTargetRef.current;
 
-    if (
-      !box ||
-      !target ||
-      !otro ||
-      !img ||
-      !clipTarget ||
-      !options ||
-      !col1 ||
-      !col2
-    )
+    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
       return;
-    let scrollTrig: ScrollTrigger | undefined;
-
-    const updatePositions = () => {
-      requestAnimationFrame(() => {
-        scrollTrig?.kill();
-        // Cálculo de posiciones absolutas
-        const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-        const boxHeight = box.offsetHeight;
-        const boxBottomAbs = boxTopAbs + boxHeight;
-        const targetTopAbs =
-          target.getBoundingClientRect().top + window.scrollY;
-        const clipTargetTopAbs =
-          clipTarget.getBoundingClientRect().top + window.scrollY;
-
-        // Desplazamiento total (se mantiene con el target original)
-        const distanceToMove = targetTopAbs - boxTopAbs;
-
-        // Nuevos cálculos para clipPath basado en clipTarget
-        const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-        const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-        const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-        const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-
-        const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-        const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-        const adjustedScrollDistance =
-          distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
-
-        scrollTrig = ScrollTrigger.create({
-          id: "boxScroll",
-          trigger: box,
-          start: "top+=70 20%",
-          end: `+=${adjustedScrollDistance}`,
-          scrub: true,
-          markers: false,
-          animation: gsap.to(box, {
-            y: adjustedDistanceToMove,
-            ease: "none",
-          }),
-          onUpdate: (self) => {
-            const p = self.progress;
-            // ClipPath interpolado usando clipTarget
-            let clipProgress = 0;
-            if (clipEndClamped > clipStartClamped) {
-              clipProgress =
-                (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-            }
-            clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-            gsap.set(img, {
-              clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-            });
-
-            gsap.to(otro, {
-              opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-              y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-              scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-              ease: "none",
-              duration: 0.8,
-            });
-
-            gsap.to(options, {
-              opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-              y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-              scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-              ease: "none",
-              duration: 0.8,
-            });
-
-            gsap.to(col1, {
-              opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-              x: p >= 0.9 && p <= 1 ? 0 : -50,
-              scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-              ease: "none",
-              duration: 0.8,
-            });
-
-            gsap.to(col2, {
-              opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-              x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-              scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-              ease: "none",
-              duration: 0.8,
-            });
-          },
-        });
-        ScrollTrigger.refresh();
-      });
-    };
-    if (activeTab !== 3) {
-      gsap.set(box, {
-        y: 0,
-        opacity: 0,
-        display: "none",
-      });
-      gsap.set(img, {
-        clipPath: "inset(100% 0% 0% 0%)", // Oculta completamente la imagen
-        opacity: 0,
-      });
-      return;
-    } else {
-      gsap.set(box, {
-        opacity: 1,
-        display: "block",
-      });
-      updatePositions();
     }
 
-    // --- Listeners para recalcular ---
-    const handleResize = () => updatePositions();
-    const handleLayoutChange = () => updatePositions();
+    const createScrollTrigger = () => {
+      try {
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill?.();
+          scrollTrigRef.current = null;
+        }
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+      } catch (e) {
+      }
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("layoutChange", handleLayoutChange);
-    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+      if (activeTab !== 3) return;
+      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+      const boxHeight = box.offsetHeight;
+      const boxBottomAbs = boxTopAbs + boxHeight;
+      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
+      const distanceToMove = targetTopAbs - boxTopAbs;
+      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+      const scrollDistanceReductionFactor = 0.8;
+      const adjustedDistanceToMove = distanceToMove;
+      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
+
+      const scrollTrig = ScrollTrigger.create({
+        id: "boxScroll",
+        trigger: box,
+        start: "top+=70 20%",
+        end: `+=${adjustedScrollDistance}`,
+        scrub: true,
+        markers: false,
+        animation: anim,
+        onUpdate: (self: any) => {
+          const p = self.progress;
+          let clipProgress = 0;
+          if (clipEndClamped > clipStartClamped) {
+            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+          }
+          clipProgress = Math.max(0, Math.min(clipProgress, 1));
+
+          gsap.set(img, {
+            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+          });
+
+          gsap.to(otro, {
+            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
+            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
+            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(options, {
+            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
+            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(col1, {
+            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
+            x: p >= 0.9 && p <= 1 ? 0 : -50,
+            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(col2, {
+            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
+            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+        },
+      });
+
+      scrollTrigRef.current = scrollTrig;
+    };
+
+    const recreate = debounce(() => {
+      createScrollTrigger();
+      ScrollTrigger.refresh();
+    }, 120);
+    createScrollTrigger();
+
+    const mo = new MutationObserver((mutations) => {
+      recreate();
+    });
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+    observerRef.current = mo;
+
+    const onResize = debounce(() => {
+      recreate();
+    }, 120);
+
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
 
     return () => {
-      scrollTrig?.kill(); // <-- evita error si no existe
-      clearTimeout(refreshTimer);
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("layoutChange", handleLayoutChange);
+      try {
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+          observerRef.current = null;
+        }
+        window.removeEventListener("resize", onResize);
+        window.removeEventListener("orientationchange", onResize);
+
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill?.();
+          scrollTrigRef.current = null;
+        }
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+        if (recreateTimerRef.current) {
+          window.clearTimeout(recreateTimerRef.current);
+          recreateTimerRef.current = null;
+        }
+      } catch (e) {
+      }
     };
   }, [activeTab]);
 
@@ -792,7 +803,7 @@ const DrumMixPlanos = () => {
                     <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
                       <div className="w-full flex justify-between border-b border-b-white">
                         <h1 className="font-bold lg:text-xl text-base w-full pb-3">
-                          BAGHOUSE CAPACITY
+                          INTEGRATED BAGHOUSE CAPACITY
                         </h1>
                         <button
                           className="block md:hidden"
@@ -836,7 +847,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>18,00ft2</p>
+                          <p>1,692 ft2</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -844,7 +855,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Bags:</h1>
-                          <p>168</p>
+                          <p>154</p>
                         </div>
                       </div>
                     </div>
@@ -2128,7 +2139,7 @@ const DrumMixPlanos = () => {
                     <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
                       <div className="w-full flex justify-between border-b border-b-white">
                         <h1 className="font-bold lg:text-xl text-base w-full pb-3">
-                          BAGHOUSE CAPACITY
+                          INTEGRATED BAGHOUSE CAPACITY
                         </h1>
                         <button
                           className="block md:hidden"
@@ -2172,7 +2183,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>24 m3</p>
+                          <p>2,463 ft2</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -3460,7 +3471,7 @@ const DrumMixPlanos = () => {
                     <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
                       <div className="w-full flex justify-between border-b border-b-white">
                         <h1 className="font-bold lg:text-xl text-base w-full pb-3">
-                          BAGHOUSE CAPACITY
+                          INTEGRATED BAGHOUSE CAPACITY
                         </h1>
                         <button
                           className="block md:hidden"
@@ -3504,7 +3515,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>33 m3</p>
+                          <p>3,079 ft2</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -3512,7 +3523,7 @@ const DrumMixPlanos = () => {
                         </div>
                         <li className="flex justify-between w-full">
                           <h1>Bags:</h1>
-                          <p>308</p>
+                          <p>280</p>
                         </li>
                       </div>
                     </div>
@@ -4807,7 +4818,7 @@ const DrumMixPlanos = () => {
                     <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
                       <div className="w-full flex justify-between border-b border-b-white">
                         <h1 className="font-bold lg:text-xl text-base w-full pb-3">
-                          BAGHOUSE CAPACITY
+                          INTEGRATED BAGHOUSE CAPACITY
                         </h1>
                         <button
                           className="block md:hidden"
@@ -4847,11 +4858,11 @@ const DrumMixPlanos = () => {
                       >
                         <div className="flex justify-between">
                           <h1>ACFM:</h1>
-                          <p>35,000</p>
+                          <p>35,000 </p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Filtering Area:</h1>
-                          <p>52 m3</p>
+                          <p>4,310 ft2</p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Fiberglass insulation:</h1>
@@ -6143,6 +6154,65 @@ const DrumMixPlanos = () => {
                         <li>Fuel filtration and safety regulation system</li>
                       </ul>
                     </div>
+                    <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
+                      <div className="w-full flex justify-between border-b border-b-white">
+                        <h1 className="font-bold lg:text-xl text-base w-full pb-3">
+                          BAGHOUSE CAPACITY
+                        </h1>
+                        <button
+                          className="block md:hidden"
+                          onClick={() =>
+                            setOpenSections((prev) => ({
+                              ...prev,
+                              C2_2: !prev.C2_2,
+                            }))
+                          }
+                        >
+                          <svg
+                            width="28px"
+                            height="28px"
+                            stroke-width="1.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            color="#000000"
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
+                          >
+                            <path
+                              d="M6 9L12 15L18 9"
+                              stroke="#ffffff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                      >
+                        <div className="flex justify-between">
+                          <h1>ACFM:</h1>
+                          <p>52,000</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Filtering Area:</h1>
+                          <p>6,384 ft2</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Fiberglass insulation:</h1>
+                          <p>2"</p>
+                        </div>
+                        <li className="flex justify-between w-full">
+                          <h1>Bags:</h1>
+                          <p>336</p>
+                        </li>
+                      </div>
+                    </div>
                     <div className="flex flex-col items-start justify-start gap-4 text-white">
                       <div className="w-full flex justify-between border-b border-b-white">
                         <h1 className="font-bold lg:text-xl text-base w-full pb-3">
@@ -6206,6 +6276,7 @@ const DrumMixPlanos = () => {
                       </ul>
                     </div>
                   </div>
+
                 </div>
                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                   <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
@@ -7405,6 +7476,65 @@ const DrumMixPlanos = () => {
                         <li>Separate pilot and main flame system</li>
                         <li>Fuel filtration and safety regulation system</li>
                       </ul>
+                    </div>
+                    <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
+                      <div className="w-full flex justify-between border-b border-b-white">
+                        <h1 className="font-bold lg:text-xl text-base w-full pb-3">
+                          BAGHOUSE CAPACITY
+                        </h1>
+                        <button
+                          className="block md:hidden"
+                          onClick={() =>
+                            setOpenSections((prev) => ({
+                              ...prev,
+                              C2_2: !prev.C2_2,
+                            }))
+                          }
+                        >
+                          <svg
+                            width="28px"
+                            height="28px"
+                            stroke-width="1.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            color="#000000"
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
+                          >
+                            <path
+                              d="M6 9L12 15L18 9"
+                              stroke="#ffffff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                      >
+                        <div className="flex justify-between">
+                          <h1>ACFM:</h1>
+                          <p>70,000</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Filtering Area:</h1>
+                          <p>9,044 ft2</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Fiberglass insulation:</h1>
+                          <p>2"</p>
+                        </div>
+                        <li className="flex justify-between w-full">
+                          <h1>Bags:</h1>
+                          <p>476</p>
+                        </li>
+                      </div>
                     </div>
                     <div className="flex flex-col items-start justify-start gap-4 text-white w-full">
                       <div className="w-full flex justify-between border-b border-b-white">
@@ -8672,6 +8802,65 @@ const DrumMixPlanos = () => {
                         <li>Separate pilot and main flame system</li>
                         <li>Fuel filtration and safety regulation system</li>
                       </ul>
+                    </div>
+                    <div className="text-white font-normal w-full flex flex-col gap-4 justify-between h-full">
+                      <div className="w-full flex justify-between border-b border-b-white">
+                        <h1 className="font-bold lg:text-xl text-base w-full pb-3">
+                          BAGHOUSE CAPACITY
+                        </h1>
+                        <button
+                          className="block md:hidden"
+                          onClick={() =>
+                            setOpenSections((prev) => ({
+                              ...prev,
+                              C2_2: !prev.C2_2,
+                            }))
+                          }
+                        >
+                          <svg
+                            width="28px"
+                            height="28px"
+                            stroke-width="1.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            color="#000000"
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
+                          >
+                            <path
+                              d="M6 9L12 15L18 9"
+                              stroke="#ffffff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                      >
+                        <div className="flex justify-between">
+                          <h1>ACFM:</h1>
+                          <p>87,000</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Filtering Area:</h1>
+                          <p>11,172 ft2</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <h1>Fiberglass insulation:</h1>
+                          <p>2"</p>
+                        </div>
+                        <li className="flex justify-between w-full">
+                          <h1>Bags:</h1>
+                          <p>588</p>
+                        </li>
+                      </div>
                     </div>
                     <div className="flex flex-col items-start justify-start gap-4 text-white w-full">
                       <div className="w-full flex justify-between border-b border-b-white">

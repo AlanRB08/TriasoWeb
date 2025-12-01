@@ -9,6 +9,7 @@ const BOdometer = () => {
   const [value, setValue] = useState(0);
   const [value1, setValue1] = useState(0);
   const [value2, setValue2] = useState(0);
+
   const [value3, setValue3] = useState(0);
   const [value4, setValue4] = useState(0);
 
@@ -20,15 +21,21 @@ const BOdometer = () => {
           setValue(0);
           setValue1(0);
           setValue2(0);
+
           setValue3(0);
           setValue4(0);
+          
 
           setTimeout(() => {
-            setValue(10);
-            setValue1(20);
-            setValue2(1);
-            setValue4(5);
-            setValue3(3);
+            setValue(60);
+            setValue3(500);
+
+            setValue1(10);
+            setValue4(20);
+
+            setValue2(18);
+    
+            
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },
@@ -52,6 +59,8 @@ const BOdometer = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
+              <Odometer value={value3} format="(,ddd)" duration={2000}/>
               <p className="text-sm font-normal ml-3">Tph</p>
             </div>
             <p className="text-grisP">Range of hot-mix production</p>
@@ -60,6 +69,8 @@ const BOdometer = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value1} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
+              <Odometer value={value4} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">kW</p>
             </div>
             <p className="text-grisP">Three-phase electric generator</p>
@@ -68,10 +79,6 @@ const BOdometer = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
-              <h1>.</h1>
-              <Odometer value={value4} format="(,ddd)" duration={2000} />
-              <h1>-</h1>
-              <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million BTU/hr</p>
             </div>
             <p className="text-grisP text-start w-full">
