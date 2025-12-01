@@ -221,7 +221,7 @@ const PAPlanos = () => {
         >
           <img
             src={imgPlano1.src}
-            className="absolute top-0 left-[-305px] min-w-[980px] "
+            className="absolute top-0 left-0 min-w-[310px] h-full"
             alt="Imagen de fondo"
             style={{
               display: activeTab === 3 ? "block" : "none",
@@ -232,7 +232,7 @@ const PAPlanos = () => {
           <img
             ref={imgRef}
             src={imgSuperior.src}
-            className="absolute top-[-4px] left-[1px] min-w-[447px] "
+            className="absolute top-0 left-0 min-w-[310px] h-full"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
           />
