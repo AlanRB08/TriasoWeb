@@ -315,63 +315,66 @@ const CMPlanos = () => {
     C4_2: false,
     C4_3: false,
   });
-  useEffect(() => {
-    const box = boxRef.current;
-    const target = nextSectionRef.current; //target original
-    const clipTarget = clipTargetRef.current; //target del clipath
-    const img = imgRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
 
-    if (
-      !box ||
-      !target ||
-      !clipTarget ||
-      !img ||
-      !otro ||
-      !options ||
-      !col1 ||
-      !col2
-    )
-      return;
+const scrollTrigRef = useRef<any>(null);
+const observerRef = useRef<MutationObserver | null>(null);
+const recreateTimerRef = useRef<number | null>(null);
 
-    if (activeTab !== 3) {
-      gsap.set(box, {
-        y: 0,
-        opacity: 0,
-        display: "none",
-      });
-      return;
+const debounce = (fn: () => void, wait = 120) => {
+  return () => {
+    if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+    recreateTimerRef.current = window.setTimeout(() => {
+      recreateTimerRef.current = null;
+      fn();
+    }, wait);
+  };
+};
+
+useEffect(() => {
+  const box = boxRef.current;
+  const target = nextSectionRef.current; // target original
+  const clipTarget = clipTargetRef.current; // target del clipath
+  const img = imgRef.current;
+  const otro = otroElemento.current;
+  const options = optionsRef.current;
+  const col1 = columnGrid1.current;
+  const col2 = columnGrid2.current;
+
+  if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
+    return;
+  }
+
+  const createScrollTrigger = () => {
+    try {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill?.();
+        scrollTrigRef.current = null;
+      }
+      const existing = ScrollTrigger.getById?.("boxScroll");
+      existing?.kill?.();
+    } catch (e) {
     }
 
-    gsap.set(box, {
-      opacity: 1,
-      display: "block",
-    });
+    if (activeTab !== 3) return;
 
-    // Cálculo de posiciones absolutas
     const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
     const boxHeight = box.offsetHeight;
     const boxBottomAbs = boxTopAbs + boxHeight;
     const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-    const clipTargetTopAbs =
-      clipTarget.getBoundingClientRect().top + window.scrollY;
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
 
-    // Desplazamiento total (se mantiene con el target original)
     const distanceToMove = targetTopAbs - boxTopAbs;
 
-    // Nuevos cálculos para clipPath basado en clipTarget
     const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
     const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
     const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
     const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
 
-    const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-    const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-    const adjustedScrollDistance =
-      distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
+    const scrollDistanceReductionFactor = 0.8;
+    const adjustedDistanceToMove = distanceToMove;
+    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+
+    const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
 
     const scrollTrig = ScrollTrigger.create({
       id: "boxScroll",
@@ -380,17 +383,13 @@ const CMPlanos = () => {
       end: `+=${adjustedScrollDistance}`,
       scrub: true,
       markers: false,
-      animation: gsap.to(box, {
-        y: adjustedDistanceToMove,
-        ease: "none",
-      }),
-      onUpdate: (self) => {
+      animation: anim,
+      onUpdate: (self: any) => {
         const p = self.progress;
-        // ClipPath interpolado usando clipTarget
+
         let clipProgress = 0;
         if (clipEndClamped > clipStartClamped) {
-          clipProgress =
-            (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
         }
         clipProgress = Math.max(0, Math.min(clipProgress, 1));
 
@@ -432,13 +431,54 @@ const CMPlanos = () => {
       },
     });
 
-    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+    scrollTrigRef.current = scrollTrig;
+  }; 
 
-    return () => {
-      scrollTrig?.kill(); // <-- evita error si no existe
-      clearTimeout(refreshTimer);
-    };
-  }, [activeTab]);
+  const recreate = debounce(() => {
+    createScrollTrigger();
+    ScrollTrigger.refresh();
+  }, 120);
+
+  createScrollTrigger();
+
+  const mo = new MutationObserver((mutations) => {
+    recreate();
+  });
+  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+  observerRef.current = mo;
+
+  // También renovamos en resize/orientationchange
+  const onResize = debounce(() => {
+    recreate();
+  }, 120);
+
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", onResize);
+
+  return () => {
+    try {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill?.();
+        scrollTrigRef.current = null;
+      }
+      // kill by id just in case
+      const existing = ScrollTrigger.getById?.("boxScroll");
+      existing?.kill?.();
+      if (recreateTimerRef.current) {
+        window.clearTimeout(recreateTimerRef.current);
+        recreateTimerRef.current = null;
+      }
+    } catch (e) {
+    }
+  };
+}, [activeTab]);
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">

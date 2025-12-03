@@ -155,128 +155,158 @@ const BHPlanos = () => {
         C4_3: false,
     });
 
+    const scrollTrigRef = useRef<any>(null);
+    const observerRef = useRef<MutationObserver | null>(null);
+    const recreateTimerRef = useRef<number | null>(null);
+
+    const debounce = (fn: () => void, wait = 120) => {
+        return () => {
+            if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+            recreateTimerRef.current = window.setTimeout(() => {
+                recreateTimerRef.current = null;
+                fn();
+            }, wait);
+        };
+    };
+
     useEffect(() => {
         const box = boxRef.current;
-        const target = nextSectionRef.current; //target original
-        const clipTarget = clipTargetRef.current; //target del clipath
+        const target = nextSectionRef.current;
+        const clipTarget = clipTargetRef.current;
         const img = imgRef.current;
         const otro = otroElemento.current;
         const options = optionsRef.current;
         const col1 = columnGrid1.current;
         const col2 = columnGrid2.current;
 
-        if (
-            !box ||
-            !target ||
-            !clipTarget ||
-            !img ||
-            !otro ||
-            !options ||
-            !col1 ||
-            !col2
-        )
-            return;
-
-        if (activeTab !== 1) {
-            gsap.set(box, {
-                y: 0,
-                opacity: 0,
-                display: "none",
-            });
+        if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
             return;
         }
 
-        gsap.set(box, {
-            opacity: 1,
-            display: "block",
-        });
-
-        // Cálculo de posiciones absolutas
-        const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-        const boxHeight = box.offsetHeight;
-        const boxBottomAbs = boxTopAbs + boxHeight;
-        const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-        const clipTargetTopAbs =
-            clipTarget.getBoundingClientRect().top + window.scrollY;
-
-        // Desplazamiento total (se mantiene con el target original)
-        const distanceToMove = targetTopAbs - boxTopAbs;
-
-        // Nuevos cálculos para clipPath basado en clipTarget
-        const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-        const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-        const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-        const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-
-        const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-        const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-        const adjustedScrollDistance =
-            distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
-
-        const scrollTrig = ScrollTrigger.create({
-            id: "boxScroll",
-            trigger: box,
-            start: "top+=70 20%",
-            end: `+=${adjustedScrollDistance}`,
-            scrub: true,
-            markers: false,
-            animation: gsap.to(box, {
-                y: adjustedDistanceToMove,
-                ease: "none",
-            }),
-            onUpdate: (self) => {
-                const p = self.progress;
-                // ClipPath interpolado usando clipTarget
-                let clipProgress = 0;
-                if (clipEndClamped > clipStartClamped) {
-                    clipProgress =
-                        (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+        const createScrollTrigger = () => {
+            try {
+                if (scrollTrigRef.current) {
+                    scrollTrigRef.current.kill?.();
+                    scrollTrigRef.current = null;
                 }
-                clipProgress = Math.max(0, Math.min(clipProgress, 1));
+                const existing = ScrollTrigger.getById?.("boxScroll");
+                existing?.kill?.();
+            } catch (e) {
+            }
 
-                gsap.set(img, {
-                    clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-                });
+            if (activeTab !== 1) return;
+            const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+            const boxHeight = box.offsetHeight;
+            const boxBottomAbs = boxTopAbs + boxHeight;
+            const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+            const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
+            const distanceToMove = targetTopAbs - boxTopAbs;
+            const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+            const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+            const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+            const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+            const scrollDistanceReductionFactor = 0.8;
+            const adjustedDistanceToMove = distanceToMove;
+            const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+            const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
 
-                gsap.to(otro, {
-                    opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-                    y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-                    scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-                    ease: "none",
-                    duration: 0.8,
-                });
+            const scrollTrig = ScrollTrigger.create({
+                id: "boxScroll",
+                trigger: box,
+                start: "top+=70 20%",
+                end: `+=${adjustedScrollDistance}`,
+                scrub: true,
+                markers: false,
+                animation: anim,
+                onUpdate: (self: any) => {
+                    const p = self.progress;
+                    let clipProgress = 0;
+                    if (clipEndClamped > clipStartClamped) {
+                        clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+                    }
+                    clipProgress = Math.max(0, Math.min(clipProgress, 1));
 
-                gsap.to(options, {
-                    opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-                    y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-                    scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-                    ease: "none",
-                    duration: 0.8,
-                });
+                    gsap.set(img, {
+                        clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+                    });
 
-                gsap.to(col1, {
-                    opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-                    x: p >= 0.9 && p <= 1 ? 0 : -50,
-                    scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-                    ease: "none",
-                    duration: 0.8,
-                });
+                    gsap.to(otro, {
+                        opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
+                        y: p >= 0.8 && p <= 1.0 ? 0 : -50,
+                        scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
+                        ease: "none",
+                        duration: 0.8,
+                    });
 
-                gsap.to(col2, {
-                    opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-                    x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-                    scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-                    ease: "none",
-                    duration: 0.8,
-                });
-            },
+                    gsap.to(options, {
+                        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+                        y: p >= 0.9 && p <= 1.0 ? 0 : -50,
+                        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+                        ease: "none",
+                        duration: 0.8,
+                    });
+
+                    gsap.to(col1, {
+                        opacity: p >= 0.9 && p <= 1 ? 1 : 0,
+                        x: p >= 0.9 && p <= 1 ? 0 : -50,
+                        scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
+                        ease: "none",
+                        duration: 0.8,
+                    });
+
+                    gsap.to(col2, {
+                        opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+                        x: p >= 0.9 && p <= 1.0 ? 0 : 50,
+                        scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+                        ease: "none",
+                        duration: 0.8,
+                    });
+                },
+            });
+
+            scrollTrigRef.current = scrollTrig;
+        };
+
+        const recreate = debounce(() => {
+            createScrollTrigger();
+            ScrollTrigger.refresh();
+        }, 120);
+        createScrollTrigger();
+
+        const mo = new MutationObserver((mutations) => {
+            recreate();
         });
+        mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+        observerRef.current = mo;
 
-        const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+        const onResize = debounce(() => {
+            recreate();
+        }, 120);
+
+        window.addEventListener("resize", onResize);
+        window.addEventListener("orientationchange", onResize);
 
         return () => {
-            scrollTrig?.kill(); // <-- evita error si no existe
-            clearTimeout(refreshTimer);
+            try {
+                if (observerRef.current) {
+                    observerRef.current.disconnect();
+                    observerRef.current = null;
+                }
+                window.removeEventListener("resize", onResize);
+                window.removeEventListener("orientationchange", onResize);
+
+                if (scrollTrigRef.current) {
+                    scrollTrigRef.current.kill?.();
+                    scrollTrigRef.current = null;
+                }
+                const existing = ScrollTrigger.getById?.("boxScroll");
+                existing?.kill?.();
+                if (recreateTimerRef.current) {
+                    window.clearTimeout(recreateTimerRef.current);
+                    recreateTimerRef.current = null;
+                }
+            } catch (e) {
+            }
         };
     }, [activeTab]);
 
@@ -302,7 +332,7 @@ const BHPlanos = () => {
                 >
                     <img
                         src={bgPlanos.src}
-                        className="absolute top-[93px] left-[-93px] min-w-[365.625px] h-full object-cover"
+                        className="absolute left-0 top-0 w-full h-full object-contain"
                         alt="Imagen de fondo"
                         style={{
                             display: activeTab === 1 ? "block" : "none",
@@ -313,7 +343,7 @@ const BHPlanos = () => {
                     <img
                         ref={imgRef}
                         src={bgFront.src}
-                        className="absolute top-[118px] left-[-50px] min-w-[365.625px] h-full object-cover  "
+                        className="absolute top-0 left-0 w-full h-full object-contain  "
                         alt="Imagen superior"
                         style={{ clipPath: "inset(0% 0% 0% 0%)" }}
                     />
@@ -1146,8 +1176,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -1653,8 +1683,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -2160,8 +2190,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -2667,8 +2697,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -3174,8 +3204,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
@@ -3680,8 +3710,8 @@ const BHPlanos = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-span-2 flex items-start justify-center w-full order-1 md:order-2 h-[600px]">
-                                        <img src={bgPlanos.src} alt="" className="w-auto h-[650px]" />
+                                    <div className="col-span-2 flex items-center justify-center w-full order-1 md:order-2 h-[550px] pb-[100px]">
+                                        <img src={bgPlanos.src} alt="" className="w-full h-full object-contain" />
                                     </div>
                                     <div
                                         className="flex flex-col items-start justify-between h-full col-span-1 w-full order-3 md:order-3"
