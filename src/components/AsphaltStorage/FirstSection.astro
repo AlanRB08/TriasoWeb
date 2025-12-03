@@ -6,11 +6,11 @@ import img1 from "../../assets/images/AsphaltStorage/versatil.png";
 import GallerySlider from "../unitComponents/GallerySlider";
 import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
-import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.webp";
+
 import ASCustom from "../AsphaltStorage/ASCustom.astro";
 import ASMainVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import ASControl from "../../assets/images/AsphaltStorage/ASControl.png";
-import ASHoses from "../../assets/images/AsphaltStorage/ASHoses.png";
+
 import ASLevelSensor from "../../assets/images/AsphaltStorage/ASLevelSensor.png";
 import bannerAsphalt from "../../assets/images/AsphaltStorage/bannerStorage.png";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
@@ -180,9 +180,9 @@ const iconos = [
             processes like temperature, material dosing, and production rates.
           </p><br />
           <div
-            class="w-full grid lg:grid-cols-4 md:grid-cols-2 sm:grid-col-1 justify-center items-center"
+            class="w-full grid grid-cols-4 lg:grid-cols-4 justify-center items-center"
           >
-            <div class="w-[130px] flex flex-col justify-center items-center">
+            <div class="w-[100px] flex flex-col justify-center items-center">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -208,7 +208,7 @@ const iconos = [
                 Cloud historical reports
               </p>
             </div>
-            <div class="w-[130px] flex flex-col justify-center items-center">
+            <div class="w-[100px] flex flex-col justify-center items-center">
               <svg
                 class="w-[48px] h-[48px] md:w-[64px] md:h-[64px]"
                 viewBox="0 0 24 24"
@@ -282,7 +282,7 @@ const iconos = [
                 Artificial Intelligence
               </p>
             </div>
-            <div class="w-[130px] flex flex-col justify-center items-center">
+            <div class="w-[100px] flex flex-col justify-center items-center">
               <svg
                 class="w-[48px] h-[48px] md:w-[64px] md:h-[64px]"
                 stroke-width="2.2"
@@ -319,9 +319,9 @@ const iconos = [
                 Fewer operators full control
               </p>
             </div>
-            <div class="w-[130px] flex flex-col justify-center items-center">
+            <div class="w-[100px] flex flex-col justify-center items-center">
               <svg
-                class="w-[20px] h-[48px] md:w-[64px] md:h-[64px]"
+                class="w-[48px] h-[48px] md:w-[64px] md:h-[64px]"
                 stroke-width="2.2"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -395,40 +395,6 @@ const iconos = [
       </p>
     </div>
   </div>
-  <div
-    class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 justify-center my-10"
-  >
-    <div class="w-[90%] mx-auto flex flex-col gap-6">
-      <h2 class="text-xl md:text-2xl">Asphalt Hoses</h2>
-      <p class="text-base md:text-lg text-grisT">
-        When the L-shaped pump, which is submerged in the tank, is turned on,
-        the material is transferred into a stainless-steel hose connected to the
-        plant. From there, the flow enters the asphalt inlet, ensuring
-        continuous and uniform delivery.
-      </p>
-      <div class="w-full flex justify-start">
-        <img src={ASHoses.src} alt="" class="w-full h-[75%] rounded-xl" />
-      </div>
-    </div>
-    <div class="w-full flex flex-col md:flex-row lg:flex-row rounded-l-2xl">
-      <div class="flex flex-row justify-center items-start">
-        <img src={fiberGlass.src} alt="" class="w-1/2 h-[85%]" />
-      </div>
-      <div class="lg:w-3/5 md:w-3/5 mx-auto">
-        <h2 class="text-lg md:text-xl">
-          Three inches fiberglass insulation
-        </h2><br />
-        <p class="text-base text-justify md:text-lg font-thin">
-          Our asphalt storage tanks feature three-inch fiberglass insulation,
-          designed for superior performance in minimizing heat loss and
-          maintaining consistent temperatures. This durable, energy-efficient
-          insulation ensures your asphalt remains at the optimal temperature,
-          ready for use. Additionally, the exterior is reinforced with a
-          stainless steel sheet lining, providing enhanced durability and
-          protection against harsh external conditions.
-        </p>
-      </div>
-    </div>
-  </div>
+
   <ASCustom />
 </section>
