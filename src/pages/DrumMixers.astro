@@ -7,6 +7,7 @@ import StationarySection from "../components/DrumMixers/StationarySection.astro"
 import IntegratedBaghouses from "../components/DrumMixers/IntegratedBaghouses.astro";
 import DrumMixPlanos from "../components/DrumMixers/DrumMixPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
+import AnalisisInversion from "../components/Calculadora/AnalisisInversion.tsx"
 ---
 <Layout title="Drum Mixers Page">
     <IntroSection />
@@ -16,4 +17,5 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
     <IntegratedBaghouses />
     <DrumMixPlanos client:only/>
     <CardSection />
+    <AnalisisInversion client:load/>
 </Layout>
