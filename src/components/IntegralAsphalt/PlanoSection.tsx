@@ -116,157 +116,170 @@ const PlanoSection = () => {
     setUnit(newUnit);
   };
   //clipath
+  const scrollTrigRef = useRef<any>(null);
+  const observerRef = useRef<MutationObserver | null>(null);
+  const recreateTimerRef = useRef<number | null>(null);
+
+  const debounce = (fn: () => void, wait = 120) => {
+    return () => {
+      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+      recreateTimerRef.current = window.setTimeout(() => {
+        recreateTimerRef.current = null;
+        fn();
+      }, wait);
+    };
+  };
+
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current; // Target original para el desplazamiento
-    const clipTarget = clipTargetRef.current; // Nuevo target para el clipPath
+    const target = nextSectionRef.current; // target original
+    const clipTarget = clipTargetRef.current; // target del clipath
     const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
-    const blue = blueRef.current;
 
-    // Verificación de elementos
-    if (
-      !box ||
-      !target ||
-      !clipTarget ||
-      !img ||
-      !otro ||
-      !options ||
-      !col1 ||
-      !col2 ||
-      !blue
-    )
-      return;
-
-    // Reset si no es la pestaña activa
-    if (activeTab !== 3) {
-      gsap.set(box, {
-        y: 0,
-        opacity: 0,
-        display: "none",
-      });
-      gsap.set(blue, {
-        opacity: 0,
-        display: "none",
-        visibility: "hidden",
-      });
-      gsap.set(img, {
-        opacity: 0,
-        display: "none",
-        clipPath: "inset(0% 0% 100% 0%)", // <- esta línea es importante
-      });
+    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
       return;
     }
 
-    // Configuración inicial cuando el tab es 3
-    gsap.set(box, {
-      opacity: 1,
-      display: "block",
-    });
-    gsap.set(blue, {
-      opacity: 1,
-      display: "block",
-      visibility: "visible",
-    });
-    gsap.set(img, {
-      opacity: 1,
-      display: "block",
-      clipPath: "inset(0% 0% 0% 0%)",
-    });
-
-    // Cálculo de posiciones absolutas
-    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-    const boxHeight = box.offsetHeight;
-    const boxBottomAbs = boxTopAbs + boxHeight;
-    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-    const clipTargetTopAbs =
-      clipTarget.getBoundingClientRect().top + window.scrollY;
-
-    // Desplazamiento total (se mantiene con el target original)
-    const distanceToMove = targetTopAbs - boxTopAbs;
-
-    // Nuevos cálculos para clipPath basado en clipTarget
-    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-
-    const scrollDistanceReductionFactor = 0.8; // Reduce el scroll a la mitad (50%)
-    const adjustedDistanceToMove = distanceToMove; // Mantenemos la misma distancia física
-    const adjustedScrollDistance =
-      distanceToMove * scrollDistanceReductionFactor; // Scroll más corto
-    // ScrollTrigger principal
-    const scrollTrig = ScrollTrigger.create({
-      id: "boxScroll",
-      trigger: box,
-      start: "top+=70 20%",
-      end: `+=${adjustedScrollDistance}`,
-      scrub: true,
-      markers: false, // Cambiar a true para debugging si necesitas
-      animation: gsap.to(box, {
-        y: adjustedDistanceToMove,
-        ease: "none",
-      }),
-      onUpdate: (self) => {
-        const p = self.progress;
-
-        // ClipPath interpolado usando clipTarget
-        let clipProgress = 0;
-        if (clipEndClamped > clipStartClamped) {
-          clipProgress =
-            (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+    const createScrollTrigger = () => {
+      try {
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill?.();
+          scrollTrigRef.current = null;
         }
-        clipProgress = Math.max(0, Math.min(clipProgress, 1));
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+      } catch (e) {
+      }
 
-        gsap.set(img, {
-          clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-        });
+      if (activeTab !== 3) return;
 
-        // Animaciones de otros elementos (se mantienen igual)
-        gsap.to(otro, {
-          opacity: p >= 0.8 ? 1 : 0,
-          y: p >= 0.8 ? 0 : -50,
-          scale: p >= 0.8 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
+      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+      const boxHeight = box.offsetHeight;
+      const boxBottomAbs = boxTopAbs + boxHeight;
+      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
 
-        gsap.to(options, {
-          opacity: p >= 0.9 ? 1 : 0,
-          y: p >= 0.9 ? 0 : -50,
-          scale: p >= 0.9 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
+      const distanceToMove = targetTopAbs - boxTopAbs;
 
-        gsap.to(col1, {
-          opacity: p >= 0.9 ? 1 : 0,
-          x: p >= 0.9 ? 0 : -50,
-          scale: p >= 0.9 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
+      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
 
-        gsap.to(col2, {
-          opacity: p >= 0.9 ? 1 : 0,
-          x: p >= 0.9 ? 0 : 50,
-          scale: p >= 0.9 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
-      },
+      const scrollDistanceReductionFactor = 0.8;
+      const adjustedDistanceToMove = distanceToMove;
+      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+
+      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
+
+      const scrollTrig = ScrollTrigger.create({
+        id: "boxScroll",
+        trigger: box,
+        start: "top+=70 20%",
+        end: `+=${adjustedScrollDistance}`,
+        scrub: true,
+        markers: false,
+        animation: anim,
+        onUpdate: (self: any) => {
+          const p = self.progress;
+
+          let clipProgress = 0;
+          if (clipEndClamped > clipStartClamped) {
+            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
+          }
+          clipProgress = Math.max(0, Math.min(clipProgress, 1));
+
+          gsap.set(img, {
+            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+          });
+
+          gsap.to(otro, {
+            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
+            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
+            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(options, {
+            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
+            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(col1, {
+            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
+            x: p >= 0.9 && p <= 1 ? 0 : -50,
+            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+
+          gsap.to(col2, {
+            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
+            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
+            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
+            ease: "none",
+            duration: 0.8,
+          });
+        },
+      });
+
+      scrollTrigRef.current = scrollTrig;
+    };
+
+    const recreate = debounce(() => {
+      createScrollTrigger();
+      ScrollTrigger.refresh();
+    }, 120);
+
+    createScrollTrigger();
+
+    const mo = new MutationObserver((mutations) => {
+      recreate();
     });
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+    observerRef.current = mo;
 
-    const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+    // También renovamos en resize/orientationchange
+    const onResize = debounce(() => {
+      recreate();
+    }, 120);
+
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
 
     return () => {
-      scrollTrig?.kill();
-      clearTimeout(refreshTimer);
+      try {
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+          observerRef.current = null;
+        }
+        window.removeEventListener("resize", onResize);
+        window.removeEventListener("orientationchange", onResize);
+
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill?.();
+          scrollTrigRef.current = null;
+        }
+        // kill by id just in case
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+        if (recreateTimerRef.current) {
+          window.clearTimeout(recreateTimerRef.current);
+          recreateTimerRef.current = null;
+        }
+      } catch (e) {
+      }
     };
   }, [activeTab]);
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="h-[150vh] relative flex items-center justify-center w-full">
@@ -326,9 +339,8 @@ const PlanoSection = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -357,11 +369,10 @@ const PlanoSection = () => {
               {/* Botón 1 */}
               <button
                 onClick={() => setActiveTab(1)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeTab === 1
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 1
                     ? "text-gray-900 bg-white border-white"
                     : "text-white bg-transparent border-white"
-                }`}
+                  }`}
               >
                 All mounted on a lightweight chassis with support legs
               </button>
@@ -369,11 +380,10 @@ const PlanoSection = () => {
               {/* Botón 2 */}
               <button
                 onClick={() => setActiveTab(2)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeTab === 2
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 2
                     ? "text-gray-900 bg-white border-white"
                     : "text-white bg-transparent border-white"
-                }`}
+                  }`}
               >
                 Standard chassis for mobility of empty plant
               </button>
@@ -381,11 +391,10 @@ const PlanoSection = () => {
               {/* Botón 3 */}
               <button
                 onClick={() => setActiveTab(3)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${
-                  activeTab === 3
+                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full ${activeTab === 3
                     ? "text-gray-900 bg-white border-white"
                     : "text-white bg-transparent border-white"
-                }`}
+                  }`}
               >
                 Reinforced chassis for full-loaded plant mobility
               </button>
@@ -427,9 +436,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -442,11 +450,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -492,9 +499,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -507,11 +513,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -567,9 +572,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -582,11 +586,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -642,9 +645,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -657,11 +659,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -699,9 +700,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -714,11 +714,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
                         <div className="flex justify-between">
@@ -768,9 +767,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -783,11 +781,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
                       <li>OSHA</li>
@@ -823,12 +820,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -887,12 +883,11 @@ const PlanoSection = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -944,12 +939,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1006,9 +1000,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1021,22 +1014,20 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C4_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1047,39 +1038,36 @@ const PlanoSection = () => {
                         <h1>Chassis width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.chasisWidth?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.chasisWidth?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.chasisWidth ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.chasisWidth ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1108,9 +1096,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1123,11 +1110,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -1135,8 +1121,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (drumMixer[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (drumMixer[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1145,8 +1131,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1155,8 +1141,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <br />
@@ -1216,9 +1202,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1231,11 +1216,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -1243,8 +1227,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1253,8 +1237,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].width?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1263,8 +1247,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].height?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1313,9 +1297,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_3 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_3 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1328,11 +1311,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_3
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -1340,8 +1322,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].length?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1350,8 +1332,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].width?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1360,8 +1342,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].height?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1406,9 +1388,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1421,11 +1402,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -1471,9 +1451,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1486,11 +1465,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -1546,9 +1524,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1561,11 +1538,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -1621,9 +1597,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1636,11 +1611,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           All mounted on a lightweight chassis with support legs
@@ -1677,9 +1651,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1692,11 +1665,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>Modulating diesel burner</li>
                       <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
@@ -1728,9 +1700,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1743,11 +1714,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
                       <li>OSHA</li>
@@ -1783,12 +1753,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1847,12 +1816,11 @@ const PlanoSection = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1904,12 +1872,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1966,9 +1933,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1981,22 +1947,20 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C4_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2027,39 +1991,36 @@ const PlanoSection = () => {
                         <h1>Chassis width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.chasisWidth?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.chasisWidth?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.chasisWidth ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.chasisWidth ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2088,9 +2049,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2103,11 +2063,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -2115,8 +2074,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (drumMixer[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (drumMixer[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2125,8 +2084,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2135,8 +2094,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <br />
@@ -2196,9 +2155,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2211,11 +2169,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -2223,8 +2180,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2233,8 +2190,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].width?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2243,8 +2200,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].height?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2293,9 +2250,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_3 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_3 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2308,11 +2264,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_3
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -2320,8 +2275,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].length?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2330,8 +2285,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].width?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2340,8 +2295,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].height?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2390,9 +2345,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2405,11 +2359,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -2455,9 +2408,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2470,11 +2422,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C1_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -2528,9 +2479,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2543,11 +2493,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -2620,9 +2569,8 @@ const PlanoSection = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2635,11 +2583,10 @@ const PlanoSection = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                          openSections.C2_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Mounted on a heavy-duty reinforced chassis for
@@ -2684,9 +2631,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2699,11 +2645,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>Modulating diesel burner</li>
                       <li>Total-air design from 1.5 to 3.0 million BTU/hr</li>
@@ -2734,9 +2679,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2749,11 +2693,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${
-                        openSections.C3_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
                       <li>OSHA</li>
@@ -2789,12 +2732,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2853,12 +2795,11 @@ const PlanoSection = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -2910,12 +2851,11 @@ const PlanoSection = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2972,9 +2912,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2987,22 +2926,20 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C4_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C4_1
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3017,14 +2954,13 @@ const PlanoSection = () => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.fifthWheel?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.fifthWheel?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.fifthWheel ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.fifthWheel ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3056,15 +2992,14 @@ const PlanoSection = () => {
                           <div className="flex justify-between">
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    activeData?.dimensions.chasisWidth?.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${activeData?.dimensions.chasisWidth?.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (activeData?.dimensions.chasisWidth ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (activeData?.dimensions.chasisWidth ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </p>
@@ -3073,24 +3008,22 @@ const PlanoSection = () => {
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -3119,9 +3052,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3134,11 +3066,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_1
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_1
                           ? "max-h-[650px] opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -3146,8 +3077,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (drumMixer[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (drumMixer[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3156,8 +3087,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3166,8 +3097,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${drumMixer[0].width?.toFixed(1) ?? ""} cm`
                             : `${((drumMixer[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <br />
@@ -3227,9 +3158,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3242,11 +3172,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_2
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_2
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -3254,8 +3183,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].length?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3264,8 +3193,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].width?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3274,8 +3203,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${asphalTank[0].height?.toFixed(1) ?? ""} cm`
                             : `${(
-                                (asphalTank[0].height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (asphalTank[0].height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3324,9 +3253,8 @@ const PlanoSection = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_3 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_3 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -3339,11 +3267,10 @@ const PlanoSection = () => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${
-                        openSections.C5_3
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden w-full list-disc list-inside ${openSections.C5_3
                           ? "max-h-96 opacity-1 mb-4"
                           : "max-h-0 opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
@@ -3351,8 +3278,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].length?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].length ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3361,8 +3288,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].width?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].width ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -3371,8 +3298,8 @@ const PlanoSection = () => {
                           {unit === "metric"
                             ? `${binUnit[0].height?.toFixed(1) ?? ""} cm`
                             : `${((binUnit[0].height ?? 0) * cmToFeet).toFixed(
-                                1
-                              )} ft`}
+                              1
+                            )} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
