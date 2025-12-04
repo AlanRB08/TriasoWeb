@@ -95,7 +95,7 @@ export default function AcordeonItemCol({
           )}
         </button>
       </div>
-      <div className="px-10 max-w-[350px]">
+      <div className="px-10 max-w-[350px] mx-auto">
         <img src={image} alt="" />
       </div>
       {subText && (
