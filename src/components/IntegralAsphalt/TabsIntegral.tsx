@@ -4,25 +4,25 @@ import { useState } from "react";
 const images = [
   { id: 0, src: "/Gallery/tolva1.png", alt: "Imagen 1" },
   { id: 1, src: "/Gallery/tolva2.png", alt: "Imagen 2" },
-  { id: 2, src: "/Gallery/tolva3.png", alt: "Imagen 3" }, // Nueva imagen
+  { id: 2, src: "/Gallery/tolva3.png", alt: "Imagen 3" }, 
 ];
 
 export default function TabsIntegral() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 max-w-7xl mx-auto px-8">
-      <div className="grid grid-cols-3 w-full justify-center items-stretch text-center">
+    <div className="w-full flex flex-col justify-center items-center gap-8 mt-10 mb-4 max-w-7xl mx-auto px-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full text-center gap-2">
         {images.map((img, index) => (
           <button
             aria-label="Tab Selector"
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center border-b-2 md:pr-4 w-full text-sm md:text-base ${
-              activeIndex === index
+            className={`min-w-0 break-words border-b-2 py-2 px-2 text-sm sm:text-base ${activeIndex === index
                 ? "border-redBg text-black font-bold"
                 : "border-transparent text-grisT font-normal"
-            }`}
+              }`}
           >
             {index === 0 ? (
               <>
@@ -45,19 +45,19 @@ export default function TabsIntegral() {
                   for full- <br /> loaded plant mobility
                 </span>
               </>
-              // Texto para el nuevo tab
             )}
           </button>
         ))}
       </div>
 
-      <div className="w-full h-[50vh] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="w-full h-[40vh] sm:h-[50vh] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}
-          className="w-full h-full object-contain" // o `object-cover` si prefieres recortar
+          className="w-full h-full object-contain"
         />
       </div>
     </div>
+
   );
 }
