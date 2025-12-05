@@ -10,6 +10,7 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import PlanoSection from '../components/IntegralAsphalt/PlanoSection'
 import SliderHero from "../components/IntegralAsphalt/SliderHero";
 import OdometerSection from '../components/IntegralAsphalt/OdometerSection';
+import AnalisisInversion from "../components/Calculadora/AnalisisInversion";
 
 
 const images2 = [
@@ -35,8 +36,9 @@ const images2 = [
     <TabsIntegral client:load />
     <NeedSection />
     <Banner />
-     <PlanoSection client:only/>
+    <PlanoSection client:only/>
     <CardSection />
+    <AnalisisInversion client:only/>
     
 
 </Layout>

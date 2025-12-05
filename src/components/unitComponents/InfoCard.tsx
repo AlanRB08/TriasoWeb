@@ -3,7 +3,7 @@ import React, { useState } from "react";
 type Section = {
   id: string;
   label: string;
-  image: string;
+  image: any;
   title: string;
   description: string;
 };
@@ -40,7 +40,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ sections }) => {
           <img
             src={sections[activeIndex].image}
             alt={sections[activeIndex].title}
-            className="w-full h-72 object-cover"
+            className="w-full  object-cover"
           />
           <div className="p-4">
             <h2 className="text-lg font-semibold">
