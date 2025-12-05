@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import M1 from "../../assets/images/ColdMix/Planos/M2.png";
 import M2 from "../../assets/images/ColdMix/Planos/M3.png";
 import FW from "../../assets/images/ColdMix/Planos/FW.png";
-import FL from "../../assets/images/ColdMix/Planos/FL.png";
+import FL from "../../assets/images/ColdMix/Planos/PlaMFMspVT.png"
 import A2GLA from "../../assets/images/ColdMix/Planos/2GLA.png";
 import A2GLW from "../../assets/images/ColdMix/Planos/2GLW.png";
 import A2GWA from "../../assets/images/ColdMix/Planos/2GWA.png";
