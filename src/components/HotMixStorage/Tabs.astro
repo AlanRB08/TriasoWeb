@@ -19,6 +19,28 @@ import semiSilo from "../../assets/images/AsphaltPlant/silos3.webp";
 import OSection from "../unitComponents/OSection.astro";
 import siloBG from "../../assets/images/HotMix/siloBG.png";
 import Aislamiento from "../../assets/images/HotMix/Aislamiento.webp";
+import HMGallerySlider from "./HMGallerySlider";
+
+const images = [
+  {
+    src: silo3.src,
+    title: "Asphalt Pumps",
+    description:
+      " Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This design guarantees first-in/first-out discharge, eliminates material buildup on the walls, and prevents material buildup along the walls, and minimizes mix segregation. The result is aclean, consistent flow with every load.",
+  },
+  {
+    src: silo2.src,
+    title: "Agitators for additives and polymers",
+    description:
+      "The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single motion through overlapping clam-style gates. The gates open simultaneously, directing the mix to fall centered, distributing  it evenly across the silo floor. This design minimizes material segregation, reduces wear, and prevents buildup within the cone area.",
+  },
+  {
+    src: silo1.src,
+    title: "Asphalt Hoses",
+    description:
+      "To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure, preserving the mix quality and delaying oxidation.",
+  }
+];
 ---
 
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col gap-4 bg-gray-100">
@@ -263,90 +285,7 @@ import Aislamiento from "../../assets/images/HotMix/Aislamiento.webp";
                     </div>
                 </div>
 
-                <div
-                    class="w-full min-h-[50vh] bg-[#727272] px-8 md:px-52 py-12"
-                >
-                    <div class=" grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-12">
-                        <!-- Columna 1 -->
-                        <div
-                            class="flex flex-col justify-start items-center text-white gap-4 text-center"
-                        >
-                            <h1 class="text-xl font-bold">
-                                Sealed from Top to Bottom
-                            </h1>
-                            <div
-                                class="w-full overflow-hidden flex justify-center"
-                            >
-                                <img
-                                    src={silo3.src}
-                                    alt="Sealed Silo"
-                                    class="w-[200px] md:w-[350px] bg-white rounded-lg"
-                                />
-                            </div>
-                            <p class="text-sm md:text-base leading-relaxed">
-                                Our silo cones are designed with a steep 66°
-                                angle to ensure full cross-sectional flow. This
-                                design guarantees first-in/first-out discharge,
-                                eliminates material buildup on the walls, and
-                                prevents material buildup along the walls, and
-                                minimizes mix segregation. The result is a
-                                clean, consistent flow with every load.
-                            </p>
-                        </div>
-
-                        <!-- Columna 2 -->
-                        <div
-                            class="flex flex-col justify-start items-center text-white gap-4 text-center"
-                        >
-                            <h1 class="text-xl font-bold">
-                                Even Distribution without segregation
-                            </h1>
-                            <div
-                                class="w-full overflow-hidden flex justify-center"
-                            >
-                                <img
-                                    src={silo2.src}
-                                    alt="Sealed Silo"
-                                    class="w-[200px] md:w-[350px] md:h-[326.656px] bg-white rounded-lg"
-                                />
-                            </div>
-                            <p class="text-sm md:text-base leading-relaxed">
-                                The silos use a top-mounted batcher that
-                                collects a full load of mix before discharging
-                                it in a single motion through overlapping
-                                clam-style gates. The gates open simultaneously,
-                                directing the mix to fall centered, distributing
-                                it evenly across the silo floor. This design
-                                minimizes material segregation, reduces wear,
-                                and prevents buildup within the cone area.
-                            </p>
-                        </div>
-
-                        <!-- Columna 3 -->
-                        <div
-                            class="flex flex-col justify-start items-center text-white gap-4 text-center"
-                        >
-                            <h1 class="text-xl font-bold">
-                                Silo Cone
-                            </h1>
-                            <div
-                                class="w-full overflow-hidden flex justify-center"
-                            >
-                                <img
-                                    src={silo1.src}
-                                    alt="Sealed Silo"
-                                    class="w-[200px] md:w-[350px] bg-white rounded-lg"
-                                />
-                            </div>
-                            <p class="text-sm md:text-base leading-relaxed">
-                                To prevent premature hardening, the silo remains
-                                fully sealed during storage. This airtight
-                                design blocks air exposure, preserving the mix
-                                quality and delaying oxidation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <HMGallerySlider client:load images={images}/>
             </div>
             <!-- Third Section -->
             <div
