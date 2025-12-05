@@ -102,7 +102,7 @@ const toggleConfig = [
   {
     id: "2-150tons",
     dimensions: {
-      width: 3630,
+      width: 363,
       height: 2136.6,
       length: 2047.8,
       chasisLenght: 0,

@@ -73,7 +73,7 @@ export default function AcordeonItem({ title, content }: AccordionProps) {
         }`}
         style={{ transitionProperty: "max-height" }}
       >
-        <p className="text-base md:text-lg font-thin">{content}</p>
+        <p className="text-base md:text-lg font-thin whitespace-pre-line">{content}</p>
       </div>
     </div>
   );
