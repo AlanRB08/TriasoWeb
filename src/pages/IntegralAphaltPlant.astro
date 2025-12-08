@@ -10,21 +10,20 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import PlanoSection from '../components/IntegralAsphalt/PlanoSection'
 import SliderHero from "../components/IntegralAsphalt/SliderHero";
 import OdometerSection from '../components/IntegralAsphalt/OdometerSection';
+import AnalisisInversion from "../components/Calculadora/AnalisisInversion";
 
 
 const images2 = [
   { src: '/Gallery/counterflow.png', title: 'Counterflow drum mixer' , texto: `<span style="color:black">The counterflow drum mixer</span>, located at the center of the chassis, is engineered for efficient heat transfer and minimal fines loss, ensuring consistent asphalt mix quality. Its robust construction and advanced sealing minimize air infiltration and reduce maintenance. Designed specifically for the 10 Tph plant, it delivers reliable performance in a compact, cost-effective system.`},
-  { src: '/Gallery/externalpugmill.png', title: 'External pugmill mixer' , texto: `<span style="color:black">The external pugmill mixer</span>, mounted directly below the drum outlet, ensures superior final mixing of the asphalt. This added stage guarantees a more homogeneous and consistent mix by thoroughly blending materials before discharge. Driven by a 5 hp motor with a robust gearbox, it features interchangeable wear-resistant paddles for long service life and easy maintenance.`},
+  { src: '/Gallery/Caja2.png', title: 'External pugmill mixer' , texto: `<span style="color:black">The external pugmill mixer</span>, mounted directly below the drum outlet, ensures superior final mixing of the asphalt. This added stage guarantees a more homogeneous and consistent mix by thoroughly blending materials before discharge. Driven by a 5 hp motor with a robust gearbox, it features interchangeable wear-resistant paddles for long service life and easy maintenance.`},
   { src: '/Gallery/aggregatesbin.png', title: 'Aggregates bin',texto:`<span style="color:black">The aggregates bin</span> is designed to store pre-dosed material ready for asphalt production. Its trapezoidal discharge and smooth belt operation ensure steady, controlled flow to the drying system. Equipped with a lagged head pulley for improved belt grip, it supports consistent feeding for reliable mix quality throughout the process.`},
-  { src: '/Gallery/tank.png', title: 'Asphalt tank', texto:`<span style="color:black">The asphalt tank </span>is designed for efficient storage and heating, ensuring a steady asphalt supply at the ideal production temperature. With a 140,000 Btu/hr burner and integrated agitator, it enables fast heating and quick start-up. A 2" pump with a 2 hp motor ensures smooth flow, optimizing plant performance.`},
+  { src: '/Gallery/Tnq.png', title: 'Asphalt tank', texto:`<span style="color:black">The asphalt tank </span>is designed for efficient storage and heating, ensuring a steady asphalt supply at the ideal production temperature. With a 140,000 Btu/hr burner and integrated agitator, it enables fast heating and quick start-up. A 2" pump with a 2 hp motor ensures smooth flow, optimizing plant performance. Mounted on a sturdy chassis with support legs, it offers stable stationary operation with optional mobility.`},
   { src: '/Gallery/electricgen.png', title: 'Electric Generator' , texto:`<span style="color:black">The electric generator </span>provides consistent, reliable power for the entire asphalt plant. With 20 kW continuous and 22 kW emergency capacity, it supports all electrical components seamlessly. Powered by a 35 hp Cummins diesel engine and a 110-liter fuel tank, it offers extended runtime with low maintenance.`},
   { src: '/Gallery/controlgabinet.png', title: 'Control Cabinet', texto:`<span style="color:black">The control cabinet </span>centralizes the operation of the entire plant, offering intuitive management of all key components—from aggregate feeding to asphalt injection. Built with industrial-grade components, it ensures reliable performance in demanding environments. Its user-friendly interface allows precise control of temperature, material flow, and mixer timing, streamlining production and reducing operator error.` },
   { src: '/Gallery/fueltank.png', title: 'Fuel Tank', texto:`<span style="color:black">The fuel tank</span>, positioned behind the asphalt tank, has a 750-liter capacity and supplies diesel to the burner system. Its placement ensures easy access for refueling while maintaining a compact layout within the plant. Built for durability and continuous operation, it supports extended production runs without interruption.` },
   
   { src: '/Gallery/burner.png', title: 'Burner' , texto:`<span style="color:black">The burner </span>optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.`},
-  { src: '/Gallery/burner.png', title: 'Burner' , texto:`<span style="color:black">The burner </span>optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.`},
   
-  // agrega hasta 16 o más imágenes
 ];
 ---
 
@@ -37,8 +36,9 @@ const images2 = [
     <TabsIntegral client:load />
     <NeedSection />
     <Banner />
-     <PlanoSection client:only/>
+    <PlanoSection client:only/>
     <CardSection />
+    <AnalisisInversion client:only/>
     
 
 </Layout>

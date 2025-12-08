@@ -5,6 +5,10 @@ import tab3Main2 from "../../assets/images/DrumMixers/tab3Main2.webp";
 import tab3Right from "../../assets/images/DrumMixers/tab3Right.webp";
 import tab1Main from "../../assets/images/DrumMixers/tab1Main.webp";
 import tab1Left from "../../assets/images/DrumMixers/tab1Left.webp";
+import PreIMG from "../../assets/images/FuelPreHeaters/planos/PreCVABp.png"
+import PreBP1 from "../../assets/images/FuelPreHeaters/planos/PreBP1.png"
+import PreBP2 from "../../assets/images/FuelPreHeaters/planos/PreBP2.png"
+import PreBP3 from "../../assets/images/FuelPreHeaters/planos/PreBP3.png"
 
 const toggleConfig = [
   {
@@ -233,8 +237,8 @@ const FPHPlanos = () => {
              z-20 w-[250px] h-[600px]"
         >
           <img
-            src={tab1Main.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={PreBP1.src}
+            className="absolute top-0 left-0 w-full h-full object-contain"
             alt="Imagen de fondo"
             style={{
               display: activeTab === 3 ? "block" : "none",
@@ -244,8 +248,8 @@ const FPHPlanos = () => {
           />
           <img
             ref={imgRef}
-            src={tab3Main2.src}
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={PreIMG.src}
+            className="absolute top-0 left-0 w-full h-full object-contain"
             alt="Imagen superior"
             style={{ clipPath: "inset(0% 0% 0% 0%)" }}
           />
@@ -743,8 +747,8 @@ const FPHPlanos = () => {
                     </div>
                     <div className="w-[372px] h-[285px] flex items-center justify-center">
                       <img
-                        src={tab1Left.src}
-                        alt=""
+                        src={PreBP3.src}
+                        alt="Fuel pre-heater"
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>
@@ -860,8 +864,8 @@ const FPHPlanos = () => {
                     </div>
                     <div className="h-[285px] w-[744px] flex justify-center items-center">
                       <img
-                        src={tab3Right.src}
-                        alt=""
+                        src={PreBP2.src}
+                        alt="Fuel pre-heater"
                         className="h-full w-auto"
                       />
                     </div>

@@ -7,99 +7,54 @@ import ModalButton from "../unitComponents/ModalButton.astro";
 import tanque360 from "../../assets/images/AsphaltStorage/Tqe60.png";
 import oil1 from "../../assets/images/AsphaltPlant/agitators1.webp";
 import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
-import OSection from "../unitComponents/OSection.astro";
+import ASHoses from "../../assets/images/AsphaltStorage/ASHoses.png";
+import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.webp";
+import ASAgitators from "../../assets/images/AsphaltPlant/agitators1.webp";
+import ASGallerySlider from "../../components/AsphaltStorage/ASGallerySlider.tsx";
+
+const images = [
+  {
+    src: ASHoses.src,
+    title: "Asphalt Pumps",
+    description:
+      "Asphalt pumping from the tank works through a pump located inside the tank, where the asphalt is stored, with its motor positioned at the top. Once heated, the asphalt is easily —where the hose is—since at high temperatures, asphalt behaves like water. To prevent blockages inside the pipe, the pump operates in both directions: forward and reverse. When the tank finishes operating, the pump draws the asphalt from the outlet hose back into the tank. Having the asphalt pump inside the tank ",
+  },
+  {
+    src: ASAgitators.src,
+    title: "Agitators for additives and polymers",
+    description:
+      "Designed to ensure a homogeneous blend of additives and polymers, uniform heat distribution, preventing hot spots. The agitator maintains consistent composition throughout the asphalt. ",
+    list: [
+      {
+        text: "5 Hp agitators for:",
+        sublist: [
+          "Speeding up heating and homogenizing asphalt temperature.",
+          "Incorporating type 2 polymers: natural latex, SBR, neoprene, etc.",
+          "Incorporating additives such as: Rejuvenator for recycled asphalts, asphalt softener, for warm mix applications, adhesion promoter, etc.",
+          "Maintaining homogeneity in polymer-modified asphalts.",
+        ],
+      },
+    ],
+  },
+  {
+    src: ASHoses.src,
+    title: "Asphalt Hoses",
+    description:
+      "When the pump, which is submerged in the tank, is turned on, the material is transferred into a stainless-steel hose connected to the plant. From there, the flow enters the asphalt inlet, ensuring continuous and uniform delivery.",
+  },
+  {
+    src: fiberGlass.src,
+    title: "Three inches fiberglass insulation",
+    description:
+      "Our asphalt storage tanks feature three-inch fiberglass insulation, designed for superior performance in minimizing heat loss and maintaining consistent temperatures. This durable, energy-efficient insulation ensures your asphalt remains at the optimal temperature, ready for use. Additionally, the exterior is reinforced with a stainless steel sheet lining, providing enhanced durability and protection against harsh external conditions.",
+  },
+];
 ---
 
 <div class="w-full flex flex-col gap-10">
+  <ASGallerySlider client:load images={images} />
   <div class="max-w-7xl px-8 mx-auto">
     <img src={tanque360.src} alt="" />
-  </div>
-  <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-    <div
-      class="w-full bg-white flex flex-col gap-2 p-8 rounded-xl shadow-lg min-h-[55vh]"
-    >
-      <div class="w-full flex justify-center">
-        <img src={oil1.src} alt="AGITATTORS FOR ADDITIVES AND POLYMERS" class="rounded-lg w-full h-4/5 my-auto" />
-      </div>
-      <div class="w-full flex">
-        <h1 class="text-black text-xl font-bold">
-          AGITATTORS FOR ADDITIVES AND POLYMERS
-        </h1>
-      </div>
-      <div class="w-full">
-        <p class="font-thin text-sm md:text-base">
-          Designed to ensure a homogeneous blend of additives and polymers,
-          uniform heat distribution, preventing hot spots. The agitator
-          maintains consistent composition throughout the asphalt.
-        </p>
-      </div>
-      <div class="w-full flex justify-end mt-auto">
-        <ModalButton>
-          <h3 slot="title" class="text-xl md:text-2xl font-bold">
-            AGITATTORS FOR ADDITIVES AND POLYMERS
-          </h3>
-          <img slot="image" src={oil1.src} alt="custom" />
-          <div slot="content">
-            <ul class="list-dis c pl-5">
-              <li>5 Hp agitators for:</li>
-              <ul class="list-disc pl-5">
-                <li>
-                  Speeding up heating and homogenizing asphalt temperature.
-                </li>
-                <li>
-                  Incorporating type 2 polymers: natural latex, SBR, neoprene,
-                  etc.
-                </li>
-                <li>Incorporating additives such as:</li>
-                <ul class="list-disc pl-5">
-                  <li>Rejuvenator for recycled asphalts.</li>
-                  <li>Asphalt softener.</li>
-                  <li>For warm mix applications.</li>
-                  <li>Adhesion promoter.</li>
-                  <li>Etc.</li>
-                </ul>
-                <li>Maintaining homogeneity in polymer-modified asphalts.</li>
-              </ul>
-            </ul>
-          </div>
-        </ModalButton>
-      </div>
-    </div>
-
-    <div
-      class="w-full bg-white flex flex-col gap-2 p-8 rounded-xl shadow-lg min-h-[55vh]"
-    >
-      <div class="w-full flex justify-center">
-        <img src={ASProv1.src} alt="ASPHALT PUMPS" class="rounded-lg w-full h-4/5 my-auto" />
-      </div>
-      <div class="w-full flex justify-between items-center">
-        <h1 class="text-black text-xl font-bold">ASPHALT PUMPS</h1>
-      </div>
-      <div class="w-full">
-        <p class="font-thin text-sm md:text-base">
-          Asphalt pumping from the tank works through a pump located inside the
-          tank, where the asphalt is stored, with its motor positioned at the
-          top.
-        </p>
-      </div>
-      <div class="w-full flex justify-end mt-auto">
-        <ModalButton>
-          <h3 slot="title" class="text-xl md:text-2xl">ASPHALT PUMPS</h3>
-          <img slot="image" src={ASProv1.src} alt="custom" />
-          <div slot="content">
-            <p class="font-thin text-base">
-              Asphalt pumping from the tank works through a pump located inside
-              the tank, where the asphalt is stored, with its motor positioned
-              at the top. Once heated, the asphalt is easily —where the hose
-              is—since at high temperatures, asphalt behaves like water. <br />
-              To prevent blockages inside the pipe, the pump operates in both directions:
-              forward and reverse. When the tank finishes operating, the pump draws
-              the asphalt from the outlet hose back into the tank.
-            </p>
-          </div>
-        </ModalButton>
-      </div>
-    </div>
   </div>
 
   <div class="w-full px-8 md:px-52">

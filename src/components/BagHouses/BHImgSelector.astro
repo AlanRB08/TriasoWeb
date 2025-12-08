@@ -18,7 +18,7 @@ import img7 from "../../assets/images/BagHouses/BHProv7.webp";
 import OSection from "../unitComponents/OSection.astro";
 import bannerNew from "../../assets/images/BagHouses/bannerImage.png";
 import damperImg from "../../assets/images/BagHouses/damper.jpg";
-import finesReturn from "../../assets/images/BagHouses/finesReturn.jpg"
+import finesReturn from "../../assets/images/BagHouses/finesReturn.jpg";
 
 const tanksSlides = [
     {
@@ -151,75 +151,80 @@ const tanksSlides = [
                 <img src={single.src} alt="" class="w-1/2" />
             </div>
         </div>
-    </div>
-    <div class="w-full bg-bgBeige">
-        <div
-            class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 bg-bgBeige items-start"
-        >
-            <AcordeonItemCol
-                title="Typical Venturi System"
-                bgColor="bg-bgBeige"
-                image={img5.src}
-                client:only
+
+        <div class="w-full">
+            <div
+                class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 items-start rounded-lg mb-5 w-[50%] gap-10"
             >
-                <div class="w-full py-10 text-sm md:text-base text-grisT">
-                    <p>
-                        In venturi-based filtration systems, the airflow design
-                        introduces multiple inefficiencies that affect both dust
-                        collection and system durability. The high-speed airflow
-                        exiting the venturi creates a low-pressure zone at the
-                        upper section of the filter bag, pulling dust toward
-                        that area. This causes uneven accumulation and reduces
-                        filtration capacity. Over time, fine particles become
-                        embedded deep within the fabric, making cleaning less
-                        effective.
-                    </p><br />
-                    <p>
-                        Another issue is the placement of the cleaning air pulse
-                        near the bag opening. This location limits its ability
-                        to draw in additional air that could improve dust
-                        removal. Meanwhile, the narrow venturi forces filtered
-                        air to accelerate rapidly into the plenum, creating
-                        upward airflow that resists the cleaning pulse. As a
-                        result, stronger air blasts are needed, increasing
-                        energy use and putting mechanical stress on the
-                        bags—leading to faster wear and reduced lifespan.
-                    </p>
-                </div>
-            </AcordeonItemCol>
-            <AcordeonItemCol
-                title="Triaso High Ratio System"
-                bgColor="bg-bgBeige"
-                image={img6.src}
-                client:only
-            >
-                <div class="w-full py-10 text-sm md:text-base text-grisT">
-                    <p>
-                        The new series baghouse improves dust removal by
-                        completely redesigning the airflow process. Instead of
-                        relying on a traditional venturi system, it uses a
-                        supersonic converging-diverging nozzle to generate the
-                        cleaning air jet. This shift in design allows for the
-                        induction of more secondary air, enhancing the cleaning
-                        efficiency. The removal of the venturi also reduces the
-                        throat velocity at the bag’s inlet, preventing the
-                        negative pressure that typically leads to dust buildup
-                        at the top of the filter bag.
-                    </p><br />
-                    <p>
-                        By fully utlization of the bag mouth, the cleaning air
-                        jet expands evenly, minimizing the likelihood of dust
-                        cake blowout. Leading to a more uniform bag inflation,
-                        resulting in a more effective cleaning cycle and reduced
-                        wear on the fabric. As a result, the Triaso Model only
-                        requires half the filter area compared to traditional
-                        venturi systems, enabling Triaso to offer high
-                        performance in a more compact form.
-                    </p>
-                </div>
-            </AcordeonItemCol>
+                <AcordeonItemCol
+                    title="Typical Venturi System"
+                    bgColor="bg-bgBeige"
+                    image={img5.src}
+                    client:only
+                    
+                >
+                    <div class="w-full py-10 text-sm md:text-base text-grisT">
+                        <p>
+                            In venturi-based filtration systems, the airflow
+                            design introduces multiple inefficiencies that
+                            affect both dust collection and system durability.
+                            The high-speed airflow exiting the venturi creates a
+                            low-pressure zone at the upper section of the filter
+                            bag, pulling dust toward that area. This causes
+                            uneven accumulation and reduces filtration capacity.
+                            Over time, fine particles become embedded deep
+                            within the fabric, making cleaning less effective.
+                        </p><br />
+                        <p>
+                            Another issue is the placement of the cleaning air
+                            pulse near the bag opening. This location limits its
+                            ability to draw in additional air that could improve
+                            dust removal. Meanwhile, the narrow venturi forces
+                            filtered air to accelerate rapidly into the plenum,
+                            creating upward airflow that resists the cleaning
+                            pulse. As a result, stronger air blasts are needed,
+                            increasing energy use and putting mechanical stress
+                            on the bags—leading to faster wear and reduced
+                            lifespan.
+                        </p>
+                    </div>
+                </AcordeonItemCol>
+                <AcordeonItemCol
+                    title="Triaso High Ratio System"
+                    bgColor="bg-bgBeige"
+                    image={img6.src}
+                    client:only
+                >
+                    <div class="w-full py-10 text-sm md:text-base text-grisT">
+                        <p>
+                            The new series baghouse improves dust removal by
+                            completely redesigning the airflow process. Instead
+                            of relying on a traditional venturi system, it uses
+                            a supersonic converging-diverging nozzle to generate
+                            the cleaning air jet. This shift in design allows
+                            for the induction of more secondary air, enhancing
+                            the cleaning efficiency. The removal of the venturi
+                            also reduces the throat velocity at the bag’s inlet,
+                            preventing the negative pressure that typically
+                            leads to dust buildup at the top of the filter bag.
+                        </p><br />
+                        <p>
+                            By fully utlization of the bag mouth, the cleaning
+                            air jet expands evenly, minimizing the likelihood of
+                            dust cake blowout. Leading to a more uniform bag
+                            inflation, resulting in a more effective cleaning
+                            cycle and reduced wear on the fabric. As a result,
+                            the Triaso Model only requires half the filter area
+                            compared to traditional venturi systems, enabling
+                            Triaso to offer high performance in a more compact
+                            form.
+                        </p>
+                    </div>
+                </AcordeonItemCol>
+            </div>
         </div>
-    </div><br />
+    </div>
+    <br />
     <div class="w-full px-8 text-center">
         <h2 class="text-blueMain text-2xl md:text-3xl text-center">
             Total and homogeneous return of fines to the asphalt mix to optimize
@@ -368,9 +373,7 @@ const tanksSlides = [
                         </div>
 
                         <div class="w-full">
-                            <p
-                                class="text-grisT text-base md:text-lg "
-                            >
+                            <p class="text-grisT text-base md:text-lg">
                                 Fine dust particles enter the baghouse through a
                                 high side inlet designed for controlled
                                 horizontal and downward airflow. This
@@ -415,7 +418,11 @@ const tanksSlides = [
             <div class="w-full order-1 lg:order-2">
                 <h2 class="text-lg md:text-xl">Fines Return System</h2><br />
                 <div class="w-full flex justify-center">
-                    <img src={finesReturn.src} alt="" class="rounded-lg w-3/4" />
+                    <img
+                        src={finesReturn.src}
+                        alt=""
+                        class="rounded-lg w-3/4"
+                    />
                 </div>
             </div>
         </div>
