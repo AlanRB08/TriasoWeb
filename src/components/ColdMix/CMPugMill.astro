@@ -1,67 +1,81 @@
 ---
-import Image from "astro/components/Image.astro"
-import img2 from '../../assets/images/ColdMix/pugmill2.png';
-import img3 from '../../assets/images/ColdMix/pugmill3.png';
+import Image from "astro/components/Image.astro";
+import img2 from "../../assets/images/ColdMix/pugmill2.png";
+import img3 from "../../assets/images/ColdMix/pugmill3.png";
 import GallerySlider from "../unitComponents/GallerySlider";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import AcordeonItem from "../unitComponents/AcordeonItem";
-import img6 from '../../assets/images/AsphaltPlant/elevator1.webp';
-import binUnit1 from '../../assets/images/BinUnits/binUnit1.png';
-import Tred from '../../assets/images/AsphaltStorage/redT.png';
+import img6 from "../../assets/images/AsphaltPlant/elevator1.webp";
+import binUnit1 from "../../assets/images/BinUnits/binUnit1.png";
+import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import PGMC from "../../assets/images/ColdMix/PGMC.mp4";
 import CMHigh from "../../assets/images/ColdMix/CMHigh.jpg";
-import PlaMFDscC1 from "../../assets/images/ColdMix/PlaMFDscC1.png"
+import PlaMFDscC1 from "../../assets/images/ColdMix/PlaMFDscC1.png";
 
 const binSlides = [
-{
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG1.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG2.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG3.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG4.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG5.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG6.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG7.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-  {
-    image: 'src/assets/images/ColdMix/GallerySlider/CMG8.png',
-    caption: 'Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada',
-  },
-]
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG1.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG2.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG3.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG4.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG5.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG6.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG7.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+    },
+    {
+        image: "src/assets/images/ColdMix/GallerySlider/CMG8.png",
+        caption:
+            "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+    },
+];
 ---
-<div class="w-full font-bold flex flex-col justify-center items-center mt-[20vh]">
+
+<div
+    class="w-full font-bold flex flex-col justify-center items-center mt-[20vh]"
+>
     <TwoColumnSection
-    leftBg="bg-redBg"
-  rightBg="bg-blueMain"
-  imageSrc={Tred.src}
-  imageAlt="Red T icon"
-  imageWidth="150px"
+        leftBg="bg-redBg"
+        rightBg="bg-blueMain"
+        imageSrc={Tred.src}
+        imageAlt="Red T icon"
+        imageWidth="150px"
     >
         <div slot="left" class="flex flex-col justify-center gap-3">
             <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
             <p class="text-base md:text-lg">
-                Our cold mix asphalt plants offer a wide range of optional features as flow detectors for precise monitoring,
-                 and vibrators to ensure smooth material flow. Customizable with bin dividers, level indicators to prevent 
-                 high- and low-level conditions, extensions, and grizzlies, they adapt to diverse material handling requirements,
-                  delivering efficiency and reliability in any project.
+                Our cold mix asphalt plants offer a wide range of optional
+                features as flow detectors for precise monitoring, and vibrators
+                to ensure smooth material flow. Customizable with bin dividers,
+                level indicators to prevent high- and low-level conditions,
+                extensions, and grizzlies, they adapt to diverse material
+                handling requirements, delivering efficiency and reliability in
+                any project.
             </p>
         </div>
         <div slot="right" class="flex flex-col justify-center gap-3">
@@ -74,88 +88,138 @@ const binSlides = [
                 <li>Polyamide (P84)</li>
             </ul>
         </div>
-  </TwoColumnSection>
-    <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
+    </TwoColumnSection>
+    <div
+        class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center"
+    >
         <div class="col-span-2 flex justify-start md:justify-center">
-            <Image src={binUnit1} alt="" class="w-3/4 md:w-full"/>
+            <Image src={binUnit1} alt="" class="w-3/4 md:w-full" />
         </div>
-        <div class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 md:pl-0 pl-8">
-            <h1 class="text-2xl md:text-5xl font-bold">Precision Dosing <br>Systems in <br>Cold Mix <br>Asphalt Plants</h1><br>
+        <div
+            class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 md:pl-0 pl-8"
+        >
+            <h1 class="text-2xl md:text-5xl font-bold">
+                Precision Dosing <br />Systems in <br />Cold Mix <br />Asphalt
+                Plants
+            </h1><br />
             <p class="text-base md:text-lg font-thin text-grisT text-justify">
-                Our cold mix asphalt plants are equipped with precision dosing systems designed for optimal accuracy
-                 and reliability. These systems provide accurate material flow and distribution, meeting the 
-                 requirements of complex or high-spec projects.
-            </p><br>
+                Our cold mix asphalt plants are equipped with precision dosing
+                systems designed for optimal accuracy and reliability. These
+                systems provide accurate material flow and distribution, meeting
+                the requirements of complex or high-spec projects.
+            </p><br />
             <div class="w-full flex flex-col gap-3 md:gap-6 pr-5 md:pr-10">
-                <AcordeonItem client:only title="High-Precision Sensors" content="The system can be equipped with optional sensors that monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Consistent Material Distribution" content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Automated Controls" content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Anti-Clogging Mechanism" content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow.">
-                </AcordeonItem>
-                <AcordeonItem client:only title="Energy-Efficient Operation" content="Engineered to optimize power usage, reducing operational costs while maintaining high performance.">
-                </AcordeonItem>
-            </div><br>
+                <AcordeonItem
+                    client:only
+                    title="High-Precision Sensors"
+                    content="The system can be equipped with optional sensors that monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages."
+                />
+                <AcordeonItem
+                    client:only
+                    title="Adjustable Flow Rates"
+                    content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand."
+                />
+                <AcordeonItem
+                    client:only
+                    title="Consistent Material Distribution"
+                    content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes."
+                />
+                <AcordeonItem
+                    client:only
+                    title="Automated Controls"
+                    content="Equipped with programmable logic controllers (PLCs) and our newest control system, Triaso 8.0, the system can be fully automated to deliver consistent and repeatable performance across different projects."
+                />
+                <AcordeonItem
+                    client:only
+                    title="Anti-Clogging Mechanism"
+                    content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow."
+                />
+                <AcordeonItem
+                    client:only
+                    title="Energy-Efficient Operation"
+                    content="Engineered to optimize power usage, reducing operational costs while maintaining high performance."
+                />
+            </div><br />
             <p class="text-base md:text-lg font-thin text-grisT text-justify">
-                These features make our dosing systems an essential component for industries requiring precise 
-                and efficient material handling.
+                These features make our dosing systems an essential component
+                for industries requiring precise and efficient material
+                handling.
             </p>
         </div>
     </div>
     <div class="w-full md:w-3/4 max-w-7xl mx-auto px-8 py-10">
         <video src={PGMC} autoplay></video>
     </div>
-    <div class="w-full flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8 py-10">
-        <h1 class="text-blueMain text-xl md:text-2xl">Discover the Magic Behind our Pugmill</h1>
+    <div
+        class="w-full flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8 py-10"
+    >
+        <h1 class="text-blueMain text-xl md:text-2xl">
+            Discover the Magic Behind our Pugmill
+        </h1>
         <p class="text-base md:text-lg text-grisP">
-            The pugmill is a crucial component in cold mix plants, designed to effectively blend a variety of 
-            materials, including aggregates and asphalt emulsion into a uniform mix. Its heavy-duty construction
-             ensures smooth operation and reliable performance over time.
+            The pugmill is a crucial component in cold mix plants, designed to
+            effectively blend a variety of materials, including aggregates and
+            asphalt emulsion into a uniform mix. Its heavy-duty construction
+            ensures smooth operation and reliable performance over time.
         </p>
         <p class="text-base md:text-lg text-grisP">
-            The pugmill’s efficient mixing process allows precise control, of material blending, making it suitable
-             for a wide range of applications that require consistent aggregate mix quality. With simple maintenance
-              and user-friendly, the pugmill delivers long-lasting performance in demanding work environments.
+            The pugmill’s mixing process allows precise homogenization of the
+            aggregates, making it ideal for a wide range of applications that
+            require high-quality cold mix. With simple maintenance and an
+            easy-to-operate design, our pugmill delivers a long and
+            cost-effective service life, even in demanding work environments.
+            This is not just a promise—we back it with a two-year warranty, the
+            highest in the market.
         </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 p-6 justify-center items-center gap-3 md:gap-10 bg-grisSubP px-8 lg:px-32">
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 p-6 justify-center items-center gap-3 md:gap-10 bg-grisSubP px-8 lg:px-32"
+    >
         <div>
-            <Image src={img2} alt=""/>
+            <Image src={img2} alt="" />
         </div>
         <div>
-            <h2 class="text-lg md:text-2xl text-blueMain">The mixing paddles</h2> <br>
+            <h2 class="text-lg md:text-2xl text-blueMain">
+                The mixing paddles
+            </h2>
+            <br />
             <p class="text-grisT text-base md:text-lg">
-                The mixing paddles inside the pugmill are essential for achieving a uniform, high-quality asphalt mix.
-                 Strategically arranged along twin synchronized shafts driven by a gear system, they ensure thorough
-                  blending of all components, preventing material build-up and providing even distribution of asphalt
-                   emulsion.<br><br>
+                The mixing paddles inside the pugmill are essential for
+                achieving a uniform, high-quality asphalt mix. Strategically
+                arranged along twin synchronized shafts driven by a gear system,
+                they ensure thorough blending of all components, preventing
+                material build-up and providing even distribution of asphalt
+                emulsion.<br /><br />
 
-                Made from wear-resistant materials such as Hardox steel or cast iron, the paddles are fully 
-                interchangeable and designed to endure heavy use and abrasive aggregates without loss of efficiency. 
-                During operation, a protective internal layer forms naturally, reducing direct wear on structural 
-                surfaces and significantly extending the equipment’s service life.<br><br>
-                
-                Easy to maintain and built for durability, the pugmill delivers reliable mixing performance
-                 even under the most demanding conditions.
+                Made from wear-resistant materials such as Hardox steel or cast
+                iron, the paddles are fully interchangeable and designed to
+                endure heavy use and abrasive aggregates without loss of
+                efficiency. During operation, a protective internal layer forms
+                naturally, reducing direct wear on structural surfaces and
+                significantly extending the equipment’s service life.<br /><br
+                />
+
+                Easy to maintain and built for durability, the pugmill delivers
+                reliable mixing performance even under the most demanding
+                conditions.
             </p>
         </div>
     </div>
-    <div class="w-full lg:w-8/12 flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8">
+    <div
+        class="w-full lg:w-8/12 flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8"
+    >
         <div class="w-full flex justify-center">
-            <Image src={img3} alt="" class={'w-3/4 h-auto object-contain'}/>
+            <Image src={img3} alt="" class={"w-3/4 h-auto object-contain"} />
         </div>
         <p class="text-grisT text-base md:text-lg">
-            The pugmill features twin synchronized shafts driven by a gear system for balanced,
-             efficient mixing. Its cast iron mixer pads are fully interchangeable and built for
-              durability. An internal protective layer forms during operation, reducing direct wear 
-              on the structure and extending the plant’s service life.
+            The pugmill features twin synchronized shafts driven by a gear
+            system for balanced and efficient mixing. Its cast-iron mixer
+            paddles are fully interchangeable and built for durability. During
+            operation, a protective internal layer forms naturally, reducing
+            direct wear on the structure and extending the equipment’s service
+            life.
         </p>
     </div>
-
 
     <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 mb-5 h-full">
             <div class="flex items-center justify-start col-span-1">

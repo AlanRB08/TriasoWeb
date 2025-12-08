@@ -11,6 +11,8 @@ const CMOdom = () => {
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
   const [value4, setValue4] = useState(0);
+  const [value5, setValue5] = useState(0);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,11 +26,12 @@ const CMOdom = () => {
           setValue4(0);
 
           setTimeout(() => {
-            setValue(10);
+            setValue(100);
+            setValue5(500)
             setValue1(20);
-            setValue2(1);
+            setValue2(18);
             setValue4(5);
-            setValue3(3);
+            setValue3(24);
           }, 300); // Pequeño retraso para asegurar reinicio
         }
       },
@@ -49,33 +52,33 @@ const CMOdom = () => {
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-8 my-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-start">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
+              <Odometer value={value5} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">Tph</p>
             </div>
-            <p className="text-grisP">Range of hot-mix production</p>
+            <p className="text-grisP">Production size range</p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value1} format="(,ddd)" duration={2000} />
-              <p className="text-sm font-normal ml-3">kW</p>
+              <p className="text-sm font-normal ml-3">tons</p>
             </div>
-            <p className="text-grisP">Three-phase electric generator</p>
+            <p className="text-grisP">Bin unit capacity</p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
-              <h1>.</h1>
-              <Odometer value={value4} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value3} format="(,ddd)" duration={2000} />
-              <p className="text-sm font-normal ml-3">million BTU/hr</p>
+              <p className="text-7xl font-bold ml-3">''</p>
             </div>
             <p className="text-grisP text-start w-full">
-              Modulating burner capacity
+              Aggregate conveyors
             </p>
           </div>
         </div>
