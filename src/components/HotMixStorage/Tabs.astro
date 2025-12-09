@@ -22,24 +22,24 @@ import Aislamiento from "../../assets/images/HotMix/Aislamiento.webp";
 import HMGallerySlider from "./HMGallerySlider";
 
 const images = [
-  {
-    src: silo3.src,
-    title: "Asphalt Pumps",
-    description:
-      " Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This design guarantees first-in/first-out discharge, eliminates material buildup on the walls, and prevents material buildup along the walls, and minimizes mix segregation. The result is aclean, consistent flow with every load.",
-  },
-  {
-    src: silo2.src,
-    title: "Agitators for additives and polymers",
-    description:
-      "The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single motion through overlapping clam-style gates. The gates open simultaneously, directing the mix to fall centered, distributing  it evenly across the silo floor. This design minimizes material segregation, reduces wear, and prevents buildup within the cone area.",
-  },
-  {
-    src: silo1.src,
-    title: "Asphalt Hoses",
-    description:
-      "To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure, preserving the mix quality and delaying oxidation.",
-  }
+    {
+        src: silo3.src,
+        title: "Asphalt Pumps",
+        description:
+            " Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This design guarantees first-in/first-out discharge, eliminates material buildup on the walls, and prevents material buildup along the walls, and minimizes mix segregation. The result is aclean, consistent flow with every load.",
+    },
+    {
+        src: silo2.src,
+        title: "Agitators for additives and polymers",
+        description:
+            "The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single motion through overlapping clam-style gates. The gates open simultaneously, directing the mix to fall centered, distributing  it evenly across the silo floor. This design minimizes material segregation, reduces wear, and prevents buildup within the cone area.",
+    },
+    {
+        src: silo1.src,
+        title: "Asphalt Hoses",
+        description:
+            "To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure, preserving the mix quality and delaying oxidation.",
+    },
 ];
 ---
 
@@ -285,7 +285,7 @@ const images = [
                     </div>
                 </div>
 
-                <HMGallerySlider client:load images={images}/>
+                <HMGallerySlider client:load images={images} />
             </div>
             <!-- Third Section -->
             <div
@@ -303,12 +303,14 @@ const images = [
                         asphalt plant with low maintenance for many years.
                     </p>
                 </div>
-                
-                <div class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]">
+
+                <div
+                    class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]"
+                >
                     <p>­</p>
                 </div>
                 <section
-                    class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] "
+                    class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] overflow-hidden"
                 >
                     <div
                         class="absolute top-0 right-[15rem] h-[30rem] w-[30rem] overflow-hidden pointer-events-none"
@@ -321,7 +323,9 @@ const images = [
                         />
                     </div>
 
-                    <div class="max-w-7xl mx-auto text-white relative z-10">
+                    <div
+                        class="max-w-7xl mx-auto text-white relative z-10 px-6 md:px-10"
+                    >
                         <p>
                             The silos are built with durable, easy-to-maintain
                             components that require minimal upkeep. Their robust
@@ -340,27 +344,39 @@ const images = [
                         </p>
                     </div>
                     <div
-                        class="grid grid-cols-1 md:grid-cols-2 mx-auto max-w-7xl my-5 relative z-10"
+                        class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 z-10 px-6 md:px-10"
                     >
-                        <div
-                            class="bg-blueMain flex flex-col justify-center gap-10 w-4/5 max-h-[260px] rounded-lg p-5"
-                        >
-                            <h1 class="text-white">24/7 customer service</h1>
-                            <p class="text-[#d9d9d9]">
-                                Our team is available around the clock, ready to
-                                assist you at any time, even on weekends and
-                                holidays.
-                            </p>
-                            <button
-                                type="button"
-                                class="bg-white rounded-2xl w-1/2 p-3 text-black text-left hover:bg-gray-100 transition"
+                        <div class="relative">
+                    
+                            <div
+                                class="absolute left-0 top-0 -translate-x-[100vw] w-[100vw] h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] bg-blueMain"
                             >
-                                Talk to a representative
-                            </button>
+                            </div>
+                            <div
+                                class="relative bg-blueMain text-white p-4 sm:p-5 md:p-6 w-full md:w-4/5 h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] flex flex-col justify-center gap-4 md:gap-6 md:rounded-r-lg"
+                            >
+                                <h1
+                                    class="text-lg sm:text-xl md:text-2xl font-semibold"
+                                >
+                                    24/7 customer service
+                                </h1>
+
+                                <p class="text-[#d9d9d9] text-sm sm:text-base">
+                                    Our team is available around the clock,
+                                    ready to assist at any time.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="bg-white rounded-xl md:rounded-2xl w-1/2 sm:w-2/5 md:w-1/2 p-2 sm:p-3 text-black text-left hover:bg-gray-100 transition"
+                                >
+                                    Talk to a representative
+                                </button>
+                            </div>
                         </div>
 
                         <div
-                            class="w-full col-span-1 flex flex-col items-center justify-center gap-6 mb-5 relative z-10"
+                            class="w-full flex flex-col items-center justify-center gap-6 mb-5"
                         >
                             <AcordeonItem
                                 client:only
@@ -383,7 +399,7 @@ const images = [
                 <section
                     class="w-full bg-gradient-to-b from-[#383838] to-[#e7e7e7] py-20"
                 >
-                    <p>­­ </p>
+                    <p>­­</p>
                 </section>
             </div>
         </div>
