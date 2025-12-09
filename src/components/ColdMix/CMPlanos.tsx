@@ -663,7 +663,7 @@ useEffect(() => {
                         : "text-white bg-transparent border-white"
                     }`}
                   >
-                    Aesthetic Flanks
+                    Aesthetic Side Panels
                   </button>
                   <button
                     onClick={() => setActiveVersion("withoutPanels")}
@@ -673,7 +673,7 @@ useEffect(() => {
                         : "text-white bg-transparent border-white"
                     }`}
                   >
-                    Without Aesthetic Flanks
+                    Without Aesthetic Side Panels
                   </button>
                 </div>
               </div>
@@ -864,7 +864,7 @@ useEffect(() => {
                         <li>Interchangeable paddles</li>
                         <li>Adjustable mixing time</li>
                         <li>Direct discharge gate to stockpile or truck</li>
-                        <li>Driven by 10–15 HP electric motor</li>
+                        <li>Driven by 10–125 HP electric motor</li>
                         <li>Speed reducer transmission</li>
                       </ul>
                     </div>
@@ -1835,7 +1835,7 @@ useEffect(() => {
                         <li>Interchangeable paddles</li>
                         <li>Adjustable mixing time</li>
                         <li>Direct discharge gate to stockpile or truck</li>
-                        <li>Driven by 10–15 HP electric motor</li>
+                        <li>Driven by 10–125 HP electric motor</li>
                         <li>Speed reducer transmission</li>
                       </ul>
                     </div>
