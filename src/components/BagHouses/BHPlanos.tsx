@@ -526,7 +526,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -801,9 +804,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -844,7 +847,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -877,7 +880,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -889,7 +892,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -903,13 +906,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -924,7 +927,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -933,7 +936,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -945,7 +948,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -959,13 +962,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -984,7 +987,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 2 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -1031,7 +1034,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -1308,9 +1314,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -1351,7 +1357,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -1373,9 +1379,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -1384,7 +1390,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -1396,7 +1402,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -1410,13 +1416,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -1431,7 +1437,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -1440,7 +1446,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -1452,7 +1458,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -1466,13 +1472,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -1491,7 +1497,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 3 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -1538,7 +1544,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -1815,9 +1824,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -1858,7 +1867,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -1880,9 +1889,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -1891,7 +1900,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -1903,7 +1912,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -1917,13 +1926,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -1938,7 +1947,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -1947,7 +1956,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -1959,7 +1968,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -1973,13 +1982,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -1998,7 +2007,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 4 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -2045,7 +2054,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -2322,9 +2334,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -2365,7 +2377,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -2387,9 +2399,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -2398,7 +2410,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -2410,7 +2422,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -2424,13 +2436,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -2445,7 +2457,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -2454,7 +2466,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -2466,7 +2478,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -2480,13 +2492,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -2505,7 +2517,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 5 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -2552,7 +2564,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -2829,9 +2844,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -2872,7 +2887,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -2894,9 +2909,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -2905,7 +2920,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -2917,7 +2932,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -2931,13 +2946,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -2952,7 +2967,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -2961,7 +2976,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -2973,7 +2988,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -2987,13 +3002,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -3012,7 +3027,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 6 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -3059,7 +3074,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -3336,9 +3354,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -3379,7 +3397,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -3401,9 +3419,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -3412,7 +3430,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -3424,7 +3442,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -3438,13 +3456,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -3456,9 +3474,10 @@ const BHPlanos = () => {
                                                 </ul>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -3467,7 +3486,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -3479,7 +3498,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -3493,13 +3512,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -3518,7 +3537,7 @@ const BHPlanos = () => {
                                 </div>
                             </div>
 
-                        )},
+                        )}
                         {activeTab === 7 && (
                             <div
                                 className="flex flex-col items-center justify-center"
@@ -3565,7 +3584,10 @@ const BHPlanos = () => {
                                                     </svg>
                                                 </button>
                                             </div>
-                                            <div>
+                                            <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
+                                                    ? "max-h-96 opacity-1 mb-4"
+                                                    : "max-h-0 opacity-0"
+                                                    } md:max-h-full md:opacity-100 md:block`}>
                                                 <div className="flex gap-5">
                                                     <h1>Length:</h1>
                                                     <p>
@@ -3842,9 +3864,9 @@ const BHPlanos = () => {
                                     </div>
 
                                 </div>
-                                <div className="w-full gap-5 grid grid-cols-1 lg:grids-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
+                                <div className="w-full gap-5 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 items-start mt-0 md:mt-10">
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 DURABILITY & SAFETY
                                             </h1>
@@ -3885,7 +3907,7 @@ const BHPlanos = () => {
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
@@ -3907,9 +3929,9 @@ const BHPlanos = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2">
+                                    <div className="flex flex-col justify-center items-center gap-4 text-white col-span-2 ">
                                         <div>
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                            <div className="flex justify-between border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     COMPLIANCE WITH INDUSTRY STANDARS
                                                 </h1>
@@ -3918,7 +3940,7 @@ const BHPlanos = () => {
                                                     onClick={() =>
                                                         setOpenSections((prev) => ({
                                                             ...prev,
-                                                            C3_2: !prev.C3_2,
+                                                            C4_1: !prev.C4_1,
                                                         }))
                                                     }
                                                 >
@@ -3930,7 +3952,7 @@ const BHPlanos = () => {
                                                         fill="none"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         color="#000000"
-                                                        className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                        className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
                                                             }`}
                                                     >
                                                         <path
@@ -3944,13 +3966,13 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0 mt-4"
                                                     } md:max-h-full md:opacity-100 md:block`}
                                             >
                                                 <ul
-                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                    className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_1
                                                         ? "max-h-96 opacity-1 mb-4"
                                                         : "max-h-0 opacity-0"
                                                         } md:max-h-full md:opacity-100 md:block`}
@@ -3965,7 +3987,7 @@ const BHPlanos = () => {
 
                                     </div>
                                     <div className="flex flex-col justify-start gap-4 text-white col-span-1">
-                                        <div className="w-full flex justify-between border-b border-b-white">
+                                        <div className="w-[44vh] lg:w-full md:w-full flex justify-between border-b border-b-white">
                                             <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                 PORTABILITY
                                             </h1>
@@ -3974,7 +3996,7 @@ const BHPlanos = () => {
                                                 onClick={() =>
                                                     setOpenSections((prev) => ({
                                                         ...prev,
-                                                        C3_2: !prev.C3_2,
+                                                        C4_2: !prev.C4_2,
                                                     }))
                                                 }
                                             >
@@ -3986,7 +4008,7 @@ const BHPlanos = () => {
                                                     fill="none"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     color="#000000"
-                                                    className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                                                    className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
                                                         }`}
                                                 >
                                                     <path
@@ -4000,13 +4022,13 @@ const BHPlanos = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                                            className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
                                                 ? "max-h-96 opacity-1 mb-4"
                                                 : "max-h-0 opacity-0"
                                                 } md:max-h-full md:opacity-100 md:block`}
                                         >
                                             <ul
-                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
+                                                className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C4_2
                                                     ? "max-h-96 opacity-1 mb-4"
                                                     : "max-h-0 opacity-0"
                                                     } md:max-h-full md:opacity-100 md:block`}
