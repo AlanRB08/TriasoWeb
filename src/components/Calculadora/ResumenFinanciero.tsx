@@ -37,7 +37,7 @@ export default function ResumenFinanciero({ state }: Props) {
       {/* TABLA 1: RESUMEN DE COSTOS */}
       {/* ------------------------------------------------------------ */}
       <section className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-4">
-        <h3 className="text-xl font-bold text-gray-800 border-b pb-2">
+        <h3 className="text-xl font-bold text-black border-b pb-2">
           Total de costos {tituloDinamico}
         </h3>
 
@@ -97,8 +97,8 @@ export default function ResumenFinanciero({ state }: Props) {
       {/* ------------------------------------------------------------ */}
       {/* TABLA 3: UTILIDAD FINAL */}
       {/* ------------------------------------------------------------ */}
-      <section className="bg-green-50 rounded-xl shadow p-6 border border-green-200 space-y-4">
-        <h3 className="text-xl font-bold text-green-800 border-b border-green-200 pb-2">
+      <section className="bg-white rounded-xl shadow p-6  space-y-4">
+        <h3 className="text-xl font-bold text-black border-b border-black pb-2">
           Utilidad {tituloDinamico}
         </h3>
 
@@ -109,8 +109,8 @@ export default function ResumenFinanciero({ state }: Props) {
           <div className="text-sm text-gray-700">(-) Costos Totales</div>
           <div className="text-right font-medium text-red-500">- {fmt(ucostos)}</div>
 
-          <div className="md:col-span-2 border-t border-green-200 mt-2 pt-2 flex justify-between items-center">
-            <span className="text-lg font-bold text-green-900">UTILIDAD NETA MENSUAL</span>
+          <div className="md:col-span-2 border-t border-black mt-2 pt-2 flex justify-between items-center">
+            <span className="text-lg font-bold text-black">UTILIDAD NETA MENSUAL</span>
             <span className="text-2xl font-bold text-green-700">{fmt(utilidad)}</span>
           </div>
         </div>

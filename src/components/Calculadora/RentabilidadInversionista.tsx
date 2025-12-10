@@ -17,7 +17,7 @@ export default function RentabilidadInversionista({
 }: Props) {
   return (
     <section className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-4">
-      <h3 className="text-xl font-semibold text-gray-700">
+      <h3 className="text-xl font-semibold text-black">
         Rentabilidad para el inversionista
       </h3>
 
@@ -25,7 +25,8 @@ export default function RentabilidadInversionista({
         Rendimiento anual (%)
         <input
           type="number"
-          value={anual}
+          value={anual || "" }
+          min="0"
           onChange={(e) => onChange("anual", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
@@ -35,7 +36,8 @@ export default function RentabilidadInversionista({
         Periodo (meses)
         <input
           type="number"
-          value={meses}
+          value={meses || ""}
+          min="0"
           onChange={(e) => onChange("meses", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
@@ -45,7 +47,8 @@ export default function RentabilidadInversionista({
         Valor de reventa (%)
         <input
           type="number"
-          value={reventa}
+          value={reventa || ""}
+          min="0"
           onChange={(e) => onChange("reventa", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
@@ -54,7 +57,7 @@ export default function RentabilidadInversionista({
       <label className="flex flex-col gap-1 text-sm">
         Renta mensual
         <input
-          value={rentaMensual.toLocaleString("es-MX")}
+          value={rentaMensual.toLocaleString("es-MX") + " pesos"}
           disabled
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />

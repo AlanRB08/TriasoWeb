@@ -1,4 +1,5 @@
 import React from "react";
+import { formatCurrency, formatNumber } from "../../components/lib/utils";
 
 interface Props {
   state: any;
@@ -32,7 +33,7 @@ export default function CostosVariables({ state, onChange }: Props) {
 
   return (
     <section className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-4">
-      <h3 className="text-xl font-semibold text-gray-700">
+      <h3 className="text-xl font-semibold text-black">
         Rentabilidad para el contratista — Costos variables
       </h3>
 
@@ -41,7 +42,8 @@ export default function CostosVariables({ state, onChange }: Props) {
         Horas de trabajo por mes
         <input
           type="number"
-          value={horasxmes}
+          value={horasxmes || ""}
+          min="0"
           onChange={(e) => onChange("horasxmes", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
@@ -52,7 +54,8 @@ export default function CostosVariables({ state, onChange }: Props) {
         % RAP a incorporar
         <input
           type="number"
-          value={rap}
+          value={rap || ""}
+          min="0"
           onChange={(e) => onChange("rap", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
@@ -63,13 +66,14 @@ export default function CostosVariables({ state, onChange }: Props) {
         Agregados vírgenes (pesos/M3)
         <input
           type="number"
-          value={agrv}
+          value={agrv || ""}
+          min="0"
           onChange={(e) => onChange("agrv", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={tav}
+          value={formatCurrency(tav) + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -78,13 +82,14 @@ export default function CostosVariables({ state, onChange }: Props) {
         Agregados RAP (pesos/M3)
         <input
           type="number"
-          value={arap}
+          value={arap || ""}
+          min="0"
           onChange={(e) => onChange("arap", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={trap}
+          value={formatCurrency(trap) + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -94,20 +99,22 @@ export default function CostosVariables({ state, onChange }: Props) {
         Asfalto vírgen (lts/M3)
         <input
           type="number"
-          value={asfvir}
+          value={asfvir || ""}
+          min="0"
           onChange={(e) => onChange("asfvir", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
-        Precio (pesos/lt)
+        A pesos/lt que se aplica al 95% de la mezcla
         <input
           type="number"
-          value={asfpesosxlitro}
+          value={asfpesosxlitro || ""}
+          min="0"
           onChange={(e) => onChange("asfpesosxlitro", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={tasfvir}
+          value={tasfvir + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -117,20 +124,22 @@ export default function CostosVariables({ state, onChange }: Props) {
         Rejuvenecedor (lts/M3)
         <input
           type="number"
-          value={rejuve}
+          value={rejuve || ""}
+          min="0"
           onChange={(e) => onChange("rejuve", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
-        Precio (pesos/lt)
+        Precio (pesos/lt) que se aplica al 5% de la mezcla 
         <input
           type="number"
-          value={rejupesosxlitro}
+          value={rejupesosxlitro || ""}
+          min="0"
           onChange={(e) => onChange("rejupesosxlitro", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={trejuve}
+          value={trejuve + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -140,20 +149,22 @@ export default function CostosVariables({ state, onChange }: Props) {
         Combustible (lts/M3)
         <input
           type="number"
-          value={combustible}
+          value={combustible || ""}
+          min="0"
           onChange={(e) => onChange("combustible", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         Precio (pesos/lt)
         <input
           type="number"
-          value={combpesosxlitro}
+          value={combpesosxlitro || ""}
+          min="0"
           onChange={(e) => onChange("combpesosxlitro", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={tcombustible}
+          value={tcombustible + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -163,29 +174,33 @@ export default function CostosVariables({ state, onChange }: Props) {
         Electricidad (Kw/Hr)
         <input
           type="number"
-          value={electri}
+          value={electri || ""}
+          min="0"
           onChange={(e) => onChange("electri", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
-        Precio (pesos/Kw)
+
+         A un precio (pesos/Kw)
         <input
           type="number"
-          value={elecpesosxlitro}
+          value={elecpesosxlitro || ""}
+          min="0"
           onChange={(e) =>
             onChange("elecpesosxlitro", Number(e.target.value))
           }
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
-        Divisor (electon)
+        Entre Ton/Hr (73 M3/Hr)
         <input
           type="number"
-          value={electon}
+          value={electon || ""}
+          min="0"
           onChange={(e) => onChange("electon", Number(e.target.value))}
           className="border border-gray-300 rounded-lg px-3 py-2"
         />
         <input
           disabled
-          value={telec}
+          value={telec +" pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
@@ -195,7 +210,7 @@ export default function CostosVariables({ state, onChange }: Props) {
         Costos variables (pesos/M3)
         <input
           disabled
-          value={cosvariables}
+          value={cosvariables + " pesos/M3"}
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
       </label>
