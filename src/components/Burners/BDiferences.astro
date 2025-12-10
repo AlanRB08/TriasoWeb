@@ -1,3 +1,11 @@
+---
+import img2 from "../../assets/images/Burners/8.png";
+import img3 from "../../assets/images/Burners/11.png";
+import img4 from "../../assets/images/Burners/9.png";
+import img5 from "../../assets/images/Burners/11.png";
+import img6 from '../../assets/images/Burners/12.png'
+---
+
 <section class="w-full max-w-7xl mx-auto px-8 font-bold text-grisT mt-20">
     <div class="text-center w-full space-y-2">
         <h1 class="text-2xl md:text-3xl text-black">
@@ -33,6 +41,34 @@
                     larger volume must be heated, leading to higher fuel
                     consumption.
                 </p>
+                <img src="https://placehold.co/600x400/png" alt="" />
+                <div
+                    class="w-full max-w-sm mx-auto bg-white rounded-xl shadow-sm p-6"
+                >
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-red-600 font-semibold text-lg">
+                            Partial air burner
+                        </h2>
+                        <span class="text-red-600 text-xl font-bold">›</span>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-4 h-4 rounded-full bg-[#001746]"
+                            ></span>
+                            <p class="text-gray-700">Primary air</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-4 h-4 rounded-full bg-[#55F0FF]"
+                            ></span>
+                            <p class="text-gray-700">Secondary air</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-4 h-4 rounded-full bg-[#B30000]"
+                            ></span>
+                            <p class="text-gray-700">Fuel</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="w-full flex flex-col gap-6">
@@ -62,6 +98,29 @@
                     However, since 2014, Triaso includes total air burners in
                     all drum mixer as standard equipment with no extra charge.
                 </p>
+                <img src={img6.src} alt="" />
+                <div
+                    class="w-full max-w-sm mx-auto bg-white rounded-xl shadow-sm p-6"
+                >
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-red-600 font-semibold text-lg">
+                            Partial air burner
+                        </h2>
+                        <span class="text-red-600 text-xl font-bold">›</span>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-4 h-4 rounded-full bg-[#081156]"
+                            ></span>
+                            <p class="text-gray-700">Total air</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-4 h-4 rounded-full bg-[#cf2019]"
+                            ></span>
+                            <p class="text-gray-700">Fuel</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -93,7 +152,7 @@
                 </p>
             </div>
             <div>
-                <img src="" alt="" />
+                <img src={img3.src} alt="" />
             </div>
         </div>
         <div class="w-full mt-10">
@@ -169,12 +228,10 @@
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col justify-center items-center">
-            <p class="font-thin text-[#de3b21]">Triaso® fixed-power burner at 100% power</p>
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded-lg"/>
+            <img src={img4.src} alt="" />
         </div>
         <div class="flex flex-col justify-center items-center">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded-lg" />
-            <p class="font-thin text-[#de3b21]">Triaso® burner at 30% power</p>
+            <img src={img5.src} alt="" />
         </div>
     </div>
     <div class="w-full text-center mt-10">
