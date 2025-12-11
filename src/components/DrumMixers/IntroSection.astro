@@ -1,82 +1,100 @@
 ---
-import item1 from '../../assets/images/DrumMixers/a3.webp';
-import item2 from '../../assets/images/DrumMixers/a5.webp';
-import item3 from '../../assets/images/DrumMixers/a4.webp';
-import item4 from '../../assets/images/DrumMixers/a2.webp';
-import item5 from '../../assets/images/DrumMixers/a6.webp';
-import item6 from '../../assets/images/DrumMixers/a1.webp';
-import Image from 'astro/components/Image.astro';
+import item1 from "../../assets/images/DrumMixers/a3.webp";
+import item2 from "../../assets/images/DrumMixers/a5.webp";
+import item3 from "../../assets/images/DrumMixers/a4.webp";
+import item4 from "../../assets/images/DrumMixers/a2.webp";
+import item5 from "../../assets/images/DrumMixers/a6.webp";
+import item6 from "../../assets/images/DrumMixers/a1.webp";
+import Image from "astro/components/Image.astro";
 import Video1 from "../../assets/images/landingVideo.mp4";
 ---
+
 <div class="max-w-7xl mx-auto px-8 mt-20 md:mt-32 font-bold">
-    <h1 class="text-2xl lg:text-4xl text-grisT">DRUM MIXERS</h1><br>
+    <h1 class="text-2xl lg:text-4xl text-grisT">DRUM MIXERS</h1><br />
     <p class="text-base md:text-lg text-grisT text-justify">
-        Triaso® drum mixers are engineered for continuous and efficient hot-mix production, combining drying 
-        and mixing in a single integrated process. Built for durability and consistent performance, they ensure
-         precise heat transfer and thorough blending of materials, producing a uniform, high performance hot-mix.
-          With heavy-duty construction and low-maintenance components, the drum mixers are ideal for both relocatable
-           plants and mobile applications, ensuring dependable operation in demanding environments.
+        Triaso® drum mixers are engineered for continuous and efficient hot-mix
+        production, combining drying and mixing in a single integrated process.
+        Built for durability and consistent performance, they ensure precise
+        heat transfer and thorough blending of materials, producing a uniform,
+        high performance hot-mix. With heavy-duty construction and
+        low-maintenance components, the drum mixers are ideal for both
+        relocatable plants and mobile applications, ensuring dependable
+        operation in demanding environments.
     </p>
-    <br>
-    <div class="relative overflow-hidden bg-black transform-gpu">
+    <br />
+    <div class="relative w-full aspect-video overflow-hidden">
         <video
-        src={Video1}
-          autoplay
-          muted
-          loop
-          playsinline
-          class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-        ></video>
-      </div>
-    <div class="bg-white py-8 px-2 md:px-20 rounded-2xl flex flex-col items-center justify-center my-10">
+            src={Video1}
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-full object-cover"></video>
+    </div>
+
+    <div
+        class="bg-white py-8 px-2 md:px-20 rounded-2xl flex flex-col items-center justify-center my-10"
+    >
         <div class="w-full flex justify-between mb-6">
             <div class="flex flex-col gap-3">
                 <h1 class="text-3xl md:text-5xl font-normal">
-                    Triaso Drum Mix 
+                    Triaso Drum Mix
                 </h1>
-                <h1 class="text-3xl md:text-5xl font-normal">
-                     Flights
-                </h1>
+                <h1 class="text-3xl md:text-5xl font-normal">Flights</h1>
             </div>
             <div>
-                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0044a4" stroke-width="1.5"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM16.0303 13.0303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L11.25 14.1893V8C11.25 7.58579 11.5858 7.25 12 7.25C12.4142 7.25 12.75 7.58579 12.75 8V14.1893L14.9697 11.9697C15.2626 11.6768 15.7374 11.6768 16.0303 11.9697C16.3232 12.2626 16.3232 12.7374 16.0303 13.0303Z" fill="#0044a4"></path></svg>
+                <svg
+                    width="64px"
+                    height="64px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    color="#0044a4"
+                    stroke-width="1.5"
+                    ><path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM16.0303 13.0303L12.5303 16.5303C12.2374 16.8232 11.7626 16.8232 11.4697 16.5303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L11.25 14.1893V8C11.25 7.58579 11.5858 7.25 12 7.25C12.4142 7.25 12.75 7.58579 12.75 8V14.1893L14.9697 11.9697C15.2626 11.6768 15.7374 11.6768 16.0303 11.9697C16.3232 12.2626 16.3232 12.7374 16.0303 13.0303Z"
+                        fill="#0044a4"></path></svg
+                >
             </div>
         </div>
         <p class="font-light">
-            The Triaso drum mixer uses a counterflow design that enhances both drying 
-            and mixing efficiency. Its removable flight system optimizes the process,
-             and with a VFD speed control, it achieves more efficient fuel usage and 
-             lower stack temperatures. This results in reduced operating costs and a 
-             smaller environmental footprint, all while maintaining maximum performance 
-             with minimal energy consumption.
+            The Triaso drum mixer uses a counterflow design that enhances both
+            drying and mixing efficiency. Its removable flight system optimizes
+            the process, and with a VFD speed control, it achieves more
+            efficient fuel usage and lower stack temperatures. This results in
+            reduced operating costs and a smaller environmental footprint, all
+            while maintaining maximum performance with minimal energy
+            consumption.
         </p>
-        <div class="grid grid-cols-3 md:grid-cols-6 items-start justify-around gap-5 my-10 w-full">
+        <div
+            class="grid grid-cols-3 md:grid-cols-6 items-start justify-around gap-5 my-10 w-full"
+        >
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item1} alt=""/>
+                <Image src={item1} alt="" />
                 <p>Inlet Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item2} alt=""/>
+                <Image src={item2} alt="" />
                 <p>Pusher Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item3} alt=""/>
+                <Image src={item3} alt="" />
                 <p>Drying Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item4} alt=""/>
+                <Image src={item4} alt="" />
                 <p>RAP Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item5} alt=""/>
+                <Image src={item5} alt="" />
                 <p>Radiation Flight</p>
             </div>
             <div class="flex flex-col items-center justify-center font-light">
-                <Image src={item6} alt=""/>
+                <Image src={item6} alt="" />
                 <p>Mixing Flight</p>
             </div>
         </div>
-
     </div>
-
 </div>
