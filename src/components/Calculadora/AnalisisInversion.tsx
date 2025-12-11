@@ -7,10 +7,14 @@ import CostosFijos from "./CostosFijos";
 import ProduccionIngresos from "./ProduccionIngresos";
 import ResumenFinanciero from "./ResumenFinanciero";
 
+import { pdf } from '@react-pdf/renderer';
+import { InversionPDF } from "./InversionPDF";
 
 import { parseNumber, pmt } from "../lib/utils";
 
 export default function AnalisisInversion() {
+  const [isClient, setIsClient] = useState(false);
+
   const [state, setState] = useState({
     dlls: 650000,
     paridad: 18.22,
@@ -64,6 +68,29 @@ export default function AnalisisInversion() {
     setState((prev) => ({ ...prev, [field]: value }));
   };
 
+  const handleDownloadPdf = async () => {
+    try {
+      const doc = <InversionPDF state={state} />;
+      const asPdf = pdf([]);
+      asPdf.updateContainer(doc);
+      const blob = await asPdf.toBlob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Analisis_Financiero_Planta.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Error generando PDF:', err);
+      alert('Ocurrió un error al generar el PDF');
+    }
+  };
+
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
 
   useEffect(() => {
     const s = { ...state };
@@ -186,6 +213,26 @@ export default function AnalisisInversion() {
         <ProduccionIngresos state={state} onChange={onChange} />
         {/* Res */}
         <ResumenFinanciero state={state} />
+
+        {/* botón */}
+
+        <div className="flex justify-center items-center">
+          {isClient ? (
+            <button
+              onClick={handleDownloadPdf}
+              className="mt-4 md:mt-0 bg-[#14427c] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+              style={{ position: 'relative', zIndex: 9999 }}
+              type="button"
+            >
+              Descargar PDF
+            </button>
+          ) : (
+            <button className="mt-4 md:mt-0 bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-not-allowed">
+              Cargando PDF...
+            </button>
+          )}
+        </div>
+
 
       </div>
 
