@@ -24,7 +24,7 @@ export default function GallerySlider({ images }: Props) {
 
   const isMobile = windowWidth < 768;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = isMobile ? 1 : 3;
+  const itemsPerPage = isMobile ? 1 : 4;
   const totalPages = Math.ceil(images.length / itemsPerPage);
 
   const nextSlide = () => {
