@@ -15,10 +15,10 @@ import { parseNumber, pmt } from "../lib/utils";
 export default function AnalisisInversion() {
   const [isClient, setIsClient] = useState(false);
 
-  const [state, setState] = useState({
+ const [state, setState] = useState({
     dlls: 650000,
-    paridad: 18.22,
-    pesos: 0,
+    // paridad: 18, 
+    pesos: 0,   
 
     anual: 25,
     meses: 60,
@@ -27,37 +27,37 @@ export default function AnalisisInversion() {
 
     horasxmes: 200,
     rap: 5,
-    agrv: 200,
-    arap: 100,
+    agrv: 15,   
+    arap: 5,
     tav: 0,
     trap: 0,
-    asfvir: 100,
-    asfpesosxlitro: 11,
+    asfvir: 25,  
+    asfpesosxlitro: 2.50, 
     tasfvir: 0,
-    rejuve: 4.5,
-    rejupesosxlitro: 20,
+    rejuve: 1,
+    rejupesosxlitro: 5, 
     trejuve: 0,
-    combustible: 12,
-    combpesosxlitro: 9,
+    combustible: 3,
+    combpesosxlitro: 3.50, 
     tcombustible: 0,
     electri: 300,
-    elecpesosxlitro: 4,
+    elecpesosxlitro: 0.15, 
     electon: 125,
     telec: 0,
 
     cosvariables: 0,
     tcVariables: 0,
 
-    cfOperador: 40000,
-    cfMantenimiento: 100000,
-    cfPayloder: 180000,
+    cfOperador: 2500, 
+    cfMantenimiento: 5000,
+    cfPayloder: 8000,
     cf: 0,
     tcFijos: 0,
 
     prodton: 126,
     prodm3: 0,
     produc: 0,
-    precioventa: 1800,
+    precioventa: 90, 
     ingresos: 0,
     uingresos: 0,
     ucostos: 0,
@@ -92,11 +92,10 @@ export default function AnalisisInversion() {
     setIsClient(true);
   }, [])
 
-  useEffect(() => {
+useEffect(() => {
     const s = { ...state };
 
-    // 1) Valor en pesos
-    s.pesos = s.dlls * s.paridad;
+    s.pesos = s.dlls; 
 
     // 2) Renta mensual 
     const i = s.anual / 100 / 12;
@@ -105,16 +104,17 @@ export default function AnalisisInversion() {
     const fv = s.pesos * (s.reventa / 100);
     s.rentaMensual = Math.round(pmt(i, n, -s.pesos, fv));
 
-    // 3) Costos variables unitarios
-    s.tav = Math.round(s.agrv * (1 - s.rap / 100));
-    s.trap = Math.round(s.arap * (s.rap / 100));
+    // 3) Costos variables
+    s.tav = s.agrv * (1 - s.rap / 100);
+    s.trap = s.arap * (s.rap / 100);
 
-    s.tasfvir = Math.round(s.asfvir * s.asfpesosxlitro * (1 - s.rap / 100));
-    s.trejuve = Math.round(s.rejuve * s.rejupesosxlitro * (s.rap / 100));
+    s.tasfvir = s.asfvir * s.asfpesosxlitro * (1 - s.rap / 100);
+    s.trejuve = s.rejuve * s.rejupesosxlitro * (s.rap / 100);
 
-    s.tcombustible = Math.round(s.combustible * s.combpesosxlitro);
+    s.tcombustible = s.combustible * s.combpesosxlitro;
 
-    s.telec = Math.round((s.electri * s.elecpesosxlitro / s.electon) * 1.72);
+    // Electricidad
+    s.telec = (s.electri * s.elecpesosxlitro / s.electon) * 1.72;
 
     s.cosvariables =
       s.tav +
@@ -151,7 +151,7 @@ export default function AnalisisInversion() {
     setState(s);
   }, [
     state.dlls,
-    state.paridad,
+    // state.paridad, 
     state.anual,
     state.meses,
     state.reventa,
@@ -180,16 +180,17 @@ export default function AnalisisInversion() {
 
   return (
     <div className="w-full bg-[url(/fondopatron.png)]">
-      <div className="max-w-7xl mx-auto space-y-10">
+      <div className="max-w-7xl mx-auto space-y-10 px-5 md:px-0 lg:px-0">
 
         <h1 className="text-3xl font-bold text-white pt-10">
           Análisis de Inversión — Planta de Asfalto
         </h1>
 
-        {/* 1 */}
+        <p className="text-white text-md">Los valores en los cuadros blancos son sugeridos, favor de poner los datos que a usted les parezcan adecuados. Los cuadros en gris son calculados.</p>
+
+        1
         <ValorPlanta
           dlls={state.dlls}
-          paridad={state.paridad}
           pesos={state.pesos}
           onChange={onChange}
         />
@@ -228,7 +229,7 @@ export default function AnalisisInversion() {
             </button>
           ) : (
             <button className="mt-4 md:mt-0 bg-gray-400 text-white font-bold py-2 px-4 rounded cursor-not-allowed">
-              Cargando PDF...
+              Loading PDF...
             </button>
           )}
         </div>

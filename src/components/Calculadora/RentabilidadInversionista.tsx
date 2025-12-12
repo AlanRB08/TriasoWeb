@@ -18,11 +18,11 @@ export default function RentabilidadInversionista({
   return (
     <section className="bg-white rounded-xl shadow p-6 border border-gray-200 space-y-4">
       <h3 className="text-xl font-semibold text-black">
-        Rentabilidad para el inversionista
+        Revenue for the investor
       </h3>
 
       <label className="flex flex-col gap-1 text-sm">
-        Rendimiento anual (%)
+         <span className="font-semibold text-sm text-gray-800 lg:text-lg md:text-md">Annual return (%) </span>
         <input
           type="number"
           value={anual || "" }
@@ -33,7 +33,7 @@ export default function RentabilidadInversionista({
       </label>
 
       <label className="flex flex-col gap-1 text-sm">
-        Periodo (meses)
+        <span className="font-semibold text-sm text-gray-800 lg:text-lg md:text-md">Duration (months)</span>
         <input
           type="number"
           value={meses || ""}
@@ -44,7 +44,7 @@ export default function RentabilidadInversionista({
       </label>
 
       <label className="flex flex-col gap-1 text-sm">
-        Valor de reventa (%)
+        <span className="font-semibold text-sm text-gray-800 lg:text-lg md:text-md">Resale value (%)</span>
         <input
           type="number"
           value={reventa || ""}
@@ -55,9 +55,9 @@ export default function RentabilidadInversionista({
       </label>
 
       <label className="flex flex-col gap-1 text-sm">
-        Renta mensual
+        <span className="font-semibold text-sm text-gray-800 lg:text-lg md:text-md">Monthly rent</span>
         <input
-          value={rentaMensual.toLocaleString("es-MX") + " pesos"}
+          value={rentaMensual.toLocaleString("es-US") + " dollars"}
           disabled
           className="border border-gray-200 bg-gray-100 rounded-lg px-3 py-2"
         />
