@@ -156,9 +156,9 @@ const images2 = [
   <div class="w-full bg-[#2e2e2e] flex flex-col justify-center items-center">
     <img src={logo.src} alt="" class="w-[500px] lg:w-full md:w-full" /><br />
     <div
-      class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center min-h-[900px] flex justify-center items-center"
+      class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center  max-h-[900px] lg:min-h-[900px] md:min-h-[900px] flex justify-center items-center"
     >
-      <div class="flex flex-col mx-auto w-96 lg:w-1/2 md:w-1/2">
+      <div class="flex flex-col mx-auto max-w-7xl px-8">
         <h1
           class="text-white text-2xl lg:text-4xl font-bold text-center lg:text-start md:text-start"
         >
@@ -179,7 +179,7 @@ const images2 = [
           the need for a low-boy or a flatbed trailer during transport.
         </p>
         <p
-          class="text-base text-center lg:text-justify md:text-justify lg:text-lg text-white font-thin"
+          class="text-base text-center lg:text-justify md:text-justify lg:text-lg text-white font-thin pb-5"
         >
           The complete asphalt plant can be transported in only three trailer
           loads, simplifying logistics and reducing setup time.
@@ -473,7 +473,7 @@ const images2 = [
     </h2>
   </div>
   <SlidersCarrusel client:load images={images2} />
-  <div class="py-10 w-full text-center">
+  <div class="py-5 px-8 w-full text-center">
     <h2 class="text-center font-bold text-blueMain text-xl md:text-3xl">
       Sell at a lower price, attract more customers, and achieve higher profits
     </h2><br />

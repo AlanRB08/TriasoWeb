@@ -39,7 +39,7 @@ export default function Tabs() {
       <img
         src={images[activeIndex].src}
         alt={images[activeIndex].alt}
-        className="border border-blueMain rounded-2xl h-[350px] w-full"
+        className="border border-blueMain rounded-2xl h-[350px] w-full object-contain md:object-cover lg:object-cover"
       />
     </div>
   );

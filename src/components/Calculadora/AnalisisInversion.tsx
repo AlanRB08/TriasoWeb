@@ -187,8 +187,6 @@ useEffect(() => {
         </h1>
 
         <p className="text-white text-md">Los valores en los cuadros blancos son sugeridos, favor de poner los datos que a usted les parezcan adecuados. Los cuadros en gris son calculados.</p>
-
-        1
         <ValorPlanta
           dlls={state.dlls}
           pesos={state.pesos}
