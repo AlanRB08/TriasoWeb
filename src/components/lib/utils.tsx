@@ -34,3 +34,18 @@ export function pmt(
 
   return -(future_value + present_value) / number_of_payments;
 }
+
+export function formatCurrency(n: number | string) {
+  if (n === null || n === undefined || n === "") return "$0.00";
+  const num = typeof n === "string" ? Number(n.toString().replace(/,/g, "")) : n;
+  
+  if (Number.isNaN(num)) return "$0.00";
+
+  return num.toLocaleString("es-MX", {
+    style: "currency",
+    currency: "MXN",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+

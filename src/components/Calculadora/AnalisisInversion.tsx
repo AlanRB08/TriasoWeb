@@ -7,12 +7,13 @@ import CostosFijos from "./CostosFijos";
 import ProduccionIngresos from "./ProduccionIngresos";
 import ResumenFinanciero from "./ResumenFinanciero";
 
+
 import { parseNumber, pmt } from "../lib/utils";
 
 export default function AnalisisInversion() {
   const [state, setState] = useState({
     dlls: 650000,
-    paridad: 21.88,
+    paridad: 18.22,
     pesos: 0,
 
     anual: 25,
@@ -37,7 +38,7 @@ export default function AnalisisInversion() {
     tcombustible: 0,
     electri: 300,
     elecpesosxlitro: 4,
-    electon: 126,
+    electon: 125,
     telec: 0,
 
     cosvariables: 0,
@@ -67,58 +68,58 @@ export default function AnalisisInversion() {
   useEffect(() => {
     const s = { ...state };
 
-  // 1) Valor en pesos
-  s.pesos = s.dlls * s.paridad;
+    // 1) Valor en pesos
+    s.pesos = s.dlls * s.paridad;
 
-  // 2) Renta mensual 
-  const i = s.anual / 100 / 12;
-  const n = s.meses;
+    // 2) Renta mensual 
+    const i = s.anual / 100 / 12;
+    const n = s.meses;
 
-  const fv =  s.pesos * (s.reventa / 100); 
-  s.rentaMensual = Math.round(pmt(i, n, -s.pesos, fv));
+    const fv = s.pesos * (s.reventa / 100);
+    s.rentaMensual = Math.round(pmt(i, n, -s.pesos, fv));
 
-  // 3) Costos variables unitarios
-  s.tav = Math.round(s.agrv * (1 - s.rap / 100));
-  s.trap = Math.round(s.arap * (s.rap / 100));
+    // 3) Costos variables unitarios
+    s.tav = Math.round(s.agrv * (1 - s.rap / 100));
+    s.trap = Math.round(s.arap * (s.rap / 100));
 
-  s.tasfvir = Math.round(s.asfvir * s.asfpesosxlitro * (1 - s.rap / 100));
-  s.trejuve = Math.round(s.rejuve * s.rejupesosxlitro * (s.rap / 100));
+    s.tasfvir = Math.round(s.asfvir * s.asfpesosxlitro * (1 - s.rap / 100));
+    s.trejuve = Math.round(s.rejuve * s.rejupesosxlitro * (s.rap / 100));
 
-  s.tcombustible = Math.round(s.combustible * s.combpesosxlitro);
+    s.tcombustible = Math.round(s.combustible * s.combpesosxlitro);
 
-  s.telec = Math.round((s.electri * s.elecpesosxlitro / s.electon) * 1.72);
+    s.telec = Math.round((s.electri * s.elecpesosxlitro / s.electon) * 1.72);
 
-  s.cosvariables =
-    s.tav +
-    s.trap +
-    s.tasfvir +
-    s.trejuve +
-    s.tcombustible +
-    s.telec;
+    s.cosvariables =
+      s.tav +
+      s.trap +
+      s.tasfvir +
+      s.trejuve +
+      s.tcombustible +
+      s.telec;
 
-  // 4) Producción 
-  s.prodm3 = Math.round(s.prodton / 1.8);
-  s.produc = Math.round(s.prodm3 * s.horasxmes);
+    // 4) Producción 
+    s.prodm3 = Math.round(s.prodton / 1.8);
+    s.produc = Math.round(s.prodm3 * s.horasxmes);
 
-  // 5) Costos variables totales s
-  s.tcVariables = Math.round(
-    s.cosvariables * (s.electon / 1.8) * s.horasxmes
-  );
+    // 5) Costos variables totales 
+    s.tcVariables = Math.round(
+      s.cosvariables * (s.electon / 1.8) * s.horasxmes
+    );
 
-  // 6) Costos fijos
-  s.cf = Math.round(
-    s.cfOperador + s.cfMantenimiento + s.cfPayloder
-  );
+    // 6) Costos fijos
+    s.cf = Math.round(
+      s.cfOperador + s.cfMantenimiento + s.cfPayloder
+    );
 
-  s.tcFijos = s.cf;
+    s.tcFijos = s.cf;
 
-  // 7) Ingresos
-  s.ingresos = Math.round(s.produc * s.precioventa);
-  s.uingresos = s.ingresos;
+    // 7) Ingresos
+    s.ingresos = Math.round(s.produc * s.precioventa);
+    s.uingresos = s.ingresos;
 
-  // 8) Costos totales y utilidad
-  s.ucostos = s.tcVariables + s.tcFijos + s.rentaMensual;
-  s.utilidad = s.ingresos - s.ucostos;
+    // 8) Costos totales y utilidad
+    s.ucostos = s.tcVariables + s.tcFijos + s.rentaMensual;
+    s.utilidad = s.ingresos - s.ucostos;
 
     setState(s);
   }, [
@@ -151,39 +152,43 @@ export default function AnalisisInversion() {
   ]);
 
   return (
-    <div className="max-w-6xl mx-auto p-8 space-y-10">
+    <div className="w-full bg-[url(/fondopatron.png)]">
+      <div className="max-w-7xl mx-auto space-y-10">
 
-      <h1 className="text-3xl font-bold text-gray-800">
-        Análisis de Inversión — Planta de Asfalto
-      </h1>
+        <h1 className="text-3xl font-bold text-white pt-10">
+          Análisis de Inversión — Planta de Asfalto
+        </h1>
 
-      {/* 1 */}
-      <ValorPlanta
-        dlls={state.dlls}
-        paridad={state.paridad}
-        pesos={state.pesos}
-        onChange={onChange}
-      />
+        {/* 1 */}
+        <ValorPlanta
+          dlls={state.dlls}
+          paridad={state.paridad}
+          pesos={state.pesos}
+          onChange={onChange}
+        />
 
-      {/* 2 */}
-      <RentabilidadInversionista
-        anual={state.anual}
-        meses={state.meses}
-        reventa={state.reventa}
-        rentaMensual={state.rentaMensual}
-        onChange={onChange}
-      />
+        {/* 2 */}
+        <RentabilidadInversionista
+          anual={state.anual}
+          meses={state.meses}
+          reventa={state.reventa}
+          rentaMensual={state.rentaMensual}
+          onChange={onChange}
+        />
 
-      {/* 3 */}
-      <CostosVariables state={state} onChange={onChange} />
+        {/* 3 */}
+        <CostosVariables state={state} onChange={onChange} />
 
-      {/* 4 */}
-      <CostosFijos state={state} onChange={onChange} />
+        {/* 4 */}
+        <CostosFijos state={state} onChange={onChange} />
 
-      {/* 5 */}
-      <ProduccionIngresos state={state} onChange={onChange} />
-      {/* Res */}
-      <ResumenFinanciero state={state} />
+        {/* 5 */}
+        <ProduccionIngresos state={state} onChange={onChange} />
+        {/* Res */}
+        <ResumenFinanciero state={state} />
+
+      </div>
+
     </div>
   );
 }
