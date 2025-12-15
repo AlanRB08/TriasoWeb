@@ -47,7 +47,7 @@ const items = [
 ---
 
 <div
-    class="w-full max-w-7xl px-8  mx-auto flex flex-col items-center justify-around font-bold"
+    class="w-full max-w-7xl px-8 mx-auto flex flex-col items-center justify-around font-bold"
 >
     <!-- Opciones -->
     <div
@@ -63,7 +63,7 @@ const items = [
 
         <button
             aria-label="Baghouses link"
-            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab2"
         >
             Baghouses
@@ -79,14 +79,14 @@ const items = [
 
         <button
             aria-label="Bins link"
-            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab4"
         >
             Bins
         </button>
 
         <button
-            class="text-md md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="text-md py-3 md:py-0 lg:py-0 md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab5"
         >
             Heating <br /> Systems
@@ -98,14 +98,19 @@ const items = [
         >
             Hot-Mix <br /> Storage Silos
         </button>
+
         <button
-            class="text-md md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none col-span-3 md:col-span-1 flex justify-center"
+            class="text-md md:text-lg md:px-4 font-bold focus:outline-none
+           col-span-3 md:col-span-1 flex justify-center"
             data-tab="tab7"
         >
-            Cold Mix <br /> Plants
+            <span
+                class="inline-flex flex-col items-center border-b border-b-grisT md:w-full lg:w-full"
+            >
+                Cold Mix <br /> Plants
+            </span>
         </button>
     </div>
-
 
     <!-- Info -->
     <div
