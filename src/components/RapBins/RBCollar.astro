@@ -20,8 +20,8 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
     </div>
     <div class="w-full bg-grisT">
         <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto">
-            <div class="w-full col-span-1">
-                <img src={rap.src} alt="" class="w-3/4">
+            <div class="w-full col-span-1 flex justify-center lg:justify-start md:justify-start py-5">
+                <img src={rap.src} alt="" class="w-1/2 lg:w-3/4 md:w-3/4">
             </div>
             <div class="w-full col-span-2 text-white flex flex-col justify-center">
                 <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br>
@@ -33,9 +33,9 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
             </div>
         </div>
     </div>
-    <div class="w-full bg-grisT">
+    <div class="w-full bg-grisT pt-5">
         <div class="w-full max-w-7xl px-8 mx-auto bg-grisT text-white">
-            <h1 class="text-end text-xl md:text-2xl font-bold">RAP ENTRY FLIGHTS</h1>
+            <h1 class="lg:text-end md:text-end text-xl md:text-2xl font-bold">RAP ENTRY FLIGHTS</h1>
         </div>
         <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto justify-center items-center pt-6">
             <div class="w-full col-span-1">
@@ -44,7 +44,7 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
                     Its design allows short, uniform drops that optimize heat transfer while minimizing blue smoke and preventing material buildup.
                 </p>
             </div>
-            <div class="w-full col-span-2 text-white flex flex-col justify-center items-end">
+            <div class="w-full col-span-2 text-white flex flex-col justify-center items-center py-5 lg:items-end md:items-end">
                 <img src={rapFlight.src} alt="" class="w-3/4 rounded-lg">
             </div>
         </div>
@@ -59,11 +59,11 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
     <div class="flex justify-center">
         <img src={heroIMG.src} alt="Banner" class="bg-cover">
     </div>
-    <div class="text-center text-2xl md:text-3xl font-bold text-redBg py-16">
-        <h1>With Triaso, Become the Exclusive Provider of Hot Mix for <br> All Paving Projects in Your Region</h1>
+    <div class="max-w-7xl mx-auto lg:text-center md:text-center text-2xl md:text-3xl font-bold text-redBg px-8 py-16">
+        <h1>With Triaso, Become the Exclusive Provider of Hot Mix for all Paving Projects in Your Region</h1>
     </div>
     <div class="w-full max-w-7xl px-8 mx-auto">
-        <img src={RAProv5.src} alt="" class="rounded-lg w-3/5">
+        <img src={RAProv5.src} alt="" class="rounded-lg lg:w-3/5 md:w-3/5">
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto items-center">
         <div>
@@ -89,8 +89,8 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
                 imageWidth="150px"
                 >
                     <div slot="left" class="flex flex-col justify-center gap-3">
-                        <h1 class="text-xl md:text-2xl">INCORPORATING RAP FEEDERS</h1>
-                        <p class="text-base md:text-lg">
+                        <h1 class="text-lg md:text-2xl">INCORPORATING RAP FEEDERS</h1>
+                        <p class="text-sm md:text-lg">
                             By incorporating RAP feeders, asphalt plants can improve RAP integration, enhance mix consistency,
                              and promote sustainable production by efficiently reintegrating recycled materials into the asphalt mix.
                         </p>
@@ -99,13 +99,13 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
                         <h1 class="text-xl md:text-2xl">
                            AVAILABLE IN 10 OR 25-TONS
                         </h1>
-                        <p class="text-base md:text-lg">
+                        <p class="text-sm md:text-lg">
                             With configurations of one, two, or three RAP bin units
                         </p>
                     </div>
     </TwoColumnSection>
     <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center">
-        <div class="col-span-2 flex justify-center">
+        <div class="col-span-2 flex lg:justify-center md:justify-center">
             <img src={binUnit1.src} alt="" class="w-1/2 md:w-full"/>
         </div>
         <div class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 lg:pl-0 pl-8">
@@ -114,7 +114,7 @@ import img4 from "../../assets/images/RapBins/RapProv6.png"
                 Our RAP bins are equipped with precision dosing systems designed for reliable material control, ensuring proper
                  dosage according to the mix recipe, meeting tight production tolerances and plant performance standards.
             </p><br>
-            <div class="w-full flex flex-col gap-6 pr-10">
+            <div class="w-full flex flex-col gap-6 ">
                 <AcordeonItem client:only title="High-Precision Sensors" content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages.">
                 </AcordeonItem>
                 <AcordeonItem client:only title="Adjustable Flow Rates" content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand.">
