@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 interface ImageData {
   src: string;
@@ -11,140 +11,145 @@ interface Props {
 }
 
 export default function ItemsSlider({ images }: Props) {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
 
-  const isMobile = windowWidth < 1024;
-  const itemsPerPage = isMobile ? 1 : 4;
-  const totalPages = images.length - (isMobile ? 0 : itemsPerPage) + 1;
+    const card = scrollRef.current.querySelector(
+      "[data-card]"
+    ) as HTMLDivElement;
 
-  // Desktop navigation
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1 >= totalPages ? 0 : prev + 1));
-  };
+    if (!card) return;
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 < 0 ? totalPages - 1 : prev - 1));
-  };
+    const gap = 16;
+    const scrollAmount = card.offsetWidth + gap;
 
-  // Mobile touch events
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!isMobile || !containerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX);
-    setScrollLeft(containerRef.current.scrollLeft);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !containerRef.current) return;
-    e.preventDefault();
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 1.5; // Ajusta la sensibilidad del desplazamiento
-    containerRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div className="max-w-7xl mx-auto y-10 bg-bgMain mt-10 md:mt-20 relative px-0 mb-10">
-      {/* Desktop navigation buttons */}
-      {!isMobile && (
-        <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
-          <button
-            aria-label="Previous slide"
-            onClick={prevSlide}
-            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-          >
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M15 6L9 12L15 18"
-                stroke="#393939"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            aria-label="Next slide"
-            onClick={nextSlide}
-            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-          >
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M9 6L15 12L9 18"
-                stroke="#393939"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      )}
-
-      {/* Slider container */}
-      <div className="relative w-full h-auto overflow-hidden">
+    <section className="w-full max-w-7xl mx-auto px-4 mt-12 md:mt-20">
+      <div className="relative">
         <div
-          ref={containerRef}
-          className={`flex ${
-            isMobile
-              ? "overflow-x-auto touch-pan-x snap-x snap-mandatory no-scrollbar gap-6 px-4"
-              : "gap-4 transition-transform duration-500 ease-in-out"
-          }`}
-          style={{
-            transform: isMobile
-              ? undefined
-              : `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
-            cursor: isMobile ? (isDragging ? "grabbing" : "grab") : "auto",
-          }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          ref={scrollRef}
+          className="
+            flex gap-4
+            overflow-x-auto
+            snap-x snap-mandatory
+            scroll-smooth
+            pb-6
+            no-scrollbar
+          "
         >
           {images.map((img, i) => (
-            <div
+            <article
               key={i}
-              className={`flex-shrink-0 ${
-                isMobile ? "snap-start pl-2" : "px-2"
-              } bg-white p-2 rounded-2xl`}
-              style={{
-                width: isMobile ? "85%" : `calc(25% - 16px)`,
-                minWidth: isMobile ? "85%" : `calc(25% - 16px)`,
-                scrollSnapAlign: isMobile ? "start" : undefined,
-              }}
+              data-card
+              className="
+                snap-start
+                shrink-0
+                w-[85%]
+                sm:w-[60%]
+                md:w-[45%]
+                lg:w-[23%]
+                bg-white
+                rounded-xl
+                border border-gray-100
+                shadow-sm
+                p-5
+                flex flex-col
+              "
             >
-              <div className="px-4">
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="h-14 object-cover"
-                />
-                <div className="text-start font-bold text-grisT">
-                  {img.title}
+              <div className="flex flex-col gap-3 h-full">
+                <div className="h-10 flex items-center">
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    className="h-full w-auto object-contain"
+                  />
                 </div>
-              </div>
 
-              <div className="font-normal text-grisT text-sm md:text-base px-4">
-                {img.texto}
+                <h3 className="font-bold text-grisT text-sm md:text-base leading-tight line-clamp-2">
+                  {img.title}
+                </h3>
+
+                <p className="text-grisT text-xs md:text-sm leading-snug">
+                  {img.texto}
+                </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
+
+        <div className="hidden lg:flex absolute -bottom-4 right-2 gap-2">
+          <button
+            onClick={() => scroll("left")}
+            className="
+              p-2
+              bg-white
+              border border-gray-200
+              rounded-full
+              shadow
+              hover:bg-gray-50
+              transition
+              active:scale-95
+            "
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => scroll("right")}
+            className="
+              p-2
+              bg-white
+              border border-gray-200
+              rounded-full
+              shadow
+              hover:bg-gray-50
+              transition
+              active:scale-95
+            "
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+
+      <style>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          scrollbar-width: none;
+        }
+      `}</style>
+    </section>
   );
 }
