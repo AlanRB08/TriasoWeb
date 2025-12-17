@@ -84,7 +84,7 @@ const OdometerSection = () => {
           <div>
             <img src={single.src} alt="" />
           </div>
-          <button className="border border-black px-3 py-2 rounded-xl hover:bg-slate-300">
+          <button className="border border-black px-3 py-2 mt-4 rounded-xl hover:bg-slate-300">
             All Technical Details
           </button>
         </div>
