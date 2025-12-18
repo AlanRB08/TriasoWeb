@@ -130,7 +130,7 @@ export default function GallerySlider({
   const { start: thumbStart, end: thumbEnd } = getVisibleThumbRange();
 
   return (
-    <div className="w-full px-8">
+    <div className="w-full">
       {/* Vista normal */}
       <div
         className={`w-full mx-auto my-16 bg-white p-4 rounded shadow max-w-5xl ${
