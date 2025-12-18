@@ -9,9 +9,9 @@ export function initScrollAnimations(): void {
     mm.add("(min-width: 768px)", () => {
         gsap.fromTo(
             ".hero-img",
-            { scale: 1.3 },
+            { scale: 1.4 },
             {
-                scale: 1.2,
+                scale: 1.3,
                 scrollTrigger: {
                     trigger: ".hero-img",
                     start: "top 90%",
@@ -39,11 +39,11 @@ export function initScrollAnimations(): void {
             ".fade-img",
             { y: 60 },
             {
-                y: -20,
+                y: -100,
                 scrollTrigger: {
                     trigger: ".fade-img",
                     start: "top 90%",
-                    end: "top 30%",
+                    end: "top 40%",
                     scrub: true,
                 },
                 ease: "none",
