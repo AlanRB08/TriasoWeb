@@ -13,20 +13,39 @@ if (!imageSrc) {
 
 <div class="grid grid-cols-1 md:grid-cols-2 relative w-full min-h-[250px]">
   <!-- Columna izquierda -->
-  <div class={`text-white ${leftBg} p-4 md:px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}>
+  <div
+    class={`text-white ${leftBg} p-4 md:px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}
+  >
     <slot name="left" />
   </div>
 
+  <div class="lg:hidden md:hidden relative w-full h-[50px]">
+    <div class="absolute inset-0 flex flex-col">
+      <div class={`${leftBg} flex-1`}></div>
+      <div class={`${rightBg} flex-1`}></div>
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+    >
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="w-[50px] h-auto drop-shadow-lg"
+      />
+    </div>
+  </div>
+
   <!-- Columna derecha -->
-  <div class={`text-white ${rightBg} p-4 md:px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}>
+  <div
+    class={`text-white ${rightBg} p-4 md:px-32 font-bold py-10 flex flex-col w-full gap-3 justify-center`}
+  >
     <slot name="right" />
   </div>
 
-  <!-- Imagen central siempre visible -->
   <div
-    class="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10"
     style={`max-width: ${imageWidth};`}
   >
-    <img src={imageSrc} alt={imageAlt} class="w-[50px] md:w-full h-auto" />
+    <img src={imageSrc} alt={imageAlt} class="w-full h-auto drop-shadow-lg" />
   </div>
 </div>
