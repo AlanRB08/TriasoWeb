@@ -8,6 +8,7 @@ import img2 from "../../assets/images/BinUnits/ProvBU3.jpeg";
 import img3 from "../../assets/images/BinUnits/ProvBU4.jpg";
 import img5 from "../../assets/images/BinUnits/Consola.png";
 import img6 from "../../assets/images/BinUnits/BinUnitsOS.png";
+import OSectionBin from "./OSectionBin.astro";
 ---
 
 <div class="w-full flex flex-col items-center justify-center mt-10">
@@ -17,11 +18,7 @@ import img6 from "../../assets/images/BinUnits/BinUnitsOS.png";
         class="w-full flex flex-col items-center justify-center font-bold mt-10"
     >
         <div class="max-w-7xl px-8 mx-auto flex justify-center">
-            <img
-                src={img1.src}
-                alt=""
-                class="hero-img lg:w-[60%] rounded-lg"
-            />
+            <img src={img1.src} alt="" class="hero-img lg:w-[60%] rounded-lg" />
         </div>
         <div
             class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
@@ -209,29 +206,36 @@ import img6 from "../../assets/images/BinUnits/BinUnitsOS.png";
             </div>
         </div>
     </div>
-</div>
-<script is:inline>
-    function toggleDropdown() {
-        const dropdown = document.getElementById("extradiv2");
-        const arrow = document.getElementById("dropdown-arrow2");
 
-        if (dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight) {
-            // Abrir dropdown
-            dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-            arrow.style.transform = "rotate(180deg)";
-        } else {
-            // Cerrar dropdown
-            dropdown.style.maxHeight = "0";
-            arrow.style.transform = "rotate(0deg)";
+    <div class="w-full">
+        <OSectionBin/>
+    </div>
+    <script is:inline>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("extradiv2");
+            const arrow = document.getElementById("dropdown-arrow2");
+
+            if (
+                dropdown.style.maxHeight === "0px" ||
+                !dropdown.style.maxHeight
+            ) {
+                // Abrir dropdown
+                dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                arrow.style.transform = "rotate(180deg)";
+            } else {
+                // Cerrar dropdown
+                dropdown.style.maxHeight = "0";
+                arrow.style.transform = "rotate(0deg)";
+            }
         }
-    }
-</script>
-<script>
-    import { initScrollAnimations } from "../../components/DrumMixers/scrollAnimations";
+    </script>
+    <script>
+        import { initScrollAnimations } from "../../components/DrumMixers/scrollAnimations";
 
-    if (typeof window !== "undefined") {
-        window.addEventListener("DOMContentLoaded", () => {
-            initScrollAnimations();
-        });
-    }
-</script>
+        if (typeof window !== "undefined") {
+            window.addEventListener("DOMContentLoaded", () => {
+                initScrollAnimations();
+            });
+        }
+    </script>
+</div>
