@@ -1,6 +1,6 @@
 ---
 import Boxes from "../../assets/images/Boxes.webp";
-import LearnBtn from "../unitComponents/LearnBtn.astro";
+import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
 import img1 from "../../assets/images/AsphaltPlant/tips.webp";
 import GallerySlider2 from "./GallerySlider2";
 import Image from "astro/components/Image.astro";
@@ -8,7 +8,7 @@ import Image from "astro/components/Image.astro";
 const images1 = [
   { src: "/Gallery/fab-silo.jpg", title: "Silo Manufacturing" },
   { src: "/Gallery/oil-heater.jpg", title: "Oil heater thermal insulation" },
-  { src: "/Gallery/oil-heater.jpg", title: "Serial parts machining" },
+  { src: "/Gallery/serial-parts-bg.jpg", title: "Serial parts machining" },
   { src: "/Gallery/fly-cutting-sm.jpg", title: "Flights cutting" },
   {
     src: "/Gallery/fab-planta-frio.jpg",
@@ -17,7 +17,7 @@ const images1 = [
   { src: "/Gallery/quemadores.jpg", title: "Burners manufacture" },
   { src: "/Gallery/drum-mixer.jpg", title: "Burners manufacture" },
   { src: "/Gallery/elevator-manu.jpg", title: "Drum mixer welding" },
-  { src: "/Gallery/oil-heater.jpg", title: "Elevator hinges manufacturing" },
+  // { src: "/Gallery/oil-heater.jpg", title: "Elevator hinges manufacturing" },
   // agrega hasta 16 o más imágenes
 ];
 ---
@@ -44,11 +44,11 @@ const images1 = [
           needs. This personalized approach ensures your plant operates at
           maximum efficiency and remains in optimal condition.
         </p>
-        <LearnBtn />
+        <LearnBtnBlue />
       </div>
     </div>
   </section>
-  <div class="w-full max-w-7xl mx-auto px-8">
+  <div class="w-full max-w-7xl mx-auto">
     <h1 class="text-black lg:text-4xl text-2xl mt-20 w-full text-start px-8">
       Some Tips for Buying an <br />
       Asphalt Plant
@@ -66,7 +66,7 @@ const images1 = [
           the foundation of an asphalt mix production business. Buy wisely.
         </p>
         <Image src={img1} alt="" class="block md:hidden my-10" />
-        <LearnBtn className="bg-blueMain hover:blueMainHover" ; />
+        <LearnBtnBlue  />
       </div>
       <Image src={img1} alt="" class="hidden md:block" />
     </div>

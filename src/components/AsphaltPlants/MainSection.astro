@@ -51,19 +51,19 @@ const items = [
 >
     <!-- Opciones -->
     <div
-        class="grid grid-cols-1 lg:grid-cols-7  justify-center items-center gap-1 md:gap-4 mt-8 text-grisP"
+        class="grid grid-cols-3 justify-center items-center lg:grid-cols-7 md:grid-cols-7 gap-5 md:gap-4 mt-8 text-grisP"
     >
         <!-- Primera fila (siempre visible) -->
         <button
             aria-label="Drum Mixers link"
-            class="text-xs md:text-base py-5 md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
         >
             Drum Mixers
         </button>
 
         <button
             aria-label="Baghouses link"
-            class="border-b border-b-grisT tab-button py-5 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab2"
         >
             Baghouses
@@ -71,7 +71,7 @@ const items = [
 
         <button
             aria-label="Asphalt tanks link"
-            class="border-b border-b-grisT tab-button py-5 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab3"
         >
             Asphalt tanks
@@ -79,37 +79,42 @@ const items = [
 
         <button
             aria-label="Bins link"
-            class="border-b border-b-grisT tab-button py-5 md:px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab4"
         >
             Bins
         </button>
 
         <button
-            class="md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md py-3 md:py-0 lg:py-0 md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab5"
         >
             Heating <br /> Systems
         </button>
 
         <button
-            class="md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
             data-tab="tab6"
         >
             Hot-Mix <br /> Storage Silos
         </button>
 
         <button
-            class="md:block border-b border-b-grisT tab-button py-2 px-4 font-bold text-xs md:text-base focus:outline-none"
+            class="text-md md:text-lg md:px-4 font-bold focus:outline-none
+           col-span-3 md:col-span-1 flex justify-center"
             data-tab="tab7"
         >
-            Cold Mix <br /> Plants
+            <span
+                class="inline-flex flex-col items-center border-b border-b-grisT md:w-full lg:w-full"
+            >
+                Cold Mix <br /> Plants
+            </span>
         </button>
     </div>
 
     <!-- Info -->
     <div
-        class="w-full text-justify font-bold text-base md:text-xl text-grisT mt-10"
+        class="w-full text-justify font-bold text-sm md:text-lg lg:text-lg text-grisT mt-10"
     >
         <p>
             With models ranging from 10 to 500 tons per hour, Triaso asphalt
@@ -132,7 +137,7 @@ const items = [
     </div>
     <!-- Ventajas -->
     <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8 mt-10 lg:mt-20 w-full"
+        class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8 mt-10 lg:mt-20 w-full"
     >
         {
             items.map((item, index) => (
@@ -142,7 +147,7 @@ const items = [
                 w-full
                 ${
                     items.length % 2 !== 0 && index === items.length - 1
-                        ? "md:col-span-2 lg:col-span-1"
+                        ? "md:col-span-2 lg:col-span-1 col-span-2"
                         : ""
                 }
             `}

@@ -621,7 +621,7 @@ useEffect(() => {
                   </button>
                 </div>
               </div>
-              <div>
+              <div className="pt-5">
                 <h1 className="text-white lg:text-xl text-lg text-center mb-10">
                   MOUNTED ON
                 </h1>
@@ -650,11 +650,11 @@ useEffect(() => {
                   </button>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center w-full">
-                <h1 className="text-white lg:text-xl text-lg text-center mb-10">
+              <div className="flex flex-col justify-center items-center w-full pt-5">
+                <h1 className="text-white lg:text-xl text-lg text-center mb-5">
                   EXTERIOR:
                 </h1>
-                <div className="version-selector flex flex-col gap-6 justify-center w-2/3">
+                <div className="version-selector flex flex-col gap-6 justify-center w-3/4 lg:w-2/3">
                   <button
                     onClick={() => setActiveVersion("withPanels")}
                     className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
@@ -663,17 +663,17 @@ useEffect(() => {
                         : "text-white bg-transparent border-white"
                     }`}
                   >
-                    Aesthetic Flanks
+                    Aesthetic Side Panels
                   </button>
                   <button
                     onClick={() => setActiveVersion("withoutPanels")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
+                    className={` px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
                       activeVersion === "withoutPanels"
                         ? "text-black bg-white border-white"
                         : "text-white bg-transparent border-white"
                     }`}
                   >
-                    Without Aesthetic Flanks
+                    Without Aesthetic Side Panels
                   </button>
                 </div>
               </div>
@@ -864,7 +864,7 @@ useEffect(() => {
                         <li>Interchangeable paddles</li>
                         <li>Adjustable mixing time</li>
                         <li>Direct discharge gate to stockpile or truck</li>
-                        <li>Driven by 10–15 HP electric motor</li>
+                        <li>Driven by 10–125 HP electric motor</li>
                         <li>Speed reducer transmission</li>
                       </ul>
                     </div>
@@ -1835,7 +1835,7 @@ useEffect(() => {
                         <li>Interchangeable paddles</li>
                         <li>Adjustable mixing time</li>
                         <li>Direct discharge gate to stockpile or truck</li>
-                        <li>Driven by 10–15 HP electric motor</li>
+                        <li>Driven by 10–125 HP electric motor</li>
                         <li>Speed reducer transmission</li>
                       </ul>
                     </div>

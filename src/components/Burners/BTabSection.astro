@@ -1,317 +1,449 @@
 ---
 import burnerVideo from "../../assets/images/Burners/BProv1.mp4";
-import preH from '../../assets/images/Burners/preHeat.png';
-import preH2 from '../../assets/images/Burners/preHeat2.png';
+import preH from "../../assets/images/Burners/preHeat.png";
+import preH2 from "../../assets/images/Burners/preHeat2.png";
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
-import TwoColumnSection from '../unitComponents/TwoColumnSection.astro';
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import preHV from "../../assets/images/Burners/AnPreHeat.mp4";
-import batch from '../../assets/images/Burners/batch.png';
-import ficha from '../../assets/images/Burners/ficha.png';
-import world from '../../assets/images/Burners/world.png';
+import batch from "../../assets/images/Burners/batch.png";
+import ficha from "../../assets/images/Burners/ficha.png";
+import world from "../../assets/images/Burners/world.png";
+import elevador2 from "../../assets/images/Burners/Elevador2.png";
+import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
 ---
-<section class="w-full flex 2 mt-6 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100">
-    <div class="flex flex-col items-center justify-center gap-4 mt-8">
-        <div class="flex items-center justify-around w-full gap-4 max-w-7xl px-8 mx-auto">
-            <button class="text-lg md:text-xl tab-button-1 py-2 md:px-4 font-bold focus:outline-none"
-                    data-tab="tab1" aria-selected="true"> <!-- Cambiado a true -->
-                    Combustion Performance and <br> Efficiency
+
+<section class="w-full flex 2 mt-6 md:mt-20 flex-col gap-4 bg-gray-100">
+    <div class="flex flex-col gap-4 mt-8">
+        <div class="flex w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4">
+            <button
+                class="tab-button-1 flex-1 py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+                data-tab="tab1"
+                aria-selected="true"
+            >
+                Combustion Performance and
+                <span class="hidden md:block"><br /></span>
+                Efficiency
             </button>
-            <button class="tab-button-1 py-2 md:px-4 font-bold text-lg md:text-xl focus:outline-none"
-                    data-tab="tab2" aria-selected="false"> <!-- Cambiado a false -->
-                    Asphalt Quality and Equipment <br> Protection
+
+            <button
+                class="tab-button-1 flex-1 py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+                data-tab="tab2"
+                aria-selected="false"
+            >
+                Asphalt Quality and Equipment
+                <span class="hidden md:block"><br /></span>
+                Protection
             </button>
-            <button class="tab-button-1 py-2 px-4 font-bold text-lg md:text-xl focus:outline-none"
-                    data-tab="tab3" aria-selected="false">
-                    Customization to adapt to specific  <br>customer needs
+
+            <button
+                class="tab-button-1 flex-1 py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+                data-tab="tab3"
+                aria-selected="false"
+            >
+                Customization to adapt to specific
+                <span class="hidden md:block"><br /></span>
+                customer needs
             </button>
         </div>
+
         <div class="py-4">
             <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT" data-tab-content="tab1">
+            <div
+                class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT"
+                data-tab-content="tab1"
+            >
                 <div class="w-full max-w-7xl px-8 mx-auto">
-                    <div class="w-full bg-white rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div
+                        class="w-full bg-white rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-10"
+                    >
                         <div>
-                            <h2 class="text-lg md:text-xl font-bold text-black">No Extra Air, No Extra Fuel</h2><br>
-                            <p class="text-base md:text-lg ">
-                                By controlling all combustion air internally, Triaso® burners eliminate the need for secondary air from the drum or chimney.
-                                 This reduces heat loss, saves fuel, and improves overall plant efficiency—every drop of fuel is put to work.
+                            <h2 class="text-lg md:text-xl font-bold text-black">
+                                No Extra Air, No Extra Fuel
+                            </h2><br />
+                            <p class="text-base md:text-lg">
+                                By controlling all combustion air internally,
+                                Triaso® burners eliminate the need for secondary
+                                air from the drum or chimney. This reduces heat
+                                loss, saves fuel, and improves overall plant
+                                efficiency—every drop of fuel is put to work.
                             </p>
                         </div>
                         <div>
-                            <img src="" alt="">
+                            <img
+                                src="https://placehold.co/600x400/png"
+                                alt=""
+                                class="rounded-lg"
+                            />
                         </div>
                     </div>
                 </div>
                 <TwoColumnSection
-                leftBg="bg-redBg"
-                rightBg="bg-blueMain"
-                imageSrc={Tred.src}
-                imageAlt="Red T icon"
-                imageWidth="150px"
+                    leftBg="bg-redBg"
+                    rightBg="bg-blueMain"
+                    imageSrc={Tred.src}
+                    imageAlt="Red T icon"
+                    imageWidth="150px"
                 >
                     <div slot="left" class="flex flex-col h-full gap-3">
-                        <h1 class="text-xl md:text-2xl text-white">Stable Operation in Any Condition</h1>
-                        <p class="text-base md:text-lg">
-                            Unlike traditional systems, Triaso® burners maintain consistent combustion regardless of altitude,
-                             weather, or time of day. From startup to shutdown, efficiency remains high and steady.
-                        </p>
-                    </div>
-                    <div slot="right" class="flex flex-col justify-center gap-3">
-                        <h1 class="text-xl md:text-2xl">
-                            Total Air Technology –<span class="font-normal"> Clean <br> Combustion with Any Fuel</span>
+                        <h1 class="text-xl md:text-2xl text-white">
+                            Stable Operation in Any Condition
                         </h1>
                         <p class="text-base md:text-lg">
-                            The integrated preheater liquefies any fuel, ensuring perfect atomization and clean combustion—no smoke, 
-                            no residue, no wasted fuel. It allows the use of any fuel type while maintaining optimal performance at all times.
+                            Unlike traditional systems, Triaso® burners maintain
+                            consistent combustion regardless of altitude,
+                            weather, or time of day. From startup to shutdown,
+                            efficiency remains high and steady.
+                        </p>
+                    </div>
+                    <div
+                        slot="right"
+                        class="flex flex-col justify-center gap-3"
+                    >
+                        <h1 class="text-xl md:text-2xl">
+                            Total Air Technology –<span class="font-normal">
+                                Clean <br /> Combustion with Any Fuel</span
+                            >
+                        </h1>
+                        <p class="text-base md:text-lg">
+                            The integrated preheater liquefies any fuel,
+                            ensuring perfect atomization and clean combustion—no
+                            smoke, no residue, no wasted fuel. It allows the use
+                            of any fuel type while maintaining optimal
+                            performance at all times.
                         </p>
                     </div>
                 </TwoColumnSection>
                 <div class="w-full max-w-7xl px-8 mx-auto">
-                    <video src={burnerVideo} autoplay muted class="w-3/5 rounded-lg"></video>
+                    <video
+                        src={burnerVideo}
+                        autoplay
+                        muted
+                        class="w-3/5 rounded-lg"></video>
                 </div>
-                <div class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 justify-center">
-                    <div>
+                <div
+                    class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 justify-center"
+                >
+                    <div class="flex flex-col justify-center items-center">
                         <h2 class="text-lg md:text-xl font-bold text-black">
                             Total Air Technology: Guaranteed Complete Combustion
-                        </h2><br>
-                        <p class="text-base md:text-lg ">
-                            Triaso® burners supply 100% of the air needed for combustion through their own blower, without relying on the drum’s exhaust.
-                             This ensures efficient fuel burning, avoids cold air entry, and delivers a clean, uncontaminated asphalt mix.
+                        </h2><br />
+                        <p class="text-base md:text-lg">
+                            Triaso® burners supply 100% of the air needed for
+                            combustion through their own blower, without relying
+                            on the drum’s exhaust. This ensures efficient fuel
+                            burning, avoids cold air entry, and delivers a
+                            clean, uncontaminated asphalt mix.
                         </p>
                     </div>
                     <div>
-
+                        <img
+                            src={escudo1.src}
+                            alt=""
+                            class="w-4/5 rounded-lg"
+                        />/
                     </div>
                 </div>
                 <div class="w-full space-y-3">
                     <div class="w-1/5 h-[2px] bg-redBg"></div>
                     <div class="w-1/6 h-[2px] bg-blueMain"></div>
                 </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-7xl px-8 mx-auto">
-                    <div class="">
-                        <h2 class="text-lg md:text-xl font-bold text-black text-center">
-                            No Smoke. No Residue. No Early Failure.
-                        </h2><br>
-                        <p class="text-base md:text-lg font-thin">
-                            Poorly designed burners leave unburned particles, smoke, and heat inefficiencies that damage both your mix and your 
-                            equipment. Triaso® eliminates these issues with advanced combustion control.
-                        </p>
+                <div class="bg-bgBeige w-full -skew-y-2">
+                    <div
+                        class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-7xl px-8 mx-auto skew-y-2 py-20"
+                    >
+                        <div class="">
+                            <h2
+                                class="text-lg md:text-xl font-bold text-black text-center"
+                            >
+                                No Smoke. No Residue. No Early Failure.
+                            </h2><br />
+                            <p class="text-base md:text-lg font-thin">
+                                Poorly designed burners leave unburned
+                                particles, smoke, and heat inefficiencies that
+                                damage both your mix and your equipment. Triaso®
+                                eliminates these issues with advanced combustion
+                                control.
+                            </p>
+                        </div>
+                        <div>
+                            <h2
+                                class="text-lg md:text-xl font-bold text-black text-center"
+                            >
+                                Burn Low-Cost Fuel Without Waste
+                            </h2><br />
+                            <p class="text-base md:text-lg font-thin">
+                                Even with heavy or low-grade fuels, Triaso®
+                                burners ensure proper atomization and complete
+                                combustion. The built-in preheater lowers fuel
+                                viscosity, preventing unburned droplets,
+                                reducing pollution and operating costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Section -->
+            <div class="hidden tab-content-1" data-tab-content="tab2">
+                <div
+                    class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:flex items-center justify-center gap-4 mt-4 text-base md:text-lg text-grisT">
+                    <div class="w-full">
+                        <img src={elevador2.src} alt="" class="" />
                     </div>
                     <div>
-                        <h2 class="text-lg md:text-xl font-bold text-black text-center">
-                            Burn Low-Cost Fuel Without Waste
-                        </h2><br>
-                        <p class="text-base md:text-lg font-thin">
-                            Even with heavy or low-grade fuels, Triaso® burners ensure proper atomization and complete combustion. The 
-                            built-in preheater lowers fuel viscosity, preventing unburned droplets, reducing pollution and operating costs.
+                        <div class="w-full px-8 mx-auto gap-10 justify-center">
+                            <div class="w-full flex flex-col gap-3">
+                                <div class="w-full grid grid-cols-3">
+                                    <div class="w-full">
+                                        <p>Consistent</p>
+                                        <h2
+                                            class="text-xl md:text-2xl text-redBg font-bold"
+                                        >
+                                            Flame
+                                        </h2>
+                                    </div>
+                                    <div class="w-full">
+                                        <p>Consistent</p>
+                                        <h2
+                                            class="text-xl md:text-2xl text-blueMain font-bold"
+                                        >
+                                            Mix
+                                        </h2>
+                                    </div>
+                                    <div class="w-full">
+                                        <p>Consistent</p>
+                                        <h2
+                                            class="text-xl md:text-2xl text-grisT font-bold"
+                                        >
+                                            Quality
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>
+                                        Fluctuating burner performance leads to
+                                        inconsistent heating, which directly
+                                        affects the asphalt mix. Triaso® burners
+                                        maintain a stable, even flame that
+                                        ensures every batch is mixed at the
+                                        correct temperature—protecting both the
+                                        pavement's durability and the plant’s
+                                        components from thermal stress.
+                                    </p>
+                                </div>
+                                <div class="w-full text-black">
+                                    <h2
+                                        class="text-xl md:text-2xl text-black font-bold"
+                                    >
+                                        Protect
+                                    </h2>
+                                    <p class="text-base md:text-lg font-thin">
+                                        your Filters
+                                    </p>
+                                    <h2
+                                        class="text-xl md:text-2xl text-black font-bold"
+                                    >
+                                        Avoid Fire Risks
+                                    </h2>
+                                    <p class="text-base md:text-lg font-thin">
+                                        Unburned fuel can clog the baghouse,
+                                        increase maintenance, and even create
+                                        fire hazards. With Triaso® burners,
+                                        complete combustion prevents residue
+                                        buildup, keeping your filters clean and
+                                        your operation safe.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full bg-blueMain py-10">
+                    <div class="w-full max-w-7xl px-8 mx-auto">
+                        <h1
+                            class="text-white text-2xl md:text-4xl font-bold text-center"
+                        >
+                            Cleaner Mix, Longer-Lasting Pavement
+                        </h1>
+                        <br />
+                        <p class="text-grisSubP md:text-lg font-bold">
+                            Incomplete combustion contaminates the mix with
+                            unburned fuel, which reduces pavement life. Triaso®
+                            burners prevent this, delivering a clean burn that
+                            protects your asphalt quality and investment.
                         </p>
                     </div>
                 </div>
-                              
-             </div>
-        <!-- Second Section -->
-         <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT" data-tab-content="tab2">
-            <div class="w-full bg-blueMain py-10">
-                <div class="w-full max-w-7xl px-8 mx-auto">
-                    <h1 class="text-white text-2xl md:text-4xl font-bold text-center">
-                    Cleaner Mix, Longer-Lasting Pavement
-                    </h1>
-                    <br>
-                    <p class="text-grisSubP md:text-lg font-bold">
-                        Incomplete combustion contaminates the mix with unburned fuel, which reduces pavement life.
-                        Triaso® burners prevent this, delivering a clean burn that protects your asphalt quality and investment.
-                    </p>
-                </div>
             </div>
-            <div class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 justify-center">
-                <div class="w-full text-black">
-                    <h2 class="text-xl md:text-2xl text-black font-bold">
-                        Protect 
-                    </h2>
-                    <p class="text-base md:text-lg font-thin">
-                        your Filters
-                    </p>
-                    <h2 class="text-xl md:text-2xl text-black font-bold">
-                        Avoid Fire Risks
-                    </h2>
-                    <p class="text-base md:text-lg font-thin">
-                        Unburned fuel can clog the baghouse, increase maintenance, and even create fire hazards.
-                        With Triaso® burners, complete combustion prevents residue buildup, keeping your filters
-                        clean and your operation safe.
-                    </p>
-                </div>
-                <div class="w-full flex flex-col gap-3">
-                    <div class="w-full grid grid-cols-3">
-                        <div class="w-full">
-                            <p>
-                                Consistent
-                            </p>
-                            <h2 class="text-xl md:text-2xl text-redBg font-bold">
-                                Flame
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <p>
-                                Consistent
-                            </p>
-                            <h2 class="text-xl md:text-2xl text-blueMain font-bold">
-                                Mix
-                            </h2>
-                        </div>
-                        <div class="w-full">
-                            <p>
-                                Consistent
-                            </p>
-                            <h2 class="text-xl md:text-2xl text-grisT font-bold">
-                                Quality
-                            </h2>
-                        </div>
-                    </div>
-                    <div>
-                        <p>
-                            Fluctuating burner performance leads to inconsistent heating, which directly affects the asphalt mix.
-                             Triaso® burners maintain a stable, even flame that ensures every batch is mixed at the correct
-                              temperature—protecting both the pavement's durability and the plant’s components from thermal stress.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <img src="" alt="">
-            </div>
-         </div>
-         <!-- Third Section -->
-          <div class="w-full flex flex-col items-center justify-center mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold" data-tab-content="tab3">
-            <div class="w- max-w-7xl px-8 mx-auto">
-                <div class="w-full">
+        </div>
+
+        <!-- Third Section -->
+        <div
+            class="w-full flex flex-col mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold"
+            data-tab-content="tab3"
+        >
+            <div class="w-full px-8">
+                <div class="w-full max-w-7xl mx-auto">
                     <div class="w-full bg-white rounded-2xl p-8">
                         <div class="w-3/4 justify-center m-auto">
                             <video src={preHV} autoplay></video>
-
                         </div>
-                        <div class="px-20 text-center">
+                        <div class="lg:px-20 text-center">
                             <h2 class="text-lg md:text-xl font-bold text-black">
                                 Preheater Included – No Extra Cost
                             </h2>
-                            <p class="text-base md:text-lg ">
-                                Since 2014, all Triaso® drums come standard with a built-in preheater. This increases combustion 
-                                efficiency by reducing fuel viscosity and improving atomization—without adding to your budget.
+                            <p class="text-base md:text-lg">
+                                Since 2014, all Triaso® drums come standard with
+                                a built-in preheater. This increases combustion
+                                efficiency by reducing fuel viscosity and
+                                improving atomization—without adding to your
+                                budget.
                             </p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            <div class="w-full px-8 md:px-52 bg-gradient-to-t from-grisT to-bgMain min-h-[200px] flex justify-center items-end">
-                <h1 class="text-bgBeige text-2xl md:text-4xl font-bold text-center">
-                    For equipment that lasts, choose components <br> built to withstand heavy-duty use
+            <div
+                class="w-full px-8 md:px-52 bg-gradient-to-t from-grisT to-bgMain min-h-[200px] flex justify-center items-end"
+            >
+                <h1
+                    class="text-bgBeige text-2xl md:text-4xl font-bold text-center"
+                >
+                    For equipment that lasts, choose components <br /> built to withstand
+                    heavy-duty use
                 </h1>
             </div>
             <div class="w-full bg-grisT">
-                <div class="w-full bg-grisT max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
-                <div class="w-full flex justify-center items-center">
-                    <img src={preH.src} alt="" class="w-1/2">
-                </div>
-                <div class="w-full text-white flex flex-col justify-center items-center">
-                    <div class="w-full flex gap-3 justify-center items-center">
-                        <h2 class="text-xl md:text-2xl text-end">Efficient and <br>Environmentall <br>and Responsible</h2>
-                        <img src={world.src} alt="" class="w-[120px]">
+                <div
+                    class="w-full max-w-7xl justify-center items-center bg-grisT px-8 mx-auto grid grid-cols-1 md:grid-cols-2"
+                >
+                    <div class="w-full flex justify-center items-center">
+                        <img src={preH.src} alt="" class="w-1/2" />
                     </div>
-                    <p class="text-base md:text-lg font-thin">
-                        With complete fuel burn and reduced NOx emissions, Triaso® burners meet strict environmental 
-                        standards. You get lower fuel consumption and cleaner operation without compromising performance.
-                    </p>
+                    <div
+                        class="w-full text-white flex flex-col justify-center items-center">
+                        <div class="w-full flex gap-3 justify-between lg:justify-center items-center">
+                            <h2 class="text-xl md:text-2xl lg:text-end">
+                                Efficient and <br />Environmentall <br />and
+                                Responsible
+                            </h2>
+                            <img src={world.src} alt="" class="w-[120px]" />
+                        </div>
+                        <div class="lg:w-1/2 flex justify-center items-center">
+                            <p
+                                class="text-base text-start md:text-lg font-thin"
+                            >
+                                With complete fuel burn and reduced NOx
+                                emissions, Triaso® burners meet strict
+                                environmental standards. You get lower fuel
+                                consumption and cleaner operation without
+                                compromising performance.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="w-full bg-grisT">
                 <div class="w-full max-w-7xl px-8 mx-auto text-white py-20">
-                
                     <div class="text-xl md:text-2xl flex items-center gap-2">
-                        <img src={ficha.src} alt="" class="w-[60px]">
-                        <h2>Inline Electric Heating for Maximum Efficiency</h2>                       
+                        <img src={ficha.src} alt="" class="w-[60px]" />
+                        <h2>Inline Electric Heating for Maximum Efficiency</h2>
                     </div>
                     <p class="text-base md:text-lg font-thin">
-                        The fuel preheater uses an inline electric resistance system capable of raising the fuel 
-                        temperature by 104 °F, even at flow rates of up to 840 liters per hour. This rapid, 
-                        controlled heating instantly reduces fuel viscosity instantly, ensuring perfect atomization and clean 
-                        combustion—without delays or external heat sources. 
-                        <br><br>
-                        Compact, reliable solution for efficient burner performance from the first second of operation.
+                        The fuel preheater uses an inline electric resistance
+                        system capable of raising the fuel temperature by 104
+                        °F, even at flow rates of up to 840 liters per hour.
+                        This rapid, controlled heating instantly reduces fuel
+                        viscosity instantly, ensuring perfect atomization and
+                        clean combustion—without delays or external heat
+                        sources.
+                        <br /><br />
+                        Compact, reliable solution for efficient burner performance
+                        from the first second of operation.
                     </p>
-                
-            </div>
-            <div class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2">
-                <div>
-                    <img src={preH2.src} alt="" class="w-3/4 rounded-2xl">
                 </div>
-                <div class="w-full text-white">
-                    <div class="text-xl md:text-2xl text-end flex justify-center items-center gap-3">
-                        <h2>Standard in Every Plant, Not <br> a Costly Upgrade</h2>
-                        <img src={batch.src} alt="" class="w-[60px]">
+                <div
+                    class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2"
+                >
+                    <div class="flex justify-center lg:justify-normal">
+                        <img src={preH2.src} alt="" class="w-3/4 rounded-2xl" />
                     </div>
-                    <p class="text-base md:text-lg font-thin">
-                        Other brands offer total-air burners and preheaters as expensive add-ons. At Triaso®, they come included as
-                         standard equipment in every plant
-                         configuration—because clean combustion shouldn’t be optional.
-                    </p>
+                    <div class="w-full text-white pb-5">
+                        <div class="text-xl md:text-2xl lg:text-end flex justify-between lg:justify-center items-center gap-3">
+                            <h2>
+                                Standard in Every Plant, Not a Costly Upgrade
+                            </h2>
+                            <img src={batch.src} alt="" class="w-[60px]" />
+                        </div>
+                        <p class="text-base md:text-lg font-thin">
+                            Other brands offer total-air burners and preheaters
+                            as expensive add-ons. At Triaso®, they come included
+                            as standard equipment in every plant
+                            configuration—because clean combustion shouldn’t be
+                            optional.
+                        </p>
+                    </div>
                 </div>
             </div>
-            </div>
-          </div>
-        </div>    
+        </div>
     </div>
 </section>
+
 <style is:global>
-  /* Estilos para los tabs activos */
-  .tab-button-1[aria-selected="true"] {
-    color: var(--rojo-btn);
-    border-bottom: 2px solid var(--rojo-btn);
-  }
-  
-  .tab-button-1[aria-selected="false"] {
-    color: var(--gris-titulos);
-    border-bottom: 2px solid var(--gris-titulos);
-  }
-  
-  .tab-button-1:hover:not([aria-selected="true"]) {
-    color: var(--rojo-btn);
-    border-bottom: 2px solid var(--rojo-btn);
-  }
-  
+    /* Estilos para los tabs activos */
+    .tab-button-1[aria-selected="true"] {
+        color: var(--rojo-btn);
+        border-bottom: 2px solid var(--rojo-btn);
+    }
+
+    .tab-button-1[aria-selected="false"] {
+        color: var(--gris-titulos);
+        border-bottom: 2px solid var(--gris-titulos);
+    }
+
+    .tab-button-1:hover:not([aria-selected="true"]) {
+        color: var(--rojo-btn);
+        border-bottom: 2px solid var(--rojo-btn);
+    }
 </style>
 <script is:inline>
     (function initTabs() {
-      // Usamos selectores más específicos para evitar conflictos
-      const tabButtons = document.querySelectorAll('.tab-button-1');
-      const tabContents = document.querySelectorAll('.tab-content-1'); // Cambiado a clase específica
-      
-      // Ocultar todos los contenidos y desactivar botones
-      tabContents.forEach((content, index) => {
-        content.classList.toggle('hidden', index !== 0);
-      });
-      
-      tabButtons.forEach((button, index) => {
-        button.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-      });
-      
-      // Configurar los listeners
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabId = button.getAttribute('data-tab');
-          
-          tabButtons.forEach(btn => {
-            btn.setAttribute('aria-selected', 'false');
-          });
-          
-          button.setAttribute('aria-selected', 'true');
-          
-          tabContents.forEach(content => {
-            content.classList.add('hidden');
-          });
-          
-          document.querySelector(`.tab-content-1[data-tab-content="${tabId}"]`).classList.remove('hidden');
+        // Usamos selectores más específicos para evitar conflictos
+        const tabButtons = document.querySelectorAll(".tab-button-1");
+        const tabContents = document.querySelectorAll(".tab-content-1"); // Cambiado a clase específica
+
+        // Ocultar todos los contenidos y desactivar botones
+        tabContents.forEach((content, index) => {
+            content.classList.toggle("hidden", index !== 0);
         });
-      });
+
+        tabButtons.forEach((button, index) => {
+            button.setAttribute(
+                "aria-selected",
+                index === 0 ? "true" : "false",
+            );
+        });
+
+        // Configurar los listeners
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const tabId = button.getAttribute("data-tab");
+
+                tabButtons.forEach((btn) => {
+                    btn.setAttribute("aria-selected", "false");
+                });
+
+                button.setAttribute("aria-selected", "true");
+
+                tabContents.forEach((content) => {
+                    content.classList.add("hidden");
+                });
+
+                document
+                    .querySelector(
+                        `.tab-content-1[data-tab-content="${tabId}"]`,
+                    )
+                    .classList.remove("hidden");
+            });
+        });
     })();
-  </script>
+</script>

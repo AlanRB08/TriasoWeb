@@ -37,9 +37,9 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
         <div
             class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20"
         >
-            <div class="flex flex-col items-center justidy-center py-6">
-                <img src={trunnionImage.src} alt="Trunnions" class="w-full h-[300px]" />
-                <h2 class="w-full text-start text-xl md:text-2xl">
+            <div class="flex flex-col items-center justify-center lg:pt-5 md:pt-5">
+                <img src={trunnionImage.src} alt="Trunnions" class="w-full " />
+                <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     TRUNNIONS
                 </h2><br />
                 <p>
@@ -48,9 +48,9 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                     rotation.
                 </p>
             </div>
-            <div class="flex flex-col items-center justidy-center py-6">
-                <img src={drumTires.src} alt="" class="w-full h-[300px]" />
-                <h2 class="w-full text-start text-xl md:text-2xl">
+            <div class="flex flex-col items-center justify-center lg:pt-5 md:pt-5">
+                <img src={drumTires.src} alt="" class="w-full" />
+                <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     DRUM TIRES
                 </h2><br />
                 <p>
@@ -63,7 +63,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
             <div
                 class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
             >
-                <div class="w-full flex justify-center">
+                <div class="w-full flex justify-center items-center mx-auto">
                     <img src={rap.src} alt="Rap System" class="w-2/5" />
                 </div>
 
@@ -135,7 +135,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
             style="max-height: 0"
         >
             <div
-                class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light"
+                class="text-white max-w-7xl mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light"
             >
                 <p>
                     Strategically positioned, the collar introduces RAP
@@ -305,21 +305,6 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                 }
             });
         }
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        dropdown.style.maxHeight = "0px";
-                        arrow.style.transform = "rotate(0deg)";
-                        window.dispatchEvent(new Event("layoutChange"));
-                    }
-                });
-            },
-            {
-                threshold: 0, 
-            },
-        );
-        observer.observe(button);
     });
 </script>
 <style>
