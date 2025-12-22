@@ -19,6 +19,7 @@ import OSection from "../unitComponents/OSection.astro";
 import bannerNew from "../../assets/images/BagHouses/bannerImage.png";
 import damperImg from "../../assets/images/BagHouses/damper.jpg";
 import finesReturn from "../../assets/images/BagHouses/finesReturn.jpg";
+import boquillasVL from "../../assets/images/BagHouses/BoquillasVL.png"
 
 const tanksSlides = [
     {
@@ -43,42 +44,73 @@ const tanksSlides = [
 <div
     class="w-full flex flex-col justify-center items-center font-bold md:mt-20"
 >
-    <div class="w-full flex justify-center px-8 md:px-0 lg:px-0">
-        <h1 class="text-redBg text-2xl text-center md:text-4xl">
-            Your best business begins with us
-        </h1>
+    <div
+        class="w-full flex flex-col items-center justify-center font-bold mt-10"
+    >
+        <div class="max-w-7xl px-8 lg:mb-20 mx-auto">
+            <h1 class="text-redBg text-xl md:text-3xl text-center">
+                Your best business begins with us
+            </h1>
+        </div>
+        <div class="max-w-7xl px-8 mx-auto flex justify-center">
+            <img src={img2.src} alt="" class="hero-img lg:w-4/5 rounded-lg" />
+        </div>
+        <div
+            class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
+        >
+            <div class="w-full mt-10">
+                <h2 class="text-black text-lg md:text-xl">
+                    Continuous cleaning system
+                </h2>
+                <p class="text-grisT text-base md:text-lg text-justify">
+                    A continuous cleaning system that keeps the filter bags in
+                    operation at all times. Bursts of compressed air are
+                    released through a super sonic nozzle, creating a pressure
+                    wave that rapidly expands each bag and dislodges the dust
+                    cake from its surface. The released particles fall into the
+                    hopper below, ensuring uninterrupted filtration and optimal
+                    bag performance.
+                </p>
+            </div>
+
+            <div class="w-full hidden lg:flex md:w-auto">
+                <img
+                    src={img7.src}
+                    alt=""
+                    class="side-img rounded-2xl will-change-transform"
+                />
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
+        >
+            <img
+                src={img3.src}
+                alt=""
+                class="fade-img rounded-lg lg:w-3/5 will-change-transform"
+            />
+        </div>
+
+        <div class="relative flex flex-col lg:hidden">
+            <img
+                src={img7.src}
+                alt=""
+                class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
+            />
+
+            <img
+                src={img3.src}
+                alt=""
+                class="absolute top-0 left-0 w-2/3 rounded-lg translate-x-1 translate-y-2"
+            />
+        </div>
     </div>
 
-    <div
-        class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center py-10"
-    >
-        <div class="w-full">
-            <div class="w-full">
-                <img src={img2.src} alt="" class="w-full rounded-lg" />
-            </div>
-            <h2 class="text-grisT text-lg md:text-xl">
-                Continuous cleaning system
-            </h2><br />
-            <p class="text-grisT font-thin text-base md:text-lg">
-                A continuous cleaning system that keeps the filter bags in
-                operation at all times. Bursts of compressed air are released
-                through a super sonic nozzle, creating a pressure wave that
-                rapidly expands each bag and dislodges the dust cake from its
-                surface. The released particles fall into the hopper below,
-                ensuring uninterrupted filtration and optimal bag performance.
-            </p>
-            <div>
-                <img src={img3.src} alt="" />
-            </div>
-        </div>
-        <div class="w-full">
-            <div class="w-full h-[200px]"></div>
-            <div class="w-full">
-                <img src={img7.src} alt="" class="rounded-lg w-4/5" />
-            </div>
-        </div>
+    <div class="mt-10 w-full lg:mt-0 md:mt-0">
+      <OSection />  
     </div>
-    <OSection />
+    
     <TwoColumnSection
         leftBg="bg-redBg"
         rightBg="bg-blueMain"
@@ -148,7 +180,7 @@ const tanksSlides = [
                 </p>
             </div>
             <div class="w-full flex justify-center items-center">
-                <img src={single.src} alt="" class="w-1/2" />
+                <img src={boquillasVL.src} alt="" class="full rounded-xl" />
             </div>
         </div>
 
@@ -161,7 +193,6 @@ const tanksSlides = [
                     bgColor="bg-bgBeige"
                     image={img5.src}
                     client:only
-                    
                 >
                     <div class="w-full py-10 text-sm md:text-base text-grisT">
                         <p>
@@ -233,8 +264,7 @@ const tanksSlides = [
     </div>
     <div class="max-w-7xl px-8 mx-auto">
         <div class="w-full flex justify-center">
-            <video src={DMVideo} autoplay loop muted playsinline 
-            ></video>
+            <video src={DMVideo} autoplay loop muted playsinline></video>
         </div>
         <p class="text-base md:text-lg font-thin">
             After passing through the primary dust collector, the gas stream
@@ -393,7 +423,8 @@ const tanksSlides = [
                 </div>
             </section>
 
-            <div class="h-[3rem]  lg:h-[12rem] md:h-[10rem] w-full bg-blueMain"></div>
+            <div class="h-[3rem] lg:h-[12rem] md:h-[10rem] w-full bg-blueMain">
+            </div>
         </div>
         <div
             class="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center"
@@ -429,7 +460,16 @@ const tanksSlides = [
         <BHCustom />
     </div>
     <div class="px-8">
-       <GallerySlider client:only slides={tanksSlides} visibleThumbs={4} /> 
+        <GallerySlider client:only slides={tanksSlides} visibleThumbs={4} />
     </div>
-    
 </div>
+
+<script>
+    import { initScrollAnimations } from "../../components/lib/scrollAnimations";
+
+    if (typeof window !== "undefined") {
+        window.addEventListener("DOMContentLoaded", () => {
+            initScrollAnimations();
+        });
+    }
+</script>

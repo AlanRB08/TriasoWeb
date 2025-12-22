@@ -113,36 +113,53 @@ import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
                         </p>
                     </div>
                 </TwoColumnSection>
-                <div class="w-full max-w-7xl px-8 mx-auto">
-                    <video
-                        src={burnerVideo}
-                        autoplay
-                        muted
-                        class="w-3/5 rounded-lg"></video>
-                </div>
+
+                <!-- ----- -->
                 <div
-                    class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 justify-center"
+                    class="w-full flex flex-col items-center justify-center font-bold mt-20"
                 >
-                    <div class="flex flex-col justify-center items-center">
-                        <h2 class="text-lg md:text-xl font-bold text-black">
-                            Total Air Technology: Guaranteed Complete Combustion
-                        </h2><br />
-                        <p class="text-base md:text-lg">
-                            Triaso® burners supply 100% of the air needed for
-                            combustion through their own blower, without relying
-                            on the drum’s exhaust. This ensures efficient fuel
-                            burning, avoids cold air entry, and delivers a
-                            clean, uncontaminated asphalt mix.
-                        </p>
+                    <div class="max-w-7xl px-8 mx-auto flex justify-center">
+                        <video
+                            src={burnerVideo}
+                            autoplay
+                            muted
+                            class="hero-img lg:w-3/5 rounded-lg"></video>
                     </div>
-                    <div>
+                    <div
+                        class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
+                    >
+                        <div class="w-full mt-10">
+                            <h2 class="text-lg md:text-xl font-bold text-black">
+                                Total Air Technology: Guaranteed Complete
+                                Combustion
+                            </h2><br />
+                            <p class="text-base md:text-lg">
+                                Triaso® burners supply 100% of the air needed
+                                for combustion through their own blower, without
+                                relying on the drum’s exhaust. This ensures
+                                efficient fuel burning, avoids cold air entry,
+                                and delivers a clean, uncontaminated asphalt
+                                mix.
+                            </p>
+                        </div>
+                        <div class="w-full hidden lg:flex md:w-auto">
+                            <img
+                                src={escudo1.src}
+                                alt=""
+                                class="side-img rounded-2xl will-change-transform"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center py-10 lg:hidden">
                         <img
                             src={escudo1.src}
                             alt=""
-                            class="w-4/5 rounded-lg"
-                        />/
+                            class="rounded-2xl w-1/2"
+                        />
                     </div>
                 </div>
+
+                <!-- -------- -->
                 <div class="w-full space-y-3">
                     <div class="w-1/5 h-[2px] bg-redBg"></div>
                     <div class="w-1/6 h-[2px] bg-blueMain"></div>
@@ -185,7 +202,8 @@ import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
             <!-- Second Section -->
             <div class="hidden tab-content-1" data-tab-content="tab2">
                 <div
-                    class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:flex items-center justify-center gap-4 mt-4 text-base md:text-lg text-grisT">
+                    class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:flex items-center justify-center gap-4 mt-4 text-base md:text-lg text-grisT"
+                >
                     <div class="w-full">
                         <img src={elevador2.src} alt="" class="" />
                     </div>
@@ -320,8 +338,11 @@ import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
                         <img src={preH.src} alt="" class="w-1/2" />
                     </div>
                     <div
-                        class="w-full text-white flex flex-col justify-center items-center">
-                        <div class="w-full flex gap-3 justify-between lg:justify-center items-center">
+                        class="w-full text-white flex flex-col justify-center items-center"
+                    >
+                        <div
+                            class="w-full flex gap-3 justify-between lg:justify-center items-center"
+                        >
                             <h2 class="text-xl md:text-2xl lg:text-end">
                                 Efficient and <br />Environmentall <br />and
                                 Responsible
@@ -368,7 +389,9 @@ import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
                         <img src={preH2.src} alt="" class="w-3/4 rounded-2xl" />
                     </div>
                     <div class="w-full text-white pb-5">
-                        <div class="text-xl md:text-2xl lg:text-end flex justify-between lg:justify-center items-center gap-3">
+                        <div
+                            class="text-xl md:text-2xl lg:text-end flex justify-between lg:justify-center items-center gap-3"
+                        >
                             <h2>
                                 Standard in Every Plant, Not a Costly Upgrade
                             </h2>
@@ -446,4 +469,14 @@ import escudo1 from "../../assets/images/Burners/251022-Escudo.jpg";
             });
         });
     })();
+</script>
+
+<script>
+    import { initScrollAnimations } from "../../components/DrumMixers/scrollAnimations";
+
+    if (typeof window !== "undefined") {
+        window.addEventListener("DOMContentLoaded", () => {
+            initScrollAnimations();
+        });
+    }
 </script>

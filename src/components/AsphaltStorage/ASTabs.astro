@@ -1,297 +1,363 @@
 ---
 import Card from "../unitComponents/Card.astro";
-import redT from '../../assets/images/AsphaltStorage/redT.png';
-import oil1 from '../../assets/images/AsphaltPlant/oil1.webp';
+import redT from "../../assets/images/AsphaltStorage/redT.png";
+import oil1 from "../../assets/images/AsphaltPlant/oil1.webp";
 import Image from "astro/components/Image.astro";
-import Whatsbtn from '../../components/unitComponents/Whatsbtn.astro';
+import Whatsbtn from "../../components/unitComponents/Whatsbtn.astro";
 import GallerySlider from "../unitComponents/GallerySlider";
 import type { slide } from "astro:transitions";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 import ModalButton from "../unitComponents/ModalButton.astro";
-import hotoil from '../../assets/images/AsphaltStorage/hotoil.jpg';
-
+import hotoil from "../../assets/images/AsphaltStorage/hotoil.jpg";
+import bombaCirculacion from "../../assets/images/AsphaltStorage/BombaCirculacion.png";
 
 const tanksSlides = [
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp',
-    caption: 'Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp",
+    caption:
+      "Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp',
-    caption: 'Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp",
+    caption:
+      "Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp",
+    caption:
+      "Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp',
-    caption: 'Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo',
-  }
+    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp",
+    caption:
+      "Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
 ];
 const tanksSlides2 = [
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT1.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT1.png",
+    caption: "Tanque de asfalto de 60,000 lts, plus.",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT2.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT2.png",
+    caption: "Tanque de asfalto de 60,000 lts, plus.",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT3.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus.',
+    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT3.png",
+    caption: "Tanque de asfalto de 60,000 lts, plus.",
   },
   {
-    image: 'src/assets/images/AsphaltStorage/SliderStorage2/DFAT4.png',
-    caption: 'Tanque de asfalto de 60,000 lts, plus.',
-  }
+    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT4.png",
+    caption: "Tanque de asfalto de 60,000 lts, plus.",
+  },
 ];
 ---
-<section class="max-w-7xl px-8 mx-auto flex mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100" data-tabs>
-    <div class="flex flex-col items-center justify-center w-full gap-4 mt-8">
-        <div class="flex items-center justify-around w-full gap-4">
-            <button class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
-            data-tab="tab1" aria-selected="true">
-                Oil Heating
-            </button>
-            <button class="tab-button py-2 md:px-4 font-bold text-xl md:text-4xl focus:outline-none"
-            data-tab="tab2" aria-selected="false">
-                Direct Fire Heating
-            </button>
-        </div>
-        <div class="py-4 flex justify-center items-center">
-            <!-- First Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT" data-tab-content="tab1">
-                <div class="w-full">
-                  <p class="text-justify">
-                    Designed for precise temperature control, the oil heater ensures uniform heat distribution through an efficient thermal oil circulation system.
-                     Its heavy-duty construction allows continuous operation, making it suitable for demanding that require consistent
-                      performance and energy efficiency.
-                  </p>
-                </div><br>
-                <GallerySlider client:only slides={tanksSlides} visibleThumbs={6}/>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
-                    <div class="w-full flex justify-center">
-                      <img src={oil1.src} alt="" class="w-4/5 h-4/5 rounded-lg">
-                    </div>
-                    <div class="w-full flex justify-between items-center my-auto">
-                      <h1 class="text-black text-xl font-semibold">Oil Heater</h1>
-                      <ModalButton>
-                        <h3 slot="title" class="text-xl md:text-2xl font-semibold">Oil Heater</h3>
-                        <img slot="image" src={oil1.src} alt="custom" />
-                        <div slot="content">
-                          <ul class="list-disc pl-5">
-                            <li> Heating capacities: 1,000,000 and 2,400,000 Btu/hr</li>
-                            <li>High-efficiency 2" diameter coil system inside the asphalt tank</li>
-                            <li>Connections for asphalt tankers with coil heating systems</li>
-                            <li>Thermally insulated with ceramic fiber</li>
-                            <li>Stainless steel exterior cladding</li>
-                            <li>Equipped with a diesel burner</li>
-                            <li>Automatic on/off control based on temperature</li>
-                            <li>Two operating modes: automatic and manual</li>
-                            <li>Digital thermometers with programmable setpoint for burner activation and shutdown</li>
-                            <li>Siemens PLC-based control system</li>
-                            <li>100-liter (26.4-gallon) thermal oil expansion tank</li>
-                            <li>100% duty cycle for continuous operation</li>
-                            <li>Integrated safety systems with automatic shutdown in case of fault</li>
-                          </ul>
-                        </div>
-                      </ModalButton>
-                    </div>
-                    
-                  </div>
-                  <div class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
-                    <div class="w-full flex justify-center">
-                      <img src={hotoil.src} alt="" class=" w-full h-4/5 rounded-lg">
-                    </div>
-                    <div class="flex justify-between items-center my-auto">
-                      <h1 class="text-black text-xl font-semibold">Hot Oil Coils</h1>
-                      <ModalButton>
-                        <h3 slot="title" class="text-xl md:text-2xl font-semibold">Hot Oil Coils</h3>
-                        <img slot="image" src={hotoil.src} alt="custom" />
-                        <div slot="content">
-                          Our asphalt storage tanks are equipped with heating coils that circulate thermal oil to
-                           ensure uniform and efficient asphalt heating. <br>
-                            This system prevents solidification and maintains the asphalt at the required 
-                            temperature for operation. <br>
-                            It delivers reliable performance, reduces energy consumption, and allows precise temperature control. <br>
-                             The design minimizes wear, extending the tank’s service life while maintaining optimal 
-                             asphalt consistency and readiness for use.
 
-
-
-                        </div>
-                      </ModalButton>
-                    </div>
-                    
-                  </div>
-                </div>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6">
-                    <Card>
-                        <h3>Precision Temperature Control:</h3>
-                        <p class="font-thin">
-                            Maintains precise temperature control within a ±1°C tolerance, ensuring optimal conditions for material processing.
-                        </p>
-                    </Card>
-                    <Card>
-                        <h3>Customizable Heating Capacity: 
-                            </h3>
-                        <p class="font-thin">
-                            Tailored to meet specific project needs, from small-scale operations to large industrial requirements.Tailored to meet specific project needs — from small-scale operations to large industrial requirements.
-                        </p>
-                    </Card>
-                    <Card>
-                        <h3>High-Efficiency Burners: 
-                            </h3>
-                        <p class="font-thin">
-                            Equipped with low-NOx burners that minimize emissions while maximizing fuel efficiency.
-                        </p>
-                    </Card>
-                    <Card>
-                        <h3>Thermal Oil Circulation System: 
-                            </h3>
-                        <p class="font-thin">
-                            Ensures uniform heat distribution across throughout the system, preventing hot spots and material degradation.
-                        </p>
-                    </Card>
-                </div>
-                
-  </div>
-                
-             </div>
-        <!-- Second Section -->
-            <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
-                <p class="text-center">
-                  Triaso® direct fire heating is designed to heat up the asphalt. A burner is mounted directly beneath the tank, transferring heat through a steel plate into the asphalt.
-                  This method provides fast, efficient heating with minimal energy loss.
-                </p>
-                <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4}/>
-                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
-                    <div class="w-full flex justify-center">
-                      <img src={oil1.src} alt="">
-                    </div>
-                    <div class="w-full flex justify-between items-center">
-                      <h1 class="text-white text-xl w-1/2 md:text-2xl">Direct Fire Heating Burner</h1>
-                      <ModalButton>
-                        <h3 slot="title" class="text-xl md:text-2xl">Direct Fire Heating Burner</h3>
-                        <img slot="image" src={oil1.src} alt="custom" />
-                        <div slot="content">
-                          El calentamiento de fuego directo funciona en base de un quemador de diesel que iradía calor a un tubo 
-                          dentro del tanque de asfalto, el cuál tiene dos tubos secundarios par airradiar su calor con mejor 
-                          distribución y los gases salen por los vapor condensers
-                        </div>
-                      </ModalButton>
-                    </div>
-                    
-                  </div>
-                  <div class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]">
-                    <div class="w-full flex justify-center">
-                      <img src={hotoil.src} alt="">
-                    </div>
-                    <div class="w-full flex justify-between items-center">
-                      <h1 class="text-white text-xl w-1/2 md:text-2xl">Vapor condensers</h1>
-                      <ModalButton>
-                        <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
-                        <img slot="image" src={hotoil.src} alt="custom" />
-                        <div slot="content">
-                          Triaso® vapor condensers are designed to capture and condense asphalt fumes during storage
-                           and heating, preventing emissions from escaping into the environment. Installed on the tank’s
-                            vent line, they cool down hot vapors into liquid form, reducing odor, improving safety, and
-                             ensuring compliance with environmental regulations.
-                        </div>
-                      </ModalButton>
-                    </div>
-                  </div>
-                </div>   
-            </div>
-        </div>
-           
+<section
+  class="max-w-7xl px-8 mx-auto flex mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-gray-100"
+  data-tabs
+>
+  <div class="flex flex-col items-center justify-center w-full gap-4 mt-8">
+    <div class="flex items-center justify-around w-full gap-4">
+      <button
+        class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
+        data-tab="tab1"
+        aria-selected="true"
+      >
+        Oil Heating
+      </button>
+      <button
+        class="tab-button py-2 md:px-4 font-bold text-xl md:text-4xl focus:outline-none"
+        data-tab="tab2"
+        aria-selected="false"
+      >
+        Direct Fire Heating
+      </button>
     </div>
+    <div class="py-4 flex justify-center items-center">
+      <!-- First Section -->
+      <div
+        class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT"
+        data-tab-content="tab1"
+      >
+        <div class="w-full">
+          <p class="text-justify">
+            Designed for precise temperature control, the oil heater ensures
+            uniform heat distribution through an efficient thermal oil
+            circulation system. Its heavy-duty construction allows continuous
+            operation, making it suitable for demanding that require consistent
+            performance and energy efficiency.
+          </p>
+        </div><br />
+        <GallerySlider client:only slides={tanksSlides} visibleThumbs={6} />
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div
+            class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
+          >
+            <div class="w-full flex justify-center">
+              <img src={oil1.src} alt="" class="w-4/5 h-4/5 rounded-lg" />
+            </div>
+            <div class="w-full flex justify-between items-center my-auto">
+              <h1 class="text-black text-xl font-semibold">Oil Heater</h1>
+              <ModalButton>
+                <h3 slot="title" class="text-xl md:text-2xl font-semibold">
+                  Oil Heater
+                </h3>
+                <img slot="image" src={oil1.src} alt="custom" />
+                <div slot="content">
+                  <ul class="list-disc pl-5">
+                    <li>Heating capacities: 1,000,000 and 2,400,000 Btu/hr</li>
+                    <li>
+                      High-efficiency 2" diameter coil system inside the asphalt
+                      tank
+                    </li>
+                    <li>
+                      Connections for asphalt tankers with coil heating systems
+                    </li>
+                    <li>Thermally insulated with ceramic fiber</li>
+                    <li>Stainless steel exterior cladding</li>
+                    <li>Equipped with a diesel burner</li>
+                    <li>Automatic on/off control based on temperature</li>
+                    <li>Two operating modes: automatic and manual</li>
+                    <li>
+                      Digital thermometers with programmable setpoint for burner
+                      activation and shutdown
+                    </li>
+                    <li>Siemens PLC-based control system</li>
+                    <li>100-liter (26.4-gallon) thermal oil expansion tank</li>
+                    <li>100% duty cycle for continuous operation</li>
+                    <li>
+                      Integrated safety systems with automatic shutdown in case
+                      of fault
+                    </li>
+                  </ul>
+                </div>
+              </ModalButton>
+            </div>
+          </div>
+          <div
+            class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
+          >
+            <div class="w-full flex justify-center">
+              <img src={hotoil.src} alt="" class="w-full h-4/5 rounded-lg" />
+            </div>
+            <div class="flex justify-between items-center my-auto">
+              <h1 class="text-black text-xl font-semibold">Hot Oil Coils</h1>
+              <ModalButton>
+                <h3 slot="title" class="text-xl md:text-2xl font-semibold">
+                  Hot Oil Coils
+                </h3>
+                <img slot="image" src={hotoil.src} alt="custom" />
+                <div slot="content">
+                  Our asphalt storage tanks are equipped with heating coils that
+                  circulate thermal oil to ensure uniform and efficient asphalt
+                  heating. <br />
+                  This system prevents solidification and maintains the asphalt at
+                  the required temperature for operation. <br />
+                  It delivers reliable performance, reduces energy consumption, and
+                  allows precise temperature control. <br />
+                  The design minimizes wear, extending the tank’s service life while
+                  maintaining optimal asphalt consistency and readiness for use.
+                </div>
+              </ModalButton>
+            </div>
+          </div>
+        </div>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[20%] gap-y-6">
+          <Card>
+            <h3>Precision Temperature Control:</h3>
+            <p class="font-thin">
+              Maintains precise temperature control within a ±1°C tolerance,
+              ensuring optimal conditions for material processing.
+            </p>
+          </Card>
+          <Card>
+            <h3>Customizable Heating Capacity:</h3>
+            <p class="font-thin">
+              Tailored to meet specific project needs, from small-scale
+              operations to large industrial requirements.Tailored to meet
+              specific project needs — from small-scale operations to large
+              industrial requirements.
+            </p>
+          </Card>
+          <Card>
+            <h3>High-Efficiency Burners:</h3>
+            <p class="font-thin">
+              Equipped with low-NOx burners that minimize emissions while
+              maximizing fuel efficiency.
+            </p>
+          </Card>
+          <Card>
+            <h3>Thermal Oil Circulation System:</h3>
+            <p class="font-thin">
+              Ensures uniform heat distribution across throughout the system,
+              preventing hot spots and material degradation.
+            </p>
+          </Card>
+        </div>
+      </div>
+    </div>
+    <!-- Second Section -->
+    <div
+      class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
+      data-tab-content="tab2"
+    >
+      <p class="text-center">
+        Triaso® direct fire heating is designed to heat up the asphalt. A burner
+        is mounted directly beneath the tank, transferring heat through a steel
+        plate into the asphalt. This method provides fast, efficient heating
+        with minimal energy loss.
+      </p>
+      <GallerySlider client:only slides={tanksSlides2} visibleThumbs={4} />
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div
+          class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
+        >
+          <div class="w-full flex justify-center">
+            <img src={bombaCirculacion.src} alt="" class="w-1/2 rounded-lg" />
+          </div>
+          <div class="w-full flex justify-between items-center">
+            <h1 class="text-white text-xl w-1/2 md:text-2xl">
+              Direct Fire Heating Burner
+            </h1>
+            <ModalButton>
+              <h3 slot="title" class="text-xl md:text-2xl">
+                Direct Fire Heating Burner
+              </h3>
+              
+                <img
+                slot="image"
+                src={bombaCirculacion.src}
+                alt="custom"
+                class="w-1/2"
+              />
+           
+              
+              <div slot="content">
+                The direct-fire heating system works with a diesel or a gas
+                burner that radiates heat to a main tube inside the asphalt
+                tank. This tube has two secondary pipes that help distribute the
+                heat more evenly, and the exhaust gases exit through the vapor
+                condensers.
+              </div>
+            </ModalButton>
+          </div>
+        </div>
+        <div
+          class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
+        >
+          <div class="w-full flex justify-center">
+            <img src={hotoil.src} alt="" />
+          </div>
+          <div class="w-full flex justify-between items-center">
+            <h1 class="text-white text-xl w-1/2 md:text-2xl">
+              Vapor condensers
+            </h1>
+            <ModalButton>
+              <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
+              <img slot="image" src={hotoil.src} alt="custom" />
+              <div slot="content">
+                Triaso® vapor condensers are designed to capture and condense
+                asphalt fumes during storage and heating, preventing emissions
+                from escaping into the environment. Installed on the tank’s vent
+                line, they cool down hot vapors into liquid form, reducing odor,
+                improving safety, and ensuring compliance with environmental
+                regulations.
+              </div>
+            </ModalButton>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <style is:global>
   /* Estilos para los tabs activos */
   .tab-button[aria-selected="true"] {
     color: black;
     border-bottom: 2px solid var(--rojo-btn);
   }
-  
+
   .tab-button[aria-selected="false"] {
     color: var(--gris-titulos);
     font-weight: normal;
     border-bottom: 2px solid var(--gris-titulos);
   }
-  
+
   .tab-button:hover:not([aria-selected="true"]) {
     color: black;
     border-bottom: 2px solid var(--rojo-btn);
   }
-  
 </style>
 <script is:inline>
-    (function initTabs() {
-      document.querySelectorAll('section[data-tabs]').forEach(tabSection => {
-        const tabButtons = tabSection.querySelectorAll('.tab-button');
-        const tabContents = tabSection.querySelectorAll('.tab-content');
-    
-        // Ocultar todos menos el primero
-        const selectedTab = tabSection.querySelector('.tab-button[aria-selected="true"]');
-const selectedTabId = selectedTab?.getAttribute('data-tab');
+  (function initTabs() {
+    document.querySelectorAll("section[data-tabs]").forEach((tabSection) => {
+      const tabButtons = tabSection.querySelectorAll(".tab-button");
+      const tabContents = tabSection.querySelectorAll(".tab-content");
 
-tabContents.forEach(content => {
-  const contentTabId = content.getAttribute('data-tab-content');
-  content.classList.toggle('hidden', contentTabId !== selectedTabId);
-});
+      // Ocultar todos menos el primero
+      const selectedTab = tabSection.querySelector(
+        '.tab-button[aria-selected="true"]',
+      );
+      const selectedTabId = selectedTab?.getAttribute("data-tab");
 
-    
-        tabButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            const tabId = button.getAttribute('data-tab');
-    
-            tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
-            button.setAttribute('aria-selected', 'true');
-    
-            tabContents.forEach(content => {
-              content.classList.add('hidden');
-            });
-    
-            const activeContent = tabSection.querySelector(`.tab-content[data-tab-content="${tabId}"]`);
-            if (activeContent) activeContent.classList.remove('hidden');
+      tabContents.forEach((content) => {
+        const contentTabId = content.getAttribute("data-tab-content");
+        content.classList.toggle("hidden", contentTabId !== selectedTabId);
+      });
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const tabId = button.getAttribute("data-tab");
+
+          tabButtons.forEach((btn) =>
+            btn.setAttribute("aria-selected", "false"),
+          );
+          button.setAttribute("aria-selected", "true");
+
+          tabContents.forEach((content) => {
+            content.classList.add("hidden");
           });
+
+          const activeContent = tabSection.querySelector(
+            `.tab-content[data-tab-content="${tabId}"]`,
+          );
+          if (activeContent) activeContent.classList.remove("hidden");
         });
       });
-    })();
-    </script>
-    <script is:inline>
-    const openModalBtn = document.getElementById("openModalBtn");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-    const modalOverlay = document.getElementById("modalOverlay");
-
-    // Abrir modal
-    openModalBtn.addEventListener("click", () => {
-      modalOverlay.classList.remove("hidden");
     });
+  })();
+</script>
+<script is:inline>
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const modalOverlay = document.getElementById("modalOverlay");
 
-    // Cerrar modal
-    closeModalBtn.addEventListener("click", () => {
+  // Abrir modal
+  openModalBtn.addEventListener("click", () => {
+    modalOverlay.classList.remove("hidden");
+  });
+
+  // Cerrar modal
+  closeModalBtn.addEventListener("click", () => {
+    modalOverlay.classList.add("hidden");
+  });
+
+  // Cerrar modal al hacer clic fuera del contenido
+  modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) {
       modalOverlay.classList.add("hidden");
-    });
-
-    // Cerrar modal al hacer clic fuera del contenido
-    modalOverlay.addEventListener("click", (e) => {
-      if (e.target === modalOverlay) {
-        modalOverlay.classList.add("hidden");
-      }
-    });
-  </script>
-    
+    }
+  });
+</script>
