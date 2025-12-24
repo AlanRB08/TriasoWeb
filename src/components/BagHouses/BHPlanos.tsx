@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bgFront from "../../assets/images/BagHouses/BagHousesVS2.png";
-import bgPlanos from "../../assets/images/BagHouses/bagHousesVS2Planos.png"
+import bgFront from "../../assets/images/BagHouses/BagHousesVS2.webp";
+import bgPlanos from "../../assets/images/BagHouses/bagHousesVS2Planos.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 const toggleConfig = [

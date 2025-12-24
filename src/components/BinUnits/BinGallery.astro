@@ -1,156 +1,157 @@
 ---
 import GallerySlider from "../unitComponents/GallerySlider";
+
+import Tred from "../../assets/images/AsphaltStorage/redT.webp";
+import Separator from "../unitComponents/Separator.astro";
+import sideP from "../../assets/images/DrumMixers/sideP.webp";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
+import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
+import BUFeeders from "../../assets/images/BinUnits/BUFeeders.webp";
+import binHigh from "../../assets/images/BinUnits/binHigh.webp";
+import img1 from "../../assets/images/BinUnits/ProvBU5.webp";
+import img2 from "../../assets/images/BinUnits/ProvBU1.webp";
+import img3 from "../../assets/images/BinUnits/ProvBU3.webp";
 const binSlides2 = [
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo con Rap",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.png",
-    caption:
-      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-  },
-  {
-    image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
     image:
-      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.png",
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.webp",
     caption:
       "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/consola.png",
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/consola.webp",
     caption:
       "Consola de control, con computadora plus para planta de asfalto de contraflujo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusA.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusA.webp",
     caption: "Tanque de asfalto de 60,000 lts, plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusB.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusB.webp",
     caption: "Tanque de asfalto de 60,000 lts, plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusC.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusC.webp",
     caption: "Tanque de asfalto de 60,000 lts, plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusD.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusD.webp",
     caption: "Tanque de asfalto de 60,000 lts, plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.webp",
     caption: "Unidad de tolvas triple plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.webp",
     caption: "Unidad de tolvas triple plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.webp",
     caption: "Unidad de tolvas triple plus",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.png",
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.webp",
     caption: "Unidad de tolvas triple plus",
   },
 ];
-import Tred from "../../assets/images/AsphaltStorage/redT.png";
-import Separator from "../unitComponents/Separator.astro";
-import sideP from "../../assets/images/DrumMixers/sideP.webp";
-import LearnBtn from "../unitComponents/LearnBtn.astro";
-import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
-import BUFeeders from "../../assets/images/BinUnits/BUFeeders.jpg";
-import binHigh from "../../assets/images/BinUnits/binHigh.jpg";
-import img1 from "../../assets/images/BinUnits/ProvBU5.jpg";
-import img2 from "../../assets/images/BinUnits/ProvBU1.jpg";
-import img3 from "../../assets/images/BinUnits/ProvBU3.jpeg";
 ---
 
 <div class="w-full flex flex-col justify-center items-center gap-10">
@@ -292,6 +293,6 @@ import img3 from "../../assets/images/BinUnits/ProvBU3.jpeg";
     </div>
   </div>
    <div class="w-full px-8">
-      <GallerySlider slides={binSlides2} visibleThumbs={6} />
+      <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
     </div>
 </div>

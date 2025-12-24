@@ -2,10 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import imgSuperior from "../../assets/images/PowderA/planos/VSuperior.png";
-import imgPlano1 from "../../assets/images/PowderA/planos/BluePrint VS.png";
-import imgPlano2 from "../../assets/images/PowderA/planos/BluePrint VL.png";
-import imgPlano3 from "../../assets/images/PowderA/planos/BluePrint VT.png";
+import imgSuperior from "../../assets/images/PowderA/planos/VSuperior.webp";
+import imgPlano1 from "../../assets/images/PowderA/planos/BluePrint VS.webp";
+import imgPlano2 from "../../assets/images/PowderA/planos/BluePrint VL.webp";
+import imgPlano3 from "../../assets/images/PowderA/planos/BluePrint VT.webp";
 
 const cabinSize = [
   {

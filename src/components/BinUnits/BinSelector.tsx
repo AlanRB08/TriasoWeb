@@ -7,24 +7,24 @@ type PanelType = (typeof panelOptions)[number];
 
 const imageMap: Record<number, Record<PanelType, string>> = {
   2: {
-    aesthetic: "src/assets/images/BinUnits/TlvU2CF.png",
-    without: "src/assets/images/BinUnits/TlvU2SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU2CF.webp",
+    without: "src/assets/images/BinUnits/TlvU2SF.webp",
   },
   3: {
-    aesthetic: "src/assets/images/BinUnits/TlvU3CF.png",
-    without: "src/assets/images/BinUnits/TlvU3SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU3CF.webp",
+    without: "src/assets/images/BinUnits/TlvU3SF.webp",
   },
   4: {
-    aesthetic: "src/assets/images/BinUnits/TlvU4CF.png",
-    without: "src/assets/images/BinUnits/TlvU4SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU4CF.webp",
+    without: "src/assets/images/BinUnits/TlvU4SF.webp",
   },
   5: {
-    aesthetic: "src/assets/images/BinUnits/TlvU5CF.png",
-    without: "src/assets/images/BinUnits/TlvU5SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU5CF.webp",
+    without: "src/assets/images/BinUnits/TlvU5SF.webp",
   },
   6: {
-    aesthetic: "src/assets/images/BinUnits/TlvU6CF.png",
-    without: "src/assets/images/BinUnits/TlvU6SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU6CF.webp",
+    without: "src/assets/images/BinUnits/TlvU6SF.webp",
   },
 };
 
