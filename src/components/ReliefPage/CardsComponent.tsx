@@ -1,6 +1,6 @@
 export default function FeatureCards() {
   return (
-    <section className="w-full bg-black py-24">
+    <section className="w-full bg-[#1e1e1e] py-24">
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
