@@ -3,7 +3,7 @@ export function formatNumber(n: number | string) {
   const num =
     typeof n === "string" ? Number(n.toString().replace(/,/g, "")) : n;
   if (Number.isNaN(num)) return "";
-  return num.toLocaleString("es-MX", { maximumFractionDigits: 2 });
+  return num.toLocaleString("en-US", { maximumFractionDigits: 2 });
 }
 
 export function parseNumber(v: string | number) {
@@ -41,9 +41,9 @@ export function formatCurrency(n: number | string) {
   
   if (Number.isNaN(num)) return "$0.00";
 
-  return num.toLocaleString("es-MX", {
+  return num.toLocaleString("es-US", {
     style: "currency",
-    currency: "MXN",
+    currency: "USD",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
