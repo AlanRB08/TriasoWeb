@@ -1,0 +1,16 @@
+---
+import ReliefFirstSection from "../components/ReliefPage/ReliefFirstSection";
+import RelifSecondSection from "../components/ReliefPage/RelifSecondSection";
+import ReliefThirdSection from "../components/ReliefPage/ReliefThirdSection";
+import ReliefFourthSection from "../components/ReliefPage/ReliefFourthSection";
+import ReliefLastSection from "../components/ReliefPage/ReliefLastSection";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Triaso Relief System">
+    <ReliefFirstSection client:only />
+    <RelifSecondSection client:only />
+    <ReliefThirdSection client:only/>
+    <ReliefFourthSection client:only/>
+    <ReliefLastSection/>
+</Layout>

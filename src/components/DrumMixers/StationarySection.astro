@@ -5,10 +5,10 @@ import rap from "../../assets/images/DrumMixers/rap.webp";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import Separator from "../unitComponents/SeparatorBlue.astro";
 import sideP from "../../assets/images/DrumMixers/sideP.webp";
-import drumTires from "../../assets/images/DrumMixers/drumtires.jpeg";
+import drumTires from "../../assets/images/DrumMixers/drumtires.webp";
 import Image from "astro/components/Image.astro";
-import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
-import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
+import rapEntry from "../../assets/images/DrumMixers/a21.webp";
+import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -37,9 +37,11 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
         <div
             class="grid grid-cols-1 md:grid-cols-2 justify-between items-center w-full text-white max-w-7xl px-8 mx-auto z-20 gap-10 md:gap-20"
         >
-            <div class="flex flex-col items-center justidy-center py-6">
-                <img src={trunnionImage.src} alt="Trunnions" class="w-full h-[300px]" />
-                <h2 class="w-full text-start text-xl md:text-2xl">
+            <div
+                class="flex flex-col items-center justify-center lg:pt-5 md:pt-5"
+            >
+                <img src={trunnionImage.src} alt="Trunnions" class="w-full" />
+                <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     TRUNNIONS
                 </h2><br />
                 <p>
@@ -48,9 +50,11 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                     rotation.
                 </p>
             </div>
-            <div class="flex flex-col items-center justidy-center py-6">
-                <img src={drumTires.src} alt="" class="w-full h-[300px]" />
-                <h2 class="w-full text-start text-xl md:text-2xl">
+            <div
+                class="flex flex-col items-center justify-center lg:pt-5 md:pt-5"
+            >
+                <img src={drumTires.src} alt="" class="w-full" />
+                <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     DRUM TIRES
                 </h2><br />
                 <p>
@@ -59,11 +63,37 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                 </p>
             </div>
         </div>
+
+        <div class="max-w-7xl mx-auto px-8 pt-8">
+            <div class="space-y-5">
+                <h1 class="font-bold text-xl lg:text-3xl md:text-2xl uppercase">
+                    Variable-Speed Rotation Drives
+                </h1>
+                <h2 class="font-bold uppercase text-md lg:text-xl md:text-xl">
+                    For Drum Rotation Systems for High-RAP Incorporation
+                </h2>
+            </div>
+            <div class="space-y-5 pt-5">
+                <p class="font-normal">
+                    Our latest innovation for high-RAP incorporation is the use
+                    of Variable-Speed Rotation Drives for Drum Rotation Systems.
+                    According to our investigation and multiple field studies,
+                    RAP quality is directly affected by its heating exposure
+                    time inside the drum, which allows the RAP binder to fully
+                    blend and incorporate with the virgin aggregates.
+                </p>
+                <p class="font-bold">
+                    This exposure time must be adjusted according to the RAP
+                    percentage in the mix.
+                </p>
+            </div>
+        </div>
+
         <div class="w-full bg-gradient-to-b from-[#2b2b2b] to-[#727272] py-16">
             <div
                 class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
             >
-                <div class="w-full flex justify-center">
+                <div class="w-full flex justify-center items-center mx-auto">
                     <img src={rap.src} alt="Rap System" class="w-2/5" />
                 </div>
 
@@ -88,7 +118,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                         <p
                             class="font-thin text-base text-center md:text-start lg:text-lg"
                         >
-                            of recycled asphalt pavement
+                            of reclaimed asphalt pavement
                         </p>
                     </div>
 
@@ -96,7 +126,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                         class="font-thin text-base text-center md:text-start lg:text-lg text-gray-200 mt-2 leading-relaxed"
                     >
                         The drum collar is engineered to provide the controlled
-                        and efficient entry of Recycled Asphalt Pavement (RAP)
+                        and efficient entry of Reclaimed Asphalt Pavement (RAP)
                         into the mixing zone. Fed directly from the RAP bin via
                         a dedicated conveyor, the material enters the drum
                         smoothly and uniformly.
@@ -135,7 +165,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
             style="max-height: 0"
         >
             <div
-                class="text-white max-w-7xl px-8 mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light"
+                class="text-white max-w-7xl mx-auto list-inside md:mb-0 md:opacity-100 my-10 text-base md:text-lg font-light"
             >
                 <p>
                     Strategically positioned, the collar introduces RAP
@@ -202,12 +232,16 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                     RAP is introduced through a collar located at an
                     intermediate point of the drum, before the mixing zone. From
                     this point on, the material never comes into direct contact
-                    with the burner flame.
+                    with the burner flame. Unlike other zones in the drum mixer,
+                    this section has no veiling flights..
                 </p>
                 <p class="text-base font-thin md:text-lg mt-10">
-                    The dedicated RAP flight are engineered to provide balanced
-                    heat distribution, smooth material flow, and reduced blue
-                    smoke or buildup.
+                    The dedicated entry flights are used to gently introduce RAP
+                    into the hot aggregate stream. The design allows uniform
+                    drying, optimizing heat transfer and controlled binder
+                    softening for high quality incorporation with virgin
+                    aggregates, while minimizing blue smoke and preventing
+                    material buildup.
                 </p>
             </div>
         </div>
@@ -232,8 +266,10 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
         </p>
     </div>
 
-    <div class="flex justify-center">
-        <LearnBtn />
+    <div class="flex justify-center pt-5">
+        <div>
+            <button class="bg-white font-normal border-2 border-[#14427c] rounded-3xl p-2 text-[#14427c] hover:text-white hover:bg-[#14427c] transition-all duration-300 ease-out transform hover:scale-110 ">Learn more about RAP</button>
+        </div>
     </div>
 
     <div class="max-w-7xl px-8 mx-auto text-2xl md:text-4xl font-bold my-10">
@@ -305,21 +341,6 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.jpeg"
                 }
             });
         }
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) {
-                        dropdown.style.maxHeight = "0px";
-                        arrow.style.transform = "rotate(0deg)";
-                        window.dispatchEvent(new Event("layoutChange"));
-                    }
-                });
-            },
-            {
-                threshold: 0, 
-            },
-        );
-        observer.observe(button);
     });
 </script>
 <style>

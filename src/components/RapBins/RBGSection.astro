@@ -1,32 +1,30 @@
 ---
 import GallerySlider from "../unitComponents/GallerySlider";
-import TRed from '../../assets/images/AsphaltStorage/redT.png';
+import TRed from '../../assets/images/AsphaltStorage/redT.webp';
 const RBImages = [
   {
-    image: 'src/assets/images/RapBins/Gallery/RBG1.png',
+    image: 'src/assets/images/RapBins/Gallery/RBG1.webp',
     caption: 'RAP single Bin',
   },
   {
-    image: 'src/assets/images/RapBins/Gallery/RBG2.png',
+    image: 'src/assets/images/RapBins/Gallery/RBG2.webp',
     caption: 'RAP single Bin',
   },
   {
-    image: 'src/assets/images/RapBins/Gallery/RBG3.png',
+    image: 'src/assets/images/RapBins/Gallery/RBG3.webp',
     caption: 'RAP single Bin',
   },
   {
-    image: 'src/assets/images/RapBins/Gallery/RBG4.png',
+    image: 'src/assets/images/RapBins/Gallery/RBG4.webp',
     caption: 'Drum mixer, 110-150 Tph, counter-flow, with pugmill, in working position with RAP Bin',
   }
 ];
 ---
 
 <section class="w-full font-bold text-grisT">
-    <div class="w-full mt-10 pb-10">
+    <div class="w-full mt-10 pb-10 px-8">
         <div class="z-50">
             <GallerySlider client:only slides={RBImages} visibleThumbs={3}/>
-        </div>
-        <img src={TRed.src} alt="" class="relative bottom-0 right-72 w-[300px] z-10">
-        
+        </div>        
     </div>
 </section>

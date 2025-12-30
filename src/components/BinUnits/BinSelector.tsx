@@ -7,24 +7,24 @@ type PanelType = (typeof panelOptions)[number];
 
 const imageMap: Record<number, Record<PanelType, string>> = {
   2: {
-    aesthetic: "src/assets/images/BinUnits/TlvU2CF.png",
-    without: "src/assets/images/BinUnits/TlvU2SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU2CF.webp",
+    without: "src/assets/images/BinUnits/TlvU2SF.webp",
   },
   3: {
-    aesthetic: "src/assets/images/BinUnits/TlvU3CF.png",
-    without: "src/assets/images/BinUnits/TlvU3SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU3CF.webp",
+    without: "src/assets/images/BinUnits/TlvU3SF.webp",
   },
   4: {
-    aesthetic: "src/assets/images/BinUnits/TlvU4CF.png",
-    without: "src/assets/images/BinUnits/TlvU4SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU4CF.webp",
+    without: "src/assets/images/BinUnits/TlvU4SF.webp",
   },
   5: {
-    aesthetic: "src/assets/images/BinUnits/TlvU5CF.png",
-    without: "src/assets/images/BinUnits/TlvU5SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU5CF.webp",
+    without: "src/assets/images/BinUnits/TlvU5SF.webp",
   },
   6: {
-    aesthetic: "src/assets/images/BinUnits/TlvU6CF.png",
-    without: "src/assets/images/BinUnits/TlvU6SF.png",
+    aesthetic: "src/assets/images/BinUnits/TlvU6CF.webp",
+    without: "src/assets/images/BinUnits/TlvU6SF.webp",
   },
 };
 
@@ -67,21 +67,24 @@ export default function BinSelector() {
             className="w-full max-w-[500px] sm:max-w-[700px] md:max-w-[1100px]"
           />
         </div>
-
-        <div className="flex flex-wrap bg-white rounded-2xl py-3 px-4 justify-center items-center gap-2">
-          <p className="font-bold text-sm sm:text-base md:text-lg py-2">Bin units:</p>
-
-          {binOptions.map((num) => (
-            <button
-              key={num}
-              onClick={() => setSelectedBins(num)}
-              className={`px-4 py-2 text-sm sm:text-base md:text-lg font-bold rounded-full
+        <div className="flex flex-col bg-white rounded-2xl py-3 px-4 justify-center items-center gap-2">
+          <div>
+            <p className="font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
+          </div>
+          <div>
+            {binOptions.map((num) => (
+              <button
+                key={num}
+                onClick={() => setSelectedBins(num)}
+                className={`px-4 py-2 text-sm sm:text-base md:text-lg font-bold rounded-full
                 ${selectedBins === num ? "bg-blueMain text-white" : "bg-white text-black"}
               `}
-            >
-              {num}
-            </button>
-          ))}
+              >
+                {num}
+              </button>
+            ))}
+          </div>
+
         </div>
 
       </div>

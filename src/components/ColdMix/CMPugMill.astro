@@ -6,8 +6,8 @@ import GallerySlider from "../unitComponents/GallerySlider";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import AcordeonItem from "../unitComponents/AcordeonItem";
 import img6 from "../../assets/images/AsphaltPlant/elevator1.webp";
-import binUnit1 from "../../assets/images/BinUnits/binUnit1.png";
-import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import binUnit1 from "../../assets/images/BinUnits/binUnit1.webp";
+import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import PGMC from "../../assets/images/ColdMix/PGMC.mp4";
 import CMHigh from "../../assets/images/ColdMix/CMHigh.jpg";
 import PlaMFDscC1 from "../../assets/images/ColdMix/PlaMFDscC1.png";
@@ -68,7 +68,7 @@ const binSlides = [
     >
         <div slot="left" class="flex flex-col justify-center gap-3">
             <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
-            <p class="text-base md:text-lg">
+            <p class="text-sm md:text-lg">
                 Our cold mix asphalt plants offer a wide range of optional
                 features as flow detectors for precise monitoring, and vibrators
                 to ensure smooth material flow. Customizable with bin dividers,
@@ -269,5 +269,11 @@ const binSlides = [
             </p>
         </div>
     </div>
-    <GallerySlider slides={binSlides} visibleThumbs={6} client:only />
+    <div>
+        
+    </div>
+    <div class="px-8">
+      <GallerySlider slides={binSlides} visibleThumbs={6} client:only />  
+    </div>
+    
 </div>

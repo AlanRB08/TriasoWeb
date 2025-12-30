@@ -1,29 +1,29 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HMainS1 from "../../assets/images/HotMix/Silo50-Comp.Assy-R.png";
-import HMainBS1 from "../../assets/images/HotMix/Silo50-Comp.Assy.png";
-import HLeftBS1 from "../../assets/images/HotMix/Silosf50-1.png";
+import HMainS1 from "../../assets/images/HotMix/Silo50-Comp.Assy-R.webp";
+import HMainBS1 from "../../assets/images/HotMix/Silo50-Comp.Assy.webp";
+import HLeftBS1 from "../../assets/images/HotMix/Silosf50-1.webp";
 import HRightBS1 from "../../assets/images/HotMix/Silosf50-3.png";
-import HRL50 from "../../assets/images/HotMix/Silo-SF50TBpL.png";
-import HRL100 from "../../assets/images/HotMix/Silo-SF100TBpL.png";
-import HRL150 from "../../assets/images/HotMix/Silo-SF150TBpL.png";
-import HRL200 from "../../assets/images/HotMix/Silo-SF200TBpL.png";
-import HRR50 from "../../assets/images/HotMix/Silo-SF50TBpFn.png";
-import HRR100 from "../../assets/images/HotMix/Silo-SF100TBpFn.png";
-import HRR150 from "../../assets/images/HotMix/Silo-SF150TBpFn.png";
-import HRR200 from "../../assets/images/HotMix/Silo-SF200TBpFn.png";
+import HRL50 from "../../assets/images/HotMix/Silo-SF50TBpL.webp";
+import HRL100 from "../../assets/images/HotMix/Silo-SF100TBpL.webp";
+import HRL150 from "../../assets/images/HotMix/Silo-SF150TBpL.webp";
+import HRL200 from "../../assets/images/HotMix/Silo-SF200TBpL.webp";
+import HRR50 from "../../assets/images/HotMix/Silo-SF50TBpFn.webp";
+import HRR100 from "../../assets/images/HotMix/Silo-SF100TBpFn.webp";
+import HRR150 from "../../assets/images/HotMix/Silo-SF150TBpFn.webp";
+import HRR200 from "../../assets/images/HotMix/Silo-SF200TBpFn.webp";
 import HLeftBS2 from "../../assets/images/HotMix/Siloae100-1.png";
 import HRightBS2 from "../../assets/images/HotMix/Siloae100-3.png";
-import HMainBS2 from "../../assets/images/HotMix/Siloae100-2.png";
-import HMainBR1 from "../../assets/images/HotMix/Silo-SF50TBpS.png";
-import HMainBR2 from "../../assets/images/HotMix/Silo-SF100TBpS.png";
-import HMainBR3 from "../../assets/images/HotMix/Silo-SF150TBpS.png";
-import HMainBR4 from "../../assets/images/HotMix/Silo-SF200TBpS.png";
-import HML50 from "../../assets/images/HotMix/50L.png";
-import HMR50 from "../../assets/images/HotMix/50R.png";
-import HML100 from "../../assets/images/HotMix/100L.png";
-import HMR100 from "../../assets/images/HotMix/100R.png";
+import HMainBS2 from "../../assets/images/HotMix/Siloae100-2.webp";
+import HMainBR1 from "../../assets/images/HotMix/Silo-SF50TBpS.webp";
+import HMainBR2 from "../../assets/images/HotMix/Silo-SF100TBpS.webp";
+import HMainBR3 from "../../assets/images/HotMix/Silo-SF150TBpS.webp";
+import HMainBR4 from "../../assets/images/HotMix/Silo-SF200TBpS.webp";
+import HML50 from "../../assets/images/HotMix/50L.webp";
+import HMR50 from "../../assets/images/HotMix/50R.webp";
+import HML100 from "../../assets/images/HotMix/100L.webp";
+import HMR100 from "../../assets/images/HotMix/100R.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 const slatConveyor = {
@@ -202,8 +202,8 @@ const HotMixPlanos = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
   };
-  
- const scrollTrigRef = useRef<any>(null);
+
+  const scrollTrigRef = useRef<any>(null);
   const observerRef = useRef<MutationObserver | null>(null);
   const recreateTimerRef = useRef<number | null>(null);
 
@@ -219,8 +219,8 @@ const HotMixPlanos = () => {
 
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current; 
-    const clipTarget = clipTargetRef.current; 
+    const target = nextSectionRef.current;
+    const clipTarget = clipTargetRef.current;
     const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
@@ -422,9 +422,8 @@ const HotMixPlanos = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -449,52 +448,55 @@ const HotMixPlanos = () => {
             <h1 className="text-white lg:text-xl text-lg text-center mb-10">
               PRODUCTION CAPACITY:
             </h1>
-            <div className="version-selector flex gap-3 md:gap-10 justify-center mb-6">
-              <button
-                onClick={() => setActiveVersion("50tons")}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeVersion === "50tons"
+            <div className="flex flex-col lg:flex-row md:flex-row lg:justify-center md:justify-center items-center gap-8">
+              <div className="version-selector grid grid-cols-2 gap-3 lg:flex md:flex md:gap-8 md:justify-center mb-6">
+                <button
+                  onClick={() => setActiveVersion("50tons")}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "50tons"
                     ? "text-black bg-white border-white"
                     : "text-white bg-transparent border-white"
-                }`}
-              >
-                50 tons
-              </button>
-              <button
-                onClick={() => setActiveVersion("100tons")}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeVersion === "100tons"
+                    }`}
+                >
+                  50 tons
+                </button>
+
+                <button
+                  onClick={() => setActiveVersion("100tons")}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "100tons"
                     ? "text-black bg-white border-white"
                     : "text-white bg-transparent border-white"
-                }`}
-              >
-                100 tons
-              </button>
+                    }`}
+                >
+                  100 tons
+                </button>
+
+              </div>
               {activeTab === 2 && (
-                <div className="">
+                <div className="grid grid-cols-2 gap-3 justify-center lg:flex md:flex md:gap-6 md:col-span-2 pb-5">
                   <button
                     onClick={() => setActiveVersion("150tons")}
-                    className={`px-4 py-2 text-sm mr-3 md:mr-6 font-medium border rounded-full transition-all duration-300 ${
-                      activeVersion === "150tons"
-                        ? "text-black bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "150tons"
+                      ? "text-black bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                      }`}
                   >
                     150 tons
                   </button>
+
                   <button
                     onClick={() => setActiveVersion("200tons")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                      activeVersion === "200tons"
-                        ? "text-black bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "200tons"
+                      ? "text-black bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                      }`}
                   >
                     200 tons
                   </button>
                 </div>
               )}
             </div>
+
+
 
             <h1 className="text-white lg:text-xl text-lg text-center mb-10">
               OPTIONS:
@@ -506,11 +508,10 @@ const HotMixPlanos = () => {
                   setActiveVersion("50tons");
                   setActiveTab(1);
                 }}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeTab === 1
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 1
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 Self-erecting
               </button>
@@ -518,11 +519,10 @@ const HotMixPlanos = () => {
               {/* Botón 2 */}
               <button
                 onClick={() => setActiveTab(2)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                  activeTab === 2
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                }`}
+                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 2
+                  ? "text-gray-900 bg-white border-white"
+                  : "text-white bg-transparent border-white"
+                  }`}
               >
                 Relocatable Silo
               </button>
@@ -565,9 +565,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -580,11 +579,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-4 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-4 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -631,9 +629,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -646,11 +643,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Top inlet with rubber seal and rain cover</li>
                         <li>1 m³ batch discharge chamber</li>
@@ -680,9 +676,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -695,11 +690,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Industrial-grade motors and components</li>
                         <li>Simple wiring system for easy maintenance</li>
@@ -750,9 +744,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -765,11 +758,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -816,9 +808,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -831,11 +822,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -879,9 +869,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -894,11 +883,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -935,12 +923,11 @@ const HotMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1007,12 +994,11 @@ const HotMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1064,12 +1050,11 @@ const HotMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1134,9 +1119,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1149,34 +1133,31 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1211,9 +1192,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1226,64 +1206,59 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including transport skid):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Chassis length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.chasisLenght?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.chasisLenght?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.chasisLenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.chasisLenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Transportation width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.transporWidth?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.transporWidth?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.transporWidth ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.transporWidth ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1298,12 +1273,11 @@ const HotMixPlanos = () => {
                         <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1326,27 +1300,25 @@ const HotMixPlanos = () => {
                         <h1>Truck height dischange:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.truckHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.truckHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.truckHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.truckHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height (heighest point):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1375,9 +1347,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1390,11 +1361,10 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 gap-6 lg:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C5_1
-                          ? "max-h-[600px] opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100`}
+                      className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 gap-6 lg:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1
+                        ? "max-h-[600px] opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100`}
                     >
                       <div className="text-white font-normal col-span-1">
                         <div className="flex justify-between">
@@ -1403,8 +1373,8 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -1413,20 +1383,19 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Height (erected):</h1>
                           <p>
                             {unit === "metric"
-                              ? `${
-                                  slatConveyor.heightErec?.toFixed(1) ?? ""
-                                } cm`
+                              ? `${slatConveyor.heightErec?.toFixed(1) ?? ""
+                              } cm`
                               : `${(
-                                  (slatConveyor.heightErec ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.heightErec ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -1435,20 +1404,19 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.chain?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.chain ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.chain ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Height (discharge height):</h1>
                           <p>
                             {unit === "metric"
-                              ? `${
-                                  slatConveyor.heightDischarge?.toFixed(1) ?? ""
-                                } cm`
+                              ? `${slatConveyor.heightDischarge?.toFixed(1) ?? ""
+                              } cm`
                               : `${(
-                                  (slatConveyor.heightDischarge ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.heightDischarge ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -1533,9 +1501,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1548,11 +1515,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-4 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-4 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -1599,9 +1565,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1614,11 +1579,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Top inlet with rubber seal and rain cover</li>
                         <li>1 m³ batch discharge chamber</li>
@@ -1648,9 +1612,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1663,11 +1626,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Industrial-grade motors and components</li>
                         <li>Simple wiring system for easy maintenance</li>
@@ -1714,9 +1676,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1729,11 +1690,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -1780,9 +1740,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1795,11 +1754,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>
@@ -1843,9 +1801,8 @@ const HotMixPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C3_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1858,11 +1815,10 @@ const HotMixPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C3_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -1899,12 +1855,11 @@ const HotMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1963,12 +1918,11 @@ const HotMixPlanos = () => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -2020,12 +1974,11 @@ const HotMixPlanos = () => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2082,9 +2035,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2097,34 +2049,31 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2159,9 +2108,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2174,64 +2122,59 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including transport skid):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Chassis length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.chasisLenght?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.chasisLenght?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.chasisLenght ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.chasisLenght ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Transportation width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.transporWidth?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.transporWidth?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.transporWidth ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.transporWidth ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2246,12 +2189,11 @@ const HotMixPlanos = () => {
                         <h1>Fifth-wheel hitch height(if pre-mounted):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2274,27 +2216,25 @@ const HotMixPlanos = () => {
                         <h1>Truck height dischange:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.truckHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.truckHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.truckHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.truckHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height (heighest point):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2323,9 +2263,8 @@ const HotMixPlanos = () => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C5_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C5_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2338,11 +2277,10 @@ const HotMixPlanos = () => {
                       </button>
                     </div>
                     <div
-                      className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 gap-6 lg:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C5_1
-                          ? "max-h-[600px] opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100`}
+                      className={`text-sm lg:text-base grid grid-cols-1 md:grid-cols-3 justify-center w-full gap-3 gap-6 lg:gap-20 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C5_1
+                        ? "max-h-[600px] opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100`}
                     >
                       <div className="text-white font-normal col-span-1">
                         <div className="flex justify-between">
@@ -2351,8 +2289,8 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.length?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.length ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -2361,20 +2299,19 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.width?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.width ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Height (erected):</h1>
                           <p>
                             {unit === "metric"
-                              ? `${
-                                  slatConveyor.heightErec?.toFixed(1) ?? ""
-                                } cm`
+                              ? `${slatConveyor.heightErec?.toFixed(1) ?? ""
+                              } cm`
                               : `${(
-                                  (slatConveyor.heightErec ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.heightErec ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
@@ -2383,20 +2320,19 @@ const HotMixPlanos = () => {
                             {unit === "metric"
                               ? `${slatConveyor.chain?.toFixed(1) ?? ""} cm`
                               : `${(
-                                  (slatConveyor.chain ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.chain ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">
                           <h1>Height (discharge height):</h1>
                           <p>
                             {unit === "metric"
-                              ? `${
-                                  slatConveyor.heightDischarge?.toFixed(1) ?? ""
-                                } cm`
+                              ? `${slatConveyor.heightDischarge?.toFixed(1) ?? ""
+                              } cm`
                               : `${(
-                                  (slatConveyor.heightDischarge ?? 0) * cmToFeet
-                                ).toFixed(1)} ft`}
+                                (slatConveyor.heightDischarge ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
                           </p>
                         </div>
                         <div className="flex justify-between">

@@ -9,32 +9,32 @@ import render5 from "../../assets/images/AsphaltPlant/render5.webp";
 import obracivil from "../../assets/images/DrumMixers/obracivil.webp";
 import obracivil2 from "../../assets/images/DrumMixers/obracivil2.webp";
 import Image from "astro/components/Image.astro";
-import Tred from "../../assets/images/AsphaltStorage/redT.png";
+import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import img6 from "../../assets/images/DrumMixers/2.png";
 import Video1 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import OSection from "../unitComponents/OSection.astro";
 import flag from "../../assets/images/Burners/flag.svg";
-import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
+import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold mt-10">
-    <div class="max-w-7xl px-8 mx-auto">
+    <div class="max-w-7xl px-8 lg:mb-20 mx-auto">
         <h1 class="text-redBg text-xl md:text-3xl text-center">
             The One and Always
-        </h1><br />
+        </h1>
     </div>
-    <div class="max-w-7xl px-8 mx-auto">
-        <img src={obracivil.src} alt="" class="rounded-lg w-3/5" />
+    <div class="max-w-7xl px-8 mx-auto flex justify-center">
+        <img src={obracivil.src} alt="" class="hero-img lg:w-4/5 rounded-lg" />
     </div>
     <div
-        class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row my-10 items-center gap-6"
+        class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
     >
-        <div class="w-full">
+        <div class="w-full mt-10">
             <h2 class="text-black text-lg md:text-xl">
                 Engineered for Demanding Producers. Built for Performance.
-            </h2><br />
+            </h2>
             <p class="text-grisT text-base md:text-lg text-justify">
                 At Triaso, we know that no two asphalt operations are alike.
                 That’s why our plants are precision-engineered to match each
@@ -43,20 +43,49 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                 efficiency and safety, every component serves a defined purpose.
                 <br /><br />
                 With a range of capacities and fully customizable features, our plants
-                adapt to your operation—not the other way around. Whether you're
-                expanding capacity or optimizing your process, Triaso delivers the
-                flexibility, performance, and reliability you need to stay ahead
-                in a competitive market.
+                adapt to your operation—not the other way around. Whether you're expanding
+                capacity or optimizing your process, Triaso delivers the flexibility,
+                performance, and reliability you need to stay ahead in a competitive
+                market.
             </p>
         </div>
-        <div>
-            <img src={obracivil2.src} alt="" class="rounded-2xl" />
+
+        <div class="w-full hidden lg:flex md:w-auto">
+            <img
+                src={obracivil2.src}
+                alt=""
+                class="side-img rounded-2xl will-change-transform"
+            />
         </div>
     </div>
-    <div class="max-w-7xl px-8 mx-auto">
-        <img src={DMProv1.src} alt="" class="rounded-lg w-3/5" />
+
+    <div
+        class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
+    >
+        <img
+            src={DMProv1.src}
+            alt=""
+            class="fade-img rounded-lg lg:w-3/5 will-change-transform"
+        />
     </div>
-    <div class="max-w-7xl px-8 mx-auto flex flex-col gap-3 my-10">
+
+    <div class="relative flex flex-col lg:hidden">
+        <img
+            src={obracivil2.src}
+            alt=""
+            class="rounded-2xl w-[40%] translate-x-[240px] translate-y-14"
+        />
+
+        <img
+            src={DMProv1.src}
+            alt=""
+            class="absolute top-0 left-0 w-2/3 rounded-lg -translate-x-1 translate-y-2 shadow-lg"
+        />
+    </div>
+
+    <div
+        class="max-w-7xl px-8 mx-auto flex flex-col gap-3 mb-10 mt-20 lg:mt-10"
+    >
         <h2 class="text-blueMain text-3xl lg:text-4xl text-center px-8">
             Precision where it matters.
         </h2>
@@ -78,7 +107,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
         </h2>
         <div class="z-20">
             <div class="w-full flex justify-center">
-                <video src={Video1} autoplay muted playsinline class="w-3/5"
+                <video src={Video1} autoplay muted playsinline class="lg:w-3/5"
                 ></video>
             </div>
             <p class="text-grisT text-justify text-base md:text-lg mt-6">
@@ -113,7 +142,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                 </div>
                 <div class="flex flex-col col-span-3 items-center gap-10">
                     <div
-                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center"
+                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start lg:p-4 md:p-4 justify-center"
                     >
                         <h1 class="text-black mb-4">Chain with a 4” pitch</h1>
                         <p class="text-grisT text-base lg:text-lg">
@@ -124,12 +153,12 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                                 With a tensile strength of 50,000 lbs (22,700
                                 kg) and floating-type chain</span
                             >
-                            guides to prevent jams, ensuring smooth and reliable
-                            performance, durability, efficiency, and minimal maintenance.
+                            guides to prevent jams, ensuring smooth and reliable performance,
+                            durability, efficiency, and minimal maintenance.
                         </p>
                     </div>
                     <div
-                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start p-4 justify-center"
+                        class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start lg:p-4 md:p-4 justify-center"
                     >
                         <h1 class="text-black mb-4">Self-aligning bearings</h1>
                         <p class="text-grisT text-base lg:text-lg">
@@ -146,7 +175,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                 class="flex flex-col justify-center items-center gap-4 mt-10 h-full"
             >
                 <div
-                    class="grid grid-cols-2 justify-center items-start gap-10 md:gap-20"
+                    class="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 justify-center items-start gap-10 md:gap-20"
                 >
                     <div
                         class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
@@ -158,15 +187,18 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                         <h2>of material.</h2>
                     </div>
                     <div
-                        class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                        class="grid grid-cols-2 gap-5 pt-5 lg:pt-0 md:pt-0 lg:gap-0 md:gap-0 lg:flex lg:flex-col md:flex md:flex-col items-start justify-center text-grisT md:text-lg text-base"
                     >
-                        <h1 class="text-black text-lg md:text-2xl">
-                            Automatic opening
-                        </h1>
-                        <h2>controlled by variables such as</h2>
-                        <h1 class="text-black text-lg md:text-2xl">
-                            time or weight.
-                        </h1>
+                        <div>
+                            <h1 class="text-black text-lg md:text-2xl">
+                                Automatic opening
+                            </h1>
+                            <h2>controlled by variables such as</h2>
+                            <h1 class="text-black text-lg md:text-2xl">
+                                time or weight.
+                            </h1>
+                        </div>
+
                         <div
                             class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
                         >
@@ -200,7 +232,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                             </h2>
                         </div>
                         <div
-                            class="flex flex-col items-start justify-center text-grisT md:text-lg text-base"
+                            class="flex flex-col col-span-2 items-start justify-center text-grisT md:text-lg text-base"
                         >
                             <h1 class="text-black text-lg md:text-2xl">
                                 7.5 Hp air <br />compressor with a 293-liter air
@@ -245,7 +277,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
         With Triaso, Become the Exclusive Provider of Hot Mix <br /> for All Paving
         Projects in Your Region
     </h2>
-    <Image src={img3} alt="" class="mt-10 max-w-7xl px-8 mx-auto" />
+    <Image src={img3} alt="" class="mt-10" />
     <OSection />
     <div>
         <h2 class="text-2xl md:text-3xl text-center text-redBg mt-10">
@@ -304,9 +336,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                 </div>
                 <div class="w-full">
                     <p class="text-base md:text-lg text-grisT font-light">
-                        The Triaso® drum is fully sealed at both ends with
-                        extra reinforcement to maintain internal temperatures
-                        and maximize combustion efficiency. Heavy-duty steel and
+                        The Triaso® drum is fully sealed at both ends with extra
+                        reinforcement to maintain internal temperatures and
+                        maximize combustion efficiency. Heavy-duty steel and
                         EPDM rubber seals prevent the entry of cold air,
                         improving fuel economy and ensuring consistent,
                         high-quality asphalt mixes. The entire drum is sealed to
@@ -373,13 +405,22 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
                 <div class="w-full flex justify-center">
                     <img src={item4.src} alt="" class="rounded-lg w-3/4" />
                 </div>
-                <div class="w-full">
+                <div class="w-full space-y-3">
                     <p class="text-base md:text-lg text-grisT font-light">
                         At the heart of all our drum mixers is a heavy-duty
                         trunnion drive system. Each drum is powered by two
                         high-efficiency electric motors, providing full control
                         of the rotation system to optimize the behavior of the
                         virgin aggregate curtain.
+                    </p>
+                    <p class="text-base md:text-lg text-grisT font-light">
+                        This drum rotation system is controlled by a
+                        Variable-Speed Rotation Drive, which allows precise
+                        control of RAP residence time inside the drum. The
+                        heating exposure time directly affects RAP binder
+                        softening and its ability to fully blend and incorporate
+                        with virgin aggregates. This exposure time must be
+                        adjusted according to the RAP percentage in the mix.
                     </p>
                 </div>
             </div>
@@ -436,3 +477,13 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.jpeg";
         </AcordeonItemCol>
     </div>
 </div>
+
+<script>
+    import { initScrollAnimations } from "../../components/DrumMixers/scrollAnimations";
+
+    if (typeof window !== "undefined") {
+        window.addEventListener("DOMContentLoaded", () => {
+            initScrollAnimations();
+        });
+    }
+</script>

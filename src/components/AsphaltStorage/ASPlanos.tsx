@@ -5,18 +5,18 @@ import tolva3L1 from "../../assets/images/BinUnits/tolva3L1.png";
 import tolva1F from "../../assets/images/BinUnits/tolva1F.png";
 import tolva3L2 from "../../assets/images/BinUnits/tolva3L2.png";
 
-import ATMain from "../../assets/images/AsphaltStorage/ATMain.png";
-import ATR1 from "../../assets/images/AsphaltStorage/ATR1.png";
-import ATR2 from "../../assets/images/AsphaltStorage/ATR2.png";
-import ATR3 from "../../assets/images/AsphaltStorage/ATR3.png";
-import ATR4 from "../../assets/images/AsphaltStorage/ATR4.png";
-import ATR5 from "../../assets/images/AsphaltStorage/ATR5.png";
-import ATL1 from "../../assets/images/AsphaltStorage/ATL1.png";
-import AS12 from "../../assets/images/AsphaltStorage/AS12.png";
-import AS15 from "../../assets/images/AsphaltStorage/AS15.png";
-import AS20 from "../../assets/images/AsphaltStorage/AS20.png";
-import AS25 from "../../assets/images/AsphaltStorage/AS25.png";
-import AS30 from "../../assets/images/AsphaltStorage/AS30.png";
+import ATMain from "../../assets/images/AsphaltStorage/ATMain.webp";
+import ATR1 from "../../assets/images/AsphaltStorage/ATR1.webp";
+import ATR2 from "../../assets/images/AsphaltStorage/ATR2.webp";
+import ATR3 from "../../assets/images/AsphaltStorage/ATR3.webp";
+import ATR4 from "../../assets/images/AsphaltStorage/ATR4.webp";
+import ATR5 from "../../assets/images/AsphaltStorage/ATR5.webp";
+import ATL1 from "../../assets/images/AsphaltStorage/ATL1.webp";
+import AS12 from "../../assets/images/AsphaltStorage/AS12.webp";
+import AS15 from "../../assets/images/AsphaltStorage/AS15.webp";
+import AS20 from "../../assets/images/AsphaltStorage/AS20.webp";
+import AS25 from "../../assets/images/AsphaltStorage/AS25.webp";
+import AS30 from "../../assets/images/AsphaltStorage/AS30.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 const toggleConfig = [

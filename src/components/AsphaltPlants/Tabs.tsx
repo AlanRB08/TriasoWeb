@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.png", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Imagen 2" },
 ];
 
 export default function Tabs() {
@@ -39,7 +39,7 @@ export default function Tabs() {
       <img
         src={images[activeIndex].src}
         alt={images[activeIndex].alt}
-        className="border border-blueMain rounded-2xl h-[350px] w-full"
+        className="border border-blueMain rounded-2xl h-[350px] w-full object-contain md:object-cover lg:object-cover"
       />
     </div>
   );

@@ -6,7 +6,7 @@ import img5 from "../../assets/images/AsphaltPlant/drum1.webp";
 import img7 from "../../assets/images/AsphaltPlant/drum2.webp";
 import img8 from "../../assets/images/AsphaltPlant/bin1.webp";
 import img9 from "../../assets/images/AsphaltPlant/bin2.webp";
-import img10 from "../../assets/images/DrumMixers/triasoWorkers.jpg";
+import img10 from "../../assets/images/DrumMixers/triasoWorkers.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import logo from "../../assets/logos/triasoLogo.webp";
 import Image from "astro/components/Image.astro";
@@ -15,11 +15,11 @@ import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
 import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
 import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import rap from "../../assets/images/DrumMixers/rap.webp";
-import rapEntry from "../../assets/images/DrumMixers/a21.jpg";
+import rapEntry from "../../assets/images/DrumMixers/a21.webp";
 import HeroS2 from "../../../public/HeroS2.png";
 import ASPanels from "../unitComponents/ASPanels.astro";
 import pugmillVideo from "../../assets/images/ColdMix/PGMC.mp4";
-import pugmill from "../../assets/images/ColdMix/pugmill3.png";
+import pugmill from "../../assets/images/DrumMixers/pugmill3.webp";
 import SlidersCarrusel from "../IntegralAsphalt/SlidersCarrusel";
 import OSection from "../unitComponents/OSection.astro";
 
@@ -29,43 +29,43 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
 
 const images2 = [
   {
-    src: "/Gallery/counterflow.png",
+    src: "/Gallery/counterflow.webp",
     title: "Counterflow drum mixer",
     texto: `<span style="color:black">The counterflow drum mixer</span>, located at the center of the chassis, is engineered for efficient heat transfer and minimal fines loss, ensuring consistent asphalt mix quality. Its robust construction and advanced sealing minimize air infiltration and reduce maintenance. Designed specifically for the 10 Tph plant, it delivers reliable performance in a compact, cost-effective system.`,
   },
   {
-    src: "/Gallery/Caja2.png",
+    src: "/Gallery/Caja2.webp",
     title: "External pugmill mixer",
     texto: `<span style="color:black">The external pugmill mixer</span>, mounted directly below the drum outlet, ensures superior final mixing of the asphalt. This added stage guarantees a more homogeneous and consistent mix by thoroughly blending materials before discharge. Driven by a 5 hp motor with a robust gearbox, it features interchangeable wear-resistant paddles for long service life and easy maintenance.`,
   },
   {
-    src: "/Gallery/aggregatesbin.png",
+    src: "/Gallery/aggregatesbin.webp",
     title: "Aggregates bin",
     texto: `<span style="color:black">The aggregates bin</span> is designed to store pre-dosed material ready for asphalt production. Its trapezoidal discharge and smooth belt operation ensure steady, controlled flow to the drying system. Equipped with a lagged head pulley for improved belt grip, it supports consistent feeding for reliable mix quality throughout the process.`,
   },
   {
-    src: "/Gallery/tank.png",
+    src: "/Gallery/tank.webp",
     title: "Asphalt tank",
     texto: `<span style="color:black">The asphalt tank </span>is designed for efficient storage and heating, ensuring a steady asphalt supply at the ideal production temperature. With a 140,000 Btu/hr burner and integrated agitator, it enables fast heating and quick start-up. A 2" pump with a 2 hp motor ensures smooth flow, optimizing plant performance.`,
   },
   {
-    src: "/Gallery/electricgen.png",
+    src: "/Gallery/electricgen.webp",
     title: "Electric Generator",
     texto: `<span style="color:black">The electric generator </span>provides consistent, reliable power for the entire asphalt plant. With 20 kW continuous and 22 kW emergency capacity, it supports all electrical components seamlessly. Powered by a 35 hp Cummins diesel engine and a 110-liter fuel tank, it offers extended runtime with low maintenance.`,
   },
   {
-    src: "/Gallery/controlgabinet.png",
+    src: "/Gallery/controlgabinet.webp",
     title: "Control Cabinet",
     texto: `<span style="color:black">The control cabinet </span>centralizes the operation of the entire plant, offering intuitive management of all key components—from aggregate feeding to asphalt injection. Built with industrial-grade components, it ensures reliable performance in demanding environments. Its user-friendly interface allows precise control of temperature, material flow, and mixer timing, streamlining production and reducing operator error.`,
   },
   {
-    src: "/Gallery/fueltank.png",
+    src: "/Gallery/fueltank.webp",
     title: "Fuel Tank",
     texto: `<span style="color:black">The fuel tank</span>, positioned behind the asphalt tank, has a 750-liter capacity and supplies diesel to the burner system. Its placement ensures easy access for refueling while maintaining a compact layout within the plant. Built for durability and continuous operation, it supports extended production runs without interruption.`,
   },
 
   {
-    src: "/Gallery/burner.png",
+    src: "/Gallery/burner.webp",
     title: "Burner",
     texto: `<span style="color:black">The burner </span>optimizes heat generation for the drying and mixing process in the asphalt plant, ensuring efficient and stable combustion. Built with high-strength materials and industrial-grade components, it maintains reliable performance even under demanding conditions. Its precise control system automatically adjusts the air-fuel ratio to maximize thermal efficiency, reduce fuel consumption, and minimize emissions.`,
   },
@@ -156,9 +156,9 @@ const images2 = [
   <div class="w-full bg-[#2e2e2e] flex flex-col justify-center items-center">
     <img src={logo.src} alt="" class="w-[500px] lg:w-full md:w-full" /><br />
     <div
-      class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center min-h-[900px] flex justify-center items-center"
+      class="w-full bg-[url(/HeroS.png)] bg-cover bg-no-repeat bg-center max-h-[900px] lg:min-h-[900px] md:min-h-[900px] flex justify-center items-center"
     >
-      <div class="flex flex-col mx-auto w-96 lg:w-1/2 md:w-1/2">
+      <div class="flex flex-col mx-auto max-w-7xl px-8">
         <h1
           class="text-white text-2xl lg:text-4xl font-bold text-center lg:text-start md:text-start"
         >
@@ -179,7 +179,7 @@ const images2 = [
           the need for a low-boy or a flatbed trailer during transport.
         </p>
         <p
-          class="text-base text-center lg:text-justify md:text-justify lg:text-lg text-white font-thin"
+          class="text-base text-center lg:text-justify md:text-justify lg:text-lg text-white font-thin pb-5"
         >
           The complete asphalt plant can be transported in only three trailer
           loads, simplifying logistics and reducing setup time.
@@ -288,7 +288,7 @@ const images2 = [
     </h2>
   </div>
   <div
-    class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 gap-6 items-center"
+    class="w-full max-w-7xl mx-auto px-8 flex flex-col lg:grid md:grid lg:grid-cols-2 md:grid-cols-2 py-10 gap-6 items-center"
   >
     <div class="w-full">
       <h2
@@ -296,7 +296,7 @@ const images2 = [
       >
         DRUM MIX MODIFICATION FOR RAP
       </h2><br />
-      <div class="text-center md:text-start lg:text-start">
+      <div class="text-justify md:text-start lg:text-start">
         <p class="text-base md:text-lg font-thin">
           RAP is introduced through a collar located at an intermediate point of
           the drum, before the mixing zone. From this point on, the material
@@ -311,7 +311,24 @@ const images2 = [
     <div>
       <img src={rapEntry.src} alt="Rap Entry Flights" class="rounded-md" />
     </div>
+    <div class="flex col-span-2">
+      <div class="space-y-5">
+        <h1 class="font-bold text-3xl uppercase">Variable-Speed Rotation Drives</h1>
+        <h2 class="font-bold text-xl uppercase">for Drum Rotation Systems for High-RAP Incorporation</h2>
+        <p class="font-thin">
+          Our latest innovation for high-RAP incorporation is the use of
+          Variable-Speed Rotation Drives for Drum Rotation Systems. <br>
+          According to
+          our investigation and multiple field studies, RAP quality is directly
+          affected by its heating exposure time inside the drum, which allows
+          the RAP binder to fully blend and incorporate with the virgin
+          aggregates.
+        </p>
+        <h2>This exposure time must be adjusted according to the RAP percentage in the mix.</h2>
+      </div>
+    </div>
   </div>
+
   <div class="w-full">
     <div class="w-full flex justify-center">
       <LearnBtnBlue />
@@ -473,7 +490,7 @@ const images2 = [
     </h2>
   </div>
   <SlidersCarrusel client:load images={images2} />
-  <div class="py-10 w-full text-center">
+  <div class="py-5 px-8 w-full text-center">
     <h2 class="text-center font-bold text-blueMain text-xl md:text-3xl">
       Sell at a lower price, attract more customers, and achieve higher profits
     </h2><br />

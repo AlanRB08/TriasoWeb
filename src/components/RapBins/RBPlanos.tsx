@@ -1,15 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import RAPMain from "../../assets/images/RapBins/RAPMain.png";
-import RAPMain2 from "../../assets/images/RapBins/RAPMainBlue.png";
-import tolva2L2 from "../../assets/images/BinUnits/tolva2L2.png";
-import tolva2L1 from "../../assets/images/BinUnits/tolva2L1.png";
-import tolva1L2 from "../../assets/images/BinUnits/tolva1L2.png";
-import tolva1L1 from "../../assets/images/BinUnits/tolva1L1.png";
-import tolva1F from "../../assets/images/BinUnits/tolva1F.png";
-import tolva2F1 from "../../assets/images/BinUnits/tolva2F1.png";
-import tolva1Main from "../../assets/images/BinUnits/tolva1Main.png";
+import RAPMain from "../../assets/images/RapBins/RAPMain.webp";
+import RAPMain2 from "../../assets/images/RapBins/RAPMainBlue.webp";
+import tolva2L2 from "../../assets/images/BinUnits/tolva2L2.webp";
+import tolva2L1 from "../../assets/images/BinUnits/tolva2L1.webp";
+import tolva1L2 from "../../assets/images/BinUnits/tolva1L2.webp";
+import tolva1L1 from "../../assets/images/BinUnits/tolva1L1.webp";
+import tolva1F from "../../assets/images/BinUnits/tolva1F.webp";
+import tolva2F1 from "../../assets/images/BinUnits/tolva2F1.webp";
+import tolva1Main from "../../assets/images/BinUnits/tolva1Main.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

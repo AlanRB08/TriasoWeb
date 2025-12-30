@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bgFront from "../../assets/images/BagHouses/BagHousesVS2.png";
-import bgPlanos from "../../assets/images/BagHouses/bagHousesVS2Planos.png"
+import bgFront from "../../assets/images/BagHouses/BagHousesVS2.webp";
+import bgPlanos from "../../assets/images/BagHouses/bagHousesVS2Planos.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 const toggleConfig = [
@@ -395,11 +395,12 @@ const BHPlanos = () => {
                         <h1 className="text-white lg:text-xl text-lg text-center mb-10">
                             MODELS:
                         </h1>
-                        <div className="flex gap-3 justify-center w-full md:px-32 items-center justify-items-center">
+                        <div className="grid grid-cols-3 md:grid-cols-12 gap-y-4 gap-5 w-full max-w-5xl mx-auto px-2 justify-items-center">
+
                             {/* Botón 1 */}
                             <button
                                 onClick={() => (setActiveTab(1), setActiveVersion("12"))}
-                                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${activeTab === 1
+                                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 1
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
@@ -410,7 +411,7 @@ const BHPlanos = () => {
                             {/* Botón 2 */}
                             <button
                                 onClick={() => (setActiveTab(2), setActiveVersion("16"))}
-                                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[150px] ${activeTab === 2
+                                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 2
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
@@ -421,56 +422,57 @@ const BHPlanos = () => {
                             {/* Botón 3 */}
                             <button
                                 onClick={() => (setActiveTab(3), setActiveVersion("20"))}
-                                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 3
+                                className={`md:col-span-4 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 3
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
                             >
                                 140-180 Tph
                             </button>
-                        </div>
-                        <br />
-                        <div className="flex gap-3 justify-center w-full md:px-32 items-center justify-items-center">
+
                             {/* Botón 4 */}
                             <button
                                 onClick={() => (setActiveTab(4), setActiveVersion("24"))}
-                                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 4
+                                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 4
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
                             >
                                 200-250 Tph
                             </button>
+
                             {/* Botón 5 */}
                             <button
                                 onClick={() => (setActiveTab(5), setActiveVersion("30"))}
-                                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 5
+                                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 5
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
                             >
                                 300-360 Tph
                             </button>
+
                             {/* Botón 6 */}
                             <button
                                 onClick={() => (setActiveTab(6), setActiveVersion("31"))}
-                                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 6
+                                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 6
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
                             >
                                 400-480 Tph
                             </button>
-                            {/* Botón 7 */}
+
                             <button
                                 onClick={() => (setActiveTab(7), setActiveVersion("32"))}
-                                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[150px] ${activeTab === 7
+                                className={`col-start-2 md:col-start-auto md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 7
                                     ? "text-gray-900 bg-white border-white"
                                     : "text-white bg-transparent border-white"
                                     }`}
                             >
                                 500-600 Tph
                             </button>
+
                         </div>
                     </div>
 
@@ -489,10 +491,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -527,10 +529,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -544,7 +546,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -558,7 +560,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -997,10 +999,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className=" w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -1035,10 +1037,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -1052,7 +1054,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -1066,7 +1068,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -1507,10 +1509,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className=" w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -1545,10 +1547,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -1562,7 +1564,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -1576,7 +1578,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2017,10 +2019,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -2055,10 +2057,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2072,7 +2074,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2086,7 +2088,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2527,10 +2529,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -2565,10 +2567,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2582,7 +2584,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -2596,7 +2598,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3037,10 +3039,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -3075,10 +3077,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3092,7 +3094,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3106,7 +3108,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3547,10 +3549,10 @@ const BHPlanos = () => {
                                     <div
                                         className="flex flex-col items-start justify-start mt-10 md:mt-0 gap-0 md:gap-10 h-full w-full order-2 md:order-1"
                                         id="column1"
-                                        ref={columnGrid1}
-                                    >
-                                        <div className="w-full flex flex-col items-start justify-center gap-4 text-white col-span-1">
-                                            <div className="w-full flex justify-between border-b border-b-white">
+                                        ref={columnGrid1}>
+                                            
+                                        <div className="w-full flex flex-col gap-4 text-white col-span-1">
+                                            <div className="w-full flex border-b border-b-white">
                                                 <h1 className="font-bold lg:text-xl text-lg w-full pb-3">
                                                     CAPACITY
                                                 </h1>
@@ -3585,10 +3587,10 @@ const BHPlanos = () => {
                                                 </button>
                                             </div>
                                             <div className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                                                    ? "max-h-96 opacity-1 mb-4"
-                                                    : "max-h-0 opacity-0"
-                                                    } md:max-h-full md:opacity-100 md:block`}>
-                                                <div className="flex gap-5">
+                                                ? "max-h-96 opacity-1 mb-4"
+                                                : "max-h-0 opacity-0"
+                                                } md:max-h-full md:opacity-100 md:block`}>
+                                                <div className="flex justify-between">
                                                     <h1>Length:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3602,7 +3604,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Filtering Area:</h1>
                                                     <p>
                                                         {unit === "metric"
@@ -3616,7 +3618,7 @@ const BHPlanos = () => {
                                                             ).toFixed(1)} ft3`}
                                                     </p>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex justify-between">
                                                     <h1>Bags:</h1>
                                                     <p>
                                                         {unit === "metric"

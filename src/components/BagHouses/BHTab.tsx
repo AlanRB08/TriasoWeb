@@ -1,10 +1,10 @@
 // src/components/Tabs.tsx
 import { useState } from "react";
-import Separator from "../unitComponents/Separator.astro";
+
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.png", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Imagen 2" },
 ];
 
 export default function Tab() {
@@ -18,11 +18,10 @@ export default function Tab() {
             aria-label="Select tab"
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`text-center md:text-start font-normal p-4 rounded-xl md:pr-4 md:w-8/12 text-sm md:text-base ${
-              activeIndex === index
+            className={`text-center md:text-start font-normal p-4 rounded-xl md:pr-4 md:w-8/12 text-sm md:text-base ${activeIndex === index
                 ? "border-red-500 text-white bg-blueMain"
                 : "border-transparent bg-white text-grisT"
-            }`}
+              }`}
           >
             {index === 0 ? (
               <>
@@ -35,18 +34,21 @@ export default function Tab() {
             )}
           </button>
         ))}
+      </div>
+
+      <img
+        src={images[activeIndex].src}
+        alt={images[activeIndex].alt}
+        className="border-2 border-blueMain rounded-2xl h-[350px] w-full object-contain md:object-cover lg:object-cover"
+      />
+
+      <div>
         <p className="font-bold text-grisT text-base md:text-lg">
           Self-contained, integrated dust control systems for effective air
           filtration and particle capture in asphalt plants—configurable for
           both portable and stationary setups.
         </p>
       </div>
-
-      <img
-        src={images[activeIndex].src}
-        alt={images[activeIndex].alt}
-        className="border-2 border-blueMain rounded-2xl max-h-[350px] w-full object-contain"
-      />
     </div>
   );
 }

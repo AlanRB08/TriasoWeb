@@ -14,15 +14,17 @@ import Spare from '../components/AsphaltPlants/Spare.astro';
 import GallerySlider from '../components/AsphaltPlants/GallerySlider';
 import Hero1 from '../assets/images/AsphaltPlant/HeroAsphalt.webp';
 import AnalisisInversion from '../components/Calculadora/AnalisisInversion';
+import HotspotComponent from '../components/ImageHotspot/HotspotComponent.astro';
+
 const images1 = [
-  { src: '/Gallery/fab-silo.jpg', title: 'Silo Manufacturing' },
-  { src: '/Gallery/oil-heater.jpg', title: 'Oil heater thermal insulation' },
-  { src: '/Gallery/serial-parts-bg.jpg', title: 'Serial parts machining' },
-  { src: '/Gallery/fly-cutting-sm.jpg', title: 'Flights cutting' },
-  { src: '/Gallery/fab-planta-frio.jpg', title: 'Cold mixing plant manufacturing' },
-  { src: '/Gallery/quemadores.jpg', title: 'Burners manufacture' },
-  { src: '/Gallery/drum-mixer.jpg', title: 'Drum mixer welding' },
-  { src: '/Gallery/elevator-manu.jpg', title: 'Elevator hinges manufacturing' },
+  { src: '/Gallery/fab-silo.webp', title: 'Silo Manufacturing' },
+  { src: '/Gallery/oil-heater.webp', title: 'Oil heater thermal insulation' },
+  { src: '/Gallery/serial-parts-bg.webp', title: 'Serial parts machining' },
+  { src: '/Gallery/fly-cutting-sm.webp', title: 'Flights cutting' },
+  { src: '/Gallery/fab-planta-frio.webp', title: 'Cold mixing plant manufacturing' },
+  { src: '/Gallery/quemadores.webp', title: 'Burners manufacture' },
+  { src: '/Gallery/drum-mixer.webp', title: 'Drum mixer welding' },
+  { src: '/Gallery/elevator-manu.webp', title: 'Elevator hinges manufacturing' },
   // { src: '/Gallery/customdes.png', title: 'Elevator hinges manufacturing' }
   // agrega hasta 16 o más imágenes
 ];
@@ -36,7 +38,7 @@ const images1 = [
       href={Hero1.src} 
       as="image" 
       imagesrcset={`
-        ${Hero1.src}?width=400 400w,
+        ${Hero1.src}?width=400 1200w,
         ${Hero1.src}?width=800 800w,
         ${Hero1.src}?width=1200 1200w
       `}
@@ -62,5 +64,5 @@ const images1 = [
     <GallerySlider client:load images={images1} />
     <Spare /> 
     <AnalisisInversion client:only/>
-
+    <HotspotComponent/>
 </Layout>

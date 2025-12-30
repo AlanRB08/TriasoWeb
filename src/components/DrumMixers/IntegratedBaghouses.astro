@@ -1,22 +1,22 @@
 ---
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
-import baghouse from "../../assets/images/BagHouses/bagHouses1.png";
+import baghouse from "../../assets/images/BagHouses/bagHouses1.webp";
 import baghouse2 from "../../assets/images/DrumMixers/baghouse2.webp";
 import Image from "astro/components/Image.astro";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 ---
 
 <div class="flex justify-center">
-    <div class="max-w-7xl flex flex-col text-grisT font-bold gap-6">
+    <div class="max-w-7xl px-8 flex flex-col text-grisT font-bold gap-6">
         <div>
-            <h1 class="w-full text-start px-8 text-2xl md:text-4xl lg:mb-10">
+            <h1 class="w-full text-start text-2xl md:text-4xl lg:mb-10">
                 INTEGRATED BAGHOUSES
             </h1>
         </div>
-        <div class="max-w-7xl px-8">
+        <div class="max-w-7xl">
             <SeparatorBlue />
         </div>
-        <div class="max-w-7xl px-8">
+        <div class="max-w-7xl">
             <p class="text-base md:text-lg">
                 Baghouses are crucial for controlling dust and maintaining air
                 quality in industrial settings. They efficiently capture
@@ -65,7 +65,7 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
             class="w-full h-auto md:h-[250px] object-cover"
         />
         <div
-            class="bg-blueMain px-4 md:px-8 lg:pr-52 py-6 lg:py-0 flex flex-col items-center justify-center md:rounded-l-2xl"
+            class="bg-blueMain px-8 lg:pr-52 py-6 lg:py-0 flex flex-col items-center justify-center md:rounded-l-2xl"
         >
             <h2 class="text-xl md:text-2xl mb-4">
                 Mechanism of baghouses available in pulse jet and reverse jet
@@ -98,7 +98,7 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
         </div>
     </div>
     <div class="max-w-7xl px-8 mx-auto flex justify-center">
-        <video src={DMVideo} autoplay playsinline muted loop class="w-3/4"
+        <video src={DMVideo} autoplay playsinline muted loop class="lg:w-4/5 md:w-4/5"
         ></video>
     </div>
 </div>
