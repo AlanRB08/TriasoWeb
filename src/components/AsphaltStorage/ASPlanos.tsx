@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import tolva3L1 from "../../assets/images/BinUnits/tolva3L1.png";
-import tolva1F from "../../assets/images/BinUnits/tolva1F.png";
-import tolva3L2 from "../../assets/images/BinUnits/tolva3L2.png";
+
 
 import ATMain from "../../assets/images/AsphaltStorage/ATMain.webp";
 import ATR1 from "../../assets/images/AsphaltStorage/ATR1.webp";
