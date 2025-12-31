@@ -3,6 +3,7 @@ import FeatureCards from './CardsComponent'
 import { useState, useRef, useEffect } from 'react'
 import img1 from "../../assets/images/Relief/TriasoOS6.webp"
 import img2 from "../../assets/images/Relief/TriasoOS5.webp"
+import gsap from 'gsap'
 
 export default function RelifSecondSection() {
     const [open, setOpen] = useState(false);
