@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
 import ATMain from "../../assets/images/AsphaltStorage/ATMain.webp";
 import ATR1 from "../../assets/images/AsphaltStorage/ATR1.webp";
 import ATR2 from "../../assets/images/AsphaltStorage/ATR2.webp";

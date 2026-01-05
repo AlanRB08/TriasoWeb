@@ -1,14 +1,22 @@
-import React from 'react'
-import FeatureCards from './CardsComponent'
-import { useState, useRef, useEffect } from 'react'
-import img1 from "../../assets/images/Relief/TriasoOS6.webp"
-import img2 from "../../assets/images/Relief/TriasoOS5.webp"
-import gsap from 'gsap'
+import React, { useState, useRef, useEffect } from 'react';
+import FeatureCards from './CardsComponent';
+import gsap from "gsap"; // Importar GSAP
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Importar ScrollTrigger
+import img1 from "../../assets/images/Relief/TriasoOS6.webp";
+import img2 from "../../assets/images/Relief/TriasoOS5.webp";
+
+// Registrar el plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function RelifSecondSection() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const text1Ref = useRef<HTMLParagraphElement>(null);
+    const text2Ref = useRef<HTMLParagraphElement>(null);
+
     const [open, setOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
 
+    // Lógica del Dropdown (existente)
     useEffect(() => {
         if (!contentRef.current) return;
 
@@ -20,26 +28,67 @@ export default function RelifSecondSection() {
         }
     }, [open]);
 
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            if (text1Ref.current) {
+                gsap.from(text1Ref.current, {
+                    x: 100,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: text1Ref.current,
+                        start: "top 85%", 
+                        toggleActions: "play none none reverse",
+                    }
+                });
+            }
+            if (text2Ref.current) {
+                gsap.from(text2Ref.current, {
+                    x: -100,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: text2Ref.current,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse",
+                    }
+                });
+            }
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <div className='bg-[#1e1e1e] space-y-10'>
-            <div className='max-w-7xl mx-auto px-8 text-white   '>
-                <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center gap-5 '>
+        <div ref={sectionRef} className='bg-[#1e1e1e] space-y-10 overflow-hidden'>
+            <div className='max-w-7xl mx-auto px-8 text-white'>
+                <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center gap-5'>
                     <img src={img2.src} alt="Triaso OS" className='w-full md:w-1/2 lg:w-1/2' />
-                    <p className='text-xl'>For faster decision-making, better-founded, and completely independent of physical location.</p>
+                    <p ref={text1Ref} className='text-xl'>
+                        For faster decision-making, better-founded, and completely independent of physical location.
+                    </p>
                 </div>
-                <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center pt-10 '>
-                    <p className='text-xl'>With multiple access points through
+                <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center pt-10'>
+                    <p ref={text2Ref} className='text-xl order-2 md:order-1 lg:order-1'>
+                        With multiple access points through
                         the operation console,
-                        remote computers, tablets, and phones.</p>
-                    <img src={img1.src} alt="Triaso OS" className='w-full md:w-1/2 lg:w-1/2' />
+                        remote computers, tablets, and phones.
+                    </p>
+                    <img src={img1.src} alt="Triaso OS" className='w-full md:w-1/2 lg:w-1/2 order-1 md:order-2 lg:order-2' />
                 </div>
             </div>
+
             <div>
                 <div className='flex justify-center max-w-7xl mx-auto'>
-                    <p className='text-white text-center font-bold'>All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners—from remote computers, tablets, and mobile phones.
+                    <p className='text-white text-center font-bold'>
+                        All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners—from remote computers, tablets, and mobile phones.
                     </p>
                 </div>
             </div>
+
             <div>
                 <FeatureCards />
             </div>
@@ -53,6 +102,7 @@ export default function RelifSecondSection() {
                     Delivered hot-mix reports
                 </h1>
             </div>
+
             <div className="w-full flex flex-col items-center justify-center">
                 <button
                     onClick={() => setOpen(!open)}
@@ -94,7 +144,7 @@ export default function RelifSecondSection() {
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     )
 }
