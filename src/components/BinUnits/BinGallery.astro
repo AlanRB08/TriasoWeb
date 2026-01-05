@@ -11,6 +11,10 @@ import binHigh from "../../assets/images/BinUnits/binHigh.webp";
 import img1 from "../../assets/images/BinUnits/ProvBU5.webp";
 import img2 from "../../assets/images/BinUnits/ProvBU1.webp";
 import img3 from "../../assets/images/BinUnits/ProvBU3.webp";
+import img4 from "../../assets/images/BinUnits/1.webp";
+import img5 from "../../assets/images/BinUnits/2.webp";
+import img6 from "../../assets/images/BinUnits/3.webp";
+import { imageConfig } from "astro:assets";
 const binSlides2 = [
   {
     image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp",
@@ -23,12 +27,14 @@ const binSlides2 = [
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp",
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp",
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp",
     caption:
       "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
   },
@@ -49,12 +55,14 @@ const binSlides2 = [
       "Tambor mezclador de 140 Tmph, de contraflujo, en posición de transporte",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp",
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
   },
   {
-    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp",
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp",
     caption:
       "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
   },
@@ -154,7 +162,7 @@ const binSlides2 = [
 ];
 ---
 
-<div class="w-full flex flex-col justify-center items-center gap-10">
+<div class="w-full flex flex-col gap-10">
   <TwoColumnSection
     leftBg="bg-redBg"
     rightBg="bg-blueMain"
@@ -234,7 +242,25 @@ const binSlides2 = [
         <LearnBtn />
       </div>
     </div>
+
+    <div class="flex flex-col">
+      <div class="flex justify-between">
+        <img src={img4.src} alt="" class="w-1/3" />
+        <img src={img5.src} alt="" class="w-1/3" />
+        <img src={img6.src} alt="" class="w-1/3" />
+      </div>
+      <div class="pt-4">
+        <h1 class="text-[#393939]">Triaso®</h1>
+        <h1 class="uppercase text-[#393939]">conveyor rollers</h1>
+        <p class="font-medium text-xl font-[#393939] w-4/6">
+          Our conveyor rollers for bin unit dosing belts and aggregate conveyors
+          are manufactured in-house from cast iron, reducing dependence on
+          third-party suppliers for replacement parts.
+        </p>
+      </div>
+    </div>
   </div>
+
   <div class="bg-[url(/fondoAsp.png)] w-full">
     <div
       class="w-full max-w-7xl px-8 lg:px-0 md:px-0 mx-auto py-10 grid grid-cols-1 gap-10"
@@ -292,7 +318,7 @@ const binSlides2 = [
       </div>
     </div>
   </div>
-   <div class="w-full px-8">
-      <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
-    </div>
+  <div class="w-full px-8">
+    <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
+  </div>
 </div>

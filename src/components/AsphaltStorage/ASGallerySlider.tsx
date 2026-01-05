@@ -40,11 +40,10 @@ export default function GallerySlider({ images }: Props) {
         setCurrentIndex((prev) => (prev - 1 < 0 ? totalPages - 1 : prev - 1));
     };
 
-    const offset = -(currentIndex * (100 / totalPages));
+    const offset = -(currentIndex * (40 / totalPages));
 
     return (
         <div className="w-full mx-auto py-10 bg-blueMain relative">
-            {/* Contenedor deslizable */}
             <div className="relative overflow-hidden max-w-7xl mx-auto gap-5 h-[300px]">
                 <div
                     ref={containerRef}
@@ -80,7 +79,35 @@ export default function GallerySlider({ images }: Props) {
                         </div>
                     ))}
                 </div>
+
             </div>
+
+            <div className="max-w-7xl mx-auto flex justify-end items-center">
+                {!isMobile && (
+                    <>
+                        <div className="space-x-5">
+                            <button
+                                onClick={prevSlide}
+                                className=" bg-[#d9d9d9] rounded-full p-5"
+                                aria-label="Previous"
+                            >
+                                ‹
+                            </button>
+
+                            <button
+                                onClick={nextSlide}
+                                className=" bg-[#d9d9d9] rounded-full p-5 "
+                                aria-label="Next"
+                            >
+                                ›
+                            </button>
+
+                        </div>
+
+                    </>
+                )}
+            </div>
+
 
             {modalIndex !== null && (
                 <div
@@ -91,7 +118,7 @@ export default function GallerySlider({ images }: Props) {
                         className="relative bg-[#111]/70 backdrop-blur-md p-6 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
-                       
+
                         <button
                             aria-label="Close modal"
                             onClick={() => setModalIndex(null)}
@@ -100,14 +127,14 @@ export default function GallerySlider({ images }: Props) {
                             ✕
                         </button>
 
-                    
+
                         <img
                             src={images[modalIndex].src}
                             alt={images[modalIndex].title}
                             className="w-full max-h-[50vh] object-contain rounded-lg bg-white"
                         />
 
-                        
+
                         <h2 className="text-white text-2xl font-bold mt-4 text-center">
                             {images[modalIndex].title}
                         </h2>

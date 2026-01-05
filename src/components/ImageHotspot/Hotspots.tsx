@@ -1,4 +1,5 @@
 import { useState } from "react";
+import img1 from "../../assets/images/AsphaltStorage/ImageHotspot.webp"
 
 interface Hotspot {
   id: number;
@@ -13,7 +14,7 @@ export default function Hotspots({ data }: { data: Hotspot[] }) {
 
   return (
     <div className="relative">
-      <img src="https://placehold.co/600x400/png" className="w-full" />
+      <img src={img1.src} className="w-full" />
 
       {data.map(h => (
         <div
