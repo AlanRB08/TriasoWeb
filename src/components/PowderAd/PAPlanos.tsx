@@ -17,9 +17,11 @@ const cabinSize = [
 const toggleConfig = {
   id: "1",
   dimensions: {
-    width: 299.09,
-    height: 705.37,
-    length: 2007.7,
+    width: 378,
+    width2: 192,
+    height: 394,
+    length: 470,
+    length2: 240,
     dosing: 315,
     feeding: 350,
     screw: 106.68,
@@ -71,7 +73,7 @@ const PAPlanos = () => {
     setUnit(newUnit);
   };
 
- const scrollTrigRef = useRef<any>(null);
+  const scrollTrigRef = useRef<any>(null);
   const observerRef = useRef<MutationObserver | null>(null);
   const recreateTimerRef = useRef<number | null>(null);
 
@@ -87,8 +89,8 @@ const PAPlanos = () => {
 
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current; 
-    const clipTarget = clipTargetRef.current; 
+    const target = nextSectionRef.current;
+    const clipTarget = clipTargetRef.current;
     const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
@@ -284,9 +286,8 @@ const PAPlanos = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -362,9 +363,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -377,11 +377,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Screw feeder manufactured with 1045 steel</li>
                         <li>
@@ -419,9 +418,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -434,11 +432,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -482,9 +479,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -497,11 +493,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
                         <li>Option for:</li>
@@ -565,9 +560,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -580,11 +574,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
                             ? "max-h-96 opacity-1"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -642,9 +635,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -657,11 +649,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -701,9 +692,8 @@ const PAPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -716,11 +706,10 @@ const PAPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_3
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
                             ? "max-h-96 opacity-1 mb-4"
                             : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>EPA</li>
                         <li>OSHA</li>
@@ -730,9 +719,10 @@ const PAPlanos = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                   <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                    <div className="flex items-center justify-center w-[135px] h-[60px] self-center ml-9">
+                    <div className="flex items-center justify-center w-[200px] h-[65px] self-center ml-9">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -755,15 +745,28 @@ const PAPlanos = () => {
                           </div>
                         </div>
                       </div>
-                      <p className="text-white lg:text-lg text-base w-full text-center mx-4">
-                        {unit === "metric"
-                          ? `${
-                              toggleConfig?.dimensions.width.toFixed(1) ?? ""
+                      <div className="flex flex-col justify-center items-center">
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.width.toFixed(1) ?? ""
                             } cm`
-                          : `${(
+                            : `${(
                               (toggleConfig?.dimensions.width ?? 0) * cmToFeet
                             ).toFixed(1)} ft`}
-                      </p>
+                        </p>
+                        <p className="text-white text-base">
+                          to
+                        </p>
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.width2.toFixed(1) ?? ""
+                            } cm`
+                            : `${(
+                              (toggleConfig?.dimensions.width2 ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
+                        </p>
+                      </div>
+
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -787,7 +790,7 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="w-[372px] h-[285px] mt-5 flex items-center justify-center">
+                    <div className="w-[372px] h-[285px] mt-7 flex items-center justify-center">
                       <img
                         src={imgPlano3.src}
                         alt=""
@@ -818,15 +821,14 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="my-3">
+                    <div className="my-3 flex flex-col">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              toggleConfig?.dimensions.height.toFixed(1) ?? ""
-                            } cm`
+                          ? `${toggleConfig?.dimensions.height.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (toggleConfig?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (toggleConfig?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -853,7 +855,7 @@ const PAPlanos = () => {
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
-                    <div className="flex items-center justify-center w-full h-[60px]">
+                    <div className="flex items-center justify-center w-[400px] h-[60px]">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -876,15 +878,26 @@ const PAPlanos = () => {
                           </div>
                         </div>
                       </div>
-                      <p className="text-white lg:text-lg text-base w-full text-center mx-4">
-                        {unit === "metric"
-                          ? `${
-                              toggleConfig?.dimensions.length.toFixed(1) ?? ""
+                      <div className="flex flex-col justify-center items-center">
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.length.toFixed(1) ?? ""
                             } cm`
-                          : `${(
+                            : `${(
                               (toggleConfig?.dimensions.length ?? 0) * cmToFeet
                             ).toFixed(1)} ft`}
-                      </p>
+                        </p>
+                        <p className="text-base text-white">to</p>
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.length2.toFixed(1) ?? ""
+                            } cm`
+                            : `${(
+                              (toggleConfig?.dimensions.length2 ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
+                        </p>
+                      </div>
+
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -908,7 +921,7 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="h-[285px] w-[744px] flex justify-center items-center">
+                    <div className="h-[285px] w-[744px] flex justify-center items-center mt-5">
                       <img
                         src={imgPlano2.src}
                         alt=""
@@ -917,6 +930,7 @@ const PAPlanos = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full mt-10 gap-0 md:gap-10">
                   <div className="col-span-1 md:col-span-2 flex flex-col items-start justify-start w-full md:gap-10 h-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 w-full md:gap-10">
@@ -942,9 +956,8 @@ const PAPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -957,36 +970,33 @@ const PAPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
                               ? "max-h-96 opacity-1 mb-4"
                               : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig?.dimensions.dosing.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${toggleConfig?.dimensions.dosing.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig?.dimensions.dosing ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}{" "}
+                                  (toggleConfig?.dimensions.dosing ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}{" "}
                               (dosing section)<br></br>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig?.dimensions.feeding.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${toggleConfig?.dimensions.feeding.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig?.dimensions.feeding ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}{" "}
+                                  (toggleConfig?.dimensions.feeding ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}{" "}
                               (feeding section)
                             </p>
                           </div>
@@ -994,29 +1004,27 @@ const PAPlanos = () => {
                             <h1>Screw Diameter::</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig?.dimensions.screw.toFixed(1) ??
-                                    ""
-                                  } cm`
+                                ? `${toggleConfig?.dimensions.screw.toFixed(1) ??
+                                ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig?.dimensions.screw ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (toggleConfig?.dimensions.screw ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig?.dimensions.height2.toFixed(
-                                      1
-                                    ) ?? ""
-                                  } cm`
+                                ? `${toggleConfig?.dimensions.height2.toFixed(
+                                  1
+                                ) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig?.dimensions.dosing ?? 0) *
-                                    cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (toggleConfig?.dimensions.dosing ?? 0) *
+                                  cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
