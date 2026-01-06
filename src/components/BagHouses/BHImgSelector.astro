@@ -16,7 +16,7 @@ import OSection from "../unitComponents/OSection.astro";
 import bannerNew from "../../assets/images/BagHouses/bannerImage.webp";
 import damperImg from "../../assets/images/BagHouses/damper.webp";
 import finesReturn from "../../assets/images/BagHouses/finesReturn.webp";
-import boquillasVL from "../../assets/images/BagHouses/BoquillasVL.webp"
+import boquillasVL from "../../assets/images/BagHouses/BoquillasVL.webp";
 
 const tanksSlides = [
     {
@@ -105,9 +105,9 @@ const tanksSlides = [
     </div>
 
     <div class="mt-10 w-full lg:mt-0 md:mt-0">
-      <OSection />  
+        <OSection />
     </div>
-    
+
     <TwoColumnSection
         leftBg="bg-redBg"
         rightBg="bg-blueMain"
@@ -189,6 +189,7 @@ const tanksSlides = [
                     title="Typical Venturi System"
                     bgColor="bg-bgBeige"
                     image={img5.src}
+                    imageClassName="pb-[50px]"
                     client:only
                 >
                     <div class="w-full py-10 text-sm md:text-base text-grisT">
@@ -285,26 +286,27 @@ const tanksSlides = [
         class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-7xl px-8 mx-auto py-10"
     >
         <div class="w-full flex justify-center">
-            <video class="w-2/3" src={BHVideo} autoplay muted playsinline
+            <video class="w-2/3 lg:w-4/5 rounded-md" src={BHVideo} autoplay muted playsinline
             ></video>
         </div>
         <div
-            class="w-full rounded-2xl p-4 bg-white text-justify text-base px-8 md:text-lg text-grisT flex flex-col justify-center"
+            class="w-full rounded-2xl p-4 text-justify text-base px-8 md:text-lg text-grisT flex flex-col justify-center"
         >
             <p>
-                The Extractor is engineered to manage airflow efficiently and
-                ensure proper gas filtration in the asphalt plant. Its
-                curved-blade fan draws exhaust gases through the system while
-                maintaining stable internal pressure and preventing external
-                contaminants from entering.
+                The Triaso Extractor is designed to effectively manage airflow
+                and ensure optimal gas filtration in the asphalt plant. With its
+                curved blade fan, the extractor pulls gases through the system
+                while maintaining efficient air circulation. By keeping external
+                contaminants out, it helps maintain internal pressure at the
+                necessary levels for consistent operation.
             </p><br />
             <p>
-                Using centrifugal force, the extractor separates dust from the
-                gas stream. As the gases enter, they spiral along the inner
-                walls, causing heavier particles to move outward. Around 70% of
-                the total dust load settles at the bottom for collection,
-                reducing the workload on the baghouse filters, improving overall
-                efficiency, and extending filter life.
+                It operates using centrifugal force to separate dust from
+                exhaust gases. As the gas enters, it spirals along the inner
+                walls, where heavier particles are pushed outward. Approximately
+                70% of the total dust load falls to the bottom for collection,
+                reducing the burden on the baghouse filters, improving
+                efficiency, and extending their service life.
             </p>
         </div>
     </div>
@@ -328,7 +330,7 @@ const tanksSlides = [
         <div
             class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10"
         >
-            <div>
+            <div class="flex justify-center items-center">
                 <img
                     src={damperImg.src}
                     alt="Damper"
@@ -444,8 +446,10 @@ const tanksSlides = [
                 </p>
             </div>
             <div class="w-full order-1 lg:order-2">
-                <h2 class="text-lg md:text-xl">Fines Return System</h2><br />
-                <div class="w-full flex justify-center">
+                <h2 class="text-lg md:text-xl text-end">
+                    Fines Return System
+                </h2><br />
+                <div class="w-full flex justify-end">
                     <img
                         src={finesReturn.src}
                         alt=""

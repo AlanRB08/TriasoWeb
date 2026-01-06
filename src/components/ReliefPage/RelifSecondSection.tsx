@@ -38,7 +38,7 @@ export default function RelifSecondSection() {
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: text1Ref.current,
-                        start: "top 85%", 
+                        start: "top 75%", 
                         toggleActions: "play none none reverse",
                     }
                 });
@@ -67,12 +67,12 @@ export default function RelifSecondSection() {
             <div className='max-w-7xl mx-auto px-8 text-white'>
                 <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center gap-5'>
                     <img src={img2.src} alt="Triaso OS" className='w-full md:w-1/2 lg:w-1/2' />
-                    <p ref={text1Ref} className='text-xl'>
+                    <p ref={text1Ref} className='text-2xl font-bold'>
                         For faster decision-making, better-founded, and completely independent of physical location.
                     </p>
                 </div>
                 <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center pt-10'>
-                    <p ref={text2Ref} className='text-xl order-2 md:order-1 lg:order-1'>
+                    <p ref={text2Ref} className='text-2xl font-bold w-full lg:w-[35%] md:w-[35%] order-2 md:order-1 lg:order-1'>
                         With multiple access points through
                         the operation console,
                         remote computers, tablets, and phones.
@@ -82,9 +82,9 @@ export default function RelifSecondSection() {
             </div>
 
             <div>
-                <div className='flex justify-center max-w-7xl mx-auto'>
-                    <p className='text-white text-center font-bold'>
-                        All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners—from remote computers, tablets, and mobile phones.
+                <div className='flex justify-center max-w-7xl mx-auto pt-10'>
+                    <p className='text-white text-lg font-medium w-full lg:w-[40%] md:w-[40%]'>
+                        All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners —from remote computers, tablets, and mobile phones.
                     </p>
                 </div>
             </div>
