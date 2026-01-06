@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
-import single from "../../assets/images/IntegralAsphalt/single.png";
-import img1 from "../../assets/images/RapBins/RAProv4.png";
+import img1 from "../../assets/images/RapBins/RAProv4.webp";
 
 const RPOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);

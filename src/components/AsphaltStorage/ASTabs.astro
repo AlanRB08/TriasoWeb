@@ -1,6 +1,6 @@
 ---
 import Card from "../unitComponents/Card.astro";
-import redT from "../../assets/images/AsphaltStorage/redT.png";
+import redT from "../../assets/images/AsphaltStorage/redT.webp";
 import oil1 from "../../assets/images/AsphaltPlant/oil1.webp";
 import Image from "astro/components/Image.astro";
 import Whatsbtn from "../../components/unitComponents/Whatsbtn.astro";
@@ -8,8 +8,9 @@ import GallerySlider from "../unitComponents/GallerySlider";
 import type { slide } from "astro:transitions";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 import ModalButton from "../unitComponents/ModalButton.astro";
-import hotoil from "../../assets/images/AsphaltStorage/hotoil.jpg";
-import bombaCirculacion from "../../assets/images/AsphaltStorage/BombaCirculacion.png";
+import hotoil from "../../assets/images/AsphaltStorage/hotoil.webp";
+import DirectFire from "../../assets/images/AsphaltStorage/DirectFire.webp";
+import VaporCondensers from "../../assets/images/AsphaltStorage/VaporCondensers.webp"
 
 const tanksSlides = [
   {
@@ -224,7 +225,7 @@ const tanksSlides2 = [
           class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
         >
           <div class="w-full flex justify-center">
-            <img src={bombaCirculacion.src} alt="" class="w-1/2 rounded-lg" />
+            <img src={DirectFire.src} alt="" class=" lg:w-4/5 rounded-lg" />
           </div>
           <div class="w-full flex justify-between items-center">
             <h1 class="text-white text-xl w-1/2 md:text-2xl">
@@ -237,9 +238,9 @@ const tanksSlides2 = [
               
                 <img
                 slot="image"
-                src={bombaCirculacion.src}
+                src={DirectFire.src}
                 alt="custom"
-                class="w-1/2"
+                class="w-4/5"
               />
            
               
@@ -257,7 +258,7 @@ const tanksSlides2 = [
           class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg min-h-[55vh]"
         >
           <div class="w-full flex justify-center">
-            <img src={hotoil.src} alt="" />
+            <img src={VaporCondensers.src} alt="" class="w-1/2 rounded-lg" />
           </div>
           <div class="w-full flex justify-between items-center">
             <h1 class="text-white text-xl w-1/2 md:text-2xl">
@@ -265,7 +266,7 @@ const tanksSlides2 = [
             </h1>
             <ModalButton>
               <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
-              <img slot="image" src={hotoil.src} alt="custom" />
+              <img slot="image" src={VaporCondensers.src} alt="custom" class="w-1/2" />
               <div slot="content">
                 Triaso® vapor condensers are designed to capture and condense
                 asphalt fumes during storage and heating, preventing emissions

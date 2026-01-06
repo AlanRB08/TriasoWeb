@@ -1,10 +1,12 @@
-import {useEffect, useState, useRef, type ReactNode } from "react";
+import { useEffect, useState, useRef, type ReactNode } from "react";
 
 type AccordionProps = {
   title: string;
   children: ReactNode;
   bgColor?: string;
   image?: string;
+  imageClassName?: string;
+  imageWrapperClassName?: string;
   subText?: string;
 };
 
@@ -13,6 +15,8 @@ export default function AcordeonItemCol({
   children,
   bgColor = "bg-white",
   image = "",
+  imageClassName = "",
+  imageWrapperClassName = "",
   subText = "",
 }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,17 +26,17 @@ export default function AcordeonItemCol({
     setIsOpen(!isOpen);
   };
 
- useEffect(() => {
+  useEffect(() => {
     const element = contentRef.current;
     if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          setIsOpen(false); 
+          setIsOpen(false);
         }
       },
-      { threshold: 0.2 } 
+      { threshold: 0.2 }
     );
 
     observer.observe(element);
@@ -96,7 +100,7 @@ export default function AcordeonItemCol({
         </button>
       </div>
       <div className="px-10 max-w-[350px] mx-auto">
-        <img src={image} alt="" />
+        <img src={image} alt="" className={`${imageClassName}`} />
       </div>
       {subText && (
         <div className="w-full py-6 font-bold text-grisT text-sm md:text-base">
@@ -106,9 +110,8 @@ export default function AcordeonItemCol({
 
       <div
         ref={contentRef}
-        className={`accordion-content w-full transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-[700px]" : "max-h-0"
-        }`}
+        className={`accordion-content w-full transition-all duration-300 overflow-hidden ${isOpen ? "max-h-[700px]" : "max-h-0"
+          }`}
         style={{ transitionProperty: "max-height" }}
       >
         {children}

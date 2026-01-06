@@ -3,8 +3,8 @@ import { useState } from "react";
 
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.png", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Imagen 2" },
 ];
 
 export default function Tab() {

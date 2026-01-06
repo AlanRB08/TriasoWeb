@@ -1,14 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import tab3Main2 from "../../assets/images/DrumMixers/tab3Main2.webp";
-import tab3Right from "../../assets/images/DrumMixers/tab3Right.webp";
-import tab1Main from "../../assets/images/DrumMixers/tab1Main.webp";
-import tab1Left from "../../assets/images/DrumMixers/tab1Left.webp";
-import PreIMG from "../../assets/images/FuelPreHeaters/planos/PreCVABp.png"
-import PreBP1 from "../../assets/images/FuelPreHeaters/planos/PreBP1.png"
-import PreBP2 from "../../assets/images/FuelPreHeaters/planos/PreBP2.png"
-import PreBP3 from "../../assets/images/FuelPreHeaters/planos/PreBP3.png"
+import PreIMG from "../../assets/images/FuelPreHeaters/planos/PreCVABp.webp"
+import PreBP1 from "../../assets/images/FuelPreHeaters/planos/PreBP1.webp"
+import PreBP2 from "../../assets/images/FuelPreHeaters/planos/PreBP2.webp"
+import PreBP3 from "../../assets/images/FuelPreHeaters/planos/PreBP3.webp"
 
 const toggleConfig = [
   {
