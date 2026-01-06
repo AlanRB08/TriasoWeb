@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import imgSuperior from "../../assets/images/PowderA/planos/VSuperior.webp";
 import imgPlano1 from "../../assets/images/PowderA/planos/BluePrint VS.webp";
-import imgPlano2 from "../../assets/images/PowderA/planos/BluePrint VL.webp";
-import imgPlano3 from "../../assets/images/PowderA/planos/BluePrint VT.webp";
+import imgPlano2 from "../../assets/images/PowderA/planos/BluePrintVL.webp";
+import imgPlano3 from "../../assets/images/PowderA/planos/BluePrintVT.webp";
 
 const cabinSize = [
   {
@@ -378,8 +378,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Screw feeder manufactured with 1045 steel</li>
@@ -433,8 +433,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -494,8 +494,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -575,8 +575,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -650,8 +650,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>
@@ -707,8 +707,8 @@ const PAPlanos = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>EPA</li>
@@ -721,8 +721,9 @@ const PAPlanos = () => {
                 </div>
 
                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
-                  <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                    <div className="flex items-center justify-center w-[200px] h-[65px] self-center ml-9">
+                  {/* izquierda */}
+                  <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
+                    <div className="flex items-center justify-center w-[300px] h-[65px] self-center ml-9">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -754,17 +755,6 @@ const PAPlanos = () => {
                               (toggleConfig?.dimensions.width ?? 0) * cmToFeet
                             ).toFixed(1)} ft`}
                         </p>
-                        <p className="text-white text-base">
-                          to
-                        </p>
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
-                          {unit === "metric"
-                            ? `${toggleConfig?.dimensions.width2.toFixed(1) ?? ""
-                            } cm`
-                            : `${(
-                              (toggleConfig?.dimensions.width2 ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
-                        </p>
                       </div>
 
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
@@ -790,15 +780,74 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="w-[372px] h-[285px] mt-7 flex items-center justify-center">
+                    <div className="w-[56%] mt-7 flex items-center justify-center">
                       <img
                         src={imgPlano3.src}
                         alt=""
-                        className="min-w-[600px] object-contain"
+                        className=" object-contain"
                       />
                     </div>
+                    {/* medidas abajo */}
+                    <div className="flex flex-row items-center pl-[160px]">
+                      <div className="border-dotted border-l border-l-white h-[20px] w-[20px] flex items-center justify-center">
+                        <div className="bg-white h-[1px] w-full relative">
+                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="8 5 8 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="block p-0 m-0 overflow-visible"
+                              style={{ shapeRendering: "crispEdges" }}
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                fill="#ffffff"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col justify-center items-center">
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.width2.toFixed(1) ?? ""
+                            } cm`
+                            : `${(
+                              (toggleConfig?.dimensions.width2 ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
+                        </p>
+                      </div>
+                      <div className="border-dotted border-r border-r-white h-[20px] w-[20px] flex items-center justify-center">
+                        <div className="bg-white h-[1px] w-full relative">
+                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="block p-0 m-0 overflow-visible"
+                              style={{ shapeRendering: "crispEdges" }}
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                fill="#ffffff"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                  <div className="flex flex-col items-center justify-end min-w-[90px] h-[285px] shrink-0">
+                  {/* medio */}
+                  <div className="flex flex-col items-center justify-end min-w-[90px] h-[330px] shrink-0 pb-8">
                     <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
                       <div className="bg-white w-[1px] h-full relative">
                         <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
@@ -854,8 +903,9 @@ const PAPlanos = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
-                    <div className="flex items-center justify-center w-[400px] h-[60px]">
+                  {/* derecha */}
+                  <div className="flex flex-col items-center justify-cemter shrink-0 max-w-[500px]">
+                    <div className="flex items-center justify-center w-[400px] h-[60px] ">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -887,15 +937,6 @@ const PAPlanos = () => {
                               (toggleConfig?.dimensions.length ?? 0) * cmToFeet
                             ).toFixed(1)} ft`}
                         </p>
-                        <p className="text-base text-white">to</p>
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
-                          {unit === "metric"
-                            ? `${toggleConfig?.dimensions.length2.toFixed(1) ?? ""
-                            } cm`
-                            : `${(
-                              (toggleConfig?.dimensions.length2 ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
-                        </p>
                       </div>
 
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
@@ -921,12 +962,69 @@ const PAPlanos = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="h-[285px] w-[744px] flex justify-center items-center mt-5">
+                    <div className="h-[330px] w-[744px] flex justify-center items-center ">
                       <img
                         src={imgPlano2.src}
                         alt=""
-                        className="max-h-80 w-auto"
+                        className="w-[50%] pt-5"
                       />
+                    </div>
+                    {/* medidas abajo */}
+                    <div className="flex flex-row items-center pr-[160px]">
+                      <div className="border-dotted border-l border-l-white h-[20px] w-[50px] flex items-center justify-center">
+                        <div className="bg-white h-[1px] w-full relative">
+                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="8 5 8 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="block p-0 m-0 overflow-visible"
+                              style={{ shapeRendering: "crispEdges" }}
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                fill="#ffffff"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col justify-center items-center">
+                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                          {unit === "metric"
+                            ? `${toggleConfig?.dimensions.length2.toFixed(1) ?? ""
+                            } cm`
+                            : `${(
+                              (toggleConfig?.dimensions.length2 ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
+                        </p>
+                      </div>
+                      <div className="border-dotted border-r border-r-white h-[20px] w-[50px] flex items-center justify-center">
+                        <div className="bg-white h-[1px] w-full relative">
+                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="block p-0 m-0 overflow-visible"
+                              style={{ shapeRendering: "crispEdges" }}
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                fill="#ffffff"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -971,8 +1069,8 @@ const PAPlanos = () => {
                         </div>
                         <div
                           className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
                             } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">

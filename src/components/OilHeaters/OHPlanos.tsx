@@ -1,12 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import tab3Main2 from "../../assets/images/DrumMixers/tab3Main2.webp";
-import tab3Right from "../../assets/images/DrumMixers/tab3Right.webp";
-import tab1Main from "../../assets/images/DrumMixers/tab1Main.webp";
-import tab1Left from "../../assets/images/DrumMixers/tab1Left.webp";
-import tab2Left from "../../assets/images/DrumMixers/tab2L.webp";
-
 import OilHeaterVAB from "../../assets/images/OilHeaters/Planos/OilHeaterVABp.webp"
 import BPCalderaVL from "../../assets/images/OilHeaters/Planos/BPCalderaVL.webp"
 import BPCalderaVS from "../../assets/images/OilHeaters/Planos/BPCalderaVS.webp"
@@ -331,7 +325,7 @@ const OHPlanos = () => {
                     </div>
                     <div className="w-full mt-20 mb-10" id="tabsSection" ref={nextSectionRef}>
                         {activeTab === 2 && (
-                            <div className="flex flex-col items-center justify-center" ref={containerRef}>
+                            <div className="flex flex-col " ref={containerRef}>
                                 <div className="flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full">
                                     <div className="flex flex-col items-start justify-between gap-0 md:gap-4 w-full h-full order-2 md:order-1">
                                         <div className="flex flex-col items-start justify-start gap-4 text-white w-full mt-10 md:mt-0">
@@ -658,7 +652,7 @@ const OHPlanos = () => {
                                 </div>
                                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                                     <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                                        <div className="flex items-center justify-center w-[200px] h-[60px] self-center">
+                                        <div className="flex items-center justify-center w-[210px] h-[60px] self-center">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -776,7 +770,7 @@ const OHPlanos = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
+                                    <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
                                         <div className="flex items-center justify-center w-[350px] h-[60px]">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
@@ -835,15 +829,90 @@ const OHPlanos = () => {
                                             <img
                                                 src={BPCalderaVL.src}
                                                 alt=""
-                                                className="w-[60%]"
+                                                className="w-[70%]"
                                             />
                                         </div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col  gap-4 text-white w-full lg:w-[35%] md:w-[35%] mt-10 md:mt-0">
+                                    <div className="w-full lg:w-[60%] md:w-[60%] flex justify-between border-b border-b-white">
+                                        <h1 className="font-bold lg:text-xl text-base w-full pb-3 uppercase">
+                                            Dimensions
+                                        </h1>
+                                        <button
+                                            className="block md:hidden"
+                                            onClick={() =>
+                                                setOpenSections((prev) => ({
+                                                    ...prev,
+                                                    C3_3: !prev.C3_3,
+                                                }))
+                                            }
+                                        >
+                                            <svg
+                                                width="28px"
+                                                height="28px"
+                                                stroke-width="1.5"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                color="#000000"
+                                                className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                                    }`}
+                                            >
+                                                <path
+                                                    d="M6 9L12 15L18 9"
+                                                    stroke="#ffffff"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div className={`flex flex-col items-center transition-all duration-500 md:mb-0 overflow-hidden  ${openSections.C3_3
+                                        ? "max-h-96 opacity-1 mb-4"
+                                        : "max-h-0 opacity-1"
+                                        } lg:flex lg:flex-col lg:items-start md:flex md:items-center md:max-h-96 md:opacity-100`}>
+                                        <div className="flex flex-row justify-between w-full lg:w-[637px] md:w-[640px]">
+                                            <p>Length</p>
+                                            <p className="text-white lg:w-full md:w-full text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.length ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-row justify-between w-full">
+                                            <p>Width</p>
+                                            <p className="text-white lg:w-full md:w-full text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.width ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-row justify-between w-full">
+                                            <p>Height</p>
+                                            <p className="text-white lg:w-full md:w-full  text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.height ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         )}
                         {activeTab === 3 && (
-                            <div className="flex flex-col items-center justify-center" ref={containerRef}
+                            <div className="flex flex-col" ref={containerRef}
                             >
                                 <div className="flex flex-col md:grid md:grid-cols-4 justify-center items-center w-full">
                                     <div
@@ -1169,7 +1238,7 @@ const OHPlanos = () => {
                                 </div>
                                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                                     <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                                        <div className="flex items-center justify-center w-[200px] h-[60px] self-center">
+                                        <div className="flex items-center justify-center w-[210px] h-[60px] self-center">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -1287,7 +1356,7 @@ const OHPlanos = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
+                                    <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
                                         <div className="flex items-center justify-center w-[350px] h-[60px]">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
@@ -1346,12 +1415,86 @@ const OHPlanos = () => {
                                             <img
                                                 src={BPCalderaVL.src}
                                                 alt=""
-                                                className="w-[60%]"
+                                                className="w-[70%]"
                                             />
                                         </div>
                                     </div>
                                 </div>
+                                <div className="flex flex-col  gap-4 text-white w-full lg:w-[35%] md:w-[35%] mt-10 md:mt-0">
+                                    <div className="w-full lg:w-[60%] md:w-[60%] flex justify-between border-b border-b-white">
+                                        <h1 className="font-bold lg:text-xl text-base w-full pb-3 uppercase">
+                                            Dimensions
+                                        </h1>
+                                        <button
+                                            className="block md:hidden"
+                                            onClick={() =>
+                                                setOpenSections((prev) => ({
+                                                    ...prev,
+                                                    C3_3: !prev.C3_3,
+                                                }))
+                                            }
+                                        >
+                                            <svg
+                                                width="28px"
+                                                height="28px"
+                                                stroke-width="1.5"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                color="#000000"
+                                                className={`transition-transform duration-300 transform ${openSections.C3_3 ? "rotate-180" : ""
+                                                    }`}
+                                            >
+                                                <path
+                                                    d="M6 9L12 15L18 9"
+                                                    stroke="#ffffff"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div className={`flex flex-col items-center transition-all duration-500 md:mb-0 overflow-hidden  ${openSections.C3_3
+                                        ? "max-h-96 opacity-1 mb-4"
+                                        : "max-h-0 opacity-1"
+                                        } lg:flex lg:flex-col lg:items-start md:flex md:items-center md:max-h-96 md:opacity-100`}>
+                                        <div className="flex flex-row justify-between w-full lg:w-[637px] md:w-[640px]">
+                                            <p>Length</p>
+                                            <p className="text-white lg:w-full md:w-full text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.length ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-row justify-between w-full">
+                                            <p>Width</p>
+                                            <p className="text-white lg:w-full md:w-full text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.width ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-row justify-between w-full">
+                                            <p>Height</p>
+                                            <p className="text-white lg:w-full md:w-full  text-center ">
+                                                {unit === "metric"
+                                                    ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                                                    } cm`
+                                                    : `${(
+                                                        (activeData?.dimensions.height ?? 0) * cmToFeet
+                                                    ).toFixed(1)} ft`}
+                                            </p>
+                                        </div>
 
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
