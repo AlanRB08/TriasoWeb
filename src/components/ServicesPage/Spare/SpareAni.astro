@@ -6,74 +6,136 @@ import business from "../../../assets/images/Service/Spare/business.webp";
 import mixer from "../../../assets/images/AsphaltPlant/drum4.webp";
 import rodillo1 from "../../../assets/images/Service/Spare/rodillo1.webp";
 ---
+
 <section class="w-full flex flex-col">
-    <div class="w-full px-8 md:px-52 flex flex-col gap-8">
-        <div class="w-3/4">
-            <img src={SpareCabin.src} alt="" class="w-full h-[600px] rounded-2xl">
+    <div class="max-w-7xl px-8 mx-auto flex justify-center">
+        <img src={SpareCabin.src} alt="" class="hero-img  rounded-lg" />
+    </div>
+    <div
+        class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
+    >
+        <div class="w-full mt-10">
+            <h2 class="text-redBg font-bold text-lg md:text-xl">Any time, anywhere</h2>
+            <p class="text-grisT font-bold md:text-lg text-justify">
+                We guarantee the fastest response for spare parts. Our dedicated
+                team is always ready to support equipment users anywhere, at any
+                time. With a specialized spare parts hotline and an efficient
+                logistics system, we ensure deliveries in record time so your
+                equipment keeps running without delays.
+            </p>
         </div>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="w-full flex flex-col justify-center">
-                <h2 class="text-redBg font-bold text-xl md:text-2xl">Any time, anywhere</h2><br>
-                <p class="text-grisT font-bold text-base md:text-lg">
-                    We guarantee the fastest response for spare parts. Our dedicated team is always ready to support equipment 
-                    users anywhere, at any time. With a specialized spare parts hotline and an efficient logistics system, we ensure 
-                    deliveries in record time so your equipment keeps running without delays.
-                </p>
-            </div>
-            <div class="w-full">
-                <img src={Aro.src} alt="" class="w-3/4 rounded-2xl">
-            </div>
-        </div>
-        <div class="w-full">
-            <img src={bandas.src} alt="" class="w-1/2 rounded-2xl">
+
+        <div class="w-full hidden lg:flex md:w-auto">
+            <img
+                src={Aro.src}
+                alt=""
+                class="side-img rounded-2xl will-change-transform"
+            />
         </div>
     </div>
+
+    <div
+        class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
+    >
+        <img
+            src={bandas.src}
+            alt=""
+            class="fade-img rounded-lg lg:w-3/5 will-change-transform"
+        />
+    </div>
+
+    <div class="relative flex flex-col lg:hidden">
+        <img
+            src={Aro.src}
+            alt=""
+            class="rounded-2xl w-[40%] translate-x-[240px] translate-y-10"
+        />
+
+        <img
+            src={bandas.src}
+            alt=""
+            class="absolute top-0 left-0 w-2/3 rounded-lg -translate-x-1 translate-y-2 shadow-lg"
+        />
+    </div>
+
     <div class="w-full px-8 md:px-52 text-center py-10">
-        <h2 class="text-redBg font-bold text-2xl md:text-3xl">We know this business inside out</h2><br>
-        <h3 class="text-grisT font-normal text-xl md:text-2xl">With over 30 years of experience, we understand exactly what our clients need.</h3>
+        <h2 class="text-redBg font-bold text-2xl md:text-3xl">
+            We know this business inside out
+        </h2><br />
+        <h3 class="text-grisT font-normal text-xl md:text-2xl">
+            With over 30 years of experience, we understand exactly what our
+            clients need.
+        </h3>
     </div>
     <div class="bg-gradient-to-b from-[#f4f5f6] to-[#393939] w-full h-[150px]">
     </div>
     <div class="bg-grisT w-full text-center flex flex-col gap-4">
-        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">Guaranteed quality</h2>
-        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">Low prices </h2>
-        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">Short delivery times</h2>
+        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">
+            Guaranteed quality
+        </h2>
+        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">Low prices</h2>
+        <h2 class="text-bgBeige font-bold text-2xl md:text-3xl">
+            Short delivery times
+        </h2>
     </div>
-    <div class="bg-grisT w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52 gap-10 py-10">
+    <div
+        class="bg-grisT w-full grid grid-cols-1 md:grid-cols-2 px-8 md:px-52 gap-10 py-10"
+    >
         <div class="w-full">
-            <img src={business.src} alt="" class="w-3/4 rounded-2xl">
+            <img src={business.src} alt="" class="w-3/4 rounded-2xl" />
         </div>
-        <div class="w-full text-base md:text-lg font-bold text-white h-full flex justify-center items-center">
+        <div
+            class="w-full text-base md:text-lg font-bold text-white h-full flex justify-center items-center"
+        >
             <p>
-                No other asphalt plant manufacturer in the world produces as many of its own components as Triaso. <br>
-                This in-house production allows us to offer superior service, industry-leading warranties, and direct 
-                support from both our Mexican manufacturing facility and our U.S. distributor. <br>
-                We ship spare parts worldwide to keep your operations running without interruption. Every part is 
-                backed by certified quality, competitive pricing, and fast delivery times.
+                No other asphalt plant manufacturer in the world produces as
+                many of its own components as Triaso. <br />
+                This in-house production allows us to offer superior service, industry-leading
+                warranties, and direct support from both our Mexican manufacturing
+                facility and our U.S. distributor. <br />
+                We ship spare parts worldwide to keep your operations running without
+                interruption. Every part is backed by certified quality, competitive
+                pricing, and fast delivery times.
             </p>
         </div>
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2">
         <div class="w-full pl-8 md:pl-52 font-bold py-10">
-            <h1 class="text-2xl md:text-3xl text-blueMain">Triaso® Inventory</h1><br>
+            <h1 class="text-2xl md:text-3xl text-blueMain">
+                Triaso® Inventory
+            </h1><br />
             <p class="text-base md:text-lg text-grisT">
-                At Triaso, we prioritize the reliability and performance of your equipment by 
-                providing high-quality spare parts. Our well-stocked warehouse in Durango, Mexico ensures fast 
-                and efficient response times when you need parts quickly. <br>
-                With an advanced cataloging system, we can accurately identify and supply the exact components you need.
-                 Whether you're looking for standard parts or custom solutions, Triaso is ready to deliver.
+                At Triaso, we prioritize the reliability and performance of your
+                equipment by providing high-quality spare parts. Our
+                well-stocked warehouse in Durango, Mexico ensures fast and
+                efficient response times when you need parts quickly. <br />
+                With an advanced cataloging system, we can accurately identify and
+                supply the exact components you need. Whether you're looking for standard
+                parts or custom solutions, Triaso is ready to deliver.
             </p>
             <div class="w-full">
-                <img src={rodillo1.src} alt="">
+                <img src={rodillo1.src} alt="" />
             </div>
         </div>
         <div class="w-full flex flex-col">
             <div class="w-full rounded-bl-2xl bg-redBg font-bold">
-                <h1 class="text-2xl md:text-3xl text-white py-6 pl-6">100% manufactured in-house</h1>
+                <h1 class="text-2xl md:text-3xl text-white py-6 pl-6">
+                    100% manufactured in-house
+                </h1>
             </div>
             <div class="w-full flex justify-end">
-                <img src={mixer.src} alt="" class="w-3/5">
+                <img src={mixer.src} alt="" class="w-3/5" />
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    import { initScrollAnimations } from "./scrollAnimationsSpare";
+
+    if (typeof window !== "undefined") {
+        window.addEventListener("DOMContentLoaded", () => {
+            initScrollAnimations();
+        });
+    }
+</script>
