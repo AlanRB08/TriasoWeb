@@ -1,4 +1,6 @@
 import React from 'react'
+import img1 from "../../assets/images/Relief/TriasoOS7.webp"
+import img2 from "../../assets/images/Relief/5.webp"
 
 export default function ReliefLastSection() {
     return (
@@ -38,10 +40,13 @@ export default function ReliefLastSection() {
                 </div>
             </div>
 
-            <div className='flex justify-center items-center pt-5'>
+            <div className=' relative flex justify-center items-center pt-5 bg-cover bg-center bg-no-repeat'
+                style={{ backgroundImage: `url(${img2.src})`, }}>
+
                 {/* bg */}
-                <div >
-                    {/* contenido */}
+                <div className="absolute inset-0 bg-white/80 z-0" />
+                {/* contenido */}
+                <div className='relative w-full'>
                     <div className='max-w-7xl mx-auto px-8 space-y-5'>
                         <div>
                             <h1 className='font-bold text-4xl text-[#393939] text-center'>Control system upgrades</h1>
@@ -57,10 +62,10 @@ export default function ReliefLastSection() {
                         </div>
 
                         <div>
-                            <img src="https://placehold.co/1920x1080/png" alt="" />
+                            <img src={img1.src} alt="" />
                         </div>
 
-                        <div>
+                        <div className='pb-10'>
                             <p className='font-semibold text-lg text-[#393939]'>Provides the freedom to access detailed, real-time analysis from anywhere and on any device. Decision-making becomes faster, better-founded, and completely independent of physical location.</p>
                         </div>
                     </div>
