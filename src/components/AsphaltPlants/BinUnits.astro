@@ -52,27 +52,29 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
     <h1 class="text-center text-redBg text-2xl md:text-3xl font-bold">
       Portable and relocatable systems designed to adapt to any site, anytime
     </h1>
-    <BinSelector client:only/>
+    <BinSelector client:only />
   </div>
-  <div
-    class="flex flex-col md:grid md:grid-cols-2 justify-center my-5 md:my-10"
-  >
-    <div class="flex justify-center items-center w-full">
-      <div class="bg-blueMain md:rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
-        <h1 class="text-white font-bold text-2xl md:text-3xl">
-          Seamless Integration with <br />Other Systems
-        </h1>
-        <br />
-        <p class="text-grisSubP text-sm md:text-lg font-bold">
-          Triaso® asphalt plants are designed to integrate seamlessly with
-          bins, conveyors, asphalt tanks, etc. This enables synchronized
-          operations and a consistent flow of hot-mix across your processing
-          system.
-        </p>
+  <div class="max-w-[2000px] flex flex-col items-center justify-center">
+    <div
+      class="flex flex-col md:grid md:grid-cols-2 justify-center my-5 md:my-10"
+    >
+      <div class="flex justify-center items-center w-full">
+        <div class="bg-blueMain md:rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
+          <h1 class="text-white font-bold text-2xl md:text-3xl">
+            Seamless Integration with <br />Other Systems
+          </h1>
+          <br />
+          <p class="text-grisSubP text-sm md:text-lg font-bold">
+            Triaso® asphalt plants are designed to integrate seamlessly with
+            bins, conveyors, asphalt tanks, etc. This enables synchronized
+            operations and a consistent flow of hot-mix across your processing
+            system.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="w-full">
-      <Image src={img2} alt="" class="object-cover w-full" />
+      <div class="w-full">
+        <Image src={img2} alt="" class="object-cover w-full" />
+      </div>
     </div>
   </div>
   <div
@@ -101,7 +103,6 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
       <div class="flex justify-center items-center">
         <LearnBtn />
       </div>
-      
     </div>
   </div>
   <TwoColumnSection

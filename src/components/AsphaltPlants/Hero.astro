@@ -1,6 +1,6 @@
 ---
 // Componente HeroSection (src/components/HeroSection.astro)
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 export interface Props {
   heroImage: ImageMetadata;
@@ -24,8 +24,10 @@ const { heroImage, title, altText } = Astro.props;
     fetchpriority="high"
     decoding="async"
   />
-  
-  <div class="absolute bottom-0 md:bottom-5 right-0 z-40 p-4 md:pr-52 overflow-hidden">
+
+  <div
+    class="absolute bottom-0 md:bottom-5 right-0 z-40 p-4 md:pr-52 overflow-hidden"
+  >
     <h1 class="text-grisT text-2xl md:text-5xl font-bold">{title}</h1>
   </div>
 </div>
