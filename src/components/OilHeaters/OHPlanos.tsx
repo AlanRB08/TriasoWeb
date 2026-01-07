@@ -242,7 +242,7 @@ const OHPlanos = () => {
                 >
                     <img
                         src={BPCalderaVS1.src}
-                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        className="absolute top-0 left-0 w-[85%] h-full object-contain"
                         alt="Imagen de fondo"
                         style={{
                             display: activeTab === 3 ? "block" : "none",
@@ -253,7 +253,7 @@ const OHPlanos = () => {
                     <img
                         ref={imgRef}
                         src={OilHeaterVAB.src}
-                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        className="absolute top-0 left-0 w-[85%] h-full object-contain"
                         alt="Imagen superior"
                         style={{ clipPath: "inset(0% 0% 0% 0%)" }}
                     />
@@ -652,7 +652,7 @@ const OHPlanos = () => {
                                 </div>
                                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                                     <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                                        <div className="flex items-center justify-center w-[210px] h-[60px] self-center">
+                                        <div className="flex items-center justify-center w-[268px] h-[60px] self-center">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -706,15 +706,15 @@ const OHPlanos = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="w-[372px] h-[285px] flex items-center justify-center">
+                                        <div className="w-full h-full flex items-center justify-center">
                                             <img
                                                 src={BPCalderaVT.src}
                                                 alt=""
-                                                className="max-w-full max-h-full object-contain"
+                                                className="max-w-[300px]"
                                             />
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-end min-w-[90px] h-[285px] shrink-0">
+                                    <div className="flex flex-col items-center justify-end min-w-[90px] h-[328px] pr-5 shrink-0">
                                         <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
                                             <div className="bg-white w-[1px] h-full relative">
                                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
@@ -770,8 +770,8 @@ const OHPlanos = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
-                                        <div className="flex items-center justify-center w-[350px] h-[60px]">
+                                    <div className="flex flex-col items-center justify-center shrink-0">
+                                        <div className="flex items-center justify-center w-full h-[60px]">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -825,11 +825,11 @@ const OHPlanos = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="h-[300px] w-[744px] flex justify-center items-center">
+                                        <div className="w-full h-full flex justify-center items-center">
                                             <img
                                                 src={BPCalderaVL.src}
                                                 alt=""
-                                                className="w-[70%]"
+                                                className="w-[530px]"
                                             />
                                         </div>
                                     </div>
@@ -1238,7 +1238,7 @@ const OHPlanos = () => {
                                 </div>
                                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                                     <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                                        <div className="flex items-center justify-center w-[210px] h-[60px] self-center">
+                                        <div className="flex items-center justify-center w-[268px] h-[60px] self-center">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -1292,15 +1292,15 @@ const OHPlanos = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="w-[372px] h-[285px] flex items-center justify-center">
+                                        <div className="w-full h-full flex items-center justify-center">
                                             <img
                                                 src={BPCalderaVT.src}
                                                 alt=""
-                                                className="max-w-full max-h-full object-contain"
+                                                className="max-w-[300px]"
                                             />
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-end min-w-[90px] h-[285px] shrink-0">
+                                    <div className="flex flex-col items-center justify-end min-w-[90px] h-[328px] pr-5 shrink-0">
                                         <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
                                             <div className="bg-white w-[1px] h-full relative">
                                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
@@ -1356,8 +1356,8 @@ const OHPlanos = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
-                                        <div className="flex items-center justify-center w-[350px] h-[60px]">
+                                    <div className="flex flex-col items-center justify-center shrink-0">
+                                        <div className="flex items-center justify-center w-full h-[60px]">
                                             <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                                 <div className="bg-white h-[1px] w-full relative">
                                                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -1411,11 +1411,11 @@ const OHPlanos = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="h-[300px] w-[744px] flex justify-center items-center">
+                                        <div className="w-full h-full flex justify-center items-center">
                                             <img
                                                 src={BPCalderaVL.src}
                                                 alt=""
-                                                className="w-[70%]"
+                                                className="w-[530px]"
                                             />
                                         </div>
                                     </div>
