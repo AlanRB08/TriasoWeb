@@ -138,6 +138,10 @@ export const menuItems = [
       {
         title : "REHABILITATION",
         url : "/Rehabilitation",
+      },
+      {
+        title: "TRIASO RELIEF",
+        url: "/Relief"
       }
     ]
   },
@@ -183,7 +187,7 @@ export const menuItems = [
         children : [
           {
             title : "ASPHALT PLANTS",
-            url : "/",
+            url : "/TipsAsphalt",
           },
           {
             title : "ROCK CRUSHERS",
