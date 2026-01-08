@@ -1,8 +1,8 @@
 import InfoCard from "../../components/unitComponents/InfoCard";
-import img1 from "../../assets/images/AsphaltPlant/Gallery/Fabricación de pugmill.jpg"
-import img2 from "../../assets/images/AsphaltPlant/Gallery/Fabricación de tanque con caldera.jpg"
-import img3 from "../../assets/images/AsphaltPlant/Gallery/Quemadores en fabricación.jpg"
-import img4 from "../../assets/images/AsphaltPlant/Gallery/Soldadura interna de tambor mezclador.jpg"
+import img1 from "../../assets/images/AsphaltPlant/Gallery/Fabricación de pugmill.webp"
+import img2 from "../../assets/images/AsphaltPlant/Gallery/Fabricación de tanque con caldera.webp"
+import img3 from "../../assets/images/AsphaltPlant/Gallery/Quemadores en fabricación.webp"
+import img4 from "../../assets/images/AsphaltPlant/Gallery/Soldadura interna de tambor mezclador.webp"
 
 export default function App() {
   return (

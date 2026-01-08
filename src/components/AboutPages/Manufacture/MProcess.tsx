@@ -2,7 +2,7 @@ import React from "react";
 
 const MProcess = () => {
   return (
-    <section className="w-full px-8 md:px-52 font-bold text-grisT">
+    <section className="w-full max-w-7xl mx-auto px-8 font-bold text-grisT">
       <div className="w-full">
         <h1 className="text-3xl md:text-4xl">MANUFACTURING PROCESS</h1>
         <br />
