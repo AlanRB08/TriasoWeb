@@ -215,6 +215,6 @@ export const menuItems = [
   },
   {
     title : "CONTACT",
-    url : "/",
+    url : "/Contact",
   }
 ]
