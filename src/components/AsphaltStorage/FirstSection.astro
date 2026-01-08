@@ -3,10 +3,12 @@ import Image from "astro/components/Image.astro";
 import Separator from "../unitComponents/Separator.astro";
 import ItemsSlider from "../LandinPage/ItemsSlider";
 import img1 from "../../assets/images/AsphaltStorage/versatil.webp";
+import img2 from "../../assets/images/AsphaltStorage/SliderStorage3/DSC05068.webp";
+import img3 from "../../assets/images/AsphaltStorage/SliderStorage3/Caldera.webp";
 import GallerySlider from "../unitComponents/GallerySlider";
 import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
-
+import SliderAsphalt from "./SliderAsphalt";
 import ASCustom from "../AsphaltStorage/ASCustom.astro";
 import ASMainVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import ASControl from "../../assets/images/AsphaltStorage/ASControl.webp";
@@ -106,14 +108,16 @@ const iconos = [
     </h1>
   </div>
   <div
-    class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[10%] items-center justify-center mt-10"
+    class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[10%] items-center mt-10"
   >
+    <!-- TEXTO -->
     <div
-      class="text-grisT flex flex-col h-full gap-3 md:gap-10 text-justify bg-white border-2 border-black rounded-r-2xl px-8 md:pl-32 py-10"
+      class="order-1 md:order-1 text-grisT flex flex-col h-full gap-4 md:gap-10 text-justify bg-white border-2 border-black rounded-r-2xl px-6 md:pl-32 py-8 md:py-10"
     >
       <h2 class="text-lg md:text-xl text-start w-full text-black">
         Versatile and Efficient Asphalt Storage Solutions
       </h2>
+
       <p>
         The tanks are engineered for versatility and reliability in asphalt
         storage applications, from road construction to roofing and other
@@ -125,16 +129,20 @@ const iconos = [
         they maintain the required asphalt consistency for both standard and
         modified binders.
       </p>
+
       <p>
         Their durable construction and easy operation make them suitable for
         continuous production and long-term service in demanding environments.
       </p>
     </div>
-    <div class="">
-      <img src={img1.src} alt="" class="max-h-[450px]" />
+
+    <!-- SLIDER -->
+    <div class="order-2 md:order-2 w-full h-[220px] md:h-[420px]">
+      <SliderAsphalt client:load images={[img1.src, img2.src, img3.src]} />
     </div>
   </div>
-  <div class="w-full px-8 md:px-52 py-10">
+
+  <div class="w-full px-8 md:px-52 py-10 lg:py-24 md:py-24">
     <h1 class="text-redBg text-2xl md:text-3xl text-center">
       With Triaso, become the principal supplier of hot-mix for <br />
       all the paving projects in your region
@@ -284,7 +292,7 @@ const iconos = [
                 Artificial Intelligence
               </p>
             </div>
-            <div class="w-[70px]  flex flex-col justify-center items-center">
+            <div class="w-[70px] flex flex-col justify-center items-center">
               <svg
                 class="w-[48px] h-[48px] md:w-[64px] md:h-[64px]"
                 stroke-width="2.2"

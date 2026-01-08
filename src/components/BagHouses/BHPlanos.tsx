@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import bgFront from "../../assets/images/BagHouses/BagHousesVS2.webp";
 import bgPlanos from "../../assets/images/BagHouses/bagHousesVS2Planos.webp";
-import BpBagHousesVL from "../../assets/images/BagHouses/BpBagHousesVL.png";
-import BpBagHousesVT2 from "../../assets/images/BagHouses/BpBagHousesVT2.png";
+import BpBagHousesVL from "../../assets/images/BagHouses/BpBagHousesVL.webp";
+import BpBagHousesVT2 from "../../assets/images/BagHouses/BpBagHousesVT2.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 const toggleConfig = [
@@ -4056,7 +4056,7 @@ const BHPlanos = () => {
                     <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                         {/* Medidas imagen izquierda ancho  */}
                         <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                            <div className="flex items-center justify-center w-[250px] h-[60px] self-center">
+                            <div className="flex items-center justify-center w-[290px] h-[60px] self-center">
                                 <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                     <div className="bg-white h-[1px] w-full relative">
                                         <div className="absolute left-0 top-1/2 transform -translate-y-64">
@@ -4111,7 +4111,7 @@ const BHPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-[372px] h-[370px] flex items-center justify-center">
+                            <div className="w-[372px] h-[350px] flex items-center justify-center">
                                 <img
                                     src={BpBagHousesVT2.src}
                                     alt=""
@@ -4120,7 +4120,7 @@ const BHPlanos = () => {
                             </div>
                         </div>
                         {/* Medidas alto */}
-                        <div className="flex flex-col items-center justify-end min-w-[90px] h-[350px] shrink-0">
+                        <div className="flex flex-col items-center justify-end min-w-[90px] h-[350px] shrink-0 pr-5">
                             <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
                                 <div className="bg-white w-[1px] h-full relative">
                                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
@@ -4178,7 +4178,7 @@ const BHPlanos = () => {
                         </div>
                         {/* Medidas largo imagen derecha */}
                         <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
-                            <div className="flex items-center justify-center w-[500px] h-[60px]">
+                            <div className="flex items-center justify-center w-full h-[60px]">
                                 <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                                     <div className="bg-white h-[1px] w-full relative">
                                         <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -4233,7 +4233,7 @@ const BHPlanos = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-[370px] w-[744px] flex justify-center items-center">
+                            <div className="h-[350px] w-[744px]">
                                 <img
                                     src={BpBagHousesVL.src}
                                     alt=""

@@ -287,7 +287,7 @@ export default function ReliefFourthSection() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto flex flex-col justify-center items-center space-y-5 pt-5">
+            <div className="max-w-7xl mx-auto flex flex-col justify-center items-center space-y-5 pt-5 pb-5">
                 <div className="flex justify-center items-center">
                     <h1 className=" font-bold text-4xl text-center">
                         Plant operation depends on fewer operators,
@@ -304,17 +304,17 @@ export default function ReliefFourthSection() {
 
             {/* sección animación */}
             <div
-                ref={sectionRef}
-                className="relative min-h-screen flex flex-col px-6 py-10"
+                // ref={sectionRef}
+                className="relative min-h-screen flex flex-col px-6 py-10 bg-[#86aaff]"
             >
                 <h1
-                    ref={titleRef}
+                    // ref={titleRef}
                     className="text-4xl md:text-5xl font-bold text-center mb-12"
                 >
                     Triaso Relief Assist
                 </h1>
                 <div
-                    ref={contentRef}
+                    // ref={contentRef}
                     className="flex-1 flex items-center justify-center pt-10"
                 >
                     <div className=" max-w-7xl mx-auto text-center space-y-10">

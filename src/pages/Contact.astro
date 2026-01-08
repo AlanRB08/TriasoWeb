@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FormSection from "../components/ContactPage/FormSection";
+import BannerSection from "../components/ContactPage/BannerSection.astro";
+---
+
+<Layout title="Contact Us">
+    <FormSection client:only/>
+    <BannerSection/>
+</Layout>

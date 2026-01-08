@@ -688,7 +688,7 @@ const FPHPlanos = () => {
                 </div>
                 <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
                   <div className="flex flex-col items-center justify-center shrink-0 min-w-[272px]">
-                    <div className="flex items-center justify-center w-[135px] h-[60px] self-start">
+                    <div className="flex items-center justify-center w-[235px] h-[60px] self-center">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
@@ -804,8 +804,8 @@ const FPHPlanos = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center shrink-0 min-w-[744px]">
-                    <div className="flex items-center justify-center w-full h-[60px]">
+                  <div className="flex flex-col items-center justify-center shrink-0 max-w-[400px]">
+                    <div className="flex items-center justify-center w-[206px] h-[60px]">
                       <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
                           <div className="absolute left-0 top-1/2 transform -translate-y-1/2">

@@ -3,11 +3,15 @@ import LearnBtn from "../../unitComponents/LearnBtn.astro";
 import Whatsbtn from "../../unitComponents/Whatsbtn.astro";
 import Logo from "../../../assets/logos/LogoTriasoMX.svg";
 import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
+import img1 from "../../../assets/images/Maintenance/userManual.webp";
+import img2 from "../../../assets/images/Maintenance/maintenance1.webp";
+import img3 from "../../../assets/images/Maintenance/tolvas.webp"
+import img4 from "../../../assets/images/Maintenance/banner2.webp"
 ---
 
 <section class="w-full font-bold text-grisT mt-28">
     <div class="w-full px-8 md:px-52">
-        <h1 class="text-3xl md:text-4xl text-end">
+        <h1 class="text-3xl md:text-4xl text-start lg:text-end md:text-end">
             MAINTENANCE
         </h1>
     </div>
@@ -18,7 +22,7 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
             <br>Our team of expert technicians, operators, and engineers meticulously inspects, services, and optimizes every component of your asphalt plant.
         </p>
     </div>
-    <div class="w-full bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center h-[70vh] mt-16">
+    <div class="w-full bg-[url(/Gallery/drum-mixer.webp)] bg-cover bg-center h-[70vh] mt-16">
         <div class="grid grid-cols-1 md:grid-cols-3 px-8 md:px-52 gap-16 justify-center items-center w-full h-full bg-white/70">
             <div class="w-full col-span-1">
             <Whatsbtn></Whatsbtn>
@@ -42,7 +46,7 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
              or servicing, guaranteeing uninterrupted equipment performance.
         </p>
     </div>
-    <div class="w-full bg-[url(/Gallery/drum-mixer.jpg)] bg-cover bg-center h-[70vh]">
+    <div class="w-full bg-[url(/Gallery/banner2.webp)] bg-cover bg-center h-[70vh]">
         <div class="w-full h-full bg-white/70 px-8 md:px-72 py-16 text-black">
             <h1 class="text-2xl md:text-3xl">USER MANUAL</h1><br>
             <p class="text-base md:text-lg">
@@ -50,16 +54,16 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
                 This allows you to independently
                 handle future installations and perform full maintenance with confidence.
             </p>
-            <div>
-                <img src="" alt="">
+            <div class="flex justify-center items-center">
+                <img src={img1.src} alt="">
             </div>
         </div>
     </div>
     <div class="w-full px-8 md:px-52 py-16">
         <h1 class="text-2xl md:text-3xl text-blueMain text-center">Technical and Professional Focus</h1>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 pl-8 md:pl-52 items-center">
-        <div class="w-full col-span-1">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10  md:pl-52 items-center">
+        <div class="w-full col-span-1 px-8">
             <img src={Cabins.src} alt="" class="rounded-2xl">
         </div>
         <div class="w-full col-span-1">
@@ -94,23 +98,23 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
                  to extend your equipment’s lifespan.
             </p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="flex justify-center lg:justify-normal">
+            <img src={img2.src} alt="" class="rounded-lg w-1/2 lg:w-full">
         </div>
     </div>
-    <div class="w-full ">
-        <img src="" alt="" class="w-3/4">
+    <div class="w-full flex justify-center items-center pb-5">
+        <img src={img3.src} alt="" class="w-3/4 rounded-lg">
     </div>
-    <div class="w-full bg-grisT relative h-[250px]">
+    <div class="w-full bg-grisT relative h-[300px]">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full">
             <img src={Logo.src} alt="">
         </div>
         <div class="w-full h-full px-8 md:px-52 text-white text-base md:text-lg relative z-20 justify-center flex flex-col">
-            <p>
+            <p class="">
             With a proactive approach to maintenance, we work to extend the lifespan of
              your equipment and ensure consistent reliability.
             </p><br>
-            <p>
+            <p class="">
                 Backed by rigorous quality control and advanced engineering techniques, our
                 systems are built for seamless, long-term operation—giving you the confidence
                 to focus on your projects without unexpected interruptions
@@ -123,8 +127,8 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
         </h1>
     </div>
     <div class="w-full px-8 md:px-64 mb-16">
-        <div class="w-full bg-[url(/Gallery/Boxes.webp)] bg-cover bg-center h-[70vh] rounded-lg">
-            <div class="w-full h-full bg-black/70 text-white text-base md:text-lg flex flex-col justify-center px-16">
+        <div class="w-full bg-[url(/Gallery/Boxes.webp)] bg-cover bg-center lg:h-[80vh] rounded-lg">
+            <div class="w-full h-full bg-black/70 text-white text-base md:text-lg flex flex-col justify-center px-16 pt-5 lg:pt-0">
                 <p>No other asphalt plant manufacturer in the world produces as many of its own components as Triaso.</p><br>
                 <p>
                     This vertical integration allows us to offer unmatched service, warranty coverage, and direct support—both
@@ -134,10 +138,10 @@ import Cabins from "../../../assets/images/Service/Spare/SpareCabine.webp";
                     We ship spare parts worldwide to ensure your production never stops. Every part is backed by guaranteed quality,
                     competitive pricing, and fast delivery times.
                 </p>
-                <div class="mt-16 flex justify-center">
+                <div class="mt-16 mb-10 lg:mb-0 flex justify-center">
                     <LearnBtn></LearnBtn>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 </section>
