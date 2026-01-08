@@ -2,43 +2,50 @@
 import Separator from "../../unitComponents/Separator.astro";
 import TwoColumnSection from "../../unitComponents/TwoColumnSection.astro";
 import Tred from "../../../assets/images/AsphaltStorage/redT.webp";
+import hero2 from "../../../assets/images/About/Delivery/hero2.webp";
 ---
-<img src="https://placehold.co/1920x300/png" alt="" class="w-auto">
-<section class="w-full max-w-7xl mx-auto  py-10">
-    
+
+<div class="flex justify-center">
+    <img src={hero2.src} alt="" class="lg:w-[3000px] lg:h-[700px] object-fill" />
+</div>
+
+<section class="w-full max-w-7xl mx-auto py-10">
     <div class="w-full grid grid-cols-1 md:grid-cols-3 bg-white">
         <div class="w-full col-span-1 p-8">
-            <h1 class="text-2xl md:text-3xl font-bold text-black">Highly portable</h1>
-            <Separator></Separator>
+            <h1 class="text-2xl md:text-3xl font-bold text-black">
+                Highly portable
+            </h1>
+            <Separator />
             <p class="text-base md:text-lg font-thin">
-                We understand the importance of getting your equipment up and running as quickly as possible.
-                 Our Triaso equipment is designed for fast installation and startup.
+                We understand the importance of getting your equipment up and
+                running as quickly as possible. Our Triaso equipment is designed
+                for fast installation and startup.
             </p>
         </div>
         <div class="w-full col-span-2">
-            <img src="" alt="">
+            <img src="" alt="" />
         </div>
     </div>
     <TwoColumnSection
-                leftBg="bg-redBg"
-                rightBg="bg-blueMain"
-                imageSrc={Tred.src}
-                imageAlt="Red T icon"
-                imageWidth="150px"
-                                >
-                    <div slot="left" class="flex flex-col justify-center gap-3">
-                        
-                        <p class="text-base md:text-lg">
-                            All components of our equipment are designed for integral transport, ensuring efficient and rapid installation.
-                             Our robust equipment can be quickly and seamlessly installed on-site.
-                        </p>
-                    </div>
-                    <div slot="right" class="flex flex-col justify-center gap-3">
-                        
-                        <p class="text-base md:text-lg">
-                            Triaso equipments offer the great advantage of being fully portable, with the flexibility to be
-                             installed as stationary, reducing operating and maintenance costs.
-                        </p>
-                    </div>
+        leftBg="bg-redBg"
+        rightBg="bg-blueMain"
+        imageSrc={Tred.src}
+        imageAlt="Red T icon"
+        imageWidth="150px"
+    >
+        <div slot="left" class="flex flex-col justify-center gap-3">
+            <p class="text-base md:text-lg">
+                All components of our equipment are designed for integral
+                transport, ensuring efficient and rapid installation. Our robust
+                equipment can be quickly and seamlessly installed on-site.
+            </p>
+        </div>
+        <div slot="right" class="flex flex-col justify-center gap-3">
+            <p class="text-base md:text-lg">
+                Triaso equipments offer the great advantage of being fully
+                portable, with the flexibility to be installed as stationary,
+                reducing operating and maintenance costs.
+            </p>
+        </div>
     </TwoColumnSection>
 </section>
