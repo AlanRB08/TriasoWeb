@@ -30,57 +30,59 @@ const SpareGallery = () => {
     { title: "EXPORTACIÓN DE REFACCIONES", image: img12 },
   ];
   return (
-    <div className="w-full px-8 md:px-72 grid grid-cols-2 md:grid-cols-3 gap-10 py-10">
-      {ItemGallery.map((element, i) => (
-        <div
-          className="w-full bg-white flex cursor-pointer shadow hover:scale-105 transition-transform"
-          onClick={() => {
-            setCurrentImg(element.image.src);
-            setIsOpen(true);
-          }}
-        >
-          <div className="w-2 self-stretch bg-blueMain text-blueMain px-2"></div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full px-8 grid grid-cols-2 md:grid-cols-3 gap-10 py-10 max-w-7xl">
+        {ItemGallery.map((element, i) => (
+          <div
+            className="w-full bg-white flex cursor-pointer shadow hover:scale-105 transition-transform"
+            onClick={() => {
+              setCurrentImg(element.image.src);
+              setIsOpen(true);
+            }}
+          >
+            <div className="w-2 self-stretch bg-blueMain text-blueMain px-2"></div>
 
-          <div className="w-full relative group">
-            <img
-              src={element.image.src}
-              alt={element.title}
-              className="w-full h-auto z-10"
-              loading="lazy"
-            />
-            <div
-              className="w-full h-full flex items-center justify-center bg-black/50 absolute top-0 z-20 
+            <div className="w-full relative group">
+              <img
+                src={element.image.src}
+                alt={element.title}
+                className="w-full h-auto z-10"
+                loading="lazy"
+              />
+              <div
+                className="w-full h-full flex items-center justify-center bg-black/50 absolute top-0 z-20 
                     opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-            >
-              <h1 className="text-xs md:text-sm text-white font-bold text-center">
-                {element.title}
-              </h1>
+              >
+                <h1 className="text-xs md:text-sm text-white font-bold text-center">
+                  {element.title}
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* Modal */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative w-11/12 md:w-1/2">
-            {/* Botón cerrar */}
-            <button
-              className="absolute top-2 right-2 bg-white rounded-full px-3 py-1 shadow hover:bg-gray-200"
-              onClick={() => setIsOpen(false)}
-            >
-              ✖
-            </button>
+        {/* Modal */}
+        {isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+            <div className="relative w-11/12 md:w-1/2">
+              {/* Botón cerrar */}
+              <button
+                className="absolute top-2 right-2 bg-white rounded-full px-3 py-1 shadow hover:bg-gray-200"
+                onClick={() => setIsOpen(false)}
+              >
+                ✖
+              </button>
 
-            {/* Imagen */}
-            <img
-              src={currentImg}
-              alt="Spare Part"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+              {/* Imagen */}
+              <img
+                src={currentImg}
+                alt="Spare Part"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
