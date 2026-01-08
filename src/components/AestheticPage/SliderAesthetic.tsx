@@ -4,19 +4,19 @@ const SliderAesthetic = () => {
   const sidePanels = [
     {
       nombre: "Drum mixer",
-      imagen: "src/assets/images/DrumMixers/sideP.webp",
+      imagen: "src/assets/images/SidePanels/FEPlaC_1.webp",
     },
     {
       nombre: "Asphalt storage tanks",
-      imagen: "src/assets/images/DrumMixers/sideP.webp",
+      imagen: "src/assets/images/SidePanels/TqesFeChasis_1.webp",
     },
     {
       nombre: "Bin Units",
-      imagen: "src/assets/images/DrumMixers/sideP.webp",
+      imagen: "src/assets/images/SidePanels/TolvasFE.webp",
     },
     {
       nombre: "Cold Mix Asphalt Plants",
-      imagen: "src/assets/images/DrumMixers/sideP.webp",
+      imagen: "src/assets/images/SidePanels/FEPlaC1_1.webp",
     },
   ];
 
@@ -37,7 +37,7 @@ const SliderAesthetic = () => {
   const currentSlide = sidePanels[currentIndex];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-4 items-center bg-white rounded-2xl shadow-md">
+    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-4 items-center bg-white rounded-2xl shadow-md min-h-[400px] justify-center">
       {/* Imagen */}
       <div className="relative w-full flex justify-center">
         <img
