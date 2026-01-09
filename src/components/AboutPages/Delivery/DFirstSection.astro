@@ -6,95 +6,90 @@ import hero1 from "../../../assets/images/About/Delivery/hero1.webp";
 import Separator from "../../unitComponents/Separator.astro";
 ---
 
-<div class="flex justify-center items-center">
-    <img src={hero1.src} alt="" class="lg:w-[1920px] lg:h-[700px]" />
+<div class="w-full flex justify-center items-center">
+  <img src={hero1.src} alt="" class="w-full" />
 </div>
 
 <section class="w-full max-w-7xl px-8 mx-auto mt-10 text-grisT font-bold">
-    <div class="w-full flex justify-start">
-        <div class="border-b-2 border-b-grisT inline-block justify-end">
-            <h1 class="text-end text-3xl md:text-4xl">
-                DELIVERY AND INSTALLATION
-            </h1>
-        </div>
+  <div class="w-full flex justify-start">
+    <div class="border-b-2 border-b-grisT inline-block justify-end">
+      <h1 class="text-end text-3xl md:text-4xl">DELIVERY AND INSTALLATION</h1>
     </div>
-    <div class="w-full my-16 text-base md:text-lg">
-        <p>
-            Efficient delivery and professional installation are essential to
-            getting your equipment up and running without delays. At Triaso, we
-            combine decades of experience with precise logistics to ensure your
-            equipment arrives safely, on time, with no downtime, and with easy
-            installation and operation.
-        </p><br />
-        <p>
-            Our specialized team handles every installation with strict
-            technical standards, guaranteeing reliable operation from day one.
-            By minimizing setup time and ensuring every component is correctly
-            installed, we help you achieve maximum productivity and long-term
-            performance with confidence.
-        </p>
-    </div>
-    <!-- arriba -->
-    <div class="flex justify-center">
-        <img src={Deliver1.src} alt="" class="hero-img lg:w-4/6 rounded-lg" />
-    </div>
-    <div class="flex flex-col md:flex-row items-center gap-6">
-        <!-- medio -->
-        <div class="w-full mt-10">
-            <h2 class="text-redBg text-xl md:text-2xl">
-                Worldwide installations
-            </h2>
-            <Separator />
-            <p class="text-grisT text-base md:text-lg">
-                Our specialized technicians have traveled around the world to
-                install and maintain our equipment. In the delivery of your
-                equipment, we include, without additional charge, a team of
-                specialized technicians who command and take responsibility for
-                the installation, start of production and training of the
-                operators.
-            </p>
-        </div>
-
-        <div class="w-full hidden lg:flex md:w-auto">
-            <img
-                src={Deliver2.src}
-                alt=""
-                class="side-img rounded-2xl will-change-transform"
-            />
-        </div>
+  </div>
+  <div class="w-full my-16 text-base md:text-lg">
+    <p>
+      Efficient delivery and professional installation are essential to getting
+      your equipment up and running without delays. At Triaso, we combine
+      decades of experience with precise logistics to ensure your equipment
+      arrives safely, on time, with no downtime, and with easy installation and
+      operation.
+    </p><br />
+    <p>
+      Our specialized team handles every installation with strict technical
+      standards, guaranteeing reliable operation from day one. By minimizing
+      setup time and ensuring every component is correctly installed, we help
+      you achieve maximum productivity and long-term performance with
+      confidence.
+    </p>
+  </div>
+  <!-- arriba -->
+  <div class="flex justify-center">
+    <img src={Deliver1.src} alt="" class="hero-img lg:w-4/6 rounded-lg" />
+  </div>
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <!-- medio -->
+    <div class="w-full mt-10">
+      <h2 class="text-redBg text-xl md:text-2xl">Worldwide installations</h2>
+      <Separator />
+      <p class="text-grisT text-base md:text-lg">
+        Our specialized technicians have traveled around the world to install
+        and maintain our equipment. In the delivery of your equipment, we
+        include, without additional charge, a team of specialized technicians
+        who command and take responsibility for the installation, start of
+        production and training of the operators.
+      </p>
     </div>
 
-    <!-- abajo-->
-    <div class="hidden lg:flex justify-center lg:justify-start">
-        <img
-            src={Deliver3.src}
-            alt=""
-            class="fade-img rounded-lg lg:w-3/5 will-change-transform"
-        />
+    <div class="w-full hidden lg:flex md:w-auto">
+      <img
+        src={Deliver2.src}
+        alt=""
+        class="side-img rounded-2xl will-change-transform"
+      />
     </div>
+  </div>
 
-    <!-- Móvil -->
-    <div class="relative flex flex-col lg:hidden">
-        <img
-            src={Deliver2.src}
-            alt=""
-            class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
-        />
+  <!-- abajo-->
+  <div class="hidden lg:flex justify-center lg:justify-start">
+    <img
+      src={Deliver3.src}
+      alt=""
+      class="fade-img rounded-lg lg:w-3/5 will-change-transform"
+    />
+  </div>
 
-        <img
-            src={Deliver3.src}
-            alt=""
-            class="absolute top-0 left-0 w-2/3 rounded-lg translate-x-1 translate-y-2"
-        />
-    </div>
+  <!-- Móvil -->
+  <div class="relative flex flex-col lg:hidden">
+    <img
+      src={Deliver2.src}
+      alt=""
+      class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
+    />
+
+    <img
+      src={Deliver3.src}
+      alt=""
+      class="absolute top-0 left-0 w-2/3 rounded-lg translate-x-1 translate-y-2"
+    />
+  </div>
 </section>
 
 <script>
-    import { initScrollAnimations } from "../../../components/lib/scrollAnimations";
+  import { initScrollAnimations } from "../../../components/lib/scrollAnimations";
 
-    if (typeof window !== "undefined") {
-        window.addEventListener("DOMContentLoaded", () => {
-            initScrollAnimations();
-        });
-    }
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", () => {
+      initScrollAnimations();
+    });
+  }
 </script>
