@@ -1,37 +1,65 @@
 ---
 import rap from "../../assets/images/DrumMixers/rap.webp";
-import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
-import Tred from "../../assets/images/AsphaltStorage/redT.webp";
-import AcordeonItem from "../unitComponents/AcordeonItem";
-import binUnit1 from "../../assets/images/BinUnits/binUnit1.webp";
-import img1 from "../../assets/images/RapBins/RAProv3.webp";
-import img2 from "../../assets/images/RapBins/RAProv1.webp";
-import RAProv5 from "../../assets/images/RapBins/RAProv5.webp";
-import video from "../../assets/images/RapBins/ProvVideo1.mp4";
-import OSection from "../unitComponents/OSection.astro";
 import rapFlight from "../../assets/images/DrumMixers/a21.webp";
-import heroIMG from "../../assets/images/RapBins/heroBG.webp";
-import img4 from "../../assets/images/RapBins/RapProv6.webp";
+import img5 from "../../assets/images/BinUnits/TolvaConfCompl.webp";
+import RBDropdown2 from "./RBDropdown2.astro";
 ---
 
-<section class="w-full font-bold">
-    <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT"></div>
-    <div class="w-full bg-grisT">
+<section
+    class="w-full bg-gradient-to-b from-[#14427c] via-blueMain to-blueMain to-50% font-bold"
+>
+    <div
+        class="bg-[#393939] w-full flex flex-col justify-center items-center p-12 text-white space-y-10"
+    >
+        <h1 class="font-bold text-4xl">
+            Incorporation into the Drum for Internal Heating
+        </h1>
+        <p>
+            Our incorporation system can recycle <span
+                class="font-bold text-2xl"
+                >up to 50%
+            </span>of reclamined asphalt pavement
+        </p>
+        <p>
+            The RAP must be introduced at a point in the drum where it does not
+            come into direct contact with the burner flame, so the asphalt it
+            contains does not burn and become unusable.
+        </p>
+    </div>
+    <div class="w-full">
         <div
-            class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto"
+            class="w-full grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto"
         >
-            <div
-                class="w-full col-span-1 flex justify-center lg:justify-start md:justify-start py-5"
-            >
-                <img src={rap.src} alt="" class="w-1/2 lg:w-3/4 md:w-3/4" />
+            <div class="w-full text-white flex flex-col justify-center">
+                <h1 class="text-xl md:text-2xl font-bold">RAP BIN</h1><br />
+                <p class="text-base md:text-lg font-thin">
+                    At TRIASO, we introduce the RAP through a collar located at
+                    an intermediate point in the drum. From this point on, the
+                    RAP never touches the burner flame and is heated by three
+                    simultaneous mechanisms:
+                </p>
+                <li>
+                    direct contact with the preheated virgin aggregate from
+                    earlier in the drum,
+                </li>
+                <li>exposure to the hot gases flowing through the drum, and</li>
+                <li>
+                    direct contact with heated internal plates, known as
+                    comales, which absorb radiant heat from the burner flame.
+                </li>
             </div>
-            <div
-                class="w-full col-span-2 text-white flex flex-col justify-center"
-            >
+            <div class="w-full flex justify-center py-5">
+                <img src={img5.src} alt="" class="w-1/2 lg:w-3/4 md:w-3/4" />
+            </div>
+
+            <div class="w-full flex justify-center py-5">
+                <img src={rap.src} alt="" class="w-1/2 lg:w-1/2 md:w-3/4" />
+            </div>
+            <div class="w-full text-white flex flex-col justify-center">
                 <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br />
                 <p class="text-base md:text-lg font-thin">
                     The drum collar is engineered to provide the controlled and
-                    efficient entry of Reclaimed Asphalt Pavement (RAP) into the
+                    efficient entry of Recycled Asphalt Pavement (RAP) into the
                     mixing zone. Fed directly from the RAP bin via a dedicated
                     conveyor, the material enters the drum smoothly and
                     uniformly.
@@ -39,199 +67,85 @@ import img4 from "../../assets/images/RapBins/RapProv6.webp";
             </div>
         </div>
     </div>
-    <div class="w-full bg-grisT pt-5">
-        <div class="w-full max-w-7xl px-8 mx-auto bg-grisT text-white">
+    <div class="w-full pt-5">
+        <div class="w-full max-w-7xl px-8 mx-auto text-white">
             <h1 class="lg:text-end md:text-end text-xl md:text-2xl font-bold">
                 RAP ENTRY FLIGHTS
             </h1>
         </div>
         <div
-            class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto justify-center items-center pt-6"
+            class="w-full grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto justify-center pt-6 pb-6"
         >
-            <div class="w-full col-span-1">
-                <p class="text-base md:text-lg font-thin text-white">
-                    For reclaimed asphalt pavement (RAP), dedicated entry
-                    flights are used to gently introduce RAP into the hot
-                    aggregate stream. The design allows uniform drying,
-                    optimizing heat transfer and controlled binder softening for
-                    high quality incorporation with virgin aggregates, while
-                    minimizing blue smoke and preventing material buildup.
-                </p>
-            </div>
-            <div
-                class="w-full col-span-2 text-white flex flex-col justify-center items-center py-5 lg:items-end md:items-end"
-            >
-                <img src={rapFlight.src} alt="" class="w-3/4 rounded-lg" />
-            </div>
-        </div>
-        <div
-            class="w-full bg-grisT max-w-7xl px-8 mx-auto py-10 flex justify-center"
-        >
-            <div class="w-full bg-white rounded-lg">
-                <img src={img1.src} alt=""/>
-            </div>
-        </div>
-    </div>
-
-    <!-- ----- -->
-    <div class="flex justify-center">
-        <img src={heroIMG.src} alt="Banner" class="bg-cover" />
-    </div>
-
-    <div
-        class="w-full flex flex-col items-center justify-center font-bold mt-10"
-    >
-        <div class="max-w-7xl px-8 lg:mb-20 mx-auto">
-            <h1 class="text-redBg text-xl md:text-3xl text-center">
-                With Triaso, Become the Exclusive Provider of Hot Mix for all
-                Paving Projects in Your Region
-            </h1>
-        </div>
-        <div class="max-w-7xl px-8 mx-auto flex justify-center">
-            <img src={RAProv5.src} alt="" class="hero-img w-full rounded-lg" />
-        </div>
-        <div
-            class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
-        >
-            <div class="w-full mt-10">
-                <h2 class="text-black text-lg md:text-xl">
-                    We undestand the importance to keep your equipment running
-                    non-stop
+            <div class="w-full flex flex-col space-y-5">
+                <h2 class="font-bold text-[#fffaea]">
+                    DRUM MIX MODIFICATION FOR RAP
                 </h2>
-                <p class="text-grisT text-base md:text-lg text-justify">
-                    Equipped with large-capacity RAP bins, this feeding process
-                    handle high material volumes while maintaining uniform
-                    distribution. The system is designed to prevent buildup,
-                    ensuring a uniform flow into the drum mixer without
-                    interruption.
+                <p class="text-base md:text-lg font-thin text-white">
+                    RAP is introduced through a collar located at an
+                    intermediate point of the drum, before the mixing zone. From
+                    this point on, the material never comes into direct contact
+                    with the burner flame. Unlike other zones in the drum mixer,
+                    this section has no veiling flights.
                 </p>
+                <p class="text-base md:text-lg font-thin text-white">
+                    The dedicated entry flights are used to gently introduce RAP
+                    into the hot aggregate stream. The design allows uniform
+                    drying, optimizing heat transfer and controlled binder
+                    softening for high quality incorporation with virgin
+                    aggregates, while minimizing blue smoke and preventing
+                    material buildup.
+                </p>
+                <div class="text-base md:text-lg font-thin text-white">
+                    <p>
+                        As the RAP moves through the drum, it is heated by three
+                        simultaneous mechanisms:
+                    </p>
+                    <li>Direct contact with the preheated virgin aggregate</li>
+                    <li>Exposure to the hot gases inside the drum</li>
+                    <li>
+                        Conduction from internal flights heated by the burner’s
+                        radiant energy.
+                    </li>
+                </div>
             </div>
-
-            <div class="w-full hidden lg:flex md:w-auto">
-                <img
-                    src={img2.src}
-                    alt=""
-                    class="side-img rounded-2xl will-change-transform"
-                />
-            </div>
-        </div>
-
-        <div
-            class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
-        >
-            <img
-                src={img4.src}
-                alt=""
-                class="fade-img rounded-lg lg:w-3/5 will-change-transform"
-            />
-        </div>
-
-        <div class="relative flex flex-col lg:hidden">
-            <img
-                src={img2.src}
-                alt=""
-                class="rounded-2xl w-[40%] translate-x-[200px] translate-y-0"
-            />
-
-            <img
-                src={img4.src}
-                alt=""
-                class="absolute top-0 left-0 w-[53%] rounded-lg -translate-x-1 translate-y-2 shadow-lg"
-            />
-        </div>
-    </div>
-
-    <!-- ---- -->
-    <OSection />
-    <TwoColumnSection
-        leftBg="bg-redBg"
-        rightBg="bg-blueMain"
-        imageSrc={Tred.src}
-        imageAlt="Red T icon"
-        imageWidth="150px"
-    >
-        <div slot="left" class="flex flex-col justify-center gap-3">
-            <h1 class="text-lg md:text-2xl">INCORPORATING RAP FEEDERS</h1>
-            <p class="text-sm md:text-lg">
-                By incorporating RAP feeders, asphalt plants can improve RAP
-                integration, enhance mix consistency, and promote sustainable
-                production by efficiently reintegrating recycled materials into
-                the asphalt mix.
-            </p>
-        </div>
-        <div slot="right" class="flex flex-col justify-center gap-3">
-            <h1 class="text-xl md:text-2xl">AVAILABLE IN 10 OR 25-TONS</h1>
-            <p class="text-sm md:text-lg">
-                With configurations of one, two, or three RAP bin units
-            </p>
-        </div>
-    </TwoColumnSection>
-    <div
-        class="w-full grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center"
-    >
-        <div class="col-span-2 flex lg:justify-center md:justify-center">
-            <img src={binUnit1.src} alt="" class="w-1/2 md:w-full" />
-        </div>
-        <div
-            class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 lg:pl-0 pl-8"
-        >
-            <h1 class="text-2xl md:text-5xl font-bold">
-                Precision Dosing <br />Systems in <br />RAP feeders
-            </h1><br />
-            <p class="text-lg md:text-xl font-thin text-grisT text-justify">
-                Our RAP bins are equipped with precision dosing systems designed
-                for reliable material control, ensuring proper dosage according
-                to the mix recipe, meeting tight production tolerances and plant
-                performance standards.
-            </p><br />
-            <div class="w-full flex flex-col gap-6">
-                <AcordeonItem
-                    client:only
-                    title="High-Precision Sensors"
-                    content="Integrated sensors monitor material levels in real time, allowing for precise control of dosing quantities and preventing overflows or shortages."
-                />
-                <AcordeonItem
-                    client:only
-                    title="Adjustable Flow Rates"
-                    content="The system allows operators to modify the flow rate, accommodating a wide range of materials, from fine aggregates to larger-sized rocks or sand."
-                />
-                <AcordeonItem
-                    client:only
-                    title="Consistent Material Distribution"
-                    content="Ensures uniform dosing to maintain a balanced mixture in downstream operations, such as mixing or crushing processes."
-                />
-                <AcordeonItem
-                    client:only
-                    title="Automated Controls"
-                    content="Equipped with programmable logic controllers (PLCs), the system can be automated for consistent and repeatable performance across different projects."
-                />
-                <AcordeonItem
-                    client:only
-                    title="Anti-Clogging Mechanism"
-                    content="Specially designed chutes and gates minimize the risk of blockages, ensuring a smooth and uninterrupted material flow."
-                />
-                <AcordeonItem
-                    client:only
-                    title="Energy-Efficient Operation"
-                    content="Engineered to optimize power usage, reducing operational costs while maintaining high performance."
-                />
-            </div>
-            <div
-                class="text-lg md:text-xl font-thin text-grisT text-justify py-10"
-            >
-                <p>
-                    These features make our RAP bin dosing systems essential for
-                    operations that require precise and efficient incorporation
-                    of RAP, meeting tight production tolerances and plant
-                    performance standards.
+            <div class="w-full text-white flex flex-col justify-between py-5">
+                <img src={rapFlight.src} alt="" class="w-full rounded-lg" />
+                <p class="font-thin text-white">
+                    This controlled triple-heating system allows a higher
+                    percentage of RAP to be processed consistently, up to 50%
+                    incorporation while maintaining uniform temperature,
+                    preserving the asphalt binder, and ensuring consistent
+                    performance in the final hot-mix.
                 </p>
             </div>
         </div>
-    </div>
-    <div class="w-full flex justify-center max-w-7xl px-8 mx-auto">
-        <video src={video} muted autoplay></video>
+        <div class="bg-gradient-to-b from-[#14427c] via-[#14427c] to-[#f4f5f6]">
+            <div class="max-w-7xl mx-auto px-8 space-y-5">
+                <p class="font-bold text-white">
+                    Note: Some other asphalt plant brands also have a collar
+                    located at an intermediate point in the drum, but positioned
+                    farther downstream—starting where internal mixing begins.
+                    This prevents the use RAP entry flights, so they do not
+                    benefit from radiant heat, and only achieve slightly higher
+                    RAP incorporation than direct pugmill methods.
+                </p>
+                <p class="font-bold text-white">
+                    A dedicated drum can be used exclusively for heating RAP,
+                    while a separate drum heats the virgin aggregate. The two
+                    materials are then blended in a pugmill. <br>
+                    <span class="font-thin">This method allows for the highest RAP percentages, but requires two drums
+                    instead of one, resulting in significantly higher equipment
+                    costs. </span>
+                </p>
+                <p class="font-bold text-black text-center">
+                    Our drum mixer can efficiently produce both WMA and HMA
+                    while achieving consistent, high-quality performance.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
+<RBDropdown2/>
 
 <script>
     import { initScrollAnimations } from "../../components/DrumMixers/scrollAnimations";

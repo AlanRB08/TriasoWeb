@@ -1,0 +1,81 @@
+---
+import bg1 from "../../assets/logos/triasoLogo.png";
+
+const tabs = [
+  {
+    id: "tab-1",
+    title: "Why RAP cannot be incorporated in a typical asphalt plant with no RAP system?",
+  },
+  {
+    id: "tab-2",
+    title: "Direct Incorporation into the Pugmill",
+  },
+  {
+    id: "tab-3",
+    title: "How mixing RAP temperature is directly related to the quality of RAP?",
+  },
+];
+---
+
+{tabs.map((tab, index) => (
+  <input
+    type="radio"
+    name="tabs"
+    id={tab.id}
+    class="hidden"
+    checked={index === 0}
+  />
+))}
+
+<section class="w-full bg-[#383838]">
+  <div class="flex justify-center items-center p-10">
+    <img src={bg1.src} alt="" class="w-1/2" />
+  </div>
+
+  <div class="flex max-w-7xl mx-auto tabs-container">
+    {tabs.map((tab) => (
+      <label
+        for={tab.id}
+        class="flex-1 cursor-pointer bg-gray-600 text-white text-sm md:text-base font-semibold
+               text-center px-5 py-4 border-r border-gray-500 last:border-r-0
+               transition-colors duration-300 hover:bg-gray-700"
+      >
+        {tab.title}
+      </label>
+    ))}
+  </div>
+</section>
+
+<div class="content-wrapper relative max-w-7xl mx-auto p-8">
+    <div id="content-1" class="tab-content">
+      <slot name="tab-1" />
+    </div>
+
+    <div id="content-2" class="tab-content">
+      <slot name="tab-2" />
+    </div>
+
+    <div id="content-3" class="tab-content">
+      <slot name="tab-3" />
+    </div>
+</div>
+
+<style>
+  .tab-content {
+    display: none;
+  }
+
+  #tab-1:checked ~ .content-wrapper #content-1,
+  #tab-2:checked ~ .content-wrapper #content-2,
+  #tab-3:checked ~ .content-wrapper #content-3 {
+    display: block;
+  }
+
+  /* 2. Controlar el color de las pestañas (que están dentro de section) */
+
+  #tab-1:checked ~ section .tabs-container label[for="tab-1"],
+  #tab-2:checked ~ section .tabs-container label[for="tab-2"],
+  #tab-3:checked ~ section .tabs-container label[for="tab-3"] {
+    background-color: #1d4ed8; 
+  }
+</style>
