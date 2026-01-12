@@ -15,6 +15,7 @@ import img4 from "../../assets/images/BinUnits/1.webp";
 import img5 from "../../assets/images/BinUnits/2.webp";
 import img6 from "../../assets/images/BinUnits/3.webp";
 import { imageConfig } from "astro:assets";
+import Whatsbtn from "../unitComponents/Whatsbtn.astro";
 const binSlides2 = [
   {
     image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp",
@@ -190,12 +191,7 @@ const binSlides2 = [
       <div
         class="flex justify-center items-center lg:justify-start lg:items-start md:justify-start md:items-start"
       >
-        <button
-          type="button"
-          class="bg-white rounded-2xl w-1/2 p-3 text-black text-left hover:bg-gray-100 transition"
-        >
-          Talk to a representative
-        </button>
+        <Whatsbtn/>
       </div>
     </div>
   </TwoColumnSection>

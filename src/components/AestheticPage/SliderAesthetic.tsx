@@ -37,7 +37,7 @@ const SliderAesthetic = () => {
   const currentSlide = sidePanels[currentIndex];
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-4 items-center bg-white rounded-2xl shadow-md min-h-[400px] justify-center">
+    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col gap-4 items-center bg-white rounded-2xl shadow-md min-h-[250px] md:min-h-[400px] justify-center">
       {/* Imagen */}
       <div className="relative w-full flex justify-center">
         <img

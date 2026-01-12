@@ -82,7 +82,7 @@ export default function RelifSecondSection() {
             </div>
 
             <div>
-                <div className='flex justify-center max-w-7xl mx-auto pt-10'>
+                <div className='flex justify-center max-w-7xl mx-auto px-4 pt-10'>
                     <p className='text-white text-lg font-medium w-full lg:w-[40%] md:w-[40%]'>
                         All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners —from remote computers, tablets, and mobile phones.
                     </p>
@@ -93,14 +93,18 @@ export default function RelifSecondSection() {
                 <FeatureCards />
             </div>
 
-            <div className='flex flex-row max-w-7xl justify-around mx-auto'>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent">
+            <div className='grid grid-cols-2 gap-4 max-w-7xl justify-around mx-auto px-4'>
+                <div className='w-full'>
+                <h1 className="text-3xl text-center font-bold bg-gradient-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent">
                     Historical reports
                 </h1>
+                </div>
 
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <div className='w-full'>
+                <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Delivered hot-mix reports
                 </h1>
+                </div>
             </div>
 
             <div className="w-full flex flex-col items-center justify-center">
