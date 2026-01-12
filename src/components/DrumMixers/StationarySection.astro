@@ -9,6 +9,7 @@ import drumTires from "../../assets/images/DrumMixers/drumtires.webp";
 import Image from "astro/components/Image.astro";
 import rapEntry from "../../assets/images/DrumMixers/a21.webp";
 import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
+import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -26,7 +27,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
                 matter the gauge, is manufactured in-house using high-strength
                 A-572 alloy steel to ensure consistent durability and
                 performance.
-            </p>
+            </p><br>
             <img
                 src={Logo.src}
                 alt=""
@@ -268,7 +269,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
 
     <div class="flex justify-center pt-5">
         <div>
-            <button class="bg-white font-normal border-2 border-[#14427c] rounded-3xl p-2 text-[#14427c] hover:text-white hover:bg-[#14427c] transition-all duration-300 ease-out transform hover:scale-110 ">Learn more about RAP</button>
+            <LearnBtnBlue text="Learn more about RAP" href="/" />
         </div>
     </div>
 
@@ -293,7 +294,7 @@ import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
     </div>
     <div class="max-w-7xl px-4 mx-auto my-10 rounded-2xl">
         <div
-            class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.webp)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[600px] relative"
+            class="w-full text-white flex flex-col justify-center items-center gap-6 bg-[url(/Gallery/drum-mixer.webp)] bg-cover bg-center bg-no-repeat p-10 rounded-2xl min-h-[250px] md:min-h-[600px] relative"
         >
             <h1 class="text-2xl md:text-3xl text white z-20">
                 THE MOST VERSATILE AND MOBILE DRUM MIX ON THE MARKET
