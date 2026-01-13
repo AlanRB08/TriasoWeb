@@ -7,47 +7,63 @@ import output1 from "../../assets/images/Rapbins/tablas/output (1).webp";
 import output2 from "../../assets/images/Rapbins/tablas/output (2).webp";
 import output3 from "../../assets/images/Rapbins/tablas/output (3).webp";
 import output4 from "../../assets/images/Rapbins/tablas/output (4).webp";
+import img2 from "../../assets/images/Rapbins/tablas/blows.webp";
 
 const items = [
     {
+        id: 1,
         title: "Start with low RAP percentages and increase gradually as experience and confidence grow.",
         text: "Beginning with low RAP contents allows producers to understand material behavior, production limits, and mix performance under controlled conditions. Gradual increases provide valuable operational and performance data, reducing risk while building confidence in RAP incorporation.",
     },
     {
+        id: 2,
         title: "Account for the contribution of the aged RAP binder in the mix design.",
         text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
     },
     {
+        id: 3,
         title: "Try RAP different rejuvenators accordign to the RAP percentage",
-        text: "Construimos la solución con tecnologías modernas y escalables.",
+        text: "Yi et al. (2022) demonstrated that rejuvenators formulated with petroleum resin and antioxidants can effectively restore the properties of aged RAP binder, improving adhesion and aging resistance. Their incorporation enables higher RAP contents by compensating for binder stiffness and maintaining mix performance when appropriate dosage and mix design procedures are used. In a lot of studies it was found that:",
+        list:[
+            "Up to approximately 15% RAP, no change in the virgin binder PG is typically required.",
+            "At RAP contents between 20% and 25%, the virgin binder grade is commonly reduced to a softer PG.",
+            "At RAP contents of 25% or higher, testing the RAP binder and designing the mix based on its properties is recommended."
+        ]
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 4,
+        title: "Adjust virgin binder grade and content to balance stiffness and workability.",
+        text: "Because RAP binder is aged and stiffer than virgin binder, adjustments to the virgin binder grade or content are often required. Using a softer virgin binder helps balance overall mix stiffness and ensures acceptable workability and compaction.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 5,
+        title: "Control RAP temperature carefully to avoid excessive aging or blue smoke.",
+        text: "RAP should be heated indirectly and at controlled temperatures to prevent additional binder aging or the generation of blue smoke. Proper temperature control preserves binder properties while ensuring effective blending during mixing.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 6,
+        title: "Ensure uniform and controlled RAP feeding into the mixing process.",
+        text: "Consistent RAP feed rates are critical to achieving uniform mix quality. Controlled introduction minimizes variability in binder content, gradation, and temperature, resulting in more consistent asphalt mixture performance.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 7,
+        title: "Use adequate mixing time and temperature to promote proper binder blending.",
+        text: "Sufficient mixing time and appropriate temperatures are required to promote interaction between the aged RAP binder and the virgin binder. Proper blending improves coating, homogeneity, and overall mix performance.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 8,
+        title: "Monitor mix workability and compactability during production and paving.",
+        text: "Workability and compactability are key indicators of mix quality. Monitoring these properties during production and placement helps identify necessary adjustments to binder content, temperature, or RAP percentage.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 9,
+        title: "Use plant equipment and process control suitable for consistent RAP incorporation.",
+        text: "The most important factor is the use of proper plant equipment. Modern asphalt plants with precise process control enable proper heating, controlled feeding, and effective blending of RAP. Suitable systems ensure consistent production conditions, which are essential for reliable and repeatable RAP incorporation.",
     },
     {
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+        id: 10,
+        title: "Rely on laboratory testing and field performance data rather than assumptions.",
+        text: "Laboratory testing and field validation provide objective data to support mix design decisions. Data-driven approaches reduce uncertainty and improve confidence in RAP performance.",
     },
 ];
 ---
@@ -487,7 +503,7 @@ const items = [
             the asphalt mixture. A study by Oliveira et al. (2012):
         </p>
         <div class="flex flex-col justify-center items-center">
-            <img src="https://placehold.co/600x400/png" alt="" />
+            <img src={img2.src} alt="" />
             <p class="font-thin">
                 Figure 3 - Air void content at different mixing temperatures for
                 (a) virgin WMA and HMA & (b) 50% WMA and 50% HMA mixes; (adpoted
@@ -676,7 +692,7 @@ const items = [
 
 <div class="w-full bg-gradient-to-b from-[#154480] to-[#2375dc]">
     <div class="max-w-7xl mx-auto flex flex-col space-y-5">
-        <div class="flex flex-row justify-evenly gap-5 px-8 pt-10">
+        <div class="flex flex-col md:flex-row justify-evenly gap-5 px-8 pt-10">
             <div class="w-full justify-start items-center my-auto">
                 <h1 class="font-bold text-white text-5xl text-start">
                     Incorporating RAP
@@ -1359,7 +1375,7 @@ const items = [
         </p>
     </div>
 
-    <div class="bg-gray-100 p-8 min-h-screen space-y-5">
+    <div class="bg-gray-100 pb-5 space-y-5">
         <div
             class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
@@ -1509,53 +1525,115 @@ const items = [
         </p>
     </div>
 
-    <div class="max-w-7xl mx-auto px-8">
-        <div class="bg-[#e6e7e8] rounded-md p-10 space-y-10">
-            <div>
-                <h1 class="font-bold text-2xl">
-                    How to Make Money by Being a Great RAPper — RAP Done Right
-                </h1>
-                <p class="font-semibold text-[#14427c]">
-                    General Guidelines for Incorporating RAP into Asphalt Mix
-                    Design and Production
-                </p>
+    <div class="max-w-7xl mx-auto  pb-5">
+        <div class="bg-[#e6e7e8] rounded-[3rem] p-10 md:p-16 relative">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12"
+            >
+                <div class="max-w-2xl">
+                    <h1
+                        class="font-bold text-3xl md:text-4xl text-black leading-tight"
+                    >
+                        <span class="border-b-4 pb-1">
+                            How to Make Money by Being a Great RAPper — RAP Done
+                            Right
+                        </span>
+                    </h1>
+                    <p class="font-bold text-[#14427c] mt-4 text-lg">
+                        General Guidelines for Incorporating RAP into Asphalt
+                        Mix Design and Production
+                    </p>
+                </div>
             </div>
 
-            <div class="w-full max-w-4xl mx-auto">
-                <div class="relative overflow-hidden">
+            <div class="flex items-center justify-between gap-4 md:gap-12">
+                <button
+                    id="prev"
+                    class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2.5"
+                        stroke="currentColor"
+                        class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                    </svg>
+                </button>
+
+                <div class="w-full overflow-hidden relative">
                     <div
                         id="slider"
-                        class="flex transition-transform duration-500 ease-in-out"
-                        style={`width: ${items.length * 10}%`}
+                        class="flex transition-transform duration-500 ease-in-out items-center"
+                        style={`width: ${items.length * 100}%`}
                     >
                         {
-                            items.map((item) => (
-                                <div class="w-full flex-shrink-0 px-6">
-                                    <div class="bg-white rounded-xl shadow-md p-8 text-center">
-                                        <h3 class="text-2xl font-semibold mb-4">
-                                            {item.title}
-                                        </h3>
-                                        <p class="text-gray-600">{item.text}</p>
+                            items.map((item, index) => (
+                                <div
+                                    class="w-full flex-shrink-0 px-4 md:px-12"
+                                    style={`width: ${100 / items.length}%`}
+                                >
+                                    <div class="flex flex-col gap-6">
+                                        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                                            <div class="flex-shrink-0 bg-[#14427c] text-white w-12 h-14 flex items-center justify-center text-3xl font-medium rounded-md">
+                                                {item.id}
+                                            </div>
+                                            <h3 class="text-[#14427c] text-xl md:text-2xl font-bold leading-snug">
+                                                {item.title}
+                                            </h3>
+                                        </div>
+
+                                        <div class="text-black text-lg leading-relaxed md:pl-16 min-h-[180px]">
+                                            <p>{item.text}</p>
+
+                                            {item.list && (
+                                                <ul class="list-disc pl-5 mt-4 space-y-2">
+                                                    {item.list.map((li) => (
+                                                        <li class="text-black">
+                                                            {li}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             ))
                         }
                     </div>
                 </div>
-                <div class="flex justify-center gap-6 mt-6">
-                    <button
-                        id="prev"
-                        class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition"
+                <button
+                    id="next"
+                    class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2.5"
+                        stroke="currentColor"
+                        class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
                     >
-                        ←
-                    </button>
-                    <button
-                        id="next"
-                        class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition"
-                    >
-                        →
-                    </button>
-                </div>
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex justify-center gap-4 mt-8 md:hidden lg:hidden">
+                <button id="prev-mobile" class="px-4 py-2 bg-gray-300 rounded"
+                    >←</button
+                >
+                <button id="next-mobile" class="px-4 py-2 bg-gray-300 rounded"
+                    >→</button
+                >
             </div>
         </div>
     </div>
@@ -1566,13 +1644,28 @@ const items = [
     const slider = document.getElementById("slider");
     const total = slider.children.length;
 
+    function moveSlider() {
+        slider.style.transform = `translateX(-${index * 10}%)`;
+    }
+
     document.getElementById("next").addEventListener("click", () => {
         index = (index + 1) % total;
-        slider.style.transform = `translateX(-${index * 100}%)`;
+        moveSlider();
     });
 
     document.getElementById("prev").addEventListener("click", () => {
         index = (index - 1 + total) % total;
-        slider.style.transform = `translateX(-${index * 100}%)`;
+        moveSlider();
+    });
+
+    document.getElementById("next-mobile").addEventListener("click", () => {
+        index = (index + 1) % total;
+        moveSlider();
+    });
+
+    document.getElementById("prev-mobile").addEventListener("click", () => {
+        index = (index - 1 + total) % total;
+        moveSlider();
     });
 </script>
+

@@ -15,10 +15,10 @@ import { parseNumber, pmt } from "../lib/utils";
 export default function AnalisisInversion() {
   const [isClient, setIsClient] = useState(false);
 
- const [state, setState] = useState({
+  const [state, setState] = useState({
     dlls: 650000,
     // paridad: 18, 
-    pesos: 0,   
+    pesos: 0,
 
     anual: 25,
     meses: 60,
@@ -27,28 +27,28 @@ export default function AnalisisInversion() {
 
     horasxmes: 200,
     rap: 5,
-    agrv: 15,   
+    agrv: 15,
     arap: 5,
     tav: 0,
     trap: 0,
-    asfvir: 25,  
-    asfpesosxlitro: 2.50, 
+    asfvir: 25,
+    asfpesosxlitro: 2.50,
     tasfvir: 0,
     rejuve: 1,
-    rejupesosxlitro: 5, 
+    rejupesosxlitro: 5,
     trejuve: 0,
     combustible: 3,
-    combpesosxlitro: 3.50, 
+    combpesosxlitro: 3.50,
     tcombustible: 0,
     electri: 300,
-    elecpesosxlitro: 0.15, 
+    elecpesosxlitro: 0.15,
     electon: 125,
     telec: 0,
 
     cosvariables: 0,
     tcVariables: 0,
 
-    cfOperador: 2500, 
+    cfOperador: 2500,
     cfMantenimiento: 5000,
     cfPayloder: 8000,
     cf: 0,
@@ -57,7 +57,7 @@ export default function AnalisisInversion() {
     prodton: 126,
     prodm3: 0,
     produc: 0,
-    precioventa: 90, 
+    precioventa: 90,
     ingresos: 0,
     uingresos: 0,
     ucostos: 0,
@@ -92,10 +92,10 @@ export default function AnalisisInversion() {
     setIsClient(true);
   }, [])
 
-useEffect(() => {
+  useEffect(() => {
     const s = { ...state };
 
-    s.pesos = s.dlls; 
+    s.pesos = s.dlls;
 
     // 2) Renta mensual 
     const i = s.anual / 100 / 12;
@@ -183,10 +183,10 @@ useEffect(() => {
       <div className="max-w-7xl mx-auto space-y-10 px-5 md:px-0 lg:px-0">
 
         <h1 className="text-3xl font-bold text-white pt-10">
-          Análisis de Inversión — Planta de Asfalto
+          Investment Analysis — Asphalt Plant
         </h1>
 
-        <p className="text-white text-md">Los valores en los cuadros blancos son sugeridos, favor de poner los datos que a usted les parezcan adecuados. Los cuadros en gris son calculados.</p>
+        <p className="text-white text-md">The values in the white boxes are suggestions; please enter the data that you find appropriate. The gray boxes are calculations.</p>
         <ValorPlanta
           dlls={state.dlls}
           pesos={state.pesos}
