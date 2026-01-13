@@ -7,7 +7,7 @@ import Card from "../unitComponents/Card.astro";
   data-tabs
 >
   <div class="flex flex-col items-center justify-center gap-4 mt-8">
-    <div class="flex items-center justify-around w-full gap-4 px-8">
+    <div class="flex items-end justify-around w-full gap-4">
       <button
         class="text-xl md:text-2xl tab-button py-2 md:px-4 font-bold focus:outline-none"
         data-tab="tab1"
@@ -29,7 +29,7 @@ import Card from "../unitComponents/Card.astro";
         class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
         data-tab-content="tab1"
       >
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20">
           <Card>
             <h2 class="text-center font-bold text-xl md:text-2xl text-black">
               On-site or remote evaluations
@@ -54,7 +54,7 @@ import Card from "../unitComponents/Card.astro";
               Factory-level quality in your existing plant
             </h2><br />
             <p
-              class="text-center font-thin text-base md:text-lg text-black px-20"
+              class="text-center font-thin text-base md:text-lg text-black md:px-20"
             >
               We apply the same standards used in our new equipment <br /> manufacturing
               to every rehabilitation project.
@@ -64,10 +64,10 @@ import Card from "../unitComponents/Card.astro";
       </div>
       <!-- Second Section -->
       <div
-        class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
+        class="w-full flex flex-col items-center justify-center gap-4 md:gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
         data-tab-content="tab2"
       >
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20">
           <Card>
             <h2 class="text-center font-bold text-xl md:text-2xl text-black">
               Regulatory compliance
@@ -93,7 +93,7 @@ import Card from "../unitComponents/Card.astro";
               Cleaner emissions
             </h2><br />
             <p
-              class="text-center font-thin text-base md:text-lg text-black w-full px-20"
+              class="text-center font-thin text-base md:text-lg text-black w-full md:px-20"
             >
               We can integrate emissions control systems like <br /> baghouses or
               scrubbers to meet modern standards.

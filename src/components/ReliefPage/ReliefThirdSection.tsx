@@ -57,8 +57,8 @@ export default function ReliefThirdSection() {
                     <img src={img1.src} alt="Triaso OS" />
                 </div>
 
-                <div className='flex flex-col md:flex-row lg:flex-row justify-between items-center'>
-                    <div className='w-1/2'>
+                <div className='w-full flex flex-col md:flex-row lg:flex-row justify-between items-center'>
+                    <div className='w-full md:w-1/2'>
                         <p className='font-bold text-[#14427c] text-3xl'> Automatic unit conversion</p>
                         <p className='font-bold text-[#393939] text-2xl'>The interface is simple and flexible. It allows you to view the information in different systems and formats.</p>
                     </div>
@@ -85,7 +85,7 @@ export default function ReliefThirdSection() {
                         <h2 className='font-bold text-3xl text-white'>Easy Mix Design Execution</h2>
                         <p className='font-bold text-lg text-[#d9d9d9] w-4/5'>Our automation systems are designed to simplify asphalt pavement mix production, from warm mixes to hot-mixes, without sacrificing control or accuracy.</p>
                     </div>
-                    <div>
+                    <div className='w-full flex items-end justify-end'>
                         <button
                             onClick={() => setOpen(!open)}
                             className="flex items-center gap-2 text-white transition-transform duration-300"

@@ -5,8 +5,8 @@ import img2 from "../../assets/images/Relief/5.webp"
 export default function ReliefLastSection() {
     return (
         <div className=''>
-            <div className='flex justify-center items-center bg-[#393939] p-10'>
-                <div className='max-w-7xl mx-auto px-8'>
+            <div className='flex justify-center items-center bg-[#393939] p-4 md:p-10'>
+                <div className='max-w-7xl mx-auto px-8 text-center'>
                     <h1 className='text-white font-bold text-3xl'>Security and access</h1>
                 </div>
             </div>
@@ -53,12 +53,12 @@ export default function ReliefLastSection() {
                         </div>
 
                         <div className='space-y-5'>
-                            <p className='text-[#14427c] text-xl font-semibold'>We transform outdated operation systems into modern, clear platforms, bringing your plant up to today’s standards with greater efficiency, reliability, and control.</p>
-                            <p className='text-[#393939] text-xl font-semibold'>We know every client has unique needs; we adapt each control system—from access points to function integration—aligning it with their specific requirements.</p>
+                            <p className='text-[#14427c] text-base md:text-xl font-semibold'>We transform outdated operation systems into modern, clear platforms, bringing your plant up to today’s standards with greater efficiency, reliability, and control.</p>
+                            <p className='text-[#393939] text-base md:text-xl font-semibold'>We know every client has unique needs; we adapt each control system—from access points to function integration—aligning it with their specific requirements.</p>
                         </div>
 
                         <div className='flex justify-center items-center'>
-                            <h1 className='font-bold text-4xl text-[#393939] w-1/2 text-center'>Available for monitoring of all Triaso equipment</h1>
+                            <h1 className='font-bold text-4xl text-[#393939] w-full md:w-1/2 text-center'>Available for monitoring of all Triaso equipment</h1>
                         </div>
 
                         <div>
@@ -66,7 +66,7 @@ export default function ReliefLastSection() {
                         </div>
 
                         <div className='pb-10'>
-                            <p className='font-semibold text-lg text-[#393939]'>Provides the freedom to access detailed, real-time analysis from anywhere and on any device. Decision-making becomes faster, better-founded, and completely independent of physical location.</p>
+                            <p className='font-semibold text-base md:text-lg text-[#393939]'>Provides the freedom to access detailed, real-time analysis from anywhere and on any device. Decision-making becomes faster, better-founded, and completely independent of physical location.</p>
                         </div>
                     </div>
 

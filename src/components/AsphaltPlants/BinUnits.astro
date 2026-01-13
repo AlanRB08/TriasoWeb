@@ -24,7 +24,7 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
     <div
       class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-3 bg-blueMain lg:rounded-b-2xl px-4 pb-4 pt-2 md:p-8"
     >
-      <div class="col-span-1">
+      <div id="BinUnits" class="scroll-mt-20 col-span-1">
         <h1 class="lg:text-4xl text-xl text-redBg">
           TRIASO®<br />
           <span class="text-white">BIN UNITS</span>
@@ -74,10 +74,10 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
     </div>
   </div>
   <div
-    class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-center"
+    class="w-full max-w-7xl mx-auto flex flex-col justify-center items-center"
   >
     <video src={Video1} autoplay muted></video>
-    <LearnBtn />
+    <LearnBtn href="/BinUnits"/>
   </div>
   <div
     class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl px-8 mx-auto py-10 items-center justify-center"
@@ -97,7 +97,7 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
         minimal maintenance.
       </p><br />
       <div class="flex justify-center items-center">
-        <LearnBtn />
+        <LearnBtn href="/PowderAd"/>
       </div>
     </div>
   </div>

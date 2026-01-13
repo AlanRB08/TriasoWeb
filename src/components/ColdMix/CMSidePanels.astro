@@ -5,6 +5,7 @@ import CustomBins from "../BinUnits/CustomBins.astro";
 import img1 from "../../assets/images/ColdMix/CMProv5.webp";
 import img2 from "../../assets/images/ColdMix/CMProv1.webp";
 import OSectionBin from "../BinUnits/OSectionBin.astro";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
 
 <div
@@ -75,8 +76,9 @@ import OSectionBin from "../BinUnits/OSectionBin.astro";
             <h1>ENHANCE YOUR COMPANY IMAGE <br />WITH TRIASO DESIGN</h1>
         </div>
     </div>
-    <div class="w-full max-w-7xl mx-auto px-8">
+    <div class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-center">
         <Image src={SideP} alt={"Side Panels Image"} />
+        <LearnBtn href="/AestheticSide"/>
     </div>
     <CustomBins />
     <div
