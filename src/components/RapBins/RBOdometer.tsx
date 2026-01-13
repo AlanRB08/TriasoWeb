@@ -75,10 +75,35 @@ const RPOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
           <div>
             <img src={img1.src} alt="" />
           </div>
+          <a
+  href="#planosRapBins"
+  className="
+    group relative inline-flex items-center justify-center
+    px-4 py-2 rounded-xl
+    border border-black
+    text-black font-medium
+    overflow-hidden
+
+    transition-all duration-300 ease-out
+    hover:text-white hover:-translate-y-0.5 hover:shadow-lg
+  "
+>
+  <span
+    className="
+      absolute inset-0 bg-black
+      translate-y-full
+      transition-transform duration-300 ease-out
+      group-hover:translate-y-0
+    "
+  />
+  <span className="relative z-10">
+    All Technical Details
+  </span>
+</a>
         </div>
       </div>
       <div className="my-20">
@@ -100,18 +125,12 @@ const RPOdometer = () => {
       </div>
 
       <div className="flex justify-center">
-        <button
-          className="
-    px-6 py-2 
-    border border-[#1c3d6e]
-    text-[#1c3d6e]
-    rounded-full 
-    hover:bg-[#1c3d6e]/10
-    transition-all
-  "
+        <a
+        href="/"
+          className="hover:bg-blueMain hover:text-white text-blueMain mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg"
         >
           Learn more about RAP
-        </button>
+        </a>
 
       </div>
     </div>

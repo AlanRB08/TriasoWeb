@@ -457,7 +457,7 @@ const DrumMixPlanos = () => {
             </div>
           </div>
         </header>
-        <div className="w-full px-8 lg:px-8 mt-14">
+        <div id="planosDrumMixers" className="w-full px-8 lg:px-8 mt-14">
           {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
             <h1 className="text-white lg:text-xl text-lg text-center mb-10">

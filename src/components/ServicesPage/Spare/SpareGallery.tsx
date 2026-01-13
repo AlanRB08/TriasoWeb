@@ -31,7 +31,10 @@ const SpareGallery = () => {
   ];
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="w-full px-8 grid grid-cols-2 md:grid-cols-3 gap-10 py-10 max-w-7xl">
+      <div className="w-full mt-6 flex justify-center items-center">
+        <h1 className="font-bold text-xl md:text-2xl">GALLERY</h1>
+      </div>
+      <div className="w-full px-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 py-10 max-w-7xl">
         {ItemGallery.map((element, i) => (
           <div
             className="w-full bg-white flex cursor-pointer shadow hover:scale-105 transition-transform"
@@ -40,7 +43,7 @@ const SpareGallery = () => {
               setIsOpen(true);
             }}
           >
-            <div className="w-2 self-stretch bg-blueMain text-blueMain px-2"></div>
+            <div className="w-1 md:w-2 self-stretch bg-blueMain text-blueMain px-1 md:px-2"></div>
 
             <div className="w-full relative group">
               <img

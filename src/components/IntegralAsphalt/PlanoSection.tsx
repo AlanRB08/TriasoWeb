@@ -325,7 +325,7 @@ const PlanoSection = () => {
         id="sectionNueva"
         className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
-        <header className="mt-10 text-white" ref={otroElemento}>
+        <header id="planosIntegral" className="mt-10 text-white" ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">
             Specifications
           </h1>

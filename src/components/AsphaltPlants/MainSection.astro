@@ -47,69 +47,76 @@ const items = [
 ---
 
 <div
-    class="w-full max-w-7xl px-8 mx-auto flex flex-col items-center justify-around font-bold"
+    class="w-full max-w-7xl px-4 mx-auto flex flex-col items-center justify-around font-bold"
 >
     <!-- Opciones -->
     <div
-        class="grid grid-cols-3 justify-center items-center lg:grid-cols-7 md:grid-cols-7 gap-5 md:gap-4 mt-8 text-grisP"
+        class="grid grid-cols-3 justify-center items-end lg:grid-cols-7 md:grid-cols-7 gap-5 md:gap-4 mt-8 text-grisP"
     >
         <!-- Primera fila (siempre visible) -->
-        <button
+        <a
+            href="#DrumMixer"
             aria-label="Drum Mixers link"
-            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="hover:text-blueMain hover:border-b-blueMain text-center text-md py-2 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
         >
             Drum Mixers
-        </button>
+        </a>
 
-        <button
+        <a
+            href="#Baghouses"
             aria-label="Baghouses link"
-            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="hover:text-blueMain hover:border-b-blueMain text-center text-md py-2 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
             data-tab="tab2"
         >
             Baghouses
-        </button>
+    </a>
 
-        <button
+        <a
+            href="#AsphaltTanks"
             aria-label="Asphalt tanks link"
-            class="text-md py-3 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="hover:text-blueMain hover:border-b-blueMain text-center text-md py-2 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
             data-tab="tab3"
         >
             Asphalt tanks
-        </button>
+</a>
 
-        <button
+        <a
+            href="#BinUnits"
             aria-label="Bins link"
-            class="text-md py-6 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+            class="text-center hover:text-blueMain hover:border-b-blueMain text-md py-2 lg:py-[14px] md:py-[14px] md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
             data-tab="tab4"
         >
             Bins
-        </button>
+</a>
 
-        <button
-            class="text-md py-3 md:py-0 lg:py-0 md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+        <a
+            href="#HeatingSystem"
+            class="text-center hover:text-blueMain hover:border-b-blueMain text-md py-2 md:py-0 lg:py-0 md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
             data-tab="tab5"
         >
             Heating <br /> Systems
-        </button>
+</a>
 
-        <button
-            class="text-md md:text-lg md:px-4 font-bold border-b border-b-grisT focus:outline-none"
+        <a
+            href="#HotMix"
+            class="text-center hover:text-blueMain hover:border-b-blueMain text-md py-2 md:text-lg md:px-4 font-bold border-b-2 border-b-grisP focus:outline-none"
             data-tab="tab6"
         >
             Hot-Mix <br /> Storage Silos
-        </button>
+</a>
 
-        <button
-            class="text-md md:text-lg md:px-4 font-bold focus:outline-none
+        <a
+            href="#ColdMix"
+            class="hover:text-blueMain hover:border-b-blueMain text-md md:text-lg md:px-4 font-bold focus:outline-none
            col-span-3 md:col-span-1 flex justify-center"
             data-tab="tab7"
         >
             <span
-                class="inline-flex flex-col items-center border-b border-b-grisT md:w-full lg:w-full"
+                class="text-center inline-flex flex-col items-center border-b-2 border-b-grisP hover:text-blueMain hover:border-b-blueMain md:w-full lg:w-full"
             >
                 Cold Mix <br /> Plants
             </span>
-        </button>
+        </a>
     </div>
 
     <!-- Info -->

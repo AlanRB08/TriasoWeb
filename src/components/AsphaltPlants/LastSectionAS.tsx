@@ -6,7 +6,7 @@ import img4 from "../../assets/images/AsphaltPlant/Gallery/Soldadura interna de 
 
 export default function App() {
   return (
-    <div className="p-8">
+    <div className="px-4">
       <InfoCard
         sections={[
           {

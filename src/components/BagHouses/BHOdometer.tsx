@@ -90,6 +90,31 @@ const BHOdometer = () => {
           <div className="w-3/5">
             <img src={bagHouseMain.src} alt="" className="rounded-lg" />
           </div>
+          <a
+  href="#planosBagHouses"
+  className="
+    group relative inline-flex items-center justify-center
+    px-4 py-2 rounded-xl
+    border border-black
+    text-black font-medium
+    overflow-hidden
+
+    transition-all duration-300 ease-out
+    hover:text-white hover:-translate-y-0.5 hover:shadow-lg
+  "
+>
+  <span
+    className="
+      absolute inset-0 bg-black
+      translate-y-full
+      transition-transform duration-300 ease-out
+      group-hover:translate-y-0
+    "
+  />
+  <span className="relative z-10">
+    All Technical Details
+  </span>
+</a>
         </div>
       </div>
       <div className="w-full py-10">

@@ -5,7 +5,7 @@ export default function FeatureCards() {
   return (
     <section className="w-full bg-[#1e1e1e] py-24">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8">
           <div className="relative rounded-2xl p-8 text-white shadow-xl overflow-hidden
                 bg-gradient-to-br from-[#0a0a0a] via-[#14145a] to-[#3b3bdc]">
 
@@ -14,7 +14,7 @@ export default function FeatureCards() {
 
 
             {/* Contenido */}
-            <h3 className="relative text-2xl font-medium mb-4">
+            <h3 className="relative text-2xl mb-4 font-bold">
               Real-time visualization
             </h3>
 
@@ -25,7 +25,7 @@ export default function FeatureCards() {
 
           <div className="relative rounded-2xl p-8 text-white overflow-hidden shadow-xl bg-gradient-to-br from-[#2b2be0] via-[#3b3bdc] to-[#1a1a1a]">
             <img src={img2.src} className="absolute right-28 bottom-0 w-40 h-40 pointer-events-none opacity-70" alt="Icono1" />
-            <h3 className="text-2xl font-medium mb-4">
+            <h3 className="text-2xl font-bold mb-4">
               Automated control
             </h3>
             <p className="text-[#fffaea] font-medium leading-relaxed">
@@ -34,7 +34,7 @@ export default function FeatureCards() {
           </div>
           <div className="relative rounded-2xl p-8 text-white overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#14145a] to-[#3b3bdc] shadow-xl">
             <img src={img3.src} className="absolute right-28 bottom-0 w-40 h-40 pointer-events-none opacity-80" alt="Icono1"/>
-            <h3 className="text-2xl font-medium mb-4">
+            <h3 className="text-2xl font-bold mb-4">
               Remote cloud monitoring
             </h3>
             <p className="text-[#fffaea] font-medium leading-relaxed">
