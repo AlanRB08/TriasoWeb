@@ -1,16 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import reinfo1 from "../../assets/images/IntegralAsphalt/reinfo1.png";
-import reinforcedBlue from "../../assets/images/IntegralAsphalt/reinforced.png";
-import reinforcedRight from "../../assets/images/IntegralAsphalt/reinfright.png";
-import reinforcedLeft from "../../assets/images/IntegralAsphalt/reinfleft.png";
-import supportRight from "../../assets/images/IntegralAsphalt/supportright.png";
-import supportLeft from "../../assets/images/IntegralAsphalt/supportleft.png";
-import supportMain from "../../assets/images/IntegralAsphalt/supportmain.png";
-import standarMain from "../../assets/images/IntegralAsphalt/standarmain.png";
-import standarRight from "../../assets/images/IntegralAsphalt/standarright.png";
-import standarLeft from "../../assets/images/IntegralAsphalt/standarleft.png";
+import reinfo1 from "../../assets/images/IntegralAsphalt/reinfo1.webp";
+import reinforcedBlue from "../../assets/images/IntegralAsphalt/reinforced.webp";
+import reinforcedRight from "../../assets/images/IntegralAsphalt/reinfright.webp";
+import reinforcedLeft from "../../assets/images/IntegralAsphalt/reinfleft.webp";
+import supportRight from "../../assets/images/IntegralAsphalt/supportright.webp";
+import supportLeft from "../../assets/images/IntegralAsphalt/supportleft.webp";
+import supportMain from "../../assets/images/IntegralAsphalt/supportmain.webp";
+import standarMain from "../../assets/images/IntegralAsphalt/standarmain.webp";
+import standarRight from "../../assets/images/IntegralAsphalt/standarright.webp";
+import standarLeft from "../../assets/images/IntegralAsphalt/standarleft.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -286,7 +286,7 @@ const PlanoSection = () => {
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
-            backgroundImage: "url(/fondoAsphalt.png)",
+            backgroundImage: "url(/fondoAsphalt.webp)",
             backgroundRepeat: "repeat-x", // Se repetirá horizontalmente si es necesario
             backgroundPosition: "center bottom",
             backgroundSize: "auto 100%", // Mantiene la altura completa y el ancho automático (se repetirá)
@@ -323,7 +323,7 @@ const PlanoSection = () => {
       <div
         ref={clipTargetRef}
         id="sectionNueva"
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header className="mt-10 text-white" ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">

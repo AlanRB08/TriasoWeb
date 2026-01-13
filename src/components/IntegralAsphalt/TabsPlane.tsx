@@ -1,10 +1,10 @@
 import { useState } from "react";
-import reinforcedRight from "../../assets/images/IntegralAsphalt/reinfright.png";
-import reinforcedLeft from "../../assets/images/IntegralAsphalt/reinfleft.png";
-import supportRight from "../../assets/images/IntegralAsphalt/supportright.png";
-import supportLeft from "../../assets/images/IntegralAsphalt/supportleft.png";
-import standarRight from "../../assets/images/IntegralAsphalt/standarright.png";
-import standarLeft from "../../assets/images/IntegralAsphalt/standarleft.png";
+import reinforcedRight from "../../assets/images/IntegralAsphalt/reinfright.webp";
+import reinforcedLeft from "../../assets/images/IntegralAsphalt/reinfleft.webp";
+import supportRight from "../../assets/images/IntegralAsphalt/supportright.webp";
+import supportLeft from "../../assets/images/IntegralAsphalt/supportleft.webp";
+import standarRight from "../../assets/images/IntegralAsphalt/standarright.webp";
+import standarLeft from "../../assets/images/IntegralAsphalt/standarleft.webp";
 import { forwardRef } from "react";
 
 const TabsPlane = forwardRef<HTMLDivElement, {}>((props, ref) => {

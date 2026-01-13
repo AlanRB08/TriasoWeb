@@ -1,6 +1,6 @@
-import img1 from "../../assets/images/Relief/Iconos/1.png";
-import img2 from "../../assets/images/Relief/Iconos/2.png";
-import img3 from "../../assets/images/Relief/Iconos/3.png";
+import img1 from "../../assets/images/Relief/Iconos/1.webp";
+import img2 from "../../assets/images/Relief/Iconos/2.webp";
+import img3 from "../../assets/images/Relief/Iconos/3.webp";
 export default function FeatureCards() {
   return (
     <section className="w-full bg-[#1e1e1e] py-24">

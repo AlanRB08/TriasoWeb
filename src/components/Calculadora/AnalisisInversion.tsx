@@ -179,7 +179,7 @@ export default function AnalisisInversion() {
   ]);
 
   return (
-    <div className="w-full bg-[url(/fondopatron.png)]">
+    <div className="w-full bg-[url(/fondopatron.webp)]">
       <div className="max-w-7xl mx-auto space-y-10 px-5 md:px-0 lg:px-0">
 
         <h1 className="text-3xl font-bold text-white pt-10">

@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/CMTLevel.png", alt: "Discharge at truck level" },
-  { id: 1, src: "/Gallery/CMGLevel.png", alt: "Discharge at ground level" },
+  { id: 0, src: "/Gallery/CMTLevel.webp", alt: "Discharge at truck level" },
+  { id: 1, src: "/Gallery/CMGLevel.webp", alt: "Discharge at ground level" },
 ];
 
 export default function CMTab() {
