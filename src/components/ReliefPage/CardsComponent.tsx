@@ -5,7 +5,7 @@ export default function FeatureCards() {
   return (
     <section className="w-full bg-[#1e1e1e] py-24">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8">
           <div className="relative rounded-2xl p-8 text-white shadow-xl overflow-hidden
                 bg-gradient-to-br from-[#0a0a0a] via-[#14145a] to-[#3b3bdc]">
 

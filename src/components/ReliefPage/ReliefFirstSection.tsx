@@ -63,7 +63,7 @@ export default function ReliefFirstSection() {
 
   return (
     <div className="mt-24">
-      <div className="max-w-7xl px-8 mx-auto space-y-6 flex flex-col justify-center items-center pb-4 text-center relative z-10">
+      <div className="max-w-7xl px-8 mx-auto space-y-3 md:space-y-6 flex flex-col justify-center items-center pb-4 text-center relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-[#383838]">
           Asphalt Plant Control & Automation
         </h1>
@@ -78,7 +78,7 @@ export default function ReliefFirstSection() {
           <img src={img1.src} alt="Control System Dashboard" className="w-full lg:w-4/5 md:w-4/5 " />
         </div>
 
-        <p className="font-semibold text-lg text-[#393939] text-start">
+        <p className="font-semibold text-base text-[#393939] text-start">
           Offering a practical and efficient way to manage industrial equipment operations. With advanced monitoring and automation, it simplifies the control of key processes like temperature, material dosing, and production rates. Built to adapt to different setups, it ensures reliable performance while prioritizing safety and ease of use.
         </p>
       </div>

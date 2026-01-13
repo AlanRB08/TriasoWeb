@@ -63,7 +63,7 @@ export default function RelifSecondSection() {
     }, []);
 
     return (
-        <div ref={sectionRef} className='bg-[#1e1e1e] space-y-10 overflow-hidden'>
+        <div ref={sectionRef} className='bg-[#1e1e1e] space-y-5 md:space-y-10 overflow-hidden'>
             <div className='max-w-7xl mx-auto px-8 text-white'>
                 <div className='flex flex-col md:flex-row lg:flex-row justify-around items-center gap-5'>
                     <img src={img2.src} alt="Triaso OS" className='w-full md:w-1/2 lg:w-1/2' />
@@ -83,7 +83,7 @@ export default function RelifSecondSection() {
 
             <div>
                 <div className='flex justify-center max-w-7xl mx-auto px-4 pt-10'>
-                    <p className='text-white text-lg font-medium w-full lg:w-[40%] md:w-[40%]'>
+                    <p className='text-white text-base font-medium w-full lg:w-[40%] md:w-[40%]'>
                         All information is also stored securely in the cloud, providing fast, multi-user access for operators, supervisors, and owners —from remote computers, tablets, and mobile phones.
                     </p>
                 </div>

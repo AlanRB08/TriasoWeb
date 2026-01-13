@@ -43,7 +43,7 @@ const PAOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20">
+    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20 mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
@@ -77,10 +77,35 @@ const PAOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-6">
           <div>
             <img src={img1.src} alt="Powder Additives VL" />
           </div>
+          <a
+  href="#planosPowder"
+  className="
+    group relative inline-flex items-center justify-center
+    px-4 py-2 rounded-xl
+    border border-black
+    text-black font-medium
+    overflow-hidden
+
+    transition-all duration-300 ease-out
+    hover:text-white hover:-translate-y-0.5 hover:shadow-lg
+  "
+>
+  <span
+    className="
+      absolute inset-0 bg-black
+      translate-y-full
+      transition-transform duration-300 ease-out
+      group-hover:translate-y-0
+    "
+  />
+  <span className="relative z-10">
+    All Technical Details
+  </span>
+</a>
         </div>
       </div>
     </div>
