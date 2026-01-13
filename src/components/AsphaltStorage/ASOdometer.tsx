@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
-import single from "../../assets/images/IntegralAsphalt/single.png";
 import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.webp";
 
 const ASOdometer = () => {

@@ -385,7 +385,7 @@ const DrumMixPlanos = () => {
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
-            backgroundImage: "url(/fondoAsphalt.png)",
+            backgroundImage: "url(/fondoAsphalt.webp)",
             backgroundRepeat: "repeat-x", // Se repetirá horizontalmente si es necesario
             backgroundPosition: "center bottom",
             backgroundSize: "auto 100%", // Mantiene la altura completa y el ancho automático (se repetirá)
@@ -421,7 +421,7 @@ const DrumMixPlanos = () => {
       <div
         ref={clipTargetRef}
         id="sectionNueva"
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header className="mt-10 text-white" ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">

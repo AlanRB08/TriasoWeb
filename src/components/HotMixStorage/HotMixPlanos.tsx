@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HMainS1 from "../../assets/images/HotMix/Silo50-Comp.Assy-R.webp";
 import HMainBS1 from "../../assets/images/HotMix/Silo50-Comp.Assy.webp";
 import HLeftBS1 from "../../assets/images/HotMix/Silosf50-1.webp";
-import HRightBS1 from "../../assets/images/HotMix/Silosf50-3.png";
 import HRL50 from "../../assets/images/HotMix/Silo-SF50TBpL.webp";
 import HRL100 from "../../assets/images/HotMix/Silo-SF100TBpL.webp";
 import HRL150 from "../../assets/images/HotMix/Silo-SF150TBpL.webp";
@@ -13,8 +12,6 @@ import HRR50 from "../../assets/images/HotMix/Silo-SF50TBpFn.webp";
 import HRR100 from "../../assets/images/HotMix/Silo-SF100TBpFn.webp";
 import HRR150 from "../../assets/images/HotMix/Silo-SF150TBpFn.webp";
 import HRR200 from "../../assets/images/HotMix/Silo-SF200TBpFn.webp";
-import HLeftBS2 from "../../assets/images/HotMix/Siloae100-1.png";
-import HRightBS2 from "../../assets/images/HotMix/Siloae100-3.png";
 import HMainBS2 from "../../assets/images/HotMix/Siloae100-2.webp";
 import HMainBR1 from "../../assets/images/HotMix/Silo-SF50TBpS.webp";
 import HMainBR2 from "../../assets/images/HotMix/Silo-SF100TBpS.webp";
@@ -364,7 +361,7 @@ const HotMixPlanos = () => {
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
-            backgroundImage: "url(/fondoAsphalt.png)",
+            backgroundImage: "url(/fondoAsphalt.webp)",
             backgroundRepeat: "repeat-x", // Se repetirá horizontalmente si es necesario
             backgroundPosition: "center bottom",
             backgroundSize: "auto 100%", // Mantiene la altura completa y el ancho automático (se repetirá)
@@ -406,7 +403,7 @@ const HotMixPlanos = () => {
       <div
         ref={clipTargetRef}
         id="sectionNueva"
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header id="planosSilos" className="mt-10 text-white" ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Hero1 from "../../assets/images/IntegralAsphalt/Hero1.jpg";
-import Hero2 from "../../assets/images/IntegralAsphalt/Hero2.jpg";
-import Hero3 from "../../assets/images/IntegralAsphalt/Hero3.jpg";
-import Hero4 from "../../assets/images/IntegralAsphalt/Hero4.jpg";
+import Hero1 from "../../assets/images/IntegralAsphalt/Hero1.webp";
+import Hero2 from "../../assets/images/IntegralAsphalt/Hero2.webp";
+import Hero3 from "../../assets/images/IntegralAsphalt/Hero3.webp";
+import Hero4 from "../../assets/images/IntegralAsphalt/Hero4.webp";
 
 const SliderHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/tolva1.png", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/tolva2.png", alt: "Imagen 2" },
-  { id: 2, src: "/Gallery/tolva3.png", alt: "Imagen 3" }, 
+  { id: 0, src: "/Gallery/tolva1.webp", alt: "Imagen 1" },
+  { id: 1, src: "/Gallery/tolva2.webp", alt: "Imagen 2" },
+  { id: 2, src: "/Gallery/tolva3.webp", alt: "Imagen 3" }, 
 ];
 
 export default function TabsIntegral() {

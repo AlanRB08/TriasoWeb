@@ -226,7 +226,7 @@ const OHPlanos = () => {
                 <div
                     className="absolute bottom-0 w-full h-4/6 overflow-hidden"
                     style={{
-                        backgroundImage: "url(/fondoAsphalt.png)",
+                        backgroundImage: "url(/fondoAsphalt.webp)",
                         backgroundRepeat: "repeat-x",
                         backgroundPosition: "center bottom",
                         backgroundSize: "auto 100%",
@@ -262,7 +262,7 @@ const OHPlanos = () => {
             <div
                 ref={clipTargetRef}
                 id="sectionNueva"
-                className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+                className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
             >
                 <header 
                 id="planosOil"

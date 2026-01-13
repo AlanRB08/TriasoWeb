@@ -2,10 +2,10 @@ import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ATMain from "../../assets/images/AsphaltStorage/ATMain.png";
-import HLeftBS1 from '../../assets/images/HotMix/Silosf50-1.png';
+import HLeftBS1 from '../../assets/images/HotMix/Silosf50-1.webp';
 import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
 import HMainBR2 from '../../assets/images/HotMix/Silo-SF100TBpS.png';
-import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.png';
+import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.webp';
 import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
 import AS12Main from "../../assets/images/AsphaltStorage/AS12Main.png";
 import ATR1 from '../../assets/images/AsphaltStorage/ATR1.png';
@@ -315,7 +315,7 @@ console.log('activeData', activeData);
       <div 
         className='absolute bottom-0 w-full h-4/6 overflow-hidden'
         style={{
-            backgroundImage: 'url(/fondoAsphalt.png)',
+            backgroundImage: 'url(/fondoAsphalt.webp)',
             backgroundRepeat: 'repeat-x', // Se repetirá horizontalmente si es necesario
             backgroundPosition: 'center bottom',
             backgroundSize: 'auto 100%' // Mantiene la altura completa y el ancho automático (se repetirá)
@@ -351,7 +351,7 @@ console.log('activeData', activeData);
       <div 
       ref={clipTargetRef}
         id='sectionNueva'  
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header className='mt-10 text-white' ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">Specifications</h1>

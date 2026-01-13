@@ -1,26 +1,26 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import M1 from "../../assets/images/ColdMix/Planos/M2.png";
-import M2 from "../../assets/images/ColdMix/Planos/M3.png";
-import FW from "../../assets/images/ColdMix/Planos/FW.png";
-import FL from "../../assets/images/ColdMix/Planos/PlaMFMspVT.png"
-import A2GLA from "../../assets/images/ColdMix/Planos/2GLA.png";
-import A2GLW from "../../assets/images/ColdMix/Planos/2GLW.png";
-import A2GWA from "../../assets/images/ColdMix/Planos/2GWA.png";
-import A2GWW from "../../assets/images/ColdMix/Planos/2GWW.png";
-import A2TLA from "../../assets/images/ColdMix/Planos/2TLA.png";
-import A2TWA from "../../assets/images/ColdMix/Planos/2TWA.png";
-import A2TWW from "../../assets/images/ColdMix/Planos/2TWW.png";
-import A3GLA from "../../assets/images/ColdMix/Planos/3GLA.png";
-import A3GLW from "../../assets/images/ColdMix/Planos/3GLW.png";
-import A3GWA from "../../assets/images/ColdMix/Planos/3GWA.png";
-import A3GWW from "../../assets/images/ColdMix/Planos/3GWW.png";
-import A3TLA from "../../assets/images/ColdMix/Planos/3TLA.png";
-import A3TLW from "../../assets/images/ColdMix/Planos/3TLW.png";
-import A3TWA from "../../assets/images/ColdMix/Planos/3TWA.png";
-import A3TWW from "../../assets/images/ColdMix/Planos/3TWW.png";
-import tolva3Main from "../../assets/images/ColdMix/Planos/CMain.png";
+import M1 from "../../assets/images/ColdMix/Planos/M2.webp";
+import M2 from "../../assets/images/ColdMix/Planos/M3.webp";
+import FW from "../../assets/images/ColdMix/Planos/FW.webp";
+import FL from "../../assets/images/ColdMix/Planos/PlaMFMspVT.webp"
+import A2GLA from "../../assets/images/ColdMix/Planos/2GLA.webp";
+import A2GLW from "../../assets/images/ColdMix/Planos/2GLW.webp";
+import A2GWA from "../../assets/images/ColdMix/Planos/2GWA.webp";
+import A2GWW from "../../assets/images/ColdMix/Planos/2GWW.webp";
+import A2TLA from "../../assets/images/ColdMix/Planos/2TLA.webp";
+import A2TWA from "../../assets/images/ColdMix/Planos/2TWA.webp";
+import A2TWW from "../../assets/images/ColdMix/Planos/2TWW.webp";
+import A3GLA from "../../assets/images/ColdMix/Planos/3GLA.webp";
+import A3GLW from "../../assets/images/ColdMix/Planos/3GLW.webp";
+import A3GWA from "../../assets/images/ColdMix/Planos/3GWA.webp";
+import A3GWW from "../../assets/images/ColdMix/Planos/3GWW.webp";
+import A3TLA from "../../assets/images/ColdMix/Planos/3TLA.webp";
+import A3TLW from "../../assets/images/ColdMix/Planos/3TLW.webp";
+import A3TWA from "../../assets/images/ColdMix/Planos/3TWA.webp";
+import A3TWW from "../../assets/images/ColdMix/Planos/3TWW.webp";
+import tolva3Main from "../../assets/images/ColdMix/Planos/CMain.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -485,7 +485,7 @@ useEffect(() => {
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
-            backgroundImage: "url(/fondoAsphalt.png)",
+            backgroundImage: "url(/fondoAsphalt.webp)",
             backgroundRepeat: "repeat-x", // Se repetirá horizontalmente si es necesario
             backgroundPosition: "center bottom",
             backgroundSize: "auto 100%", // Mantiene la altura completa y el ancho automático (se repetirá)
@@ -522,7 +522,7 @@ useEffect(() => {
       <div
         ref={clipTargetRef}
         id="sectionNueva"
-        className="bg-[url('/fondopatron.png')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
+        className="bg-[url('/fondopatron.webp')] bg-repeat bg-top w-full flex flex-col items-center justify-start relative bg-black overflow-hidden z-10 min-h-screen"
       >
         <header id="planosCold" className="mt-10 text-white" ref={otroElemento}>
           <h1 className="lg:text-4xl text-2xl pb-3 border-b-2 border-b-white text-center">

@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import img1 from '../../assets/images/IntegralAsphalt/reinforced.png';
-import img2 from '../../assets/images/IntegralAsphalt/reinfo1.png';
+import img1 from '../../assets/images/IntegralAsphalt/reinforced.webp';
+import img2 from '../../assets/images/IntegralAsphalt/reinfo1.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
