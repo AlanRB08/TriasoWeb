@@ -2,6 +2,7 @@
 import Logo from "../../../assets/logos/LogoTriasoMX.svg";
 import img1 from "../../../assets/images/ColdMix/CMHigh.webp"
 import img2 from "../../../assets/images/About/Delivery/Manual.webp";
+import Image from "astro/components/Image.astro";
 ---
 <section class="w-full bg-grisT flex flex-col gap-10 text-white">
     <div class="w-full relative">
@@ -14,11 +15,11 @@ import img2 from "../../../assets/images/About/Delivery/Manual.webp";
                 Speak to us to give you a list of satisfied customers, with which you can see our equipments working.
             </p>
         </div>
-        <img src={Logo.src} alt="" class="w-full absolute top-0 right-0 z-0">
+        <Image src={Logo} alt="" class="w-full absolute top-0 right-0 z-0">
     </div>  
     <div class="w-full max-w-7xl items-center px-8 mx-auto lg:py-10 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
-            <img src={img2.src} alt="" class="rounded-lg">
+            <Image src={img2} alt="" class="rounded-lg">
         </div>
         <div >
             <p class="text-base md:text-lg font-thin">
@@ -46,7 +47,7 @@ import img2 from "../../../assets/images/About/Delivery/Manual.webp";
             </div>
         </div>
         <div class="flex justify-center">
-            <img src={img1.src} alt="" class="w-4/5 rounded-lg">
+            <Image src={img1} alt="" class="w-4/5 rounded-lg">
         </div>
     </div>
 </section>

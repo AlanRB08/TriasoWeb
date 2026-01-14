@@ -9,6 +9,7 @@ import icon7 from "../../assets/images/AsphaltPlant/upT.svg";
 import icon8 from "../../assets/images/AsphaltPlant/cont.svg";
 import icon9 from "../../assets/images/AsphaltPlant/lowF.svg";
 import img1 from "../../assets/images/AsphaltPlant/render.webp";
+import Image from "astro/components/Image.astro";
 const items = [
     { text: "LOW MAINTENANCE", img: icon1 },
     {
@@ -152,7 +153,7 @@ const items = [
                 }
             `}
                 >
-                    <img src={item.img.src} alt="" class="lg:w-28 w-20" />
+                    <Image src={item.img} alt="" class="lg:w-28 w-20" />
                     <p class="text-black text-base md:text-xl">{item.text}</p>
                 </div>
             ))
@@ -166,7 +167,7 @@ const items = [
             With Triaso, Become the Exclusive Provider of Hot Mix for All Paving
             Projects in Your Region
         </h1>
-        <img src={img1.src} alt="" />
+        <Image src={img1} alt="" />
         <h1 class="text-center">
             Our customers choose Triaso asphalt plants over other brands for
             their high quality, reliability, and competitive pricing.

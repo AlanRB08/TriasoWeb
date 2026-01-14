@@ -3,10 +3,11 @@ import Separator from "../../unitComponents/Separator.astro";
 import TwoColumnSection from "../../unitComponents/TwoColumnSection.astro";
 import Tred from "../../../assets/images/AsphaltStorage/redT.webp";
 import hero2 from "../../../assets/images/About/Delivery/hero2.webp";
+import Image from "astro/components/Image.astro";
 ---
 
 <div class="flex justify-center">
-    <img src={hero2.src} alt="" class="lg:w-[3000px] lg:h-[700px] object-fill" />
+    <Image src={hero2} alt="" class="lg:w-[3000px] lg:h-[700px] object-fill" />
 </div>
 
 <section class="w-full max-w-7xl mx-auto py-10">
@@ -23,7 +24,7 @@ import hero2 from "../../../assets/images/About/Delivery/hero2.webp";
             </p>
         </div>
         <div class="w-full col-span-2">
-            <img src="" alt="" />
+            
         </div>
     </div>
     <TwoColumnSection

@@ -9,7 +9,7 @@ import ASHoses from "../../assets/images/AsphaltStorage/ASHoses.webp"
 import fiberGlass from "../../assets/images/AsphaltPlant/Aislamiento.webp";
 import ASAgitators from "../../assets/images/AsphaltPlant/agitators1.webp";
 import ASGallerySlider from "../../components/AsphaltStorage/ASGallerySlider.tsx";
-
+import Image from "astro/components/Image.astro";
 
 const images = [
   {
@@ -59,7 +59,7 @@ const images = [
 <div class="w-full flex flex-col gap-10">
   <ASGallerySlider client:load images={images} />
   <div class="max-w-7xl px-8 mx-auto">
-    <img src={tanque360.src} alt="" />
+    <Image src={tanque360} alt="" />
   </div>
 
   <div class="w-full px-8 md:px-52">
@@ -71,7 +71,7 @@ const images = [
     class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
   >
     <div class="w-full">
-      <img src={img2.src} alt="" />
+      <Image src={img2} alt="" />
     </div>
     <AcordeonItemCol
       title="Triaso® Vertical Asphalt Storage Tanks"
