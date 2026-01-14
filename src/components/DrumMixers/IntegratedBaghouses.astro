@@ -58,31 +58,37 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
             <Image src={baghouse} alt="" class="w-full" />
         </div>
     </div>
-    <div class="w-full flex flex-col md:flex-row text-white my-0 md:my-10">
-        <Image
-            src={baghouse2}
-            alt=""
-            class="w-full h-auto md:h-[250px] object-cover"
-        />
-        <div
-            class="bg-blueMain px-8 lg:pr-52 py-6 lg:py-0 flex flex-col items-center justify-center md:rounded-l-2xl"
-        >
-            <h2 class="text-xl md:text-2xl mb-4">
-                Mechanism of baghouses available in pulse jet and reverse jet
-            </h2>
-            <p class="text-grisSubP mb-4 md:mb-0">
-                <span class="text-white">Pulse Jet:</span> A cleaning system that
-                uses short bursts of compressed air to dislodge dust and debris from
-                the filter bags, maintaining continuous airflow and filtration efficiency.
-            </p><br />
-            <p class="text-grisSubP">
-                <span class="text-white">Reverse Air:</span>
-                A cleaning system that directs low-pressure air in the opposite direction
-                to remove dust from the filter bags, typically used in larger baghouses
-                or high-dust applications.
-            </p>
+    <div class="max-w-[2400px] w-full flex justify-center items-center">
+        <div class="w-full flex flex-col md:grid md:grid-cols-5 text-white my-0 md:my-10 justify-center">
+            <div class="w-full h-full md:col-span-2">
+                <Image
+                src={baghouse2}
+                alt=""
+                class="w-full h-full object-cover"
+            />
+            </div>
+            <div
+                class="w-full md:col-span-3 bg-blueMain px-8 lg:pr-52 py-6 lg:py-0 flex flex-col justify-center md:rounded-l-2xl h-full"
+            >
+                <h2 class="text-xl md:text-2xl mb-4 text-start">
+                    Mechanism of baghouses available in pulse jet and reverse jet
+                </h2>
+                <p class="text-grisSubP mb-4 md:mb-0">
+                    <span class="text-white">Pulse Jet:</span> A cleaning system that
+                    uses short bursts of compressed air to dislodge dust and debris from
+                    the filter bags, maintaining continuous airflow and filtration efficiency.
+                </p><br />
+                <p class="text-grisSubP">
+                    <span class="text-white">Reverse Air:</span>
+                    A cleaning system that directs low-pressure air in the opposite direction
+                    to remove dust from the filter bags, typically used in larger baghouses
+                    or high-dust applications.
+                </p>
+            </div>
         </div>
     </div>
+    
+    
     <div
         class="w-full flex justify-center items-center gap-10 px-8 md:px-52 bg-grisT py-10 bg-[url('/Gallery/telasDrum.webp')]"
     >

@@ -1,8 +1,18 @@
 ---
 import CMG5 from "../../assets/images/ColdMix/GallerySlider/CMG5.webp";
 import CMVideo from "../../assets/images/ColdMix/CMVideo.mp4";  
+import HeroCold from "../../assets/images/ColdMix/HeroColdMix.webp";
+import { Image } from "astro:assets";
 ---
 <div class="w-full flex flex-col justify-center">
+    <div class="w-full flex justify-center">
+        
+        <Image
+  src={HeroCold}
+  alt="Hero from ColdMix"
+  width={2000}
+/>
+    </div>
     <div class="w-full max-w-7xl mx-auto px-8 flex flex-col justify-center items-center font-bold">
         <div class="text-end lg:w-1/2 md:w-1/2 mt-24 self-end">
             <h1 class="text-2xl md:text-3xl">COLD MIX ASPHALT PLANTS</h1><br>

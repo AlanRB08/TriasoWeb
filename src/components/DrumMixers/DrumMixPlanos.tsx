@@ -93,7 +93,7 @@ const toggleConfig = [
       height: 705.37,
       length: 2007.7,
       diameter: 182.88,
-      drumLenght: 640.1,
+      drumLenght: 852,
       drumHeight: 264.31,
       transportationHeight: 424.57,
       wheel: 140.0,
@@ -108,7 +108,7 @@ const toggleConfig = [
       height: 705.37,
       length: 2127.37,
       diameter: 182.88,
-      drumLenght: 853,
+      drumLenght: 878,
       drumHeight: 264.31,
       transportationHeight: 424.57,
       wheel: 140.0,
@@ -484,7 +484,7 @@ const DrumMixPlanos = () => {
                   : "text-white bg-transparent border-white"
                   }`}
               >
-                110-150 Tph
+                110-140 Tph
               </button>
 
               {/* Botón 3 */}
@@ -1374,7 +1374,7 @@ const DrumMixPlanos = () => {
                           </div>
                           <div className="flex justify-between">
                             <h1>RAP Incorporation:</h1>
-                            <p>40%</p>
+                            <p>50%</p>
                           </div>
                         </div>
                       </div>
@@ -2718,7 +2718,7 @@ const DrumMixPlanos = () => {
                           </div>
                           <div className="flex justify-between">
                             <h1>RAP Incorporation:</h1>
-                            <p>40%</p>
+                            <p>50%</p>
                           </div>
                         </div>
                       </div>
