@@ -5,9 +5,9 @@ import ASVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
 
-<div class="w-full flex flex-col font-bold px-8 mt-5">
-  <div class="flex justify-center items-center">
-    <h1 class="text-xl md:text-4xl py-10">Asphalt Storage Tanks</h1>
+<div class="w-full flex flex-col font-bold px-4 mt-5">
+  <div id="AsphaltTanks" class="scroll-mt-20 flex justify-center items-center">
+    <h1 class="text-2xl md:text-4xl py-10">Asphalt Storage Tanks</h1>
   </div>
 
   <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
@@ -110,7 +110,7 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
   <div class="w-full flex flex-col justify-center items-center mb-5">
     <div class="max-w-7xl flex flex-col items-center">
       <video src={ASVideo} autoplay muted></video><br />
-      <LearnBtn />
+      <LearnBtn href="/AsphaltStorage"/>
     </div>
   </div>
 </div>

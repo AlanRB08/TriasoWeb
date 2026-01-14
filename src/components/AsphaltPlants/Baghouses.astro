@@ -2,6 +2,7 @@
 import Tabs from "./Tabs";
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import single from "../../assets/images/DrumMixers/baghouse.webp";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
 import Image from "astro/components/Image.astro";
 ---
 
@@ -9,7 +10,9 @@ import Image from "astro/components/Image.astro";
   <div
     class="w-full flex flex-col  mt-20 text-grisT max-w-7xl mx-auto px-8 text-base md:text-xl"
   >
-    <h1 class="text-xl lg:text-4xl text-center lg:text-start md:text-start mb-10">BAGHOUSES</h1>
+    <h1 
+    id="Baghouses"
+    class=" scroll-mt-20 text-2xl lg:text-4xl text-center lg:text-start md:text-start mb-10">BAGHOUSES</h1>
     <div class="w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center">
       <div>
         <p class="text-justify text-base lg:text-lg font-thin">
@@ -38,7 +41,7 @@ import Image from "astro/components/Image.astro";
   >
     <Tabs client:visible />
   </div><br />
-  <div class="w-full max-w-7xl mx-auto px-8">
+  <div class="w-full max-w-7xl mx-auto px-8 py-6">
     <h2 class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl">
       Advantages of fines return system
     </h2>
@@ -82,7 +85,7 @@ import Image from "astro/components/Image.astro";
     </div>
   </div>
   <div
-    class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8"
+    class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-8"
   >
     <div>
       <video src={DMVideo} autoplay muted></video>
@@ -91,11 +94,6 @@ import Image from "astro/components/Image.astro";
         air-to-cloth ratios up to 8:1
       </p>
     </div><br />
-    <button
-      class="bg-redBg rounded-full
-        font-normal max-w-[200px] text-white py-1 px-4
-        text-sm md:text-lg hover:bg-redBgHover"
-      >Learn more</button
-    >
+    <LearnBtn href="/BagHouses"/>
   </div>
 </div>

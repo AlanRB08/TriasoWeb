@@ -1,365 +1,344 @@
 ---
-import Hero1 from "../../assets/images/Tips/DeliveryImage.webp";
-import Image from "astro/components/Image.astro";
+import Hero1 from "../../assets/images/About/Delivery/deliveryAsp.webp";
 import GallerySlider from "../../components/unitComponents/GallerySlider";
 const binSlides2 = [
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp",
-        caption:
-            "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.webp",
-        caption:
-            "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp",
-        caption:
-            "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp",
-        caption:
-            "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, en posición de transporte",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo con Rap",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.webp",
-        caption:
-            "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de transporte",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.webp",
-        caption:
-            "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/consola.webp",
-        caption:
-            "Consola de control, con computadora plus para planta de asfalto de contraflujo",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusA.webp",
-        caption: "Tanque de asfalto de 60,000 lts, plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusB.webp",
-        caption: "Tanque de asfalto de 60,000 lts, plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusC.webp",
-        caption: "Tanque de asfalto de 60,000 lts, plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusD.webp",
-        caption: "Tanque de asfalto de 60,000 lts, plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.webp",
-        caption: "Unidad de tolvas triple plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.webp",
-        caption: "Unidad de tolvas triple plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.webp",
-        caption: "Unidad de tolvas triple plus",
-    },
-    {
-        image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.webp",
-        caption: "Unidad de tolvas triple plus",
-    },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp",
+    caption:
+      "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.webp",
+    caption:
+      "Tambor mezclador de 80 Tmph, de contraflujo, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp",
+    caption:
+      "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp",
+    caption:
+      "Tambor mezclador de 80 Tmph, de contraflujo, en posición de transporte",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, en posición de transporte",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de trabajo con Rap",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.webp",
+    caption:
+      "Tambor mezclador de 140 Tmph, de contraflujo, con pugmill, en posición de transporte",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image:
+      "src/assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.webp",
+    caption:
+      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/consola.webp",
+    caption:
+      "Consola de control, con computadora plus para planta de asfalto de contraflujo",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusA.webp",
+    caption: "Tanque de asfalto de 60,000 lts, plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusB.webp",
+    caption: "Tanque de asfalto de 60,000 lts, plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusC.webp",
+    caption: "Tanque de asfalto de 60,000 lts, plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/tanqueplusD.webp",
+    caption: "Tanque de asfalto de 60,000 lts, plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.webp",
+    caption: "Unidad de tolvas triple plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.webp",
+    caption: "Unidad de tolvas triple plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.webp",
+    caption: "Unidad de tolvas triple plus",
+  },
+  {
+    image: "src/assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.webp",
+    caption: "Unidad de tolvas triple plus",
+  },
 ];
 ---
 
-<div>
+<div class="w-full flex flex-col gap-10">
+  <!-- Banner -->
+  <div
+    class="flex justify-center items-center max-h-[700px] overflow-hidden bg-bottom"
+  >
+    <img src={Hero1.src} alt="Triaso" class="" />
+  </div>
+  <!-- Contenido -->
+  <div class="w-full">
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-8 space-y-5">
+      <div class="flex justify-end items-center">
+        <h1 class="font-bold text-5xl uppercase">
+          Some Tips for Buying an Asphalt Plant
+        </h1>
+      </div>
+
+      <div class="space-y-5">
+        <div>
+          <p class="font-bold text-xl text-[#393939]">
+            Purchasing an asphalt plant is a significant investment and serves
+            as the foundation of an asphalt mix production business. Buy wisely.
+          </p>
+        </div>
+        <div class="pl-5">
+          <li class="text-[#393939]">
+            Be cautious with salespeople; they may say anything to make a sale.
+          </li>
+          <li class="text-[#393939]">
+            Dig deeper and investigate anything they can’t answer immediately or
+            that doesn’t seem logical.
+          </li>
+          <li class="text-[#393939]">
+            Compare the offerings from each supplier you are considering.
+          </li>
+          <li class="text-[#393939]">
+            Visit the manufacturer or supplier and verify every claim they make.
+          </li>
+          <li class="text-[#393939]">
+            Include us in your visit and verification process.
+          </li>
+          <li class="text-[#393939]">
+            Assign these tasks to an experienced engineer or an external
+            consultant.
+          </li>
+          <li class="text-[#393939]">
+            Request plenty of references and verify that they are legitimate.
+          </li>
+        </div>
+      </div>
+    </div>
     <!-- Banner -->
-    <div class="flex justify-center items-center mb-5 lg:mb-0 lg:h-96 md:mb-0 md:h-96">
-        <img src={Hero1.src} alt="Triaso" class="" />
-    </div>
-    <!-- Contenido -->
-    <div class="lg:pt-96 md:pt-96">
-        <!-- Header -->
-        <div class="max-w-7xl mx-auto px-8 space-y-5">
-            <div class="flex justify-end items-center">
-                <h1 class="font-bold text-5xl uppercase">
-                    Some Tips for Buying an Asphalt Plant
-                </h1>
-            </div>
-
-            <div class="space-y-5">
-                <div>
-                    <p class="font-bold text-xl text-[#393939]">
-                        Purchasing an asphalt plant is a significant investment
-                        and serves as the foundation of an asphalt mix
-                        production business. Buy wisely.
-                    </p>
-                </div>
-                <div class="pl-5">
-                    <li class="text-[#393939]">
-                        Be cautious with salespeople; they may say anything to
-                        make a sale.
-                    </li>
-                    <li class="text-[#393939]">
-                        Dig deeper and investigate anything they can’t answer
-                        immediately or that doesn’t seem logical.
-                    </li>
-                    <li class="text-[#393939]">
-                        Compare the offerings from each supplier you are
-                        considering.
-                    </li>
-                    <li class="text-[#393939]">
-                        Visit the manufacturer or supplier and verify every
-                        claim they make.
-                    </li>
-                    <li class="text-[#393939]">
-                        Include us in your visit and verification process.
-                    </li>
-                    <li class="text-[#393939]">
-                        Assign these tasks to an experienced engineer or an
-                        external consultant.
-                    </li>
-                    <li class="text-[#393939]">
-                        Request plenty of references and verify that they are
-                        legitimate.
-                    </li>
-                </div>
-            </div>
-        </div>
-        <!-- Banner -->
-        <div class="w-full bg-blueMain p-20 mt-5">
-            <div
-                class="max-w-7xl px-8 mx-auto flex flex-col-reverse lg:flex-row md:flex-row justify-between items-center"
+    <div class="w-full bg-blueMain p-20 mt-5">
+      <div
+        class="max-w-7xl px-8 mx-auto flex flex-col-reverse lg:flex-row md:flex-row justify-between items-center"
+      >
+        <div>
+          <button
+            class="bg-white transition-all duration-300 ease-out transform hover:scale-105 p-5 rounded-2xl flex items-center gap-5"
+          >
+            <span class="font-bold">Talk to a representative </span>
+            <span
+              ><svg
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M21 5.5C21 14.0604 14.0604 21 5.5 21C5.11378 21 4.73086 20.9859 4.35172 20.9581C3.91662 20.9262 3.69906 20.9103 3.50103 20.7963C3.33701 20.7019 3.18146 20.5345 3.09925 20.364C3 20.1582 3 19.9181 3 19.438V16.6207C3 16.2169 3 16.015 3.06645 15.842C3.12515 15.6891 3.22049 15.553 3.3441 15.4456C3.48403 15.324 3.67376 15.255 4.05321 15.117L7.26005 13.9509C7.70153 13.7904 7.92227 13.7101 8.1317 13.7237C8.31637 13.7357 8.49408 13.7988 8.64506 13.9058C8.81628 14.0271 8.93713 14.2285 9.17882 14.6314L10 16C12.6499 14.7999 14.7981 12.6489 16 10L14.6314 9.17882C14.2285 8.93713 14.0271 8.81628 13.9058 8.64506C13.7988 8.49408 13.7357 8.31637 13.7237 8.1317C13.7101 7.92227 13.7904 7.70153 13.9509 7.26005L13.9509 7.26005L15.117 4.05321C15.255 3.67376 15.324 3.48403 15.4456 3.3441C15.553 3.22049 15.6891 3.12515 15.842 3.06645C16.015 3 16.2169 3 16.6207 3H19.438C19.9181 3 20.1582 3 20.364 3.09925C20.5345 3.18146 20.7019 3.33701 20.7963 3.50103C20.9103 3.69907 20.9262 3.91662 20.9581 4.35173C20.9859 4.73086 21 5.11378 21 5.5Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </g></svg
+              ></span
             >
-                <div>
-                    <button
-                        class="bg-white transition-all duration-300 ease-out transform hover:scale-105 p-5 rounded-2xl flex items-center gap-5"
-                    >
-                        <span class="font-bold">Talk to a representative </span>
-                        <span
-                            ><svg
-                                width="30"
-                                height="30"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                ><g id="SVGRepo_bgCarrier" stroke-width="0"
-                                ></g><g
-                                    id="SVGRepo_tracerCarrier"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"></g><g
-                                    id="SVGRepo_iconCarrier"
-                                >
-                                    <path
-                                        d="M21 5.5C21 14.0604 14.0604 21 5.5 21C5.11378 21 4.73086 20.9859 4.35172 20.9581C3.91662 20.9262 3.69906 20.9103 3.50103 20.7963C3.33701 20.7019 3.18146 20.5345 3.09925 20.364C3 20.1582 3 19.9181 3 19.438V16.6207C3 16.2169 3 16.015 3.06645 15.842C3.12515 15.6891 3.22049 15.553 3.3441 15.4456C3.48403 15.324 3.67376 15.255 4.05321 15.117L7.26005 13.9509C7.70153 13.7904 7.92227 13.7101 8.1317 13.7237C8.31637 13.7357 8.49408 13.7988 8.64506 13.9058C8.81628 14.0271 8.93713 14.2285 9.17882 14.6314L10 16C12.6499 14.7999 14.7981 12.6489 16 10L14.6314 9.17882C14.2285 8.93713 14.0271 8.81628 13.9058 8.64506C13.7988 8.49408 13.7357 8.31637 13.7237 8.1317C13.7101 7.92227 13.7904 7.70153 13.9509 7.26005L13.9509 7.26005L15.117 4.05321C15.255 3.67376 15.324 3.48403 15.4456 3.3441C15.553 3.22049 15.6891 3.12515 15.842 3.06645C16.015 3 16.2169 3 16.6207 3H19.438C19.9181 3 20.1582 3 20.364 3.09925C20.5345 3.18146 20.7019 3.33701 20.7963 3.50103C20.9103 3.69907 20.9262 3.91662 20.9581 4.35173C20.9859 4.73086 21 5.11378 21 5.5Z"
-                                        stroke="#000000"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </g></svg
-                            ></span
-                        >
-                    </button>
-                </div>
-                <div class="flex flex-col justify-end items-end lg:w-4/6">
-                    <h1
-                        class="font-bold text-white text-5xl uppercase lg:text-end"
-                    >
-                        24/7 customer service
-                    </h1>
-                    <h2
-                        class="font-semibold text-white text-xl lg:text-end uppercase"
-                    >
-                        Our team is available around the clock, ready to assist
-                        you at any time, even on weekends and holidays.
-                    </h2>
-                </div>
-            </div>
+          </button>
         </div>
-        <!-- último -->
-        <div class="py-10">
-            <div class="max-w-7xl mx-auto px-8 bg-white rounded-t-lg h-full">
-                <div
-                    class="w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-20 justify-center items-start"
-                >
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Evaluate the Plant's Technical Specifications
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            Ensure the plant you choose aligns with your
-                            production goals, including mix capacity, fuel
-                            efficiency, and environmental compliance. Advanced
-                            features like modern control systems or capabilities
-                            for RAP integration can enhance productivity and
-                            reduce costs.
-                        </p>
-                    </div>
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Analyze Long-Term Costs
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            Initial cost is just one aspect of your investment.
-                            Assess maintenance expenses, spare parts
-                            availability, and energy consumption over the
-                            plant's lifecycle. Reliable manufacturers often
-                            provide a clear breakdown of these costs.
-                        </p>
-                    </div>
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Understand the Supplier’s Support
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            After-sales service can be as important as the plant
-                            itself. Confirm the availability of technical
-                            support, operator training, and prompt delivery of
-                            spare parts. Suppliers with strong service networks
-                            can save you significant downtime.
-                        </p>
-                    </div>
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Inspect the Manufacturing Quality
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            Focus on the durability and material standards,
-                            particularly the steel used in construction. Verify
-                            certifications that ensure the alloy's purity and
-                            quality. High-grade materials are essential for
-                            plants built for heavy-duty applications, as they
-                            provide superior longevity and can endure demanding
-                            operational conditions
-                        </p>
-                    </div>
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Examine the Environmental Compliance
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            Regulations around emissions are becoming stricter
-                            globally. Choose a plant that not only meets current
-                            standards but is also prepared for future
-                            requirements.
-                        </p>
-                    </div>
-                    <div class="w-full">
-                        <h2
-                            class="text-lg md:text-xl text-blueMain text-center font-bold"
-                        >
-                            Check Proven Performance
-                        </h2>
-                        <div class="w-full bg-grisT h-[1px] my-3"></div>
-                        <p class="text-base md:text-lg font-thin text-grisT">
-                            Ask suppliers for case studies or site visits where
-                            their plants are operational. Speak with existing
-                            customers to understand their experiences regarding
-                            reliability, efficiency, and support.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="max-w-7xl mx-auto rounded-b-lg flex justify-center bg-white py-16"
-            >
-                <div class="w-4/6">
-                    <p
-                        class="text-base md:text-lg font-thin text-grisT text-center"
-                    >
-                        Remember, an asphalt plant is the backbone of your
-                        operation. Investing time in due diligence now ensures a
-                        smoother production process and long-term profitability.
-                        Reach out to us for personalized guidance—we're here to
-                        help you make an informed decision.
-                    </p>
-                </div>
-            </div>
+        <div class="flex flex-col justify-end items-end lg:w-4/6">
+          <h1 class="font-bold text-white text-5xl uppercase lg:text-end">
+            24/7 customer service
+          </h1>
+          <h2 class="font-semibold text-white text-xl lg:text-end uppercase">
+            Our team is available around the clock, ready to assist you at any
+            time, even on weekends and holidays.
+          </h2>
         </div>
-
-        <div class="max-w-7xl px-8 mx-auto">
-            <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
-        </div>
+      </div>
     </div>
+    <!-- último -->
+    <div class="py-10">
+      <div class="max-w-7xl mx-auto px-8 bg-white rounded-t-lg h-full">
+        <div
+          class="w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-20 justify-center items-start"
+        >
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Evaluate the Plant's Technical Specifications
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              Ensure the plant you choose aligns with your production goals,
+              including mix capacity, fuel efficiency, and environmental
+              compliance. Advanced features like modern control systems or
+              capabilities for RAP integration can enhance productivity and
+              reduce costs.
+            </p>
+          </div>
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Analyze Long-Term Costs
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              Initial cost is just one aspect of your investment. Assess
+              maintenance expenses, spare parts availability, and energy
+              consumption over the plant's lifecycle. Reliable manufacturers
+              often provide a clear breakdown of these costs.
+            </p>
+          </div>
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Understand the Supplier’s Support
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              After-sales service can be as important as the plant itself.
+              Confirm the availability of technical support, operator training,
+              and prompt delivery of spare parts. Suppliers with strong service
+              networks can save you significant downtime.
+            </p>
+          </div>
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Inspect the Manufacturing Quality
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              Focus on the durability and material standards, particularly the
+              steel used in construction. Verify certifications that ensure the
+              alloy's purity and quality. High-grade materials are essential for
+              plants built for heavy-duty applications, as they provide superior
+              longevity and can endure demanding operational conditions
+            </p>
+          </div>
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Examine the Environmental Compliance
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              Regulations around emissions are becoming stricter globally.
+              Choose a plant that not only meets current standards but is also
+              prepared for future requirements.
+            </p>
+          </div>
+          <div class="w-full">
+            <h2 class="text-lg md:text-xl text-blueMain text-center font-bold">
+              Check Proven Performance
+            </h2>
+            <div class="w-full bg-grisT h-[1px] my-3"></div>
+            <p class="text-base md:text-lg font-thin text-grisT">
+              Ask suppliers for case studies or site visits where their plants
+              are operational. Speak with existing customers to understand their
+              experiences regarding reliability, efficiency, and support.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto rounded-b-lg flex justify-center bg-white py-16"
+      >
+        <div class="w-4/6">
+          <p class="text-base md:text-lg font-thin text-grisT text-center">
+            Remember, an asphalt plant is the backbone of your operation.
+            Investing time in due diligence now ensures a smoother production
+            process and long-term profitability. Reach out to us for
+            personalized guidance—we're here to help you make an informed
+            decision.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl px-8 mx-auto">
+      <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
+    </div>
+  </div>
 </div>

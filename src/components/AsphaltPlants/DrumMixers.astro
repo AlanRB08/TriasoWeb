@@ -84,7 +84,8 @@ const images2 = [
       <div class="hidden justify-start items-end md:flex h-full">
         <Image src={img5} alt="" class="w-[80%]" />
       </div>
-      <div class="hidden md:flex-col items-start justify-start pt-4 md:flex">
+      <div 
+      class="hidden md:flex-col items-start justify-start pt-4 md:flex">
         <h1 class="md:text-4xl text-2xl text-black text-center w-full">
           Two Year Warranty
         </h1>
@@ -98,7 +99,8 @@ const images2 = [
         class="flex flex-col justify-center items-center md:items-start md:justify-start lg:items-start lg:justify-start gap-4 bg-blueMain md:rounded-t-2xl p-8 md:h-full"
       >
         <div
-          class="text-xl md:text-4xl w-full text-center lg:text-start md:text-start"
+          id="DrumMixer"
+          class="scroll-mt-20 text-2xl md:text-4xl w-full text-center lg:text-start md:text-start"
         >
           <h1 class="text-redBg">TRIASO®</h1>
           <h1 class="">DRUM MIXER</h1>
@@ -134,7 +136,7 @@ const images2 = [
     </div>
   </div>
   <div
-    class="w-full flex flex-col items-center justify-center mt-20 text-black max-w-7xl mx-auto px-8"
+    class="w-full flex flex-col items-center justify-center mt-20 text-black max-w-7xl mx-auto px-4"
   >
     <h1 class="text-xl md:text-3xl text-center md:mb-10">
       Asphalt plants for the smallest jobs to large projects
@@ -216,7 +218,7 @@ const images2 = [
     </h2>
     <div class="">
       <div class="w-full flex justify-center">
-        <video src={Video4} autoplay muted playsinline class="w-3/5"></video>
+        <video src={Video4} autoplay muted playsinline class="w-full md:w-3/5"></video>
       </div>
       <p
         class="text-black text-center lg:text-justify md:text-justify font-semibold mt-5 mb-5"
@@ -362,12 +364,12 @@ const images2 = [
         efficiency.
       </p>
       <Image src={img8} alt="" class="block md:hidden" />
-      <LearnBtn />
+      <LearnBtn href="/BinUnits"/>
     </div>
   </div>
   <ASPanels />
   <div
-    class="w-full flex flex-col items-center justify-center mt-20 max-w-7xl mx-auto px-8"
+    class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-4"
   >
     <h1 class="text-3xl md:text-4xl text-redBg">
       Hot-mix
@@ -474,8 +476,8 @@ const images2 = [
   <div
     class="w-full flex flex-col items-center justify-start text-black bg-[url(/HeroIntegral.webp)] bg-no-repeat bg-center bg-cover min-h-[550px] md:min-h-[700px]"
   >
-    <div class="w-full max-w-7xl mx-auto px-8 my-14">
-      <h1 class="text-2xl md:text-3xl text-start mb-5 w-full font-bold">
+    <div class="w-full max-w-7xl mx-auto px-8 my-4 md:my-14">
+      <h1 class="text-2xl md:text-3xl text-start mb-1 md:mb-5 w-full font-bold">
         Integral 10 Tph <br /> Asphalt Plants
       </h1>
       <h2
@@ -483,7 +485,7 @@ const images2 = [
       >
         Ideal for municipal jobs and road maintenance
       </h2>
-      <p class="mt-5 text-[#313131] text-base md:text-lg font-thin">
+      <p class="mt-1 md:mt-5 text-[#313131] text-base md:text-lg font-thin">
         Full-Scale Technology in a Compact Format
       </p>
     </div>
