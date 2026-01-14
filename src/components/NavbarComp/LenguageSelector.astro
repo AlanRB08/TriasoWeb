@@ -33,7 +33,7 @@ const currentLang = typeof window !== 'undefined' ?
     aria-controls="dropdown-menu"
   >
     <span>
-      <img src={idiomaIcon.src} alt="Idioma" class="w-4 h-4" />
+      <Image src={idiomaIcon} alt="Idioma" class="w-4 h-4" />
     </span>
     <span>{SITES[currentLang].label}</span>
     <svg class="ml-1 h-4 w-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ const currentLang = typeof window !== 'undefined' ?
           }`}
           role="menuitem"
         >
-          <img src={flag.src} alt="" class="w-4 h-4" />
+          <Image src={flag} alt="" class="w-4 h-4" />
           {label}
         </a>
       ))}

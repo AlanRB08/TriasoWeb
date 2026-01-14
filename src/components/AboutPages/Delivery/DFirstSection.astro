@@ -8,7 +8,7 @@ import Image from "astro/components/Image.astro";
 ---
 
 <div class="w-full flex justify-center items-center mt-10">
-  <img src={hero1.src} alt="" class="w-full" />
+  <Image src={hero1} alt="" class="w-full" />
 </div>
 
 <section class="w-full max-w-7xl px-8 mx-auto mt-10 text-grisT font-bold">
@@ -35,7 +35,7 @@ import Image from "astro/components/Image.astro";
   </div>
   <!-- arriba -->
   <div class="flex justify-center">
-    <img src={Deliver1.src} alt="" class="hero-img lg:w-4/6 rounded-lg" />
+    <Image src={Deliver1} alt="" class="hero-img lg:w-4/6 rounded-lg" />
   </div>
   <div class="flex flex-col md:flex-row items-center gap-6">
     <!-- medio -->
@@ -52,8 +52,8 @@ import Image from "astro/components/Image.astro";
     </div>
 
     <div class="w-full hidden lg:flex md:w-auto">
-      <img
-        src={Deliver2.src}
+      <Image
+        src={Deliver2}
         alt=""
         class="side-img rounded-2xl will-change-transform"
       />
@@ -62,8 +62,8 @@ import Image from "astro/components/Image.astro";
 
   <!-- abajo-->
   <div class="hidden lg:flex justify-center lg:justify-start">
-    <img
-      src={Deliver3.src}
+    <Image
+      src={Deliver3}
       alt=""
       class="fade-img rounded-lg lg:w-3/5 will-change-transform"
     />
@@ -71,14 +71,14 @@ import Image from "astro/components/Image.astro";
 
   <!-- Móvil -->
   <div class="relative flex flex-col lg:hidden">
-    <img
-      src={Deliver2.src}
+    <Image
+      src={Deliver2}
       alt=""
       class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
     />
 
-    <img
-      src={Deliver3.src}
+    <Image
+      src={Deliver3}
       alt=""
       class="absolute top-0 left-0 w-2/3 rounded-lg translate-x-1 translate-y-2"
     />

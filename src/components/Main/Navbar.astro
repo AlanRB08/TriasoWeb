@@ -5,12 +5,13 @@ import Logo from "../../assets/logos/LogoTriasoUs.svg"
 import { menuItems } from "../../assets/data/menuItems"
 import SearchComponent from "../NavbarComp/SearchComponent.astro"
 import MobileMenu from "../NavbarComp/MobileMenu.astro"
+import Image from "astro/components/Image.astro"
 ---
 <nav class="bg-white border-b-2 border-blueMain font-sans font-bold text-black text-sm fixed z-50 w-full">
   <div class="max-w-screen mx-auto px-4 flex justify-between items-center h-16">
     {/* Logo */}
     <div class="flex items-center space-x-2 max-w-[200px] flex-shrink-0">
-       <a href="/"><img src={Logo.src} alt="Triaso Logo" class="h-5 md:h-10 w-auto" /></a>
+       <a href="/"><Image src={Logo} alt="Triaso Logo" class="h-5 md:h-10 w-auto" /></a>
     </div>
 
     {/* Menú principal */}

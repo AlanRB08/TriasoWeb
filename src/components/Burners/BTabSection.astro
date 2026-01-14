@@ -70,8 +70,10 @@ import Image from "astro/components/Image.astro";
               </p>
             </div>
             <div>
-              <img
+              <Image
                 src="https://placehold.co/600x400/png"
+                width={600}
+                height={400}
                 alt=""
                 class="rounded-lg"
               />
@@ -136,8 +138,8 @@ import Image from "astro/components/Image.astro";
               </p>
             </div>
             <div class="w-full hidden lg:flex md:w-auto">
-              <img
-                src={escudo1.src}
+              <Image
+                src={escudo1}
                 alt=""
                 class="side-img rounded-2xl will-change-transform"
               />
@@ -146,7 +148,7 @@ import Image from "astro/components/Image.astro";
           <div
             class="flex flex-col justify-center items-center py-10 lg:hidden"
           >
-            <img src={escudo1.src} alt="" class="rounded-2xl w-1/2" />
+            <Image src={escudo1} alt="" class="rounded-2xl w-1/2" />
           </div>
         </div>
 
@@ -190,7 +192,7 @@ import Image from "astro/components/Image.astro";
           class="w-full max-w-[2400px] mx-auto grid grid-cols-1 lg:flex items-center justify-center gap-4 mt-4 text-base md:text-lg text-grisT"
         >
           <div class="w-full order-2 md:order-1">
-            <img src={elevador2.src} alt="" class="w-3/4" />
+            <Image src={elevador2} alt="" class="w-3/4" />
           </div>
           <div class="w-full order-1 md:order-2">
             <div class="w-full lg:w-3/4 px-8 mx-auto gap-10 justify-center">
@@ -279,7 +281,7 @@ import Image from "astro/components/Image.astro";
             </div>
           </div>
           <div class="flex justify-end items-end">
-            <img src={QmdorSil.src} alt="" class="w-1/2" />
+            <Image src={QmdorSil} alt="" class="w-1/2" />
           </div>
         </div>
       </div>
@@ -323,7 +325,7 @@ import Image from "astro/components/Image.astro";
           class="w-full max-w-7xl justify-center items-center bg-grisT px-8 mx-auto grid grid-cols-1 md:grid-cols-2"
         >
           <div class="w-full flex justify-center items-center">
-            <img src={preH.src} alt="" class="w-1/2" />
+            <Image src={preH} alt="" class="w-1/2" />
           </div>
           <div
             class="w-full text-white flex flex-col justify-center items-center"
@@ -334,7 +336,7 @@ import Image from "astro/components/Image.astro";
               <h2 class="text-xl md:text-2xl lg:text-end">
                 Efficient and <br />Environmentall <br />and Responsible
               </h2>
-              <img src={world.src} alt="" class="w-[120px]" />
+              <Image src={world} alt="" class="w-[120px]" />
             </div>
             <div class="lg:w-1/2 flex justify-center items-center">
               <p class="text-base text-start md:text-lg font-thin">
@@ -350,7 +352,7 @@ import Image from "astro/components/Image.astro";
       <div class="w-full bg-grisT">
         <div class="w-full max-w-7xl px-8 mx-auto text-white py-20">
           <div class="text-xl md:text-2xl flex items-center gap-2">
-            <img src={ficha.src} alt="" class="w-[60px]" />
+            <Image src={ficha} alt="" class="w-[60px]" />
             <h2>Inline Electric Heating for Maximum Efficiency</h2>
           </div>
           <p class="text-base md:text-lg font-thin">
@@ -368,14 +370,14 @@ import Image from "astro/components/Image.astro";
           class="w-full max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2"
         >
           <div class="flex justify-center lg:justify-normal">
-            <img src={preH2.src} alt="" class="w-3/4 rounded-2xl" />
+            <Image src={preH2} alt="" class="w-3/4 rounded-2xl" />
           </div>
           <div class="w-full text-white pb-5">
             <div
               class="text-xl md:text-2xl lg:text-end flex justify-between lg:justify-center items-center gap-3"
             >
               <h2>Standard in Every Plant, Not a Costly Upgrade</h2>
-              <img src={batch.src} alt="" class="w-[60px]" />
+              <Image src={batch} alt="" class="w-[60px]" />
             </div>
             <p class="text-base md:text-lg font-thin">
               Other brands offer total-air burners and preheaters as expensive

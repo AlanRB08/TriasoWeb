@@ -1,4 +1,5 @@
 ---
+import Image from "astro/components/Image.astro";
 import Hero1 from "../../assets/images/About/Delivery/deliveryAsp.webp";
 import GallerySlider from "../../components/unitComponents/GallerySlider";
 const binSlides2 = [
@@ -153,7 +154,7 @@ const binSlides2 = [
   <div
     class="flex justify-center items-center max-h-[700px] overflow-hidden bg-bottom"
   >
-    <img src={Hero1.src} alt="Triaso" class="" />
+    <Image src={Hero1} alt="Triaso" class="" />
   </div>
   <!-- Contenido -->
   <div class="w-full">

@@ -58,8 +58,8 @@ import Image from "astro/components/Image.astro";
                     </div>
                     <div class="flex flex-col items-center lg:flex-row">
                         <div class="flex flex-col justify-center items-center">
-                            <img
-                                src={Tabla1.src}
+                            <Image
+                                src={Tabla1}
                                 alt="Figure 1 - WMA usage between 2008-2014 (Christie 2015)"
                             />
                             <p class="font-thin text-sm">
@@ -127,7 +127,7 @@ import Image from "astro/components/Image.astro";
                     </p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src={Tabla1.src} alt="Figure 1" />
+                    <Image src={Tabla1} alt="Figure 1" />
                     <p class="text-sm font-thin mt-2">
                         Figure 1 - WMA usage between 2008-2014
                     </p>
@@ -179,14 +179,14 @@ import Image from "astro/components/Image.astro";
                     <p class="font-thin text-sm text-center">
                         Tons of RAP in each country
                     </p>
-                    <img src={Tabla2.src} alt="" />
+                    <Image src={Tabla2} alt="" />
                     <p class="font-thin text-sm mt-2 text-center">
                         Extracted from Journal of Innovative Engineering and
                         Natural Science, research paper: “The Economic
                         Potentials of Reclaimed Asphalt Pavements (RAP) in Urban
                         Road Infrastructure: A Case Study of Yalova City.”
                     </p>
-                    <img src={Tabla3.src} alt="" />
+                    <Image src={Tabla3} alt="" />
                     <p class="font-thin text-sm mt-2 text-center">
                         Data obtained from the National Asphalt Pavement
                         Association (NAPA), Asphalt Pavement Industry Survey on
@@ -246,8 +246,10 @@ import Image from "astro/components/Image.astro";
                             >
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <img
+                            <Image
                                 src="https://placehold.co/600x400/png"
+                                width={600}
+                                height={400}
                                 alt="Figure 1 - WMA usage between 2008-2014 (Christie 2015)"
                             />
                         </div>
@@ -360,7 +362,7 @@ import Image from "astro/components/Image.astro";
                     </p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src={Tabla4.src} alt="Figure 1" />
+                    <Image src={Tabla4} alt="Figure 1" />
                 </div>
             </div>
         </details>
@@ -368,7 +370,7 @@ import Image from "astro/components/Image.astro";
 </div>
 
 <div>
-    <img src={bg.src} alt="" />
+    <Image src={bg} alt="" />
 </div>
 <div class="space-y-5 max-w-7xl mx-auto px-8">
     <div class="rounded-lg">
@@ -398,8 +400,10 @@ import Image from "astro/components/Image.astro";
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex flex-col justify-center items-center">
-                            <img
+                            <Image
                                 src="https://placehold.co/600x400/png"
+                                width={600}
+                                height={400}
                                 alt="Figure 1 - WMA usage between 2008-2014 (Christie 2015)"
                             />
                         </div>
@@ -492,7 +496,7 @@ import Image from "astro/components/Image.astro";
                 </div>
 
                 <div class="flex flex-col items-center">
-                    <img src={Grafica2.src} alt="Figure 2" />
+                    <Image src={Grafica2} alt="Figure 2" />
                 </div>
 
                 <div class="space-y-5">
