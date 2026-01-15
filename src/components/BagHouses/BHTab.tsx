@@ -3,8 +3,8 @@ import { useState } from "react";
 
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Baghouse mounted on the same chasis as the drum mixer" },
+  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Baghouse self-contained" },
 ];
 
 export default function Tab() {

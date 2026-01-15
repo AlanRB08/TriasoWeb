@@ -6,7 +6,7 @@ import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import Separator from "../unitComponents/SeparatorBlue.astro";
 import sideP from "../../assets/images/DrumMixers/sideP.webp";
 import drumTires from "../../assets/images/DrumMixers/drumtires.webp";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import rapEntry from "../../assets/images/DrumMixers/a21.webp";
 import trunnionImage from "../../assets/images/DrumMixers/trunnions.webp";
 import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
@@ -28,9 +28,9 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
                 A-572 alloy steel to ensure consistent durability and
                 performance.
             </p><br>
-            <img
-                src={Logo.src}
-                alt=""
+            <Image
+                src={Logo}
+                alt="Triaso Logo"
                 class="absolute top-0 left-0 z-10 w-full"
             />
         </div>
@@ -41,7 +41,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
             <div
                 class="flex flex-col items-center justify-center lg:pt-5 md:pt-5"
             >
-                <img src={trunnionImage.src} alt="Trunnions" class="w-full" />
+                <Image src={trunnionImage} alt="Trunnions" class="w-full" />
                 <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     TRUNNIONS
                 </h2><br />
@@ -54,7 +54,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
             <div
                 class="flex flex-col items-center justify-center lg:pt-5 md:pt-5"
             >
-                <img src={drumTires.src} alt="" class="w-full" />
+                <Image src={drumTires} alt="Drum tires" class="w-full" />
                 <h2 class="w-full text-start text-xl pt-5 md:text-2xl">
                     DRUM TIRES
                 </h2><br />
@@ -95,7 +95,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
                 class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
             >
                 <div class="w-full flex justify-center items-center mx-auto">
-                    <img src={rap.src} alt="Rap System" class="w-2/5" />
+                    <Image src={rap} alt="Rap System" class="w-2/5" />
                 </div>
 
                 <div class="w-full text-white flex flex-col gap-4">
@@ -248,8 +248,8 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
         </div>
 
         <div>
-            <img
-                src={rapEntry.src}
+            <Image
+                src={rapEntry}
                 alt="Rap Entry Flights"
                 class="rounded-md"
             />
@@ -286,7 +286,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
             </div>
         </div>
         <div class="my-10 flex flex-col justify-center items-center gap-6">
-            <img src={sideP.src} alt="" />
+            <Image src={sideP} alt="Aesthetic Side Panel" />
             <div class="max-w-[250px]">
                 <LearnBtn />
             </div>

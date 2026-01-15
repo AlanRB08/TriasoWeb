@@ -2,7 +2,7 @@
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import baghouse from "../../assets/images/BagHouses/bagHouses1.webp";
 import baghouse2 from "../../assets/images/DrumMixers/baghouse2.webp";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 ---
 
@@ -55,7 +55,7 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
             </p>
         </div>
         <div class="flex flex-col items-center justify-center px-8 lg:pr-52">
-            <Image src={baghouse} alt="" class="w-full" />
+            <Image src={baghouse} alt="Baghouse" class="w-full" />
         </div>
     </div>
     <div class="max-w-[2400px] w-full flex justify-center items-center">

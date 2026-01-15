@@ -6,6 +6,7 @@ import Face from '../../assets/iconos/facebookIcon.svg';
 import YouTube from '../../assets/iconos/youIcon.svg';
 import Phone from '../../assets/iconos/phone.svg';
 import Mail from '../../assets/iconos/mail-2.svg';
+import { Image } from "astro:assets";
 ---
 
 <footer class="bg-bgFooter text-white text-sm">
@@ -30,7 +31,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
       <div>
         <h2 class="text-white font-semibold mb-2">About Triaso</h2>
         <hr class="border-blueMain w-12 mb-4" />
-        <img src={Logo.src} alt="Triaso logo" class="mb-4 w-32" />
+        <Image src={Logo} alt="Triaso logo" class="mb-4 w-32" />
         <p>
           We are a leading company in manufacturing and engineering development...
           <a href="#" class="text-blueMain underline">Show more</a>
@@ -65,7 +66,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
         <hr class="border-blue-500 w-12 mb-4" />
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <img src={Phone.src} alt="">
+            <Image src={Phone} alt="">
             <input
               aria-label="Phone number"
               type="text"
@@ -75,7 +76,7 @@ import Mail from '../../assets/iconos/mail-2.svg';
             />
           </div>
           <div class="flex items-center gap-2">
-            <img src={Mail.src} alt="">
+            <Image src={Mail} alt="">
             <input
             aria-label="Email address"
               type="text"
@@ -85,10 +86,10 @@ import Mail from '../../assets/iconos/mail-2.svg';
             />
           </div>
           <div class="flex items-center gap-2">
-            <img src={Insta.src} alt="">
-            <img src={LinkedIn.src} alt="">
-            <img src={Face.src} alt="">
-            <img src={YouTube.src} alt="">
+            <Image src={Insta} alt="">
+            <Image src={LinkedIn} alt="">
+            <Image src={Face} alt="">
+            <Image src={YouTube} alt="">
             
           </div>
         </div>

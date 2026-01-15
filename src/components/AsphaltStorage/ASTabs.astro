@@ -2,7 +2,7 @@
 import Card from "../unitComponents/Card.astro";
 import redT from "../../assets/images/AsphaltStorage/redT.webp";
 import oil1 from "../../assets/images/AsphaltPlant/oil1.webp";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Whatsbtn from "../../components/unitComponents/Whatsbtn.astro";
 import GallerySlider from "../unitComponents/GallerySlider";
 import type { slide } from "astro:transitions";
@@ -16,50 +16,50 @@ const tanksSlides = [
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp",
     caption:
-      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp",
     caption:
-      "Tanque de asfalto de 60,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp",
     caption:
-      "Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "25,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp",
     caption:
-      "Tanque de asfalto de 25,000 lts, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "25,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp",
     caption:
-      "Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "16,000-gallon asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp",
     caption:
-      "Tanque de asfalto de 16,000 galones, plus, con caldera, con normas para Estados Unidos, en posición de trabajo",
+      "16,000-gallon asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
 ];
 const tanksSlides2 = [
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT1.webp",
-    caption: "Tanque de asfalto de 60,000 lts, plus.",
+    caption: "60,000-liter asphalt tank, plus.",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT2.webp",
-    caption: "Tanque de asfalto de 60,000 lts, plus.",
+    caption: "60,000-liter asphalt tank, plus",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT3.webp",
-    caption: "Tanque de asfalto de 60,000 lts, plus.",
+    caption: "60,000-liter asphalt tank, plus",
   },
   {
     image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT4.webp",
-    caption: "Tanque de asfalto de 60,000 lts, plus.",
+    caption: "60,000-liter asphalt tank, plus",
   },
 ];
 ---
@@ -106,7 +106,7 @@ const tanksSlides2 = [
             class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
           >
             <div class="w-full flex justify-center">
-              <img src={oil1.src} alt="" class="w-4/5 h-4/5 rounded-lg" />
+              <Image src={oil1} alt="Oil Heater" class="w-4/5 h-4/5 rounded-lg" />
             </div>
             <div class="w-full flex justify-between items-center my-auto">
               <h1 class="text-black text-xl font-semibold">Oil Heater</h1>
@@ -114,7 +114,7 @@ const tanksSlides2 = [
                 <h3 slot="title" class="text-xl md:text-2xl font-semibold">
                   Oil Heater
                 </h3>
-                <img slot="image" src={oil1.src} alt="custom" />
+                <Image slot="image" src={oil1} alt="Oil Heater" />
                 <div slot="content">
                   <ul class="list-disc pl-5">
                     <li>Heating capacities: 1,000,000 and 2,400,000 Btu/hr</li>
@@ -150,7 +150,7 @@ const tanksSlides2 = [
             class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
           >
             <div class="w-full flex justify-center">
-              <img src={hotoil.src} alt="" class="w-full h-4/5 rounded-lg" />
+              <Image src={hotoil} alt="Hot Oil Coils" class="w-full h-4/5 rounded-lg" />
             </div>
             <div class="flex justify-between items-center my-auto">
               <h1 class="text-black text-xl font-semibold">Hot Oil Coils</h1>
@@ -158,7 +158,7 @@ const tanksSlides2 = [
                 <h3 slot="title" class="text-xl md:text-2xl font-semibold">
                   Hot Oil Coils
                 </h3>
-                <img slot="image" src={hotoil.src} alt="custom" />
+                <Image slot="image" src={hotoil} alt="Hot Oil Coils" />
                 <div slot="content">
                   Our asphalt storage tanks are equipped with heating coils that
                   circulate thermal oil to ensure uniform and efficient asphalt
@@ -225,7 +225,7 @@ const tanksSlides2 = [
           class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
         >
           <div class="w-full flex justify-center">
-            <img src={DirectFire.src} alt="" class=" lg:w-full lg:h-96 object-fill rounded-lg" />
+            <Image src={DirectFire} alt="Direct Fire Heating Burner" class=" lg:w-full lg:h-96 object-fill rounded-lg" />
           </div>
           <div class="w-full flex justify-between items-center">
             <h1 class="text-white text-xl w-1/2 md:text-2xl">
@@ -236,10 +236,10 @@ const tanksSlides2 = [
                 Direct Fire Heating Burner
               </h3>
               
-                <img
+                <Image
                 slot="image"
-                src={DirectFire.src}
-                alt="custom"
+                src={DirectFire}
+                alt="Direct Fire Heating Burner"
                 class="w-full"
               />
            
@@ -258,7 +258,7 @@ const tanksSlides2 = [
           class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
         >
           <div class="w-full flex justify-center">
-            <img src={VaporCondensers.src} alt="" class="lg:w-full lg:h-[400px] object-fill rounded-lg" />
+            <Image src={VaporCondensers} alt="Vapor condensers" class="lg:w-full lg:h-[400px] object-fill rounded-lg" />
           </div>
           <div class="w-full flex justify-between items-center">
             <h1 class="text-white text-xl w-1/2 md:text-2xl">
@@ -266,7 +266,7 @@ const tanksSlides2 = [
             </h1>
             <ModalButton>
               <h3 slot="title" class="text-xl md:text-2xl">Vapor condensers</h3>
-              <img slot="image" src={VaporCondensers.src} alt="custom" class="w-full object-fill" />
+              <Image slot="image" src={VaporCondensers} alt="Vapor condensers" class="w-full object-fill" />
               <div slot="content">
                 Triaso® vapor condensers are designed to capture and condense
                 asphalt fumes during storage and heating, preventing emissions

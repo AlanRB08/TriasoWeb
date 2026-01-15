@@ -82,7 +82,7 @@ const OdometerSection = () => {
 
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" />
+            <img src={single.src} alt="Back of a Integral asphalt plant of 10 Tph" />
           </div>
           <a
   href="#planosIntegral"

@@ -1,6 +1,7 @@
 ---
 import Manu1 from "../../../assets/images/About/Manufacture/Manufac1.webp";
 import Manu2 from "../../../assets/images/About/Manufacture/Manufac2.webp";
+import { Image } from "astro:assets";
 ---
 <section class="w-full flex 2 mt-10 md:mt-20 flex-col items-center justify-center gap-4 bg-blueMain" data-tabs>
     <div class="w-full max-w-7xl mx-auto px-8  font-bold text-white text-base md:text-lg py-16">
@@ -27,13 +28,13 @@ import Manu2 from "../../../assets/images/About/Manufacture/Manufac2.webp";
             <!-- First Section -->
             <div class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab1">
                 <div class="w-full px-8 ">
-                    <img src={Manu1.src} alt="">
+                    <Image src={Manu1} alt="Asphalt plant pieces">
                 </div>
              </div>
         <!-- Second Section -->
             <div class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold" data-tab-content="tab2">
             <div class="w-full px-8 ">
-                    <img src={Manu2.src} alt="">
+                    <Image src={Manu2} alt="Rock crusher pieces">
                 </div>
             </div>
         </div>    

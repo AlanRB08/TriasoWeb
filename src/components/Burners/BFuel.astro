@@ -1,12 +1,13 @@
 ---
 import flag from "../../assets/images/Burners/flag.svg";
 import PlaCQuemador from '../../assets/images/Burners/PlaC Quemador.webp'
+import { Image } from "astro:assets";
 ---
 
 <section class="w-full font-bold text-black mt-20 flex flex-col gap-10">
   <div class="w-full bg-[url(/newBanner.webp)] px-8 lg:px-52 py-20">
     <div class="w-full flex justify-center">
-      <img src={flag.src} alt="" class="w-[150px] md:w-[200px]" />
+      <Image src={flag} alt="Flag icon" class="w-[150px] md:w-[200px]" />
     </div>
     <p class="text-white font-bold text-base lg:text-xl">
       Our latest burner innovation features an oxygen sensor that automatically
@@ -62,6 +63,6 @@ import PlaCQuemador from '../../assets/images/Burners/PlaC Quemador.webp'
     </div>
   </div>
   <div class="flex mx-auto max-w-7xl justify-end">
-    <img src={PlaCQuemador.src} alt="" class="w-4/5 md:w-1/2" />
+    <Image src={PlaCQuemador} alt="Aggregate Drying Plant" class="w-4/5 md:w-1/2" />
   </div>
 </section>

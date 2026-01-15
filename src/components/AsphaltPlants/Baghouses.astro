@@ -3,6 +3,7 @@ import Tabs from "./Tabs";
 import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import single from "../../assets/images/DrumMixers/baghouse.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
+import { Image } from "astro:assets";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -31,7 +32,7 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
         </p>
       </div>
       <div class="w-full flex justify-center items-center">
-        <img src={single.src} alt="" class="w-1/2" />
+        <Image src={single} alt="Attachable bag house" class="w-1/2" />
       </div>
     </div>
   </div>
