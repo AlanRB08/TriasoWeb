@@ -4,7 +4,7 @@ import img2 from "../../assets/images/planos.webp";
 import img3 from "../../assets/images/maquina2.webp";
 import { Image } from "astro:assets";
 ---
-<section class="w-full mt-10 md:mt-20">
+<section class="w-full mt-10 md:mt-20 flex flex-col justify-center items-center">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 px-8">
         <div class="flex flex-col items-start justify-between">
             <Image src={img1} alt="" class="order-3 md:order-1"/>
@@ -37,9 +37,9 @@ import { Image } from "astro:assets";
             <Image src={img2} alt="" class="md:mt-32"/>
         </div>
     </div>
-    <div class="flex flex-col md:grid md:grid-cols-2 justify-center my-10">
-            <div class="flex justify-center items-center w-full">
-                <div class="bg-redBg rounded-r-2xl py-10 px-8 md:px-16 min-h-1/2">
+    <div class="flex flex-col md:grid md:grid-cols-2 justify-center my-10 items-center max-w-[2400px]">
+            <div class="flex justify-center items-center w-full h-full">
+                <div class="bg-redBg rounded-r-2xl py-10 px-8 md:px-16 h-full flex flex-col justify-center">
                     <h1 class="text-white font-bold text-2xl md:text-3xl">Seamless Integration with <br>Other Systems</h1>
                     <br>
                     <p class="text-grisSubP text-sm md:text-lg font-bold">
@@ -50,8 +50,8 @@ import { Image } from "astro:assets";
                 </div>
             </div>
             <!-- -->
-            <div class="w-full">
-                <Image src={img3} alt="" class="object-cover w-full"/>
+            <div class="w-full flex justify-center items-center">
+                <Image src={img3} alt="" class="object-contain w-full"/>
             </div>
     </div>
           
