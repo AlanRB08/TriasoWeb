@@ -91,7 +91,7 @@ const ASOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div>
-            <img src={ASOdom.src} alt="" />
+            <img src={ASOdom.src} alt="Back of an Asphalt Storage Tank" />
           </div>
           <a
   href="#planosAsphaltStorage"

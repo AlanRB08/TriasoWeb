@@ -91,7 +91,7 @@ const OHOdometer = () => {
 
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" />
+            <img src={single.src} alt="Front of an oil heater system" />
           </div>
           <a
   href="#planosOil"

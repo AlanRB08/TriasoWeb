@@ -89,7 +89,7 @@ const BOdometer = () => {
 
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" className="rounded-lg" />
+            <img src={single.src} alt="Bin Unit Odometer" className="rounded-lg" />
           </div>
           <a
   href="#planosBinUnits"

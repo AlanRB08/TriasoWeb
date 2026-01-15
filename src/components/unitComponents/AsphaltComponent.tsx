@@ -65,7 +65,7 @@ export default function AsphaltComponent({ data }: Props) {
                     <div className="w-full max-w-md sm:max-w-lg lg:max-w-xl flex-1 flex items-center">
                         <img
                             src={image?.src ?? image}
-                            alt="Feature image"
+                            alt="Asphalt Storage Tank"
                             className="w-full h-auto object-contain"
                         />
                     </div>

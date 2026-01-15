@@ -15,19 +15,20 @@ import img12 from "../../../assets/images/Service/Spare/Gallery/SpareParts-13.we
 const SpareGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const [currentAlt, setCurrentAlt] = useState("");
   const ItemGallery = [
-    { title: "REDUCTORES", image: img1 },
-    { title: "MOTORES ELECTRICOS", image: img2 },
-    { title: "BANDAS", image: img3 },
-    { title: "RODILLOS", image: img4 },
-    { title: "PARTES DE CADENAS DE ELEVADORES", image: img5 },
-    { title: "POLEAS", image: img6 },
-    { title: "AROS DE TAMBORES", image: img7 },
-    { title: "ROLES", image: img8 },
-    { title: "PARTES DE CONTROL", image: img9 },
-    { title: "PARTES ELECTRICAS", image: img10 },
-    { title: "VÁLVULAS TRIASO", image: img11 },
-    { title: "EXPORTACIÓN DE REFACCIONES", image: img12 },
+    { title: "GEARBOXES", image: img1, altTitle:"GEARBOXES" },
+    { title: "ELECTRIC MOTORS", image: img2, altTitle:"ELECTRIC MOTORS" },
+    { title: "BANDS", image: img3, altTitle:"BANDS" },
+    { title: "ROLLERS", image: img4, altTitle:"ROLLERS" },
+    { title: "ELEVATOR CHAIN PARTS", image: img5, altTitle:"ELEVATOR CHAIN PARTS" },
+    { title: "PULLEYS", image: img6, altTitle:"PULLEYS" },
+    { title: "DRUM RINGS", image: img7, altTitle:"DRUM RINGS" },
+    { title: "ROLES", image: img8, altTitle:"ROLES" },
+    { title: "CONTROL COMPONENTS", image: img9, altTitle:"CONTROL COMPONENTS" },
+    { title: "ELECTRICAL PARTS", image: img10, altTitle:"ELECTRICAL PARTS" },
+    { title: "TRIASO VALVES", image: img11, altTitle:"TRIASO VALVES" },
+    { title: "EXPORT OF SPARE PARTS", image: img12, altTitle:"EXPORT OF SPARE PARTS" },
   ];
   return (
     <div className="w-full flex flex-col justify-center items-center">
@@ -40,6 +41,7 @@ const SpareGallery = () => {
             className="w-full bg-white flex cursor-pointer shadow hover:scale-105 transition-transform"
             onClick={() => {
               setCurrentImg(element.image.src);
+              setCurrentAlt (element.altTitle)
               setIsOpen(true);
             }}
           >
@@ -79,7 +81,7 @@ const SpareGallery = () => {
               {/* Imagen */}
               <img
                 src={currentImg}
-                alt="Spare Part"
+                alt={currentAlt}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
