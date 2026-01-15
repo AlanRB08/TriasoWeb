@@ -88,7 +88,7 @@ const BHOdometer = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div className="w-3/5">
-            <img src={bagHouseMain.src} alt="" className="rounded-lg" />
+            <img src={bagHouseMain.src} alt="Baghouse Odometer" className="rounded-lg" />
           </div>
           <a
   href="#planosBagHouses"

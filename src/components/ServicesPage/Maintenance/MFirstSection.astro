@@ -7,6 +7,7 @@ import img1 from "../../../assets/images/Maintenance/userManual.webp";
 import img2 from "../../../assets/images/Maintenance/maintenance1.webp";
 import img3 from "../../../assets/images/Maintenance/tolvas.webp";
 import img4 from "../../../assets/images/Maintenance/banner2.webp";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -81,7 +82,7 @@ import img4 from "../../../assets/images/Maintenance/banner2.webp";
           future installations and perform full maintenance with confidence.
         </p><br />
         <div class="flex justify-center items-center">
-          <img src={img1.src} alt="" />
+          <Image src={img1} alt="User Manuals" />
         </div>
       </div>
     </div>
@@ -93,7 +94,7 @@ import img4 from "../../../assets/images/Maintenance/banner2.webp";
   </div>
   <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
     <div class="w-full col-span-1 px-8">
-      <img src={Cabins.src} alt="" class="rounded-2xl" />
+      <Image src={Cabins} alt="Control Cabins" class="rounded-2xl" />
     </div>
     <div class="w-full col-span-1">
       <div class="w-full rounded-2xl bg-redBg p-8">
@@ -130,17 +131,17 @@ import img4 from "../../../assets/images/Maintenance/banner2.webp";
       </p>
     </div>
     <div class="flex justify-center lg:justify-normal">
-      <img src={img2.src} alt="" class="rounded-lg w-1/2 lg:w-full" />
+      <Image src={img2} alt="TRIASO employee adjusting a gear" class="rounded-lg w-1/2 lg:w-full" />
     </div>
   </div>
   <div class="max-w-7xl flex justify-center items-center pb-5">
-    <img src={img3.src} alt="" class="w-3/4 rounded-lg" />
+    <Image src={img3} alt="Bin units" class="w-3/4 rounded-lg" />
   </div>
   <div class="w-full bg-grisT relative h-[300px]">
     <div
       class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full"
     >
-      <img src={Logo.src} alt="" />
+      <Image src={Logo} alt="TRIASO Logo" />
     </div>
     <div class="w-full flex justify-center items-center h-full">
       <div

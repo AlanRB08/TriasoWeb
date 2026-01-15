@@ -1,6 +1,7 @@
 ---
 import OSHand from "../../assets/images/OSHand.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
+import { Image } from "astro:assets";
 ---
 
 <div class="w-full bg-white">
@@ -198,7 +199,7 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
         <div
             class="col-span-1 lg:col-span-2 w-full flex justify-center items-center"
         >
-            <img src={OSHand.src} alt="" class="w-3/4 lg:w-full" />
+            <Image src={OSHand} alt="Triaso Relief system on a mobile device" class="w-3/4 lg:w-full" />
         </div>
     </section>
 </div>

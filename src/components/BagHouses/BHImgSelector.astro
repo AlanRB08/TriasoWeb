@@ -17,6 +17,7 @@ import bannerNew from "../../assets/images/BagHouses/bannerImage.webp";
 import damperImg from "../../assets/images/BagHouses/damper.webp";
 import finesReturn from "../../assets/images/BagHouses/finesReturn.webp";
 import boquillasVL from "../../assets/images/BagHouses/BoquillasVL.webp";
+import { Image } from "astro:assets";
 
 const tanksSlides = [
     {
@@ -50,7 +51,7 @@ const tanksSlides = [
             </h1>
         </div>
         <div class="max-w-7xl px-8 mx-auto flex justify-center">
-            <img src={img2.src} alt="" class="hero-img lg:w-4/5 rounded-lg" />
+            <Image src={img2} alt="Baghouse" class="hero-img lg:w-4/5 rounded-lg" />
         </div>
         <div
             class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
@@ -71,9 +72,9 @@ const tanksSlides = [
             </div>
 
             <div class="w-full hidden lg:flex md:w-auto">
-                <img
-                    src={img7.src}
-                    alt=""
+                <Image
+                    src={img7}
+                    alt="Baghouse cleaning system"
                     class="side-img rounded-2xl will-change-transform"
                 />
             </div>
@@ -82,23 +83,23 @@ const tanksSlides = [
         <div
             class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
         >
-            <img
-                src={img3.src}
-                alt=""
+            <Image
+                src={img3}
+                alt="Baghouse"
                 class="fade-img rounded-lg lg:w-3/5 will-change-transform"
             />
         </div>
 
         <div class="relative flex flex-col lg:hidden">
-            <img
-                src={img7.src}
-                alt=""
+            <Image
+                src={img7}
+                alt="Baghouse cleaning system"
                 class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
             />
 
-            <img
-                src={img3.src}
-                alt=""
+            <Image
+                src={img3}
+                alt="Baghouse"
                 class="absolute top-0 left-0 w-2/3 rounded-lg translate-x-1 translate-y-2"
             />
         </div>
@@ -135,7 +136,7 @@ const tanksSlides = [
         </div>
     </TwoColumnSection>
     <div class="">
-        <img src={bannerNew.src} alt="Banner" class="w-[3000px]" />
+        <Image src={bannerNew} alt="Bag house with a road in the background and workers next to it" class="w-[3000px]" />
     </div>
     <div class="w-full flex justify-center px-8 text-center">
         <h1 class="text-blueMain text-2xl md:text-3xl">
@@ -177,7 +178,7 @@ const tanksSlides = [
                 </p>
             </div>
             <div class="w-full flex justify-center items-center">
-                <img src={boquillasVL.src} alt="" class="full rounded-xl" />
+                <Image src={boquillasVL} alt="Triaso Supersonic Nozzle" class="full rounded-xl" />
             </div>
         </div>
 
@@ -331,8 +332,8 @@ const tanksSlides = [
             class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10"
         >
             <div class="flex justify-center items-center">
-                <img
-                    src={damperImg.src}
+                <Image
+                    src={damperImg}
                     alt="Damper"
                     class="w-[70%] aspect-square rounded-md"
                 />
@@ -394,9 +395,9 @@ const tanksSlides = [
                         class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                     >
                         <div class="w-full flex justify-center">
-                            <img
-                                src={BHoppers.src}
-                                alt="Baghouse Hoppers"
+                            <Image
+                                src={BHoppers}
+                                alt="Baghouse Fines Hoppers"
                                 class="rounded-2xl w-full md:w-4/5 object-cover z-20 relative mr-0 lg:mr-32 md:mr-32"
                             />
                         </div>
@@ -450,9 +451,9 @@ const tanksSlides = [
                     Fines Return System
                 </h2><br />
                 <div class="w-full flex justify-end">
-                    <img
-                        src={finesReturn.src}
-                        alt=""
+                    <Image
+                        src={finesReturn}
+                        alt="Fines Return System"
                         class="rounded-lg w-3/4"
                     />
                 </div>

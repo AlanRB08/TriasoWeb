@@ -1,5 +1,6 @@
 ---
 import bg1 from "../../assets/logos/triasoLogo.png";
+import { Image } from "astro:assets";
 
 const tabs = [
   {
@@ -29,7 +30,7 @@ const tabs = [
 
 <section class="w-full bg-[#383838]">
   <div class="flex justify-center items-center p-10">
-    <img src={bg1.src} alt="" class="w-1/2" />
+    <Image src={bg1} alt="" class="w-1/2" />
   </div>
 
   <div class="flex max-w-7xl mx-auto tabs-container">

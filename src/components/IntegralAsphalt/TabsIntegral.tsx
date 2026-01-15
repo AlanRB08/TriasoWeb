@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/tolva1.webp", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/tolva2.webp", alt: "Imagen 2" },
-  { id: 2, src: "/Gallery/tolva3.webp", alt: "Imagen 3" }, 
+  { id: 0, src: "/Gallery/tolva1.webp", alt: "Standar chasis for mobility of empty plant" },
+  { id: 1, src: "/Gallery/tolva2.webp", alt: "All mounted on a lightweight chassis with support legs" },
+  { id: 2, src: "/Gallery/tolva3.webp", alt: "Reinforced chassis for full loaded plant mobility" }, 
 ];
 
 export default function TabsIntegral() {

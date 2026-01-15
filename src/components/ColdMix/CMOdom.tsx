@@ -85,7 +85,7 @@ const CMOdom = () => {
 
         <div className="flex flex-col items-center justify-center gap-6">
           <div>
-            <img src={single.src} alt="" />
+            <img src={single.src} alt="Back of a cold mix asphalt plant" />
           </div>
           <a
   href="#planosCold"

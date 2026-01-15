@@ -1,5 +1,6 @@
 ---
 import Logo from "../../assets/logos/LogoTriasoUs.webp";
+import { Image } from "astro:assets";
 ---
 
 <div class="w-full flex flex-col justify-center items-center bg-blueMain">
@@ -27,7 +28,7 @@ import Logo from "../../assets/logos/LogoTriasoUs.webp";
     <div
       class="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"
     >
-      <img src={Logo.src} alt="" />
+      <Image src={Logo} alt="Triaso logo" />
     </div>
   </div>
 </div>

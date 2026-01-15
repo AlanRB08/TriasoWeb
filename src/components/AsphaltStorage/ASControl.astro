@@ -1,10 +1,11 @@
 ---
 import glass from '../../assets/images/AsphaltPlant/Aislamiento.webp';
 import blueT from '../../assets/images/AsphaltStorage/blueT.png';
+import { Image } from "astro:assets";
 ---
 
 <section class="w-full flex flex-col items-center justify-center mt-20 font-bold relative">
-    <img src={blueT.src} alt="" class="max-w-[300px] absolute top-0 z-0">
+    <Image src={blueT} alt="" class="max-w-[300px] absolute top-0 z-0">
     <div class="w-full md:mx-32 grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-4 mt-10 z-10">
         <div class="bg-white px-8 md:pl-32 py-4 md:py-4 rounded-r-2xl">
             <h1 class="text-2xl md:text-3xl mt-10">From <br>
@@ -12,7 +13,7 @@ import blueT from '../../assets/images/AsphaltStorage/blueT.png';
             </h1><br>
             <div class="w-full grid grid-cols-3 gap-4">
                 <div class="col-span-1 flex justify-center">
-                    <img src={glass.src} alt="" class="h-full md:max-h-[300px]">
+                    <Image src={glass} alt="" class="h-full md:max-h-[300px]">
                 </div>
                 <div class="col-span-2">
                     <h2>Two inches fiberglass insulation</h2><br>
@@ -39,7 +40,7 @@ import blueT from '../../assets/images/AsphaltStorage/blueT.png';
                 With automated asphalt controls to monitor asphalt consumption per ton of produced mix, preventing waste and theft.
             </p>
             <div>
-                <img src="" alt="">
+                
             </div>
         </div>
     </div>

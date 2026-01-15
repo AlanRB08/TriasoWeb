@@ -719,18 +719,142 @@ const PAPlanos = () => {
                     </div>
                   </div>
                 </div>
+                <div className="max-w-xl lg:w-full lg:max-w-full">
+                  <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
+                    {/* izquierda */}
+                    <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
+                      <div className="flex items-center justify-center w-[300px] h-[65px] self-center ml-9">
+                        <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                          <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                            {unit === "metric"
+                              ? `${toggleConfig?.dimensions.width.toFixed(1) ?? ""
+                              } cm`
+                              : `${(
+                                (toggleConfig?.dimensions.width ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
+                          </p>
+                        </div>
 
-                <div className="flex justify-start md:justify-center items-end my-10 overflow-x-auto w-full whitespace-nowrap flex-nowrap">
-                  {/* izquierda */}
-                  <div className="flex flex-col items-center justify-center shrink-0 max-w-[500px]">
-                    <div className="flex items-center justify-center w-[300px] h-[65px] self-center ml-9">
-                      <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                        <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-[56%] mt-7 flex items-center justify-center">
+                        <img
+                          src={imgPlano3.src}
+                          alt=""
+                          className=" object-contain"
+                        />
+                      </div>
+                      {/* medidas abajo */}
+                      <div className="flex flex-row items-center pl-[160px]">
+                        <div className="border-dotted border-l border-l-white h-[20px] w-[20px] flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                          <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                            {unit === "metric"
+                              ? `${toggleConfig?.dimensions.width2.toFixed(1) ?? ""
+                              } cm`
+                              : `${(
+                                (toggleConfig?.dimensions.width2 ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
+                          </p>
+                        </div>
+                        <div className="border-dotted border-r border-r-white h-[20px] w-[20px] flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    {/* medio */}
+                    <div className="flex flex-col items-center justify-end min-w-[90px] h-[330px] shrink-0 pb-8">
+                      <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
+                        <div className="bg-white w-[1px] h-full relative">
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
                             <svg
                               width="8"
                               height="8"
-                              viewBox="8 5 8 14"
+                              viewBox="6 5 12 10" // Área ajustada al contenido real
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               className="block p-0 m-0 overflow-visible"
@@ -739,294 +863,173 @@ const PAPlanos = () => {
                               <path
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
-                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z"
                                 fill="#ffffff"
                               />
                             </svg>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col justify-center items-center">
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                      <div className="my-3 flex flex-col">
+                        <p className="text-white text-lg">
                           {unit === "metric"
-                            ? `${toggleConfig?.dimensions.width.toFixed(1) ?? ""
+                            ? `${toggleConfig?.dimensions.height.toFixed(1) ?? ""
                             } cm`
                             : `${(
-                              (toggleConfig?.dimensions.width ?? 0) * cmToFeet
+                              (toggleConfig?.dimensions.height ?? 0) * cmToFeet
                             ).toFixed(1)} ft`}
                         </p>
                       </div>
+                      <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
+                        <div className="bg-white w-[1px] h-full relative">
+                          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                            <svg
+                              width="8"
+                              height="8"
+                              viewBox="6 8 12 10" // Área ajustada al contenido real
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="block p-0 m-0 overflow-visible"
+                              style={{ shapeRendering: "crispEdges" }}
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z"
+                                fill="#ffffff"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* derecha */}
+                    <div className="flex flex-col items-center justify-cemter shrink-0 max-w-[500px]">
+                      <div className="flex items-center justify-center w-[400px] h-[60px] ">
+                        <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                          <p className="text-white lg:text-lg text-base w-full text-center mx-4">
+                            {unit === "metric"
+                              ? `${toggleConfig?.dimensions.length.toFixed(1) ?? ""
+                              } cm`
+                              : `${(
+                                (toggleConfig?.dimensions.length ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
+                          </p>
+                        </div>
 
-                      <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
+                        <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="h-[330px] w-[744px] flex justify-center items-center ">
+                        <img
+                          src={imgPlano2.src}
+                          alt=""
+                          className="w-[50%] pt-5"
+                        />
+                      </div>
+                      {/* medidas abajo */}
+                      <div className="flex flex-row items-center pr-[160px]">
+                        <div className="border-dotted border-l border-l-white h-[20px] w-[50px] flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                          <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
+                            {unit === "metric"
+                              ? `${toggleConfig?.dimensions.length2.toFixed(1) ?? ""
+                              } cm`
+                              : `${(
+                                (toggleConfig?.dimensions.length2 ?? 0) * cmToFeet
+                              ).toFixed(1)} ft`}
+                          </p>
+                        </div>
+                        <div className="border-dotted border-r border-r-white h-[20px] w-[50px] flex items-center justify-center">
+                          <div className="bg-white h-[1px] w-full relative">
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                              <svg
+                                width="8"
+                                height="8"
+                                viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="block p-0 m-0 overflow-visible"
+                                style={{ shapeRendering: "crispEdges" }}
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
+                                  fill="#ffffff"
+                                />
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="w-[56%] mt-7 flex items-center justify-center">
-                      <img
-                        src={imgPlano3.src}
-                        alt=""
-                        className=" object-contain"
-                      />
-                    </div>
-                    {/* medidas abajo */}
-                    <div className="flex flex-row items-center pl-[160px]">
-                      <div className="border-dotted border-l border-l-white h-[20px] w-[20px] flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-center">
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
-                          {unit === "metric"
-                            ? `${toggleConfig?.dimensions.width2.toFixed(1) ?? ""
-                            } cm`
-                            : `${(
-                              (toggleConfig?.dimensions.width2 ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
-                        </p>
-                      </div>
-                      <div className="border-dotted border-r border-r-white h-[20px] w-[20px] flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
-                  {/* medio */}
-                  <div className="flex flex-col items-center justify-end min-w-[90px] h-[330px] shrink-0 pb-8">
-                    <div className="border-dotted border-t border-t-white w-full h-full flex items-center justify-center">
-                      <div className="bg-white w-[1px] h-full relative">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
-                          <svg
-                            width="8"
-                            height="8"
-                            viewBox="6 5 12 10" // Área ajustada al contenido real
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="block p-0 m-0 overflow-visible"
-                            style={{ shapeRendering: "crispEdges" }}
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5.30711 15.287C5.4232 15.5673 5.69668 15.75 6.00002 15.75H18C18.3034 15.75 18.5768 15.5673 18.6929 15.287C18.809 15.0068 18.7449 14.6842 18.5304 14.4697L12.5304 8.46967C12.2375 8.17678 11.7626 8.17678 11.4697 8.46967L5.46969 14.4697C5.25519 14.6842 5.19103 15.0068 5.30711 15.287Z"
-                              fill="#ffffff"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="my-3 flex flex-col">
-                      <p className="text-white text-lg">
-                        {unit === "metric"
-                          ? `${toggleConfig?.dimensions.height.toFixed(1) ?? ""
-                          } cm`
-                          : `${(
-                            (toggleConfig?.dimensions.height ?? 0) * cmToFeet
-                          ).toFixed(1)} ft`}
-                      </p>
-                    </div>
-                    <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
-                      <div className="bg-white w-[1px] h-full relative">
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                          <svg
-                            width="8"
-                            height="8"
-                            viewBox="6 8 12 10" // Área ajustada al contenido real
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="block p-0 m-0 overflow-visible"
-                            style={{ shapeRendering: "crispEdges" }}
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5.30711 8.71299C5.4232 8.43273 5.69668 8.25 6.00002 8.25H18C18.3034 8.25 18.5768 8.43273 18.6929 8.71299C18.809 8.99324 18.7449 9.31583 18.5304 9.53033L12.5304 15.5303C12.2375 15.8232 11.7626 15.8232 11.4697 15.5303L5.46969 9.53033C5.25519 9.31583 5.19103 8.99324 5.30711 8.71299Z"
-                              fill="#ffffff"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* derecha */}
-                  <div className="flex flex-col items-center justify-cemter shrink-0 max-w-[500px]">
-                    <div className="flex items-center justify-center w-[400px] h-[60px] ">
-                      <div className="border-dotted border-l border-l-white h-full w-full flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-center">
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4">
-                          {unit === "metric"
-                            ? `${toggleConfig?.dimensions.length.toFixed(1) ?? ""
-                            } cm`
-                            : `${(
-                              (toggleConfig?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
-                        </p>
-                      </div>
 
-                      <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="h-[330px] w-[744px] flex justify-center items-center ">
-                      <img
-                        src={imgPlano2.src}
-                        alt=""
-                        className="w-[50%] pt-5"
-                      />
-                    </div>
-                    {/* medidas abajo */}
-                    <div className="flex flex-row items-center pr-[160px]">
-                      <div className="border-dotted border-l border-l-white h-[20px] w-[50px] flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M15.287 18.6929C15.5673 18.5768 15.75 18.3033 15.75 18V5.99998C15.75 5.69663 15.5673 5.42315 15.287 5.30707C15.0068 5.19098 14.6842 5.25515 14.4697 5.46965L8.46967 11.4696C8.17678 11.7625 8.17678 12.2374 8.46967 12.5303L14.4697 18.5303C14.6842 18.7448 15.0068 18.809 15.287 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-center">
-                        <p className="text-white lg:text-lg text-base w-full text-center mx-4 ">
-                          {unit === "metric"
-                            ? `${toggleConfig?.dimensions.length2.toFixed(1) ?? ""
-                            } cm`
-                            : `${(
-                              (toggleConfig?.dimensions.length2 ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
-                        </p>
-                      </div>
-                      <div className="border-dotted border-r border-r-white h-[20px] w-[50px] flex items-center justify-center">
-                        <div className="bg-white h-[1px] w-full relative">
-                          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
-                            <svg
-                              width="8"
-                              height="8"
-                              viewBox="8 5 8 14" // Ajustado para recortar espacio vacío
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="block p-0 m-0 overflow-visible"
-                              style={{ shapeRendering: "crispEdges" }}
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
-                                fill="#ffffff"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full mt-10 gap-0 md:gap-10">
