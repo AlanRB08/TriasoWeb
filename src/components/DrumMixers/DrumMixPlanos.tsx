@@ -9,11 +9,9 @@ import tab6Right from "../../assets/images/DrumMixers/tab6Right.webp";
 import tab6Left from "../../assets/images/DrumMixers/tab6Left.webp";
 import tab5Main from "../../assets/images/DrumMixers/tab5Main.webp";
 import tab5Left from "../../assets/images/DrumMixers/tab5Left.webp";
-import tab5Right from "../../assets/images/DrumMixers/tab5Right.webp";
 import tab1Main from "../../assets/images/DrumMixers/tab1Main.webp";
 import tab1Left from "../../assets/images/DrumMixers/tab1Left.webp";
 import tab1Right from "../../assets/images/DrumMixers/tab5Right.webp";
-import tab2Main from "../../assets/images/DrumMixers/tab2Main.webp";
 import tab2Left from "../../assets/images/DrumMixers/tab2L.webp";
 import tab6Main from "../../assets/images/DrumMixers/tab6M.webp";
 

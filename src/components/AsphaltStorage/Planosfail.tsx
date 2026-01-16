@@ -7,7 +7,6 @@ import HMainBR1 from '../../assets/images/HotMix/Silo-SF50TBpS.png';
 import HMainBR2 from '../../assets/images/HotMix/Silo-SF100TBpS.png';
 import HMainBR3 from '../../assets/images/HotMix/Silo-SF150TBpS.webp';
 import HMainBR4 from '../../assets/images/HotMix/Silo-SF200TBpS.png';
-import AS12Main from "../../assets/images/AsphaltStorage/AS12Main.png";
 import ATR1 from '../../assets/images/AsphaltStorage/ATR1.png';
 import ATR2 from '../../assets/images/AsphaltStorage/ATR2.png';
 import ATR3 from '../../assets/images/AsphaltStorage/ATR3.png';

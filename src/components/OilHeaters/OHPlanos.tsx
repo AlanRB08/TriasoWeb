@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import OilHeaterVAB from "../../assets/images/OilHeaters/Planos/OilHeaterVABp.webp"
 import BPCalderaVL from "../../assets/images/OilHeaters/Planos/BPCalderaVL.webp"
-import BPCalderaVS from "../../assets/images/OilHeaters/Planos/BPCalderaVS.webp"
 import BPCalderaVS1 from "../../assets/images/OilHeaters/Planos/BPCalderaVS1.webp"
 import BPCalderaVT from "../../assets/images/OilHeaters/Planos/BPCalderaVT.webp"
 
