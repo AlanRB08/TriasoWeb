@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
-import single from "../../assets/images/DrumMixers/baghouse.webp";
 import bagHouseMain from "../../assets/images/BagHouses/bagHouseMain.webp"
 
 const BHOdometer = () => {
