@@ -3,1670 +3,1509 @@ import tabla1 from "../../assets/images/RapBins/Tablas/WMAUsage.webp";
 import RBTabs from "./RBTabs.astro";
 import bg1 from "../../assets/images/DrumMixers/trunnions.webp";
 import img1 from "../../assets/images/RapBins/Tablas/5.webp";
-import output1 from "../../assets/images/Rapbins/tablas/output (1).webp";
-import output2 from "../../assets/images/Rapbins/tablas/output (2).webp";
-import output3 from "../../assets/images/Rapbins/tablas/output (3).webp";
-import output4 from "../../assets/images/Rapbins/tablas/output (4).webp";
+import output1 from "../../assets/images/Rapbins/tablas/output1.webp";
+import output2 from "../../assets/images/Rapbins/tablas/output2.webp";
+import output3 from "../../assets/images/Rapbins/tablas/output3.webp";
+import output4 from "../../assets/images/Rapbins/tablas/output4.webp";
 import img2 from "../../assets/images/Rapbins/tablas/blows.webp";
 import { Image } from "astro:assets";
 
 const items = [
-    {
-        id: 1,
-        title: "Start with low RAP percentages and increase gradually as experience and confidence grow.",
-        text: "Beginning with low RAP contents allows producers to understand material behavior, production limits, and mix performance under controlled conditions. Gradual increases provide valuable operational and performance data, reducing risk while building confidence in RAP incorporation.",
-    },
-    {
-        id: 2,
-        title: "Account for the contribution of the aged RAP binder in the mix design.",
-        text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
-    },
-    {
-        id: 3,
-        title: "Try RAP different rejuvenators accordign to the RAP percentage",
-        text: "Yi et al. (2022) demonstrated that rejuvenators formulated with petroleum resin and antioxidants can effectively restore the properties of aged RAP binder, improving adhesion and aging resistance. Their incorporation enables higher RAP contents by compensating for binder stiffness and maintaining mix performance when appropriate dosage and mix design procedures are used. In a lot of studies it was found that:",
-        list:[
-            "Up to approximately 15% RAP, no change in the virgin binder PG is typically required.",
-            "At RAP contents between 20% and 25%, the virgin binder grade is commonly reduced to a softer PG.",
-            "At RAP contents of 25% or higher, testing the RAP binder and designing the mix based on its properties is recommended."
-        ]
-    },
-    {
-        id: 4,
-        title: "Adjust virgin binder grade and content to balance stiffness and workability.",
-        text: "Because RAP binder is aged and stiffer than virgin binder, adjustments to the virgin binder grade or content are often required. Using a softer virgin binder helps balance overall mix stiffness and ensures acceptable workability and compaction.",
-    },
-    {
-        id: 5,
-        title: "Control RAP temperature carefully to avoid excessive aging or blue smoke.",
-        text: "RAP should be heated indirectly and at controlled temperatures to prevent additional binder aging or the generation of blue smoke. Proper temperature control preserves binder properties while ensuring effective blending during mixing.",
-    },
-    {
-        id: 6,
-        title: "Ensure uniform and controlled RAP feeding into the mixing process.",
-        text: "Consistent RAP feed rates are critical to achieving uniform mix quality. Controlled introduction minimizes variability in binder content, gradation, and temperature, resulting in more consistent asphalt mixture performance.",
-    },
-    {
-        id: 7,
-        title: "Use adequate mixing time and temperature to promote proper binder blending.",
-        text: "Sufficient mixing time and appropriate temperatures are required to promote interaction between the aged RAP binder and the virgin binder. Proper blending improves coating, homogeneity, and overall mix performance.",
-    },
-    {
-        id: 8,
-        title: "Monitor mix workability and compactability during production and paving.",
-        text: "Workability and compactability are key indicators of mix quality. Monitoring these properties during production and placement helps identify necessary adjustments to binder content, temperature, or RAP percentage.",
-    },
-    {
-        id: 9,
-        title: "Use plant equipment and process control suitable for consistent RAP incorporation.",
-        text: "The most important factor is the use of proper plant equipment. Modern asphalt plants with precise process control enable proper heating, controlled feeding, and effective blending of RAP. Suitable systems ensure consistent production conditions, which are essential for reliable and repeatable RAP incorporation.",
-    },
-    {
-        id: 10,
-        title: "Rely on laboratory testing and field performance data rather than assumptions.",
-        text: "Laboratory testing and field validation provide objective data to support mix design decisions. Data-driven approaches reduce uncertainty and improve confidence in RAP performance.",
-    },
+  {
+    id: 1,
+    title:
+      "Start with low RAP percentages and increase gradually as experience and confidence grow.",
+    text: "Beginning with low RAP contents allows producers to understand material behavior, production limits, and mix performance under controlled conditions. Gradual increases provide valuable operational and performance data, reducing risk while building confidence in RAP incorporation.",
+  },
+  {
+    id: 2,
+    title:
+      "Account for the contribution of the aged RAP binder in the mix design.",
+    text: "The aged binder present in RAP contributes to the total effective binder content and stiffness of the asphalt mix. Properly accounting for this contribution is essential to avoid overly stiff mixtures and to maintain adequate flexibility and durability.",
+  },
+  {
+    id: 3,
+    title: "Try RAP different rejuvenators accordign to the RAP percentage",
+    text: "Yi et al. (2022) demonstrated that rejuvenators formulated with petroleum resin and antioxidants can effectively restore the properties of aged RAP binder, improving adhesion and aging resistance. Their incorporation enables higher RAP contents by compensating for binder stiffness and maintaining mix performance when appropriate dosage and mix design procedures are used. In a lot of studies it was found that:",
+    list: [
+      "Up to approximately 15% RAP, no change in the virgin binder PG is typically required.",
+      "At RAP contents between 20% and 25%, the virgin binder grade is commonly reduced to a softer PG.",
+      "At RAP contents of 25% or higher, testing the RAP binder and designing the mix based on its properties is recommended.",
+    ],
+  },
+  {
+    id: 4,
+    title:
+      "Adjust virgin binder grade and content to balance stiffness and workability.",
+    text: "Because RAP binder is aged and stiffer than virgin binder, adjustments to the virgin binder grade or content are often required. Using a softer virgin binder helps balance overall mix stiffness and ensures acceptable workability and compaction.",
+  },
+  {
+    id: 5,
+    title:
+      "Control RAP temperature carefully to avoid excessive aging or blue smoke.",
+    text: "RAP should be heated indirectly and at controlled temperatures to prevent additional binder aging or the generation of blue smoke. Proper temperature control preserves binder properties while ensuring effective blending during mixing.",
+  },
+  {
+    id: 6,
+    title: "Ensure uniform and controlled RAP feeding into the mixing process.",
+    text: "Consistent RAP feed rates are critical to achieving uniform mix quality. Controlled introduction minimizes variability in binder content, gradation, and temperature, resulting in more consistent asphalt mixture performance.",
+  },
+  {
+    id: 7,
+    title:
+      "Use adequate mixing time and temperature to promote proper binder blending.",
+    text: "Sufficient mixing time and appropriate temperatures are required to promote interaction between the aged RAP binder and the virgin binder. Proper blending improves coating, homogeneity, and overall mix performance.",
+  },
+  {
+    id: 8,
+    title:
+      "Monitor mix workability and compactability during production and paving.",
+    text: "Workability and compactability are key indicators of mix quality. Monitoring these properties during production and placement helps identify necessary adjustments to binder content, temperature, or RAP percentage.",
+  },
+  {
+    id: 9,
+    title:
+      "Use plant equipment and process control suitable for consistent RAP incorporation.",
+    text: "The most important factor is the use of proper plant equipment. Modern asphalt plants with precise process control enable proper heating, controlled feeding, and effective blending of RAP. Suitable systems ensure consistent production conditions, which are essential for reliable and repeatable RAP incorporation.",
+  },
+  {
+    id: 10,
+    title:
+      "Rely on laboratory testing and field performance data rather than assumptions.",
+    text: "Laboratory testing and field validation provide objective data to support mix design decisions. Data-driven approaches reduce uncertainty and improve confidence in RAP performance.",
+  },
 ];
 ---
 
 <div class="max-w-7xl mx-auto px-8 pt-5 space-y-5">
-    <div class="flex flex-col justify-center items-center space-y-10">
-        <h1 class="font-bold text-5xl">Warm-Mix Popularity</h1>
-        <p class="text-center">
-            According to 37 recopilated studies, per 10% of RAP incorporation in
-            new hot-mix asphalt decreases environmental impact by roughly 28%
-            compared with conventional virgin aggregate mixes.
-        </p>
-        <div class="flex flex-col justify-center items-center">
-            <Image
+  <div class="flex flex-col justify-center items-center space-y-10">
+    <h1 class="font-bold text-5xl">Warm-Mix Popularity</h1>
+    <p class="text-center">
+      According to 37 recopilated studies, per 10% of RAP incorporation in new
+      hot-mix asphalt decreases environmental impact by roughly 28% compared
+      with conventional virgin aggregate mixes.
+    </p>
+    <div class="flex flex-col justify-center items-center">
+      <Image
+        src={tabla1}
+        alt="Figure 1 - WMA Usage Between Year 2008-2014 (Christie 2015)"
+      />
+      <p class="text-sm font-thin">
+        Figure 1 - WMA Usage Between Year 2008-2014 (Christie 2015)
+      </p>
+    </div>
+  </div>
+  <!-- warm-mix -->
+  <div>
+    <div class="flex justify-center">
+      <details class="group p-10">
+        <summary
+          class="flex items-center justify-center cursor-pointer list-none"
+        >
+          <div
+            class="bg-black text-white px-10 py-3 rounded-2xl flex items-center"
+          >
+            See more
+          </div>
+        </summary>
+        <div class="pt-5 flex flex-col">
+          <div class="space-y-5">
+            <p class="font-thin text-base">
+              Warm Mix Asphalt (WMA) has rapidly gained importance as the
+              pavement industry moves toward cleaner and more sustainable
+              technologies. The method originated in Europe during the 1990s and
+              was later adopted in the United States in the early 2000s, where
+              it began replacing traditional Hot Mix Asphalt (HMA) in many
+              applications
+            </p>
+            <p class="font-thin text-base">
+              WMA mixes are produced at lower temperatures than conventional
+              hot-mix asphalt (HMA), allowing reduced heating without becoming
+              cold mixes, (later explained). This lower-temperature process
+              enables different RAP incorporation levels depending on the mix
+              design, binder condition, and the use of rejuvenators or
+              additives.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2">
+              <div class="flex flex-col justify-center items-center">
+                <p>Hot Mix Asphalt (HMA)</p>
+                <p>
+                  150 – 180 °C <br />
+                  302 – 356 °F
+                </p>
+              </div>
+              <div class="flex flex-col justify-center items-center">
+                <p>Warm Mix Asphalt (WMA)</p>
+                <p>
+                  100 – 140 °C <br />
+                  212 – 284 °F
+                </p>
+              </div>
+            </div>
+            <p class="font-thin text-base">
+              By 2015, WMA already accounted for roughly one-third of total
+              asphalt mix production in the U.S., supported by initiatives such
+              as the Federal Highway Administration’s Everyday Counts (EDC)
+              program (Hansen et al., 2015).
+            </p>
+            <p class="font-thin text-base">
+              Industry reports also show that WMA experienced an exceptionally
+              rapid growth curve: between 2010 and 2014, its usage increased
+              from approximately 3% to nearly 40% of all asphalt mixtures
+              produced (Christiansen, 2015; Hansen et al., 2015).
+            </p>
+            <div class="flex justify-center items-center">
+              <Image
                 src={tabla1}
                 alt="Figure 1 - WMA Usage Between Year 2008-2014 (Christie 2015)"
-            />
-            <p class="text-sm font-thin">
-                Figure 1 - WMA Usage Between Year 2008-2014 (Christie 2015)
-            </p>
-        </div>
-    </div>
-    <!-- warm-mix -->
-    <div>
-        <div class="flex justify-center">
-            <details class="group p-10">
-                <summary
-                    class="flex items-center justify-center cursor-pointer list-none"
-                >
-                    <div
-                        class="bg-black text-white px-10 py-3 rounded-2xl flex items-center"
-                    >
-                        See more
-                    </div>
-                </summary>
-                <div class="pt-5 flex flex-col">
-                    <div class="space-y-5">
-                        <p class="font-thin text-base">
-                            Warm Mix Asphalt (WMA) has rapidly gained importance
-                            as the pavement industry moves toward cleaner and
-                            more sustainable technologies. The method originated
-                            in Europe during the 1990s and was later adopted in
-                            the United States in the early 2000s, where it began
-                            replacing traditional Hot Mix Asphalt (HMA) in many
-                            applications
-                        </p>
-                        <p class="font-thin text-base">
-                            WMA mixes are produced at lower temperatures than
-                            conventional hot-mix asphalt (HMA), allowing reduced
-                            heating without becoming cold mixes, (later
-                            explained). This lower-temperature process enables
-                            different RAP incorporation levels depending on the
-                            mix design, binder condition, and the use of
-                            rejuvenators or additives.
-                        </p>
-                        <div
-                            class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2"
-                        >
-                            <div
-                                class="flex flex-col justify-center items-center"
-                            >
-                                <p>Hot Mix Asphalt (HMA)</p>
-                                <p>
-                                    150 – 180 °C <br />
-                                    302 – 356 °F
-                                </p>
-                            </div>
-                            <div
-                                class="flex flex-col justify-center items-center"
-                            >
-                                <p>Warm Mix Asphalt (WMA)</p>
-                                <p>
-                                    100 – 140 °C <br />
-                                    212 – 284 °F
-                                </p>
-                            </div>
-                        </div>
-                        <p class="font-thin text-base">
-                            By 2015, WMA already accounted for roughly one-third
-                            of total asphalt mix production in the U.S.,
-                            supported by initiatives such as the Federal Highway
-                            Administration’s Everyday Counts (EDC) program
-                            (Hansen et al., 2015).
-                        </p>
-                        <p class="font-thin text-base">
-                            Industry reports also show that WMA experienced an
-                            exceptionally rapid growth curve: between 2010 and
-                            2014, its usage increased from approximately 3% to
-                            nearly 40% of all asphalt mixtures produced
-                            (Christiansen, 2015; Hansen et al., 2015).
-                        </p>
-                        <div class="flex justify-center items-center">
-                            <Image
-                                src={tabla1}
-                                alt="Figure 1 - WMA Usage Between Year 2008-2014 (Christie 2015)"
-                            />
-                        </div>
-
-                        <p class="font-thin text-base">
-                            The rising cost of asphalt binder and the decreasing
-                            availability of high-quality virgin aggregates have
-                            encouraged wider adoption of RAP in mixture design
-                            (Copeland et al., 2010; Hossain et al., 2012).
-                        </p>
-                        <p class="font-thin text-base">
-                            National data show that RAP usage increased from
-                            about 30% in 2004 to over 90% by 2014 in HMA
-                            production (Hansen et al., 2015).
-                        </p>
-                        <p class="font-thin text-base">
-                            However, combining WMA with high RAP contents
-                            introduces technical challenges, since reduced
-                            temperatures may not provide sufficient thermal
-                            energy to activate the aged RAP binder (Bonaquist,
-                            2011).
-                        </p>
-
-                        <div>
-                            <p class="font-bold">
-                                Lower production temperatures affect:
-                            </p>
-                            <div class="pl-5">
-                                <li>workability,</li>
-                                <li>compactability,</li>
-                                <li>binder blending efficiency,</li>
-                                <li>moisture susceptibility, and</li>
-                                <li>rutting resistance</li>
-                            </div>
-                            <p>
-                                Later, it is explained why the pugmill cannot
-                                incorporate more than 5% RAP.
-                            </p>
-                        </div>
-
-                        <p class="font-thin text-base">
-                            (Bonaquist, 2011; Bennert et al., 2011; Jamshidi et
-                            al., 2013; Zhao et al., 2015). <br />
-                            In traditional HMA, high temperatures ensure adequate
-                            coating and lubrication. In WMA, reduced temperatures
-                            may not sufficiently soften the aged RAP binder, particularly
-                            at high RAP percentages (Bonaquist, 2011).
-                        </p>
-                        <p class="font-thin text-base">
-                            The use of WMA must be properly aligned with HMA
-                            practices: temperatures cannot be excessively high,
-                            as in conventional hot-mix production, but they also
-                            cannot be too low, since insufficient heat may
-                            prevent the aged RAP binder from softening.
-                        </p>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </div>
-    <!-- fuel consumption  -->
-    <div class="flex flex-col justify-center items-center space-y-5">
-        <div class="flex flex-col items-center justify-center space-y-5">
-            <h1 class="text-5xl text-center font-bold">
-                Reduce fuel consumption by recycling RAP
-            </h1>
-            <h1 class="text-7xl text-center font-bold text-[#007504]">
-                up to <br /> 20-35%
-            </h1>
-        </div>
-    </div>
-    <div>
-        <details class="group p-10">
-            <summary class="flex items-center cursor-pointer list-none">
-                <div class="space-y-3">
-                    <p class="text-center">
-                        WMA technologies can significantly reduce fuel
-                        consumption by lowering mixing and compaction
-                        temperatures.
-                    </p>
-                    <p class="text-center">
-                        However, when WMA is combined with Reclaimed Asphalt
-                        Pavement (RAP), the mixture design must be carefully
-                        evaluated to determine how the reduced temperatures will
-                        interact with the selected RAP percentage. Adequate
-                        activation of the aged binder is essential to ensure
-                        proper blending, compaction, and long-term performance. <span
-                            class="underline"
-                            >Know more
-                        </span>
-                    </p>
-                </div>
-            </summary>
-
-            <div class="pt-5 flex flex-col">
-                <div class="space-y-5">
-                    <p class="font-bold text-base">
-                        WMA technologies can significantly reduce fuel
-                        consumption by lowering mixing and compaction
-                        temperatures. <br />
-                        However, when WMA is combined with Reclaimed Asphalt Pavement
-                        (RAP), the mixture design must be carefully evaluated to determine
-                        how the reduced temperatures will interact with the selected
-                        RAP percentage. Adequate activation of the aged binder is
-                        essential to ensure proper blending, compaction, and long-term
-                        performance.
-                    </p>
-                    <p class="font-thin text-base">
-                        One of the primary reasons for the widespread adoption
-                        of WMA is its substantially lower production
-                        temperature. According to the FHWA, WMA technologies
-                        allow mixtures to be produced 30°F to 120°F below
-                        conventional HMA temperatures (D’Angelo et al., 2008).
-                    </p>
-                    <div class="flex flex-col">
-                        <p class="font-thin text-base">
-                            This temperature reduction leads to several
-                            performance and construction benefits, including:
-                        </p>
-                        <div class="pl-5">
-                            <li>burner fuel savings of 20–35%,</li>
-                            <li>earlier opening times to traffic,</li>
-                            <li>longer haul distances,</li>
-                            <li>an extended paving season,</li>
-                            <li>easier compaction at lower viscosity, and</li>
-                            <li>reduced short-term binder aging</li>
-                        </div>
-                        <p class="font-thin text-base">
-                            (Button et al., 2007; Zaumanis, 2010; Capitão et
-                            al., 2012; Bennert, 2015).
-                        </p>
-                    </div>
-                    <div class="flex flex-col">
-                        <p class="font-thin text-base">
-                            Multiple studies report important emissions
-                            reductions when WMA is used. Typical reductions
-                            include:
-                        </p>
-                        <div class="pl-5">
-                            <li>30–40% CO₂,</li>
-                            <li>35% SO₂,</li>
-                            <li>50% VOC,</li>
-                            <li>10–30% CO,</li>
-                            <li>60–70% NOx,</li>
-                            <li>20–25% dust</li>
-                        </div>
-                        <p class="font-thin text-base">
-                            (Prowell, 2007; D’Angelo et al., 2008). <br />
-                            These reductions make WMA one of the most environmentally
-                            advantageous asphalt technologies available.
-                        </p>
-                    </div>
-                    <p class="font-thin text-base">
-                        Uzar et al. (2015) found that RAP-WMA mixtures compacted
-                        as well as RAP-HMA mixtures, with only small differences
-                        in air voids across most projects. The only notable
-                        exception was the foamed RAP-WMA mix, which showed a
-                        clear improvement in compactability with an air void
-                        reduction of about 1.8%.
-                    </p>
-
-                    <p class="font-bold text-lg">Blue Smoke</p>
-                    <p class="font-thin text-base">
-                        When incorporating RAP, the mixing temperature must be
-                        reduced to maintain proper workability and binder
-                        blending quality. Excessive heat not only stiffens the
-                        effective binder and affects mix uniformity, but it also
-                        needs to be carefully controlled to prevent the
-                        formation of blue smoke, which occurs when the aged RAP
-                        binder is overheated and begins to volatilize.
-                        Maintaining an appropriate temperature range ensures
-                        effective RAP integration while avoiding emissions that
-                        indicate thermal degradation of the binder.
-                    </p>
-                </div>
+              />
             </div>
-        </details>
+
+            <p class="font-thin text-base">
+              The rising cost of asphalt binder and the decreasing availability
+              of high-quality virgin aggregates have encouraged wider adoption
+              of RAP in mixture design (Copeland et al., 2010; Hossain et al.,
+              2012).
+            </p>
+            <p class="font-thin text-base">
+              National data show that RAP usage increased from about 30% in 2004
+              to over 90% by 2014 in HMA production (Hansen et al., 2015).
+            </p>
+            <p class="font-thin text-base">
+              However, combining WMA with high RAP contents introduces technical
+              challenges, since reduced temperatures may not provide sufficient
+              thermal energy to activate the aged RAP binder (Bonaquist, 2011).
+            </p>
+
+            <div>
+              <p class="font-bold">Lower production temperatures affect:</p>
+              <div class="pl-5">
+                <li>workability,</li>
+                <li>compactability,</li>
+                <li>binder blending efficiency,</li>
+                <li>moisture susceptibility, and</li>
+                <li>rutting resistance</li>
+              </div>
+              <p>
+                Later, it is explained why the pugmill cannot incorporate more
+                than 5% RAP.
+              </p>
+            </div>
+
+            <p class="font-thin text-base">
+              (Bonaquist, 2011; Bennert et al., 2011; Jamshidi et al., 2013;
+              Zhao et al., 2015). <br />
+              In traditional HMA, high temperatures ensure adequate coating and lubrication.
+              In WMA, reduced temperatures may not sufficiently soften the aged RAP
+              binder, particularly at high RAP percentages (Bonaquist, 2011).
+            </p>
+            <p class="font-thin text-base">
+              The use of WMA must be properly aligned with HMA practices:
+              temperatures cannot be excessively high, as in conventional
+              hot-mix production, but they also cannot be too low, since
+              insufficient heat may prevent the aged RAP binder from softening.
+            </p>
+          </div>
+        </div>
+      </details>
     </div>
+  </div>
+  <!-- fuel consumption  -->
+  <div class="flex flex-col justify-center items-center space-y-5">
+    <div class="flex flex-col items-center justify-center space-y-5">
+      <h1 class="text-5xl text-center font-bold">
+        Reduce fuel consumption by recycling RAP
+      </h1>
+      <h1 class="text-7xl text-center font-bold text-[#007504]">
+        up to <br /> 20-35%
+      </h1>
+    </div>
+  </div>
+  <div>
+    <details class="group p-10">
+      <summary class="flex items-center cursor-pointer list-none">
+        <div class="space-y-3">
+          <p class="text-center">
+            WMA technologies can significantly reduce fuel consumption by
+            lowering mixing and compaction temperatures.
+          </p>
+          <p class="text-center">
+            However, when WMA is combined with Reclaimed Asphalt Pavement (RAP),
+            the mixture design must be carefully evaluated to determine how the
+            reduced temperatures will interact with the selected RAP percentage.
+            Adequate activation of the aged binder is essential to ensure proper
+            blending, compaction, and long-term performance. <span
+              class="underline"
+              >Know more
+            </span>
+          </p>
+        </div>
+      </summary>
+
+      <div class="pt-5 flex flex-col">
+        <div class="space-y-5">
+          <p class="font-bold text-base">
+            WMA technologies can significantly reduce fuel consumption by
+            lowering mixing and compaction temperatures. <br />
+            However, when WMA is combined with Reclaimed Asphalt Pavement (RAP), the
+            mixture design must be carefully evaluated to determine how the reduced
+            temperatures will interact with the selected RAP percentage. Adequate
+            activation of the aged binder is essential to ensure proper blending,
+            compaction, and long-term performance.
+          </p>
+          <p class="font-thin text-base">
+            One of the primary reasons for the widespread adoption of WMA is its
+            substantially lower production temperature. According to the FHWA,
+            WMA technologies allow mixtures to be produced 30°F to 120°F below
+            conventional HMA temperatures (D’Angelo et al., 2008).
+          </p>
+          <div class="flex flex-col">
+            <p class="font-thin text-base">
+              This temperature reduction leads to several performance and
+              construction benefits, including:
+            </p>
+            <div class="pl-5">
+              <li>burner fuel savings of 20–35%,</li>
+              <li>earlier opening times to traffic,</li>
+              <li>longer haul distances,</li>
+              <li>an extended paving season,</li>
+              <li>easier compaction at lower viscosity, and</li>
+              <li>reduced short-term binder aging</li>
+            </div>
+            <p class="font-thin text-base">
+              (Button et al., 2007; Zaumanis, 2010; Capitão et al., 2012;
+              Bennert, 2015).
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <p class="font-thin text-base">
+              Multiple studies report important emissions reductions when WMA is
+              used. Typical reductions include:
+            </p>
+            <div class="pl-5">
+              <li>30–40% CO₂,</li>
+              <li>35% SO₂,</li>
+              <li>50% VOC,</li>
+              <li>10–30% CO,</li>
+              <li>60–70% NOx,</li>
+              <li>20–25% dust</li>
+            </div>
+            <p class="font-thin text-base">
+              (Prowell, 2007; D’Angelo et al., 2008). <br />
+              These reductions make WMA one of the most environmentally advantageous
+              asphalt technologies available.
+            </p>
+          </div>
+          <p class="font-thin text-base">
+            Uzar et al. (2015) found that RAP-WMA mixtures compacted as well as
+            RAP-HMA mixtures, with only small differences in air voids across
+            most projects. The only notable exception was the foamed RAP-WMA
+            mix, which showed a clear improvement in compactability with an air
+            void reduction of about 1.8%.
+          </p>
+
+          <p class="font-bold text-lg">Blue Smoke</p>
+          <p class="font-thin text-base">
+            When incorporating RAP, the mixing temperature must be reduced to
+            maintain proper workability and binder blending quality. Excessive
+            heat not only stiffens the effective binder and affects mix
+            uniformity, but it also needs to be carefully controlled to prevent
+            the formation of blue smoke, which occurs when the aged RAP binder
+            is overheated and begins to volatilize. Maintaining an appropriate
+            temperature range ensures effective RAP integration while avoiding
+            emissions that indicate thermal degradation of the binder.
+          </p>
+        </div>
+      </div>
+    </details>
+  </div>
 </div>
 
 <RBTabs>
-    <div slot="tab-1" class="space-y-4 text-[#393939]">
-        <p class="font-semibold">
-            According to <span class="font-bold text-black"
-                >FHWA’s Pavement Recycling Guidelines (FHWA-SA-98-042),
-            </span>
-            reclaimed asphalt pavement cannot be processed in normal drum-mix plants
-            when it comes into direct contact with the burner, because this produces
-            excessive “blue smoke” and visible hydrocarbon emissions.
-        </p>
+  <div slot="tab-1" class="space-y-4 text-[#393939]">
+    <p class="font-semibold">
+      According to <span class="font-bold text-black"
+        >FHWA’s Pavement Recycling Guidelines (FHWA-SA-98-042),
+      </span>
+      reclaimed asphalt pavement cannot be processed in normal drum-mix plants when
+      it comes into direct contact with the burner, because this produces excessive
+      “blue smoke” and visible hydrocarbon emissions.
+    </p>
 
-        <p class="font-semibold">
-            <span class="font-bold text-black"
-                >Similarly, Tarsi et al. (2020)
-            </span>note that RAP material cannot simply be incorporated in
-            standard plants as if it were virgin aggregate, since direct
-            exposure of the recycled material to high-temperature gases leads to
-            excessive blue-smoke emissions.
-        </p>
+    <p class="font-semibold">
+      <span class="font-bold text-black"
+        >Similarly, Tarsi et al. (2020)
+      </span>note that RAP material cannot simply be incorporated in standard
+      plants as if it were virgin aggregate, since direct exposure of the
+      recycled material to high-temperature gases leads to excessive blue-smoke
+      emissions.
+    </p>
 
-        <p class="font-semibold">
-            The <span class="font-bold text-black"
-                >Hot-Mix Asphalt Paving Handbook</span
-            > reinforces this, recommending that RAP be introduced downstream of the
-            burner in counter-flow drum plants so that the recycled material is heated
-            by hot aggregate rather than by direct contact with burner gases, specifically
-            to reduce visible emissions.
-        </p>
+    <p class="font-semibold">
+      The <span class="font-bold text-black"
+        >Hot-Mix Asphalt Paving Handbook</span
+      > reinforces this, recommending that RAP be introduced downstream of the burner
+      in counter-flow drum plants so that the recycled material is heated by hot aggregate
+      rather than by direct contact with burner gases, specifically to reduce visible
+      emissions.
+    </p>
 
-        <p class="font-semibold">
-            We address all these problems by incorporating a dedicated RAP
-            section within our counter-flow drum mixer, designed exclusively for
-            controlled RAP introduction.
-        </p>
+    <p class="font-semibold">
+      We address all these problems by incorporating a dedicated RAP section
+      within our counter-flow drum mixer, designed exclusively for controlled
+      RAP introduction.
+    </p>
 
-        <p class="font-thin">
-            But a RAP incorporation system is not only intended to reduce
-            polluting gases; it is also essential for ensuring mixture quality.
-        </p>
+    <p class="font-thin">
+      But a RAP incorporation system is not only intended to reduce polluting
+      gases; it is also essential for ensuring mixture quality.
+    </p>
+  </div>
+
+  <div slot="tab-2" class="space-y-4 text-[#393939] font-semibold">
+    <p>
+      Many asphalt plant manufacturers incorporate RAP directly in the pugmill,
+      without any drying process. This method is the simplest, but <span
+        class="font-bold text-black"
+        >no more than 5% RAP
+      </span>can be added. This limitation exists because the RAP is heated only
+      through contact with the hot virgin aggregate exiting the dryer drum. The
+      aggregates must be overheated in an attempt to “dry” the RAP, but this
+      simply does not work. Overheating the aggregate consumes excessive burner
+      energy and, consequently, excessive fuel.
+    </p>
+    <p>
+      When superheated virgin aggregate abo 180 °C comes into contact with cold
+      RAP at 20–25 °C, a severe thermal shock occurs (Bonaquist, 2011; Shah,
+      2007). This extreme temperature gradient accelerates oxidation of the
+      asphalt binder, damaging both the RAP binder and the virgin binder.
+      Because RAP does not warm gradually, its binder does not properly soften
+      or blend, instead undergoing localized overheating and additional
+      oxidative hardening (Shah, 2007; Bennert et al., 2011). As a result, the
+      final blended binder becomes harder and more brittle, reducing pavement
+      durability and increasing susceptibility to cracking (Jamshidi et al.,
+      2013; Zhao et al., 2015).
+    </p>
+    <p>
+      Some brands claim that their systems can incorporate up to 30% RAP by
+      mixing it directly in the pugmill, but this is not realistic. High-RAP
+      systems are thermally and mechanically complex and cannot rely only on
+      superheated virgin aggregate. As RAP percentages rise, the risk of
+      overheating the material increases sharply, leading to excessive aging of
+      the binder and visible blue-smoke emissions if no proper gas-filtration or
+      incineration system is used.
+    </p>
+    <p>
+      Laboratory studies using pugmill-style mixing have shown that even when
+      virgin aggregates are preheated to typical plant temperatures and
+      room-temperature RAP is added and mixed for approximately one minute, only
+      a limited amount of binder is actually transferred from the RAP to the
+      virgin aggregate. Shah (2007) demonstrated that when mixing time or
+      temperature is insufficient, RAP particles behave essentially as
+      pre-coated “black rock,” meaning the aged binder remains on the RAP and
+      does not adequately blend with the virgin binder.
+    </p>
+    <p>
+      Mixing RAP directly in the pugmill also requires longer mixing time to
+      transfer enough heat to the RAP. However, the pugmill residence time is
+      very short—typically only a few seconds. Extending the mixing time to
+      properly heat the RAP significantly reduces the plant’s production rate.
+      And even when production is slowed down, the limited heat-transfer
+      capability and short residence time inside the pugmill make it impossible
+      for the RAP to reach the required temperature for proper binder
+      activation.
+    </p>
+    <p>
+      According to FHWA guidance and several laboratory and field studies,
+      simply dropping cold, moist RAP into the pugmill and relying on
+      superheated virgin aggregate results in insufficient and non-uniform
+      heating, limited RAP binder activation, higher fuel consumption, and an
+      increased risk of blue-smoke emissions.
+    </p>
+    <p>
+      In real-world operation, plants that claim very high RAP contents using
+      direct pugmill incorporation are frequently forced to reduce the actual
+      RAP percentage to meet emission regulations, avoid binder burning, but
+      excessive oxidation, mix quality aren’t good.
+    </p>
+  </div>
+
+  <div slot="tab-3" class="space-y-4 text-[#393939] font-semibold">
+    <p>
+      The reduction in production temperature raises concerns about several
+      factors that influence both construction and long-term pavement
+      performance. Lower temperatures can negatively affect mix workability and
+      compactability, and they also limit binder blending efficiency. In
+      high-RAP WMA mixtures, these effects contribute to increased moisture
+      susceptibility and reduced rutting resistance (Bonaquist, 2011; Bennert et
+      al., 2011; Jamshidi et al., 2013; Zhao et al., 2015).
+    </p>
+    <p>
+      Adequate workability is essential for any asphalt mixture to ensure proper
+      pavement construction. Because asphalt binder is highly
+      temperature-dependent, the workability of an asphalt concrete mix is
+      directly influenced by the temperatures at which it is produced and
+      handled. In conventional HMA, mixing and compaction temperatures are
+      selected to achieve a binder viscosity that provides sufficient coating of
+      aggregate particles and adequate lubrication during compaction.
+    </p>
+    <p>
+      When RAP is incorporated, however, the effective binder grade increases
+      due to the presence of aged, stiff RAP binder blending with the virgin
+      binder. As a result, higher temperatures may be required to attain the
+      same level of workability achieved in mixtures containing only virgin
+      materials.
+    </p>
+    <p>
+      This occurs because the reduced production temperatures used in WMA may
+      not supply enough thermal energy to adequately activate and blend the RAP
+      binder with the virgin binder. When this happens, RAP behaves essentially
+      as “black rock,” contributing little to the effective binder content of
+      the mixture. The reduction in effective binder impairs constructability
+      and weakens the mixture’s overall mechanical stability and durability.
+    </p>
+    <p>
+      Black rock: Describes RAP particles whose aged binder remains stiff and
+      inactive during mixing, causing the RAP to behave like inert aggregate
+      rather than contributing usable asphalt binder.
+    </p>
+    <p>
+      When temperatures are too low, the RAP binder may not mobilize or blend
+      with the virgin binder. In these cases, RAP behaves like an inert “black
+      rock,” reducing the effective binder, increasing air voids, and weakening
+      mixture durability (Bonaquist, 2011).
+    </p>
+    <p>
+      Increasing production temperatures directly affects the air voids in the
+      asphalt mixture. A study by Oliveira et al. (2012):
+    </p>
+    <div class="flex flex-col justify-center items-center">
+      <Image
+        src={img2}
+        alt="Figure 3 - Air void content at different mixing temperatures for (a) virgin WMA and HMA & (b) 50% WMA and 50% HMA mixes; (adpoted from Oliveira et al. 2012)."
+      />
+      <p class="font-thin">
+        Figure 3 - Air void content at different mixing temperatures for (a)
+        virgin WMA and HMA & (b) 50% WMA and 50% HMA mixes; (adpoted from
+        Oliveira et al. 2012).
+      </p>
     </div>
-
-    <div slot="tab-2" class="space-y-4 text-[#393939] font-semibold">
-        <p>
-            Many asphalt plant manufacturers incorporate RAP directly in the
-            pugmill, without any drying process. This method is the simplest,
-            but <span class="font-bold text-black"
-                >no more than 5% RAP
-            </span>can be added. This limitation exists because the RAP is
-            heated only through contact with the hot virgin aggregate exiting
-            the dryer drum. The aggregates must be overheated in an attempt to
-            “dry” the RAP, but this simply does not work. Overheating the
-            aggregate consumes excessive burner energy and, consequently,
-            excessive fuel.
-        </p>
-        <p>
-            When superheated virgin aggregate abo 180 °C comes into contact with
-            cold RAP at 20–25 °C, a severe thermal shock occurs (Bonaquist,
-            2011; Shah, 2007). This extreme temperature gradient accelerates
-            oxidation of the asphalt binder, damaging both the RAP binder and
-            the virgin binder. Because RAP does not warm gradually, its binder
-            does not properly soften or blend, instead undergoing localized
-            overheating and additional oxidative hardening (Shah, 2007; Bennert
-            et al., 2011). As a result, the final blended binder becomes harder
-            and more brittle, reducing pavement durability and increasing
-            susceptibility to cracking (Jamshidi et al., 2013; Zhao et al.,
-            2015).
-        </p>
-        <p>
-            Some brands claim that their systems can incorporate up to 30% RAP
-            by mixing it directly in the pugmill, but this is not realistic.
-            High-RAP systems are thermally and mechanically complex and cannot
-            rely only on superheated virgin aggregate. As RAP percentages rise,
-            the risk of overheating the material increases sharply, leading to
-            excessive aging of the binder and visible blue-smoke emissions if no
-            proper gas-filtration or incineration system is used.
-        </p>
-        <p>
-            Laboratory studies using pugmill-style mixing have shown that even
-            when virgin aggregates are preheated to typical plant temperatures
-            and room-temperature RAP is added and mixed for approximately one
-            minute, only a limited amount of binder is actually transferred from
-            the RAP to the virgin aggregate. Shah (2007) demonstrated that when
-            mixing time or temperature is insufficient, RAP particles behave
-            essentially as pre-coated “black rock,” meaning the aged binder
-            remains on the RAP and does not adequately blend with the virgin
-            binder.
-        </p>
-        <p>
-            Mixing RAP directly in the pugmill also requires longer mixing time
-            to transfer enough heat to the RAP. However, the pugmill residence
-            time is very short—typically only a few seconds. Extending the
-            mixing time to properly heat the RAP significantly reduces the
-            plant’s production rate. And even when production is slowed down,
-            the limited heat-transfer capability and short residence time inside
-            the pugmill make it impossible for the RAP to reach the required
-            temperature for proper binder activation.
-        </p>
-        <p>
-            According to FHWA guidance and several laboratory and field studies,
-            simply dropping cold, moist RAP into the pugmill and relying on
-            superheated virgin aggregate results in insufficient and non-uniform
-            heating, limited RAP binder activation, higher fuel consumption, and
-            an increased risk of blue-smoke emissions.
-        </p>
-        <p>
-            In real-world operation, plants that claim very high RAP contents
-            using direct pugmill incorporation are frequently forced to reduce
-            the actual RAP percentage to meet emission regulations, avoid binder
-            burning, but excessive oxidation, mix quality aren’t good.
-        </p>
+    <p class="text-black">
+      The study shows that lowering the mixing temperature has little effect on
+      virgin mixes, but it significantly affects RAP mixes. At 50% RAP, lower
+      temperatures lead to higher air voids, meaning poorer compaction. This
+      occurs because the aged binder in the RAP requires more heat energy to
+      blend and mobilize. Without that heat, the RAP behaves like a stiff “black
+      rock,” reducing the effective binder and making the mixture harder to
+      compact (Oliveira et al., 2012).
+    </p>
+    <div class="pl-5">
+      <li>
+        Oliveira et al. (2012) demonstrated that mixing temperature has a direct
+        effect on the air-void content of asphalt mixtures containing RAP. In
+        their study, virgin mixes compacted almost identically at 140°C and
+        130°C, while RAP mixes (50% RAP) showed a strong sensitivity to
+        temperature. When the temperature was reduced from 140°C to 120°C, air
+        voids increased significantly, indicating poorer compaction. This
+        confirms that high-RAP mixtures require sufficient temperature to
+        mobilize the aged binder and achieve proper densification.
+      </li>
     </div>
-
-    <div slot="tab-3" class="space-y-4 text-[#393939] font-semibold">
-        <p>
-            The reduction in production temperature raises concerns about
-            several factors that influence both construction and long-term
-            pavement performance. Lower temperatures can negatively affect mix
-            workability and compactability, and they also limit binder blending
-            efficiency. In high-RAP WMA mixtures, these effects contribute to
-            increased moisture susceptibility and reduced rutting resistance
-            (Bonaquist, 2011; Bennert et al., 2011; Jamshidi et al., 2013; Zhao
-            et al., 2015).
-        </p>
-        <p>
-            Adequate workability is essential for any asphalt mixture to ensure
-            proper pavement construction. Because asphalt binder is highly
-            temperature-dependent, the workability of an asphalt concrete mix is
-            directly influenced by the temperatures at which it is produced and
-            handled. In conventional HMA, mixing and compaction temperatures are
-            selected to achieve a binder viscosity that provides sufficient
-            coating of aggregate particles and adequate lubrication during
-            compaction.
-        </p>
-        <p>
-            When RAP is incorporated, however, the effective binder grade
-            increases due to the presence of aged, stiff RAP binder blending
-            with the virgin binder. As a result, higher temperatures may be
-            required to attain the same level of workability achieved in
-            mixtures containing only virgin materials.
-        </p>
-        <p>
-            This occurs because the reduced production temperatures used in WMA
-            may not supply enough thermal energy to adequately activate and
-            blend the RAP binder with the virgin binder. When this happens, RAP
-            behaves essentially as “black rock,” contributing little to the
-            effective binder content of the mixture. The reduction in effective
-            binder impairs constructability and weakens the mixture’s overall
-            mechanical stability and durability.
-        </p>
-        <p>
-            Black rock: Describes RAP particles whose aged binder remains stiff
-            and inactive during mixing, causing the RAP to behave like inert
-            aggregate rather than contributing usable asphalt binder.
-        </p>
-        <p>
-            When temperatures are too low, the RAP binder may not mobilize or
-            blend with the virgin binder. In these cases, RAP behaves like an
-            inert “black rock,” reducing the effective binder, increasing air
-            voids, and weakening mixture durability (Bonaquist, 2011).
-        </p>
-        <p>
-            Increasing production temperatures directly affects the air voids in
-            the asphalt mixture. A study by Oliveira et al. (2012):
-        </p>
-        <div class="flex flex-col justify-center items-center">
-            <Image src={img2} alt="Figure 3 - Air void content at different mixing temperatures for (a) virgin WMA and HMA & (b) 50% WMA and 50% HMA mixes; (adpoted from Oliveira et al. 2012)." />
-            <p class="font-thin">
-                Figure 3 - Air void content at different mixing temperatures for
-                (a) virgin WMA and HMA & (b) 50% WMA and 50% HMA mixes; (adpoted
-                from Oliveira et al. 2012).
-            </p>
-        </div>
-        <p class="text-black">
-            The study shows that lowering the mixing temperature has little
-            effect on virgin mixes, but it significantly affects RAP mixes. At
-            50% RAP, lower temperatures lead to higher air voids, meaning poorer
-            compaction. This occurs because the aged binder in the RAP requires
-            more heat energy to blend and mobilize. Without that heat, the RAP
-            behaves like a stiff “black rock,” reducing the effective binder and
-            making the mixture harder to compact (Oliveira et al., 2012).
-        </p>
-        <div class="pl-5">
-            <li>
-                Oliveira et al. (2012) demonstrated that mixing temperature has
-                a direct effect on the air-void content of asphalt mixtures
-                containing RAP. In their study, virgin mixes compacted almost
-                identically at 140°C and 130°C, while RAP mixes (50% RAP) showed
-                a strong sensitivity to temperature. When the temperature was
-                reduced from 140°C to 120°C, air voids increased significantly,
-                indicating poorer compaction. This confirms that high-RAP
-                mixtures require sufficient temperature to mobilize the aged
-                binder and achieve proper densification.
-            </li>
-        </div>
-    </div>
+  </div>
 </RBTabs>
 
 <div
-    class="relative w-full min-h-[50vh] flex justify-center items-center bg-cover bg-top bg-no-repeat"
-    style={{
-        backgroundImage: `url(${bg1.src})`,
-    }}
+  class="relative w-full min-h-[50vh] flex justify-center items-center bg-cover bg-top bg-no-repeat"
+  style={{
+    backgroundImage: `url(${bg1.src})`,
+  }}
 >
-    <div class="absolute inset-0 bg-[#3b3b39]/70"></div>
+  <div class="absolute inset-0 bg-[#3b3b39]/70"></div>
 
-    <div
-        class="relative max-w-7xl mx-auto px-8 flex flex-col justify-center items-center space-y-5"
-    >
-        <h1 class="font-bold text-white text-4xl">
-            VFD-Controlled Drum Rotation System for High-RAP Incorporation
-        </h1>
-        <p class="font-thin text-center text-white">
-            Our latest innovation for high-RAP incorporation is the use of
-            VFD-controlled drum rotation. According to our investigation and
-            multiple field studies, RAP quality is directly affected by its
-            heating exposure time inside the drum, which allows the RAP binder
-            to fully blend and incorporate with the virgin aggregates. This
-            exposure time must be adjusted according to the RAP percentage in
-            the mix.
-        </p>
-    </div>
+  <div
+    class="relative max-w-7xl mx-auto px-8 flex flex-col justify-center items-center space-y-5"
+  >
+    <h1 class="font-bold text-white text-4xl">
+      VFD-Controlled Drum Rotation System for High-RAP Incorporation
+    </h1>
+    <p class="font-thin text-center text-white">
+      Our latest innovation for high-RAP incorporation is the use of
+      VFD-controlled drum rotation. According to our investigation and multiple
+      field studies, RAP quality is directly affected by its heating exposure
+      time inside the drum, which allows the RAP binder to fully blend and
+      incorporate with the virgin aggregates. This exposure time must be
+      adjusted according to the RAP percentage in the mix.
+    </p>
+  </div>
 </div>
 
 <div class="max-w-7xl mx-auto px-8 pt-5 space-y-5">
-    <div class="flex flex-col justify-center items-center space-y-10">
-        <h1 class="font-bold text-5xl text-center">
-            How Does Heat Exposure Time Affect RAP Percentage Incorporation?
-        </h1>
-        <p class="text-center">
-            In a study Gaitán et al. (2012) found that temperature increase in
-            mixing does not improve the blending of RAP binder in WMA or HMA
-            mixtures. In their study they raised the temeprature from 260°F to
-            315°F for analyzing RAP behavior in extremely high temeprature
-            environments, the result was aging RAP binder to to stiffen even
-            further, this increased the difference between the binder coating
-            the fine and coarse aggregates—indicating less blending by 85% in
-            mix A, and 96% in mix B, and 151% mix C! By increasing the
-            temperature, the overall degree of blending (DOB) was reduced by
-            about 5%, showing directly that high temperatures actually hinder
-            the activation of RAP binder. The authors noted that WMA additives
-            may start degrading by exposure above their design limits.
-        </p>
-        <div class="flex flex-col justify-center items-center">
-            <Image
+  <div class="flex flex-col justify-center items-center space-y-10">
+    <h1 class="font-bold text-5xl text-center">
+      How Does Heat Exposure Time Affect RAP Percentage Incorporation?
+    </h1>
+    <p class="text-center">
+      In a study Gaitán et al. (2012) found that temperature increase in mixing
+      does not improve the blending of RAP binder in WMA or HMA mixtures. In
+      their study they raised the temeprature from 260°F to 315°F for analyzing
+      RAP behavior in extremely high temeprature environments, the result was
+      aging RAP binder to to stiffen even further, this increased the difference
+      between the binder coating the fine and coarse aggregates—indicating less
+      blending by 85% in mix A, and 96% in mix B, and 151% mix C! By increasing
+      the temperature, the overall degree of blending (DOB) was reduced by about
+      5%, showing directly that high temperatures actually hinder the activation
+      of RAP binder. The authors noted that WMA additives may start degrading by
+      exposure above their design limits.
+    </p>
+    <div class="flex flex-col justify-center items-center">
+      <Image
+        src={img1}
+        alt="The data shown in Figure 5 shows an interesting trend. After two (2) hours of conditioning, the difference between the different mixes is very wide ranging from 0.44 to 1.0."
+      />
+      <p class="text-sm font-thin">
+        The data shown in Figure 5 shows an interesting trend. After two (2)
+        hours of conditioning, the difference between the different mixes is
+        very wide ranging from 0.44 to 1.0.>
+      </p>
+    </div>
+  </div>
+  <div>
+    <div class="flex justify-center">
+      <details class="group p-10">
+        <summary
+          class="flex items-center justify-center cursor-pointer list-none"
+        >
+          <div
+            class="bg-black text-white px-10 py-3 rounded-2xl flex items-center"
+          >
+            See more
+          </div>
+        </summary>
+
+        <div class="pt-5 flex flex-col">
+          <div class="space-y-5">
+            <p class="font-thin text-base">
+              In a study Gaitán et al. (2012) found that temperature increase in
+              mixing does not improve the blending of RAP binder in WMA or HMA
+              mixtures. In their study they raised the temeprature from 260°F to
+              315°F for analyzing RAP behavior in extremely high temeprature
+              environments, the result was aging RAP binder to to stiffen even
+              further, this increased the difference between the binder coating
+              the fine and coarse aggregates—indicating less blending by 85% in
+              mix A, and 96% in mix B, and 151% mix C! By increasing the
+              temperature, the overall degree of blending (DOB) was reduced by
+              about 5%, showing directly that high temperatures actually hinder
+              the activation of RAP binder. The authors noted that WMA additives
+              may start degrading by exposure above their design limits.
+            </p>
+            <p class="font-thin text-base">
+              However the most interesting finding in this study was that
+              extending the conditioning time from two to three hours improved
+              DOB by approximately 8%. Indicating that additional time —not
+              additional heat— promote better diffusion between the aged RAP
+              binder and the virgin binder! (Gaitán et al., 2012).
+            </p>
+            <p class="font-thin text-base">
+              In a study by Bonaquist et al. (2011), the blending of RAP binder
+              with virgin binder in WMA mixes was evaluated by comparing the
+              measured dynamic modulus of the mixture with the estimated modulus
+              derived from the recovered binder. When the ratio approaches 1.0,
+              it indicates that the RAP binder is fully blending and
+              contributing to the mixture; when the ratio is low, the RAP binder
+              is barely activated.
+            </p>
+            <div class="pl-5">
+              <li>Flow Number (FN) = Better rutting resistance</li>
+              <div class="pl-5">
+                <li>Lower FN = More susceptible to permanent deformation.</li>
+                <li>
+                  Higher FN = Indicates greater resistance to rutting and
+                  improved ability of the mixture to withstand repeated loading
+                  without accumulating permanent strain.
+                </li>
+              </div>
+            </div>
+            <p class="font-thin text-base">
+              For Design A with 25% RAP, mixtures aged for only 30 to 60 minutes
+              showed low ratios (0.35–0.55), indicating limited blending.
+              However, when the same mix (Design A) was aged for two hours—an
+              increase of 200–400% in aging time—the ratio approached 1.0,
+              signifying complete blending of the RAP binder. The study also
+              shows that higher compaction temperatures significantly improve
+              RAP binder activation and blending within the mixture.
+            </p>
+            <div class="flex flex-col justify-center items-center">
+              <Image
                 src={img1}
                 alt="The data shown in Figure 5 shows an interesting trend. After two (2) hours of conditioning, the difference between the different mixes is very wide ranging from 0.44 to 1.0."
-            />
-            <p class="text-sm font-thin">
+              />
+              <p class="text-center font-thin text-[#494949]">
                 The data shown in Figure 5 shows an interesting trend. After two
                 (2) hours of conditioning, the difference between the different
-                mixes is very wide ranging from 0.44 to 1.0.>
-            </p>
+                mixes is very wide ranging from 0.44 to 1.0.
+              </p>
+            </div>
+          </div>
         </div>
+      </details>
     </div>
-    <div>
-        <div class="flex justify-center">
-            <details class="group p-10">
-                <summary
-                    class="flex items-center justify-center cursor-pointer list-none"
-                >
-                    <div
-                        class="bg-black text-white px-10 py-3 rounded-2xl flex items-center"
-                    >
-                        See more
-                    </div>
-                </summary>
-
-                <div class="pt-5 flex flex-col">
-                    <div class="space-y-5">
-                        <p class="font-thin text-base">
-                            In a study Gaitán et al. (2012) found that
-                            temperature increase in mixing does not improve the
-                            blending of RAP binder in WMA or HMA mixtures. In
-                            their study they raised the temeprature from 260°F
-                            to 315°F for analyzing RAP behavior in extremely
-                            high temeprature environments, the result was aging
-                            RAP binder to to stiffen even further, this
-                            increased the difference between the binder coating
-                            the fine and coarse aggregates—indicating less
-                            blending by 85% in mix A, and 96% in mix B, and 151%
-                            mix C! By increasing the temperature, the overall
-                            degree of blending (DOB) was reduced by about 5%,
-                            showing directly that high temperatures actually
-                            hinder the activation of RAP binder. The authors
-                            noted that WMA additives may start degrading by
-                            exposure above their design limits.
-                        </p>
-                        <p class="font-thin text-base">
-                            However the most interesting finding in this study
-                            was that extending the conditioning time from two to
-                            three hours improved DOB by approximately 8%.
-                            Indicating that additional time —not additional
-                            heat— promote better diffusion between the aged RAP
-                            binder and the virgin binder! (Gaitán et al., 2012).
-                        </p>
-                        <p class="font-thin text-base">
-                            In a study by Bonaquist et al. (2011), the blending
-                            of RAP binder with virgin binder in WMA mixes was
-                            evaluated by comparing the measured dynamic modulus
-                            of the mixture with the estimated modulus derived
-                            from the recovered binder. When the ratio approaches
-                            1.0, it indicates that the RAP binder is fully
-                            blending and contributing to the mixture; when the
-                            ratio is low, the RAP binder is barely activated.
-                        </p>
-                        <div class="pl-5">
-                            <li>
-                                Flow Number (FN) = Better rutting resistance
-                            </li>
-                            <div class="pl-5">
-                                <li>
-                                    Lower FN = More susceptible to permanent
-                                    deformation.
-                                </li>
-                                <li>
-                                    Higher FN = Indicates greater resistance to
-                                    rutting and improved ability of the mixture
-                                    to withstand repeated loading without
-                                    accumulating permanent strain.
-                                </li>
-                            </div>
-                        </div>
-                        <p class="font-thin text-base">
-                            For Design A with 25% RAP, mixtures aged for only 30
-                            to 60 minutes showed low ratios (0.35–0.55),
-                            indicating limited blending. However, when the same
-                            mix (Design A) was aged for two hours—an increase of
-                            200–400% in aging time—the ratio approached 1.0,
-                            signifying complete blending of the RAP binder. The
-                            study also shows that higher compaction temperatures
-                            significantly improve RAP binder activation and
-                            blending within the mixture.
-                        </p>
-                        <div class="flex flex-col justify-center items-center">
-                            <Image
-                                src={img1}
-                                alt="The data shown in Figure 5 shows an interesting trend. After two (2) hours of conditioning, the difference between the different mixes is very wide ranging from 0.44 to 1.0."
-                            />
-                            <p class="text-center font-thin text-[#494949]">
-                                The data shown in Figure 5 shows an interesting
-                                trend. After two (2) hours of conditioning, the
-                                difference between the different mixes is very
-                                wide ranging from 0.44 to 1.0.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </div>
+  </div>
 </div>
 
 <div class="w-full bg-gradient-to-b from-[#154480] to-[#2375dc]">
-    <div class="max-w-7xl mx-auto flex flex-col space-y-5">
-        <div class="flex flex-col md:flex-row justify-evenly gap-5 px-8 pt-10">
-            <div class="w-full justify-start items-center my-auto">
-                <h1 class="font-bold text-white text-5xl text-start">
-                    Incorporating RAP
-                </h1>
-            </div>
+  <div class="max-w-7xl mx-auto flex flex-col space-y-5">
+    <div class="flex flex-col md:flex-row justify-evenly gap-5 px-8 pt-10">
+      <div class="w-full justify-start items-center my-auto">
+        <h1 class="font-bold text-white text-5xl text-start">
+          Incorporating RAP
+        </h1>
+      </div>
 
-            <div class="w-full flex justify-center items-center">
-                <p class="font-bold text-5xl">VS</p>
-            </div>
+      <div class="w-full flex justify-center items-center">
+        <p class="font-bold text-5xl">VS</p>
+      </div>
 
-            <div class="w-full flex justify-end items-center">
-                <h1 class="font-bold text-white text-5xl text-end">
-                    Conventional virgin-aggregate mixtures
-                </h1>
-            </div>
-        </div>
-        <p class="text-white font-thin text-center">
-            In a study by D’Angelo et al. (2008), D’Angelo et al. (2008)
-            reported two primary benefits for the WMA pavement constructed on
-            SR-417, near Orlando, FL, while additional performance observations
-            for WMA—including rutting depth reduction, improved ride quality
-            retention, lower cracking progression, and better overall PCS
-            evolution—were documented in subsequent FDOT field evaluations for
-            projects on US-92 and SR-11, and studied for five years after its
-            aplication.
-        </p>
-        <div class="flex justify-end">
-            <details class="group p-10">
-                <summary class="cursor-pointer list-none flex justify-end">
-                    <svg
-                        class="transition-transform duration-300 group-open:rotate-180"
-                        fill="#ffffff"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="64px"
-                        height="64px"
-                        viewBox="0 0 100 100"
-                        enable-background="new 0 0 100 100"
-                        xml:space="preserve"
-                        stroke="#ffffff"
-                        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                            id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"></g><g
-                            id="SVGRepo_iconCarrier"
-                        >
-                            <g>
-                                <path
-                                    d="M49.288,59.647c0.383,0.348,0.863,0.519,1.342,0.519c0.076,0,0.151-0.015,0.228-0.023c0.028,0.001,0.057,0.008,0.085,0.008 c0.545,0,1.088-0.222,1.482-0.657l15.231-16.804c0.742-0.818,0.68-2.083-0.139-2.824c-0.818-0.743-2.083-0.679-2.824,0.139 L50.656,55.49L35.169,41.453c-0.819-0.744-2.083-0.68-2.824,0.139c-0.742,0.818-0.68,2.083,0.139,2.824L49.288,59.647z"
-                                ></path>
-                                <path
-                                    d="M50,83.214c18.449,0,33.458-15.009,33.458-33.457c0-18.449-15.009-33.458-33.458-33.458 c-18.448,0-33.457,15.009-33.457,33.458C16.543,68.205,31.552,83.214,50,83.214z M50,20.299c16.243,0,29.458,13.215,29.458,29.458 c0,16.242-13.215,29.457-29.458,29.457c-16.242,0-29.457-13.215-29.457-29.457C20.543,33.514,33.758,20.299,50,20.299z"
-                                ></path>
-                            </g>
-                        </g></svg
-                    >
-                </summary>
-
-                <div class="pt-5 flex flex-col">
-                    <div class="space-y-5">
-                        <div class="text-white space-y-5">
-                            <h1 class="font-bold text-3xl">
-                                Incorporating RAP reduces life-cycle costs
-                            </h1>
-                            <p class="font-semibold text-base">
-                                It may be impressive that asphalt pavement
-                                produce by a waste (reclaimed asphalt pavement)
-                                can have greater quality than asphalt pavement
-                                produce with virgin aggregates.
-                            </p>
-                            <p class="font-semibold">
-                                Across these studies, life-cycle cost reductions
-                                of roughly 10–34% were observed, influenced by
-                                factors such as RAP percentage, savings in
-                                binder use, and the long-term maintenance
-                                behavior of the mixture. According to the
-                                PennDOT WMA–RAP study (Faheem et al., 2018),
-                                “RAP is expected to replace some of the more
-                                expensive virgin materials, and lower life-cycle
-                                costs (Huang et al., 2007; Chiu et al., 2008;
-                                Lee et al., 2010).”
-                            </p>
-                            <div class="pl-5">
-                                <li>
-                                    Huang et al. (2007) reported that adding RAP
-                                    to hot-mix asphalt leads to life-cycle
-                                    savings in the range of 10–34%. These
-                                    savings come primarily from decreased
-                                    material costs—especially binder and
-                                    aggregate—and from reduced maintenance
-                                    requirements throughout the pavement’s
-                                    service life.
-                                </li>
-                                <li>
-                                    Chiu et al. (2008) found that mixtures
-                                    incorporating RAP can lower life-cycle costs
-                                    by about 20–30%. They attributed these
-                                    reductions to both lower initial production
-                                    expenses and reduced long-term
-                                    rehabilitation needs.
-                                </li>
-                                <li>
-                                    Lee et al. (2010) showed that RAP-modified
-                                    mixtures can decrease life-cycle costs by
-                                    roughly 12–32%, emphasizing that pavements
-                                    containing RAP often require fewer
-                                    maintenance interventions over time, which
-                                    significantly enhances their long-term
-                                    economic performance.
-                                </li>
-                            </div>
-                        </div>
-
-                        <div
-                            class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto"
-                        >
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    Initial costs
-                                </h3>
-                                <p>
-                                    RAP contains both aggregates and aged
-                                    asphalt binder, which are already processed.
-                                </p>
-                                <p>
-                                    Because virgin binder and high-quality
-                                    aggregates are the most expensive components
-                                    of hot-mix asphalt, replacing part of them
-                                    with RAP immediately lowers initial
-                                    production costs.
-                                </p>
-                                <div>
-                                    <li>Why RAP reduces initial costs:</li>
-                                    <div class="pl-5">
-                                        <li>
-                                            Less virgin binder is needed (binder
-                                            is the most expensive material in
-                                            asphalt production).
-                                        </li>
-                                        <li>
-                                            Less virgin aggregate is needed.
-                                        </li>
-                                        <li>
-                                            Energy demand can be reduced when
-                                            RAP is processed efficiently.
-                                        </li>
-                                    </div>
-                                </div>
-                                <p>
-                                    This is why studies (Huang 2007; Chiu 2008;
-                                    Lee 2010) consistently report 10–34%
-                                    reductions in overall life-cycle costs.
-                                </p>
-                            </div>
-
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    Maintenance and Rehabilitation Costs — RAP
-                                </h3>
-                                <div>
-                                    <p>
-                                        RAP-containing mixes can exhibit lower
-                                        long-term aging rates because:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            The aged binder in RAP has already
-                                            oxidized, so it contributes less to
-                                            future aging.
-                                        </li>
-                                        <li>
-                                            RAP increases stiffness, improving
-                                            rutting resistance and delaying
-                                            certain types of deterioration.
-                                        </li>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <p class="font-bold">
-                                        So, pavements with moderate RAP contents
-                                        may require:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>Fewer treatments,</li>
-                                        <li>Less frequent overlays,</li>
-                                        <li>
-                                            Longer intervals between major
-                                            rehabilitation.
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    Operating Costs — fewer work zones
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>
-                                        If a pavement lasts longer before
-                                        requiring rehabilitation then:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>There are fewer lane closures,</li>
-                                        <li>Less congestion,</li>
-                                        <li>Lower user-delay costs.</li>
-                                    </div>
-                                    <p>
-                                        Even if agencies do not always include
-                                        user costs, when they do, RAP pavements
-                                        perform favorably.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <p class="font-bold">
-                                        Why RAP reduces operating costs:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            Longer maintenance cycles mean fewer
-                                            traffic disruptions.
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    End-of-Life Costs — RAP becomes a resource
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>
-                                        At the end of the pavement’s service
-                                        life:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            Material is milled and reused as RAP
-                                            again.
-                                        </li>
-                                        <li>This reduces disposal costs.</li>
-                                        <li>
-                                            It also reduces the cost of future
-                                            pavement construction because the
-                                            RAP becomes a valuable input for the
-                                            next cycle.
-                                        </li>
-                                    </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <p class="font-bold text-black">
-                                        Why RAP reduces end-of-life costs:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>No need to pay for disposal.</li>
-                                        <li>
-                                            The recovered material retains high
-                                            economic value.
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col space-y-5 pt-5 text-white">
-                        <p class="text-center font-bold">
-                            So, the pavement essentially feeds itself, reducing
-                            future material demand.
-                        </p>
-                        <p>
-                            RAP lowers life-cycle costs because it reduces
-                            expenses at every stage of the pavement’s economic
-                            life. In the initial phase, RAP replaces costly
-                            virgin binder and aggregates, immediately lowering
-                            material costs. During service life, RAP mixtures
-                            often show slower aging and improved rutting
-                            resistance, reducing the frequency and cost of
-                            maintenance and rehabilitation. These extended
-                            maintenance intervals also reduce user-delay and
-                            operational costs associated with lane closures.
-                            Finally, at the end of the pavement’s life, RAP
-                            becomes a reusable resource rather than a waste
-                            material, eliminating disposal expenses and reducing
-                            the cost of future constructions.
-                        </p>
-                    </div>
-
-                    <div class="text-white space-y-5 pt-5">
-                        <h1 class="font-bold text-3xl">
-                            Asphalt mixtures incorporating RAP have shown
-                            performance levels superior to conventional
-                            virgin-aggregate mixtures particularly in rutting
-                            resistance and long-term stiffness.
-                        </h1>
-                        <p class="font-semibold text-base">
-                            In a study by D’Angelo et al. (2008), D’Angelo et
-                            al. (2008) reported two primary benefits for the WMA
-                            pavement constructed on SR-417, near Orlando, FL,
-                            while additional performance observations for
-                            WMA—including rutting depth reduction, improved ride
-                            quality retention, lower cracking progression, and
-                            better overall PCS (Pavement Condition Score)
-                            evolution—were documented in subsequent FDOT field
-                            evaluations for projects on US-92 and SR-11, and
-                            studied for five years after its aplication.
-                        </p>
-                        <p class="font-semibold">
-                            The first primary was a reduction in comapction
-                            resistance, and the second was lower levels of
-                            early-stage aging due to gentle production
-                            temperatures of WMA. Additional performcance
-                            benefits were also found in these study, such as
-                            deduced rutting depth, longer preservation ride
-                            quality, slower cracking progression, and improved
-                            PCS trends.
-                        </p>
-                        <p class="font-semibold">
-                            According to the FDOT performance study (Choubane et
-                            al., 2013), pavement sections containing 15% RAP and
-                            45% RAP showed reduced rutting and superior ride
-                            quality to virgin mixes, although the section with
-                            45% RAP exhibited minor cracking after five years of
-                            service.
-                        </p>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto max-w-6xl gap-6 pt-5"
-                    >
-                        <div>
-                            <Image src={output1} alt="Illustrative Rutting Progression for Different RAP Contents" />
-                        </div>
-                        <div>
-                            <Image src={output2} alt="Illustrative Ride Quality Progression for Different RAP Contents" />
-                        </div>
-                        <div>
-                            <Image src={output3} alt="Ride Quality Progression (0-10 scale) for Different RAP Contents" />
-                        </div>
-                        <div>
-                            <Image src={output4} alt="Illustrative PCS Progression (0-10 scale)" />
-                        </div>
-                    </div>
-
-                    <div class="text-white py-5">
-                        <p>
-                            The study by Goh et al. (2011) showed that
-                            incorporating RAP into asphalt mixtures does not
-                            reduce mix quality or compactability; instead,
-                            RAP-modified mixtures demonstrated equal or improved
-                            compaction characteristics compared to
-                            virgin-aggregate mixes. The researchers reported
-                            that mixtures containing RAP required lower
-                            compaction energy than their virgin counterparts,
-                            indicating more efficient densification during
-                            production. The findings confirm that RAP can be
-                            incorporated into asphalt mixtures without
-                            compromising workability or performance, and may
-                            even enhance certain production efficiencies.
-                        </p>
-                    </div>
-                </div>
-            </details>
-        </div>
+      <div class="w-full flex justify-end items-center">
+        <h1 class="font-bold text-white text-5xl text-end">
+          Conventional virgin-aggregate mixtures
+        </h1>
+      </div>
     </div>
+    <p class="text-white font-thin text-center">
+      In a study by D’Angelo et al. (2008), D’Angelo et al. (2008) reported two
+      primary benefits for the WMA pavement constructed on SR-417, near Orlando,
+      FL, while additional performance observations for WMA—including rutting
+      depth reduction, improved ride quality retention, lower cracking
+      progression, and better overall PCS evolution—were documented in
+      subsequent FDOT field evaluations for projects on US-92 and SR-11, and
+      studied for five years after its aplication.
+    </p>
+    <div class="flex justify-end">
+      <details class="group p-10">
+        <summary class="cursor-pointer list-none flex justify-end">
+          <svg
+            class="transition-transform duration-300 group-open:rotate-180"
+            fill="#ffffff"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="64px"
+            height="64px"
+            viewBox="0 0 100 100"
+            enable-background="new 0 0 100 100"
+            xml:space="preserve"
+            stroke="#ffffff"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M49.288,59.647c0.383,0.348,0.863,0.519,1.342,0.519c0.076,0,0.151-0.015,0.228-0.023c0.028,0.001,0.057,0.008,0.085,0.008 c0.545,0,1.088-0.222,1.482-0.657l15.231-16.804c0.742-0.818,0.68-2.083-0.139-2.824c-0.818-0.743-2.083-0.679-2.824,0.139 L50.656,55.49L35.169,41.453c-0.819-0.744-2.083-0.68-2.824,0.139c-0.742,0.818-0.68,2.083,0.139,2.824L49.288,59.647z"
+                ></path>
+                <path
+                  d="M50,83.214c18.449,0,33.458-15.009,33.458-33.457c0-18.449-15.009-33.458-33.458-33.458 c-18.448,0-33.457,15.009-33.457,33.458C16.543,68.205,31.552,83.214,50,83.214z M50,20.299c16.243,0,29.458,13.215,29.458,29.458 c0,16.242-13.215,29.457-29.458,29.457c-16.242,0-29.457-13.215-29.457-29.457C20.543,33.514,33.758,20.299,50,20.299z"
+                ></path>
+              </g>
+            </g></svg
+          >
+        </summary>
+
+        <div class="pt-5 flex flex-col">
+          <div class="space-y-5">
+            <div class="text-white space-y-5">
+              <h1 class="font-bold text-3xl">
+                Incorporating RAP reduces life-cycle costs
+              </h1>
+              <p class="font-semibold text-base">
+                It may be impressive that asphalt pavement produce by a waste
+                (reclaimed asphalt pavement) can have greater quality than
+                asphalt pavement produce with virgin aggregates.
+              </p>
+              <p class="font-semibold">
+                Across these studies, life-cycle cost reductions of roughly
+                10–34% were observed, influenced by factors such as RAP
+                percentage, savings in binder use, and the long-term maintenance
+                behavior of the mixture. According to the PennDOT WMA–RAP study
+                (Faheem et al., 2018), “RAP is expected to replace some of the
+                more expensive virgin materials, and lower life-cycle costs
+                (Huang et al., 2007; Chiu et al., 2008; Lee et al., 2010).”
+              </p>
+              <div class="pl-5">
+                <li>
+                  Huang et al. (2007) reported that adding RAP to hot-mix
+                  asphalt leads to life-cycle savings in the range of 10–34%.
+                  These savings come primarily from decreased material
+                  costs—especially binder and aggregate—and from reduced
+                  maintenance requirements throughout the pavement’s service
+                  life.
+                </li>
+                <li>
+                  Chiu et al. (2008) found that mixtures incorporating RAP can
+                  lower life-cycle costs by about 20–30%. They attributed these
+                  reductions to both lower initial production expenses and
+                  reduced long-term rehabilitation needs.
+                </li>
+                <li>
+                  Lee et al. (2010) showed that RAP-modified mixtures can
+                  decrease life-cycle costs by roughly 12–32%, emphasizing that
+                  pavements containing RAP often require fewer maintenance
+                  interventions over time, which significantly enhances their
+                  long-term economic performance.
+                </li>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto"
+            >
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">Initial costs</h3>
+                <p>
+                  RAP contains both aggregates and aged asphalt binder, which
+                  are already processed.
+                </p>
+                <p>
+                  Because virgin binder and high-quality aggregates are the most
+                  expensive components of hot-mix asphalt, replacing part of
+                  them with RAP immediately lowers initial production costs.
+                </p>
+                <div>
+                  <li>Why RAP reduces initial costs:</li>
+                  <div class="pl-5">
+                    <li>
+                      Less virgin binder is needed (binder is the most expensive
+                      material in asphalt production).
+                    </li>
+                    <li>Less virgin aggregate is needed.</li>
+                    <li>
+                      Energy demand can be reduced when RAP is processed
+                      efficiently.
+                    </li>
+                  </div>
+                </div>
+                <p>
+                  This is why studies (Huang 2007; Chiu 2008; Lee 2010)
+                  consistently report 10–34% reductions in overall life-cycle
+                  costs.
+                </p>
+              </div>
+
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  Maintenance and Rehabilitation Costs — RAP
+                </h3>
+                <div>
+                  <p>
+                    RAP-containing mixes can exhibit lower long-term aging rates
+                    because:
+                  </p>
+                  <div class="pl-5">
+                    <li>
+                      The aged binder in RAP has already oxidized, so it
+                      contributes less to future aging.
+                    </li>
+                    <li>
+                      RAP increases stiffness, improving rutting resistance and
+                      delaying certain types of deterioration.
+                    </li>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold">
+                    So, pavements with moderate RAP contents may require:
+                  </p>
+                  <div class="pl-5">
+                    <li>Fewer treatments,</li>
+                    <li>Less frequent overlays,</li>
+                    <li>Longer intervals between major rehabilitation.</li>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  Operating Costs — fewer work zones
+                </h3>
+                <div class="space-y-2">
+                  <p>
+                    If a pavement lasts longer before requiring rehabilitation
+                    then:
+                  </p>
+                  <div class="pl-5">
+                    <li>There are fewer lane closures,</li>
+                    <li>Less congestion,</li>
+                    <li>Lower user-delay costs.</li>
+                  </div>
+                  <p>
+                    Even if agencies do not always include user costs, when they
+                    do, RAP pavements perform favorably.
+                  </p>
+                </div>
+
+                <div>
+                  <p class="font-bold">Why RAP reduces operating costs:</p>
+                  <div class="pl-5">
+                    <li>
+                      Longer maintenance cycles mean fewer traffic disruptions.
+                    </li>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border border-red-400 bg-white rounded-lg p-6">
+                <h3 class="font-semibold mb-3">
+                  End-of-Life Costs — RAP becomes a resource
+                </h3>
+                <div class="space-y-2">
+                  <p>At the end of the pavement’s service life:</p>
+                  <div class="pl-5">
+                    <li>Material is milled and reused as RAP again.</li>
+                    <li>This reduces disposal costs.</li>
+                    <li>
+                      It also reduces the cost of future pavement construction
+                      because the RAP becomes a valuable input for the next
+                      cycle.
+                    </li>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <p class="font-bold text-black">
+                    Why RAP reduces end-of-life costs:
+                  </p>
+                  <div class="pl-5">
+                    <li>No need to pay for disposal.</li>
+                    <li>The recovered material retains high economic value.</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-5 pt-5 text-white">
+            <p class="text-center font-bold">
+              So, the pavement essentially feeds itself, reducing future
+              material demand.
+            </p>
+            <p>
+              RAP lowers life-cycle costs because it reduces expenses at every
+              stage of the pavement’s economic life. In the initial phase, RAP
+              replaces costly virgin binder and aggregates, immediately lowering
+              material costs. During service life, RAP mixtures often show
+              slower aging and improved rutting resistance, reducing the
+              frequency and cost of maintenance and rehabilitation. These
+              extended maintenance intervals also reduce user-delay and
+              operational costs associated with lane closures. Finally, at the
+              end of the pavement’s life, RAP becomes a reusable resource rather
+              than a waste material, eliminating disposal expenses and reducing
+              the cost of future constructions.
+            </p>
+          </div>
+
+          <div class="text-white space-y-5 pt-5">
+            <h1 class="font-bold text-3xl">
+              Asphalt mixtures incorporating RAP have shown performance levels
+              superior to conventional virgin-aggregate mixtures particularly in
+              rutting resistance and long-term stiffness.
+            </h1>
+            <p class="font-semibold text-base">
+              In a study by D’Angelo et al. (2008), D’Angelo et al. (2008)
+              reported two primary benefits for the WMA pavement constructed on
+              SR-417, near Orlando, FL, while additional performance
+              observations for WMA—including rutting depth reduction, improved
+              ride quality retention, lower cracking progression, and better
+              overall PCS (Pavement Condition Score) evolution—were documented
+              in subsequent FDOT field evaluations for projects on US-92 and
+              SR-11, and studied for five years after its aplication.
+            </p>
+            <p class="font-semibold">
+              The first primary was a reduction in comapction resistance, and
+              the second was lower levels of early-stage aging due to gentle
+              production temperatures of WMA. Additional performcance benefits
+              were also found in these study, such as deduced rutting depth,
+              longer preservation ride quality, slower cracking progression, and
+              improved PCS trends.
+            </p>
+            <p class="font-semibold">
+              According to the FDOT performance study (Choubane et al., 2013),
+              pavement sections containing 15% RAP and 45% RAP showed reduced
+              rutting and superior ride quality to virgin mixes, although the
+              section with 45% RAP exhibited minor cracking after five years of
+              service.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto max-w-6xl gap-6 pt-5"
+          >
+            <div>
+              <Image
+                src={output1}
+                alt="Illustrative Rutting Progression for Different RAP Contents"
+              />
+            </div>
+            <div>
+              <Image
+                src={output2}
+                alt="Illustrative Ride Quality Progression for Different RAP Contents"
+              />
+            </div>
+            <div>
+              <Image
+                src={output3}
+                alt="Ride Quality Progression (0-10 scale) for Different RAP Contents"
+              />
+            </div>
+            <div>
+              <Image
+                src={output4}
+                alt="Illustrative PCS Progression (0-10 scale)"
+              />
+            </div>
+          </div>
+
+          <div class="text-white py-5">
+            <p>
+              The study by Goh et al. (2011) showed that incorporating RAP into
+              asphalt mixtures does not reduce mix quality or compactability;
+              instead, RAP-modified mixtures demonstrated equal or improved
+              compaction characteristics compared to virgin-aggregate mixes. The
+              researchers reported that mixtures containing RAP required lower
+              compaction energy than their virgin counterparts, indicating more
+              efficient densification during production. The findings confirm
+              that RAP can be incorporated into asphalt mixtures without
+              compromising workability or performance, and may even enhance
+              certain production efficiencies.
+            </p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
 </div>
 
 <div class="w-full bg-gradient-to-b from-[#7d1416] to-[#df2427]">
-    <div class="max-w-7xl mx-auto flex flex-col space-y-5">
-        <div class="flex justify-center items-center px-8 pt-10">
-            <div class="w-full flex justify-center items-center my-auto">
-                <h1 class="font-bold text-white text-5xl text-center">
-                    Quality of mixes <br />
-                    <span class="text-black">with/without</span>
-                    <br />
-                    RAP
-                </h1>
-            </div>
-        </div>
-        <p class="text-white font-thin text-center">
-            In a study by D’Angelo et al. (2008), D’Angelo et al. (2008)
-            reported two primary benefits for the WMA pavement constructed on
-            SR-417, near Orlando, FL, while additional performance observations
-            for WMA—including rutting depth reduction, improved ride quality
-            retention, lower cracking progression, and better overall PCS
-            evolution—were documented in subsequent FDOT field evaluations for
-            projects on US-92 and SR-11, and studied for five years after its
-            aplication.
-        </p>
-        <div class="flex justify-start">
-            <details class="group p-10">
-                <summary class="cursor-pointer list-none flex justify-start">
-                    <svg
-                        class="transition-transform duration-300 group-open:rotate-180"
-                        fill="#ffffff"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="64px"
-                        height="64px"
-                        viewBox="0 0 100 100"
-                        enable-background="new 0 0 100 100"
-                        xml:space="preserve"
-                        stroke="#ffffff"
-                        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                            id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"></g><g
-                            id="SVGRepo_iconCarrier"
-                        >
-                            <g>
-                                <path
-                                    d="M49.288,59.647c0.383,0.348,0.863,0.519,1.342,0.519c0.076,0,0.151-0.015,0.228-0.023c0.028,0.001,0.057,0.008,0.085,0.008 c0.545,0,1.088-0.222,1.482-0.657l15.231-16.804c0.742-0.818,0.68-2.083-0.139-2.824c-0.818-0.743-2.083-0.679-2.824,0.139 L50.656,55.49L35.169,41.453c-0.819-0.744-2.083-0.68-2.824,0.139c-0.742,0.818-0.68,2.083,0.139,2.824L49.288,59.647z"
-                                ></path>
-                                <path
-                                    d="M50,83.214c18.449,0,33.458-15.009,33.458-33.457c0-18.449-15.009-33.458-33.458-33.458 c-18.448,0-33.457,15.009-33.457,33.458C16.543,68.205,31.552,83.214,50,83.214z M50,20.299c16.243,0,29.458,13.215,29.458,29.458 c0,16.242-13.215,29.457-29.458,29.457c-16.242,0-29.457-13.215-29.457-29.457C20.543,33.514,33.758,20.299,50,20.299z"
-                                ></path>
-                            </g>
-                        </g></svg
-                    >
-                </summary>
-
-                <div class="pt-5 flex flex-col">
-                    <div class="space-y-5">
-                        <div
-                            class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto"
-                        >
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    RAP contributes a stiffer binder that
-                                    improves rutting resistance.
-                                </h3>
-                                <div>
-                                    <p>
-                                        The aged binder present in RAP increases
-                                        the structural stiffness of the blend,
-                                        which:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            enhances high-temperature stability,
-                                        </li>
-                                        <li>
-                                            reduces permanent deformation in
-                                            wheel paths,
-                                        </li>
-                                        <li>
-                                            improves resistance to shear flow.
-                                        </li>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span class="font-bold">Result: </span>RAP
-                                    mixtures typically exhibit lower rutting
-                                    than fully virgin mixtures.
-                                </p>
-                                <p class="font-bold">
-                                    This benefit is one of the most consistently
-                                    documented in international studies.
-                                </p>
-                            </div>
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    RAP improves long-term durability because it
-                                    reduces the aging rate of the virgin binder.
-                                </h3>
-                                <div>
-                                    <p>
-                                        Although it may sound counterintuitive:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            The binder in RAP is already aged,
-                                            meaning it contributes less to
-                                            future oxidative aging.
-                                        </li>
-                                        <li>
-                                            This slows down the overall
-                                            oxidation rate of the virgin binder
-                                            added to the mix.
-                                        </li>
-                                        <li>
-                                            The mixture becomes less prone to
-                                            excessive stiffening over time.
-                                        </li>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span class="font-bold">Result: </span>RAP
-                                    mixtures can maintain more stable mechanical
-                                    properties throughout their service life.
-                                </p>
-                            </div>
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    RAP introduces aggregate particles with
-                                    better adhesion and higher angularity.
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>Aggregates recovered from RAP:</p>
-                                    <div class="pl-5">
-                                        <li>
-                                            retain films of aged binder that
-                                            improve bonding,
-                                        </li>
-                                        <li>
-                                            provide rougher, more angular
-                                            surfaces,
-                                        </li>
-                                        <li>
-                                            create a more interlocked internal
-                                            structure.
-                                        </li>
-                                    </div>
-                                    <p>
-                                        <span class="font-bold"
-                                            >Result:
-                                        </span>increased internal cohesion and
-                                        higher shear resistance, which
-                                        translates into improved structural
-                                        performance.
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    RAP mixtures tend to show lower variability
-                                    and greater uniformity in their properties.
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>RAP:</p>
-                                    <div class="pl-5">
-                                        <li>
-                                            originates from pavements previously
-                                            designed and tested,
-                                        </li>
-                                        <li>
-                                            has already undergone compaction,
-                                            traffic loading, and real-world
-                                            aging,
-                                        </li>
-                                        <li>
-                                            exhibits more stable and predictable
-                                            properties than freshly quarried
-                                            aggregates.
-                                        </li>
-                                    </div>
-                                    <p class="font-bold">
-                                        This contributes to consistency and
-                                        reproducibility—highly valuable
-                                        characteristics in industrial asphalt
-                                        production.
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    In terms of functional performance, RAP
-                                    improves mid-term ride stability.
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>
-                                        FDOT studies (SR-417, US-92, SR-11) show
-                                        that:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            ride quality (RN / PCS) in RAP
-                                            sections remains as stable as, or
-                                            even more stable than, comparable
-                                            virgin sections,
-                                        </li>
-                                        <li>
-                                            particularly after 3–5 years in
-                                            service.
-                                        </li>
-                                    </div>
-                                    <p>
-                                        <span class="font-bold"
-                                            >Result:
-                                        </span>better retention of functional
-                                        performance over time.
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="border border-red-400 bg-white rounded-lg p-6"
-                            >
-                                <h3 class="font-semibold mb-3">
-                                    Economically, RAP improves efficiency and
-                                    reduces variability in effective binder
-                                    content.
-                                </h3>
-                                <div class="space-y-2">
-                                    <p>
-                                        The mechanical implications are direct:
-                                    </p>
-                                    <div class="pl-5">
-                                        <li>
-                                            RAP reduces virgin binder demand,
-                                            lowering variability in the
-                                            viscosity of the blended binder,
-                                        </li>
-                                        <li>
-                                            it enables more consistent control
-                                            of the effective binder content,
-                                        </li>
-                                        <li>
-                                            it reduces dependence on the
-                                            variable quality of newly sourced
-                                            aggregates.
-                                        </li>
-                                    </div>
-                                    <p>
-                                        <span class="font-bold"
-                                            >Outcome:
-                                        </span>more stable production and more
-                                        predictable pavement performance.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-white">
-                            Overall, incorporating RAP enhances rutting
-                            resistance, improves long-term durability, increases
-                            internal cohesion, reduces production variability,
-                            and maintains functional performance—making RAP a
-                            mechanically advantageous component compared to
-                            virgin-only mixtures.
-                        </p>
-                    </div>
-                </div>
-            </details>
-        </div>
+  <div class="max-w-7xl mx-auto flex flex-col space-y-5">
+    <div class="flex justify-center items-center px-8 pt-10">
+      <div class="w-full flex justify-center items-center my-auto">
+        <h1 class="font-bold text-white text-5xl text-center">
+          Quality of mixes <br />
+          <span class="text-black">with/without</span>
+          <br />
+          RAP
+        </h1>
+      </div>
     </div>
+    <p class="text-white font-thin text-center">
+      In a study by D’Angelo et al. (2008), D’Angelo et al. (2008) reported two
+      primary benefits for the WMA pavement constructed on SR-417, near Orlando,
+      FL, while additional performance observations for WMA—including rutting
+      depth reduction, improved ride quality retention, lower cracking
+      progression, and better overall PCS evolution—were documented in
+      subsequent FDOT field evaluations for projects on US-92 and SR-11, and
+      studied for five years after its aplication.
+    </p>
+    <div class="flex justify-start">
+      <details class="group p-10">
+        <summary class="cursor-pointer list-none flex justify-start">
+          <svg
+            class="transition-transform duration-300 group-open:rotate-180"
+            fill="#ffffff"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="64px"
+            height="64px"
+            viewBox="0 0 100 100"
+            enable-background="new 0 0 100 100"
+            xml:space="preserve"
+            stroke="#ffffff"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M49.288,59.647c0.383,0.348,0.863,0.519,1.342,0.519c0.076,0,0.151-0.015,0.228-0.023c0.028,0.001,0.057,0.008,0.085,0.008 c0.545,0,1.088-0.222,1.482-0.657l15.231-16.804c0.742-0.818,0.68-2.083-0.139-2.824c-0.818-0.743-2.083-0.679-2.824,0.139 L50.656,55.49L35.169,41.453c-0.819-0.744-2.083-0.68-2.824,0.139c-0.742,0.818-0.68,2.083,0.139,2.824L49.288,59.647z"
+                ></path>
+                <path
+                  d="M50,83.214c18.449,0,33.458-15.009,33.458-33.457c0-18.449-15.009-33.458-33.458-33.458 c-18.448,0-33.457,15.009-33.457,33.458C16.543,68.205,31.552,83.214,50,83.214z M50,20.299c16.243,0,29.458,13.215,29.458,29.458 c0,16.242-13.215,29.457-29.458,29.457c-16.242,0-29.457-13.215-29.457-29.457C20.543,33.514,33.758,20.299,50,20.299z"
+                ></path>
+              </g>
+            </g></svg
+          >
+        </summary>
+
+        <div class="pt-5 flex flex-col">
+          <div class="space-y-5">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto"
+            >
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  RAP contributes a stiffer binder that improves rutting
+                  resistance.
+                </h3>
+                <div>
+                  <p>
+                    The aged binder present in RAP increases the structural
+                    stiffness of the blend, which:
+                  </p>
+                  <div class="pl-5">
+                    <li>enhances high-temperature stability,</li>
+                    <li>reduces permanent deformation in wheel paths,</li>
+                    <li>improves resistance to shear flow.</li>
+                  </div>
+                </div>
+                <p>
+                  <span class="font-bold">Result: </span>RAP mixtures typically
+                  exhibit lower rutting than fully virgin mixtures.
+                </p>
+                <p class="font-bold">
+                  This benefit is one of the most consistently documented in
+                  international studies.
+                </p>
+              </div>
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  RAP improves long-term durability because it reduces the aging
+                  rate of the virgin binder.
+                </h3>
+                <div>
+                  <p>Although it may sound counterintuitive:</p>
+                  <div class="pl-5">
+                    <li>
+                      The binder in RAP is already aged, meaning it contributes
+                      less to future oxidative aging.
+                    </li>
+                    <li>
+                      This slows down the overall oxidation rate of the virgin
+                      binder added to the mix.
+                    </li>
+                    <li>
+                      The mixture becomes less prone to excessive stiffening
+                      over time.
+                    </li>
+                  </div>
+                </div>
+                <p>
+                  <span class="font-bold">Result: </span>RAP mixtures can
+                  maintain more stable mechanical properties throughout their
+                  service life.
+                </p>
+              </div>
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  RAP introduces aggregate particles with better adhesion and
+                  higher angularity.
+                </h3>
+                <div class="space-y-2">
+                  <p>Aggregates recovered from RAP:</p>
+                  <div class="pl-5">
+                    <li>retain films of aged binder that improve bonding,</li>
+                    <li>provide rougher, more angular surfaces,</li>
+                    <li>create a more interlocked internal structure.</li>
+                  </div>
+                  <p>
+                    <span class="font-bold">Result: </span>increased internal
+                    cohesion and higher shear resistance, which translates into
+                    improved structural performance.
+                  </p>
+                </div>
+              </div>
+              <div class="border border-red-400 bg-white rounded-lg p-6">
+                <h3 class="font-semibold mb-3">
+                  RAP mixtures tend to show lower variability and greater
+                  uniformity in their properties.
+                </h3>
+                <div class="space-y-2">
+                  <p>RAP:</p>
+                  <div class="pl-5">
+                    <li>
+                      originates from pavements previously designed and tested,
+                    </li>
+                    <li>
+                      has already undergone compaction, traffic loading, and
+                      real-world aging,
+                    </li>
+                    <li>
+                      exhibits more stable and predictable properties than
+                      freshly quarried aggregates.
+                    </li>
+                  </div>
+                  <p class="font-bold">
+                    This contributes to consistency and reproducibility—highly
+                    valuable characteristics in industrial asphalt production.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="border border-red-400 bg-white rounded-lg p-6 space-y-5"
+              >
+                <h3 class="font-semibold mb-3">
+                  In terms of functional performance, RAP improves mid-term ride
+                  stability.
+                </h3>
+                <div class="space-y-2">
+                  <p>FDOT studies (SR-417, US-92, SR-11) show that:</p>
+                  <div class="pl-5">
+                    <li>
+                      ride quality (RN / PCS) in RAP sections remains as stable
+                      as, or even more stable than, comparable virgin sections,
+                    </li>
+                    <li>particularly after 3–5 years in service.</li>
+                  </div>
+                  <p>
+                    <span class="font-bold">Result: </span>better retention of
+                    functional performance over time.
+                  </p>
+                </div>
+              </div>
+              <div class="border border-red-400 bg-white rounded-lg p-6">
+                <h3 class="font-semibold mb-3">
+                  Economically, RAP improves efficiency and reduces variability
+                  in effective binder content.
+                </h3>
+                <div class="space-y-2">
+                  <p>The mechanical implications are direct:</p>
+                  <div class="pl-5">
+                    <li>
+                      RAP reduces virgin binder demand, lowering variability in
+                      the viscosity of the blended binder,
+                    </li>
+                    <li>
+                      it enables more consistent control of the effective binder
+                      content,
+                    </li>
+                    <li>
+                      it reduces dependence on the variable quality of newly
+                      sourced aggregates.
+                    </li>
+                  </div>
+                  <p>
+                    <span class="font-bold">Outcome: </span>more stable
+                    production and more predictable pavement performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="text-white">
+              Overall, incorporating RAP enhances rutting resistance, improves
+              long-term durability, increases internal cohesion, reduces
+              production variability, and maintains functional
+              performance—making RAP a mechanically advantageous component
+              compared to virgin-only mixtures.
+            </p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
 </div>
 
 <div class="max-w-7xl mx-auto px-8 pt-10 space-y-10">
-    <div>
-        <h1 class="font-bold text-3xl">
-            Why are people skeptical about RAP and reluctant to trust it?
-        </h1>
-    </div>
-    <div>
-        <p>
-            Even today, many people do not trust asphalt mixes that incorporate
-            RAP. A common belief is that these mixes are of lower quality
-            because RAP is often perceived as a waste material rather than a
-            valuable resource. This perception is largely rooted in early
-            recycling practices, where RAP was sometimes used without proper
-            processing, control, or mix design adjustments. As a result,
-            inconsistent performance in some past projects reinforced the idea
-            that RAP-containing mixes are inferior. However, this skepticism
-            persists despite significant advances in plant technology, mix
-            design methods, and quality control that allow RAP to be used
-            reliably and consistently in modern asphalt production.
-        </p>
-    </div>
+  <div>
+    <h1 class="font-bold text-3xl">
+      Why are people skeptical about RAP and reluctant to trust it?
+    </h1>
+  </div>
+  <div>
+    <p>
+      Even today, many people do not trust asphalt mixes that incorporate RAP. A
+      common belief is that these mixes are of lower quality because RAP is
+      often perceived as a waste material rather than a valuable resource. This
+      perception is largely rooted in early recycling practices, where RAP was
+      sometimes used without proper processing, control, or mix design
+      adjustments. As a result, inconsistent performance in some past projects
+      reinforced the idea that RAP-containing mixes are inferior. However, this
+      skepticism persists despite significant advances in plant technology, mix
+      design methods, and quality control that allow RAP to be used reliably and
+      consistently in modern asphalt production.
+    </p>
+  </div>
 
-    <div class="bg-gray-100 pb-5 space-y-5">
-        <div
-            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+  <div class="bg-gray-100 pb-5 space-y-5">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">Lack of experience</h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>They do not know how to design asphalt mixes with RAP.</li>
+          <li>
+            They do not know how to account for the binder already present in
+            RAP.
+          </li>
+          <li>
+            They lack a clear understanding of how aggregate properties
+            influence mix performance.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">Outdated perceptions</h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>
+            They associate RAP with early recycling practices that lacked proper
+            control.
+          </li>
+          <li>
+            They assume RAP is a waste material rather than a reusable
+            engineered resource.
+          </li>
+          <li>
+            They generalize isolated past failures to all RAP-containing mixes.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">
+          Inadequate plant technology
+        </h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>
+            They lack equipment capable of properly heating and blending RAP.
+          </li>
+          <li>They do not have controlled RAP introduction systems.</li>
+          <li>
+            They cannot maintain consistent temperatures during production.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">
+          Process control limitations
+        </h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>
+            They do not monitor RAP moisture, gradation, or binder content
+            consistently.
+          </li>
+          <li>
+            They lack proper temperature and blending control during mixing.
+          </li>
+          <li>
+            They rely on conservative assumptions instead of data-driven
+            adjustments.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">
+          Risk aversion and conservative specifications
+        </h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>
+            They avoid RAP due to fear of performance claims or penalties.
+          </li>
+          <li>
+            They follow conservative specifications that discourage RAP use.
+          </li>
+          <li>
+            They prefer traditional practices over adopting newer technologies.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
+      >
+        <h3 class="text-xl font-bold mb-6 text-black">
+          Lack of understanding and investigation of rejuvenators
+        </h3>
+        <ul class="list-disc ml-5 space-y-3 text-gray-800">
+          <li>
+            They do not fully understand how rejuvenators interact with aged RAP
+            binder.
+          </li>
+          <li>
+            They lack sufficient laboratory testing and field validation to
+            determine proper rejuvenator dosage.
+          </li>
+          <li>
+            They are uncertain about the long-term performance and durability of
+            rejuvenated RAP mixtures.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      According to Liu et al. (2024), two out of every three contractors outside
+      the United States remain skeptical of RAP, often considering it a
+      low-quality waste material unsuitable for new road construction. However,
+      this perception does not reflect the reality of modern asphalt production.
+      Contractors who recognize RAP as a high-quality material for new pavements
+      gain a clear competitive advantage over those who continue to reject it.
+      By properly incorporating RAP, production costs can be reduced by up to
+      35% while maintaining high-quality asphalt mixes. These results are
+      achieved not only through the use of RAP itself, but through the use of
+      appropriate plant equipment and process control that allow RAP to be
+      processed, heated, and blended correctly.
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto pb-5">
+    <div class="bg-[#e6e7e8] rounded-[3rem] p-10 md:p-16 relative">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12"
+      >
+        <div class="max-w-2xl">
+          <h1 class="font-bold text-3xl md:text-4xl text-black leading-tight">
+            <span class="border-b-4 pb-1">
+              How to Make Money by Being a Great RAPper — RAP Done Right
+            </span>
+          </h1>
+          <p class="font-bold text-[#14427c] mt-4 text-lg">
+            General Guidelines for Incorporating RAP into Asphalt Mix Design and
+            Production
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between gap-4 md:gap-12">
+        <button
+          id="prev"
+          class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
         >
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Lack of experience
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They do not know how to design asphalt mixes with RAP.
-                    </li>
-                    <li>
-                        They do not know how to account for the binder already
-                        present in RAP.
-                    </li>
-                    <li>
-                        They lack a clear understanding of how aggregate
-                        properties influence mix performance.
-                    </li>
-                </ul>
-            </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+          </svg>
+        </button>
 
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Outdated perceptions
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They associate RAP with early recycling practices that
-                        lacked proper control.
-                    </li>
-                    <li>
-                        They assume RAP is a waste material rather than a
-                        reusable engineered resource.
-                    </li>
-                    <li>
-                        They generalize isolated past failures to all
-                        RAP-containing mixes.
-                    </li>
-                </ul>
-            </div>
-
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Inadequate plant technology
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They lack equipment capable of properly heating and
-                        blending RAP.
-                    </li>
-                    <li>
-                        They do not have controlled RAP introduction systems.
-                    </li>
-                    <li>
-                        They cannot maintain consistent temperatures during
-                        production.
-                    </li>
-                </ul>
-            </div>
-
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Process control limitations
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They do not monitor RAP moisture, gradation, or binder
-                        content consistently.
-                    </li>
-                    <li>
-                        They lack proper temperature and blending control during
-                        mixing.
-                    </li>
-                    <li>
-                        They rely on conservative assumptions instead of
-                        data-driven adjustments.
-                    </li>
-                </ul>
-            </div>
-
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Risk aversion and conservative specifications
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They avoid RAP due to fear of performance claims or
-                        penalties.
-                    </li>
-                    <li>
-                        They follow conservative specifications that discourage
-                        RAP use.
-                    </li>
-                    <li>
-                        They prefer traditional practices over adopting newer
-                        technologies.
-                    </li>
-                </ul>
-            </div>
-
-            <div
-                class="bg-[#eaeaea] border border-black rounded-[30px] p-8 flex flex-col"
-            >
-                <h3 class="text-xl font-bold mb-6 text-black">
-                    Lack of understanding and investigation of rejuvenators
-                </h3>
-                <ul class="list-disc ml-5 space-y-3 text-gray-800">
-                    <li>
-                        They do not fully understand how rejuvenators interact
-                        with aged RAP binder.
-                    </li>
-                    <li>
-                        They lack sufficient laboratory testing and field
-                        validation to determine proper rejuvenator dosage.
-                    </li>
-                    <li>
-                        They are uncertain about the long-term performance and
-                        durability of rejuvenated RAP mixtures.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <p>
-            According to Liu et al. (2024), two out of every three contractors
-            outside the United States remain skeptical of RAP, often considering
-            it a low-quality waste material unsuitable for new road
-            construction. However, this perception does not reflect the reality
-            of modern asphalt production. Contractors who recognize RAP as a
-            high-quality material for new pavements gain a clear competitive
-            advantage over those who continue to reject it. By properly
-            incorporating RAP, production costs can be reduced by up to 35%
-            while maintaining high-quality asphalt mixes. These results are
-            achieved not only through the use of RAP itself, but through the use
-            of appropriate plant equipment and process control that allow RAP to
-            be processed, heated, and blended correctly.
-        </p>
-    </div>
-
-    <div class="max-w-7xl mx-auto  pb-5">
-        <div class="bg-[#e6e7e8] rounded-[3rem] p-10 md:p-16 relative">
-            <div
-                class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12"
-            >
-                <div class="max-w-2xl">
-                    <h1
-                        class="font-bold text-3xl md:text-4xl text-black leading-tight"
-                    >
-                        <span class="border-b-4 pb-1">
-                            How to Make Money by Being a Great RAPper — RAP Done
-                            Right
-                        </span>
-                    </h1>
-                    <p class="font-bold text-[#14427c] mt-4 text-lg">
-                        General Guidelines for Incorporating RAP into Asphalt
-                        Mix Design and Production
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-center justify-between gap-4 md:gap-12">
-                <button
-                    id="prev"
-                    class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
+        <div class="w-full overflow-hidden relative">
+          <div
+            id="slider"
+            class="flex transition-transform duration-500 ease-in-out items-center"
+            style={`width: ${items.length * 100}%`}
+          >
+            {
+              items.map((item, index) => (
+                <div
+                  class="w-full flex-shrink-0 px-4 md:px-12"
+                  style={`width: ${100 / items.length}%`}
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2.5"
-                        stroke="currentColor"
-                        class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
-                    </svg>
-                </button>
-
-                <div class="w-full overflow-hidden relative">
-                    <div
-                        id="slider"
-                        class="flex transition-transform duration-500 ease-in-out items-center"
-                        style={`width: ${items.length * 100}%`}
-                    >
-                        {
-                            items.map((item, index) => (
-                                <div
-                                    class="w-full flex-shrink-0 px-4 md:px-12"
-                                    style={`width: ${100 / items.length}%`}
-                                >
-                                    <div class="flex flex-col gap-6">
-                                        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                                            <div class="flex-shrink-0 bg-[#14427c] text-white w-12 h-14 flex items-center justify-center text-3xl font-medium rounded-md">
-                                                {item.id}
-                                            </div>
-                                            <h3 class="text-[#14427c] text-xl md:text-2xl font-bold leading-snug">
-                                                {item.title}
-                                            </h3>
-                                        </div>
-
-                                        <div class="text-black text-lg leading-relaxed md:pl-16 min-h-[180px]">
-                                            <p>{item.text}</p>
-
-                                            {item.list && (
-                                                <ul class="list-disc pl-5 mt-4 space-y-2">
-                                                    {item.list.map((li) => (
-                                                        <li class="text-black">
-                                                            {li}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                  <div class="flex flex-col gap-6">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                      <div class="flex-shrink-0 bg-[#14427c] text-white w-12 h-14 flex items-center justify-center text-3xl font-medium rounded-md">
+                        {item.id}
+                      </div>
+                      <h3 class="text-[#14427c] text-xl md:text-2xl font-bold leading-snug">
+                        {item.title}
+                      </h3>
                     </div>
-                </div>
-                <button
-                    id="next"
-                    class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2.5"
-                        stroke="currentColor"
-                        class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-                    </svg>
-                </button>
-            </div>
 
-            <div class="flex justify-center gap-4 mt-8 md:hidden lg:hidden">
-                <button id="prev-mobile" class="px-4 py-2 bg-gray-300 rounded"
-                    >←</button
-                >
-                <button id="next-mobile" class="px-4 py-2 bg-gray-300 rounded"
-                    >→</button
-                >
-            </div>
+                    <div class="text-black text-lg leading-relaxed md:pl-16 min-h-[180px]">
+                      <p>{item.text}</p>
+
+                      {item.list && (
+                        <ul class="list-disc pl-5 mt-4 space-y-2">
+                          {item.list.map((li) => (
+                            <li class="text-black">{li}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
+        <button
+          id="next"
+          class="hidden md:flex flex-shrink-0 w-16 h-16 rounded-full border-[3px] border-black items-center justify-center hover:bg-gray-300 transition group"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="w-8 h-8 text-black group-hover:scale-110 transition-transform"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex justify-center gap-4 mt-8 md:hidden lg:hidden">
+        <button id="prev-mobile" class="px-4 py-2 bg-gray-300 rounded">←</button
+        >
+        <button id="next-mobile" class="px-4 py-2 bg-gray-300 rounded">→</button
+        >
+      </div>
     </div>
+  </div>
 </div>
 
 <script>
-    let index = 0;
-    const slider = document.getElementById("slider");
-    const total = slider.children.length;
+  let index = 0;
+  const slider = document.getElementById("slider");
+  const total = slider.children.length;
 
-    function moveSlider() {
-        slider.style.transform = `translateX(-${index * 10}%)`;
-    }
+  function moveSlider() {
+    slider.style.transform = `translateX(-${index * 10}%)`;
+  }
 
-    document.getElementById("next").addEventListener("click", () => {
-        index = (index + 1) % total;
-        moveSlider();
-    });
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % total;
+    moveSlider();
+  });
 
-    document.getElementById("prev").addEventListener("click", () => {
-        index = (index - 1 + total) % total;
-        moveSlider();
-    });
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    moveSlider();
+  });
 
-    document.getElementById("next-mobile").addEventListener("click", () => {
-        index = (index + 1) % total;
-        moveSlider();
-    });
+  document.getElementById("next-mobile").addEventListener("click", () => {
+    index = (index + 1) % total;
+    moveSlider();
+  });
 
-    document.getElementById("prev-mobile").addEventListener("click", () => {
-        index = (index - 1 + total) % total;
-        moveSlider();
-    });
+  document.getElementById("prev-mobile").addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    moveSlider();
+  });
 </script>
-
