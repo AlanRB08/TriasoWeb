@@ -1,7 +1,4 @@
 ---
-import Tred from "../../assets/images/AsphaltStorage/redT.webp";
-import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
-import Tolva from "../../assets/images/BinUnits/TolvaConfCompl.webp";
 import rap from "../../assets/images/DrumMixers/rap.webp";
 import img1 from "../../assets/images/RapBins/RAProv5.webp";
 import RBDropdowns from "./RBDropdowns.astro";
@@ -9,6 +6,7 @@ import img5 from "../../assets/images/BinUnits/TolvaConfCompl.webp";
 import rapFlight from "../../assets/images/DrumMixers/a21.webp";
 import RBDropdown2 from "./RBDropdown2.astro";
 import AnalisisInversion from "../Calculadora/AnalisisInversion";
+import { Image } from "astro:assets";
 ---
 
 <section class="w-full mt-28">
@@ -43,7 +41,7 @@ import AnalisisInversion from "../Calculadora/AnalisisInversion";
         </p>
     </div>
     <div class="max-w-7xl mx-auto px-8 py-10">
-        <img src={img1.src} alt="" />
+        <Image src={img1} alt="RAP (RECYCLED ASPHALT PAVEMENT) System" />
     </div>
     <RBDropdowns />
     <section
@@ -93,15 +91,15 @@ import AnalisisInversion from "../Calculadora/AnalisisInversion";
                     </li>
                 </div>
                 <div class="w-full flex justify-center py-5">
-                    <img
-                        src={img5.src}
-                        alt=""
+                    <Image
+                        src={img5}
+                        alt="RAP Bin"
                         class="w-1/2 lg:w-3/4 md:w-3/4"
                     />
                 </div>
 
                 <div class="w-full flex justify-center py-5">
-                    <img src={rap.src} alt="" class="w-1/2 lg:w-1/2 md:w-3/4" />
+                    <Image src={rap} alt="RAP Collar" class="w-1/2 lg:w-1/2 md:w-3/4" />
                 </div>
                 <div class="w-full text-white flex flex-col justify-center">
                     <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br
@@ -164,7 +162,7 @@ import AnalisisInversion from "../Calculadora/AnalisisInversion";
                 <div
                     class="w-full text-white flex flex-col justify-between py-5"
                 >
-                    <img src={rapFlight.src} alt="" class="w-full rounded-lg" />
+                    <Image src={rapFlight} alt="RAP ENTRY FLIGHTS" class="w-full rounded-lg" />
                     <p class="font-thin text-white">
                         This controlled triple-heating system allows a higher
                         percentage of RAP to be processed consistently, up to

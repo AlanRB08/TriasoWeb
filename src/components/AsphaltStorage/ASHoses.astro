@@ -1,6 +1,5 @@
 ---
-import Image from "astro/components/Image.astro";
-import img5 from "../../assets/images/AsphaltPlant/agitators1.webp";
+import { Image } from "astro:assets";
 import img1 from "../../assets/images/AsphaltStorage/ATG1.webp";
 import img3 from "../../assets/images/AsphaltStorage/ATG2.webp";
 import img4 from "../../assets/images/AsphaltStorage/ASafety3.webp";
@@ -21,16 +20,16 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
         </div>
 
         <div class="max-w-7xl px-8 mx-auto flex justify-center">
-            <img src={img6.src} alt="" class="hero-img lg:w-4/5 rounded-lg" />
+            <Image src={img6} alt="Image of an Asphalt Storage Tank inside the production facility" class="hero-img lg:w-4/5 rounded-lg" />
         </div>
 
         <div
             class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
         >
             <div class="w-full hidden lg:flex md:w-auto">
-                <img
-                    src={ASProv2.src}
-                    alt=""
+                <Image
+                    src={ASProv2}
+                    alt="Front of the Asphalt Storage Tank"
                     class="side-img rounded-2xl will-change-transform"
                 />
             </div>
@@ -68,23 +67,23 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
         <div
             class="max-w-7xl hidden px-8 lg:flex justify-center lg:justify-end"
         >
-            <img
-                src={img4.src}
-                alt=""
+            <Image
+                src={img4}
+                alt="Asphalt Tank with a Oil Heater installed"
                 class="fade-img rounded-lg lg:w-3/5 will-change-transform"
             />
         </div>
 
         <div class="w-full overflow-hidden relative flex flex-col lg:hidden">
-            <img
-                src={img4.src}
-                alt=""
+            <Image
+                src={img4}
+                alt="Asphalt Tank with a Oil Heater installed"
                 class="rounded-2xl w-[60%] translate-x-[200px] translate-y-5"
             />
 
-            <img
-                src={ASProv2.src}
-                alt=""
+            <Image
+                src={ASProv2}
+                alt="Front of the Asphalt Storage Tank"
                 class="absolute top-0 left-0 w-[40%] rounded-lg translate-x-1 translate-y-2"
             />
         </div>
@@ -107,10 +106,10 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
                     data-img1={img1.src}
                     data-img2={img3.src}
                 >
-                    <img
+                    <Image
                         id="miImagen"
-                        src={img1.src}
-                        alt=""
+                        src={img1}
+                        alt="Asphalt storage tank modified for a specific need"
                         class="w-full max-w-[300px] md:max-w-[600px] max-h-[250px] object-contain"
                     />
                 </div>
@@ -198,7 +197,7 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
             presentation of your asphalt storage tank.
         </p>
         <div>
-            <img src={sideP.src} alt="" />
+            <Image src={sideP} alt="Aesthetic Side Panel" />
         </div>
     </div>
 </section>

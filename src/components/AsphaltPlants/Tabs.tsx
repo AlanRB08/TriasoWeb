@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Imagen 1" },
-  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Imagen 2" },
+  { id: 0, src: "/Gallery/baghouses1.webp", alt: "Bag house mounted on the same chassis as the drum mixer" },
+  { id: 1, src: "/Gallery/baghouses2.webp", alt: "Bag house self-contained" },
 ];
 
 export default function Tabs() {

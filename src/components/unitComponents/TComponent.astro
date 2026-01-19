@@ -1,6 +1,7 @@
 ---
 import Tred from "../../assets/images/AsphaltStorage/redT.png";
 import Whatsbtn from "./Whatsbtn.astro";
+import { Image } from "astro:assets";
 ---
 <div class='grid grid-cols-1 md:grid-cols-2 relative'>
         <div class='text-white bg-redBg p-4 font-bold py-10'>
@@ -22,6 +23,6 @@ import Whatsbtn from "./Whatsbtn.astro";
             </div>
         </div>
         <div class="max-w-[150px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <img src={Tred.src} alt="" class="w-full h-auto">
+          <Image src={Tred} alt="" class="w-full h-auto">
         </div>
 </div>

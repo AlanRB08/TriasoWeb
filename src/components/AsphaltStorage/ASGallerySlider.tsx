@@ -85,23 +85,36 @@ export default function GallerySlider({ images }: Props) {
             <div className="max-w-7xl mx-auto flex justify-end items-center">
                 {!isMobile && (
                     <>
-                        <div className="space-x-5">
-                            <button
-                                onClick={prevSlide}
-                                className=" bg-[#d9d9d9] rounded-full p-5"
-                                aria-label="Previous"
-                            >
-                                ‹
+                        <div className="w-full flex justify-center items-center gap-5  md:flex lg:justify-end ">
+                            <button onClick={prevSlide} className=" p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-50 transition active:scale-95 ">
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#4d4d4d"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
                             </button>
 
-                            <button
-                                onClick={nextSlide}
-                                className=" bg-[#d9d9d9] rounded-full p-5 "
-                                aria-label="Next"
-                            >
-                                ›
+                            <button onClick={nextSlide} className="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-50 transition active:scale-95 ">
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#4d4d4d"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
                             </button>
-
                         </div>
 
                     </>

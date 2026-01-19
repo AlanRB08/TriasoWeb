@@ -1,11 +1,10 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import img2 from "../../assets/images/ColdMix/pugmill2.webp";
 import img3 from "../../assets/images/ColdMix/pugmill3.webp";
 import GallerySlider from "../unitComponents/GallerySlider";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import AcordeonItem from "../unitComponents/AcordeonItem";
-import img6 from "../../assets/images/AsphaltPlant/elevator1.webp";
 import binUnit1 from "../../assets/images/BinUnits/binUnit1.webp";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import PGMC from "../../assets/images/ColdMix/PGMC.mp4";
@@ -16,42 +15,42 @@ const binSlides = [
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG1.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+      "Cold mixing plant, stabilizer, up to 200 Tmph, with floor discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG2.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+      "Cold mixing plant, stabilizer, up to 200 Tmph, with floor discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG3.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+      "Cold mixing plant, stabilizer, up to 200 Tmph, with floor discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG4.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 200 Tmph, con descarga en piso",
+      "Cold mixing plant, stabilizer, up to 200 Tmph, with floor discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG5.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+      "Cold mixing plant, stabilizer, up to 300 Tmph, with elevated discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG6.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+      "Cold mixing plant, stabilizer, up to 300 Tmph, with elevated discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG7.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+      "Cold mixing plant, stabilizer, up to 300 Tmph, with elevated discharge",
   },
   {
     image: "src/assets/images/ColdMix/GallerySlider/CMG8.webp",
     caption:
-      "Planta mezcladora en frío, estabilizadora, de hasta 300 Tmph, con descarga elevada",
+      "Cold mixing plant, stabilizer, up to 300 Tmph, with elevated discharge",
   },
 ];
 ---
@@ -92,7 +91,7 @@ const binSlides = [
     class="max-w-[2400px] grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center"
   >
     <div class="col-span-2 flex justify-start md:justify-center">
-      <Image src={binUnit1} alt="" class="w-3/4 md:w-full" />
+      <Image src={binUnit1} alt="Precision Dosing Systems in Cold Mix Asphalt Plants" class="w-3/4 md:w-full" />
     </div>
     <div
       class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 md:pl-0 pl-8"
@@ -173,7 +172,7 @@ const binSlides = [
       class="max-w-7xl grid grid-cols-1 md:grid-cols-2 p-6 justify-center items-center gap-3 md:gap-10 bg-grisSubP px-8"
     >
       <div>
-        <Image src={img2} alt="" />
+        <Image src={img2} alt="Mixing paddles" />
       </div>
       <div>
         <h2 class="text-lg md:text-2xl text-blueMain">The mixing paddles</h2>
@@ -202,7 +201,7 @@ const binSlides = [
     class="w-full lg:w-8/12 flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8"
   >
     <div class="w-full flex justify-center">
-      <Image src={img3} alt="" class={"w-3/4 h-auto object-contain"} />
+      <Image src={img3} alt="Inside of a pugmill" class={"w-3/4 h-auto object-contain"} />
     </div>
     <p class="text-grisT text-base md:text-lg">
       The pugmill features twin synchronized shafts driven by a gear system for
@@ -217,7 +216,7 @@ const binSlides = [
     class="max-w-[2400px] grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 mb-5 h-full"
   >
     <div class="flex items-center justify-start col-span-1">
-      <Image src={PlaMFDscC1} alt="" class="w-[70%]" />
+      <Image src={PlaMFDscC1} alt="Pugmill on top of the system" class="w-[70%]" />
     </div>
     <div
       class="grid grid-cols-2 md:grid-cols-3 col-span-2 justify-center items-start gap-10 md:gap-20 px-8 bg-bgBeige p-6 rounded-l-2xl"
@@ -273,9 +272,9 @@ const binSlides = [
       class="w-full bg-blueMain px-4 lg:px-32 grid grid-cols-1 md:grid-cols-2 py-10 mb-5 items-center gap-6"
     >
       <div class="w-full flex justify-center">
-        <img
-          src={CMHigh.src}
-          alt=""
+        <Image
+          src={CMHigh}
+          alt="Bin units connected to trucks"
           class="w-full md:w-4/5 lg:w-3/5 rounded-2xl"
         />
       </div>

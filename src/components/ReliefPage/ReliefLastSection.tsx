@@ -62,7 +62,7 @@ export default function ReliefLastSection() {
                         </div>
 
                         <div>
-                            <img src={img1.src} alt="" />
+                            <img src={img1.src} alt="TRIASO OS on different systems" />
                         </div>
 
                         <div className='pb-10'>

@@ -1,9 +1,8 @@
 ---
-import Boxes from "../../assets/images/Boxes.webp";
 import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
 import img1 from "../../assets/images/AsphaltPlant/tips.webp";
 import GallerySlider2 from "./GallerySlider2";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 const images1 = [
   { src: "/Gallery/fab-silo.webp", title: "Silo Manufacturing" },
@@ -65,10 +64,10 @@ const images1 = [
           Purchasing an asphalt plant is a significant investment and serves as
           the foundation of an asphalt mix production business. Buy wisely.
         </p>
-        <Image src={img1} alt="" class="block md:hidden my-10" />
+        <Image src={img1} alt="Asphalt plant" class="block md:hidden my-10" />
         <LearnBtnBlue  href="/TipsAsphalt"/>
       </div>
-      <Image src={img1} alt="" class="hidden md:block" />
+      <Image src={img1} alt="Asphalt plant" class="hidden md:block" />
     </div>
   </div>
   <GallerySlider2 client:load images={images1} />

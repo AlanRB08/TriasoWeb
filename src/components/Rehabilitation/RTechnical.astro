@@ -8,6 +8,7 @@ import Rehab3 from "../../assets/images/Service/Rehabilitation/Rehab3.webp";
 import icono1 from "../../assets/images/Service/Rehabilitation/30.webp";
 import icono2 from "../../assets/images/Service/Rehabilitation/31.webp";
 import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
+import { Image } from "astro:assets";
 ---
 
 <section class="w-full flex flex-col justify-center items-center">
@@ -27,12 +28,12 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
       </h2>
     </div>
     <div class="w-full col-span-2 flex justify-center px-4">
-      <img src={SpareCabin.src} alt="" class="w-full md:w-3/5 rounded-2xl" />
+      <Image src={SpareCabin} alt="Control Cabins" class="w-full md:w-3/5 rounded-2xl" />
     </div>
   </div>
   <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:px-32 max-w-7xl">
     <div class="w-full flex justify-center">
-      <img src={rodillo2.src} alt="" class="max-h-[300px]" />
+      <Image src={rodillo2} alt="TRIASO Roller" class="max-h-[300px]" />
     </div>
     <div class="w-full flex flex-col justify-center px-4">
       <h2 class="font-bold text-blueMain text-lg md:text-xl">
@@ -44,7 +45,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
       </p>
     </div>
     <div class="w-full flex justify-center">
-      <img src={rodillo3.src} alt="" class="max-h-[300px]" />
+      <Image src={rodillo3} alt="TRIASO Roller" class="max-h-[300px]" />
     </div>
     <div class="w-full flex flex-col justify-center px-4">
       <h2 class="font-bold text-grisT text-lg md:text-xl">
@@ -56,7 +57,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
       </p>
     </div>
     <div class="w-full flex justify-center">
-      <img src={rodillo1.src} alt="" class="max-w-[300px] md:max-h-[400px]" />
+      <Image src={rodillo1} alt="TRIASO Roller" class="max-w-[300px] md:max-h-[400px]" />
     </div>
     <div class="w-full flex flex-col justify-center px-4">
       <h2 class="font-bold text-redBg text-lg md:text-xl">
@@ -72,7 +73,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
     class="w-full px-8 md:px-52 flex justify-center bg-gradient-to-b from-bgMain to-grisT"
   >
     <div class="w-full max-w-7xl flex justify-center mt-2">
-      <img src={Rehab3.src} alt="" class="rounded-2xl w-full md:w-3/5" />
+      <Image src={Rehab3} alt="Asphalt Storage Tank" class="rounded-2xl w-full md:w-3/5" />
     </div>
   </div>
   <div class="w-full flex flex-col justify-center items-center bg-grisT">
@@ -81,7 +82,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
     </h2><br />
     <div class="w-full flex flex-col gap-2 px-8 items-start max-w-7xl">
       <div class="w-full flex gap-2 items-center">
-        <img src={icono1.src} alt="" class="w-[80px] h-[80px]" />
+        <Image src={icono1} alt="Arrows icon" class="w-[80px] h-[80px]" />
         <h3 class="font-bold text-white text-xl md:text-2xl">
           Boost efficiency and reduce fuel consumption
         </h3>
@@ -102,7 +103,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
           <h3 class="w-full font-bold text-white text-xl md:text-2xl text-end">
             Minimal downtime
           </h3>
-          <img src={icono3.src} alt="" class="w-[80px] h-[80px]" />
+          <Image src={icono3} alt="Watch icon" class="w-[80px] h-[80px]" />
         </div>
         <div class="w-full">
           <p class="font-thin text-white text-base md:text-lg text-end">
@@ -114,7 +115,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
     </div>
     <div class="w-full flex flex-col gap-2 px-8 max-w-7xl items-start">
       <div class="w-full flex gap-2 items-center">
-        <img src={icono2.src} alt="" class="w-[80px] h-[80px]" />
+        <Image src={icono2} alt="Investment icon" class="w-[80px] h-[80px]" />
         <h3 class="font-bold text-white text-xl md:text-2xl">
           Return on investment
         </h3>
@@ -127,7 +128,7 @@ import icono3 from "../../assets/images/Service/Rehabilitation/32.webp";
       </div>
     </div>
     <div class="w-full flex justify-center">
-      <img src={logo.src} alt="" />
+      <Image src={logo} alt="TRIASO Logo" />
     </div>
   </div>
 </section>

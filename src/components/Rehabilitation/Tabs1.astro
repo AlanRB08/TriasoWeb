@@ -1,6 +1,7 @@
 ---
 import Rehab1 from "../../assets/images/Service/Rehabilitation/Rehab1.webp";
 import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.webp";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -33,7 +34,7 @@ import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.webp";
         data-tab-content="tab1"
       >
         <div class="w-full px-8">
-          <img src={Rehab1.src} alt="" />
+          <Image src={Rehab1} alt="Asphalt Plant pieces" />
         </div>
       </div>
       <!-- Second Section -->
@@ -42,7 +43,7 @@ import Rehab2 from "../../assets/images/Service/Rehabilitation/Rehab2.webp";
         data-tab-content="tab2"
       >
         <div class="w-full px-8">
-          <img src={Rehab2.src} alt="" />
+          <Image src={Rehab2} alt="Rock Crusher pieces" />
         </div>
       </div>
     </div>

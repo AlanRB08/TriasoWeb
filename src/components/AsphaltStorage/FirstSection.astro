@@ -1,11 +1,10 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Separator from "../unitComponents/Separator.astro";
 import ItemsSlider from "../LandinPage/ItemsSlider";
 import img1 from "../../assets/images/AsphaltStorage/versatil.webp";
 import img2 from "../../assets/images/AsphaltStorage/SliderStorage3/DSC05068.webp";
 import img3 from "../../assets/images/AsphaltStorage/SliderStorage3/Caldera.webp";
-import GallerySlider from "../unitComponents/GallerySlider";
 import ASOdometer from "./ASOdometer";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import SliderAsphalt from "./SliderAsphalt";
@@ -15,7 +14,6 @@ import ASControl from "../../assets/images/AsphaltStorage/ASControl.webp";
 
 import ASLevelSensor from "../../assets/images/AsphaltStorage/ASLevelSensor.webp";
 import bannerAsphalt from "../../assets/images/AsphaltStorage/bannerStorage.webp";
-import LearnBtn from "../unitComponents/LearnBtn.astro";
 import OSHand from "../../assets/images/OSHandbgremoved.webp";
 
 const iconos = [
@@ -83,7 +81,7 @@ const iconos = [
 
 <section class="w-full flex flex-col items-center justify-center font-bold">
   <div class="w-full mt-10 lg:mt-0 md:mt-0">
-    <img src={bannerAsphalt.src} alt="Banner" class="w-full" />
+    <Image src={bannerAsphalt} alt="Asphalt Storage Tank with a road in the background and a worker next to it" class="w-full" />
   </div>
 
   <div class="w-full max-w-7xl px-8 mx-auto">
@@ -156,11 +154,11 @@ const iconos = [
     class="w-full bg-gradient-to-t from-[#727272] to-[#393939] text-white flex flex-col justify-center mt-10 pt-10 h-full"
   >
     <div class="w-full relative h-[100px] md:h-[250px]">
-      <img src={Logo.src} alt="" class="absolute top-0 left-0 z-10 w-full" />
+      <Image src={Logo} alt="Triaso Logo" class="absolute top-0 left-0 z-10 w-full" />
     </div>
     <div class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="w-full flex justify-center">
-        <img src={ASControl.src} alt="" class="w-full lg:w-3/4 rounded-2xl" />
+        <Image src={ASControl} alt="Asphalt Control System" class="w-full lg:w-3/4 rounded-2xl" />
       </div>
       <div class="w-full flex flex-col gap-6 my-10">
         <h2 class="text-xl md:text-2xl">Control System</h2>
@@ -356,7 +354,7 @@ const iconos = [
           </div>
         </div>
         <div class="col-span-1 lg:col-span-2 flex justify-end items-end">
-          <img src={OSHand.src} alt="" class="w-3-4 lg:w-full" />
+          <Image src={OSHand} alt="Triaso Relief system on a mobile device" class="w-3-4 lg:w-full" />
         </div>
       </section>
     </div>
@@ -379,9 +377,9 @@ const iconos = [
           </ul>
         </div>
         <div class="w-full text-center text-black flex justify-center">
-          <img
-            src={ASLevelSensor.src}
-            alt=""
+          <Image
+            src={ASLevelSensor}
+            alt="Triaso Asphalt Level Sensor"
             class="w-full lg:w-3/4 rounded-xl"
           />
         </div>

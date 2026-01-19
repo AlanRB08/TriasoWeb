@@ -1,10 +1,5 @@
 ---
-import img1 from "../../assets/images/AsphaltPlant/silos1.webp";
-import img2 from "../../assets/images/AsphaltPlant/Aislamiento.webp";
-import Image from "astro/components/Image.astro";
-import img4 from "../../assets/images/AsphaltPlant/silos2.webp";
-import img5 from "../../assets/images/AsphaltPlant/silos3.webp";
-import img6 from "../../assets/images/AsphaltPlant/segre1.webp";
+import { Image } from "astro:assets";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import siloSealed from "../../assets/images/HotMix/siloSealed.webp";
 import siloUse from "../../assets/images/HotMix/siloUse.webp";
@@ -95,8 +90,8 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                         class="flex flex-col items-center md:items-end justify-center w-full"
                     >
                         <div class="w-full">
-                            <img
-                                src={single.src}
+                            <Image
+                                src={single}
                                 alt="Machine detail"
                                 class="w-full h-auto object-contain"
                             />
@@ -197,7 +192,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 >
                     <Image
                         src={timeIcon}
-                        alt="Watch"
+                        alt="Watch icon"
                         class="w-10 h-10 lg:w-12 md:w-12 lg:h-12 md:h-12 object-contain"
                     />
                     <p
@@ -212,7 +207,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 >
                     <Image
                         src={lockIcon}
-                        alt="Lock"
+                        alt="Lock icon"
                         class="w-10 h-10 lg:w-12 md:w-12 lg:h-12 md:h-12 object-contain"
                     />
                     <p
@@ -273,7 +268,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                         <div class="shrink-0">
                             <Image
                                 src={siloIcon}
-                                alt="Silo"
+                                alt="Silo icon"
                                 class="w-20 h-20 object-contain"
                             />
                         </div>

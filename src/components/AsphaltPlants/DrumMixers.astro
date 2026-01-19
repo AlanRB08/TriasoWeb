@@ -1,15 +1,12 @@
 ---
-import img1 from "../../assets/images/AsphaltPlant/render2.webp";
 import img2 from "../../assets/images/AsphaltPlant/render3.webp";
-import img4 from "../../assets/images/AsphaltPlant/render6.webp";
 import img5 from "../../assets/images/AsphaltPlant/drum1.webp";
 import img7 from "../../assets/images/AsphaltPlant/drum2.webp";
 import img8 from "../../assets/images/AsphaltPlant/bin1.webp";
-import img9 from "../../assets/images/AsphaltPlant/bin2.webp";
 import img10 from "../../assets/images/DrumMixers/triasoWorkers.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import logo from "../../assets/logos/triasoLogo.webp";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Video1 from "../../assets/images/landingVideo.mp4";
 import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
 import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
@@ -82,7 +79,7 @@ const images2 = [
       class="grid grid-cols-1 md:grid-cols-3 justify-center items-start gap-4"
     >
       <div class="hidden justify-start items-end md:flex h-full">
-        <Image src={img5} alt="" class="w-[80%]" />
+        <Image src={img5} alt="Drum Mixer" class="w-[80%]" />
       </div>
       <div 
       class="hidden md:flex-col items-start justify-start pt-4 md:flex">
@@ -122,7 +119,7 @@ const images2 = [
       </h1>
     </div>
     <div class="block md:hidden">
-      <Image src={img7} alt="" class="w-1/2" />
+      <Image src={img7} alt="Drum Mixer" class="w-1/2" />
       <div class="flex-col flex md:hidden items-start justify-start pt-4">
         <h1 class="md:text-4xl text-2xl text-black text-center w-full">
           Two Year Warranty
@@ -156,7 +153,7 @@ const images2 = [
     </div>
   </div>
   <div class="w-full bg-[#2e2e2e] flex flex-col justify-center items-center">
-    <img src={logo.src} alt="" class="w-[500px] lg:w-full md:w-full" /><br />
+    <Image src={logo} alt="Triaso Logo" class="w-[500px] lg:w-full md:w-full" /><br />
     <div
       class="w-full bg-[url(/HeroS.webp)] bg-cover bg-no-repeat bg-center max-h-[900px] lg:min-h-[900px] md:min-h-[900px] flex justify-center items-center"
     >
@@ -238,7 +235,7 @@ const images2 = [
       class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 py-10 justify-center items-center"
     >
       <div class="w-full flex justify-center">
-        <img src={rap.src} alt="" class="w-3/5" />
+        <Image src={rap} alt="Drum Collar" class="w-3/5" />
       </div>
       <div class="w-full text-white">
         <h1
@@ -311,7 +308,7 @@ const images2 = [
       </div>
     </div>
     <div>
-      <img src={rapEntry.src} alt="Rap Entry Flights" class="rounded-md" />
+      <Image src={rapEntry} alt="Rap Entry Flights" class="rounded-md" />
     </div>
     <div class="flex col-span-2">
       <div class="space-y-5">
@@ -340,12 +337,12 @@ const images2 = [
     <div class="w-full flex justify-center">
       <LearnBtnBlue href="/RapRecycled"/>
     </div>
-    <img src={HeroS2.src} alt="" class="w-full" />
+    <Image src={HeroS2} alt="Asphalt plant specializing in the incorporation of RAP" class="w-full" />
   </div>
   <div
     class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-10 gap-10 max-w-7xl mx-auto"
   >
-    <Image src={img8} alt="" class="hidden md:block" />
+    <Image src={img8} alt="Rap Bin" class="hidden md:block" />
     <div class="flex flex-col text-grisT items-center justify-center">
       <h1
         class="text-xl lg:text-2xl mb-4 text-center lg:text-start md:text-start w-full"
@@ -363,11 +360,13 @@ const images2 = [
         nature of RAP, reducing downtime and ensuring high operational
         efficiency.
       </p>
-      <Image src={img8} alt="" class="block md:hidden" />
+      <Image src={img8} alt="Rap Bin" class="block md:hidden" />
       <LearnBtn href="/BinUnits"/>
     </div>
   </div>
-  <ASPanels />
+  <ASPanels  />
+  
+  <div id="ColdMix"></div>
   <div
     class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-4"
   >
@@ -392,7 +391,7 @@ const images2 = [
           ensures complete homogenization and consistency throughout the
           material.
         </p>
-        <Image src={img2} alt="" class="block md:hidden my-4" />
+        <Image src={img2} alt="Pugmill component for the drum-mix" class="block md:hidden my-4" />
         <p
           class="text-base md:text-lg text-grisP text-center lg:text-justify md:text-justify text-[#2b2b2b]"
         >
@@ -403,7 +402,7 @@ const images2 = [
           demanding production conditions.
         </p>
       </div>
-      <Image src={pugmill} alt="" class="hidden md:block" />
+      <Image src={pugmill} alt="Pugmill component for the drum-mix" class="hidden md:block" />
     </div>
     <LearnBtn href="/ColdMix"/>
   </div>
@@ -452,7 +451,7 @@ const images2 = [
     class="w-full max-w-7xl my-10 mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-6"
   >
     <div>
-      <Image src={img10} alt="Triaso workers" class="rounded-md" />
+      <Image src={img10} alt="Triaso workers operating the control cabin" class="rounded-md" />
     </div>
     <div class="justify-center flex flex-col">
       <h1
