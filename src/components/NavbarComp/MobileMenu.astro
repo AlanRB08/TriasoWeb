@@ -1,67 +1,115 @@
 ---
 // src/components/MobileMenu.astro
-import MobileMenuItem from './MobileMenuItem.astro';
-import MobileSubMenuWrapper from './MobileSubMenuWrapper.astro';
-import { menuItems } from '../../assets/data/menuItems';
+import MobileMenuItem from "./MobileMenuItem.astro";
+import MobileSubmenuWrapper from "./MobileSubmenuWrapper.astro";
+import { menuItems } from "../../assets/data/menuItems";
 ---
 
 <!-- Botón Hamburguesa -->
-<button id="mobileMenuButton" class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-opacity duration-200" aria-expanded="false" aria-label="Abrir menu en mobil">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800">
-    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+<button
+  id="mobileMenuButton"
+  class="block md:hidden z-50 p-2 rounded-md hover:bg-gray-100 transition-opacity duration-200"
+  aria-expanded="false"
+  aria-label="Abrir menu en mobil"
+>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="text-gray-800"
+  >
+    <path
+      d="M3 12H21"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"></path>
+    <path
+      d="M3 6H21"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"></path>
+    <path
+      d="M3 18H21"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"></path>
   </svg>
 </button>
 
 <!-- Contenedor principal del menú -->
 <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
   <!-- Fondo oscuro -->
-  <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300"></div>
+  <div
+    id="mobileMenuBackdrop"
+    class="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300"
+  >
+  </div>
 
   <!-- Panel principal (nivel 0) -->
-  <div id="main-menu" class="absolute inset-0 bg-bgMain transform transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] overflow-y-auto">
-    <button id="mobileMenuClose" class="absolute right-4 top-4 p-2 rounded-full hover:bg-grisSubP" aria-label="Cerrar menú">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-grisT">
-        <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <div
+    id="main-menu"
+    class="absolute inset-0 bg-bgMain transform transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] overflow-y-auto"
+  >
+    <button
+      id="mobileMenuClose"
+      class="absolute right-4 top-4 p-2 rounded-full hover:bg-grisSubP"
+      aria-label="Cerrar menú"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        class="text-grisT"
+      >
+        <path
+          d="M6 18L18 6M6 6L18 18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
       </svg>
     </button>
 
     <nav class="mt-16 p-6">
       <ul class="space-y-4">
-        {menuItems.map((item) => (
-          <MobileMenuItem item={item} isFirstLevel={true} />
-        ))}
+        {
+          menuItems.map((item) => (
+            <MobileMenuItem item={item} isFirstLevel={true} />
+          ))
+        }
       </ul>
     </nav>
   </div>
 
   <!-- Aquí se renderizarán los submenús de primer nivel -->
-  {menuItems.map((item) => (
-    item.children && (
-      <MobileSubMenuWrapper 
-        items={item.children} 
-        parentTitle={item.title} 
-        parentId="main-menu" 
-      />
+  {
+    menuItems.map(
+      (item) =>
+        item.children && (
+          <MobileSubmenuWrapper
+            items={item.children}
+            parentTitle={item.title}
+            parentId="main-menu"
+          />
+        ),
     )
-  ))}
+  }
 </div>
 
 <style is:global>
   body.mobile-menu-open {
     overflow: hidden;
   }
-  
+
   #mobileMenu.active {
     display: block;
   }
-  
+
   #mobileMenu.active > #mobileMenuBackdrop {
     opacity: 0.5 !important;
   }
- 
-  
 
   /* Animaciones para submenús */
   .submenu-level {
@@ -74,64 +122,68 @@ import { menuItems } from '../../assets/data/menuItems';
     transform: translateX(0);
   }
   #main-menu {
-  transform: translateY(-100%); /* Inicia arriba */
-  transition: transform 0.5s ease-[cubic-bezier(0.25,0.1,0.25,1)];
-}
-#mobileMenu.active #main-menu {
-  transform: translateY(0); /* Entra desde arriba */
-}
+    transform: translateY(-100%); /* Inicia arriba */
+    transition: transform 0.5s ease-[cubic-bezier(0.25, 0.1, 0.25, 1)];
+  }
+  #mobileMenu.active #main-menu {
+    transform: translateY(0); /* Entra desde arriba */
+  }
 </style>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.getElementById('mobileMenuButton');
-    const menu = document.getElementById('mobileMenu');
-    const backdrop = document.getElementById('mobileMenuBackdrop');
-    const closeButton = document.getElementById('mobileMenuClose');
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("mobileMenuButton");
+    const menu = document.getElementById("mobileMenu");
+    const backdrop = document.getElementById("mobileMenuBackdrop");
+    const closeButton = document.getElementById("mobileMenuClose");
 
     const toggleMenu = (open) => {
       if (open) {
-        menu.style.display = 'block';
+        menu.style.display = "block";
         requestAnimationFrame(() => {
-          menu.classList.add('active');
-          document.body.classList.add('mobile-menu-open');
-          menuButton.classList.add('hidden');
-          menuButton.setAttribute('aria-expanded', 'true');
+          menu.classList.add("active");
+          document.body.classList.add("mobile-menu-open");
+          menuButton.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "true");
         });
       } else {
         // Cerrar todos los submenús primero
-        document.querySelectorAll('.submenu-level').forEach(el => el.classList.remove('active'));
-        document.getElementById('main-menu').classList.remove('slide-left');
-        
-        menu.classList.remove('active');
-        document.body.classList.remove('mobile-menu-open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        
+        document
+          .querySelectorAll(".submenu-level")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById("main-menu").classList.remove("slide-left");
+
+        menu.classList.remove("active");
+        document.body.classList.remove("mobile-menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+
         setTimeout(() => {
-          menu.style.display = 'none';
-          menuButton.classList.remove('hidden');
+          menu.style.display = "none";
+          menuButton.classList.remove("hidden");
         }, 500);
       }
     };
 
     // Función global para abrir submenús
     window.openSubmenu = (submenuId, parentId) => {
-      document.getElementById(parentId).classList.add('slide-left');
-      document.getElementById(submenuId).classList.add('active');
+      document.getElementById(parentId).classList.add("slide-left");
+      document.getElementById(submenuId).classList.add("active");
     };
 
     // Función global para volver atrás
     window.goBack = (parentId) => {
-      document.querySelector('.submenu-level.active').classList.remove('active');
-      document.getElementById(parentId).classList.remove('slide-left');
+      document
+        .querySelector(".submenu-level.active")
+        .classList.remove("active");
+      document.getElementById(parentId).classList.remove("slide-left");
     };
 
-    menuButton?.addEventListener('click', () => toggleMenu(true));
-    backdrop?.addEventListener('click', () => toggleMenu(false));
-    closeButton?.addEventListener('click', () => toggleMenu(false));
+    menuButton?.addEventListener("click", () => toggleMenu(true));
+    backdrop?.addEventListener("click", () => toggleMenu(false));
+    closeButton?.addEventListener("click", () => toggleMenu(false));
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menu.classList.contains('active')) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.classList.contains("active")) {
         toggleMenu(false);
       }
     });
