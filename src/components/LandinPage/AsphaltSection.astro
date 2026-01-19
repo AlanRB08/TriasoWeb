@@ -1,8 +1,8 @@
 ---
 import Hero from "../../assets/images/hero2.webp";
 import Video1 from "../../assets/images/landingVideo.webm";
+import Video2 from "../../assets/images/landingVideo.mp4";
 import { Image } from "astro:assets";
-
 ---
 
 <section class="w-full min-h-10/12 mt-10">
@@ -25,6 +25,17 @@ import { Image } from "astro:assets";
     </p>
   </div>
   <div class="max-w-7xl mx-auto">
-    <video src={Video1} autoplay muted></video>
+    <video
+      playsinline
+      controls
+      poster="/src/assets/images/Burners/quemadorInfo.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src={Video1} type="video/webm" />
+      <source src={Video2} type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
   </div>
 </section>
