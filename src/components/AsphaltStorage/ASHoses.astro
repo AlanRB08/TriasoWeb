@@ -5,7 +5,9 @@ import img1 from "../../assets/images/AsphaltStorage/ATG1.webp";
 import img3 from "../../assets/images/AsphaltStorage/ATG2.webp";
 import img4 from "../../assets/images/AsphaltStorage/ASafety3.webp";
 import ASProv2 from "../../assets/images/AsphaltStorage/MngrsTqe4.webp";
+import ASProv2Low from "../../assets/images/AsphaltStorage/Low/MngrsTqe4Low.webp";
 import img6 from "../../assets/images/AsphaltStorage/ASafety.webp";
+import img6Low from "../../assets/images/AsphaltStorage/Low/ASafetyLow.webp"
 import ASGallery from "./ASGallery.astro";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
 import sideP from "../../assets/images/DrumMixers/sideP.webp";
@@ -21,7 +23,8 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
         </div>
 
         <div class="max-w-7xl px-8 mx-auto flex justify-center">
-            <Image src={img6} alt="Image of an Asphalt Storage Tank inside the production facility" class="hero-img lg:w-4/5 rounded-lg" />
+            <Image src={img6} alt="Image of an Asphalt Storage Tank inside the production facility" class="hero-img hidden lg:block lg:w-4/5 rounded-lg" />
+            <Image src={img6Low} alt="Image of an Asphalt Storage Tank inside the production facility" class="hero-img rounded-lg lg:hidden md:hidden"/>
         </div>
 
         <div
@@ -83,7 +86,7 @@ import sideP from "../../assets/images/DrumMixers/sideP.webp";
             />
 
             <Image
-                src={ASProv2}
+                src={ASProv2Low}
                 alt="Front of the Asphalt Storage Tank"
                 class="absolute top-0 left-0 w-[40%] rounded-lg translate-x-1 translate-y-2"
             />
