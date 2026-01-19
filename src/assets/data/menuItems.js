@@ -75,11 +75,11 @@ export const menuItems = [
         children : [
           {
             title : "JAW CRUSHERS",
-            url : "/",
+            url : "/JawCrushers",
           },
           {
             title : "CONE CRUSHERS",
-            url : "/",
+            url : "/ConeCrushers",
           },
           {
             title : "INTEGRAL EQUIPPED CRUSHERS",
@@ -95,7 +95,7 @@ export const menuItems = [
           },
           {
             title : "CONVEYORS",
-            url : "/",
+            url : "/BeltConveyors",
           },
           {
             title : "FEEDERS",
@@ -103,7 +103,7 @@ export const menuItems = [
             children : [
               {
                 title : "BELT FEEDERS",
-                url : "/",
+                url : "/BeltFeeders",
               },
               {
                 title : "VIBRATORY FEEDERS",
@@ -113,7 +113,7 @@ export const menuItems = [
           },
           {
             title : "VIBRATORY SCREENS",
-            url : "/",
+            url : "/VibratingScreens",
           }
         ]
       },

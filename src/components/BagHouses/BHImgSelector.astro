@@ -6,17 +6,19 @@ import img3 from "../../assets/images/BagHouses/BHProv4.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import BHCustom from "./BHCustom.astro";
-import BHoppers from "../../assets/images/BagHouses/BHoppers.webp";
+import BHoppers from "../../assets/images/BagHouses/Low/BHoppersLow.webp";
 import BHVideo from "../../assets/images/BagHouses/BHVideo.mp4";
 import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import img5 from "../../assets/images/BagHouses/venturiSys.webp";
 import img6 from "../../assets/images/BagHouses/ratioSys.webp";
 import img7 from "../../assets/images/BagHouses/BHProv7.webp";
+import img7Low from "../../assets/images/BagHouses/Low/BHProv7Low.webp";
 import OSection from "../unitComponents/OSection.astro";
 import bannerNew from "../../assets/images/BagHouses/bannerImage.webp";
+import bannerMobile from "../../assets/images/BagHouses/Low/bannerImageLow.webp"
 import damperImg from "../../assets/images/BagHouses/damper.webp";
 import finesReturn from "../../assets/images/BagHouses/finesReturn.webp";
-import boquillasVL from "../../assets/images/BagHouses/BoquillasVL.webp";
+import boquillasVL from "../../assets/images/BagHouses/Low/BoquillasVLLow.webp";
 import { Image } from "astro:assets";
 
 const tanksSlides = [
@@ -92,10 +94,10 @@ const tanksSlides = [
 
         <div class="relative flex flex-col lg:hidden">
             <Image
-                src={img7}
+                src={img7Low}
                 alt="Baghouse cleaning system"
                 class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
-            />
+            />  
 
             <Image
                 src={img3}
@@ -136,7 +138,8 @@ const tanksSlides = [
         </div>
     </TwoColumnSection>
     <div class="">
-        <Image src={bannerNew} alt="Bag house with a road in the background and workers next to it" class="w-[3000px]" />
+        <Image src={bannerNew} alt="Bag house with a road in the background and workers next to it" class="hidden lg:block lg:w-[3000px] md:block md:w-[3000px]" />
+        <Image src ={bannerMobile} alt="Bag house with a road in the background and workers nex to ir" class="w-full lg:hidden md:hidden"/>
     </div>
     <div class="w-full flex justify-center px-8 text-center">
         <h1 class="text-blueMain text-2xl md:text-3xl">
