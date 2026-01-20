@@ -83,15 +83,15 @@ export const menuItems = [
           },
           {
             title : "INTEGRAL EQUIPPED CRUSHERS",
-            url : "/",
+            url : "/IntegralCrushers",
           },
           {
             title : "BALL MILLS",
-            url : "/",
+            url : "/BallMills",
           },
           {
             title : "MINI CRUSHERS",
-            url : "/",
+            url : "/MiniCrushers",
           },
           {
             title : "CONVEYORS",
