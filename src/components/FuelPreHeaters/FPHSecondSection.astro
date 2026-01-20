@@ -5,6 +5,7 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import FPH1 from "../../assets/images/FuelPreHeaters/FPH1.webp";
 import FPH2 from "../../assets/images/FuelPreHeaters/FPH2.webp";
+import FPH2Low from "../../assets/images/FuelPreHeaters/Low/FPH2Low.webp"
 import FPH3 from "../../assets/images/FuelPreHeaters/FPH3.webp";
 import fIcon from "../../assets/images/FuelPreHeaters/FlamaIcon.svg"
 import img1 from '../../assets/images/Burners/10.webp'
@@ -158,7 +159,8 @@ import { Image } from "astro:assets";
         </div>
     </div>
     <div class="w-full flex justify-center">
-        <Image src={FPH2} alt="Fuel pre-heater installed to the system" />
+        <Image src={FPH2} alt="Fuel pre-heater installed to the system" class="hidden lg:block md:block" />
+        <Image src={FPH2Low} alt="Fuel pre-heater installed to the system" class="lg:hidden md:hidden"/>
     </div>
     <div
         class="w-full max-w-7xl mx-auto px-8 pb-5 flex flex-col justify-center items-center lg:justify-end lg:items-end"
