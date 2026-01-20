@@ -1,6 +1,5 @@
 ---
 import Tabs from "./Tabs";
-import DMVideo from "../../assets/images/DrumMixers/DMVideo.mp4";
 import single from "../../assets/images/DrumMixers/baghouse.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import { Image } from "astro:assets";
@@ -8,12 +7,17 @@ import { Image } from "astro:assets";
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
   <div
-    class="w-full flex flex-col  mt-20 text-grisT max-w-7xl mx-auto px-8 text-base md:text-xl"
+    class="w-full flex flex-col mt-20 text-grisT max-w-7xl mx-auto px-8 text-base md:text-xl"
   >
-    <h1 
-    id="Baghouses"
-    class=" scroll-mt-20 text-2xl lg:text-4xl text-center lg:text-start md:text-start mb-10">BAGHOUSES</h1>
-    <div class="w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center">
+    <h1
+      id="Baghouses"
+      class="scroll-mt-20 text-2xl lg:text-4xl text-center lg:text-start md:text-start mb-10"
+    >
+      BAGHOUSES
+    </h1>
+    <div
+      class="w-full grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center"
+    >
       <div>
         <p class="text-justify text-base lg:text-lg font-thin">
           A continuous cleaning system keeps the filter bags operating at all
@@ -42,7 +46,9 @@ import { Image } from "astro:assets";
     <Tabs client:visible />
   </div><br />
   <div class="w-full max-w-7xl mx-auto px-8 py-6">
-    <h2 class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl">
+    <h2
+      class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl"
+    >
       Advantages of fines return system
     </h2>
   </div>
@@ -68,13 +74,15 @@ import { Image } from "astro:assets";
         </ul>
       </div>
       <div class="w-full">
-        <h2 class="text-base text-center mt-5 lg:mt-0 md:mt-0 lg:text-start md:text-start md:text-lg font-bold">
+        <h2
+          class="text-base text-center mt-5 lg:mt-0 md:mt-0 lg:text-start md:text-start md:text-lg font-bold"
+        >
           Mechanism of baghouses available in pulse jet and reverse jet
         </h2><br />
         <p class="font-thin">
           <span class="font-bold">Pulse Jet:</span>
-          A cleaning system that uses compressed air bursts to dislodge dust and
-          debris from the filter bags, maintaining continuous airflow.
+          A cleaning system that uses compressed air bursts to dislodge dust and debris
+          from the filter bags, maintaining continuous airflow.
         </p><br />
         <p class="font-thin">
           <span class="font-bold">Reverse Air:</span>
@@ -88,12 +96,22 @@ import { Image } from "astro:assets";
     class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-8"
   >
     <div>
-      <video src={DMVideo} autoplay muted></video>
+      <video
+        playsinline
+        controls
+        poster="/public/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/public/Videos/Webm/DMVideo.webp" type="video/webm" />
+        <source src="/public/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
+      </video>
       <p class="font-thin text-center text-grisT">
         Triaso® baghouses are portable, self-contained units that operate at
         air-to-cloth ratios up to 8:1
       </p>
     </div><br />
-    <LearnBtn href="/BagHouses"/>
+    <LearnBtn href="/BagHouses" />
   </div>
 </div>

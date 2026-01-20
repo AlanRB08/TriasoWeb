@@ -1,12 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import BurnerVideo from "../../assets/images/Burners/burnerVideo.mp4";
 import flag from "../../assets/images/Burners/flag.svg";
 import ficha from "../../assets/images/Burners/ficha.webp";
 import wordIcon from "../../assets/images/Burners/world.webp";
 import batchIcon from "../../assets/images/Burners/batch.webp";
 import preHeat from "../../assets/images/Burners/preHeat.webp";
-import BurnerBackground from "../../assets/images/Burners/bprov1.mp4";
 ---
 
 <div class="flex flex-col items-center justify-center mt-20 font-bold">
@@ -24,20 +22,35 @@ import BurnerBackground from "../../assets/images/Burners/bprov1.mp4";
     <div
       class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 w-full"
     >
-      <video src={BurnerVideo} autoplay class="w-full lg:w-1/2 md:w-1/2"
-      ></video>
+      <video
+        class="w-full lg:w-1/2 md:w-1/2"
+        playsinline
+        controls
+        poster="/public/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/public/Videos/Webm/burnerVideo.webp" type="video/webm" />
+        <source src="/public/Videos/Mp4/burnerVideo.mp4" type="video/mp4" />
+      </video>
       <h2 class="font-bold text-center my-5">
         From 6 to 125 million Btu/Hr, with preheater and filter
       </h2>
     </div>
     <div class="relative w-full min-h-[600px]">
       <video
-        autoplay
-        muted
-        loop
+        class="absolute inset-0 w-full h-full object-cover z-0"
         playsinline
-        src={BurnerBackground}
-        class="absolute inset-0 w-full h-full object-cover z-0"></video>
+        controls
+        poster="/public/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/public/Videos/Webm/bprov1.webp" type="video/webm" />
+        <source src="/public/Videos/Mp4/bprov1.mp4" type="video/mp4" />
+      </video>
 
       <div class="absolute inset-0 bg-black/50 z-0"></div>
 

@@ -2,9 +2,6 @@
 import Card from "../unitComponents/Card.astro";
 import { Image } from "astro:assets";
 import semiSilo from "../../assets/images/AsphaltPlant/silos3.webp";
-import HMSilo from "../../assets/images/HotMix/HMSilo.mp4";
-import HTSilo2 from "../../assets/images/HotMix/HMSilo2.mp4";
-import HMinclinado from "../../assets/images/HotMix/HMinclinado.mp4";
 import Logo from "../../assets/logos/LogoTriasoMX.svg";
 import suspension from "../../assets/images/HotMix/suspension.webp";
 import icon1 from "../../assets/images/HotMix/icon1.webp";
@@ -12,505 +9,465 @@ import icon2 from "../../assets/images/HotMix/icon2.webp";
 import icon3 from "../../assets/images/HotMix/icon3.webp";
 import icon4 from "../../assets/images/HotMix/icon4.webp";
 import icon5 from "../../assets/images/HotMix/icon5.webp";
-import SiloSAE from "../../assets/images/HotMix/SiloSAE.webp"
-import SiloAEVL from "../../assets/images/HotMix/SiloAEVL.webp"
+import SiloSAE from "../../assets/images/HotMix/SiloSAE.webp";
+import SiloAEVL from "../../assets/images/HotMix/SiloAEVL.webp";
 ---
 
 <section
-    class="w-full flex mt-10 md:mt-20 flex-col gap-4 bg-gray-100"
-    data-tabs
+  class="w-full flex mt-10 md:mt-20 flex-col gap-4 bg-gray-100"
+  data-tabs
 >
-    <div class="flex flex-col gap-4 mt-8">
-        <div
-            class="flex items-center justify-around w-full gap-4 max-w-7xl mx-auto px-8"
-        >
-            <button
-                class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
-                data-tab="tab1"
-                aria-selected="true"
-            >
-                STATIONARY SILO
-            </button>
-            <button
-                class="tab-button py-2 md:px-4 font-bold text-xl md:text-4xl focus:outline-none"
-                data-tab="tab2"
-                aria-selected="false"
-            >
-                SELF-ERECTING SILO
-            </button>
-        </div>
-        <div class="py-4">
-            <!-- First Section -->
-            <div
-                class="w-full flex flex-col gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
-                data-tab-content="tab1"
-            >
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <p>
-                        The semi-stationary is the ultimate silo, designed to
-                        offer unparalleled efficiency, flexibility, and
-                        durability for asphalt storage. Combining advanced
-                        technology with robust construction, this silo provides
-                        seamless operation in both stationary and mobile setups.
-                        Engineered for high performance, it ensures maximum
-                        productivity while maintaining the highest standards of
-                        quality and safety. Whether for large-scale projects or
-                        relocatable needs, the Ultimate Silo delivers unmatched
-                        reliability and convenience.
-                    </p>
-                </div>
-                <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
-                    <video
-                        src={HMSilo}
-                        autoplay
-                        playsinline
-                        webkit-playsinline
-                        loop
-                        class="w-[90vw] md:w-[50vw]"></video>
-                </div>
-                <div class="w-full text-center px-8 md:px-52">
-                    <h1 class="text-blueMain text-2xl md:text-3xl font-bold">
-                        50,100,150 and 200 Tons capacity
-                    </h1>
-                </div>
-
-                <div
-                    class="w-full flex flex-col  bg-[#2b2b2b]"
-                >
-                    <div class="text-white py-10 w-full">
-                        <div class="w-full max-w-7xl mx-auto px-8">
-                            <h1 class="font-bold text-2xl md:text-3xl">
-                                Option for portability
-                            </h1>
-                            <br />
-                            <p class="text-base md:text-lg">
-                                The semi-stationary silo offers an option for
-                                portability, allowing easy transport of the drag
-                                slat conveyor along with the silo in just one
-                                trip. Equipped with a fifth wheel pin, brakes,
-                                and lamps, it ensures safe and efficient
-                                transportation. Anchor points are provided to
-                                securely mount the drag slat conveyor during
-                                transit. Rear hinged legs provide stability,
-                                that can be lifted with a crane for
-                                installation.
-                            </p>
-                        </div>
-
-                        <div class="w-full max-w-7xl mx-auto px-8">
-                            <Image src={semiSilo} alt="Silo system with a worker next to it" />
-                        </div>
-
-                        <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-x-10 gap-y-4 my-10 px-8"
-                        >
-                            <div
-                                class="w-full p-8 border-white rounded-2xl border-2"
-                            >
-                                <h2 class="text-2xl md:text-3xl">
-                                    Mountable in low-boy
-                                </h2>
-                                <ul
-                                    class="list-disc ml-6 font-thin text-base md:text-lg"
-                                >
-                                    <li>
-                                        With protections to be transported
-                                        without damage.
-                                    </li>
-                                    <li>
-                                        With lifting points for maneuvers of
-                                        lifting with a crane.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div
-                                class="w-full p-8 border-white rounded-2xl border-2"
-                            >
-                                <h2 class="text-2xl md:text-3xl">
-                                    Gate with pneumatic system to release the
-                                    hot mix to the trucks
-                                </h2>
-                                <p class="text-base md:text-lg font-thin">
-                                    Does not include compressor and air tank, it
-                                    uses the air system from the asphalt plant.
-                                </p>
-                            </div>
-
-                            <div
-                                class="w-full p-8 border-white rounded-2xl border-2"
-                            >
-                                <h2 class="text-2xl md:text-3xl">
-                                    With support structure, high enough to
-                                    accommodate dump trucks
-                                </h2>
-                            </div>
-
-                            <div
-                                class="w-full p-8 border-white rounded-2xl border-2"
-                            >
-                                <h2 class="text-2xl md:text-3xl">
-                                    With opening and closing control to be
-                                    integrated into the Asphalt plant console
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <video
-                        src={HTSilo2}
-                        autoplay
-                        playsinline
-                        webkit-playsinline
-                        loop></video>
-                </div>
-            </div>
-            <!-- Second Section -->
-            <div
-                class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
-                data-tab-content="tab2"
-            >
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <p>
-                        Engineered for long-term performance, the hot mix
-                        storage silos ensure consistent asphalt quality and
-                        efficient material handling. Built with automated and
-                        manual control systems and heavy-duty materials, they
-                        provide precise control, easy mobility, and seamless
-                        integration with exisitng asphalt plant systems, making
-                        them an essential asset for any paving project.
-                    </p>
-                </div>
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <video
-                        src={HMinclinado}
-                        autoplay
-                        playsinline
-                        webkit-playsinline
-                        loop></video>
-                </div>
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <h1 class="text-blueMain text-2xl md:text-3xl text-center">
-                        The Triaso team understands that proper material
-                        handling and hot-mix storage are key to optimal
-                        performance and durability
-                    </h1>
-                </div>
-                <div class="w-full max-w-7xl mx-auto px-8">
-                    <div class="w-full rounded-2xl overflow-hidden">
-                        <Image src={suspension} alt="Self-erecting system Silo" class="lg:w-1/2" />
-                    </div>
-                    <div class="w-full grid grid-cols-1 items-center justify-center md:grid-cols-2">
-                        <div>
-                            <h2
-                                class="text-blueMain text-xl md:text-2xl font-bold"
-                            >
-                                Self-erecting system
-                            </h2>
-                            <br />
-                              <p class="font-thin text-base md:text-lg">
-                                The self-erecting silo is equipped with
-                                telescopic hydraulic cylinders, enabling quick
-                                and efficient lifting. With a setup time of <span
-                                    class="font-bold">just 10 minutes</span
-                                >, it ensures rapid deployment. The hydraulic
-                                locking bolts provide secure vertical and
-                                horizontal positioning, delivering stability and
-                                precision during operation.
-                            </p>      
-                        </div>
-                        <div>
-                            <Image src={SiloSAE} alt="Self-erecting system Silo" class="lg:w-4/5 rounded-lg" />
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <Image src={SiloAEVL} alt="Self-erecting system Silo" class="w-4/5" />
-                    </div>
-                </div>
-                <div
-                    class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
-                >
-                    <Card>
-                        <div class="w-full flex justify-center">
-                            <Image
-                                src={icon1}
-                                alt="Arrow icon"
-                                class="w-1/2 self-center"
-                            />
-                        </div>
-                        <h2 class="text-center text-xl md:text-2xl">
-                            Telescopic hydraulic cylinders for lifting
-                        </h2>
-                    </Card>
-                    <Card>
-                        <div class="w-full flex justify-center">
-                            <Image
-                                src={icon2}
-                                alt="Watch icon"
-                                class="w-1/2 self-center"
-                            />
-                        </div>
-                        <h2 class="text-center text-xl md:text-2xl">
-                            Lifting time of 10 minutes
-                        </h2>
-                    </Card>
-                    <Card>
-                        <div class="w-full flex justify-center">
-                            <Image
-                                src={icon3}
-                                alt="Lock icon"
-                                class="w-1/2 self-center"
-                            />
-                        </div>
-                        <h2 class="text-center text-xl md:text-2xl">
-                            Vertical and horizontal positioning with hydraulic
-                            locking bolts
-                        </h2>
-                    </Card>
-                </div>
-                <div class="w-full px-8 md:px-52 flex justify-center">
-                    <h1 class="text-blueMain text-2xl md:text-3xl text-center">
-                        50 and 100 Short Tons capacity
-                    </h1>
-                </div>
-                <div
-                    class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full"
-                >
-                    <div
-                        class="w-full max-w-7xl mx-auto px-8 relative h-[250px]"
-                    >
-                        <div class="w-full flex justify-between items-center">
-                            <h2
-                                class="text-xl md:text-2xl relative z-20 font-bold"
-                            >
-                                Difference between Self -erecting and
-                                Semi-stationary
-                            </h2>
-                            <button class="w-full z-20" id="dropdown-button">
-                                <svg
-                                    id="dropdown-arrow"
-                                    width="64px"
-                                    height="64px"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    color="#ca1c1c"
-                                    stroke-width="1.5"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM16.0303 10.9697L12.5303 7.46967C12.2374 7.17678 11.7626 7.17678 11.4697 7.46967L7.96967 10.9697C7.67678 11.2626 7.67678 11.7374 7.96967 12.0303C8.26256 12.3232 8.73744 12.3232 9.03033 12.0303L11.25 9.81066V16C11.25 16.4142 11.5858 16.75 12 16.75C12.4142 16.75 12.75 16.4142 12.75 16V9.81066L14.9697 12.0303C15.2626 12.3232 15.7374 12.3232 16.0303 12.0303C16.3232 11.7374 16.3232 11.2626 16.0303 10.9697Z"
-                                        fill="#ca1c1c"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <br />
-                        <p class="font-thin text-base md:text-lg relative z-20">
-                            Both the self-erecting and stationary silos share
-                            the same key features and advantages, offering
-                            unmatched efficiency, durability, and flexibility.
-                            The primary difference lies in their functionality.
-                        </p>
-                        <Image
-                            src={Logo}
-                            alt="Triaso Logo"
-                            class="absolute top-0 left-0 z-10 w-full"
-                        />
-                    </div>
-                    <!-- Div oculto que se despliega -->
-                    <div
-                        class="w-full flex flex-col gap-10 max-w-7xl mx-auto px-8 transition-all duration-300 overflow-hidden"
-                        id="extradiv"
-                        style="max-height: 0"
-                    >
-                        <div class="w-full list-inside md:mb-0 md:opacity-100">
-                            <div
-                                class="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
-                            >
-                                <div class="w-full flex flex-col gap-3 px-10">
-                                    <h2 class="text-xl md:text-2xl text-center">
-                                        Semi-stationary Silo
-                                    </h2>
-                                    <p class="font-thin text-base md:text-lg">
-                                        The stationary silo offers greater
-                                        capacity, making it the perfect choice
-                                        for larger, long-term operations.
-                                    </p>
-                                </div>
-                                <div class="w-full flex flex-col gap-3 px-10">
-                                    <h2 class="text-xl md:text-2xl text-center">
-                                        Self-erecting Silo
-                                    </h2>
-                                    <p class="font-thin text-base md:text-lg">
-                                        The self-erecting silo provides the
-                                        convenience of automated setup, making
-                                        it ideal for projects requiring quick
-                                        relocation.
-                                    </p>
-                                </div>
-                            </div><br />
-                            <div class="w-full px-10">
-                                <p
-                                    class="text-base md:text-lg font-thin text-center"
-                                >
-                                    Both options ensure optimal performance,
-                                    easy integration with asphalt plants, and a
-                                    robust design for reliable operation in
-                                    demanding conditions.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Otro contenido -->
-                    <div
-                        class="w-full flex flex-col gap-6 justify-center my-10"
-                    >
-                        <div
-                            class="w-full max-w-7xl mx-auto px-8 flex justify-between gap-10"
-                        >
-                            <div class="w-full">
-                                <Image
-                                    src={icon4}
-                                    alt="No crane icon"
-                                    class="max-w-[150px]"
-                                />
-                            </div>
-                            <div class="w-full">
-                                <h1 class="text-2xl md:text-3xl">
-                                    No cranes required for installation
-                                </h1>
-                                <br />
-                                <p class="text-base md:text-lg">
-                                    Triaso self-erecting silo is designed and
-                                    manufactured for easy transportation,
-                                    allowing installation without cranes.
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            class="w-full max-w-7xl mx-auto px-8 flex justify-between gap-10"
-                        >
-                            <div class="w-full">
-                                <h1 class="text-2xl md:text-3xl">
-                                    The most versatile and mobile silo on the
-                                    market.
-                                </h1>
-                            </div>
-                            <div class="w-full">
-                                <Image
-                                    src={icon5}
-                                    alt="Silo icon"
-                                    class="max-w-[150px]"
-                                />
-                            </div>
-                        </div>
-                        <div class="w-full max-w-7xl mx-auto px-8">
-                            <p class="font-thin text-base md:text-lg">
-                                This self-erecting silo revolutionizes mobility
-                                and installation with its innovative hydraulic
-                                system. Designed for effortless relocation, it
-                                can be fully set up in just 10 minutes. The
-                                hydraulic locking bolts ensure secure placement,
-                                making it the ultimate choice for fast, stable,
-                                and adaptable asphalt storage solutions.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="flex flex-col gap-4 mt-8">
+    <div
+      class="flex items-center justify-around w-full gap-4 max-w-7xl mx-auto px-8"
+    >
+      <button
+        class="text-xl md:text-4xl tab-button py-2 md:px-4 font-bold focus:outline-none"
+        data-tab="tab1"
+        aria-selected="true"
+      >
+        STATIONARY SILO
+      </button>
+      <button
+        class="tab-button py-2 md:px-4 font-bold text-xl md:text-4xl focus:outline-none"
+        data-tab="tab2"
+        aria-selected="false"
+      >
+        SELF-ERECTING SILO
+      </button>
     </div>
+    <div class="py-4">
+      <!-- First Section -->
+      <div
+        class="w-full flex flex-col gap-4 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
+        data-tab-content="tab1"
+      >
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <p>
+            The semi-stationary is the ultimate silo, designed to offer
+            unparalleled efficiency, flexibility, and durability for asphalt
+            storage. Combining advanced technology with robust construction,
+            this silo provides seamless operation in both stationary and mobile
+            setups. Engineered for high performance, it ensures maximum
+            productivity while maintaining the highest standards of quality and
+            safety. Whether for large-scale projects or relocatable needs, the
+            Ultimate Silo delivers unmatched reliability and convenience.
+          </p>
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
+          <video
+            class="w-[90vw] md:w-[50vw]"
+            playsinline
+            controls
+            poster="/public/Gallery/customdes.webp"
+            preload="metadata"
+            width="1280"
+            height="720"
+          >
+            <source src="/public/Videos/Webm/HMSilo.webp" type="video/webm" />
+            <source src="/public/Videos/Mp4/HMSilo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="w-full text-center px-8 md:px-52">
+          <h1 class="text-blueMain text-2xl md:text-3xl font-bold">
+            50,100,150 and 200 Tons capacity
+          </h1>
+        </div>
+
+        <div class="w-full flex flex-col bg-[#2b2b2b]">
+          <div class="text-white py-10 w-full">
+            <div class="w-full max-w-7xl mx-auto px-8">
+              <h1 class="font-bold text-2xl md:text-3xl">
+                Option for portability
+              </h1>
+              <br />
+              <p class="text-base md:text-lg">
+                The semi-stationary silo offers an option for portability,
+                allowing easy transport of the drag slat conveyor along with the
+                silo in just one trip. Equipped with a fifth wheel pin, brakes,
+                and lamps, it ensures safe and efficient transportation. Anchor
+                points are provided to securely mount the drag slat conveyor
+                during transit. Rear hinged legs provide stability, that can be
+                lifted with a crane for installation.
+              </p>
+            </div>
+
+            <div class="w-full max-w-7xl mx-auto px-8">
+              <Image
+                src={semiSilo}
+                alt="Silo system with a worker next to it"
+              />
+            </div>
+
+            <div
+              class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-x-10 gap-y-4 my-10 px-8"
+            >
+              <div class="w-full p-8 border-white rounded-2xl border-2">
+                <h2 class="text-2xl md:text-3xl">Mountable in low-boy</h2>
+                <ul class="list-disc ml-6 font-thin text-base md:text-lg">
+                  <li>With protections to be transported without damage.</li>
+                  <li>
+                    With lifting points for maneuvers of lifting with a crane.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="w-full p-8 border-white rounded-2xl border-2">
+                <h2 class="text-2xl md:text-3xl">
+                  Gate with pneumatic system to release the hot mix to the
+                  trucks
+                </h2>
+                <p class="text-base md:text-lg font-thin">
+                  Does not include compressor and air tank, it uses the air
+                  system from the asphalt plant.
+                </p>
+              </div>
+
+              <div class="w-full p-8 border-white rounded-2xl border-2">
+                <h2 class="text-2xl md:text-3xl">
+                  With support structure, high enough to accommodate dump trucks
+                </h2>
+              </div>
+
+              <div class="w-full p-8 border-white rounded-2xl border-2">
+                <h2 class="text-2xl md:text-3xl">
+                  With opening and closing control to be integrated into the
+                  Asphalt plant console
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <video
+            playsinline
+            controls
+            poster="/public/Gallery/customdes.webp"
+            preload="metadata"
+            width="1280"
+            height="720"
+          >
+            <source src="/public/Videos/Webm/HMSilo2.webp" type="video/webm" />
+            <source src="/public/Videos/Mp4/HMSilo2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- Second Section -->
+      <div
+        class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
+        data-tab-content="tab2"
+      >
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <p>
+            Engineered for long-term performance, the hot mix storage silos
+            ensure consistent asphalt quality and efficient material handling.
+            Built with automated and manual control systems and heavy-duty
+            materials, they provide precise control, easy mobility, and seamless
+            integration with exisitng asphalt plant systems, making them an
+            essential asset for any paving project.
+          </p>
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <video
+            playsinline
+            controls
+            poster="/public/Gallery/customdes.webp"
+            preload="metadata"
+            width="1280"
+            height="720"
+          >
+            <source
+              src="/public/Videos/Webm/HMinclinado.webp"
+              type="video/webm"
+            />
+            <source src="/public/Videos/Mp4/HMinclinado.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <h1 class="text-blueMain text-2xl md:text-3xl text-center">
+            The Triaso team understands that proper material handling and
+            hot-mix storage are key to optimal performance and durability
+          </h1>
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8">
+          <div class="w-full rounded-2xl overflow-hidden">
+            <Image
+              src={suspension}
+              alt="Self-erecting system Silo"
+              class="lg:w-1/2"
+            />
+          </div>
+          <div
+            class="w-full grid grid-cols-1 items-center justify-center md:grid-cols-2"
+          >
+            <div>
+              <h2 class="text-blueMain text-xl md:text-2xl font-bold">
+                Self-erecting system
+              </h2>
+              <br />
+              <p class="font-thin text-base md:text-lg">
+                The self-erecting silo is equipped with telescopic hydraulic
+                cylinders, enabling quick and efficient lifting. With a setup
+                time of <span class="font-bold">just 10 minutes</span>, it
+                ensures rapid deployment. The hydraulic locking bolts provide
+                secure vertical and horizontal positioning, delivering stability
+                and precision during operation.
+              </p>
+            </div>
+            <div>
+              <Image
+                src={SiloSAE}
+                alt="Self-erecting system Silo"
+                class="lg:w-4/5 rounded-lg"
+              />
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <Image
+              src={SiloAEVL}
+              alt="Self-erecting system Silo"
+              class="w-4/5"
+            />
+          </div>
+        </div>
+        <div
+          class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10"
+        >
+          <Card>
+            <div class="w-full flex justify-center">
+              <Image src={icon1} alt="Arrow icon" class="w-1/2 self-center" />
+            </div>
+            <h2 class="text-center text-xl md:text-2xl">
+              Telescopic hydraulic cylinders for lifting
+            </h2>
+          </Card>
+          <Card>
+            <div class="w-full flex justify-center">
+              <Image src={icon2} alt="Watch icon" class="w-1/2 self-center" />
+            </div>
+            <h2 class="text-center text-xl md:text-2xl">
+              Lifting time of 10 minutes
+            </h2>
+          </Card>
+          <Card>
+            <div class="w-full flex justify-center">
+              <Image src={icon3} alt="Lock icon" class="w-1/2 self-center" />
+            </div>
+            <h2 class="text-center text-xl md:text-2xl">
+              Vertical and horizontal positioning with hydraulic locking bolts
+            </h2>
+          </Card>
+        </div>
+        <div class="w-full px-8 md:px-52 flex justify-center">
+          <h1 class="text-blueMain text-2xl md:text-3xl text-center">
+            50 and 100 Short Tons capacity
+          </h1>
+        </div>
+        <div
+          class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full"
+        >
+          <div class="w-full max-w-7xl mx-auto px-8 relative h-[250px]">
+            <div class="w-full flex justify-between items-center">
+              <h2 class="text-xl md:text-2xl relative z-20 font-bold">
+                Difference between Self -erecting and Semi-stationary
+              </h2>
+              <button class="w-full z-20" id="dropdown-button">
+                <svg
+                  id="dropdown-arrow"
+                  width="64px"
+                  height="64px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  color="#ca1c1c"
+                  stroke-width="1.5"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM16.0303 10.9697L12.5303 7.46967C12.2374 7.17678 11.7626 7.17678 11.4697 7.46967L7.96967 10.9697C7.67678 11.2626 7.67678 11.7374 7.96967 12.0303C8.26256 12.3232 8.73744 12.3232 9.03033 12.0303L11.25 9.81066V16C11.25 16.4142 11.5858 16.75 12 16.75C12.4142 16.75 12.75 16.4142 12.75 16V9.81066L14.9697 12.0303C15.2626 12.3232 15.7374 12.3232 16.0303 12.0303C16.3232 11.7374 16.3232 11.2626 16.0303 10.9697Z"
+                    fill="#ca1c1c"></path>
+                </svg>
+              </button>
+            </div>
+            <br />
+            <p class="font-thin text-base md:text-lg relative z-20">
+              Both the self-erecting and stationary silos share the same key
+              features and advantages, offering unmatched efficiency,
+              durability, and flexibility. The primary difference lies in their
+              functionality.
+            </p>
+            <Image
+              src={Logo}
+              alt="Triaso Logo"
+              class="absolute top-0 left-0 z-10 w-full"
+            />
+          </div>
+          <!-- Div oculto que se despliega -->
+          <div
+            class="w-full flex flex-col gap-10 max-w-7xl mx-auto px-8 transition-all duration-300 overflow-hidden"
+            id="extradiv"
+            style="max-height: 0"
+          >
+            <div class="w-full list-inside md:mb-0 md:opacity-100">
+              <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="w-full flex flex-col gap-3 px-10">
+                  <h2 class="text-xl md:text-2xl text-center">
+                    Semi-stationary Silo
+                  </h2>
+                  <p class="font-thin text-base md:text-lg">
+                    The stationary silo offers greater capacity, making it the
+                    perfect choice for larger, long-term operations.
+                  </p>
+                </div>
+                <div class="w-full flex flex-col gap-3 px-10">
+                  <h2 class="text-xl md:text-2xl text-center">
+                    Self-erecting Silo
+                  </h2>
+                  <p class="font-thin text-base md:text-lg">
+                    The self-erecting silo provides the convenience of automated
+                    setup, making it ideal for projects requiring quick
+                    relocation.
+                  </p>
+                </div>
+              </div><br />
+              <div class="w-full px-10">
+                <p class="text-base md:text-lg font-thin text-center">
+                  Both options ensure optimal performance, easy integration with
+                  asphalt plants, and a robust design for reliable operation in
+                  demanding conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Otro contenido -->
+          <div class="w-full flex flex-col gap-6 justify-center my-10">
+            <div
+              class="w-full max-w-7xl mx-auto px-8 flex justify-between gap-10"
+            >
+              <div class="w-full">
+                <Image src={icon4} alt="No crane icon" class="max-w-[150px]" />
+              </div>
+              <div class="w-full">
+                <h1 class="text-2xl md:text-3xl">
+                  No cranes required for installation
+                </h1>
+                <br />
+                <p class="text-base md:text-lg">
+                  Triaso self-erecting silo is designed and manufactured for
+                  easy transportation, allowing installation without cranes.
+                </p>
+              </div>
+            </div>
+            <div
+              class="w-full max-w-7xl mx-auto px-8 flex justify-between gap-10"
+            >
+              <div class="w-full">
+                <h1 class="text-2xl md:text-3xl">
+                  The most versatile and mobile silo on the market.
+                </h1>
+              </div>
+              <div class="w-full">
+                <Image src={icon5} alt="Silo icon" class="max-w-[150px]" />
+              </div>
+            </div>
+            <div class="w-full max-w-7xl mx-auto px-8">
+              <p class="font-thin text-base md:text-lg">
+                This self-erecting silo revolutionizes mobility and installation
+                with its innovative hydraulic system. Designed for effortless
+                relocation, it can be fully set up in just 10 minutes. The
+                hydraulic locking bolts ensure secure placement, making it the
+                ultimate choice for fast, stable, and adaptable asphalt storage
+                solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <style is:global>
-    /* Estilos para los tabs activos */
-    .tab-button[aria-selected="true"] {
-        color: var(--azul-bg1);
-        border-bottom: 2px solid var(--azul-bg1);
-    }
+  /* Estilos para los tabs activos */
+  .tab-button[aria-selected="true"] {
+    color: var(--azul-bg1);
+    border-bottom: 2px solid var(--azul-bg1);
+  }
 
-    .tab-button[aria-selected="false"] {
-        color: var(--gris-titulos);
-        border-bottom: 2px solid var(--gris-titulos);
-    }
+  .tab-button[aria-selected="false"] {
+    color: var(--gris-titulos);
+    border-bottom: 2px solid var(--gris-titulos);
+  }
 
-    .tab-button:hover:not([aria-selected="true"]) {
-        color: var(--azul-bg1);
-        border-bottom: 2px solid var(--azul-bg1);
-    }
+  .tab-button:hover:not([aria-selected="true"]) {
+    color: var(--azul-bg1);
+    border-bottom: 2px solid var(--azul-bg1);
+  }
 </style>
 <script is:inline>
-    (function initTabs() {
-        document
-            .querySelectorAll("section[data-tabs]")
-            .forEach((tabSection) => {
-                const tabButtons = tabSection.querySelectorAll(".tab-button");
-                const tabContents = tabSection.querySelectorAll(".tab-content");
+  (function initTabs() {
+    document.querySelectorAll("section[data-tabs]").forEach((tabSection) => {
+      const tabButtons = tabSection.querySelectorAll(".tab-button");
+      const tabContents = tabSection.querySelectorAll(".tab-content");
 
-                // Ocultar todos menos el primero
-                const selectedTab = tabSection.querySelector(
-                    '.tab-button[aria-selected="true"]',
-                );
-                const selectedTabId = selectedTab?.getAttribute("data-tab");
+      // Ocultar todos menos el primero
+      const selectedTab = tabSection.querySelector(
+        '.tab-button[aria-selected="true"]',
+      );
+      const selectedTabId = selectedTab?.getAttribute("data-tab");
 
-                tabContents.forEach((content) => {
-                    const contentTabId =
-                        content.getAttribute("data-tab-content");
-                    content.classList.toggle(
-                        "hidden",
-                        contentTabId !== selectedTabId,
-                    );
-                });
+      tabContents.forEach((content) => {
+        const contentTabId = content.getAttribute("data-tab-content");
+        content.classList.toggle("hidden", contentTabId !== selectedTabId);
+      });
 
-                tabButtons.forEach((button) => {
-                    button.addEventListener("click", () => {
-                        const tabId = button.getAttribute("data-tab");
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const tabId = button.getAttribute("data-tab");
 
-                        tabButtons.forEach((btn) =>
-                            btn.setAttribute("aria-selected", "false"),
-                        );
-                        button.setAttribute("aria-selected", "true");
+          tabButtons.forEach((btn) =>
+            btn.setAttribute("aria-selected", "false"),
+          );
+          button.setAttribute("aria-selected", "true");
 
-                        tabContents.forEach((content) => {
-                            content.classList.add("hidden");
-                        });
+          tabContents.forEach((content) => {
+            content.classList.add("hidden");
+          });
 
-                        const activeContent = tabSection.querySelector(
-                            `.tab-content[data-tab-content="${tabId}"]`,
-                        );
-                        if (activeContent)
-                            activeContent.classList.remove("hidden");
-                    });
-                });
-            });
-    })();
+          const activeContent = tabSection.querySelector(
+            `.tab-content[data-tab-content="${tabId}"]`,
+          );
+          if (activeContent) activeContent.classList.remove("hidden");
+        });
+      });
+    });
+  })();
 </script>
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const dropdown = document.getElementById("extradiv");
-        const arrow = document.getElementById("dropdown-arrow");
-        const button = document.getElementById("dropdown-button");
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.getElementById("extradiv");
+    const arrow = document.getElementById("dropdown-arrow");
+    const button = document.getElementById("dropdown-button");
 
-        if (button) {
-            button.addEventListener("click", () => {
-                const isClosed =
-                    dropdown.style.maxHeight === "0px" ||
-                    !dropdown.style.maxHeight;
+    if (button) {
+      button.addEventListener("click", () => {
+        const isClosed =
+          dropdown.style.maxHeight === "0px" || !dropdown.style.maxHeight;
 
-                if (isClosed) {
-                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-                    arrow.style.transform = "rotate(180deg)";
-                } else {
-                    dropdown.style.maxHeight = "0px";
-                    arrow.style.transform = "rotate(0deg)";
-                }
-            });
+        if (isClosed) {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          arrow.style.transform = "rotate(180deg)";
+        } else {
+          dropdown.style.maxHeight = "0px";
+          arrow.style.transform = "rotate(0deg)";
         }
-    });
+      });
+    }
+  });
 </script>
 <style is:inline>
-    #dropdown-arrow {
-        transition: transform 0.3s ease;
-    }
+  #dropdown-arrow {
+    transition: transform 0.3s ease;
+  }
 </style>

@@ -12,7 +12,6 @@ import { Image } from "astro:assets";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import img6 from "../../assets/images/DrumMixers/2.webp";
-import Video1 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import AcordeonItemCol from "../unitComponents/AcordeonItemCol";
 import OSection from "../unitComponents/OSection.astro";
 import flag from "../../assets/images/Burners/flag.svg";
@@ -26,7 +25,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
     </h1>
   </div>
   <div class="max-w-7xl px-8 mx-auto flex justify-center">
-    <Image src={obracivil} alt="Drum mixer on a construction zone" class="hero-img lg:w-4/5 rounded-lg" />
+    <Image
+      src={obracivil}
+      alt="Drum mixer on a construction zone"
+      class="hero-img lg:w-4/5 rounded-lg"
+    />
   </div>
   <div
     class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
@@ -82,7 +85,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
     />
   </div>
 
-  <div class="max-w-7xl px-8 mx-auto flex flex-col gap-0 md:gap-3 mb-10 mt-20 lg:mt-10">
+  <div
+    class="max-w-7xl px-8 mx-auto flex flex-col gap-0 md:gap-3 mb-10 mt-20 lg:mt-10"
+  >
     <h2 class="text-blueMain text-2xl lg:text-4xl text-center px-8">
       Precision where it matters.
     </h2>
@@ -104,7 +109,18 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
     </h2>
     <div class="z-20">
       <div class="w-full flex justify-center">
-        <video src={Video1} autoplay muted playsinline class="lg:w-3/5"></video>
+        <video
+          class="lg:w-3/5"
+          playsinline
+          controls
+          poster="/public/Gallery/customdes.webp"
+          preload="metadata"
+          width="1280"
+          height="720"
+        >
+          <source src="/public/Videos/Webm/DMVideo1.webp" type="video/webm" />
+          <source src="/public/Videos/Mp4/DMVideo1.mp4" type="video/mp4" />
+        </video>
       </div>
       <p class="text-grisT text-justify text-base md:text-lg mt-6">
         The vertical drag slat features a retractable configuration that
@@ -223,7 +239,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
           <div
             class="flex items-start justify-start gap-10 absolute bottom-0 left-[-220px] z-10 pointer-events-none"
           >
-            <Image src={img6} alt="4” pitch chain" class="w-[80%] max-w-[750px]" />
+            <Image
+              src={img6}
+              alt="4” pitch chain"
+              class="w-[80%] max-w-[750px]"
+            />
           </div>
         </div>
       </div>
@@ -238,7 +258,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
       With Triaso, Become the Exclusive Provider of Hot Mix <br /> for All Paving
       Projects in Your Region
     </h2>
-    <Image src={img3} alt="Drum Mixer machine with vibrating mixers" class="mt-10" />
+    <Image
+      src={img3}
+      alt="Drum Mixer machine with vibrating mixers"
+      class="mt-10"
+    />
   </div>
   <OSection />
   <div class="px-4">
@@ -294,7 +318,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
         class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
       >
         <div class="w-full flex justify-center">
-          <Image src={item1} alt="Extra-reinforced front shield" class="rounded-lg w-3/4" />
+          <Image
+            src={item1}
+            alt="Extra-reinforced front shield"
+            class="rounded-lg w-3/4"
+          />
         </div>
         <div class="w-full">
           <p class="text-base md:text-lg text-grisT font-light">
@@ -329,7 +357,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
           </p>
         </div>
         <div class="w-full flex justify-center">
-          <Image src={item2} alt="Optimized Insulation Design" class="rounded-lg w-3/4" />
+          <Image
+            src={item2}
+            alt="Optimized Insulation Design"
+            class="rounded-lg w-3/4"
+          />
         </div>
       </div>
     </AcordeonItemCol>
@@ -338,7 +370,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
         class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
       >
         <div class="w-full flex justify-center">
-          <Image src={item3} alt="Single-Point Adjustment System" class="rounded-lg w-3/4" />
+          <Image
+            src={item3}
+            alt="Single-Point Adjustment System"
+            class="rounded-lg w-3/4"
+          />
         </div>
         <div class="w-full">
           <p class="text-base md:text-lg text-grisT font-light">
@@ -360,7 +396,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
         class="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-5"
       >
         <div class="w-full flex justify-center">
-          <Image src={item4} alt="Drum Tires & Trunnions" class="rounded-lg w-3/4" />
+          <Image
+            src={item4}
+            alt="Drum Tires & Trunnions"
+            class="rounded-lg w-3/4"
+          />
         </div>
         <div class="w-full space-y-3">
           <p class="text-base md:text-lg text-grisT font-light">
@@ -418,7 +458,11 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
           </p>
         </div>
         <div class="w-full flex justify-center">
-          <Image src={thrustrollers} alt="Triaso Thrust Rollers" class="rounded-lg w-3/4" />
+          <Image
+            src={thrustrollers}
+            alt="Triaso Thrust Rollers"
+            class="rounded-lg w-3/4"
+          />
         </div>
       </div>
     </AcordeonItemCol>

@@ -11,7 +11,6 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Collapsable from "../HotMixStorage/Collapsable";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import AcordeonItem from "../unitComponents/AcordeonItem";
-import HTAdv from "../../assets/images/HotMix/HMAdv.mp4";
 import semiSilo from "../../assets/images/AsphaltPlant/silos3.webp";
 import OSection from "../unitComponents/OSection.astro";
 import siloBG from "../../assets/images/HotMix/siloBG.webp";
@@ -19,438 +18,407 @@ import Aislamiento from "../../assets/images/HotMix/Aislamiento.webp";
 import HMGallerySlider from "./HMGallerySlider";
 
 const images = [
-    {
-        src: silo3.src,
-        title: "Asphalt Pumps",
-        description:
-            " Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This design guarantees first-in/first-out discharge, eliminates material buildup on the walls, and prevents material buildup along the walls, and minimizes mix segregation. The result is aclean, consistent flow with every load.",
-    },
-    {
-        src: silo2.src,
-        title: "Agitators for additives and polymers",
-        description:
-            "The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single motion through overlapping clam-style gates. The gates open simultaneously, directing the mix to fall centered, distributing  it evenly across the silo floor. This design minimizes material segregation, reduces wear, and prevents buildup within the cone area.",
-    },
-    {
-        src: silo1.src,
-        title: "Asphalt Hoses",
-        description:
-            "To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure, preserving the mix quality and delaying oxidation.",
-    },
+  {
+    src: silo3.src,
+    title: "Asphalt Pumps",
+    description:
+      " Our silo cones are designed with a steep 66° angle to ensure full cross-sectional flow. This design guarantees first-in/first-out discharge, eliminates material buildup on the walls, and prevents material buildup along the walls, and minimizes mix segregation. The result is aclean, consistent flow with every load.",
+  },
+  {
+    src: silo2.src,
+    title: "Agitators for additives and polymers",
+    description:
+      "The silos use a top-mounted batcher that collects a full load of mix before discharging it in a single motion through overlapping clam-style gates. The gates open simultaneously, directing the mix to fall centered, distributing  it evenly across the silo floor. This design minimizes material segregation, reduces wear, and prevents buildup within the cone area.",
+  },
+  {
+    src: silo1.src,
+    title: "Asphalt Hoses",
+    description:
+      "To prevent premature hardening, the silo remains fully sealed during storage. This airtight design blocks air exposure, preserving the mix quality and delaying oxidation.",
+  },
 ];
 ---
 
 <section class="w-full flex 2 mt-6 md:mt-20 flex-col gap-4 bg-gray-100">
-    <div class="flex flex-col gap-4 mt-8">
+  <div class="flex flex-col gap-4 mt-8">
+    <div
+      class="flex w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 justify-center items-center"
+    >
+      <button
+        class="tab-button-1 flex-1 py-5 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+        data-tab="tab1"
+        aria-selected="true"
+      >
+        <!-- Cambiado a true -->
+        Computerization
+      </button>
+      <button
+        class="tab-button-1 flex-1 py-5 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+        data-tab="tab2"
+        aria-selected="false"
+      >
+        <!-- Cambiado a false -->
+        Advantages
+      </button>
+      <button
+        class="tab-button-1 flex-1 py-3 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
+        data-tab="tab3"
+        aria-selected="false"
+      >
+        Low Maintenance
+      </button>
+    </div>
+    <div class="py-4">
+      <!-- First Section -->
+      <div
+        class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT"
+        data-tab-content="tab1"
+      >
         <div
-            class="flex w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 justify-center items-center"
+          class="grid grid-cols-1 md:grid-cols-2 justify-center items-center"
         >
-            <button
-                class="tab-button-1 flex-1 py-5 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
-                data-tab="tab1"
-                aria-selected="true"
-            >
-                <!-- Cambiado a true -->
-                Computerization
-            </button>
-            <button
-                class="tab-button-1 flex-1 py-5 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
-                data-tab="tab2"
-                aria-selected="false"
-            >
-                <!-- Cambiado a false -->
-                Advantages
-            </button>
-            <button
-                class="tab-button-1 flex-1 py-3 lg:py-3 px-2 font-bold text-xs sm:text-sm md:text-xl text-center leading-tight focus:outline-none"
-                data-tab="tab3"
-                aria-selected="false"
-            >
-                Low Maintenance
-            </button>
+          <div
+            class="bg-white p-4 font-bold md:rounded-r-2xl md:px-36 md:border-2 border-black order-2 md:order-1"
+          >
+            <p>
+              Offers automated, precise control for weighing and delivering hot
+              mix, reducing the risk of human error and increasing operational
+              efficiency.
+            </p><br />
+            <p>
+              The silo HMI can be connected to the asphalt plant’s computer
+              using industrial protocols such as Ethernet Industrial, Modbus,
+              and CANopen. If needed, Triaso communication interface can be
+              integrated for additional protocol requirements and advanced
+              real-time data monitoring regardless of location.
+            </p><br />
+            <p>
+              Equipped with quick connection contacts for easy setup and
+              maintenance, along with protective signs to shield the electrical
+              components from weather conditions.
+            </p>
+          </div>
+          <div
+            class="w-full h-auto flex justify-center items-center px-8 md:px-36 order-1 md:order-2"
+          >
+            <Image
+              src={silo}
+              alt="Silo Image"
+              class={"max-w-[400px] max-h-[600px]"}
+            />
+          </div>
         </div>
-        <div class="py-4">
-            <!-- First Section -->
+        <OSection />
+        <TwoColumnSection
+          leftBg="bg-redBg"
+          rightBg="bg-blueMain"
+          imageSrc={Tred.src}
+          imageAlt="Red T icon"
+          imageWidth="150px"
+        >
+          <div slot="left" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">Versatil Setup</h1>
+            <p class="text-base md:text-lg">
+              Works seamlessly in a dedicated control cabin or under a
+              protective roof
+            </p>
+          </div>
+          <div slot="right" class="flex flex-col justify-center gap-3">
+            <h1 class="text-xl md:text-2xl">Quick Adjustments</h1>
+            <p class="text-base md:text-lg">
+              Allows rapid adjustments to control settings or operating
+              parameters to match project requirements.
+            </p>
+          </div>
+        </TwoColumnSection>
+
+        <div
+          class="w-full max-w-7xl mx-auto px-4 flex flex-col justify-center gap-2"
+        >
+          <Collapsable client:only />
+        </div>
+        <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
+          <Image src={HMI} alt="Triaso Relief system " class="w-4/5" />
+        </div>
+        <div
+          class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full"
+        >
+          <div class="w-full max-w-7xl mx-auto px-8 relative h-[250px]">
+            <h2 class="text-xl md:text-2xl relative z-20 font-bold">
+              User Friendly Interface
+            </h2>
+            <br />
+            <p class="font-thin text-sm md:text-base relative z-20">
+              Created to offer plant operators a deeper understanding of their
+              operation, this cloud-based platform stores all production data
+              remotely and securely. It gives you the freedom to access detailed
+              performance analytics from any location and any device—whether
+              you're in the office, on the road, or at a job site. With
+              real-time access to trends, logs, and operational metrics,
+              decision-making becomes faster, more informed, and fully
+              independent of your physical location.
+            </p>
+            <Image
+              src={Logo}
+              alt="Triaso Logo"
+              class="absolute top-0 left-0 z-10 w-full"
+            />
+          </div>
+          <div class="w-full bg-bgBeige -skew-y-2">
             <div
-                class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 text-base md:text-lg text-grisT"
-                data-tab-content="tab1"
+              class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl mx-auto px-8 skew-y-2 gap-3 md:gap-10"
             >
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 justify-center items-center"
-                >
-                    <div
-                        class="bg-white p-4 font-bold md:rounded-r-2xl md:px-36 md:border-2 border-black order-2 md:order-1"
-                    >
-                        <p>
-                            Offers automated, precise control for weighing and
-                            delivering hot mix, reducing the risk of human error
-                            and increasing operational efficiency.
-                        </p><br />
-                        <p>
-                            The silo HMI can be connected to the asphalt plant’s
-                            computer using industrial protocols such as Ethernet
-                            Industrial, Modbus, and CANopen. If needed, Triaso
-                            communication interface can be integrated for
-                            additional protocol requirements and advanced
-                            real-time data monitoring regardless of location.
-                        </p><br />
-                        <p>
-                            Equipped with quick connection contacts for easy
-                            setup and maintenance, along with protective signs
-                            to shield the electrical components from weather
-                            conditions.
-                        </p>
-                    </div>
-                    <div
-                        class="w-full h-auto flex justify-center items-center px-8 md:px-36 order-1 md:order-2"
-                    >
-                        <Image
-                            src={silo}
-                            alt="Silo Image"
-                            class={"max-w-[400px] max-h-[600px]"}
-                        />
-                    </div>
-                </div>
-                <OSection />
-                <TwoColumnSection
-                    leftBg="bg-redBg"
-                    rightBg="bg-blueMain"
-                    imageSrc={Tred.src}
-                    imageAlt="Red T icon"
-                    imageWidth="150px"
-                >
-                    <div slot="left" class="flex flex-col justify-center gap-3">
-                        <h1 class="text-xl md:text-2xl">Versatil Setup</h1>
-                        <p class="text-base md:text-lg">
-                            Works seamlessly in a dedicated control cabin or
-                            under a protective roof
-                        </p>
-                    </div>
-                    <div
-                        slot="right"
-                        class="flex flex-col justify-center gap-3">
-                        <h1 class="text-xl md:text-2xl">Quick Adjustments</h1>
-                        <p class="text-base md:text-lg">
-                            Allows rapid adjustments to control settings or
-                            operating parameters to match project requirements.
-                        </p>
-                    </div>
-                </TwoColumnSection>
-
-                <div
-                    class="w-full max-w-7xl mx-auto px-4 flex flex-col justify-center gap-2"
-                >
-                    <Collapsable client:only />
-                </div>
-                <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
-                    <Image src={HMI} alt="Triaso Relief system " class="w-4/5" />
-                </div>
-                <div
-                    class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full"
-                >
-                    <div
-                        class="w-full max-w-7xl mx-auto px-8 relative h-[250px]"
-                    >
-                        <h2 class="text-xl md:text-2xl relative z-20 font-bold">
-                            User Friendly Interface
-                        </h2>
-                        <br />
-                        <p class="font-thin text-sm md:text-base relative z-20">
-                            Created to offer plant operators a deeper
-                            understanding of their operation, this cloud-based
-                            platform stores all production data remotely and
-                            securely. It gives you the freedom to access
-                            detailed performance analytics from any location and
-                            any device—whether you're in the office, on the
-                            road, or at a job site. With real-time access to
-                            trends, logs, and operational metrics,
-                            decision-making becomes faster, more informed, and
-                            fully independent of your physical location.
-                        </p>
-                        <Image
-                            src={Logo}
-                            alt="Triaso Logo"
-                            class="absolute top-0 left-0 z-10 w-full"
-                        />
-                    </div>
-                    <div class="w-full bg-bgBeige -skew-y-2">
-                        <div
-                            class="w-full grid grid-cols-1 md:grid-cols-2 py-20 max-w-7xl mx-auto px-8 skew-y-2 gap-3 md:gap-10"
-                        >
-                            <div class="w-full text-center text-black">
-                                <h1
-                                    class="font-bold text-black text-xl md:text-2xl"
-                                >
-                                    Visual and audible alarm for maximum mix
-                                    level
-                                </h1><br />
-                                <p class="text-base md:text-lg">
-                                    Visual and audible alarms to alert the
-                                    operator and personnel when the silo is
-                                    full.
-                                </p>
-                            </div>
-                            <div class="w-full text-center text-black">
-                                <h1
-                                    class="font-bold text-black text-xl md:text-2xl"
-                                >
-                                    Sonic sensor to indicate mix level inside
-                                    the silo
-                                </h1><br />
-                                <p class="text-base md:text-lg">
-                                    Real-time display of hot mix level on the
-                                    operator console.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="w-full relative">
-                        <!-- Imagen -->
-                        <Image
-                            src={semiSilo}
-                            alt="Semi silo"
-                            class="w-[90vw] md:w-[60vw] mx-auto relative z-10 -mb-10"
-                        />
-
-                        <!-- Sección blanca -->
-                        <div class="w-full bg-bgMain h-[80px] relative z-0">
-                            
-                        </div>
-                    </div>
-                </div>
+              <div class="w-full text-center text-black">
+                <h1 class="font-bold text-black text-xl md:text-2xl">
+                  Visual and audible alarm for maximum mix level
+                </h1><br />
+                <p class="text-base md:text-lg">
+                  Visual and audible alarms to alert the operator and personnel
+                  when the silo is full.
+                </p>
+              </div>
+              <div class="w-full text-center text-black">
+                <h1 class="font-bold text-black text-xl md:text-2xl">
+                  Sonic sensor to indicate mix level inside the silo
+                </h1><br />
+                <p class="text-base md:text-lg">
+                  Real-time display of hot mix level on the operator console.
+                </p>
+              </div>
             </div>
-            <!-- Second Section -->
-            <div
-                class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT"
-                data-tab-content="tab2"
-            >
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 justify-center items-center max-w-7xl mx-auto px-8"
-                >
-                    <div
-                        class="w-full flex flex-col justify-start items-center gap-6 order-2 md:order-1"
-                    >
-                        <div class="bg-white p-4 font-bold rounded-2xl">
-                            <AcordeonItem
-                                client:only
-                                title="Essential Storage Solutions for Efficient Asphalt Operations"
-                                content={`Hot mix storage silos are essential for maintaining the quality and efficiency of asphalt production and delivery operations. 
+          </div>
+
+          <div class="w-full relative">
+            <!-- Imagen -->
+            <Image
+              src={semiSilo}
+              alt="Semi silo"
+              class="w-[90vw] md:w-[60vw] mx-auto relative z-10 -mb-10"
+            />
+
+            <!-- Sección blanca -->
+            <div class="w-full bg-bgMain h-[80px] relative z-0"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Second Section -->
+      <div
+        class="w-full flex flex-col items-center justify-center gap-4 mt-4 tab-content-1 hidden text-base md:text-lg text-grisT"
+        data-tab-content="tab2"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 justify-center items-center max-w-7xl mx-auto px-8"
+        >
+          <div
+            class="w-full flex flex-col justify-start items-center gap-6 order-2 md:order-1"
+          >
+            <div class="bg-white p-4 font-bold rounded-2xl">
+              <AcordeonItem
+                client:only
+                title="Essential Storage Solutions for Efficient Asphalt Operations"
+                content={`Hot mix storage silos are essential for maintaining the quality and efficiency of asphalt production and delivery operations. 
                                 
                                 Built with durable materials and advanced control systems, these silos deliver consistent performance under demanding conditions while helping reduce operating costs and downtime. Whether used in stationary or mobile configurations, the silo provides practical flexibility and dependable operation, making it an essential element of any asphalt plant.`}
-                            />
-                        </div>
-                        <div class="flex flex-row items-start">
-                            <div class="items-start">
-                                <Image
-                                    src={Aislamiento}
-                                    alt="Six inches fiberglass insulation"
-                                    class="w-[600px]"
-                                />
-                                <div
-                                    class="flex flex-col justify-end items-center"
-                                >
-                                    <p class="text-blueMain font-bold">
-                                        Six inches
-                                    </p>
-                                    <p class="font-bold text-center">
-                                        fiberglass insulation
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-10">
-                                <AcordeonItem
-                                    client:only
-                                    title="Optimized Insulation Design"
-                                    content={`The silo walls are designed with high-efficiency insulation that not only preserves the hot-mix temperature but also minimizes heat loss, reducing energy consumption and ensuring the material stays at the ideal temperature for up to 72 hours — even in extreme weather conditions.`}
-                                />
-                                <AcordeonItem
-                                    client:only
-                                    title="Enhanced Loading and Unloading Efficiency"
-                                    content={`The silos are designed with an optimized loading and unloading system that allows for faster material transfer, reducing wait times and improving overall throughput. This feature enhances productivity by streamlining the flow of materials during operations.`}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full order-1 md:order-2">
-                        <video
-                            src={HTAdv}
-                            autoplay
-                            loop
-                            playsinline
-                            webkit-playsinline></video>
-                    </div>
-                </div>
-
-                <HMGallerySlider client:load images={images} />
+              />
             </div>
-            <!-- Third Section -->
-            <div
-                class="w-full flex flex-col mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold"
-                data-tab-content="tab3"
+            <div class="flex flex-row items-start">
+              <div class="items-start">
+                <Image
+                  src={Aislamiento}
+                  alt="Six inches fiberglass insulation"
+                  class="w-[600px]"
+                />
+                <div class="flex flex-col justify-end items-center">
+                  <p class="text-blueMain font-bold">Six inches</p>
+                  <p class="font-bold text-center">fiberglass insulation</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-10">
+                <AcordeonItem
+                  client:only
+                  title="Optimized Insulation Design"
+                  content={`The silo walls are designed with high-efficiency insulation that not only preserves the hot-mix temperature but also minimizes heat loss, reducing energy consumption and ensuring the material stays at the ideal temperature for up to 72 hours — even in extreme weather conditions.`}
+                />
+                <AcordeonItem
+                  client:only
+                  title="Enhanced Loading and Unloading Efficiency"
+                  content={`The silos are designed with an optimized loading and unloading system that allows for faster material transfer, reducing wait times and improving overall throughput. This feature enhances productivity by streamlining the flow of materials during operations.`}
+                />
+              </div>
+            </div>
+          </div>
+          <div class="w-full order-1 md:order-2">
+            <video
+              playsinline
+              controls
+              poster="/public/Gallery/customdes.webp"
+              preload="metadata"
+              width="1280"
+              height="720"
             >
-                <div class="w-full max-w-7xl mx-auto p-5">
-                    <h1 class="text-red-600 font-bold">
-                        We understand the importance of keeping your equipment
-                        running non-stop. The operation of many other machines
-                        depends on the reliability of your asphalt plant.
-                    </h1>
-                    <p class="font-bold">
-                        Strict quality control ensures the operation of your
-                        asphalt plant with low maintenance for many years.
-                    </p>
-                </div>
-
-                <div
-                    class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]"
-                >
-                    <p>­</p>
-                </div>
-                <section
-                    class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] overflow-hidden"
-                >
-                    <div
-                        class="absolute top-0 right-[15rem] h-[30rem] w-[30rem] overflow-hidden pointer-events-none"
-                    >
-                        <Image
-                            src={siloBG}
-                            alt="Silo image"
-                            class="absolute top-[10rem] right-[-5rem] lg:right-0 lg:top-1/2 -translate-y-1/2 w-auto max-h-[100%] opacity-40 object-contain"
-                        />
-                    </div>
-
-                    <div
-                        class="max-w-7xl mx-auto text-white relative z-10 px-6 md:px-10"
-                    >
-                        <p>
-                            The silos are built with durable, easy-to-maintain
-                            components that require minimal upkeep. Their robust
-                            construction and simple design reduce the need for
-                            frequent repairs, lowering long-term maintenance
-                            costs and increasing the lifespan of the equipment.
-                        </p>
-                        <p>
-                            We understand the importance of keeping your
-                            equipment running nonstop. The reliability of your
-                            silos, built to operate in a variety of weather
-                            conditions—from intense heat to freezing
-                            temperatures—ensures consistent performance and
-                            minimizes downtime, providing dependable operation
-                            year-round.
-                        </p>
-                    </div>
-                    <div
-                        class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 z-10 px-6 md:px-10"
-                    >
-                        <div class="relative pb-4">
-                            <div
-                                class="absolute left-0 top-0 -translate-x-[100vw] w-[100vw] h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] bg-blueMain"
-                            >
-                            </div>
-                            <div
-                                class="relative bg-blueMain text-white p-4 sm:p-5 md:p-6 w-full md:w-4/5 h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] flex flex-col justify-center gap-4 md:gap-6 rounded-r-[30px]"
-                            >
-                                <h1
-                                    class="text-lg sm:text-xl md:text-2xl font-semibold"
-                                >
-                                    24/7 customer service
-                                </h1>
-
-                                <p class="text-[#d9d9d9] text-sm sm:text-base">
-                                    Our team is available around the clock,
-                                    ready to assist at any time.
-                                </p>
-
-                                <Whatsbtn />
-                            </div>
-                        </div>
-
-                        <div
-                            class="w-full flex flex-col items-center justify-center gap-6 mb-5"
-                        >
-                            <AcordeonItem
-                                client:only
-                                title="Quick Replacement Parts Availability"
-                                content="To ensure minimal downtime, the silos are designed with standard, easily replaceable parts. This reduces lead time for repairs and helps maintain smooth operations without extended interruptions."
-                            />
-                            <AcordeonItem
-                                client:only
-                                title="Corrosion-Resistant Coating"
-                                content="Equipped with aspecialized corrosion-resistant coating that protects against wear and tear from weather elements and chemicals, ensuring durability and functionality even in harsh environments."
-                            />
-                            <AcordeonItem
-                                client:only
-                                title="High-Quality Materials, Manufactured In-House"
-                                content="Our silos are constructed using premium materials sourced directly by us, ensuring superior quality and long-lasting performance. By manufacturing every component in-house, we maintain strict quality control standards, guaranteeing that each silo meets the highest industry standards for durability, efficiency, and reliability."
-                            />
-                        </div>
-                    </div>
-                </section>
-                <section
-                    class="w-full bg-gradient-to-b from-[#383838] to-[#e7e7e7] py-20"
-                >
-                    <p>­­</p>
-                </section>
-            </div>
+              <source src="/public/Videos/Webm/HMAdv.webp" type="video/webm" />
+              <source src="/public/Videos/Mp4/HMAdv.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
+
+        <HMGallerySlider client:load images={images} />
+      </div>
+      <!-- Third Section -->
+      <div
+        class="w-full flex flex-col mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold"
+        data-tab-content="tab3"
+      >
+        <div class="w-full max-w-7xl mx-auto p-5">
+          <h1 class="text-red-600 font-bold">
+            We understand the importance of keeping your equipment running
+            non-stop. The operation of many other machines depends on the
+            reliability of your asphalt plant.
+          </h1>
+          <p class="font-bold">
+            Strict quality control ensures the operation of your asphalt plant
+            with low maintenance for many years.
+          </p>
+        </div>
+
+        <div
+          class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]"
+        >
+          <p>­</p>
+        </div>
+        <section
+          class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-[15rem] h-[30rem] w-[30rem] overflow-hidden pointer-events-none"
+          >
+            <Image
+              src={siloBG}
+              alt="Silo image"
+              class="absolute top-[10rem] right-[-5rem] lg:right-0 lg:top-1/2 -translate-y-1/2 w-auto max-h-[100%] opacity-40 object-contain"
+            />
+          </div>
+
+          <div class="max-w-7xl mx-auto text-white relative z-10 px-6 md:px-10">
+            <p>
+              The silos are built with durable, easy-to-maintain components that
+              require minimal upkeep. Their robust construction and simple
+              design reduce the need for frequent repairs, lowering long-term
+              maintenance costs and increasing the lifespan of the equipment.
+            </p>
+            <p>
+              We understand the importance of keeping your equipment running
+              nonstop. The reliability of your silos, built to operate in a
+              variety of weather conditions—from intense heat to freezing
+              temperatures—ensures consistent performance and minimizes
+              downtime, providing dependable operation year-round.
+            </p>
+          </div>
+          <div
+            class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 z-10 px-6 md:px-10"
+          >
+            <div class="relative pb-4">
+              <div
+                class="absolute left-0 top-0 -translate-x-[100vw] w-[100vw] h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] bg-blueMain"
+              >
+              </div>
+              <div
+                class="relative bg-blueMain text-white p-4 sm:p-5 md:p-6 w-full md:w-4/5 h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] flex flex-col justify-center gap-4 md:gap-6 rounded-r-[30px]"
+              >
+                <h1 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                  24/7 customer service
+                </h1>
+
+                <p class="text-[#d9d9d9] text-sm sm:text-base">
+                  Our team is available around the clock, ready to assist at any
+                  time.
+                </p>
+
+                <Whatsbtn />
+              </div>
+            </div>
+
+            <div
+              class="w-full flex flex-col items-center justify-center gap-6 mb-5"
+            >
+              <AcordeonItem
+                client:only
+                title="Quick Replacement Parts Availability"
+                content="To ensure minimal downtime, the silos are designed with standard, easily replaceable parts. This reduces lead time for repairs and helps maintain smooth operations without extended interruptions."
+              />
+              <AcordeonItem
+                client:only
+                title="Corrosion-Resistant Coating"
+                content="Equipped with aspecialized corrosion-resistant coating that protects against wear and tear from weather elements and chemicals, ensuring durability and functionality even in harsh environments."
+              />
+              <AcordeonItem
+                client:only
+                title="High-Quality Materials, Manufactured In-House"
+                content="Our silos are constructed using premium materials sourced directly by us, ensuring superior quality and long-lasting performance. By manufacturing every component in-house, we maintain strict quality control standards, guaranteeing that each silo meets the highest industry standards for durability, efficiency, and reliability."
+              />
+            </div>
+          </div>
+        </section>
+        <section
+          class="w-full bg-gradient-to-b from-[#383838] to-[#e7e7e7] py-20"
+        >
+          <p>­­</p>
+        </section>
+      </div>
     </div>
+  </div>
 </section>
 <style is:global>
-    /* Estilos para los tabs activos */
-    .tab-button-1[aria-selected="true"] {
-        color: var(--rojo-btn);
-        border-bottom: 2px solid var(--rojo-btn);
-    }
+  /* Estilos para los tabs activos */
+  .tab-button-1[aria-selected="true"] {
+    color: var(--rojo-btn);
+    border-bottom: 2px solid var(--rojo-btn);
+  }
 
-    .tab-button-1[aria-selected="false"] {
-        color: var(--gris-titulos);
-        border-bottom: 2px solid var(--gris-titulos);
-    }
+  .tab-button-1[aria-selected="false"] {
+    color: var(--gris-titulos);
+    border-bottom: 2px solid var(--gris-titulos);
+  }
 
-    .tab-button-1:hover:not([aria-selected="true"]) {
-        color: var(--rojo-btn);
-        border-bottom: 2px solid var(--rojo-btn);
-    }
+  .tab-button-1:hover:not([aria-selected="true"]) {
+    color: var(--rojo-btn);
+    border-bottom: 2px solid var(--rojo-btn);
+  }
 </style>
 <script is:inline>
-    (function initTabs() {
-        // Usamos selectores más específicos para evitar conflictos
-        const tabButtons = document.querySelectorAll(".tab-button-1");
-        const tabContents = document.querySelectorAll(".tab-content-1"); // Cambiado a clase específica
+  (function initTabs() {
+    // Usamos selectores más específicos para evitar conflictos
+    const tabButtons = document.querySelectorAll(".tab-button-1");
+    const tabContents = document.querySelectorAll(".tab-content-1"); // Cambiado a clase específica
 
-        // Ocultar todos los contenidos y desactivar botones
-        tabContents.forEach((content, index) => {
-            content.classList.toggle("hidden", index !== 0);
+    // Ocultar todos los contenidos y desactivar botones
+    tabContents.forEach((content, index) => {
+      content.classList.toggle("hidden", index !== 0);
+    });
+
+    tabButtons.forEach((button, index) => {
+      button.setAttribute("aria-selected", index === 0 ? "true" : "false");
+    });
+
+    // Configurar los listeners
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tabId = button.getAttribute("data-tab");
+
+        tabButtons.forEach((btn) => {
+          btn.setAttribute("aria-selected", "false");
         });
 
-        tabButtons.forEach((button, index) => {
-            button.setAttribute(
-                "aria-selected",
-                index === 0 ? "true" : "false",
-            );
+        button.setAttribute("aria-selected", "true");
+
+        tabContents.forEach((content) => {
+          content.classList.add("hidden");
         });
 
-        // Configurar los listeners
-        tabButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const tabId = button.getAttribute("data-tab");
-
-                tabButtons.forEach((btn) => {
-                    btn.setAttribute("aria-selected", "false");
-                });
-
-                button.setAttribute("aria-selected", "true");
-
-                tabContents.forEach((content) => {
-                    content.classList.add("hidden");
-                });
-
-                document
-                    .querySelector(
-                        `.tab-content-1[data-tab-content="${tabId}"]`,
-                    )
-                    .classList.remove("hidden");
-            });
-        });
-    })();
+        document
+          .querySelector(`.tab-content-1[data-tab-content="${tabId}"]`)
+          .classList.remove("hidden");
+      });
+    });
+  })();
 </script>

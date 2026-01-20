@@ -1,51 +1,80 @@
 ---
-import burnerV from "../../assets/images/Burners/burnerVideo.mp4";
+
 ---
-<section class="w-full mt-20 md:mt-32 font-bold text-grisT flex flex-col gap-6 max-w-7xl px-8 mx-auto">
-    <div class="w-full">
-        <h1 class="text-3xl md:text-4xl">BURNERS</h1><br>
-        <p class="text-base md:text-lg">Triaso® 'Total Air' Burners are designed for complete and efficient fuel combustion, using a fully sealed system that doesn’t
-             rely on the drum’s exhaust. This avoids pollution, mix contamination, and filter clogging—while saving fuel and maintaining
-              consistent performance throughout the day. Their precise air control system ensures clean operation, low emissions, and reliable 
-              results in any climate.
-        </p>
+
+<section
+  class="w-full mt-20 md:mt-32 font-bold text-grisT flex flex-col gap-6 max-w-7xl px-8 mx-auto"
+>
+  <div class="w-full">
+    <h1 class="text-3xl md:text-4xl">BURNERS</h1><br />
+    <p class="text-base md:text-lg">
+      Triaso® 'Total Air' Burners are designed for complete and efficient fuel
+      combustion, using a fully sealed system that doesn’t rely on the drum’s
+      exhaust. This avoids pollution, mix contamination, and filter
+      clogging—while saving fuel and maintaining consistent performance
+      throughout the day. Their precise air control system ensures clean
+      operation, low emissions, and reliable results in any climate.
+    </p>
+  </div>
+  <div class="lg:w-1/2 md:w-1/2 flex justify-center mx-auto">
+    <video
+      playsinline
+      controls
+      poster="/public/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/public/Videos/Webm/burnerVideo.webp" type="video/webm" />
+      <source src="/public/Videos/Mp4/burnerVideo.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="text-center">
+    <h2 class="text-black text-xl md:text-2xl">
+      From 6 to 125 million Btu/Hr, with preheater and filter
+    </h2>
+  </div>
+  <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="w-full text-blueMain flex flex-col gap-3">
+      <h2 class="text-lg md:text-xl text-center">Low Nox emissions</h2>
+      <div class="w-full h-[2px] bg-blueMain"></div>
+      <p class="text-sm md:text-lg text-justify">
+        Low NOx emissions <span class="text-grisPPP"
+          >(nitrogen oxides), are achieved, minimizing the release of this
+          greenhouse gas, which is strictly regulated in many regions, mainly in
+          urban areas. The system can be equipped with a flame protection module
+          that further reduces NOx levels, reaching near-zero emissions. <br />
+          By achieving total combustion, several issues are avoided:</span
+        >
+      </p>
+      <ul class="text-sm md:text-lg list-disc ml-6">
+        <li>Atmospheric pollution.</li>
+        <li>Contamination of the asphalt mix with unburned fuel.</li>
+        <li>Baghouse clogging in the baghouse and a increased fire risk.</li>
+      </ul>
     </div>
-    <div class="lg:w-1/2 md:w-1/2 flex justify-center mx-auto">
-        <video src={burnerV} autoplay class="w-full"></video>
+    <div class="w-full text-redBg flex flex-col gap-3">
+      <h2 class="text-lg md:text-xl text-center">100% regulated air</h2>
+      <div class="w-full h-[2px] bg-redBg"></div>
+      <p class="text-sm md:text-lg text-justify text-grisPPP">
+        The burner regulates <span class="text-redBg">
+          100% of the air for combustion
+        </span>without relying on the drum's exhaust system. This ensures
+        complete combustion and<span class="text-redBg">
+          100% fuel utilization</span
+        >.
+      </p>
+      <ul class="text-sm md:text-lg list-disc ml-6 text-grisPPP">
+        <li>
+          A sealed installation prevents cold air from entering, that would
+          otherwise be used to heat it and allowing precise, efficient
+          combustion.
+        </li>
+        <li>
+          Efficiency remains stable regardless of temperature changes throughout
+          the day.
+        </li>
+      </ul>
     </div>
-    <div class="text-center">
-        <h2 class="text-black text-xl md:text-2xl">
-            From 6 to 125 million Btu/Hr, with preheater and filter
-        </h2>
-    </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="w-full text-blueMain flex flex-col gap-3">
-            <h2 class="text-lg md:text-xl text-center">Low Nox emissions</h2>
-            <div class="w-full h-[2px] bg-blueMain"></div>
-            <p class="text-sm md:text-lg text-justify">
-                Low NOx emissions <span class="text-grisPPP">(nitrogen oxides), are achieved,
-                     minimizing the release of this greenhouse gas, which is strictly regulated in many regions, 
-                     mainly in urban areas. The system can be equipped with a flame protection module that further reduces NOx levels,
-                      reaching near-zero emissions. <br>
-                    By achieving total combustion, several issues are avoided:</span>
-            </p>
-            <ul class="text-sm md:text-lg list-disc ml-6"> 
-                <li>Atmospheric pollution.</li>
-                <li>Contamination of the asphalt mix with unburned fuel.</li>
-                <li>Baghouse clogging in the baghouse and a increased fire risk.</li>
-            </ul>
-        </div>
-        <div class="w-full text-redBg flex flex-col gap-3">
-            <h2 class="text-lg md:text-xl text-center">100% regulated air</h2>
-            <div class="w-full h-[2px] bg-redBg"></div>
-            <p class="text-sm md:text-lg text-justify text-grisPPP">
-                The burner regulates <span class="text-redBg"> 100% of the air for combustion </span>without relying on the drum's exhaust system. 
-                This ensures complete combustion and<span class="text-redBg"> 100% fuel utilization</span>.
-            </p>
-            <ul class="text-sm md:text-lg list-disc ml-6 text-grisPPP"> 
-                <li>A sealed installation prevents cold air from entering, that would otherwise be used to heat it and allowing precise, efficient combustion.</li>
-                <li>Efficiency remains stable regardless of temperature changes throughout the day.</li>
-            </ul>
-        </div>
-    </div>
+  </div>
 </section>

@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.webp";
-import ASVideo from "../../assets/images/AsphaltStorage/ASMainVideo.mp4";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
 
@@ -109,8 +108,18 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
   </div>
   <div class="w-full flex flex-col justify-center items-center mb-5">
     <div class="max-w-7xl flex flex-col items-center">
-      <video src={ASVideo} autoplay muted></video><br />
-      <LearnBtn href="/AsphaltStorage"/>
+      <video
+        playsinline
+        controls
+        poster="/public/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/public/Videos/Webm/ASMainVideo.webp" type="video/webm" />
+        <source src="/public/Videos/Mp4/ASMainVideo.mp4" type="video/mp4" />
+      </video><br />
+      <LearnBtn href="/AsphaltStorage" />
     </div>
   </div>
 </div>

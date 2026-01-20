@@ -1,6 +1,5 @@
 ---
 import CardSection from "../IntegralAsphalt/CardSection.astro";
-import BProv1 from "../../assets/images/Burners/bprov1.mp4";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import FPH1 from "../../assets/images/FuelPreHeaters/FPH1.webp";
@@ -18,8 +17,18 @@ import { Image } from "astro:assets";
   >
     <div class="w-full flex flex-col gap-10">
       <div class="w-full">
-        <video src={BProv1} autoplay muted loop class="w-full rounded-lg"
-        ></video>
+        <video
+          class="w-full rounded-lg"
+          playsinline
+          controls
+          poster="/public/Gallery/customdes.webp"
+          preload="metadata"
+          width="1280"
+          height="720"
+        >
+          <source src="/public/Videos/Webm/bprov1.webp" type="video/webm" />
+          <source src="/public/Videos/Mp4/bprov1.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="w-full">
         <h1 class="text-center font-bold text-2xl md:text-3xl">
@@ -198,69 +207,63 @@ import { Image } from "astro:assets";
         it is to burn properly.
       </p>
     </Image>
-    <div>
-      <!-- <Image src="" alt="" /> -->
-    </div>
-    <div class="w-full max-w-7xl mx-auto px-8 relative flex flex-col gap-6">
-      <Image
-        src={fIcon}
-        alt="fire icon"
-        class="absolute top-[-8px] left-[-82px] w-1/4 -z-10 pointer-events-none"
-      />
-      <div class="w-full text-center lg:text-end">
-        <h2 class="text-2xl md:text-3xl">
-          Problems Caused by Not Preheating Low-Cost Fuels
-        </h2><br />
-        <p class="text-grisT text-lg md:text-xl">
-          Low-cost fuels that are not preheated cause and intensify the
-          following serious problems:
-        </p>
-      </div>
-      <div
-        class="lg:w-4/5 bg-white rounded-2xl p-4 self-center text-sm md:text-lg text-grisT flex justify-center"
-      >
-        <ul class="list-disc ml-6">
-          <li>Unburned microdroplets lead to a significant waste of fuel</li>
-          <li>The hot-mix becomes contaminated with unburned fuel</li>
-          <li>
-            This contamination causes the asphalt pavement to have a much
-            shorter service life
-          </li>
-          <li>
-            Additionally, the atmosphere is polluted by gases from incomplete
-            combustion
-          </li>
-          <ul class="list-disc ml-6">
-            <li>
-              Paying environmental fees for operating polluting equipment.
-            </li>
-          </ul>
-        </ul>
-      </div>
-    </div>
-    <div class="w-full bg-[url(/Hero1.webp)] bg-center my-10">
-      <div class="w-full bg-black/70 py-10 md:py-20 px-4 bg-cover h-full">
-        <ul class="text-white text-base md:text-2xl space-y-5">
-          <li>
-            Only brands with cutting-edge technology offer preheaters, usually
-            as an expensive add-on option.
-          </li>
-          <li>
-            Since 2014, Triaso includes preheaters in all of its drum
-            models—Parallel Flow and Counterflow—as standard equipment, with no
-            extra cost.
-          </li>
-          <li>
-            This is part of our effort to reduce pollution and extend the
-            lifespan of roadways.
-          </li>
-          <li>
-            We believe that these types of actions are the best investment.
-          </li>
-        </ul>
-      </div>
-    </div>
-    <FPHPlanos client:only />
-    <CardSection />
   </div>
+  <!-- <Image src="" alt="" /> -->
 </section>
+<div class="w-full max-w-7xl mx-auto px-8 relative flex flex-col gap-6">
+  <Image
+    src={fIcon}
+    alt="fire icon"
+    class="absolute top-[-8px] left-[-82px] w-1/4 -z-10 pointer-events-none"
+  />
+  <div class="w-full text-center lg:text-end">
+    <h2 class="text-2xl md:text-3xl">
+      Problems Caused by Not Preheating Low-Cost Fuels
+    </h2><br />
+    <p class="text-grisT text-lg md:text-xl">
+      Low-cost fuels that are not preheated cause and intensify the following
+      serious problems:
+    </p>
+  </div>
+  <div
+    class="lg:w-4/5 bg-white rounded-2xl p-4 self-center text-sm md:text-lg text-grisT flex justify-center"
+  >
+    <ul class="list-disc ml-6">
+      <li>Unburned microdroplets lead to a significant waste of fuel</li>
+      <li>The hot-mix becomes contaminated with unburned fuel</li>
+      <li>
+        This contamination causes the asphalt pavement to have a much shorter
+        service life
+      </li>
+      <li>
+        Additionally, the atmosphere is polluted by gases from incomplete
+        combustion
+      </li>
+      <ul class="list-disc ml-6">
+        <li>Paying environmental fees for operating polluting equipment.</li>
+      </ul>
+    </ul>
+  </div>
+</div>
+<div class="w-full bg-[url(/Hero1.webp)] bg-center my-10">
+  <div class="w-full bg-black/70 py-10 md:py-20 px-4 bg-cover h-full">
+    <ul class="text-white text-base md:text-2xl space-y-5">
+      <li>
+        Only brands with cutting-edge technology offer preheaters, usually as an
+        expensive add-on option.
+      </li>
+      <li>
+        Since 2014, Triaso includes preheaters in all of its drum
+        models—Parallel Flow and Counterflow—as standard equipment, with no
+        extra cost.
+      </li>
+      <li>
+        This is part of our effort to reduce pollution and extend the lifespan
+        of roadways.
+      </li>
+      <li>We believe that these types of actions are the best investment.</li>
+    </ul>
+  </div>
+</div>
+<FPHPlanos client:only />
+<CardSection />
