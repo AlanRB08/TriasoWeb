@@ -7,7 +7,6 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
 import AcordeonItem from "../unitComponents/AcordeonItem";
 import binUnit1 from "../../assets/images/BinUnits/binUnit1.webp";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
-import PGMC from "../../assets/images/ColdMix/PGMC.mp4";
 import CMHigh from "../../assets/images/ColdMix/CMHigh.webp";
 import PlaMFDscC1 from "../../assets/images/ColdMix/PlaMFDscC1.webp";
 
@@ -91,7 +90,11 @@ const binSlides = [
     class="max-w-[2400px] grid grid-cols-1 md:grid-cols-5 gap-10 items-start justify-center"
   >
     <div class="col-span-2 flex justify-start md:justify-center">
-      <Image src={binUnit1} alt="Precision Dosing Systems in Cold Mix Asphalt Plants" class="w-3/4 md:w-full" />
+      <Image
+        src={binUnit1}
+        alt="Precision Dosing Systems in Cold Mix Asphalt Plants"
+        class="w-3/4 md:w-full"
+      />
     </div>
     <div
       class="col-span-3 flex flex-col items-start h-full justify-center lg:pr-52 pr-8 md:pl-0 pl-8"
@@ -144,7 +147,17 @@ const binSlides = [
     </div>
   </div>
   <div class="w-full md:w-3/4 max-w-7xl mx-auto px-8 py-10">
-    <video src={PGMC} autoplay></video>
+    <video
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/PGMC.webp" type="video/webm" />
+      <source src="/Videos/Mp4/PGMC.mp4" type="video/mp4" />
+    </video>
   </div>
   <div
     class="w-full flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8 py-10"
@@ -201,7 +214,11 @@ const binSlides = [
     class="w-full lg:w-8/12 flex flex-col justify-center items-center gap-10 max-w-7xl mx-auto px-8"
   >
     <div class="w-full flex justify-center">
-      <Image src={img3} alt="Inside of a pugmill" class={"w-3/4 h-auto object-contain"} />
+      <Image
+        src={img3}
+        alt="Inside of a pugmill"
+        class={"w-3/4 h-auto object-contain"}
+      />
     </div>
     <p class="text-grisT text-base md:text-lg">
       The pugmill features twin synchronized shafts driven by a gear system for
@@ -216,7 +233,11 @@ const binSlides = [
     class="max-w-[2400px] grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 mt-10 mb-5 h-full"
   >
     <div class="flex items-center justify-start col-span-1">
-      <Image src={PlaMFDscC1} alt="Pugmill on top of the system" class="w-[70%]" />
+      <Image
+        src={PlaMFDscC1}
+        alt="Pugmill on top of the system"
+        class="w-[70%]"
+      />
     </div>
     <div
       class="grid grid-cols-2 md:grid-cols-3 col-span-2 justify-center items-start gap-10 md:gap-20 px-8 bg-bgBeige p-6 rounded-l-2xl"
@@ -235,36 +256,35 @@ const binSlides = [
         <h2>controlled by time regulates the opening</h2>
         <h1 class="text-black text-lg md:text-2xl">via a timer.</h1>
       </div>
-        <div
-          class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
-        >
-          <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
-          <h2>in the console centralizes system management.</h2>
-        </div>
-        <div
-          class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
-        >
-          <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
-          <h2>with a</h2>
-          <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
-        </div>
-        <div
-          class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
-        >
-          <h1 class="text-black text-lg md:text-2xl">
-            Automatic or manual opening
-          </h1>
-          <h2>allows operation either manually or automatically</h2>
-        </div>
-        <div
-          class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
-        >
-          <h1 class="text-black text-lg md:text-2xl">
-            7.5 Hp air <br />compressor with a 293-liter air tank
-          </h1>
-          <h2>supplies air for pneumatic operation</h2>
-        </div>
-      
+      <div
+        class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
+      >
+        <h1 class="text-black text-lg md:text-2xl">Integrated control</h1>
+        <h2>in the console centralizes system management.</h2>
+      </div>
+      <div
+        class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
+      >
+        <h1 class="text-black text-lg md:text-2xl">Pneumatic opening</h1>
+        <h2>with a</h2>
+        <h1 class="text-black text-lg md:text-2xl">double-acting jack</h1>
+      </div>
+      <div
+        class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
+      >
+        <h1 class="text-black text-lg md:text-2xl">
+          Automatic or manual opening
+        </h1>
+        <h2>allows operation either manually or automatically</h2>
+      </div>
+      <div
+        class="flex flex-col items-start justify-center text-grisT md:text-base lg:text-lg text-sm"
+      >
+        <h1 class="text-black text-lg md:text-2xl">
+          7.5 Hp air <br />compressor with a 293-liter air tank
+        </h1>
+        <h2>supplies air for pneumatic operation</h2>
+      </div>
     </div>
   </div>
   <div>

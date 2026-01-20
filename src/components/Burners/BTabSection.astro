@@ -1,10 +1,8 @@
 ---
-import burnerVideo from "../../assets/images/Burners/bprov1.mp4";
 import preH from "../../assets/images/Burners/preHeat.webp";
 import preH2 from "../../assets/images/Burners/preHeat2.webp";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
-import preHV from "../../assets/images/Burners/AnPreHeat.mp4";
 import batch from "../../assets/images/Burners/batch.webp";
 import ficha from "../../assets/images/Burners/ficha.webp";
 import world from "../../assets/images/Burners/world.webp";
@@ -117,10 +115,17 @@ import imgtab1 from "../../assets/images/Burners/14.webp";
         >
           <div class="max-w-7xl px-8 mx-auto flex justify-center">
             <video
-              src={burnerVideo}
-              autoplay
-              muted
-              class="hero-img lg:w-3/5 rounded-lg"></video>
+              class="hero-img lg:w-3/5 rounded-lg"
+              playsinline
+              controls
+              poster="/Gallery/customdes.webp"
+              preload="metadata"
+              width="1280"
+              height="720"
+            >
+              <source src="/Videos/Webm/bprov1.webp" type="video/webm" />
+              <source src="/Videos/Mp4/bprov1.mp4" type="video/mp4" />
+            </video>
           </div>
           <div
             class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
@@ -299,7 +304,17 @@ import imgtab1 from "../../assets/images/Burners/14.webp";
         <div class="w-full max-w-7xl mx-auto">
           <div class="w-full bg-white rounded-2xl p-8">
             <div class="w-full md:w-3/4 justify-center m-auto">
-              <video src={preHV} autoplay></video>
+              <video
+                playsinline
+                controls
+                poster="/Gallery/customdes.webp"
+                preload="metadata"
+                width="1280"
+                height="720"
+              >
+                <source src="/Videos/Webm/AnPreHeat.webp" type="video/webm" />
+                <source src="/Videos/Mp4/AnPreHeat.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="lg:px-20 text-center">
               <h2 class="text-lg md:text-xl font-bold text-black">
