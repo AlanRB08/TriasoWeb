@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export type Slide = {
-  image: string;
+  image: any;
   caption: string;
 };
 
