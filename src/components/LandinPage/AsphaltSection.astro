@@ -1,9 +1,6 @@
 ---
 import Hero from "../../assets/images/hero2.webp";
-import Image from "astro/components/Image.astro";
-import Video1 from "../../assets/images/landingVideo.webm";
 import { Image } from "astro:assets";
-import Video1 from "../../assets/images/landingVideo.mp4";
 ---
 
 <section class="w-full min-h-10/12 mt-10">
@@ -26,6 +23,17 @@ import Video1 from "../../assets/images/landingVideo.mp4";
     </p>
   </div>
   <div class="max-w-7xl mx-auto">
-    <video src={Video1} autoplay muted></video>
+    <video
+      class="w-full h-full object-cover"
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/landingVideo.webp" type="video/webm" />
+      <source src="/Videos/Mp4/landingVideo.mp4" type="video/mp4" />
+    </video>
   </div>
 </section>

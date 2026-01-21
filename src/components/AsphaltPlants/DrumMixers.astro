@@ -1,24 +1,16 @@
 ---
-import img1 from "../../assets/images/AsphaltPlant/render2.webp";
 import img2 from "../../assets/images/AsphaltPlant/render3.webp";
-import img4 from "../../assets/images/AsphaltPlant/render6.webp";
 import img5 from "../../assets/images/AsphaltPlant/drum1.webp";
 import img7 from "../../assets/images/AsphaltPlant/drum2.webp";
 import img8 from "../../assets/images/AsphaltPlant/bin1.webp";
-import img9 from "../../assets/images/AsphaltPlant/bin2.webp";
 import img10 from "../../assets/images/DrumMixers/triasoWorkers.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import logo from "../../assets/logos/triasoLogo.webp";
 import { Image } from "astro:assets";
-import Video1 from "../../assets/images/landingVideo.mp4";
-import Video2 from "../../assets/images/AsphaltPlant/asphaltVideo1.mp4";
-import Video3 from "../../assets/images/AsphaltPlant/asphaltVideo2.mp4";
-import Video4 from "../../assets/images/DrumMixers/DMVideo1.mp4";
 import rap from "../../assets/images/DrumMixers/rap.webp";
 import rapEntry from "../../assets/images/DrumMixers/a21.webp";
 import HeroS2 from "../../../public/HeroS2.webp";
 import ASPanels from "../unitComponents/ASPanels.astro";
-import pugmillVideo from "../../assets/images/ColdMix/PGMC.mp4";
 import pugmill from "../../assets/images/DrumMixers/pugmill3.webp";
 import SlidersCarrusel from "../IntegralAsphalt/SlidersCarrusel";
 import OSection from "../unitComponents/OSection.astro";
@@ -84,8 +76,7 @@ const images2 = [
       <div class="hidden justify-start items-end md:flex h-full">
         <Image src={img5} alt="Drum Mixer" class="w-[80%]" />
       </div>
-      <div 
-      class="hidden md:flex-col items-start justify-start pt-4 md:flex">
+      <div class="hidden md:flex-col items-start justify-start pt-4 md:flex">
         <h1 class="md:text-4xl text-2xl text-black text-center w-full">
           Two Year Warranty
         </h1>
@@ -141,22 +132,33 @@ const images2 = [
     <h1 class="text-xl md:text-3xl text-center md:mb-10">
       Asphalt plants for the smallest jobs to large projects
     </h1>
-    <a href="/DrumMixers" class="text-lg md:text-2xl text-center text-blue-600 hover:text-blue-700 underline">
+    <a
+      href="/DrumMixers"
+      class="text-lg md:text-2xl text-center text-blue-600 hover:text-blue-700 underline"
+    >
       Discover all asphalt plants ranges and models >
     </a>
     <div class="relative overflow-hidden bg-black transform-gpu">
       <video
-        src={Video1}
-        autoplay
-        muted
-        loop
-        playsinline
         class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-      ></video>
+        playsinline
+        controls
+        poster="/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/Videos/Webm/landingVideo.webp" type="video/webm" />
+        <source src="/Videos/Mp4/landingVideo.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
   <div class="w-full bg-[#2e2e2e] flex flex-col justify-center items-center">
-    <Image src={logo} alt="Triaso Logo" class="w-[500px] lg:w-full md:w-full" /><br />
+    <Image
+      src={logo}
+      alt="Triaso Logo"
+      class="w-[500px] lg:w-full md:w-full"
+    /><br />
     <div
       class="w-full bg-[url(/HeroS.webp)] bg-cover bg-no-repeat bg-center max-h-[900px] lg:min-h-[900px] md:min-h-[900px] flex justify-center items-center"
     >
@@ -191,23 +193,31 @@ const images2 = [
   </div>
   <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
     <video
-      src={Video2}
-      autoplay
-      muted
-      loop
-      playsinline
       class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-    ></video>
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/asphaltVideo1.webp" type="video/webm" />
+      <source src="/Videos/Mp4/asphaltVideo1.mp4" type="video/mp4" />
+    </video>
   </div>
   <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
     <video
-      src={Video3}
-      autoplay
-      muted
-      loop
-      playsinline
       class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
-    ></video>
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/asphaltVideo2.webp" type="video/webm" />
+      <source src="/Videos/Mp4/asphaltVideo2.mp4" type="video/mp4" />
+    </video>
   </div>
 
   <div
@@ -218,7 +228,18 @@ const images2 = [
     </h2>
     <div class="">
       <div class="w-full flex justify-center">
-        <video src={Video4} autoplay muted playsinline class="w-full md:w-3/5"></video>
+        <video
+          class="w-full md:w-3/5"
+          playsinline
+          controls
+          poster="/Gallery/customdes.webp"
+          preload="metadata"
+          width="1280"
+          height="720"
+        >
+          <source src="/Videos/Webm/DMVideo1.webp" type="video/webm" />
+          <source src="/Videos/Mp4/DMVideo1.mp4" type="video/mp4" />
+        </video>
       </div>
       <p
         class="text-black text-center lg:text-justify md:text-justify font-semibold mt-5 mb-5"
@@ -338,9 +359,13 @@ const images2 = [
 
   <div class="w-full">
     <div class="w-full flex justify-center">
-      <LearnBtnBlue href="/RapRecycled"/>
+      <LearnBtnBlue href="/RapRecycled" />
     </div>
-    <Image src={HeroS2} alt="Asphalt plant specializing in the incorporation of RAP" class="w-full" />
+    <Image
+      src={HeroS2}
+      alt="Asphalt plant specializing in the incorporation of RAP"
+      class="w-full"
+    />
   </div>
   <div
     class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center mt-10 gap-10 max-w-7xl mx-auto"
@@ -364,11 +389,11 @@ const images2 = [
         efficiency.
       </p>
       <Image src={img8} alt="Rap Bin" class="block md:hidden" />
-      <LearnBtn href="/BinUnits"/>
+      <LearnBtn href="/BinUnits" />
     </div>
   </div>
-  <ASPanels  />
-  
+  <ASPanels />
+
   <div id="ColdMix"></div>
   <div
     class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-4"
@@ -378,7 +403,17 @@ const images2 = [
       <span class="text-3xl md:text-4xl text-black">Pugmill</span>
     </h1>
     <div>
-      <video src={pugmillVideo} autoplay muted></video>
+      <video
+        playsinline
+        controls
+        poster="/Gallery/customdes.webp"
+        preload="metadata"
+        width="1280"
+        height="720"
+      >
+        <source src="/Videos/Webm/PGMC.webp" type="video/webm" />
+        <source src="/Videos/Mp4/PGMC.mp4" type="video/mp4" />
+      </video>
     </div>
     <div
       class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8"
@@ -394,7 +429,11 @@ const images2 = [
           ensures complete homogenization and consistency throughout the
           material.
         </p>
-        <Image src={img2} alt="Pugmill component for the drum-mix" class="block md:hidden my-4" />
+        <Image
+          src={img2}
+          alt="Pugmill component for the drum-mix"
+          class="block md:hidden my-4"
+        />
         <p
           class="text-base md:text-lg text-grisP text-center lg:text-justify md:text-justify text-[#2b2b2b]"
         >
@@ -405,9 +444,13 @@ const images2 = [
           demanding production conditions.
         </p>
       </div>
-      <Image src={pugmill} alt="Pugmill component for the drum-mix" class="hidden md:block" />
+      <Image
+        src={pugmill}
+        alt="Pugmill component for the drum-mix"
+        class="hidden md:block"
+      />
     </div>
-    <LearnBtn href="/ColdMix"/>
+    <LearnBtn href="/ColdMix" />
   </div>
 
   <HeatingSystem />
@@ -454,7 +497,11 @@ const images2 = [
     class="w-full max-w-7xl my-10 mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-6"
   >
     <div>
-      <Image src={img10} alt="Triaso workers operating the control cabin" class="rounded-md" />
+      <Image
+        src={img10}
+        alt="Triaso workers operating the control cabin"
+        class="rounded-md"
+      />
     </div>
     <div class="justify-center flex flex-col">
       <h1
@@ -503,7 +550,9 @@ const images2 = [
     <h2 class="text-center font-bold text-blueMain text-xl md:text-3xl">
       Sell at a lower price, attract more customers, and achieve higher profits
     </h2><br />
-    <a href="/IntegralAphaltPlant" class="font-semibold text-blue-700 hover:text-blue-600 underline text-sm md:text-base text-center"
+    <a
+      href="/IntegralAphaltPlant"
+      class="font-semibold text-blue-700 hover:text-blue-600 underline text-sm md:text-base text-center"
       >Learn more about our 10 TPH asphalt plants >
     </a>
   </div>

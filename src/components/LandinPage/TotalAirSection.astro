@@ -1,47 +1,73 @@
 ---
-import BurnerVideo from "../../assets/images/Burners/burnerVideo.mp4";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 ---
+
 <section class="max-w-7xl mx-auto flex flex-col my-20 px-8">
-    <div class="text-3xl md:text-4xl font-bold">
-        <h1>Triaso® 'Total air'</h1>
-        <h1 class="text-red-600">Burners</h1>
-        <div class="mt-4 mb-6 flex">
-            <div class="w-20 h-0.5 bg-red-500"></div>
-            <div class="w-20 h-0.5 bg-gray-300"></div>
-        </div>
+  <div class="text-3xl md:text-4xl font-bold">
+    <h1>Triaso® 'Total air'</h1>
+    <h1 class="text-red-600">Burners</h1>
+    <div class="mt-4 mb-6 flex">
+      <div class="w-20 h-0.5 bg-red-500"></div>
+      <div class="w-20 h-0.5 bg-gray-300"></div>
     </div>
-    <div class="w-full flex justify-center">
-        <video src={BurnerVideo} autoplay class="w-4/5 md:w-1/2"></video>
+  </div>
+  <div class="w-full flex justify-center">
+    <video
+      class="w-4/5 md:w-1/2"
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/burnerVideo.webp" type="video/webm" />
+      <source src="/Videos/Mp4/burnerVideo.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
+    <div
+      class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+    >
+      <p>
+        Our burners regulate <strong class="text-black"
+          >100% of the air for combustion</strong
+        > without relying on the drum's exhaust system. This ensures total combustion
+        and <strong class="text-black">100% fuel utilization</strong>,
+        effectively preventing various types of problems.
+      </p>
+      <ul class="pl-4 pt-4">
+        <li class="list-disc">Atmospheric pollution.</li>
+        <li class="list-disc">
+          Contamination of the asphalt mix with unburned fuel.
+        </li>
+        <li class="list-disc">
+          Clogging in the baghouse and a high risk of fire.
+        </li>
+      </ul>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
-        <div class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP">
-            <p>Our burners regulate <strong class="text-black">100% of the air for combustion</strong> without 
-            relying on the drum's exhaust system. This ensures total 
-            combustion and <strong class="text-black">100% fuel utilization</strong>, effectively preventing 
-            various types of problems.
-            </p>
-            <ul class="pl-4 pt-4">
-                <li class="list-disc">Atmospheric pollution.</li>
-                <li class="list-disc">Contamination of the asphalt mix with unburned fuel.</li>
-                <li class="list-disc">Clogging in the baghouse and a high risk of fire.</li>
-            </ul>
-        </div>
-        <div class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP">
-            <p><strong class="text-black">Low NOx emissions </strong>(nitrogen oxides), a greenhouse gas that is highly regulated in most regions. 
-                It can be equipped with a flame protection system to reduce NOx to levels allowed by the 
-                authorities in your region.
-            </p>
-            <ul class="pl-4 pt-4">
-                <li class="list-disc">Sealed installation, without cold air inlets, saving the fuel used to heat it, allowing for precise and efficient carburation.</li>
-                <li class="list-disc">Efficiency is not affected by changes in weather temperature throughout the day.</li>
-                
-            </ul>
-        </div>
+    <div
+      class="font-semibold text-sm md:text-base bg-white p-4 rounded-xl shadow-2xs text-grisPPP"
+    >
+      <p>
+        <strong class="text-black">Low NOx emissions </strong>(nitrogen oxides),
+        a greenhouse gas that is highly regulated in most regions. It can be
+        equipped with a flame protection system to reduce NOx to levels allowed
+        by the authorities in your region.
+      </p>
+      <ul class="pl-4 pt-4">
+        <li class="list-disc">
+          Sealed installation, without cold air inlets, saving the fuel used to
+          heat it, allowing for precise and efficient carburation.
+        </li>
+        <li class="list-disc">
+          Efficiency is not affected by changes in weather temperature
+          throughout the day.
+        </li>
+      </ul>
     </div>
-    <div class="flex justify-center items-center">
-        <LearnBtn href="/Burners"/>
-    </div>
-    
-    
+  </div>
+  <div class="flex justify-center items-center">
+    <LearnBtn href="/Burners" />
+  </div>
 </section>
