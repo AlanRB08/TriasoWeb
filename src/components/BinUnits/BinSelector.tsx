@@ -55,8 +55,8 @@ export default function BinSelector() {
         <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <button
             onClick={() => setPanelType("aesthetic")}
-            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded font-bold border
-              ${panelType === "aesthetic" ? "bg-blueMain text-white" : "bg-white text-black"}
+            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded-xl font-bold border
+              ${panelType === "aesthetic" ? "bg-blueMain text-white" : "bg-white text-black rounded-xl"}
             `}
           >
             Aesthetic Side Panels
@@ -64,8 +64,8 @@ export default function BinSelector() {
 
           <button
             onClick={() => setPanelType("without")}
-            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded font-bold border
-              ${panelType === "without" ? "bg-blueMain text-white" : "bg-white text-black"}
+            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded-xl font-bold border
+              ${panelType === "without" ? "bg-blueMain text-white" : "bg-white text-black rounded-xl"}
             `}
           >
             Without Aesthetic Side Panels
@@ -78,9 +78,10 @@ export default function BinSelector() {
             className="w-full max-w-[500px] sm:max-w-[700px] md:max-w-[1100px]"
           />
         </div>
-        <div className="flex flex-col bg-white rounded-2xl py-3 px-4 justify-center items-center gap-2">
+        <div className="flex flex-col lg:flex-row bg-white rounded-2xl py-3 px-4 lg:px-16 justify-center items-center gap-2 lg:gap-10">
           <div>
-            <p className="font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
+            <p className="hidden lg:block md:block font-bold text-sm sm:text-base md:text-lg py-2">Bin units:</p>
+            <p className=" lg:hidden md:hidden font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
           </div>
           <div>
             {binOptions.map((num) => (

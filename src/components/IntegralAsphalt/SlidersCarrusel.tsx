@@ -40,7 +40,6 @@ export default function SlidersCarrusel({ images }: Props) {
 
   return (
     <div className="w-full mx-auto y-10 bg-bgMain mt-10  relative px-0 md:px-44 mb-10">
-      {/* Botones solo en desktop */}
       {!isMobile && (
         <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
           <button
@@ -75,15 +74,13 @@ export default function SlidersCarrusel({ images }: Props) {
           </button>
         </div>
       )}
-      {/* Contenedor deslizable */}
       <div className="relative overflow-hidden w-full h-auto">
         <div
           ref={containerRef}
-          className={`flex transition-transform duration-500 ease-in-out ${
-            isMobile
+          className={`flex transition-transform duration-500 ease-in-out ${isMobile
               ? "overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
               : ""
-          }`}
+            }`}
           style={{
             transform: isMobile ? undefined : `translateX(${offset}%)`,
             width: isMobile
@@ -94,15 +91,14 @@ export default function SlidersCarrusel({ images }: Props) {
           {images.map((img, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 px-2 cursor-pointer ${
-                isMobile ? "snap-start" : ""
-              }`}
+              className={`flex-shrink-0 px-2 cursor-pointer ${isMobile ? "snap-start" : ""
+                }`}
               style={{
                 width: isMobile ? "80%" : `${100 / images.length}%`,
               }}
               onClick={() => setModalIndex(i)}
             >
-              <div className="p-4 bg-white rounded-sm">
+              <div className="p-4 bg-white rounded-sm lg:h-[60vh]">
                 <img
                   src={img.src}
                   alt={img.title}
@@ -111,17 +107,16 @@ export default function SlidersCarrusel({ images }: Props) {
                 <div className="mt-4 text-start font-bold text-blueMain">
                   {img.title}
                 </div>
+                <div className="mt-4 text-justify font-bold text-grisT text-sm md:text-base px-4">
+                  <p dangerouslySetInnerHTML={{ __html: img.texto }}></p>
+                </div>
               </div>
 
-              <div className="mt-4 text-justify font-bold text-grisT text-sm md:text-base px-4">
-                <p dangerouslySetInnerHTML={{ __html: img.texto }}></p>
-              </div>
+
             </div>
           ))}
         </div>
       </div>
-
-      {/* Modal para imagen ampliada */}
       {modalIndex !== null && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"

@@ -24,7 +24,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
         <h1 class="lg:text-4xl text-2xl w-full text-start text-[#393939]">
           HOT-MIX STORAGE SILOS
         </h1>
-        <p class="text-justify my-5">
+        <p class="text-justify text-sm lg:text-base md:text-base my-5">
           Triaso® hot-mix storage silos are engineered to optimize the storage,
           handling and delivery of hot-mix, ensuring top-quality performance
           while meeting the demands of modern construction projects. Designed
@@ -45,7 +45,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 <p class="w-auto md:w-64 lg:w-64">50-200</p>
                 <p class="text-sm font-normal ml-3">Tons</p>
               </div>
-              <p class="text-grisP mt-1 text-left">
+              <p class="text-grisP mt-1 text-left font-medium">
                 Range of hot-mix storage capacity
               </p>
             </div>
@@ -57,7 +57,7 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 <p>10</p>
                 <p class="text-sm font-normal ml-3">mins</p>
               </div>
-              <p class="text-grisP mt-1 text-left">Set-up time</p>
+              <p class="text-grisP mt-1 text-left font-medium">Set-up time</p>
             </div>
 
             <div class="flex flex-col items-start justify-start w-full">
@@ -67,7 +67,9 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 <p>72</p>
                 <p class="text-sm font-normal ml-3">hours</p>
               </div>
-              <p class="text-grisP mt-1 text-left">Preservation quality</p>
+              <p class="text-grisP mt-1 text-left font-medium">
+                Preservation quality
+              </p>
             </div>
           </div>
 
@@ -88,43 +90,41 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
 
     <div class="flex flex-col gap-6">
       <div
-        class="flex justify-between bg-[#fffaeb] p-5 rounded-lg gap-4 items-baseline-last"
+        class="flex flex-col lg:flex-row md:flex-row justify-between bg-[#fffaeb] p-5 rounded-lg gap-4 items-baseline-last"
       >
         <div
-          class="flex flex-col-reverse justify-center items-center text-center"
+          class="flex flex-col justify-center items-center text-center"
         >
-          <Image
-            src={siloSealed}
-            alt="Silo sealed"
-            class="w-[80%] lg:w-1/2 md:w-1/2"
-          />
           <p class="mt-2 text-[12px] lg:text-base md:text-base">
             Sealed from Top to Bottom
           </p>
+          <Image
+            src={siloSealed}
+            alt="Silo sealed"
+            class="w-1/2 lg:w-[80%] md:w-[80%] "
+          />
         </div>
 
         <div
-          class="flex flex-col-reverse justify-center items-center text-center"
+          class="flex flex-col justify-center items-center text-center"
         >
-          <Image
-            src={siloUse}
-            alt="Usage of the Silo"
-            class="w-[80%] lg:w-1/2 md:w-1/2"
-          />
           <p class="mt-2 text-[12px] lg:text-base md:text-base">
             Even distribution without segregation
           </p>
+          <Image
+            src={siloUse}
+            alt="Usage of the Silo"
+            class="w-1/2 lg:w-[80%] md:w-[80%] "
+          />
         </div>
 
-        <div
-          class="flex flex-col-reverse justify-center items-center text-center"
-        >
+        <div class="flex flex-col justify-center items-center text-center">
+          <p class="mt-2 text-[12px] lg:text-base md:text-base">Silo cone</p>
           <Image
             src={siloCone}
             alt="Silo Cone"
-            class="w-[80%] lg:w-1/2 md:w-1/2"
+            class="w-1/2 lg:w-[80%] md:w-[80%] "
           />
-          <p class="mt-2 text-[12px] lg:text-base md:text-base">Silo cone</p>
         </div>
       </div>
 
@@ -219,14 +219,14 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
           <div
             class="border-2 border-white rounded-xl p-6 flex items-center h-full"
           >
-            <p class="font-bold text-lg leading-tight">
+            <p class="font-bold text-sm lg:text-lg md:text-lg leading-tight">
               With support structure, high enough to accommodate dump trucks
             </p>
           </div>
           <div
             class="border-2 border-white rounded-xl p-6 flex flex-col justify-center h-full"
           >
-            <p class="font-bold text-lg leading-tight mb-4">
+            <p class="font-bold text-sm lg:text-lg md:text-lg leading-tight mb-4">
               Gate with pneumatic system to release the hot mix to the trucks
             </p>
             <p class="text-xs text-gray-300 leading-snug">
@@ -244,12 +244,12 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
                 class="w-20 h-20 object-contain"
               />
             </div>
-            <h3 class="text-xl md:text-2xl font-bold">
+            <h3 class="text-lg lg:text-2xl md:text-2xl font-bold">
               No cranes required for installation
             </h3>
           </div>
           <div class="flex items-center justify-between gap-6">
-            <h2 class="text-2xl font-bold leading-tight">
+            <h2 class="text-lg lg:text-2xl md:text-2xl font-bold leading-tight">
               The most versatile and mobile silo on the market.
             </h2>
             <div class="shrink-0">
