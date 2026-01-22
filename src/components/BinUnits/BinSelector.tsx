@@ -1,5 +1,16 @@
 import { useState } from "react";
 
+import a1 from "../../assets/images/BinUnits/TlvU2CF.webp"
+import a1w from "../../assets/images/BinUnits/TlvU2SF.webp"
+import a2 from "../../assets/images/BinUnits/TlvU3CF.webp"
+import a2w from "../../assets/images/BinUnits/TlvU3SF.webp"
+import a3 from "../../assets/images/BinUnits/TlvU4CF.webp"
+import a3w from "../../assets/images/BinUnits/TlvU4SF.webp"
+import a4 from "../../assets/images/BinUnits/TlvU5CF.webp"
+import a4w from "../../assets/images/BinUnits/TlvU5SF.webp"
+import a5 from "../../assets/images/BinUnits/TlvU6CF.webp"
+import a5w from "../../assets/images/BinUnits/TlvU6SF.webp"
+
 const binOptions = [2, 3, 4, 5, 6] as const;
 const panelOptions = ["aesthetic", "without"] as const;
 
@@ -7,24 +18,24 @@ type PanelType = (typeof panelOptions)[number];
 
 const imageMap: Record<number, Record<PanelType, string>> = {
   2: {
-    aesthetic: "src/assets/images/BinUnits/TlvU2CF.webp",
-    without: "src/assets/images/BinUnits/TlvU2SF.webp",
+    aesthetic: a1.src,
+    without: a1w.src,
   },
   3: {
-    aesthetic: "src/assets/images/BinUnits/TlvU3CF.webp",
-    without: "src/assets/images/BinUnits/TlvU3SF.webp",
+    aesthetic: a2.src,
+    without: a2w.src,
   },
   4: {
-    aesthetic: "src/assets/images/BinUnits/TlvU4CF.webp",
-    without: "src/assets/images/BinUnits/TlvU4SF.webp",
+    aesthetic: a3.src,
+    without: a3w.src,
   },
   5: {
-    aesthetic: "src/assets/images/BinUnits/TlvU5CF.webp",
-    without: "src/assets/images/BinUnits/TlvU5SF.webp",
+    aesthetic: a4.src,
+    without: a4w.src,
   },
   6: {
-    aesthetic: "src/assets/images/BinUnits/TlvU6CF.webp",
-    without: "src/assets/images/BinUnits/TlvU6SF.webp",
+    aesthetic: a5.src,
+    without: a5w.src,
   },
 };
 
@@ -44,8 +55,8 @@ export default function BinSelector() {
         <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <button
             onClick={() => setPanelType("aesthetic")}
-            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded font-bold border
-              ${panelType === "aesthetic" ? "bg-blueMain text-white" : "bg-white text-black"}
+            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded-xl font-bold border
+              ${panelType === "aesthetic" ? "bg-blueMain text-white" : "bg-white text-black rounded-xl"}
             `}
           >
             Aesthetic Side Panels
@@ -53,8 +64,8 @@ export default function BinSelector() {
 
           <button
             onClick={() => setPanelType("without")}
-            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded font-bold border
-              ${panelType === "without" ? "bg-blueMain text-white" : "bg-white text-black"}
+            className={`w-full sm:w-auto text-center text-sm sm:text-base md:text-lg px-4 py-3 rounded-xl font-bold border
+              ${panelType === "without" ? "bg-blueMain text-white" : "bg-white text-black rounded-xl"}
             `}
           >
             Without Aesthetic Side Panels
@@ -67,9 +78,10 @@ export default function BinSelector() {
             className="w-full max-w-[500px] sm:max-w-[700px] md:max-w-[1100px]"
           />
         </div>
-        <div className="flex flex-col bg-white rounded-2xl py-3 px-4 justify-center items-center gap-2">
+        <div className="flex flex-col lg:flex-row bg-white rounded-2xl py-3 px-4 lg:px-16 justify-center items-center gap-2 lg:gap-10">
           <div>
-            <p className="font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
+            <p className="hidden lg:block md:block font-bold text-sm sm:text-base md:text-lg py-2">Bin units:</p>
+            <p className=" lg:hidden md:hidden font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
           </div>
           <div>
             {binOptions.map((num) => (
