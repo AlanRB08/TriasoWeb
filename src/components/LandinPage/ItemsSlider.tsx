@@ -52,8 +52,7 @@ export default function ItemsSlider({ images }: Props) {
               className="
                 snap-start
                 shrink-0
-                w-[85%]
-                sm:w-[60%]
+                w-[65%]
                 md:w-[45%]
                 lg:w-[23%]
                 bg-white

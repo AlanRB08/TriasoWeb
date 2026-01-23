@@ -49,8 +49,8 @@ const ASOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
+    <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center pb-10">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
@@ -90,7 +90,7 @@ const ASOdometer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <div>
+          <div className="pb-[50px] pt-[50px]">
             <img src={ASOdom.src} alt="Back of an Asphalt Storage Tank" />
           </div>
           <a
