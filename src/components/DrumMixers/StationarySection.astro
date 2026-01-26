@@ -26,7 +26,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
                 matter the gauge, is manufactured in-house using high-strength
                 A-572 alloy steel to ensure consistent durability and
                 performance.
-            </p><br>
+            </p><br />
             <Image
                 src={Logo}
                 alt="Triaso Logo"
@@ -131,6 +131,14 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
                         a dedicated conveyor, the material enters the drum
                         smoothly and uniformly.
                     </p>
+                    <div class="mx-auto ">
+                        <a
+                            href="/RapBins"
+                            class="p-4 bg-white rounded-xl text-[#14427c] transition hover:bg-gray-400 hover:text-black"
+                        >
+                            Learn More
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,11 +255,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
         </div>
 
         <div>
-            <Image
-                src={rapEntry}
-                alt="Rap Entry Flights"
-                class="rounded-md"
-            />
+            <Image src={rapEntry} alt="Rap Entry Flights" class="rounded-md" />
         </div>
     </div>
 
@@ -278,7 +282,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
                 <h1 class="text-grisT">AESTHETIC SIDE PANELS</h1>
                 <Separator />
             </div>
-            <div class="text-end">
+            <div class="hidden lg:block text-end">
                 <h2 class="text-blueMain">
                     ENHANCE YOUR COMPANY IMAGE <br /> WITH TRIASO DESIGN
                 </h2>
@@ -287,7 +291,7 @@ import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
         <div class="my-10 flex flex-col justify-center items-center gap-6">
             <Image src={sideP} alt="Aesthetic Side Panel" />
             <div class="max-w-[250px]">
-                <LearnBtn />
+                <LearnBtn href="/AestheticSide" />
             </div>
         </div>
     </div>
