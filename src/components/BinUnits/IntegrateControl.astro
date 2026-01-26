@@ -112,15 +112,6 @@ import OSectionBin from "./OSectionBin.astro";
             <Image src={binUnit1} alt="Precision Dosing System in action" class="w-3/4 md:w-full" />
         </div>
         <div class="col-span-3 flex flex-col items-start h-full justify-center">
-            <h1 class="text-2xl md:text-5xl font-bold">
-                Precision Dosing <br />Systems in <br />Bin Units
-            </h1><br />
-            <p class="text-lg md:text-xl font-thin text-grisT text-justify">
-                Our bin units are equipped with advanced dosing systems designed
-                for optimal precision and reliability. These systems ensure
-                accurate material flow and distribution, meeting the demands of
-                even the most stringent project requirements.
-            </p><br />
             <div class="w-full flex flex-col gap-3 md:gap-6">
                 <AcordeonItem
                     client:only
@@ -206,7 +197,7 @@ import OSectionBin from "./OSectionBin.astro";
 
     <div class="flex w-full max-w-7xl my-5">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto">
-            <div>
+            <div class="hidden lg:block">
                 <Image src={img5} alt="Console" class="rounded-md" />
             </div>
             <div class="flex justify-center items-center">
@@ -224,6 +215,12 @@ import OSectionBin from "./OSectionBin.astro";
                     </p>
                 </div>
             </div>
+            <div class="flex justify-end items-end mx-auto py-10 lg:hidden">
+                <Image src={img5} alt="Console" class="rounded-md" />
+            </div>
+
+
+
             <div class="flex justify-center items-center">
                 <div class="flex flex-col gap-6 px-8">
                     <h1
