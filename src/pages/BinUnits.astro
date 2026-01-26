@@ -13,53 +13,71 @@ import BOdometer from "../components/BinUnits/BOdometer";
 <Layout title="Bin Units">
   <IntroSection />
   <BinSelector client:only />
-  <div
-    class="w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20 px-8 md:px-20 lg:px-52"
-  >
-    <h1 class="text-white font-bold text-2xl md:text-3xl text-center">
-      Specifications and Characteristics
-    </h1>
-    <br />
-    <div
-      class="w-full grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto"
-    >
-      <div>
-        <p>
-          Dimensions and aggregate dosing systems that comply with construction
-          regulations
-          <ul class="list-disc ml-6">
-            <li>DOT</li>
-            <li>OSHA</li>
-            <li>EPA</li>
-            <li>UL Wiring</li>
-          </ul>
-          <br />
-          Built from high-strength steel to withstand heavy loads and resist deformation
-          under demanding working conditions. <br />
-          <br />
-          Designed for quick and smooth unloading to maintain continuous workflow
-          and minimize downtime.
-        </p>
+  <div class="w-full bg-grisT text-grisSubP text-base md:text-lg py-10 my-20">
+    <details class="max-w-7xl mx-auto px-8 group">
+      <summary class="relative flex justify-center items-center cursor-pointer list-none">
+        <h1 class="text-white font-bold text-2xl md:text-3xl text-center absolute left-1/2 -translate-x-1/2">
+          Specifications and Characteristics
+        </h1>
+        <svg
+          class="transition-transform duration-300 group-open:rotate-180 ml-auto "
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <path
+              d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+              fill="white"></path>
+          </g></svg
+        >
+      </summary>
+
+      <div
+        class="w-full grid grid-cols-1 md:grid-cols-2 justify-center max-w-7xl mx-auto pt-5"
+      >
+        <div>
+          <p>
+            Dimensions and aggregate dosing systems that comply with
+            construction regulations
+            <ul class="list-disc ml-6">
+              <li>DOT</li>
+              <li>OSHA</li>
+              <li>EPA</li>
+              <li>UL Wiring</li>
+            </ul>
+            <br />
+            Built from high-strength steel to withstand heavy loads and resist deformation
+            under demanding working conditions. <br />
+            <br />
+            Designed for quick and smooth unloading to maintain continuous workflow
+            and minimize downtime.
+          </p>
+        </div>
+        <div>
+          <p>
+            High-quality equipment built for durability and efficient hot-mix
+            production. Featuring reinforced steel structures and integrated
+            vibration systems, our bin units ensure steady aggregate flow,
+            minimal clogging, and reduced wear. Designed for continuous
+            operation, they deliver consistent, reliable performance with low
+            maintenance—even under the toughest jobsite conditions. <br />
+            <br />
+            Equipped with precision-controlled aggregate dosing mechanisms they guarantee
+            accurate and uniform material dosing throughout production process.
+          </p>
+        </div>
       </div>
-      <div>
-        <p>
-          High-quality equipment built for durability and efficient hot-mix
-          production. Featuring reinforced steel structures and integrated
-          vibration systems, our bin units ensure steady aggregate flow, minimal
-          clogging, and reduced wear. Designed for continuous operation, they
-          deliver consistent, reliable performance with low maintenance—even
-          under the toughest jobsite conditions. <br />
-          <br />
-          Equipped with precision-controlled aggregate dosing mechanisms they guarantee
-          accurate and uniform material dosing throughout production process.
-        </p>
-      </div>
-    </div>
+    </details>
   </div>
   <BOdometer client:only />
   <CustomBins />
   <IntegrateControl />
-  <BinGallery/>
+  <BinGallery />
   <BinPlanosSection client:only />
   <CardSection />
 </Layout>

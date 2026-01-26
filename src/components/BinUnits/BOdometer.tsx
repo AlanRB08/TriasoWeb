@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
-import single from "../../assets/images/BinUnits/ProvBU1.webp";
+import single from "../../assets/images/BinUnits/BinOdometer.webp";
 
 const BOdometer = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -87,9 +87,9 @@ const BOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6">
-          <div>
-            <img src={single.src} alt="Bin Unit Odometer" className="rounded-lg" />
+        <div className="flex flex-col items-center justify-center mx-auto gap-6 pt-10">
+          <div className="w-4/6">
+            <img src={single.src} alt="Bin Unit Odometer" className=" object-cover" />
           </div>
           <a
   href="#planosBinUnits"
