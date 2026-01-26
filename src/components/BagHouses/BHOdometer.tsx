@@ -51,9 +51,9 @@ const BHOdometer = () => {
   return (
     <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-        <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
+        <div className="flex flex-col items-start justify-center mx-auto lg:mx-0 gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-7xl font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <p>-</p>
               <Odometer value={value5} format="(,ddd)" duration={2000} />
@@ -63,7 +63,7 @@ const BHOdometer = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-7xl font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p>.</p>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
@@ -73,7 +73,7 @@ const BHOdometer = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-7xl font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value3} format="(,ddd)" duration={2000} />
@@ -85,13 +85,13 @@ const BHOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-3/5">
+        <div className="flex flex-col items-center justify-center py-10 space-y-5">
+          <div className="lg:w-3/5">
             <img src={bagHouseMain.src} alt="Baghouse Odometer" className="rounded-lg" />
           </div>
           <a
-  href="#planosBagHouses"
-  className="
+            href="#planosBagHouses"
+            className="
     group relative inline-flex items-center justify-center
     px-4 py-2 rounded-xl
     border border-black
@@ -101,26 +101,20 @@ const BHOdometer = () => {
     transition-all duration-300 ease-out
     hover:text-white hover:-translate-y-0.5 hover:shadow-lg
   "
->
-  <span
-    className="
+          >
+            <span
+              className="
       absolute inset-0 bg-black
       translate-y-full
       transition-transform duration-300 ease-out
       group-hover:translate-y-0
     "
-  />
-  <span className="relative z-10">
-    All Technical Details
-  </span>
-</a>
+            />
+            <span className="relative z-10">
+              All Technical Details
+            </span>
+          </a>
         </div>
-      </div>
-      <div className="w-full py-10">
-        <h2 className="text-2xl md:text-4xl text-grisT font-bold text-center">
-          The baghouses are highly efficient at capturing fine particles,{" "}
-          <span className="text-black">achieving up to 99.99% filtration</span>.
-        </h2>
       </div>
     </div>
   );

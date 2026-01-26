@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 interface Slide {
-  img: { src: string }; // si usas imágenes importadas con Webpack/Vite
+  img: { src: string };
   titulo?: string;
   texto?: string;
 }
@@ -10,7 +10,6 @@ interface SliderProps {
   slides: Slide[];
   autoSlide?: boolean;
   interval?: number;
-  heightClass?: string;
   showText?: boolean;
 }
 
@@ -18,167 +17,112 @@ const MiniGallery: React.FC<SliderProps> = ({
   slides,
   autoSlide = true,
   interval = 5000,
-  heightClass = "h-[200px] md:h-[300px]",
   showText = true,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
     if (!autoSlide) return;
-    const id = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, interval);
+    const id = setInterval(nextSlide, interval);
     return () => clearInterval(id);
   }, [slides.length, interval, autoSlide]);
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) nextSlide();
+    if (distance < -minSwipeDistance) prevSlide();
+  };
+
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-8">
-      {/* Botones Mobil*/}
-      <button
-        aria-label="Previous"
-        className="block md:hidden h-[200px] absolute right-0 top-0 bg-transparent p-1 rounded-full text-xs z-20"
-        onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
-      >
-        <svg
-          width="24px"
-          height="24px"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          color="#393939"
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+      <div className="relative">
+        <div 
+          className="relative w-full overflow-hidden rounded-2xl shadow-sm"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         >
-          <path
-            d="M9 6L15 12L9 18"
-            stroke="#393939"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </button>
-      <button
-        aria-label="Next"
-        className="block md:hidden absolute left-0 top-0 h-[200px] bg-transparent p-1 rounded-full text-xs z-20"
-        onClick={() =>
-          setCurrentSlide((currentSlide - 1 + slides.length) % slides.length)
-        }
-      >
-        <svg
-          width="24px"
-          height="24px"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          color="#000000"
-        >
-          <path
-            d="M15 6L9 12L15 18"
-            stroke="#393939"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </button>
-      <div className="relative w-full overflow-hidden mt-4">
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="w-full flex-shrink-0 relative rounded-xl"
-            >
-              <img
-                src={slide.img.src}
-                alt={`slide-${index}`}
-                className={`w-full object-cover ${heightClass} px-8`}
-              />
-              {showText && (
-                <div className="absolute top-4 left-4 text-white p-4 max-w-sm rounded-md bg-blueMain bg-opacity-80">
-                  {slide.titulo && (
-                    <h2 className="text-sm md:text-lg font-semibold mb-1">
-                      {slide.titulo}
-                    </h2>
-                  )}
-                  {slide.texto && (
-                    <p className="text-xs md:text-sm">{slide.texto}</p>
-                  )}
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div key={index} className="w-full flex-shrink-0 relative">
+                <div className="aspect-video md:aspect-[21/9] w-full">
+                  <img
+                    src={slide.img.src}
+                    alt={slide.titulo || `slide-${index}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              )}
-            </div>
-          ))}
+
+                {showText && (slide.titulo || slide.texto) && (
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 text-white p-4 max-w-sm rounded-xl bg-blueMain/80 backdrop-blur-md">
+                    {slide.titulo && (
+                      <h2 className="text-sm md:text-lg font-bold mb-1 leading-tight">
+                        {slide.titulo}
+                      </h2>
+                    )}
+                    {slide.texto && (
+                      <p className="text-xs md:text-sm opacity-90 leading-relaxed">
+                        {slide.texto}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:flex absolute -bottom-14 right-0 items-center gap-3 z-30">
+          <button 
+            onClick={prevSlide} 
+            className="p-2.5 bg-white border border-gray-200 rounded-full shadow-md hover:bg-gray-50 transition active:scale-90"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4d4d4d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button 
+            onClick={nextSlide} 
+            className="p-2.5 bg-white border border-gray-200 rounded-full shadow-md hover:bg-gray-50 transition active:scale-90"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4d4d4d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
       </div>
-      <div className="w-full relative my-3">
-        {/* Indicadores */}
-        <div className="flex w-full justify-center space-x-6 mt-3">
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full cursor-pointer ${
-                currentSlide === index ? "bg-blueMain" : "bg-white opacity-50"
-              }`}
-            />
-          ))}
-        </div>
-        <div className="absolute right-20 hidden md:block">
-          {/* Botones Desktop*/}
+
+      <div className="flex justify-center items-center space-x-2 mt-8 md:mt-10">
+        {slides.map((_, index) => (
           <button
-            aria-label="Previous"
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-grisSubP hover:bg-[#BDBDBD] p-1 rounded-full text-xs"
-            onClick={() => setCurrentSlide((currentSlide + 1) % slides.length)}
-          >
-            <svg
-              width="24px"
-              height="24px"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#000000"
-            >
-              <path
-                d="M9 6L15 12L9 18"
-                stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-          <button
-            aria-label="Next"
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-grisSubP hover:bg-[#BDBDBD] p-1 rounded-full text-xs"
-            onClick={() =>
-              setCurrentSlide(
-                (currentSlide - 1 + slides.length) % slides.length
-              )
-            }
-          >
-            <svg
-              width="24px"
-              height="24px"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#000000"
-            >
-              <path
-                d="M15 6L9 12L15 18"
-                stroke="#000000"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-        </div>
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`transition-all duration-300 rounded-full ${
+              currentSlide === index 
+                ? "w-8 h-1.5 bg-blueMain" 
+                : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
