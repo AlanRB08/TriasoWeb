@@ -90,18 +90,18 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
 
     <div class="flex flex-col gap-6">
       <div
-        class="flex flex-col lg:flex-row md:flex-row justify-between bg-[#fffaeb] p-5 rounded-lg gap-4 items-baseline-last"
+        class="grid grid-cols-2 lg:grid-cols-3 flex-col lg:flex-row md:flex-row justify-between bg-[#fffaeb] p-5 rounded-lg gap-4"
       >
         <div
-          class="flex flex-col justify-center items-center text-center"
+          class="flex flex-col justify-center items-center text-center space-y-6 lg:space-y-2"
         >
-          <p class="mt-2 text-[12px] lg:text-base md:text-base">
+          <p class="text-[12px] lg:text-base md:text-base">
             Sealed from Top to Bottom
           </p>
           <Image
             src={siloSealed}
             alt="Silo sealed"
-            class="w-1/2 lg:w-[80%] md:w-[80%] "
+            class=" lg:w-[80%] md:w-[80%] "
           />
         </div>
 
@@ -114,12 +114,13 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
           <Image
             src={siloUse}
             alt="Usage of the Silo"
-            class="w-1/2 lg:w-[80%] md:w-[80%] "
+            class=" lg:w-[80%] md:w-[80%] "
           />
         </div>
 
-        <div class="flex flex-col justify-center items-center text-center">
+        <div class="flex flex-col justify-start items-center text-center col-span-2 lg:col-span-1">
           <p class="mt-2 text-[12px] lg:text-base md:text-base">Silo cone</p>
+          <br>
           <Image
             src={siloCone}
             alt="Silo Cone"
