@@ -5,75 +5,85 @@ import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import AcordeonItem from "../unitComponents/AcordeonItem";
 import binUnit1 from "../../assets/images/BinUnits/binUnit1.webp";
 import img1 from "../../assets/images/RapBins/RAProv3.webp";
-import img1Low from "../../assets/images/RapBins/Low/RAProv3Low.webp"
+import img1Low from "../../assets/images/RapBins/Low/RAProv3Low.webp";
 import img2 from "../../assets/images/RapBins/RAProv1.webp";
 import RAProv5 from "../../assets/images/RapBins/RAProv5.webp";
 import OSection from "../unitComponents/OSection.astro";
 import rapFlight from "../../assets/images/DrumMixers/a21.webp";
 import heroIMG from "../../assets/images/RapBins/heroBG.webp";
 import img4 from "../../assets/images/RapBins/RapProv6.webp";
-import img4Low from "../../assets/images/RapBins/Low/RapProv6Low.webp"
+import img4Low from "../../assets/images/RapBins/Low/RapProv6Low.webp";
 import { Image } from "astro:assets";
 ---
 
 <section class="w-full font-bold">
-    <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT"></div>
-    <div class="w-full bg-grisT">
-        <div
-            class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto"
-        >
-            <div
-                class="w-full col-span-1 flex justify-center lg:justify-start md:justify-start py-5"
-            >
-                <Image src={rap} alt="RAP Collar" class="w-1/2 lg:w-3/4 md:w-3/4" />
-            </div>
-            <div
-                class="w-full col-span-2 text-white flex flex-col justify-center"
-            >
-                <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br />
-                <p class="text-base md:text-lg font-thin">
-                    The drum collar is engineered to provide the controlled and
-                    efficient entry of Reclaimed Asphalt Pavement (RAP) into the
-                    mixing zone. Fed directly from the RAP bin via a dedicated
-                    conveyor, the material enters the drum smoothly and
-                    uniformly.
-                </p>
-            </div>
-        </div>
+  <div class="w-full h-[100px] bg-gradient-to-b from-blueMain to-grisT"></div>
+  <div class="w-full bg-grisT">
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto"
+    >
+      <div
+        class="w-full col-span-1 flex justify-center lg:justify-start md:justify-start py-5"
+      >
+        <Image src={rap} alt="RAP Collar" class="w-1/2 lg:w-3/4 md:w-3/4" />
+      </div>
+      <div class="w-full col-span-2 text-white flex flex-col justify-center">
+        <h1 class="text-xl md:text-2xl font-bold">RAP COLLAR</h1><br />
+        <p class="text-sm lg:text-lg md:text-lg font-thin">
+          The drum collar is engineered to provide the controlled and efficient
+          entry of Reclaimed Asphalt Pavement (RAP) into the mixing zone. Fed
+          directly from the RAP bin via a dedicated conveyor, the material
+          enters the drum smoothly and uniformly.
+        </p>
+      </div>
     </div>
-    <div class="w-full bg-grisT pt-5">
-        <div class="w-full max-w-7xl px-8 mx-auto bg-grisT text-white">
-            <h1 class="lg:text-end md:text-end text-xl md:text-2xl font-bold">
-                RAP ENTRY FLIGHTS
-            </h1>
-        </div>
-        <div
-            class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto justify-center items-center pt-6"
-        >
-            <div class="w-full col-span-1">
-                <p class="text-base md:text-lg font-thin text-white">
-                    For reclaimed asphalt pavement (RAP), dedicated entry
-                    flights are used to gently introduce RAP into the hot
-                    aggregate stream. The design allows uniform drying,
-                    optimizing heat transfer and controlled binder softening for
-                    high quality incorporation with virgin aggregates, while
-                    minimizing blue smoke and preventing material buildup.
-                </p>
-            </div>
-            <div
-                class="w-full col-span-2 text-white flex flex-col justify-center items-center py-5 lg:items-end md:items-end"
-            >
-                <Image src={rapFlight} alt="RAP Entry flights" class="w-3/4 rounded-lg" />
-            </div>
-        </div>
-        <div
-            class="w-full bg-grisT max-w-7xl px-8 mx-auto py-10 flex justify-center"
-        >
-            <div class="w-full bg-white rounded-lg">
-                <Image src={img1Low} alt="Bin unit with conveyor belt"/>
-            </div>
-        </div>
+  </div>
+  <div class="w-full bg-grisT pt-5">
+    <div class="w-full max-w-7xl px-8 mx-auto bg-grisT text-white">
+      <h1 class="lg:text-end md:text-end text-xl md:text-2xl font-bold">
+        RAP ENTRY FLIGHTS
+      </h1>
     </div>
+    <div
+      class="w-full grid grid-cols-1 md:grid-cols-3 bg-grisT max-w-7xl px-8 mx-auto justify-center items-center pt-6"
+    >
+      <div
+        class="w-full col-span-2 text-white flex lg:hidden md:hidden flex-col justify-center items-center py-5 lg:items-end md:items-end"
+      >
+        <Image
+          src={rapFlight}
+          alt="RAP Entry flights"
+          class="rounded-lg"
+        />
+      </div>
+
+      <div class="w-full col-span-1">
+        <p class="text-sm lg:text-lg md:text-lg font-thin text-white">
+          For reclaimed asphalt pavement (RAP), dedicated entry flights are used
+          to gently introduce RAP into the hot aggregate stream. The design
+          allows uniform drying, optimizing heat transfer and controlled binder
+          softening for high quality incorporation with virgin aggregates, while
+          minimizing blue smoke and preventing material buildup.
+        </p>
+      </div>
+      <div
+        class="hidden w-full col-span-2 text-white lg:flex lg:flex-col justify-center items-center py-5 lg:items-end md:items-end"
+      >
+        <Image
+          src={rapFlight}
+          alt="RAP Entry flights"
+          class="w-3/4 rounded-lg"
+        />
+      </div>
+    </div>
+    <div
+      class="w-full bg-grisT max-w-7xl px-8 mx-auto py-10 flex justify-center"
+    >
+      <div class="w-full bg-white rounded-lg">
+        <Image src={img1Low} alt="Bin unit with conveyor belt" />
+      </div>
+    </div>
+  </div>
 
   <!-- ----- -->
   <div class="flex justify-center">
@@ -105,7 +115,7 @@ import { Image } from "astro:assets";
         <h2 class="text-black text-lg md:text-xl">
           We undestand the importance to keep your equipment running non-stop
         </h2>
-        <p class="text-grisT text-base md:text-lg text-justify">
+        <p class="text-grisT pt-2 text-sm lg:text-lg md:text-lg text-justify">
           Equipped with large-capacity RAP bins, this feeding process handle
           high material volumes while maintaining uniform distribution. The
           system is designed to prevent buildup, ensuring a uniform flow into
@@ -122,15 +132,15 @@ import { Image } from "astro:assets";
       </div>
     </div>
 
-        <div
-            class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
-        >
-            <Image
-                src={img4Low}
-                alt="Belt Feeders with Rubberized Pulley"
-                class="fade-img rounded-lg lg:w-3/5 will-change-transform"
-            />
-        </div>
+    <div
+      class="max-w-7xl hidden px-8 mx-auto lg:flex justify-center lg:justify-start"
+    >
+      <Image
+        src={img4Low}
+        alt="Belt Feeders with Rubberized Pulley"
+        class="fade-img rounded-lg lg:w-3/5 will-change-transform"
+      />
+    </div>
 
     <div class="relative flex flex-col lg:hidden">
       <Image
@@ -139,13 +149,13 @@ import { Image } from "astro:assets";
         class="rounded-2xl w-[40%] translate-x-[200px] translate-y-0"
       />
 
-            <Image
-                src={img4Low}
-                alt="Belt Feeders with Rubberized Pulley"
-                class="absolute top-0 left-0 w-[53%] rounded-lg -translate-x-1 translate-y-2 shadow-lg"
-            />
-        </div>
+      <Image
+        src={img4Low}
+        alt="Belt Feeders with Rubberized Pulley"
+        class="absolute top-0 left-0 w-[53%] rounded-lg -translate-x-1 translate-y-2 shadow-lg"
+      />
     </div>
+  </div>
 
   <!-- ---- -->
   <OSection />
@@ -165,7 +175,7 @@ import { Image } from "astro:assets";
       </p>
     </div>
     <div slot="right" class="flex flex-col justify-center gap-3">
-      <h1 class="text-xl md:text-2xl">AVAILABLE IN 10 OR 25-TONS</h1>
+      <h1 class="text-xl md:text-2xl">AVAILABLE IN 14 OR 21-TONS</h1>
       <p class="text-sm md:text-lg">
         With configurations of one, two, or three RAP bin units
       </p>
@@ -187,7 +197,7 @@ import { Image } from "astro:assets";
       <h1 class="text-2xl md:text-5xl font-bold">
         Precision Dosing <br />Systems in <br />RAP feeders
       </h1><br />
-      <p class="text-lg md:text-xl font-thin text-grisT text-justify">
+      <p class="text-base lg:text-xl md:text-xl font-thin text-grisT text-justify">
         Our RAP bins are equipped with precision dosing systems designed for
         reliable material control, ensuring proper dosage according to the mix
         recipe, meeting tight production tolerances and plant performance
@@ -225,7 +235,7 @@ import { Image } from "astro:assets";
           content="Engineered to optimize power usage, reducing operational costs while maintaining high performance."
         />
       </div>
-      <div class="text-lg md:text-xl font-thin text-grisT text-justify py-10">
+      <div class="text-base lg:text-xl md:text-xl font-thin text-grisT text-justify py-10">
         <p>
           These features make our RAP bin dosing systems essential for
           operations that require precise and efficient incorporation of RAP,
