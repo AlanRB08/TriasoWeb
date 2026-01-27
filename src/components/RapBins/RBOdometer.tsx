@@ -76,8 +76,8 @@ const RPOdometer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-6">
-          <div>
-            <img src={img1.src} alt="Back of the RAP (Reclaimed Asphalt Pavement) Bin Unit" />
+          <div className="w-4/6 pt-10 lg:pt-0 md:pt-0">
+            <img src={img1.src} alt="Back of the RAP (Reclaimed Asphalt Pavement) Bin Unit"  />
           </div>
           <a
             href="#planosRapBins"
