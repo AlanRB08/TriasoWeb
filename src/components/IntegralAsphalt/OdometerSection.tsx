@@ -47,6 +47,9 @@ const OdometerSection = () => {
 
   return (
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-8 mt-20">
+      <div className="flex justify-center items-center">
+        <h1 className="font-bold text-lg lg:text-4xl md:text-4xl">Everything in a single unit</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
