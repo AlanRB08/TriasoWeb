@@ -33,43 +33,49 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
         </p>
       </div>
 
-      <div class="w-full mx-auto px-8 mt-10">
+      <div class="w-full mx-auto mt-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div
-            class="flex flex-col items-start justify-center gap-10 md:gap-20 w-full"
+            class="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20 w-full"
           >
-            <div class="flex flex-col items-start justify-start w-full">
-              <div
-                class="flex text-5xl md:text-7xl lg:text-7xl font-normal items-baseline text-left"
-              >
-                <p class="w-auto md:w-64 lg:w-64">50-200</p>
-                <p class="text-sm font-normal ml-3">Tons</p>
+            <div
+              class="flex flex-col justify-center items-center lg:items-start rounded-lg space-y-10"
+            >
+              <div class="flex flex-col">
+                <div
+                  class="flex text-5xl font-normal justify-center lg:justify-start items-center lg:items-baseline w-full"
+                >
+                  <p class="text-black">50-200</p>
+                  <p class="text-sm font-normal ml-3 text-black">Tons</p>
+                </div>
+                <p class="text-black font-thin text-center lg:text-start w-full text-base">
+                  Range of hot-mix storage capacity
+                </p>
               </div>
-              <p class="text-grisP mt-1 text-left font-medium">
-                Range of hot-mix storage capacity
-              </p>
-            </div>
 
-            <div class="flex flex-col items-start justify-start w-full">
               <div
-                class="flex text-5xl md:text-7xl lg:text-7xl font-normal items-baseline text-left"
+                class="flex flex-col text-5xl font-normal justify-center lg:justify-start items-center lg:items-baseline w-full"
               >
-                <p>10</p>
-                <p class="text-sm font-normal ml-3">mins</p>
+                <div class="flex flex-row items-baseline">
+                  <p class="text-black">10</p>
+                  <p class="text-sm font-normal ml-3 text-black">mins</p>
+                </div>
+                <p class="text-black font-thin text-center lg:text-start w-full text-base">
+                  Set-up time
+                </p>
               </div>
-              <p class="text-grisP mt-1 text-left font-medium">Set-up time</p>
-            </div>
 
-            <div class="flex flex-col items-start justify-start w-full">
-              <div
-                class="flex text-5xl md:text-7xl lg:text-7xl font-normal items-baseline text-left"
-              >
-                <p>72</p>
-                <p class="text-sm font-normal ml-3">hours</p>
+              <div class="flex flex-col">
+                <div
+                  class="flex text-5xl font-normal justify-center lg:justify-start items-center lg:items-baseline w-full"
+                >
+                  <p class="text-black">72</p>
+                  <p class="text-sm font-normal ml-3 text-black">hours</p>
+                </div>
+                <p class="text-black font-thin text-center lg:text-start w-full text-base">
+                  Preservation quality
+                </p>
               </div>
-              <p class="text-grisP mt-1 text-left font-medium">
-                Preservation quality
-              </p>
             </div>
           </div>
 
@@ -101,30 +107,30 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
           <Image
             src={siloSealed}
             alt="Silo sealed"
-            class=" lg:w-[80%] md:w-[80%] "
+            class="lg:w-[80%] md:w-[80%]"
           />
         </div>
 
-        <div
-          class="flex flex-col justify-center items-center text-center"
-        >
+        <div class="flex flex-col justify-center items-center text-center">
           <p class="mt-2 text-[12px] lg:text-base md:text-base">
             Even distribution without segregation
           </p>
           <Image
             src={siloUse}
             alt="Usage of the Silo"
-            class=" lg:w-[80%] md:w-[80%] "
+            class="lg:w-[80%] md:w-[80%]"
           />
         </div>
 
-        <div class="flex flex-col justify-start items-center text-center col-span-2 lg:col-span-1">
+        <div
+          class="flex flex-col justify-start items-center text-center col-span-2 lg:col-span-1"
+        >
           <p class="mt-2 text-[12px] lg:text-base md:text-base">Silo cone</p>
-          <br>
+          <br />
           <Image
             src={siloCone}
             alt="Silo Cone"
-            class="w-1/2 lg:w-[80%] md:w-[80%] "
+            class="w-1/2 lg:w-[80%] md:w-[80%]"
           />
         </div>
       </div>
@@ -227,7 +233,9 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
           <div
             class="border-2 border-white rounded-xl p-6 flex flex-col justify-center h-full"
           >
-            <p class="font-bold text-sm lg:text-lg md:text-lg leading-tight mb-4">
+            <p
+              class="font-bold text-sm lg:text-lg md:text-lg leading-tight mb-4"
+            >
               Gate with pneumatic system to release the hot mix to the trucks
             </p>
             <p class="text-xs text-gray-300 leading-snug">
