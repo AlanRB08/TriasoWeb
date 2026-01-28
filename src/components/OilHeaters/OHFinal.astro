@@ -1,66 +1,123 @@
 ---
 import MiniGallery from "../unitComponents/MiniGallery";
-import heroIMG from "../../assets/images/OilHeaters/heroIMG.webp"
-import img1 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS1.webp';
-import img2 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS2.webp';
-import img3 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS3.webp';
-import img4 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS4.webp';
-import img5 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS5.webp';
-import img6 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS6.webp';
-import img7 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS7.webp';
-import img8 from '../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS8.webp';
+import heroIMG from "../../assets/images/OilHeaters/heroIMG.webp";
+import img1 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS1.webp";
+import img2 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS2.webp";
+import img3 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS3.webp";
+import img4 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS4.webp";
+import img5 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS5.webp";
+import img6 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS6.webp";
+import img7 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS7.webp";
+import img8 from "../../assets/images/AsphaltStorage/SliderGalleryStorage/ATS8.webp";
 import OHProv2 from "../../assets/images/OilHeaters/OHProv2.webp";
 import ItemsSlider from "../LandinPage/ItemsSlider";
 import { Image } from "astro:assets";
 
-
-
-const gallerySlides = [{img:img1},{img:img2},{img:img3},{img:img4},{img:img5},{img:img6},{img:img7},{img:img8},];
+const gallerySlides = [
+    { img: img1 },
+    { img: img2 },
+    { img: img3 },
+    { img: img4 },
+    { img: img5 },
+    { img: img6 },
+    { img: img7 },
+    { img: img8 },
+];
 const images1 = [
-  { src: '/Gallery/sliderHotMix/1.webp', title: 'Preservation of Quality',texto:'Preservation of quality and integrity of the asphalt.' },
-  { src: '/Gallery/sliderHotMix/2.webp', title: 'Efficient Logistics' ,texto:'Streamlines delivery with automated weighing, ticket printing, and precise material flow control.'},
-  { src: '/Gallery/sliderHotMix/3.webp', title: 'Versatile Storage Options' ,texto:'Long-duration thermal retention, ensuring it remains liquid and high-quality for extended periods.'},
-  { src: '/Gallery/sliderHotMix/4.webp', title: 'Mobility' ,texto:'Triaso asphalt tanks allow quick setup without heavy machinery, ideal for relocatable operations.'},
-  { src: '/Gallery/sliderHotMix/5.webp', title: 'Durability' ,texto:'Built with reinforcerd material, thermally insulated cylinders, and corrosion-resistant finishes.'},
-  { src: '/Gallery/sliderHotMix/6.webp', title: 'Seamless Integration',texto:'Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.' },
-  { src: '/Gallery/sliderHotMix/7.webp', title: 'Enhanced Safety' ,texto:'Equipped with guards, alarms, and visual indicators to protect personnel and equipment.'},
-  { src: '/Gallery/sliderHotMix/8.webp', title: 'Cost-Effective' ,texto:'Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.'},
-  { src: '/Gallery/sliderHotMix/9.webp', title: 'Improved Company Image' ,texto:'Industrial aesthetics elevate the visual appeal of your operation.'},
-  { src: '/Gallery/sliderHotMix/10.webp', title: 'Customizable' ,texto:'Adaptable features to meet specific project requirements and operational goals.'}
+    {
+        src: "/Gallery/sliderHotMix/1.webp",
+        title: "Preservation of Quality",
+        texto: "Preservation of quality and integrity of the asphalt.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/2.webp",
+        title: "Efficient Logistics",
+        texto: "Streamlines delivery with automated weighing, ticket printing, and precise material flow control.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/3.webp",
+        title: "Versatile Storage Options",
+        texto: "Long-duration thermal retention, ensuring it remains liquid and high-quality for extended periods.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/4.webp",
+        title: "Mobility",
+        texto: "Triaso asphalt tanks allow quick setup without heavy machinery, ideal for relocatable operations.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/5.webp",
+        title: "Durability",
+        texto: "Built with reinforcerd material, thermally insulated cylinders, and corrosion-resistant finishes.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/6.webp",
+        title: "Seamless Integration",
+        texto: "Compatible with asphalt plant systems through protocols like Ethernet Industrial, Modbus, and CANopen.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/7.webp",
+        title: "Enhanced Safety",
+        texto: "Equipped with guards, alarms, and visual indicators to protect personnel and equipment.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/8.webp",
+        title: "Cost-Effective",
+        texto: "Reduces downtime, transportation costs, and maintenance with efficient design and reliable performance.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/9.webp",
+        title: "Improved Company Image",
+        texto: "Industrial aesthetics elevate the visual appeal of your operation.",
+    },
+    {
+        src: "/Gallery/sliderHotMix/10.webp",
+        title: "Customizable",
+        texto: "Adaptable features to meet specific project requirements and operational goals.",
+    },
 
-  // agrega hasta 16 o más imágenes
+    // agrega hasta 16 o más imágenes
 ];
 ---
 
 <section class="w-full flex flex-col justify-center ga-4 md:gap-10">
     <div>
-        <Image src={heroIMG} alt="Asphalt storange tank with an oil heater system" class="bg-cover w-full">
-    </div>
-    <div class="w-full max-w-7xl mx-auto px-8 my-10">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10">
-            <div>
-                <h2 class="text-blueMain text-xl md:text-2xl font-bold">Different Applications</h2>
-                <p class="text-grisT text-base md:text-lg font-bold">
-                    Our oil heaters are designed and manufactured in-house for our asphalt 
-                    storage tanks, but they are also suitable for a wide range of other 
-                    applications.
-                </p>
+        <Image
+            src={heroIMG}
+            alt="Asphalt storange tank with an oil heater system"
+            class="bg-cover w-full"
+        />
+        <div class="w-full max-w-7xl mx-auto px-8 my-10">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10">
+                <div>
+                    <h2 class="text-blueMain text-xl md:text-2xl font-bold">
+                        Different Applications
+                    </h2>
+                    <p class="text-grisT text-base md:text-lg font-bold">
+                        Our oil heaters are designed and manufactured in-house
+                        for our asphalt storage tanks, but they are also
+                        suitable for a wide range of other applications.
+                    </p>
+                </div>
+                <div>
+                    <Image src={OHProv2} alt="Side oil heater" />
+                </div>
             </div>
-            <div>
-                <Image src={OHProv2} alt="Side oil heater">
+            <div class="w-full px-8 md:px-52 bg-bgBeige py-10">
+                <div class="w-full max-w-7xl mx-auto px-8">
+                    <h2 class="text-black text-2xl md:text-3xl font-bold">
+                        Gallery
+                    </h2>
+                </div>
+                <MiniGallery
+                    slides={gallerySlides}
+                    autoSlide={false}
+                    showText={false}
+                    client:only
+                />
+            </div>
+            <div class="lg:px-8">
+                <ItemsSlider images={images1} client:only />
             </div>
         </div>
     </div>
-    <div class="w-full px-8 md:px-52 bg-bgBeige py-10">
-        <div class="w-full max-w-7xl mx-auto px-8">
-            <h2 class="text-black text-2xl md:text-3xl font-bold">Gallery</h2>
-        </div>
-        <MiniGallery slides={gallerySlides}
-                autoSlide={false}
-                heightClass="h-[150px] md:h-[500px]"
-                showText={false}
-                client:only/>
-    </div>
-    <ItemsSlider images={images1} client:only></ItemsSlider>
-    
 </section>
