@@ -54,7 +54,7 @@ export default function ItemsSlider({ images }: Props) {
                 shrink-0
                 w-[65%]
                 md:w-[45%]
-                lg:w-[23%]
+                lg:w-[20%]
                 bg-white
                 rounded-xl
                 border border-gray-100
