@@ -28,7 +28,7 @@ const OdometerDrum = () => {
           setTimeout(() => {
             setValue(25);
             setValue6(500);
-            setValue1(40);
+            setValue1(50);
             setValue2(7);
             setValue4(5);
             setValue3(150);

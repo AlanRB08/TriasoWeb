@@ -32,7 +32,29 @@ import { Image } from "astro:assets";
         <p class="text-justify text-base lg:text-lg font-thin">
           Elimination of sludge pits and their costly operation.
         </p><br />
-        <BagHousesOdometer client:only />
+
+        <div class="flex flex-col justify-center rounded-lg space-y-5">
+          <div class="flex flex-col">
+            <div class="flex flex-row gap-2 items-center text-5xl font-medium">
+              <p>4 - 90</p>
+              <p class="font-medium text-sm">thousand ACFM</p>
+            </div>
+            <div>
+              <h2 class="font-medium text-lg">Baghouses capacity</h2>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex flex-row gap-2 items-center text-5xl font-medium">
+              <p>99.99</p>
+              <p class="font-medium text-sm">%</p>
+            </div>
+            <div>
+              <h2 class="font-medium text-lg">
+                Fine particle filtration efficiency
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
       <div
         class="w-full flex justify-center items-center pt-10 lg:pt-0 md:pt-0"
@@ -47,9 +69,11 @@ import { Image } from "astro:assets";
     <Tabs client:visible />
   </div><br />
   <div class="w-full">
-    <details class="group ">
+    <details class="group">
       <summary class="flex cursor-pointer list-none">
-        <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+        <div
+          class="w-full max-w-7xl mx-auto flex justify-between items-center px-8 py-6"
+        >
           <h2
             class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl"
           >

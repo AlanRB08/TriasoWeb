@@ -80,8 +80,8 @@ export default function BinSelector() {
         </div>
         <div className="flex flex-col lg:flex-row bg-white rounded-2xl py-3 px-4 lg:px-16 justify-center items-center gap-2 lg:gap-10">
           <div>
-            <p className="hidden lg:block md:block font-bold text-sm sm:text-base md:text-lg py-2">Bin units:</p>
-            <p className=" lg:hidden md:hidden font-bold text-sm sm:text-base md:text-lg py-2">Bin units</p>
+            <p className="hidden lg:block md:block font-bold text-sm lg:text-xl md:text-xl py-2">Bin units:</p>
+            <p className=" lg:hidden md:hidden font-bold text-sm lg:text-xl md:text-xl py-2">Bin units</p>
           </div>
           <div>
             {binOptions.map((num) => (
