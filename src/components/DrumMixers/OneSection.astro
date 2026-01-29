@@ -76,7 +76,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
     <Image
       src={obracivil2Low}
       alt="Drum mixer"
-      class="rounded-2xl w-[40%] translate-x-[240px] translate-y-14"
+      class="rounded-2xl w-[40%] translate-x-[230px] translate-y-14"
     />
 
     <Image
@@ -107,9 +107,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
   </div>
 
   <div
-    class="p-4 flex flex-col max-w-7xl px-8 mx-auto items-center justify-center bg-white rounded-2xl relative"
+    class="flex flex-col max-w-7xl px-8 mx-auto  items-center justify-center bg-white rounded-2xl relative"
   >
-    <details class="group">
+    <details class="group max-w-7xl">
       <summary class="cursor-pointer list-none">
         <h2 class="text-2xl md:text-3xl my-6 text-center">
           Retractable Drag Slat for Efficient Transport and Operation
@@ -148,7 +148,7 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
           >
         </div>
       </summary>
-      <div class="w-full flex flex-col items-center justify-center mt-20 z-20">
+      <div class="w-full max-w-full flex flex-col items-center justify-center mt-20 z-20">
         <p class="text-grisT text-justify text-base md:text-lg pb-5">
           The vertical drag slat features a retractable configuration that
           complies with DOT transportation height limits, ensuring safe and
@@ -158,22 +158,81 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
           design improves logistics while maintaining high performance during
           loading and discharge operations.
         </p>
-        <h1 class="text-2xl md:text-4xl text-black mb-10 w-full text-start">
+
+        <div class="w-full max-w-[calc(100vw-4rem)] overflow-hidden lg:hidden">
+          <div
+            class="w-full lg:hidden overflow-x-auto snap-x snap-mandatory flex gap-4 mt-6"
+          >
+            <div
+              class="snap-center shrink-0 w-[80%] max-w-[320px] bg-bgMain rounded-2xl p-4 min-h-[350px] box-border"
+            >
+              <h1
+                class="text-2xl md:text-4xl text-black mb-10 w-full text-start"
+              >
+                Hinged and Integrated
+              </h1>
+              <p class="text-base md:text-lg font-thin text-grisT">
+                This hinged drag slat is fully assembled on its own chassis,
+                allowing for immediate installation and reducing on-site
+                assembly time. Its structural design is intended to integrate
+                directly with the mix discharge system without the need for
+                additional adjustments.
+              </p>
+            </div>
+            <div
+              class="snap-center shrink-0 w-[80%] max-w-[320px] bg-bgMain rounded-2xl p-4 min-h-[350px] box-border"
+            >
+              <h1
+                class="text-2xl md:text-4xl text-black mb-10 w-full text-start"
+              >
+                Chain with a 4” pitch
+              </h1>
+              <p class="text-grisT text-base lg:text-lg">
+                The 4” pitch chain is a key component of the elevator, designed
+                for heavy-duty operation. <span style="color:black;">
+                  With a tensile strength of 50,000 lbs (22,700 kg) and
+                  floating-type chain</span
+                >
+                guides to prevent jams, ensuring smooth and reliable performance,
+                durability, efficiency, and minimal maintenance.
+              </p>
+            </div>
+            <div
+              class="snap-center shrink-0 w-[80%] max-w-[320px] bg-bgMain rounded-2xl p-4 min-h-[350px] box-border"
+            >
+              <h1
+                class="text-2xl md:text-4xl text-black mb-10 w-full text-start"
+              >
+                Self-aligning bearings
+              </h1>
+              <p class="text-grisT text-base lg:text-lg">
+                Self-aligning bearings in the straight drag slat ensure smooth
+                operation by automatically compensating for misalignment. This
+                reduces wear, extends service life, and improves reliability in
+                heavy-duty applications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h1
+          class="hidden lg:flex text-2xl md:text-4xl text-black mb-10 w-full text-start"
+        >
           Hinged and Integrated
         </h1>
-        <p class="text-base md:text-lg font-thin text-grisT">
+        <p class="hidden lg:flex text-base md:text-lg font-thin text-grisT">
           This hinged drag slat is fully assembled on its own chassis, allowing
           for immediate installation and reducing on-site assembly time. Its
           structural design is intended to integrate directly with the mix
           discharge system without the need for additional adjustments.
         </p>
         <div
-          class="w-full grid grid-cols-2 lg:grid-cols-5 md:gap-8 items-center"
+          class="w-full hidden lg:grid grid-cols-2 lg:grid-cols-5 md:gap-8 items-center"
         >
           <div class="flex flex-col col-span-2 gap-8">
             <Image src={render5} alt="4” pitch chain" />
           </div>
-          <div class="flex flex-col col-span-3 items-center gap-10  ">
+          <div class="flex flex-col col-span-3 items-center gap-10">
             <div
               class="bg-white rounded-2xl text-base lg:text-lg flex flex-col text-start lg:p-4 md:p-4 justify-center"
             >
@@ -205,13 +264,13 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
         <div
           class="flex flex-col justify-center items-center gap-4 mt-10 h-full"
         >
-          <div
-            class="gap-10 md:gap-20"
-          >
+          <div class="gap-10 md:gap-20">
             <div
-              class="grid grid-cols-2 space-y-10   gap-5 pt-5 lg:pt-0 md:pt-0 lg:gap-0 md:gap-0 text-grisT md:text-lg text-base relative z-20"
+              class="grid grid-cols-2 space-y-10 gap-5 pt-5 lg:pt-0 md:pt-0 lg:gap-0 md:gap-0 text-grisT md:text-lg text-base relative z-20"
             >
-              <div class="flex flex-col justify-center lg:items-start text-grisT md:text-lg text-base">
+              <div
+                class="flex flex-col justify-center lg:items-start text-grisT md:text-lg text-base"
+              >
                 <h2 class="font-medium">It can hold up</h2>
                 <h1
                   class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
@@ -222,16 +281,22 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
               </div>
 
               <div class="flex flex-col lg:justify-end lg:items-end">
-                <h1 class="text-black font-bold text-lg lg:text-3xl md:text-3xl">
+                <h1
+                  class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
+                >
                   Automatic opening
                 </h1>
                 <h2>controlled by variables such as</h2>
-                <h1 class="text-black font-bold text-lg lg:text-3xl md:text-3xl">
+                <h1
+                  class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
+                >
                   time or weight.
                 </h1>
               </div>
 
-              <div class="flex flex-col lg:justify-center lg:items-start text-grisT md:text-lg text-base">
+              <div
+                class="flex flex-col lg:justify-center lg:items-start text-grisT md:text-lg text-base"
+              >
                 <h1
                   class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
                 >
@@ -240,7 +305,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
                 <h2>in the console centralizes system management.</h2>
               </div>
 
-              <div class="flex flex-col lg:justify-end lg:items-end text-grisT md:text-lg text-base">
+              <div
+                class="flex flex-col lg:justify-end lg:items-end text-grisT md:text-lg text-base"
+              >
                 <h1
                   class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
                 >
@@ -254,7 +321,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
                 </h1>
               </div>
 
-              <div class="flex flex-col lg:justify-center lg:items-start text-grisT md:text-lg text-base" >
+              <div
+                class="flex flex-col lg:justify-center lg:items-start text-grisT md:text-lg text-base"
+              >
                 <h1
                   class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
                 >
@@ -263,7 +332,9 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
                 <h2>allows operation either manually or automatically</h2>
               </div>
 
-              <div class="flex flex-col lg:justify-end lg:items-end text-grisT md:text-lg text-base" >
+              <div
+                class="flex flex-col lg:justify-end lg:items-end text-grisT md:text-lg text-base"
+              >
                 <h1
                   class="text-black font-bold text-lg lg:text-3xl md:text-3xl"
                 >
@@ -319,10 +390,10 @@ import thrustrollers from "../../assets/images/DrumMixers/thrustrollers.webp";
       Lower fuel consumption than any other asphalt plant
     </h2>
   </div>
-  <div class="">
-    <div
-      class="w-full bg-[url(/newBanner.webp)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-20 mt-10"
-    >
+  <div
+    class="w-full bg-[url(/newBanner.webp)] bg-no-repeat bg-center bg-cover px-8 py-10 lg:py-20 mt-10"
+  >
+    <div class="max-w-7xl mx-auto flex flex-col">
       <div class="w-full flex justify-center">
         <Image src={flag} alt="Flag icon" class="w-[125px] md:w-[200px]" />
       </div>

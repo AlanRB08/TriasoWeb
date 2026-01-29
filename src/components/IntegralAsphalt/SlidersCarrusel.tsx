@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 interface ImageData {
   src: string;
@@ -6,139 +6,180 @@ interface ImageData {
   texto: string;
 }
 
-interface Props {
+interface SlidersCarruselProps {
   images: ImageData[];
 }
 
-export default function SlidersCarrusel({ images }: Props) {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [modalIndex, setModalIndex] = useState<number | null>(null);
-
-  const containerRef = useRef<HTMLDivElement>(null);
+const useItemsPerPage = () => {
+  const [itemsPerPage, setItemsPerPage] = useState(1);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
+    if (typeof window === "undefined") return;
+
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setItemsPerPage(1);
+      } else if (width < 1024) {
+        setItemsPerPage(2);
+      } else if (width < 1280) {
+        setItemsPerPage(3);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
     handleResize();
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowWidth < 1024;
+  return itemsPerPage;
+};
+
+const NavigationButton = ({
+  direction,
+  onClick,
+  disabled
+}: {
+  direction: "prev" | "next";
+  onClick: () => void;
+  disabled: boolean;
+}) => {
+  const isNext = direction === "next";
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={`${isNext ? "Next" : "Prev"} slide`}
+      className={`
+        bg-[#d2d2d2] text-black p-2 rounded-full shadow transition-all z-10
+        ${disabled ? "opacity-50 cursor-not-allowed" : "hover:bg-[#bcbcbc] hover:scale-110"}
+      `}
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+        <path
+          d={isNext ? "M9 6L15 12L9 18" : "M15 6L9 12L15 18"}
+          stroke="#393939"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+  );
+};
+
+export default function SlidersCarrusel({ images }: SlidersCarruselProps) {
+  const itemsPerPage = useItemsPerPage();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = isMobile ? 1 : 4;
-  const totalPages = Math.ceil(images.length / itemsPerPage);
+  const [modalImage, setModalImage] = useState<ImageData | null>(null);
+  const maxIndex = Math.ceil(images.length / itemsPerPage) - 1;
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [itemsPerPage]);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1 >= totalPages ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 < 0 ? totalPages - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
-  const offset = -(currentIndex * (100 / totalPages));
+  const isMobile = itemsPerPage === 1;
 
   return (
-    <div className="w-full mx-auto y-10 bg-bgMain mt-10  relative px-0 md:px-44 mb-10">
-      {!isMobile && (
-        <div className="absolute -bottom-10 right-[15%] flex gap-2 justify-end">
-          <button
-            aria-label="Prev slide"
-            onClick={prevSlide}
-            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-          >
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M15 6L9 12L15 18"
-                stroke="#393939"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            aria-label="Next slide"
-            onClick={nextSlide}
-            className="bg-[#d2d2d2] hover:bg-[#bcbcbc] text-black px-1 py-1 rounded-full shadow"
-          >
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M9 6L15 12L9 18"
-                stroke="#393939"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      )}
-      <div className="relative overflow-hidden w-full h-auto">
+    <div className="relative w-full mx-auto mt-10 mb-10 px-4 md:px-12 lg:px-20 xl:px-44 bg-bgMain">
+
+      <div className="overflow-hidden w-full h-auto py-4">
         <div
-          ref={containerRef}
-          className={`flex transition-transform duration-500 ease-in-out ${isMobile
-              ? "overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
-              : ""
-            }`}
+          className={`
+            flex transition-transform duration-500 ease-out h-full
+            ${isMobile ? "overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4" : ""}
+          `}
           style={{
-            transform: isMobile ? undefined : `translateX(${offset}%)`,
-            width: isMobile
-              ? "100%"
-              : `${(images.length / itemsPerPage) * 100}%`,
+            transform: !isMobile ? `translateX(-${currentIndex * 100}%)` : "none",
           }}
         >
-          {images.map((img, i) => (
+          {images.map((img, index) => (
             <div
-              key={i}
-              className={`flex-shrink-0 px-2 cursor-pointer ${isMobile ? "snap-start" : ""
-                }`}
+              key={index}
+              onClick={() => setModalImage(img)}
+              className={`
+                flex-shrink-0 cursor-pointer px-2 transition-all duration-300
+                ${isMobile ? "snap-center w-[85%]" : ""}
+              `}
               style={{
-                width: isMobile ? "80%" : `${100 / images.length}%`,
+                width: isMobile ? undefined : `${100 / itemsPerPage}%`,
               }}
-              onClick={() => setModalIndex(i)}
             >
-              <div className="p-4 bg-white rounded-sm lg:h-[60vh]">
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="w-full h-64 object-cover shadow hover:scale-105 transition"
-                />
-                <div className="mt-4 text-start font-bold text-blueMain">
-                  {img.title}
+              <div className="bg-white rounded-md shadow-sm hover:shadow-lg h-full flex flex-col transition-shadow duration-300">
+                <div className="overflow-hidden rounded-t-md h-56 lg:h-64 flex-shrink-0">
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <div className="mt-4 text-justify font-bold text-grisT text-sm md:text-base px-4">
-                  <p dangerouslySetInnerHTML={{ __html: img.texto }}></p>
+
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-bold text-blueMain text-lg mb-3 text-start leading-tight">
+                    {img.title}
+                  </h3>
+
+                  <div className="text-justify text-grisT text-sm md:text-base flex-grow">
+                    <div dangerouslySetInnerHTML={{ __html: img.texto }} />
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-400 font-semibold uppercase tracking-wide text-right">
+                    See more
+                  </div>
                 </div>
               </div>
-
-
             </div>
           ))}
         </div>
       </div>
-      {modalIndex !== null && (
+
+      {modalImage && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={() => setModalIndex(null)}
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm"
+          onClick={() => setModalImage(null)}
         >
-          <div className="relative max-w-4xl w-full mx-4">
-            <img
-              src={images[modalIndex].src}
-              alt={images[modalIndex].title}
-              className="w-full max-h-[80vh] object-contain rounded"
-            />
+          <div
+            className="relative max-w-5xl w-full flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              aria-label="Close modal"
-              onClick={() => setModalIndex(null)}
-              className="absolute top-2 right-2 text-white bg-black/50 hover:bg-black px-3 py-1 rounded"
+              onClick={() => setModalImage(null)}
+              className="absolute -top-5 right-0 text-white hover:text-gray-300 transition-colors bg-white/10 p-2 rounded-full"
             >
               ✕
             </button>
-            <div className="text-white text-center mt-2 text-lg font-medium">
-              {images[modalIndex].title}
+
+            <img
+              src={modalImage.src}
+              alt={modalImage.title}
+              className="w-auto max-h-[70vh] object-contain rounded-lg shadow-2xl"
+            />
+
+            <div className="bg-white w-full max-w-2xl p-6 mt-4 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold text-blueMain mb-2">{modalImage.title}</h2>
+              <div
+                className="text-gray-600 text-sm md:text-base overflow-y-auto max-h-[20vh] pr-2 custom-scrollbar"
+                dangerouslySetInnerHTML={{ __html: modalImage.texto }}
+              />
             </div>
           </div>
+        </div>
+      )}
+
+      {!isMobile && images.length > itemsPerPage && (
+        <div className=" flex justify-end gap-3">
+          <NavigationButton direction="prev" onClick={prevSlide} disabled={false} />
+          <NavigationButton direction="next" onClick={nextSlide} disabled={false} />
         </div>
       )}
     </div>
