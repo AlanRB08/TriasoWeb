@@ -49,10 +49,10 @@ const OdometerDrum = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="max-w-7xl mx-auto px-8 mt-20">
+    <div ref={sectionRef} className="max-w-7xl mx-auto px-8 lg:mt-28 lg:mb-80 md:mt-28 md:mb-80">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20">
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center lg:items-start">
             <div className="flex text-6xl lg:text-7xl font-normal justify-center items-center lg:justify-start lg:items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
