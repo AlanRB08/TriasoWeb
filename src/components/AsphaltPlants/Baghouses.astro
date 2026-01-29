@@ -33,29 +33,31 @@ import { Image } from "astro:assets";
           Elimination of sludge pits and their costly operation.
         </p><br />
 
-        <div class="flex flex-col justify-center rounded-lg space-y-5">
+        <div class="flex flex-col justify-center rounded-lg space-y-2">
           <div class="flex flex-col">
-            <div class="flex flex-row gap-2 items-center text-5xl font-medium">
-              <p>4 - 90</p>
-              <p class="font-medium text-sm">thousand ACFM</p>
+            <div
+              class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
+            >
+              <p class="text-black">4 - 90</p>
+              <p class="text-sm font-normal ml-3 text-black">thousand ACFM</p>
             </div>
-            <div>
-              <h2 class="font-medium text-lg">Baghouses capacity</h2>
-            </div>
+            <p class="text-black font-thin text-center lg:text-start w-full text-base">
+              Baghouses capacity
+            </p>
           </div>
-          <div class="flex flex-col">
-            <div class="flex flex-row gap-2 items-center text-5xl font-medium">
-              <p>99.99</p>
-              <p class="font-medium text-sm">%</p>
-            </div>
-            <div>
-              <h2 class="font-medium text-lg">
-                Fine particle filtration efficiency
-              </h2>
-            </div>
+
+          <div
+            class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
+          >
+            <p class="text-black">99.99</p>
+            <p class="text-sm font-normal ml-3 text-black">%</p>
           </div>
+          <p class="text-black font-thin text-center lg:text-start w-full text-base">
+            Fine particle filtration efficiency
+          </p>
         </div>
       </div>
+
       <div
         class="w-full flex justify-center items-center pt-10 lg:pt-0 md:pt-0"
       >
@@ -63,106 +65,107 @@ import { Image } from "astro:assets";
       </div>
     </div>
   </div>
-  <div
-    class="w-full flex flex-col items-center mt-20 text-grisT max-w-7xl mx-auto px-8 text-base md:text-lg"
-  >
-    <Tabs client:visible />
-  </div><br />
-  <div class="w-full">
-    <details class="group">
-      <summary class="flex cursor-pointer list-none">
-        <div
-          class="w-full max-w-7xl mx-auto flex justify-between items-center px-8 py-6"
-        >
-          <h2
-            class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl"
-          >
-            Advantages of fines return system
-          </h2>
-          <svg
-            class="transition-transform duration-300 group-open:rotate-180"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
-              <path
-                d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
-                fill="#0F0F0F"></path>
-            </g></svg
-          >
-        </div>
-      </summary>
+</div>
 
-      <div class="w-full bg-grisT text-white py-10">
-        <div
-          class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 items-center"
+<div
+  class="w-full flex flex-col items-center mt-20 text-grisT max-w-7xl mx-auto px-8 text-base md:text-lg"
+>
+  <Tabs client:visible />
+</div><br />
+<div class="w-full">
+  <details class="group">
+    <summary class="flex cursor-pointer list-none">
+      <div
+        class="w-full max-w-7xl mx-auto flex justify-between items-center px-8 py-6"
+      >
+        <h2
+          class="font-bold text-grisT text-xl text-center lg:text-start md:text-start md:text-2xl"
         >
-          <div class="w-full">
-            <ul class="list-disc ml-6 font-thin text-sm md:text-base">
-              <li>Improves the gradation of the hot-mix.</li>
-              <li>Increases the density and cohesion of the final material.</li>
-              <li>
-                Reduces the consumption of virgin aggregates, optimizing
-                production costs.
-              </li>
-              <li>
-                Decreases environmental pollution by reincorporating captured
-                dust.
-              </li>
-              <li>
-                Contributes to a more uniform and durable mix with better
-                structural properties.
-              </li>
-            </ul>
-          </div>
-          <div class="w-full">
-            <h2
-              class="text-base text-center mt-5 lg:mt-0 md:mt-0 lg:text-start md:text-start md:text-lg font-bold"
-            >
-              Mechanism of baghouses available in pulse jet and reverse jet
-            </h2><br />
-            <p class="font-thin">
-              <span class="font-bold">Pulse Jet:</span>
-              A cleaning system that uses compressed air bursts to dislodge dust and
-              debris from the filter bags, maintaining continuous airflow.
-            </p><br />
-            <p class="font-thin">
-              <span class="font-bold">Reverse Air:</span>
-              A cleaning system that blows air in the opposite direction to remove
-              dust from the filter bags, typically used in larger baghouses or high-dust
-              applications.
-            </p>
-          </div>
+          Advantages of fines return system
+        </h2>
+        <svg
+          class="transition-transform duration-300 group-open:rotate-180"
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <path
+              d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+              fill="#0F0F0F"></path>
+          </g></svg
+        >
+      </div>
+    </summary>
+
+    <div class="w-full bg-grisT text-white py-10">
+      <div
+        class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 items-center"
+      >
+        <div class="w-full">
+          <ul class="list-disc ml-6 font-thin text-sm md:text-base">
+            <li>Improves the gradation of the hot-mix.</li>
+            <li>Increases the density and cohesion of the final material.</li>
+            <li>
+              Reduces the consumption of virgin aggregates, optimizing
+              production costs.
+            </li>
+            <li>
+              Decreases environmental pollution by reincorporating captured
+              dust.
+            </li>
+            <li>
+              Contributes to a more uniform and durable mix with better
+              structural properties.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full">
+          <h2
+            class="text-base text-center mt-5 lg:mt-0 md:mt-0 lg:text-start md:text-start md:text-lg font-bold"
+          >
+            Mechanism of baghouses available in pulse jet and reverse jet
+          </h2><br />
+          <p class="font-thin">
+            <span class="font-bold">Pulse Jet:</span>
+            A cleaning system that uses compressed air bursts to dislodge dust and
+            debris from the filter bags, maintaining continuous airflow.
+          </p><br />
+          <p class="font-thin">
+            <span class="font-bold">Reverse Air:</span>
+            A cleaning system that blows air in the opposite direction to remove dust
+            from the filter bags, typically used in larger baghouses or high-dust
+            applications.
+          </p>
         </div>
       </div>
-    </details>
-  </div>
+    </div>
+  </details>
+</div>
 
-  <div
-    class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-8"
-  >
-    <div>
-      <video
-        playsinline
-        controls
-        poster="/Gallery/customdes.webp"
-        preload="metadata"
-        width="1280"
-        height="720"
-      >
-        <source src="/Videos/Webm/DMVideo.webp" type="video/webm" />
-        <source src="/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
-      </video>
-      <p class="font-thin text-center text-grisT">
-        Triaso® baghouses are portable, self-contained units that operate at
-        air-to-cloth ratios up to 8:1
-      </p>
-    </div><br />
-    <LearnBtn href="/BagHouses" />
-  </div>
+<div
+  class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-8"
+>
+  <div>
+    <video
+      playsinline
+      controls
+      poster="/Gallery/customdes.webp"
+      preload="metadata"
+      width="1280"
+      height="720"
+    >
+      <source src="/Videos/Webm/DMVideo.webp" type="video/webm" />
+      <source src="/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
+    </video>
+    <p class="font-thin text-center text-grisT">
+      Triaso® baghouses are portable, self-contained units that operate at
+      air-to-cloth ratios up to 8:1
+    </p>
+  </div><br />
+  <LearnBtn href="/BagHouses" />
 </div>

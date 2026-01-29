@@ -14,7 +14,7 @@ import { Image } from "astro:assets";
             What Are the Differences Between ‘Partial Air’ and ‘Total Air’
             Burners?
         </h1>
-        <p class="text-base md:text-lg">
+        <p class="text-sm lg:text-lg md:text-lg">
             Key advantages that make ‘Total Air Burners’ more efficient and
             environmentally friendly than ‘Partial Air Burners’
         </p>
@@ -28,7 +28,7 @@ import { Image } from "astro:assets";
                 <div class="h-[2px] w-3/4 bg-blueMain"></div>
             </div>
 
-            <div class="flex flex-col gap-6 text-sm md:text-lg">
+            <div class="flex flex-col gap-6 text-sm lg:text-lg md:text-lg">
                 <p>
                     These burners provide only 30% to 45% of the necessary
                     combustion air (called primary air) through the blower.
@@ -57,17 +57,17 @@ import { Image } from "astro:assets";
                         <div class="flex items-center gap-3">
                             <span class="w-4 h-4 rounded-full bg-[#001746]"
                             ></span>
-                            <p class="text-gray-700">Primary air</p>
+                            <p class="text-gray-700 text-sm lg:text-base md:text-base">Primary air</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-4 h-4 rounded-full bg-[#55F0FF]"
                             ></span>
-                            <p class="text-gray-700">Secondary air</p>
+                            <p class="text-gray-700 text-sm lg:text-base md:text-base">Secondary air</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-4 h-4 rounded-full bg-[#B30000]"
                             ></span>
-                            <p class="text-gray-700">Fuel</p>
+                            <p class="text-gray-700 text-sm lg:text-base md:text-base">Fuel</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ import { Image } from "astro:assets";
                 <div class="h-[2px] w-3/4 bg-redBg"></div>
             </div>
 
-            <div class="flex flex-col gap-6 text-sm md:text-lg">
+            <div class="flex flex-col gap-6 text-sm lg:text-lg md:text-lg">
                 <p>
                     These burners supply 100% of the air required for combustion
                     through their own blower, in a controlled manner.
@@ -114,12 +114,12 @@ import { Image } from "astro:assets";
                         <div class="flex items-center gap-3">
                             <span class="w-4 h-4 rounded-full bg-[#081156]"
                             ></span>
-                            <p class="text-gray-700">Total air</p>
+                            <p class="text-gray-700 text-sm lg:text-base md:text-base">Total air</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-4 h-4 rounded-full bg-[#cf2019]"
                             ></span>
-                            <p class="text-gray-700">Fuel</p>
+                            <p class="text-gray-700 text-sm lg:text-base md:text-base">Fuel</p>
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ import { Image } from "astro:assets";
             </h1>
         </div><br />
         <div class="w-full grid grid-cols-1 md:grid-cols-2">
-            <div class="w-full flex flex-col font-thin text-base md:text-lg">
+            <div class="w-full flex flex-col font-thin text-sm lg:text-lg md:text-lg">
                 <p>
                     Reducing burner power becomes necessary when production at
                     the asphalt plant must be slowed — whether due to truck
@@ -161,14 +161,14 @@ import { Image } from "astro:assets";
             <h1 class="text-2xl md:text-3xl text-black">
                 Problems Caused by Fixed Power Burners
             </h1><br />
-            <p class="text-base md:text-lg">
+            <p class="text-sm lg:text-lg md:text-lg">
                 The inefficiency of fixed power burners leads to several serious
                 issues:
             </p>
         </div>
         <div class="w-full bg-white rounded-2xl p-8 mt-10">
             <ul
-                class="font-thin list-disc ml-5 md:ml-10 text-base md:text-lg space-y-2"
+                class="font-thin list-disc ml-5 md:ml-10 text-sm lg:text-lg md:text-lg space-y-2"
             >
                 <li>
                     Unburned microdroplets result in a significant waste of
@@ -197,13 +197,13 @@ import { Image } from "astro:assets";
             <h1 class="text-black text-2xl md:text-3xl">
                 Variable Power Burners
             </h1><br />
-            <p class="text-base md:text-xl">
+            <p class="text-sm lg:text-xl md:text-xl">
                 This problem (inefficiency at low production levels) is solved
                 by using variable power burners.
             </p>
         </div>
         <div class="w-full bg-white rounded-2xl p-4 mt-10">
-            <ul class="list-disc ml-3 md:ml-10 text-base md:text-lg space-y-4">
+            <ul class="list-disc ml-3 md:ml-10 text-sm lg:text-lg md:text-lg space-y-4">
                 <li>
                     In these burners, fuel is atomized at constant pressure,
                     regardless of power variation.
@@ -230,7 +230,7 @@ import { Image } from "astro:assets";
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col justify-center items-center">
-            <p class="text-center font-bold text-[#db1a14] pb-5">Burner with fixed power at 100% power</p>
+            <p class="text-center font-bold text-[#db1a14] pb-5 pt-5">Burner with fixed power at 100% power</p>
             <Image src={img1Low} alt="Burner with fixed power at 100% power" />
         </div>
         <div class="flex flex-col justify-center items-center">

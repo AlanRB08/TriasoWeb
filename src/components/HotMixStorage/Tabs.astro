@@ -77,9 +77,7 @@ const images = [
         <div
           class="grid grid-cols-1 md:grid-cols-2 justify-center items-center"
         >
-          <div
-            class="bg-white p-4 font-bold md:rounded-r-2xl md:px-36 md:border-2 border-black order-2 md:order-1"
-          >
+          <div class="p-4 font-bold md:px-36 order-2 md:order-1">
             <p>
               Offers automated, precise control for weighing and delivering hot
               mix, reducing the risk of human error and increasing operational
@@ -120,7 +118,7 @@ const images = [
             <h1 class="text-xl md:text-2xl">Versatil Setup</h1>
             <p class="text-base md:text-lg">
               Works seamlessly in a dedicated control cabin or under a
-              protective roof
+              protective roof.
             </p>
           </div>
           <div slot="right" class="flex flex-col justify-center gap-3">
@@ -133,17 +131,19 @@ const images = [
         </TwoColumnSection>
 
         <div
-          class="w-full max-w-7xl mx-auto px-4 flex flex-col justify-center gap-2"
+          class="w-full max-w-7xl mx-auto px-4 flex flex-col justify-center gap-2 pt-10"
         >
           <Collapsable client:only />
         </div>
-        <div class="w-full max-w-7xl mx-auto px-8 flex justify-center">
+        <div class="w-full max-w-7xl mx-auto px-8 py-10 flex justify-center">
           <Image src={HMI} alt="Triaso Relief system " class="w-4/5" />
         </div>
         <div
           class="w-full bg-[#2b2b2b] text-white flex flex-col justify-center pt-10 h-full"
         >
-          <div class="w-full max-w-7xl mx-auto px-8 relative h-[250px]">
+          <div
+            class="w-full max-w-7xl mx-auto px-8 relative h-[300px] lg:h-[250px]"
+          >
             <h2 class="text-xl md:text-2xl relative z-20 font-bold">
               User Friendly Interface
             </h2>
@@ -161,7 +161,7 @@ const images = [
             <Image
               src={Logo}
               alt="Triaso Logo"
-              class="absolute top-0 left-0 z-10 w-full"
+              class="absolute top-0 left-0 z-10 w-full opacity-40"
             />
           </div>
           <div class="w-full bg-bgBeige -skew-y-2">
@@ -221,14 +221,14 @@ const images = [
                                 Built with durable materials and advanced control systems, these silos deliver consistent performance under demanding conditions while helping reduce operating costs and downtime. Whether used in stationary or mobile configurations, the silo provides practical flexibility and dependable operation, making it an essential element of any asphalt plant.`}
               />
             </div>
-            <div class="flex flex-row items-start">
+            <div class="flex flex-row items-start gap-5">
               <div class="items-start">
                 <Image
                   src={Aislamiento}
                   alt="Six inches fiberglass insulation"
                   class="w-[600px]"
                 />
-                <div class="flex flex-col justify-end items-center">
+                <div class="flex flex-col justify-end items-center pt-5 space-y-2 lg:space-y-0">
                   <p class="text-blueMain font-bold">Six inches</p>
                   <p class="font-bold text-center">fiberglass insulation</p>
                 </div>
@@ -266,10 +266,10 @@ const images = [
       </div>
       <!-- Third Section -->
       <div
-        class="w-full flex flex-col mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold"
+        class="w-full lg:w-[2000px] mx-auto flex flex-col mt-4 tab-content-1 hidden text-base md:text-lg text-grisT font-bold"
         data-tab-content="tab3"
       >
-        <div class="w-full max-w-7xl mx-auto p-5">
+        <div class="w-full max-w-7xl mx-auto p-8 text-center lg:text-start">
           <h1 class="text-red-600 font-bold">
             We understand the importance of keeping your equipment running
             non-stop. The operation of many other machines depends on the
@@ -280,32 +280,35 @@ const images = [
             with low maintenance for many years.
           </p>
         </div>
-
         <div
-          class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]"
-        >
+          class="relative w-full bg-gradient-to-b from-[#e7e7e7] to-[#393939] py-20 [clip-path:ellipse(150%_100%_at_50%_100%)]">
           <p>­</p>
         </div>
-        <section
-          class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] overflow-hidden"
-        >
-          <div
-            class="absolute top-0 right-[15rem] h-[30rem] w-[30rem] overflow-hidden pointer-events-none"
-          >
-            <Image
-              src={siloBG}
-              alt="Silo image"
-              class="absolute top-[10rem] right-[-5rem] lg:right-0 lg:top-1/2 -translate-y-1/2 w-auto max-h-[100%] opacity-40 object-contain"
-            />
-          </div>
 
-          <div class="max-w-7xl mx-auto text-white relative z-10 px-6 md:px-10">
-            <p>
+        <section
+          class="relative w-full bg-gradient-to-b from-[#393939] to-[#383838] overflow-hidden lg:overflow-visible"
+        >
+       
+            <Image
+            src={siloBG}
+            alt="Silo background"
+            class="absolute hidden md:block right-0 top-1/2 -translate-y-1/2 w-[900px] max-w-none opacity-40 pointer-events-none"/>
+          
+          <Image
+            src={siloBG}
+            alt="Silo background"
+            class="absolute md:hidden top-0 left-1/2 -translate-x-1/2 w-[110%] max-w-none opacity-20 pointer-events-none"/>
+
+          <div
+            class="relative z-10 max-w-7xl mx-auto text-white px-6 md:px-10 py-10"
+          >
+            <p class="mb-6">
               The silos are built with durable, easy-to-maintain components that
               require minimal upkeep. Their robust construction and simple
               design reduce the need for frequent repairs, lowering long-term
               maintenance costs and increasing the lifespan of the equipment.
             </p>
+
             <p>
               We understand the importance of keeping your equipment running
               nonstop. The reliability of your silos, built to operate in a
@@ -315,16 +318,14 @@ const images = [
             </p>
           </div>
           <div
-            class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 z-10 px-6 md:px-10"
+            class="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 z-10 px-6 md:px-10 gap-10"
           >
             <div class="relative pb-4">
               <div
-                class="absolute left-0 top-0 -translate-x-[100vw] w-[100vw] h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] bg-blueMain"
-              >
-              </div>
+                class="absolute left-0 top-0 -translate-x-[100vw]  w-[100vw] h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] bg-blueMain"></div>
+
               <div
-                class="relative bg-blueMain text-white p-4 sm:p-5 md:p-6 w-full md:w-4/5 h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] flex flex-col justify-center gap-4 md:gap-6 rounded-r-[30px]"
-              >
+                class="relative bg-blueMain text-white p-4 sm:p-5 md:p-6 w-full md:w-4/5 h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] flex flex-col justify-center gap-4 md:gap-6 rounded-r-[30px]">
                 <h1 class="text-lg sm:text-xl md:text-2xl font-semibold">
                   24/7 customer service
                 </h1>
@@ -346,19 +347,22 @@ const images = [
                 title="Quick Replacement Parts Availability"
                 content="To ensure minimal downtime, the silos are designed with standard, easily replaceable parts. This reduces lead time for repairs and helps maintain smooth operations without extended interruptions."
               />
+
               <AcordeonItem
                 client:only
                 title="Corrosion-Resistant Coating"
-                content="Equipped with aspecialized corrosion-resistant coating that protects against wear and tear from weather elements and chemicals, ensuring durability and functionality even in harsh environments."
+                content="Equipped with a specialized corrosion-resistant coating that protects against wear and tear from weather elements and chemicals, ensuring durability and functionality even in harsh environments."
               />
+
               <AcordeonItem
                 client:only
                 title="High-Quality Materials, Manufactured In-House"
-                content="Our silos are constructed using premium materials sourced directly by us, ensuring superior quality and long-lasting performance. By manufacturing every component in-house, we maintain strict quality control standards, guaranteeing that each silo meets the highest industry standards for durability, efficiency, and reliability."
+                content="Our silos are constructed using premium materials sourced directly by us, ensuring superior quality and long-lasting performance."
               />
             </div>
           </div>
         </section>
+
         <section
           class="w-full bg-gradient-to-b from-[#383838] to-[#e7e7e7] py-20"
         >
@@ -368,6 +372,7 @@ const images = [
     </div>
   </div>
 </section>
+
 <style is:global>
   /* Estilos para los tabs activos */
   .tab-button-1[aria-selected="true"] {

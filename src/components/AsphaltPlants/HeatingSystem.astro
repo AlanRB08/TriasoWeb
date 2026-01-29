@@ -7,8 +7,8 @@ import batchIcon from "../../assets/images/Burners/batch.webp";
 import preHeat from "../../assets/images/Burners/preHeat.webp";
 ---
 
-<div class="flex flex-col items-center justify-center mt-20 font-bold">
-  <section class="flex flex-col items-center justify-center w-full">
+<div class="flex flex-col mt-20 font-bold">
+  <section class="flex flex-col w-full">
     <div
       id="HeatingSystem"
       class="scroll-mt-20 text-3xl md:text-4xl font-bold w-full text-start max-w-7xl mx-auto px-8"
@@ -19,9 +19,8 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
         <div class="w-20 h-0.5 bg-gray-300"></div>
       </div>
     </div>
-    <div
-      class="flex flex-col items-center justify-center max-w-7xl mx-auto px-8 w-full"
-    >
+
+    <div class="flex flex-col items-center justify-center px-8 w-full">
       <video
         class="w-full lg:w-1/2 md:w-1/2"
         playsinline
@@ -38,6 +37,7 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
         From 6 to 125 million Btu/Hr, with preheater and filter
       </h2>
     </div>
+
     <div class="relative w-full min-h-[600px]">
       <video
         class="absolute inset-0 w-full h-full object-cover z-0"
@@ -54,79 +54,94 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
 
       <div class="absolute inset-0 bg-black/50 z-0"></div>
 
-      <div
-        class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 pt-[80px] lg:mt-[120px] md:mt-[120px] max-w-7xl mx-auto w-full"
-      >
+      <div class="relative z-10">
         <div
-          class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs text-white"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-[80px] lg:mt-[120px] md:mt-[120px] px-8 lg:px-60 "
         >
-          <h2 class="text-white font-bold text-center">Low NOx emissions</h2>
-          <div class="border-t-2 border-white my-2"></div>
-          <p class="text-center lg:text-justify md:text-justify text-[#d9d9d9]">
-            <strong class="text-white">Low NOx emissions </strong>(nitrogen
-            oxides) are achieved, minimizing the release of this greenhouse gas,
-            which is strictly regulated in many regions, mainly in urban areas.
-            The system can be equipped with a flame protection module that
-            further reduces NOx levels, reaching near-zero emissions.
-          </p>
-          <p class="text-center lg:text-justify md:text-justify text-white">
-            By achieving total combustion, several issues are avoided:
-          </p>
-
-          <ul
-            class="pl-4 pt-4 text-[#d9d9d9] text-start lg:text-justify md:text-justify"
+          <div
+            class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs text-white"
           >
-            <li class="list-disc">Atmospheric pollution.</li>
-            <li class="list-disc">Contamination of the hot-mix.</li>
-            <li class="list-disc">Baghouse clogging and fire risk.</li>
-          </ul>
-        </div>
-        <div
-          class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs"
-        >
-          <h2 class="text-white font-bold text-center">100% regulated air</h2>
-          <div class="border-t-2 border-white my-2"></div>
-          <p class="text-center lg:text-justify md:text-justify text-[#d9d9d9]">
-            The burner regulates <strong class="text-[#c91c1c]"
-              >100% of the air combustion</strong
-            > without relying on the drum's exhaust system. This ensures complete
-            combustion and <strong class="text-[#c91c1c]"
-              >100% fuel utilization</strong
-            >.
-          </p>
+            <h2 class="text-white font-bold text-center">Low NOx emissions</h2>
+            <div class="border-t-2 border-white my-2"></div>
+            <p
+              class="text-center lg:text-justify md:text-justify text-[#d9d9d9]"
+            >
+              <strong class="text-white">Low NOx emissions </strong>(nitrogen
+              oxides) are achieved, minimizing the release of this greenhouse
+              gas, which is strictly regulated in many regions, mainly in urban
+              areas. The system can be equipped with a flame protection module
+              that further reduces NOx levels, reaching near-zero emissions.
+            </p>
+            <p class="text-center lg:text-justify md:text-justify text-white">
+              By achieving total combustion, several issues are avoided:
+            </p>
+            <ul
+              class="pl-4 pt-4 text-[#d9d9d9] text-start lg:text-justify md:text-justify"
+            >
+              <li class="list-disc">Atmospheric pollution.</li>
+              <li class="list-disc">Contamination of the hot-mix.</li>
+              <li class="list-disc">Baghouse clogging and fire risk.</li>
+            </ul>
+          </div>
 
-          <ul
-            class="pl-4 pt-4 text-start lg:text-justify md:text-justify text-white"
+          <div
+            class="font-semibold text-sm md:text-base p-4 rounded-xl shadow-2xs"
           >
-            <li class="list-disc">
-              A sealed installation prevents cold air from entering, that would
-              otherwise be used to heat it and allowing precise, efficient
-              combustion.
-            </li>
-            <li class="list-disc pb-10">
-              Efficiency remains stable regardless of temperature changes
-              throughout the day.
-            </li>
-          </ul>
+            <h2 class="text-white font-bold text-center">100% regulated air</h2>
+            <div class="border-t-2 border-white my-2"></div>
+            <p
+              class="text-center lg:text-justify md:text-justify text-[#d9d9d9]"
+            >
+              The burner regulates <strong class="text-[#c91c1c]"
+                >100% of the air combustion</strong
+              > without relying on the drum's exhaust system. This ensures complete
+              combustion and <strong class="text-[#c91c1c]"
+                >100% fuel utilization</strong
+              >.
+            </p>
+
+            <ul
+              class="pl-4 pt-4 text-start lg:text-justify md:text-justify text-white"
+            >
+              <li class="list-disc">
+                A sealed installation prevents cold air from entering, that
+                would otherwise be used to heat it and allowing precise,
+                efficient combustion.
+              </li>
+              <li class="list-disc pb-10">
+                Efficiency remains stable regardless of temperature changes
+                throughout the day.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
     <div
       class="w-full bg-[url(/newBanner.webp)] bg-no-repeat bg-center bg-cover px-8 lg:px-52 py-10 lg:py-20"
     >
-      <div class="w-full flex justify-center">
-        <Image src={flag} alt="Burner machine" class="w-[150px] md:w-[200px]" />
+      <div class="flex flex-col justify-center items-center max-w-7xl mx-auto">
+        <div class="w-full flex justify-center">
+          <Image
+            src={flag}
+            alt="Burner machine"
+            class="w-[150px] md:w-[200px]"
+          />
+        </div>
+
+        <p
+          class="text-white font-bold text-center text-sm lg:text-justify lg:text-xl md:text-justify md:text-xl"
+        >
+          Our latest burner innovation features an oxygen sensor that
+          automatically regulates excess oxygen to no more than 3%, eliminating
+          the need for manual fuel carburization adjustment when relocating the
+          equipment. Thanks to our self-carburizing system, NOx levels remain
+          even lower.
+        </p>
       </div>
-      <p
-        class="text-white font-bold text-center text-sm  lg:text-justify lg:text-xl md:text-justify md:text-xl "
-      >
-        Our latest burner innovation features an oxygen sensor that
-        automatically regulates excess oxygen to no more than 3%, eliminating
-        the need for manual fuel carburization adjustment when relocating the
-        equipment. Thanks to our self-carburizing system, NOx levels remain even
-        lower.
-      </p>
     </div>
+
     <div class="w-full bg-[url(/HeroFH.webp)] bg-no-repeat bg-center bg-cover">
       <div class="w-full max-w-7xl mx-auto px-8 py-10">
         <h2
@@ -135,7 +150,6 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
           FUEL PREHEATERS
         </h2>
       </div>
-
       <div
         class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10"
       >
@@ -159,9 +173,11 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
         </div>
       </div>
       <div
-        class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10  mx-auto  items-center"
+        class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 py-10 mx-auto items-center"
       >
-        <div class="w-full bg-blueMain p-6 lg:pl-20 lg:py-5 md:pl-20 md:py-5  text-white rounded-r-lg h-auto">
+        <div
+          class="w-full bg-blueMain p-6 lg:pl-20 lg:py-5 md:pl-20 md:py-5 text-white rounded-r-lg h-auto"
+        >
           <h2
             class="font-bold text-base text-center lg:text-start md:text-start md:text-lg"
           >
@@ -186,6 +202,7 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
         </div>
       </div>
     </div>
+
     <div class="w-full bg-bgBeige py-10">
       <div
         class="w-full max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-10"

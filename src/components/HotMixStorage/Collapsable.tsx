@@ -11,7 +11,7 @@ const Collapsable = () => {
     {
       title: "Real-Time Display",
       content:
-        "All silo functions — including mix temperature and weighing data — are clearly displayed on the Proface HMI for full operational transparency. This information is also sent to a real-time cloud database, allowing remote monitoring through an app — anywhere, anytime.",
+        "All silo functions — including mix temperature and weighing data — are clearly displayed on the HMI for full operational transparency. This information is also sent to a real-time cloud database, allowing remote monitoring through an app — anywhere, anytime.",
     },
     {
       title: "Enhanced Loading and Unloading Efficiency:",

@@ -89,7 +89,7 @@ const OHOdometer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6">
+        <div className="flex flex-col items-center justify-center gap-6 py-14">
           <div>
             <img src={single.src} alt="Front of an oil heater system" />
           </div>

@@ -8,6 +8,7 @@ import FPH2Low from "../../assets/images/FuelPreHeaters/Low/FPH2Low.webp";
 import FPH3 from "../../assets/images/FuelPreHeaters/FPH3.webp";
 import fIcon from "../../assets/images/FuelPreHeaters/FlamaIcon.svg";
 import img1 from "../../assets/images/Burners/10.webp";
+import bgBanner from "../../assets/images/IntegralAsphalt/Hero1.webp"
 import FPHPlanos from "./FPHPlanos";
 import { Image } from "astro:assets";
 ---
@@ -359,7 +360,8 @@ import { Image } from "astro:assets";
     </div>
   </div>
   <div
-    class="w-full bg-[url(src/assets/images/IntegralAsphalt/Hero1.webp)] bg-center bg-cover bg-no-repeat my-10"
+    class="w-full bg-center bg-cover bg-no-repeat my-10"
+     style={{ backgroundImage: `url(${bgBanner.src})` }}
   >
     <div class="w-full bg-black/70 py-10 md:py-20 bg-cover h-full">
       <div class="max-w-7xl mx-auto items-center px-8">

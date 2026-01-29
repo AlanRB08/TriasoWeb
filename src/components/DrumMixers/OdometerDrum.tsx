@@ -51,37 +51,37 @@ const OdometerDrum = () => {
   return (
     <div ref={sectionRef} className="max-w-7xl mx-auto px-8 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-        <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
+        <div className="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-7xl font-normal justify-center items-center lg:justify-start lg:items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value6} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">Tph</p>
             </div>
-            <p className="text-grisP">Range of hot-mix production</p>
+            <p className="text-grisP text-center lg:text-start">Range of hot-mix production</p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-7xl font-normal justify-center items-center lg:justify-start lg:items-baseline w-full">
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">%</p>
             </div>
-            <p className="text-grisP">
+            <p className="text-grisP text-center lg:text-start">
               RAP (Recycled Asphalt Pavement) Incorporation
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-7xl font-normal justify-center items-center lg:justify-start lg:items-baseline w-full gap-1 lg:gap-0">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <h1>.</h1>
               <Odometer value={value4} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value3} format="(,ddd)" duration={2000} />
-              <p className="text-sm font-normal md:ml-3">million BTU/hr</p>
+              <p className="text-sm font-normal lg:ml-3">million BTU/hr</p>
             </div>
-            <p className="text-grisP text-start w-full">
+            <p className="text-grisP text-center lg:text-start w-full">
               Modulating burner capacity
             </p>
           </div>

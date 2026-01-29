@@ -440,7 +440,7 @@ const BinPlanosSection = () => {
             </div>
 
             <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              NUMBER OF UNITS:
+              UNITS:
             </h1>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3 justify-center w-full md:px-32 items-center justify-items-center">
               {/* Botón 1 */}
@@ -451,7 +451,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                1 UNIT
+                1 BIN
               </button>
 
               {/* Botón 2 */}
@@ -462,7 +462,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                2 UNITS
+                2 BINS
               </button>
 
               {/* Botón 3 */}
@@ -473,7 +473,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                3 UNITS
+                3 BINS
               </button>
               <button
                 onClick={() => setActiveTab(4)}
@@ -482,7 +482,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                4 UNITS
+                4 BINS
               </button>
               <button
                 onClick={() => setActiveTab(5)}
@@ -491,7 +491,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                5 UNITS
+                5 BINS
               </button>
               <button
                 onClick={() => setActiveTab(6)}
@@ -500,7 +500,7 @@ const BinPlanosSection = () => {
                     : "text-white bg-transparent border-white"
                   }`}
               >
-                6 UNITS
+                6 BINS
               </button>
             </div>
           </div>
