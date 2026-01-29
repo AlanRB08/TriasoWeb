@@ -1,0 +1,24 @@
+---
+import GallerySlider from "../unitComponents/GallerySlider";
+import g1 from "../../assets/images/FuelPreHeaters/Gallery/PREH1.webp"
+import g2 from "../../assets/images/FuelPreHeaters/Gallery/PREH2.webp"
+
+const FPHImages = [
+  {
+    image: g1.src,
+    caption: 'Fuel preheater with filtering system',
+  },
+  {
+    image: g2.src,
+    caption: 'Fuel preheater with filtering system',
+  },
+];
+---
+
+<section class="w-full font-bold text-grisT">
+    <div class="w-full mt-10 pb-10 px-8">
+        <div class="z-50">
+            <GallerySlider client:only slides={FPHImages} visibleThumbs={3}/>
+        </div>        
+    </div>
+</section>

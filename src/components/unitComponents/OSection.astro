@@ -6,13 +6,13 @@ import { Image } from "astro:assets";
 
 <div class="w-full bg-white">
   <section
-    class="max-w-7xl px-4 mx-auto py-10 grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-0 bg-white justify-center items-center"
+    class="max-w-7xl px-0 pt-5 lg:pt-0 md:pt-0 lg:px-4 md:px-4 mx-auto py-0 lg:py-10 md:py-10 grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-0 bg-white justify-center items-center"
   >
-    <div class="col-span-1 lg:col-span-3 w-full">
-      <h1 class="text-2xl md:text-4xl text-grisT font-bold">
+    <div class="col-span-1 lg:col-span-3 w-full px-8">
+      <h1 class="text-2xl lg:text-4xl md:text-4xl text-grisT font-bold">
         Triaso Control System
       </h1><br />
-      <p class="text-base md:text-lg font-thin text-grisT">
+      <p class="text-sm lg:text-lg md:text-lg font-thin text-grisT">
         Offering a practical and efficient way to manage industrial equipment
         operations. With advanced monitoring and automation, it simplifies the
         Asphalt Plant operation and personnel. Control of key processes like
@@ -42,7 +42,7 @@ import { Image } from "astro:assets";
               stroke-linejoin="round"></path>
           </svg>
 
-          <p class="text-sm md:text-base font-bold text-black text-center">
+          <p class="text-sm lg:text-base md:text-base font-bold text-black text-center">
             Cloud historical reports
           </p>
         </div>
@@ -182,13 +182,13 @@ import { Image } from "astro:assets";
           </p>
         </div> 
       </div>
-              <div class=" flex justify-center items-center my-0 md:my-10">
+              <div class=" flex justify-center lg:justify-start items-center my-0 md:my-10">
          <LearnBtn href="/Relief"/> 
         </div>
  
     </div>
     <div
-      class="col-span-1 lg:col-span-2 w-full flex justify-center items-center"
+      class="col-span-1 lg:col-span-2 w-full flex justify-end items-end lg:justify-center lg:items-center"
     >
       <Image src={OSHand} alt="Triaso Control System on a mobile device" class="w-3/4 lg:w-full" />
     </div>

@@ -32,14 +32,14 @@ export default function AsphaltComponent({ data }: Props) {
 
     return (
         <section className="w-full bg-blueMain text-white py-12 md:py-20">
-            <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-2 lg:gap-16 items-start">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-2 items-start">
 
-                <div className="w-full  lg:w-1/2  lg:min-h-[520px]">
+                <div className="w-full ">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                         {title}
                     </h1>
 
-                    <p className="text-sm sm:text-base lg:text-lg font-light opacity-80 mb-6">
+                    <p className="text-sm lg:text-lg md:text-lg font-light opacity-80 mb-6">
                         {subtitle}
                     </p>
 
@@ -62,11 +62,11 @@ export default function AsphaltComponent({ data }: Props) {
                 <div
                     className="w-full lg:w-1/2 flex flex-col items-center  lg:min-h-[520px]"
                 >
-                    <div className="w-full max-w-md sm:max-w-lg lg:max-w-xl flex-1 flex items-center">
+                    <div className="w-full  flex-1 flex items-center">
                         <img
                             src={image?.src ?? image}
                             alt="Asphalt Storage Tank"
-                            className="w-full h-auto object-contain"
+                            className="max-w-full lg:max-w-[150%] "
                         />
                     </div>
 

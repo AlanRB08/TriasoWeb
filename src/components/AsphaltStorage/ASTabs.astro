@@ -8,53 +8,65 @@ import hotoil from "../../assets/images/AsphaltStorage/hotoil.webp";
 import DirectFire from "../../assets/images/AsphaltStorage/DirectFire.webp";
 import VaporCondensers from "../../assets/images/AsphaltStorage/VaporCondensers.webp"
 
+import t1 from "../../assets/images/AsphaltStorage/SliderStorage/P-3a.webp"
+import t2 from "../../assets/images/AsphaltStorage/SliderStorage/P-3b.webp"
+import t3 from "../../assets/images/AsphaltStorage/SliderStorage/P-3c.webp"
+import t4 from "../../assets/images/AsphaltStorage/SliderStorage/P-3d.webp"
+import t5 from "../../assets/images/AsphaltStorage/SliderStorage/P-3e.webp"
+import t6 from "../../assets/images/AsphaltStorage/SliderStorage/P-3f.webp"
+
+import g1 from "../../assets/images/AsphaltStorage/SliderStorage2/DFAT1.webp"
+import g2 from "../../assets/images/AsphaltStorage/SliderStorage2/DFAT2.webp"
+import g3 from "../../assets/images/AsphaltStorage/SliderStorage2/DFAT3.webp"
+import g4 from "../../assets/images/AsphaltStorage/SliderStorage2/DFAT4.webp"
+
 const tanksSlides = [
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3a.webp",
+    image: t1.src,
     caption:
       "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3b.webp",
+    image: t2.src,
     caption:
       "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3c.webp",
+    image: t3.src,
     caption:
       "25,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3d.webp",
+    image: t4.src,
     caption:
       "25,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3e.webp",
+    image: t5.src,
     caption:
       "16,000-gallon asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage/P-3f.webp",
+    image: t6.src,
     caption:
       "16,000-gallon asphalt tank, plus, with boiler, compliant with US standards, in working condition",
   },
 ];
 const tanksSlides2 = [
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT1.webp",
+    image: g1.src,
     caption: "60,000-liter asphalt tank, plus.",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT2.webp",
+    image: g2.src,
     caption: "60,000-liter asphalt tank, plus",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT3.webp",
+    image: g3.src,
     caption: "60,000-liter asphalt tank, plus",
   },
   {
-    image: "src/assets/images/AsphaltStorage/SliderStorage2/DFAT4.webp",
+    image: g4.src,
     caption: "60,000-liter asphalt tank, plus",
   },
 ];
@@ -84,28 +96,28 @@ const tanksSlides2 = [
     <div class="py-4 flex justify-center items-center">
       <!-- First Section -->
       <div
-        class="w-full flex flex-col items-center justify-center gap-5 mt-4 tab-content text-base md:text-lg text-grisT"
+        class="w-full flex flex-col items-center justify-center gap-5 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
         data-tab-content="tab1"
       >
         <div class="w-full">
-          <p class="text-justify">
+          <p class="text-justify text-sm lg:text-lg md:text-lg">
             Designed for precise temperature control, the oil heater ensures
             uniform heat distribution through an efficient thermal oil
             circulation system. Its heavy-duty construction allows continuous
             operation, making it suitable for demanding that require consistent
             performance and energy efficiency.
           </p>
-        </div><br />
+        </div>
         <GallerySlider client:only slides={tanksSlides} visibleThumbs={6} />
         <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
           <div
-            class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
+            class="w-full bg-[#727272] flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
           >
             <div class="w-full flex justify-center">
               <Image src={oil1} alt="Oil Heater" class="w-4/5 h-4/5 rounded-lg" />
             </div>
             <div class="w-full flex justify-between items-center my-auto">
-              <h1 class="text-black text-xl font-semibold">Oil Heater</h1>
+              <h1 class="text-white text-xl font-semibold">Oil Heater</h1>
               <ModalButton>
                 <h3 slot="title" class="text-xl md:text-2xl font-semibold">
                   Oil Heater
@@ -143,13 +155,13 @@ const tanksSlides2 = [
             </div>
           </div>
           <div
-            class="w-full bg-white flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
+            class="w-full bg-[#727272]  flex flex-col gap-6 p-8 rounded-xl shadow-lg max-h-[55vh]"
           >
             <div class="w-full flex justify-center">
               <Image src={hotoil} alt="Hot Oil Coils" class="w-full h-4/5 rounded-lg" />
             </div>
             <div class="flex justify-between items-center my-auto">
-              <h1 class="text-black text-xl font-semibold">Hot Oil Coils</h1>
+              <h1 class="text-white text-xl font-semibold">Hot Oil Coils</h1>
               <ModalButton>
                 <h3 slot="title" class="text-xl md:text-2xl font-semibold">
                   Hot Oil Coils
@@ -206,10 +218,10 @@ const tanksSlides2 = [
     </div>
     <!-- Second Section -->
     <div
-      class="w-full flex flex-col items-center justify-center gap-10 mt-4 tab-content text-base md:text-lg text-grisT font-bold"
+      class="w-full flex flex-col items-center justify-center gap-10  tab-content text-base md:text-lg text-grisT font-bold"
       data-tab-content="tab2"
     >
-      <p class="text-center">
+      <p class="text-justify text-sm lg:text-lg md:text-lg">
         Triaso® direct fire heating is designed to heat up the asphalt. A burner
         is mounted directly beneath the tank, transferring heat through a steel
         plate into the asphalt. This method provides fast, efficient heating

@@ -1,22 +1,26 @@
 import React, { useState } from "react";
+import g1 from "../../assets/images/SidePanels/FEPlaC_1.webp"
+import g2 from "../../assets/images/SidePanels/TqesFeChasis_1.webp"
+import g3 from "../../assets/images/SidePanels/TolvasFE.webp"
+import g4 from "../../assets/images/SidePanels/FEPlaC1_1.webp"
 
 const SliderAesthetic = () => {
   const sidePanels = [
     {
       nombre: "Drum mixer",
-      imagen: "src/assets/images/SidePanels/FEPlaC_1.webp",
+      imagen: g1.src,
     },
     {
       nombre: "Asphalt storage tanks",
-      imagen: "src/assets/images/SidePanels/TqesFeChasis_1.webp",
+      imagen: g2.src,
     },
     {
       nombre: "Bin Units",
-      imagen: "src/assets/images/SidePanels/TolvasFE.webp",
+      imagen: g3.src,
     },
     {
       nombre: "Cold Mix Asphalt Plants",
-      imagen: "src/assets/images/SidePanels/FEPlaC1_1.webp",
+      imagen: g4.src,
     },
   ];
 

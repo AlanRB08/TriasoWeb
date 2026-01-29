@@ -46,7 +46,7 @@ const HMOdometer = () => {
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto px-8 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-start">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
@@ -56,7 +56,7 @@ const HMOdometer = () => {
             <p className="text-grisP">Range of hot-mix storage capacity</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-start">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">mins</p>
@@ -64,7 +64,7 @@ const HMOdometer = () => {
             <p className="text-grisP">Set-up time</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-start">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value4} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">hours</p>
@@ -78,8 +78,8 @@ const HMOdometer = () => {
             <img src={single.src} alt="Back of a Hot-Mix storage silo" />
           </div>
           <a
-  href="#planosSilos"
-  className="
+            href="#planosSilos"
+            className="
     group relative inline-flex items-center justify-center
     px-4 py-2 rounded-xl
     border border-black
@@ -89,19 +89,19 @@ const HMOdometer = () => {
     transition-all duration-300 ease-out
     hover:text-white hover:-translate-y-0.5 hover:shadow-lg
   "
->
-  <span
-    className="
+          >
+            <span
+              className="
       absolute inset-0 bg-black
       translate-y-full
       transition-transform duration-300 ease-out
       group-hover:translate-y-0
     "
-  />
-  <span className="relative z-10">
-    All Technical Details
-  </span>
-</a>
+            />
+            <span className="relative z-10">
+              All Technical Details
+            </span>
+          </a>
         </div>
       </div>
     </div>

@@ -13,27 +13,33 @@ import img7 from "../../assets/images/BagHouses/BHProv7.webp";
 import img7Low from "../../assets/images/BagHouses/Low/BHProv7Low.webp";
 import OSection from "../unitComponents/OSection.astro";
 import bannerNew from "../../assets/images/BagHouses/bannerImage.webp";
-import bannerMobile from "../../assets/images/BagHouses/Low/bannerImageLow.webp"
+import bannerMobile from "../../assets/images/BagHouses/Low/bannerImageLow.webp";
 import damperImg from "../../assets/images/BagHouses/damper.webp";
 import finesReturn from "../../assets/images/BagHouses/finesReturn.webp";
 import boquillasVL from "../../assets/images/BagHouses/Low/BoquillasVLLow.webp";
+import bgBack from "../../assets/images/BagHouses/test.webp";
 import { Image } from "astro:assets";
+
+import g1 from "../../assets/images/BagHouses/GallerySlider/BHG1.webp";
+import g2 from "../../assets/images/BagHouses/GallerySlider/BHG2.webp";
+import g3 from "../../assets/images/BagHouses/GallerySlider/BHG4.webp";
+import g4 from "../../assets/images/BagHouses/GallerySlider/BHG4.webp";
 
 const tanksSlides = [
   {
-    image: "src/assets/images/BagHouses/GallerySlider/BHG1.webp",
+    image: g1.src,
     caption: "Self-contained Baghouse of 24,000 Acfm, Pulse Jet",
   },
   {
-    image: "src/assets/images/BagHouses/GallerySlider/BHG2.webp",
+    image: g2.src,
     caption: "Self-contained Baghouse of 24,000 Acfm, Pulse Jet",
   },
   {
-    image: "src/assets/images/BagHouses/GallerySlider/BHG3.webp",
+    image: g3.src,
     caption: "Self-contained Baghouse of 24,000 Acfm, Reverse",
   },
   {
-    image: "src/assets/images/BagHouses/GallerySlider/BHG4.webp",
+    image: g4.src,
     caption: "Self-contained Baghouse of 24,000 Acfm, Reverse Air",
   },
 ];
@@ -49,7 +55,7 @@ const tanksSlides = [
       </h1>
     </div>
     <div class="max-w-7xl px-8 mx-auto flex justify-center">
-      <Image src={img2} alt="Baghouse" class="hero-img lg:w-4/5 rounded-lg" />
+      <Image src={img2} alt="Baghouse" class="hero-img lg:w-4/6 rounded-lg" />
     </div>
     <div
       class="max-w-7xl px-8 mx-auto flex flex-col md:flex-row items-center gap-6"
@@ -58,7 +64,7 @@ const tanksSlides = [
         <h2 class="text-black text-lg md:text-xl">
           Continuous cleaning system
         </h2>
-        <p class="text-grisT text-base md:text-lg text-justify">
+        <p class="text-grisT text-sm lg:text-lg md:text-lg text-justify">
           A continuous cleaning system that keeps the filter bags in operation
           at all times. Bursts of compressed air are released through a super
           sonic nozzle, creating a pressure wave that rapidly expands each bag
@@ -72,7 +78,7 @@ const tanksSlides = [
         <Image
           src={img7}
           alt="Baghouse cleaning system"
-          class="side-img rounded-2xl will-change-transform"
+          class="side-img rounded-2xl will-change-transform w-4/5"
         />
       </div>
     </div>
@@ -87,12 +93,12 @@ const tanksSlides = [
       />
     </div>
 
-        <div class="relative flex flex-col lg:hidden">
-            <Image
-                src={img7Low}
-                alt="Baghouse cleaning system"
-                class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
-            />  
+    <div class="relative flex flex-col lg:hidden">
+      <Image
+        src={img7Low}
+        alt="Baghouse cleaning system"
+        class="rounded-2xl w-[40%] translate-x-[200px] translate-y-5"
+      />
 
       <Image
         src={img3}
@@ -106,79 +112,103 @@ const tanksSlides = [
     <OSection />
   </div>
 
-    <TwoColumnSection
-        leftBg="bg-redBg"
-        rightBg="bg-blueMain"
-        imageSrc={Tred.src}
-        imageAlt="Red T icon"
-        imageWidth="150px"
-    >
-        <div slot="left" class="flex flex-col justify-center gap-3">
-            <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
-            <p class="text-base md:text-lg">
-                Manufacturing highly portable self-contained, and integrated
-                models, Triaso® baghouses operate at an air-to-cloth ratio as
-                high as 8:1.
-            </p>
-        </div>
-        <div slot="right" class="flex flex-col justify-center gap-3">
-            <h1 class="text-xl md:text-2xl">
-                Different Types of Filter Bags and Their Specific Applications:
-            </h1>
-            <ul class="text-base md:text-lg">
-                <li>Polyester</li>
-                <li>Nomex</li>
-                <li>Polyamide (P84)</li>
-            </ul>
-        </div>
-    </TwoColumnSection>
-    <div class="">
-        <Image src={bannerNew} alt="Bag house with a road in the background and workers next to it" class="hidden lg:block lg:w-[3000px] md:block md:w-[3000px]" />
-        <Image src ={bannerMobile} alt="Bag house with a road in the background and workers nex to ir" class="w-full lg:hidden md:hidden"/>
+  <TwoColumnSection
+    leftBg="bg-redBg"
+    rightBg="bg-blueMain"
+    imageSrc={Tred.src}
+    imageAlt="Red T icon"
+    imageWidth="150px"
+  >
+    <div slot="left" class="flex flex-col justify-center gap-3">
+      <h1 class="text-xl md:text-2xl">Options to Meet Any Need</h1>
+      <p class="text-sm lg:text-lg md:text-lg">
+        Manufacturing highly portable self-contained, and integrated models,
+        Triaso® baghouses operate at an air-to-cloth ratio as high as 8:1.
+      </p>
     </div>
-    <div class="w-full flex justify-center px-8 text-center">
-        <h1 class="text-blueMain text-2xl md:text-3xl">
-            Mechanism of baghouses available in pulse jet and reverse jet
-        </h1>
+    <div slot="right" class="flex flex-col justify-center gap-3">
+      <h1 class="text-xl md:text-2xl">
+        Different Types of Filter Bags and Their Specific Applications:
+      </h1>
+      <ul class="text-sm lg:text-lg md:text-lg list-disc pl-5 text-[#d9d9d9]">
+        <li>Polyester</li>
+        <li>Nomex</li>
+        <li>Polyamide (P84)</li>
+      </ul>
     </div>
+  </TwoColumnSection>
+  <div class="">
+    <Image
+      src={bannerNew}
+      alt="Bag house with a road in the background and workers next to it"
+      class="hidden lg:block lg:w-[3000px] md:block md:w-[3000px]"
+    />
+    <Image
+      src={bannerMobile}
+      alt="Bag house with a road in the background and workers nex to ir"
+      class="w-full lg:hidden md:hidden"
+    />
+  </div>
+  <div class="w-full flex justify-center px-8 text-center">
+    <h1 class="text-blueMain text-2xl md:text-3xl">
+      Mechanism of baghouses available in pulse jet and reverse jet
+    </h1>
+  </div>
+
+  <div class="w-full py-10">
+    <div class="relative max-w-7xl mx-auto px-8 py-24 overflow-hidden">
+      <div class="absolute inset-0 flex justify-center items-center">
+        <Image
+          src={bgBack}
+          alt="Baghouse"
+          class="w-1/3 opacity-20 pointer-events-none select-none"
+        />
+      </div>
+      <div
+        class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 text-center"
+      >
+        <div>
+          <h2 class="text-xl md:text-2xl font-semibold mb-4">Reverse Air</h2>
+          <p class="text-grisT font-thin text-sm lg:text-lg md:text-lg">
+            A cleaning system that directs low-pressure air in the opposite
+            direction to remove dust from the filter bags, typically used in
+            larger baghouses or high-dust applications.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl md:text-2xl font-semibold mb-4">Pulse Jet</h2>
+          <p class="text-grisT font-thin text-sm lg:text-lg md:text-lg">
+            A cleaning system that uses short bursts of compressed air to
+            dislodge dust and debris from the filter bags, maintaining
+            continuous airflow and filtration efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-grisT text-white flex flex-col gap-6">
     <div
-        class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl px-8 mx-auto py-10"
+      class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-6"
     >
-        <div>
-            <h2 class="text-center text-xl md:text-2xl">Reverse Air</h2><br />
-            <p class="text-grisT font-thin text-base md:text-lg">
-                A cleaning system that directs low-pressure air in the opposite
-                direction to remove dust from the filter bags, typically used in
-                larger baghouses or high-dust applications.
-            </p>
-        </div>
-        <div>
-            <h2 class="text-center text-xl md:text-2xl">Pulse Jet</h2><br>
-            <p class="text-grisT font-thin text-base md:text-lg">
-                A cleaning system that uses short bursts of compressed air to
-                dislodge dust and debris from the filter bags, maintaining
-                continuous airflow and filtration efficiency.
-            </p>
-        </div>
+      <div>
+        <h2 class="text-xl md:text-2xl">Triaso Supersonic Nozzle</h2><br />
+        <p class="text-sm lg:text-lg md:text-lg font-thin">
+          Our supersonic nozzles are 3D printed in-house using carbon alloy
+          materials for exceptional resistance to impacts, high temperatures,
+          and vibrations. Ensuring highly efficient fine particle collection in
+          the baghouse.
+        </p>
+      </div>
+      <div class="w-full flex justify-center items-center">
+        <Image
+          src={boquillasVL}
+          alt="Triaso Supersonic Nozzle"
+          class="full rounded-xl"
+        />
+      </div>
     </div>
-    <div class="w-full bg-grisT text-white flex flex-col gap-6">
-        <div
-            class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-6"
-        >
-            <div>
-                <h2 class="text-xl md:text-2xl">Triaso Supersonic Nozzle</h2><br
-                />
-                <p class="text-base md:text-lg font-thin">
-                    Our supersonic nozzles are 3D printed in-house using carbon
-                    alloy materials for exceptional resistance to impacts, high
-                    temperatures, and vibrations. Ensuring highly efficient fine
-                    particle collection in the baghouse.
-                </p>
-            </div>
-            <div class="w-full flex justify-center items-center">
-                <Image src={boquillasVL} alt="Triaso Supersonic Nozzle" class="full rounded-xl" />
-            </div>
-        </div>
 
     <div class="w-full">
       <div
@@ -248,7 +278,9 @@ const tanksSlides = [
   </div>
   <br />
   <div class="w-full px-8 text-center">
-    <h2 class="text-blueMain text-2xl md:text-3xl text-center">
+    <h2
+      class="text-blueMain text-[17px] pb-5 lg:pb-0 md:pb-0 lg:text-3xl md:text-3xl text-center"
+    >
       Total and homogeneous return of fines to the asphalt mix to optimize its
       quality and pavement life.
     </h2>
@@ -267,7 +299,7 @@ const tanksSlides = [
         <source src="/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
       </video>
     </div>
-    <p class="text-base md:text-lg font-thin">
+    <p class="text-sm pt-5 lg:pt-0 md:pt-0 lg:text-lg md:text-lg font-thin">
       After passing through the primary dust collector, the gas stream enters
       the baghouse inlet chamber. As it slows down, it flows beneath a
       protective barrier that shields the filter bags. in the clean air plenum
@@ -284,11 +316,11 @@ const tanksSlides = [
     </h2>
   </div>
   <div
-    class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-7xl px-8 mx-auto py-10"
+    class="w-full grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-7xl px-8 mx-auto py-5"
   >
     <div class="w-full flex justify-center">
       <video
-        class="w-2/3 lg:w-4/5 rounded-md"
+        class="w-4/5 lg:w-4/5 rounded-md"
         playsinline
         controls
         poster="/Gallery/customdes.webp"
@@ -301,15 +333,13 @@ const tanksSlides = [
       </video>
     </div>
     <div
-      class="w-full rounded-2xl py-4 text-justify text-base md:text-lg text-grisT flex flex-col justify-center"
+      class="w-full rounded-2xl py-4 text-justify text-sm lg:text-lg md:text-lg text-grisT flex flex-col justify-center"
     >
       <p>
-        The Triaso Extractor is designed to effectively manage airflow and
+        The Triaso® Extractor is designed to effectively manage airflow and
         ensure optimal gas filtration in the asphalt plant. With its curved
         blade fan, the extractor pulls gases through the system while
-        maintaining efficient air circulation. By keeping external contaminants
-        out, it helps maintain internal pressure at the necessary levels for
-        consistent operation.
+        maintaining efficient air circulation.
       </p><br />
       <p>
         It operates using centrifugal force to separate dust from exhaust gases.
@@ -320,66 +350,143 @@ const tanksSlides = [
       </p>
     </div>
   </div>
-  <div class="max-w-7xl px-8 mx-auto text-base md:text-lg py-10">
-    <p>
-      The finer dust particles are directed into the baghouse through a
-      strategically placed high side inlet. This ensures horizontal and downward
-      airflow, preventing fine dust from being re-entrained into the system. A
-      knockout chamber decelerates airflow, allowing more material to drop into
-      the hopper, while internal baffles ensure even air distribution and
-      protect the bags from abrasion.
-    </p><br />
-    <p>
-      This design optimizes air quality, enhances filtration efficiency, and
-      minimizes maintenance requirements, ensuring a more effective and reliable
-      operation.
-    </p>
+  <div class="max-w-7xl px-8 mx-auto pb-5">
+    <details class="group">
+      <summary
+        class="flex flex-col lg:flex-row cursor-pointer list-none items-end lg:items-center md:items-center"
+      >
+        <p class="font-bold text-sm lg:text-lg">
+          The finer dust particles are directed into the baghouse through a
+          strategically placed high side inlet. This ensures horizontal and
+          downward airflow, preventing fine dust from being re-entrained into
+          the system. A knockout chamber decelerates airflow, allowing more
+          material to drop into the hopper, while internal baffles ensure even
+          air distribution and protect the bags from abrasion.
+        </p>
+        <svg
+          class="group-open:hidden transition h-[40px] w-[40px] lg:h-[128px] lg:w-[128px]"
+          viewBox="0 0 24 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <title>add_circle_fill</title>
+            <g
+              id="页面-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="System"
+                transform="translate(0.000000, -48.000000)"
+                fill-rule="nonzero"
+              >
+                <g
+                  id="add_circle_fill"
+                  transform="translate(0.000000, 48.000000)"
+                >
+                  <path
+                    d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                    id="MingCute"
+                    fill-rule="nonzero"
+                  >
+                  </path>
+                  <path
+                    d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M12,7 C11.48715,7 11.0644908,7.38603566 11.0067275,7.8833779 L11,8 L11,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.51285 7.38604429,12.9355092 7.88337975,12.9932725 L8,13 L11,13 L11,16 C11,16.5523 11.4477,17 12,17 C12.51285,17 12.9355092,16.613973 12.9932725,16.1166239 L13,16 L13,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.48715 16.613973,11.0644908 16.1166239,11.0067275 L16,11 L13,11 L13,8 C13,7.44771 12.5523,7 12,7 Z"
+                    id="形状"
+                    fill="#14437d"
+                  >
+                  </path>
+                </g>
+              </g>
+            </g>
+          </g></svg
+        >
+
+        <svg
+          class="hidden group-open:block transition h-[40px] w-[40px] lg:h-[128px] lg:w-[128px]"
+          viewBox="0 0 24 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+          ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+            <title>minus_circle_fill</title>
+            <g
+              id="页面-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="System"
+                transform="translate(-864.000000, -48.000000)"
+                fill-rule="nonzero"
+              >
+                <g
+                  id="minus_circle_fill"
+                  transform="translate(864.000000, 48.000000)"
+                >
+                  <path
+                    d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                    id="MingCute"
+                    fill-rule="nonzero"
+                  >
+                  </path>
+                  <path
+                    d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M16,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.5523 7.44772,13 8,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.4477 16.5523,11 16,11 Z"
+                    id="形状"
+                    fill="#14437d"
+                  >
+                  </path>
+                </g>
+              </g>
+            </g>
+          </g></svg
+        >
+      </summary>
+
+      <p class="font-thin text-sm lg:text-lg md:text-lg">
+        This design optimizes air quality, enhances filtration efficiency, and
+        minimizes maintenance requirements, ensuring a more effective and
+        reliable operation.
+      </p>
+    </details>
   </div>
 
   <div class="w-full bg-blueMain">
     <div
-      class="max-w-7xl px-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10"
+      class="max-w-7xl px-8 mx-auto grid grid-cols-1 items-center md:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10"
     >
       <div class="flex justify-center items-center">
         <Image
           src={damperImg}
           alt="Damper"
-          class="w-[70%] aspect-square rounded-md"
+          class="w-[90%] aspect-square rounded-md"
         />
       </div>
       <div class="flex flex-col space-y-10">
         <h2 class="text-white text-2xl">Damper</h2>
-        <p class="text-[#d9d9d9]">
+        <p class="text-[#d9d9d9] text-sm lg:text-lg md:text-lg">
           The damper consists of a series of bars that, when fully closed, form
           a shutter acting as a barrier for the exhaust gases from the baghouse.
         </p>
-        <p class="text-[#d9d9d9]">
+        <p class="text-[#d9d9d9] text-sm lg:text-lg md:text-lg">
           The damper is electrically operated to regulate the flow of dust-free
           exhaust gases from the asphalt plant. It can be controlled manually
           from the control cabin or automatically by pressure-differential
           sensors inside the baghouse, maintaining the system within a safe
           operating pressure range.
-        </p>
-      </div>
-      <div class="w-full text-white">
-        <h2 class="text-lg md:text-xl">Durable Construction</h2><br />
-        <p class="font-thin text-base md:text-lg text-justify">
-          Our bin units are built with wear-resistant materials designed to
-          handle abrasive and heavy loads. This durable construction ensures
-          reliable performance under demanding conditions. By reducing wear and
-          minimizing maintenance needs, the design extends service life and
-          provides consistent, long-term operation.
-        </p>
-      </div>
-      <div class="w-full text-white">
-        <h2 class="text-lg md:text-xl">Customizable Settings</h2><br />
-        <p class="font-thin text-base md:text-lg text-justify">
-          The dosing system provides flexible control to meet the specific
-          requirements of each project. With options for both manual and
-          automatic adjustment, it allows precise regulation of material flow.
-          This versatility ensures efficient handling of materials ranging from
-          fine aggregates to coarse components, allowing smooth integration into
-          any production setup.
         </p>
       </div>
     </div>
@@ -397,16 +504,126 @@ const tanksSlides = [
           <div
             class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
-            <div class="w-full flex justify-center">
-              <Image
-                src={BHoppers}
-                alt="Baghouse Fines Hoppers"
-                class="rounded-2xl w-full md:w-4/5 object-cover z-20 relative mr-0 lg:mr-32 md:mr-32"
-              />
+            <div class="w-full flex flex-col justify-center">
+              <div>
+                <Image
+                  src={BHoppers}
+                  alt="Baghouse Fines Hoppers"
+                  class="rounded-2xl w-full md:w-4/5 object-cover z-20 relative mr-0 lg:mr-32 md:mr-32"
+                />
+              </div>
+              <details class="group">
+                <summary
+                  class="flex items-end justify-end cursor-pointer list-none"
+                >
+                  <svg
+                    class="group-open:hidden transition h-[40px] w-[40px] lg:h-16 lg:w-16"
+                    viewBox="0 0 24 24"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    fill="#000000"
+                    ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                      <title>add_circle_fill</title>
+                      <g
+                        id="页面-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          id="System"
+                          transform="translate(0.000000, -48.000000)"
+                          fill-rule="nonzero"
+                        >
+                          <g
+                            id="add_circle_fill"
+                            transform="translate(0.000000, 48.000000)"
+                          >
+                            <path
+                              d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                              id="MingCute"
+                              fill-rule="nonzero"
+                            >
+                            </path>
+                            <path
+                              d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M12,7 C11.48715,7 11.0644908,7.38603566 11.0067275,7.8833779 L11,8 L11,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.51285 7.38604429,12.9355092 7.88337975,12.9932725 L8,13 L11,13 L11,16 C11,16.5523 11.4477,17 12,17 C12.51285,17 12.9355092,16.613973 12.9932725,16.1166239 L13,16 L13,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.48715 16.613973,11.0644908 16.1166239,11.0067275 L16,11 L13,11 L13,8 C13,7.44771 12.5523,7 12,7 Z"
+                              id="形状"
+                              fill="#14437d"
+                            >
+                            </path>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                  >
+                  <svg
+                    class="hidden group-open:block transition h-[40px] w-[40px] lg:h-16 lg:w-16"
+                    viewBox="0 0 24 24"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    fill="#000000"
+                    ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                      <title>minus_circle_fill</title>
+                      <g
+                        id="页面-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          id="System"
+                          transform="translate(-864.000000, -48.000000)"
+                          fill-rule="nonzero"
+                        >
+                          <g
+                            id="minus_circle_fill"
+                            transform="translate(864.000000, 48.000000)"
+                          >
+                            <path
+                              d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                              id="MingCute"
+                              fill-rule="nonzero"
+                            >
+                            </path>
+                            <path
+                              d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M16,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.5523 7.44772,13 8,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.4477 16.5523,11 16,11 Z"
+                              id="形状"
+                              fill="#14437d"
+                            >
+                            </path>
+                          </g>
+                        </g>
+                      </g>
+                    </g></svg
+                  >
+                </summary>
+
+                <div>
+                  <p class="text-sm text-[#393939] lg:text-lg md:text-lg">
+                    Positioned directly below the filter system, these hoppers
+                    allow for controlled collection of fines, which can then be
+                    temporarily stored, discharged, or reintegrated into the
+                    asphalt mix—depending on the plant’s configuration. They
+                    play a crucial role in maintaining clean air emissions and
+                    supporting the environmental performance of the asphalt
+                    plant.
+                  </p>
+                </div>
+              </details>
             </div>
 
             <div class="w-full">
-              <p class="text-grisT text-base md:text-lg">
+              <p class="text-grisT text-sm lg:text-lg md:text-lg">
                 Fine dust particles enter the baghouse through a high side inlet
                 designed for controlled horizontal and downward airflow. This
                 configuration prevents re-entrainment of fine material. A
@@ -428,20 +645,120 @@ const tanksSlides = [
       class="max-w-7xl px-8 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 bg-blueMain py-10 text-white items-center"
     >
       <div class="order-2 lg:order-1">
-        <p class="font-thin text-base md:text-lg text-justify">
+        <p class="font-thin text-sm lg:text-lg md:text-lg text-justify">
           After the baghouse collects fine particles in the hoppers, a screw
           conveyor transfers them back to the drum mixer. The return point is
           precisely timed and located at the liquid asphalt injection zone,
           ensuring the fines are immediately coated and fully incorporated into
           the hot-mix.
-        </p><br />
-        <p class="font-thin text-base md:text-lg text-justify">
-          By reintegrating the fines at this specific point, the system prevents
-          them from becoming airborne again, reduces material loss, and improves
-          the quality and durability of the asphalt. This efficient recovery not
-          only enhances environmental performance but also maximizes resource
-          use for a more cost-effective operation.
         </p>
+        <details class="group">
+          <summary class="cursor-pointer list-none flex justify-end items-end">
+            <div
+              class="bg-red-600 rounded-full flex items-center justify-center
+         w-[44px] h-[44px] lg:w-16 lg:h-16"
+            >
+              <svg
+                class="group-open:hidden transition h-[40px] w-[40px] lg:h-16 lg:w-16"
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="white"
+                ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                  <title>add_circle_fill</title>
+                  <g
+                    id="页面-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="System"
+                      transform="translate(0.000000, -48.000000)"
+                      fill-rule="nonzero"
+                    >
+                      <g
+                        id="add_circle_fill"
+                        transform="translate(0.000000, 48.000000)"
+                      >
+                        <path
+                          d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                          id="MingCute"
+                          fill-rule="nonzero"
+                        >
+                        </path>
+                        <path
+                          d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M12,7 C11.48715,7 11.0644908,7.38603566 11.0067275,7.8833779 L11,8 L11,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.51285 7.38604429,12.9355092 7.88337975,12.9932725 L8,13 L11,13 L11,16 C11,16.5523 11.4477,17 12,17 C12.51285,17 12.9355092,16.613973 12.9932725,16.1166239 L13,16 L13,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.48715 16.613973,11.0644908 16.1166239,11.0067275 L16,11 L13,11 L13,8 C13,7.44771 12.5523,7 12,7 Z"
+                          id="形状"
+                          fill="white"
+                        >
+                        </path>
+                      </g>
+                    </g>
+                  </g>
+                </g></svg
+              >
+              <svg
+                class="hidden group-open:block transition h-[40px] w-[40px] lg:h-16 lg:w-16"
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#000000"
+                ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                  <title>minus_circle_fill</title>
+                  <g
+                    id="页面-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="System"
+                      transform="translate(-864.000000, -48.000000)"
+                      fill-rule="nonzero"
+                    >
+                      <g
+                        id="minus_circle_fill"
+                        transform="translate(864.000000, 48.000000)"
+                      >
+                        <path
+                          d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z"
+                          id="MingCute"
+                          fill-rule="nonzero"
+                        >
+                        </path>
+                        <path
+                          d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M16,11 L8,11 C7.44772,11 7,11.4477 7,12 C7,12.5523 7.44772,13 8,13 L16,13 C16.5523,13 17,12.5523 17,12 C17,11.4477 16.5523,11 16,11 Z"
+                          id="形状"
+                          fill="white"
+                        >
+                        </path>
+                      </g>
+                    </g>
+                  </g>
+                </g></svg
+              >
+            </div>
+          </summary>
+
+          <p class="font-thin text-sm lg:text-lg md:text-lg text-justify">
+            By reintegrating the fines at this specific point, the system
+            prevents them from becoming airborne again, reduces material loss,
+            and improves the quality and durability of the asphalt. This
+            efficient recovery not only enhances environmental performance but
+            also maximizes resource use for a more cost-effective operation.
+          </p>
+        </details>
       </div>
       <div class="w-full order-1 lg:order-2">
         <h2 class="text-lg md:text-xl text-end">Fines Return System</h2><br />
@@ -449,7 +766,7 @@ const tanksSlides = [
           <Image
             src={finesReturn}
             alt="Fines Return System"
-            class="rounded-lg w-3/4"
+            class="rounded-lg lg:w-3/4 md:w-3/4"
           />
         </div>
       </div>

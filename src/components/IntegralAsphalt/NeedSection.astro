@@ -1,74 +1,142 @@
 ---
-import logo1 from '../../assets/images/IntegralAsphalt/14.svg';
-import logo2 from '../../assets/images/IntegralAsphalt/15.svg';
-import logo3 from '../../assets/images/IntegralAsphalt/16.svg';
-import logo4 from '../../assets/images/IntegralAsphalt/17.svg';
-import logo5 from '../../assets/images/IntegralAsphalt/18.svg';
-import Image from 'astro/components/Image.astro';
+import logo1 from "../../assets/images/IntegralAsphalt/14.svg";
+import logo2 from "../../assets/images/IntegralAsphalt/15.svg";
+import logo3 from "../../assets/images/IntegralAsphalt/16.svg";
+import logo4 from "../../assets/images/IntegralAsphalt/17.svg";
+import logo5 from "../../assets/images/IntegralAsphalt/18.svg";
+import Image from "astro/components/Image.astro";
 ---
-<div class="w-full flex flex-col items-center justify-center max-w-7xl mx-auto px-4 mt-10 font-bold">
-    <div class="bg-white flex flex-col items-center justify-center rounded-md p-4 mb-10">
-        <h1 class="text-2xl lg:text-4xl text-center mt-4 mb-8">Everything you need in a single unit.</h1>
-        <p class="text-[#14427c] text-xl mb-5">Go directly to the job site — no need for a lowboy or flatbed, eliminating costly transport.</p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 justify-center items-start gap-4 md:gap-10">
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
-                <Image src={logo1} alt="Icon 1" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
-                <div class="relative z-10">
-                    <h1 class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT">Perfect for small projects, patching, and premixed seals.</h1>
+
+<div
+    class="w-full flex flex-col items-center justify-center max-w-7xl mx-auto px-4 mt-10 font-bold"
+>
+    <div
+        class="bg-white flex flex-col items-center justify-center rounded-md p-4 mb-10 w-full"
+    >
+        <h1 class="text-2xl lg:text-4xl text-center mt-4 mb-8">
+            Everything you need in a single unit.
+        </h1>
+
+        <p class="text-[#14427c] text-xl mb-5 text-center">
+            Go directly to the job site — no need for a lowboy or flatbed,
+            eliminating costly transport.
+        </p>
+
+        <div
+            class="w-full md:hidden overflow-x-auto snap-x snap-mandatory flex gap-4 px-2 mt-6"
+        >
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px] relative overflow-hidden"
+            >
+                <Image
+                    src={logo1}
+                    alt="Icon 1"
+                    class="absolute inset-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10 text-center">
+                    <h1
+                        class="text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT"
+                    >
+                        Perfect for small projects, patching, and premixed
+                        seals.
+                    </h1>
                     <p class="font-normal text-grisT text-justify">
-                        Perfect for small-scale jobs such as patching, resurfacing, and premixed seals. Its compact design and 
-                        efficient operation make
-                         it ideal for quick, cost-effective hot-mix production on demand.
+                        Perfect for small-scale jobs such as patching,
+                        resurfacing, and premixed seals. Its compact design and
+                        efficient operation make it ideal for quick,
+                        cost-effective hot-mix production on demand.
                     </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
-                <Image src={logo2} alt="Icon 2" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
-                <div class="relative z-10">
-                <h1 class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT">
-                    Produce your asphalt mix directly at the paving site</h1>
-                <p class="font-normal text-grisT text-justify">
-                    Produce your hot-mix directly at the paving site, eliminating the need for transport from external plants.
-                     This speeds up work, reduces costs, and ensures the mix is always fresh and at the right temperature.
-                </p>
+
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px] relative overflow-hidden"
+            >
+                <Image
+                    src={logo2}
+                    alt="Icon 2"
+                    class="absolute inset-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10 text-center">
+                    <h1
+                        class="text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT"
+                    >
+                        Produce your asphalt mix directly at the paving site
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        Produce your hot-mix directly at the paving site,
+                        eliminating the need for transport from external plants.
+                        This speeds up work, reduces costs, and ensures the mix
+                        is always fresh.
+                    </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
-                <Image src={logo3} alt="Icon 3" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
-                <div class="relative z-10">
-                <h1 class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT">
-                    Zero emissions, ready to work in any city.</h1>
-                <p class="font-normal text-grisT text-justify">
-                    The 10 TPH Integral Asphalt Plant is a low-emission, eco-friendly solution for urban projects.
-                     With advanced technology and efficient design, it meets strict environmental standards while delivering 
-                     high performance.</p>
-                    </div>
-            </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]">
-                <Image src={logo4} alt="Icon 4" class="w-1/2"/>
-                <div class="relative z-10">
-                <h1 class="text-grisT lg:text-2xl text-lg">Continuous production <br> for 10 hours</h1>
-                <p class="font-normal text-grisT lg:text-lg text-base">with full tank
-                </p>
+
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px] relative overflow-hidden"
+            >
+                <Image
+                    src={logo3}
+                    alt="Icon 3"
+                    class="absolute inset-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10 text-center">
+                    <h1
+                        class="text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT"
+                    >
+                        Zero emissions, ready to work in any city.
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        The 10 TPH Integral Asphalt Plant is a low-emission,
+                        eco-friendly solution for urban projects, meeting strict
+                        environmental standards.
+                    </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]">
-                <Image src={logo5} alt="Icon 5" class="absolute top-0 left-0 w-full h-full object-contain z-0"/>
-                <div class="relative z-10">
-                <h1 class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT">
-                    Free yourself from local mix suppliers for small jobs.</h1>
-                <p class="font-normal text-grisT text-justify">
-                    With the 10 TPH Integral Asphalt Plant, you can eliminate the reliance on local mix suppliers for small projects.
-                     This self-sufficient solution allows for complete control over your hot-mix production, reducing costs and 
-                     ensuring high-quality results on demand.
-                </p>
+
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px] flex flex-col items-center justify-center text-center"
+            >
+                <Image src={logo4} alt="Icon 4" class="w-1/2 mb-4" />
+                <h1 class="text-grisT text-lg">
+                    Continuous production <br /> for 10 hours
+                </h1>
+                <p class="font-normal text-grisT text-base">with full tank</p>
+            </div>
+
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px] relative overflow-hidden"
+            >
+                <Image
+                    src={logo5}
+                    alt="Icon 5"
+                    class="absolute inset-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10 text-center">
+                    <h1
+                        class="text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT"
+                    >
+                        Free yourself from local mix suppliers for small jobs.
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        Eliminate reliance on local mix suppliers and gain full
+                        control over your hot-mix production.
+                    </p>
                 </div>
             </div>
-            <div class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]">
-                <h1 class="lg:text-2xl text-lg text-grisT">
-                    Drum Mixer Flights</h1>
-                <p class="border-b-2 border-b-redBg pb-4 mb-4 font-normal text-grisT">Conventional flights, as in any standard-capacity drum mixer</p>
-                <ul class="text-blueMain font-normal text-start w-full list-disc pl-8">
+
+            <div
+                class="snap-center shrink-0 w-[85%] bg-bgMain rounded-2xl p-4 min-h-[350px]"
+            >
+                <h1 class="text-lg text-grisT mb-2 text-center">
+                    Drum Mixer Flights
+                </h1>
+                <p
+                    class="border-b-2 border-b-redBg pb-4 mb-4 font-normal text-grisT text-center"
+                >
+                    Conventional flights
+                </p>
+                <ul class="text-blueMain font-normal list-disc pl-6">
                     <li>Inlet Flights</li>
                     <li>Drying Veiling Flights</li>
                     <li>Radiation Flights</li>
@@ -77,17 +145,156 @@ import Image from 'astro/components/Image.astro';
                 </ul>
             </div>
         </div>
-        <div class="bg-bgMain px-8 py-4 rounded-2xl md:rounded-full border border-blueMain mt-8">
-            <h2 class="text-center lg:text-lg text-base">Reduces production costs for small-volume asphalt manufacturing by 
-                optimizing startups, minimizing fuel consumption, and lowering labor and 
-                transportation expenses.</h2>
+
+        <div
+            class="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 mt-8"
+        >
+
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]"
+            >
+                <Image
+                    src={logo1}
+                    alt="Icon 1"
+                    class="absolute top-0 left-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10">
+                    <h1
+                        class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT"
+                    >
+                        Perfect for small projects, patching, and premixed
+                        seals.
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        Perfect for small-scale jobs such as patching,
+                        resurfacing, and premixed seals. Its compact design and
+                        efficient operation make it ideal for quick,
+                        cost-effective hot-mix production on demand.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]"
+            >
+                <Image
+                    src={logo2}
+                    alt="Icon 2"
+                    class="absolute top-0 left-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10">
+                    <h1
+                        class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT"
+                    >
+                        Produce your asphalt mix directly at the paving site
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        Produce your hot-mix directly at the paving site,
+                        eliminating the need for transport from external plants.
+                        This speeds up work, reduces costs, and ensures the mix
+                        is always fresh and at the right temperature.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]"
+            >
+                <Image
+                    src={logo3}
+                    alt="Icon 3"
+                    class="absolute top-0 left-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10">
+                    <h1
+                        class="lg:text-2xl text-lg border-b-2 border-b-redBg pb-4 mb-4 text-grisT"
+                    >
+                        Zero emissions, ready to work in any city.
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        The 10 TPH Integral Asphalt Plant is a low-emission,
+                        eco-friendly solution for urban projects. With advanced
+                        technology and efficient design, it meets strict
+                        environmental standards while delivering high
+                        performance.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]"
+            >
+                <Image src={logo4} alt="Icon 4" class="w-1/2" />
+                <div class="relative z-10">
+                    <h1 class="text-grisT lg:text-2xl text-lg">
+                        Continuous production <br /> for 10 hours
+                    </h1>
+                    <p class="font-normal text-grisT lg:text-lg text-base">
+                        with full tank
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[350px]"
+            >
+                <Image
+                    src={logo5}
+                    alt="Icon 5"
+                    class="absolute top-0 left-0 w-full h-full object-contain z-0"
+                />
+                <div class="relative z-10">
+                    <h1
+                        class="lg:text-2xl text-lg border-b-2 border-b-blueMain pb-4 mb-4 text-grisT"
+                    >
+                        Free yourself from local mix suppliers for small jobs.
+                    </h1>
+                    <p class="font-normal text-grisT text-justify">
+                        With the 10 TPH Integral Asphalt Plant, you can
+                        eliminate the reliance on local mix suppliers for small
+                        projects. This self-sufficient solution allows for
+                        complete control over your hot-mix production, reducing
+                        costs and ensuring high-quality results on demand.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-bgMain rounded-2xl p-4 flex flex-col items-center justify-center text-center min-h-[350px]"
+            >
+                <h1 class="lg:text-2xl text-lg text-grisT">
+                    Drum Mixer Flights
+                </h1>
+                <p
+                    class="border-b-2 border-b-redBg pb-4 mb-4 font-normal text-grisT"
+                >
+                    Conventional flights, as in any standard-capacity drum mixer
+                </p>
+                <ul
+                    class="text-blueMain font-normal text-start w-full list-disc pl-8"
+                >
+                    <li>Inlet Flights</li>
+                    <li>Drying Veiling Flights</li>
+                    <li>Radiation Flights</li>
+                    <li>Heating Flights</li>
+                    <li>Mixing Flights</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="bg-bgMain px-8 py-4 rounded-2xl md:rounded-full border border-blueMain mt-8"
+        >
+            <h2 class="text-center lg:text-lg text-base">
+                Reduces production costs for small-volume asphalt manufacturing
+                by optimizing startups, minimizing fuel consumption, and
+                lowering labor and transportation expenses.
+            </h2>
         </div>
     </div>
-    <h1 class="text-lg lg:text-2xl text-grisT mb-6">Minimal Installation, Maximum Autonomy</h1>
-    <p class="font-normal text-grisT text-base lg:text-lg">The Triaso® 10 TPH Integral Asphalt Plant is engineered for rapid deployment and independent operation. 
-        Thanks to its pre-installed components, self-contained systems, and factory-set configurations,
-         it requires minimal on-site setup—just position, connect fuel and power, and start producing.
-          Ideal for remote or temporary jobsites, this unit eliminates the need for external infrastructure, 
-          enabling fully autonomous asphalt production anywhere it's needed.
-        </p>
+
+    <h1 class="text-lg lg:text-2xl text-grisT mb-6">
+        Minimal Installation, Maximum Autonomy
+    </h1>
+
+    <p class="font-normal text-grisT text-base lg:text-lg">
+        The Triaso® 10 TPH Integral Asphalt Plant is engineered for rapid
+        deployment and independent operation. Ideal for remote or temporary
+        jobsites, enabling fully autonomous asphalt production anywhere.
+    </p>
 </div>

@@ -28,9 +28,10 @@ const CMOdom = () => {
           setTimeout(() => {
             setValue(100);
             setValue5(500)
-            setValue1(20);
-            setValue2(18);
-            setValue4(5);
+             setValue4(14);
+            setValue1(21);
+            setValue2(30);
+           
             setValue3(24);
           }, 300); // Pequeño retraso para asegurar reinicio
         }
@@ -62,8 +63,10 @@ const CMOdom = () => {
             <p className="text-grisP">Production size range</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-start justify-star">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+              <Odometer value={value4} format="(,ddd)" duration={2000} />
+              <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">tons</p>
             </div>
@@ -73,12 +76,10 @@ const CMOdom = () => {
           <div className="flex flex-col items-center justify-center">
             <div className="flex text-7xl font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
-              <h1>-</h1>
-              <Odometer value={value3} format="(,ddd)" duration={2000} />
               <p className="text-7xl font-bold ml-3">''</p>
             </div>
             <p className="text-grisP text-start w-full">
-              Aggregate conveyors
+              Collecting Conveyor
             </p>
           </div>
         </div>

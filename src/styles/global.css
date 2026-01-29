@@ -3,33 +3,60 @@
 @tailwind utilities;
 
 :root {
-    --azul-bg1 : #14427C; /* Azul de fondos y cards */    
+    --azul-bg1: #14427C;
+    /* Azul de fondos y cards */
     --azul-tran: rgba(20, 66, 124, 0.8);
-    --azul-bg1Hover : #11396b; /* Azul de fondos y cards */  
-    --azul-bg2 : #0044A4; /* Azul de fondos y cards 2 */
-    --rojo-btn : #CA1C1C; /* Rojo de botones e iconos */
-    --rojo-btnHover : #b81a1a; /* Rojo de botones e iconos */
-    --gris-titulos: #393939; /* Gris obscuro para titulos */ 
-    --gris-textos : #727272; /* Gris para menu*/
-    --gris-textos2: #D9D9D9; /* Gris claro para textos */
-    --gris-textos3: #343434; /* Gris obscuro para textos */
-    --gris-textos4: #5D5D5D; /* Gris obscuro para textos */
-    --gris-textos5: #4d4d4d; /* Gris obscuro para textos */
-    --verde-whats: #128c7e; /* Verde de whatshapp */
-    --bg-main : #f4f5f6; /* Fondo principal de la app */
-    --bg-footer: #252726; /*Fondo del footer */
-    --bg-beige:#fffaea; /* Fondo beige de la app */
+    --azul-bg1Hover: #11396b;
+    /* Azul de fondos y cards */
+    --azul-bg2: #0044A4;
+    /* Azul de fondos y cards 2 */
+    --rojo-btn: #CA1C1C;
+    /* Rojo de botones e iconos */
+    --rojo-btnHover: #b81a1a;
+    /* Rojo de botones e iconos */
+    --gris-titulos: #393939;
+    /* Gris obscuro para titulos */
+    --gris-textos: #727272;
+    /* Gris para menu*/
+    --gris-textos2: #D9D9D9;
+    /* Gris claro para textos */
+    --gris-textos3: #343434;
+    /* Gris obscuro para textos */
+    --gris-textos4: #5D5D5D;
+    /* Gris obscuro para textos */
+    --gris-textos5: #4d4d4d;
+    /* Gris obscuro para textos */
+    --verde-whats: #128c7e;
+    /* Verde de whatshapp */
+    --bg-main: #f4f5f6;
+    /* Fondo principal de la app */
+    --bg-footer: #252726;
+    /*Fondo del footer */
+    --bg-beige: #fffaea;
+    /* Fondo beige de la app */
 }
-.bgplane{
+
+.bgplane {
     background-image: url('../assets/images/IntegralAsphalt/fondopatron.png');
 }
+
 video {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     will-change: transform;
     background-color: #000;
-  }
-  
+}
+
 /*  {
     outline: 1px solid red !important;
   }*/
+
+@layer utilities {
+    .reveal {
+        @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+    }
+
+    .reveal-active {
+        @apply opacity-100 translate-y-0;
+    }
+}

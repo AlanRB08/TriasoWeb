@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 const images = [
-  { id: 0, src: "/Gallery/tolva1.webp", alt: "Standar chasis for mobility of empty plant" },
-  { id: 1, src: "/Gallery/tolva2.webp", alt: "All mounted on a lightweight chassis with support legs" },
-  { id: 2, src: "/Gallery/tolva3.webp", alt: "Reinforced chassis for full loaded plant mobility" }, 
+  { id: 0, src: "/Gallery/tolva1.webp", alt: "Standar chasis for mobility of empty plant", sub:"For mobility of empty plant" },
+  { id: 1, src: "/Gallery/tolva2.webp", alt: "All mounted on a lightweight chassis with support legs", sub:"All mounted, with support legs" },
+  { id: 2, src: "/Gallery/tolva3.webp", alt: "Reinforced chassis for full loaded plant mobility", sub:"For full-loaded plant mobility" }, 
 ];
 
 export default function TabsIntegral() {
@@ -50,12 +50,15 @@ export default function TabsIntegral() {
         ))}
       </div>
 
-      <div className="w-full h-[40vh] sm:h-[50vh] flex justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
+      <div className="w-full h-[50vh] lg:h-[75vh] md:h-[75hv]  flex flex-col justify-center items-center bg-gray-100 rounded-2xl overflow-hidden">
         <img
           src={images[activeIndex].src}
           alt={images[activeIndex].alt}
           className="w-full h-full object-contain"
         />
+
+        <p className="font-bold text-xl lg:text-4xl md:text-4xl lg:pt-5 md:pt-5">{images[activeIndex].sub}</p>
+
       </div>
     </div>
 

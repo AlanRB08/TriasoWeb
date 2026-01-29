@@ -55,11 +55,12 @@ const SliderHero = () => {
               alt={`slide-${index}`}
               className="w-full object-cover h-[300px] md:h-[600px]"
             />
-            <div className="absolute top-10 left-10 text-white p-6 max-w-sm md:max-w-md rounded-md bg-blueMain">
-              <h2 className="text-base md:text-2xl font-bold mb-2">
+            <div className="absolute top-10 left-10 text-white p-6 max-w-sm md:max-w-md rounded-md ">
+              <div className="absolute inset-0 bg-blueMain opacity-70 rounded-md "></div>
+              <h2 className="relative text-base md:text-2xl font-bold mb-2">
                 {slide.titulo}
               </h2>
-              <p className="text-xs md:text-base">{slide.texto}</p>
+              <p className=" relative text-xs md:text-base">{slide.texto}</p>
             </div>
           </div>
         ))}
@@ -89,9 +90,8 @@ const SliderHero = () => {
           <div
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              currentSlide === index ? "bg-blueMain" : "bg-white opacity-50"
-            }`}
+            className={`w-3 h-3 rounded-full cursor-pointer ${currentSlide === index ? "bg-blueMain" : "bg-white opacity-50"
+              }`}
           />
         ))}
       </div>

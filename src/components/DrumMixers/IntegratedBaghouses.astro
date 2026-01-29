@@ -4,6 +4,162 @@ import baghouse from "../../assets/images/DrumMixers/Low/bagHouses1Low.webp";
 import baghouse2 from "../../assets/images/DrumMixers/baghouse2.webp";
 import { Image } from "astro:assets";
 import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
+import GallerySlider from "../../components/unitComponents/GallerySlider";
+import g1 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabA.webp";
+import g2 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC60P288TrabB.webp";
+import g3 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspA.webp";
+import g4 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC60P288TranspB.webp";
+import g5 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC110P286Trab.webp";
+import g6 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC110P286TrabB.webp";
+import g7 from "../../assets/images/BinUnits/GallerySlider/Big/TmbC110P286TranspA.webp";
+import g8 from "../../assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabA.webp";
+import g9 from "../../assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabB.webp";
+import g10 from "../../assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TrabRapA.webp";
+import g11 from "../../assets/images/BinUnits/GallerySlider/Big/TmbCE110P268TranspA.webp";
+import g12 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabA.webp";
+import g13 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabB.webp";
+import g14 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabC.webp";
+import g15 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TrabD.webp";
+import g16 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspA.webp";
+import g17 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspB.webp";
+import g18 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspC.webp";
+import g19 from "../../assets/images/BinUnits/GallerySlider/Big/TqePCU60N70TranspD.webp";
+import g20 from "../../assets/images/BinUnits/GallerySlider/Big/consola.webp";
+import g21 from "../../assets/images/BinUnits/GallerySlider/Big/tanqueplusA.webp";
+import g22 from "../../assets/images/BinUnits/GallerySlider/Big/tanqueplusB.webp";
+import g23 from "../../assets/images/BinUnits/GallerySlider/Big/tanqueplusC.webp";
+import g24 from "../../assets/images/BinUnits/GallerySlider/Big/tanqueplusD.webp";
+import g25 from "../../assets/images/BinUnits/GallerySlider/Big/TlvP317P268A.webp";
+import g26 from "../../assets/images/BinUnits/GallerySlider/Big/TlvP317P268B.webp";
+import g27 from "../../assets/images/BinUnits/GallerySlider/Big/TlvP317P268C.webp";
+import g28 from "../../assets/images/BinUnits/GallerySlider/Big/TlvP317P268D.webp";
+
+const binSlides2 = [
+  {
+    image: g1.src,
+    caption: "80 Tmph counterflow mixing drum in working position",
+  },
+  {
+    image: g2.src,
+    caption: "80 Tmph counterflow mixing drum in working position",
+  },
+  {
+    image: g3.src,
+    caption: "80 Tmph counterflow mixing drum in transport position",
+  },
+  {
+    image: g4.src,
+    caption: "80 Tmph counterflow mixing drum in transport position",
+  },
+  {
+    image: g5.src,
+    caption: "140 Tmph counterflow mixing drum in working position",
+  },
+  {
+    image: g6.src,
+    caption: "140 Tmph counterflow mixing drum in working position",
+  },
+  {
+    image: g7.src,
+    caption: "140 Tmph counterflow mixing drum in transport position",
+  },
+  {
+    image: g8.src,
+    caption:
+      "140 Tmph counterflow mixing drum with pugmill, in working position",
+  },
+  {
+    image: g9.src,
+    caption:
+      "140 Tmph counterflow mixing drum with pugmill, in working position",
+  },
+  {
+    image: g10.src,
+    caption:
+      "140 Tmph counterflow mixing drum with pugmill, in working position with RAP",
+  },
+  {
+    image: g11.src,
+    caption:
+      "140 Tmph counterflow mixing drum with pugmill, in transport position",
+  },
+  {
+    image: g12.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g13.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g14.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g15.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g16.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g17.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g18.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g19.src,
+    caption:
+      "60,000-liter asphalt tank, plus, with boiler, compliant with US standards, in working condition",
+  },
+  {
+    image: g20.src,
+    caption: "Control console with computer plus for counterflow asphalt plant",
+  },
+  {
+    image: g21.src,
+    caption: "60,000-liter asphalt tank, plus",
+  },
+  {
+    image: g22.src,
+    caption: "60,000-liter asphalt tank, plus",
+  },
+  {
+    image: g23.src,
+    caption: "60,000-liter asphalt tank, plus",
+  },
+  {
+    image: g24.src,
+    caption: "60,000-liter asphalt tank, plus",
+  },
+  {
+    image: g25.src,
+    caption: "Triple plus hopper unit",
+  },
+  {
+    image: g26.src,
+    caption: "Triple plus hopper unit",
+  },
+  {
+    image: g27.src,
+    caption: "Triple plus hopper unit",
+  },
+  {
+    image: g28.src,
+    caption: "Triple plus hopper unit",
+  },
+];
 ---
 
 <div class="flex justify-center">
@@ -32,36 +188,45 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
   class="w-full flex flex-col items-center justify-center text-grisT font-bold mt-20 gap-0 md:gap-6"
 >
   <div
-    class="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-10 w-full"
+    class="grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-2 justify-center items-center gap-5 px-8 w-full"
   >
-    <div
-      class="px-8 lg:pl-52 bg-white border-black border-2 md:rounded-r-2xl py-10"
-    >
-      <h2 class="text-black text-xl md:text-2xl">
-        Ranging from 4,000 to 90,000 ACFM Capacity
-      </h2><br />
-      <p>
-        The baghouses are highly efficient at capturing fine particles,<span
-          class="text-black"
+    <div class="flex flex-col justify-center rounded-lg space-y-2">
+      <div class="flex flex-col">
+        <div
+          class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
         >
-          achieving up to 99.99% filtration</span
-        >. Total and homogeneous return of fines to the hot-mix to optimize its
-        quality and pavement life.
-      </p><br />
-      <p>
-        Their advanced filtration system ensures cleaner air, contributing to a
-        greener, more eco-conscious workplace.
+          <p class="text-black">4 - 90</p>
+          <p class="text-sm font-normal ml-3 text-black">thousand ACFM</p>
+        </div>
+        <p
+          class="text-black font-thin text-center lg:text-start w-full text-base"
+        >
+          Baghouses capacity
+        </p>
+      </div>
+
+      <div
+        class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
+      >
+        <p class="text-black">99.99</p>
+        <p class="text-sm font-normal ml-3 text-black">%</p>
+      </div>
+      <p
+        class="text-black font-thin text-center lg:text-start w-full text-base"
+      >
+        Fine particle filtration efficiency
       </p>
     </div>
-    <div class="flex flex-col items-center justify-center px-8 lg:pr-52">
-      <Image src={baghouse} alt="Baghouse" class="w-full" />
+    <div class="flex flex-col items-center justify-center">
+      <Image src={baghouse} alt="Baghouse" class="lg:max-w-[150%]" />
     </div>
   </div>
+
   <div class="max-w-[2400px] w-full flex justify-center items-center">
     <div
-      class="w-full flex flex-col md:grid md:grid-cols-5 text-white my-0 md:my-10 justify-center"
+      class="w-full flex flex-col-reverse md:grid md:grid-cols-5 text-white my-0 md:my-10 justify-center"
     >
-      <div class="w-full h-full md:col-span-2">
+      <div class="w-full h-full md:col-span-2 py-10">
         <Image src={baghouse2} alt="" class="w-full h-full object-cover" />
       </div>
       <div
@@ -99,7 +264,9 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
       </ul>
     </div>
   </div>
-  <div class="max-w-7xl px-8 mx-auto flex justify-center">
+  <div
+    class="max-w-7xl flex flex-col px-8 mx-auto justify-center items-center space-y-10"
+  >
     <video
       class="lg:w-4/5 md:w-4/5"
       playsinline
@@ -112,5 +279,16 @@ import SeparatorBlue from "../unitComponents/SeparatorBlue.astro";
       <source src="/Videos/Webm/DMVideo.webp" type="video/webm" />
       <source src="/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
     </video>
+
+    <a
+      href="/BagHouses"
+      class="p-2 w-36 text-center rounded-3xl border border-[#14427c] text-[#14427c] mx-auto transition hover:bg-blueMain hover:text-white"
+    >
+      Learn more...
+    </a>
   </div>
+</div>
+
+<div class="max-w-7xl px-8 mx-auto">
+  <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
 </div>

@@ -43,7 +43,7 @@ export default function Tab() {
       />
 
       <div>
-        <p className="font-bold text-grisT text-base md:text-lg">
+        <p className=" text-grisT text-sm lg:text-lg md:text-lg">
           Self-contained, integrated dust control systems for effective air
           filtration and particle capture in asphalt plants—configurable for
           both portable and stationary setups.
