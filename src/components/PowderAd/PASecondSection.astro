@@ -1,6 +1,7 @@
 ---
 import CardSection from "../IntegralAsphalt/CardSection.astro";
 import PAPlanos from "./PAPlanos";
+import PAGallery from "./PAGallery.astro";
 import img1 from "../../assets/images/PowderA/binLids.webp";
 import img2 from "../../assets/images/PowderA/powderA.webp";
 import img3 from "../../assets/images/PowderA/tlvLoaded.webp";
@@ -68,6 +69,8 @@ import { Image } from "astro:assets";
       <Image src={img3} alt="Powder additive with sand on top" />
     </div>
   </div>
+  <PAGallery/>
+
   <PAPlanos client:only />
   <CardSection />
 </section>
