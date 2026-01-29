@@ -1,0 +1,30 @@
+---
+import GallerySlider from "../unitComponents/GallerySlider";
+import g1 from "../../assets/images/OilHeaters/Gallery/OH1.webp";
+import g2 from "../../assets/images/OilHeaters/Gallery/OH2.webp";
+import g3 from "../../assets/images/OilHeaters/Gallery/OH3.webp";
+
+
+const OHImages = [
+    {
+        image: g1.src,
+        caption: "1,000,000 Btu/Hr Oil Heater",
+    },
+    {
+        image: g2.src,
+        caption: "1,000,000 Btu/Hr Oil Heater",
+    },
+    {
+        image: g3.src,
+        caption: "1,000,000 Btu/Hr Oil Heater",
+    },
+];
+---
+
+<section class="w-full font-bold text-grisT">
+    <div class="w-full mt-10 pb-10 px-8">
+        <div class="z-50">
+            <GallerySlider client:only slides={OHImages} visibleThumbs={3} />
+        </div>
+    </div>
+</section>

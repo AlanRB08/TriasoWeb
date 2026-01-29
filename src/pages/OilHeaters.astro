@@ -5,6 +5,7 @@ import OHOdometer from "../components/OilHeaters/OHOdometer";
 import OHPrecision from "../components/OilHeaters/OHPrecision.astro";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import OHFinal from "../components/OilHeaters/OHFinal.astro";
+import OHGallery from "../components/OilHeaters/OHGallery.astro";
 import OHPlanos from "../components/OilHeaters/OHPlanos";
 ---
 <Layout title="Oil Heaters Page">
@@ -12,6 +13,7 @@ import OHPlanos from "../components/OilHeaters/OHPlanos";
     <OHOdometer client:only></OHOdometer>
     <OHPrecision></OHPrecision>
     <OHFinal></OHFinal>
+    <OHGallery/>
     <OHPlanos client:only/>
     <CardSection></CardSection>
 </Layout>
