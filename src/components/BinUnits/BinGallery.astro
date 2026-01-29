@@ -201,10 +201,9 @@ const binSlides2 = [
       <div
         class="flex justify-center items-center lg:justify-start lg:items-start md:justify-start md:items-start"
       >
-      <div class="w-1/2 flex items-center mx-auto">
-         <Whatsbtn />
-      </div>
-       
+        <div class="w-full lg:w-1/2 flex items-center mx-auto">
+          <Whatsbtn />
+        </div>
       </div>
     </div>
   </TwoColumnSection>
@@ -261,26 +260,20 @@ const binSlides2 = [
     </div>
 
     <div class="flex flex-col max-w-7xl mx-auto items-center">
-      <div class="grid grid-cols-2 lg:flex lg:flex-row items-center justify-center">
+      <div
+        class="grid grid-cols-2 lg:flex lg:flex-row items-center justify-center"
+      >
         <div>
-          <Image
-            src={img4}
-            alt="Triaso® Conveyor Rollers"
-            class=" "
-          />
+          <Image src={img4} alt="Triaso® Conveyor Rollers" class="" />
         </div>
         <div>
-          <Image
-            src={img5}
-            alt="Triaso® Conveyor Rollers"
-            class=" "
-          />
+          <Image src={img5} alt="Triaso® Conveyor Rollers" class="" />
         </div>
-        <div class="col-span-2 ">
+        <div class="col-span-2">
           <Image
             src={img6}
             alt="Triaso® Conveyor Rollers"
-            class="w-1/2 mx-auto lg:w-full lg:mx-0 "
+            class="w-1/2 mx-auto lg:w-full lg:mx-0"
           />
         </div>
       </div>
@@ -298,7 +291,9 @@ const binSlides2 = [
     </div>
   </div>
 
-  <div class="relative bg-[url(/fondoAsp.webp)] bg-cover bg-center w-full">
+  <div
+    class="relative bg-[url(/fondoAsp.webp)] hidden lg:flex md:flex bg-cover bg-center w-full"
+  >
     <div class="absolute inset-0 bg-black/50"></div>
     <div
       class="relative w-full max-w-7xl px-8 lg:px-0 md:px-0 mx-auto py-10 grid grid-cols-1 gap-10"
@@ -360,7 +355,125 @@ const binSlides2 = [
       </div>
     </div>
   </div>
+
+  <div
+    class="relative bg-[url(/fondoAsp.webp)] flex lg:hidden md:hidden bg-cover bg-center w-full"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div
+      id="auto-slider"
+      class="relative w-full max-w-7xl px-8 lg:px-0 md:px-0 mx-auto py-10 gap-10 flex overflow-x-auto snap-x snap-mandatory"
+    >
+      <!-- 1 -->
+      <div class="relative w-full snap-center shrink-0">
+        <div class="absolute inset-0 bg-white/15 rounded-2xl"></div>
+        <div
+          class="relative z-10 flex flex-col w-full md:flex-row lg:flex-row p-6"
+        >
+          <div class="text-white font-bold flex flex-col justify-center">
+            <h1 class="text-2xl md:text-3xl">Highly portable equipment</h1>
+            <br />
+            <p class="text-base md:text-lg lg:pr-8 md:pr-8">
+              We understand the importance of getting your equipment up and
+              running as quickly as possible. Our Triaso equipment is designed
+              for fast installation and startup.
+            </p>
+          </div>
+
+          <div class="w-full flex justify-center py-5">
+            <Image
+              src={binHigh}
+              alt="Truck eqquipped with a bin system unit"
+              class="w-full rounded-2xl"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="relative w-full snap-center shrink-0">
+        <div class="absolute inset-0 bg-white/15 rounded-2xl"></div>
+        <div
+          class="relative z-10 flex flex-col justify-around items-center w-full h-full p-6"
+        >
+          <div class="text-white font-bold flex flex-col justify-center">
+            <h1 class="text-2xl md:text-3xl">Any time anywhere</h1>
+            <br />
+            <p class="text-base md:text-lg lg:pr-8 md:pr-8">
+              We understand the importance of keeping your equipment running
+              non-stop.
+            </p>
+          </div>
+
+          <div class="w-full flex justify-center py-5">
+            <Image
+              src={img2}
+              alt="Truck eqquipped with a bin system unit"
+              class="w-full rounded-2xl"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="relative w-full snap-center shrink-0">
+        <div class="absolute inset-0 bg-white/15 rounded-2xl"></div>
+        <div
+          class="relative z-10 flex flex-col justify-around items-center w-full h-full p-6"
+        >
+          <div class="text-white font-bold flex flex-col justify-center">
+            <h1 class="text-2xl md:text-3xl">Easy Storage</h1>
+            <br />
+            <p class="text-base md:text-lg lg:pr-8 md:pr-8">
+              Designed for easy storage, our equipment can be quickly and
+              conveniently stored anywhere.
+            </p>
+          </div>
+
+          <div class="w-full flex justify-center py-5">
+            <Image
+              src={img3}
+              alt="Truck eqquipped with a bin system unit"
+              class="w-full rounded-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="w-full px-4">
     <GallerySlider client:only slides={binSlides2} visibleThumbs={6} />
   </div>
 </div>
+
+<script>
+  
+  const slider = document.getElementById("auto-slider");
+
+  if (slider) {
+    const slides = slider.children.length;
+    let index = 0;
+    let resumeTimout;
+    let interval = setInterval(moveSlider, 3000);
+
+    function moveSlider() {
+      index = (index + 1) % slides;
+
+      slider.scrollTo({
+        left: slider.clientWidth * index,
+        behavior: "smooth",
+      });
+    }
+   
+    function pauseAutoplay() {
+      clearInterval(interval);
+      clearTimeout(resumeTimout);
+
+      resumeTimout = setTimeout(() => {
+        interval = setInterval(moveSlider, 4000);
+      }, 2000); 
+    }
+
+    slider.addEventListener("touchstart", pauseAutoplay, { passive: true });
+  }
+</script>
