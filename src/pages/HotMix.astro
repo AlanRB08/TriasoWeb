@@ -7,6 +7,7 @@ import HotMixPlanos from "../components/HotMixStorage/HotMixPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import SlatConveyor from "../components/HotMixStorage/SlatConveyor.astro";
 import HMOdometer from "../components/HotMixStorage/HMOdometer";
+import HotMixGallery from "../components/HotMixStorage/HotMixGallery.astro"
 import ItemsSlider from "../components/LandinPage/ItemsSlider";
 const images1 = [
   { src: '/Gallery/sliderHotMix/1.webp', title: 'Preservation of Quality',texto:'Perservation of quality  and integrity of the asphlt mix for up to 72 hours.' },
@@ -30,6 +31,7 @@ const images1 = [
     <!-- <SliderHotMix client:load images={images1}/> -->
     <Tabs2 />
     <SlatConveyor />
+    <HotMixGallery/>
     <HotMixPlanos client:only/>
     <CardSection/>
 </Layout>

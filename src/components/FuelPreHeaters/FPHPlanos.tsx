@@ -57,24 +57,15 @@ const FPHPlanos = () => {
     setUnit(newUnit);
   };
 
- const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
+  const scrollTrigRef = useRef<any>(null);
+  const resizeTimerRef = useRef<number | null>(null);
+  const isCreatingRef = useRef(false);
 
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
 
   useEffect(() => {
     const box = boxRef.current;
-    const target = nextSectionRef.current; 
-    const clipTarget = clipTargetRef.current; 
+    const target = nextSectionRef.current;
+    const clipTarget = clipTargetRef.current;
     const img = imgRef.current;
     const otro = otroElemento.current;
     const options = optionsRef.current;
@@ -86,17 +77,19 @@ const FPHPlanos = () => {
     }
 
     const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
+      if (isCreatingRef.current) return;
+      isCreatingRef.current = true;
+      
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+        scrollTrigRef.current = null;
       }
 
-      if (activeTab !== 3) return;
+      if (activeTab !== 3) {
+        isCreatingRef.current = false;
+        return;
+      }
+
       const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
       const boxHeight = box.offsetHeight;
       const boxBottomAbs = boxTopAbs + boxHeight;
@@ -117,8 +110,9 @@ const FPHPlanos = () => {
         trigger: box,
         start: "top+=70 20%",
         end: `+=${adjustedScrollDistance}`,
-        scrub: true,
+        scrub: 1,
         markers: false,
+        invalidateOnRefresh: true,
         animation: anim,
         onUpdate: (self: any) => {
           const p = self.progress;
@@ -132,7 +126,7 @@ const FPHPlanos = () => {
             clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
           });
 
-          gsap.to(otro, {
+          gsap.set(otro, {
             opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
             y: p >= 0.8 && p <= 1.0 ? 0 : -50,
             scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
@@ -140,7 +134,7 @@ const FPHPlanos = () => {
             duration: 0.8,
           });
 
-          gsap.to(options, {
+          gsap.set(options, {
             opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
             y: p >= 0.9 && p <= 1.0 ? 0 : -50,
             scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
@@ -167,47 +161,33 @@ const FPHPlanos = () => {
       });
 
       scrollTrigRef.current = scrollTrig;
+      isCreatingRef.current = false;
     };
 
-    const recreate = debounce(() => {
-      createScrollTrigger();
-      ScrollTrigger.refresh();
-    }, 120);
     createScrollTrigger();
 
-    const mo = new MutationObserver((mutations) => {
-      recreate();
-    });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
+    const handleResize = () => {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
 
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
+      resizeTimerRef.current = window.setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 300);
+    };
 
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
 
     return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
 
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
-        }
-      } catch (e) {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
       }
     };
   }, [activeTab]);
@@ -270,9 +250,8 @@ const FPHPlanos = () => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -348,9 +327,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -363,11 +341,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Specifically designed for use with Triaso burners.
@@ -403,9 +380,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -418,11 +394,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>In-line electric resistance of 13.5 kW.</li>
                         <li>
@@ -458,9 +433,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -473,11 +447,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`font-thin transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -521,9 +494,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -536,11 +508,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`font-thin transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`font-thin transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Integrated strainer for internal fuel filtration.
@@ -571,9 +542,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -586,11 +556,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -642,9 +611,8 @@ const FPHPlanos = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -657,11 +625,10 @@ const FPHPlanos = () => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block md:mb-0`}
+                        className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block md:mb-0`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -715,8 +682,8 @@ const FPHPlanos = () => {
                         {unit === "metric"
                           ? `${toggleConfig[0].width.toFixed(1) ?? ""} cm`
                           : `${(
-                              (toggleConfig[0].width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (toggleConfig[0].width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -777,8 +744,8 @@ const FPHPlanos = () => {
                         {unit === "metric"
                           ? `${toggleConfig[0].height?.toFixed(1) ?? ""} cm`
                           : `${(
-                              (toggleConfig[0].height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (toggleConfig[0].height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -832,8 +799,8 @@ const FPHPlanos = () => {
                         {unit === "metric"
                           ? `${toggleConfig[0].length?.toFixed(1) ?? ""} cm`
                           : `${(
-                              (toggleConfig[0].length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (toggleConfig[0].length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -892,9 +859,8 @@ const FPHPlanos = () => {
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
                               color="#000000"
-                              className={`transition-transform duration-300 transform ${
-                                openSections.C3_1 ? "rotate-180" : ""
-                              }`}
+                              className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                                }`}
                             >
                               <path
                                 d="M6 9L12 15L18 9"
@@ -907,46 +873,42 @@ const FPHPlanos = () => {
                           </button>
                         </div>
                         <div
-                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${
-                            openSections.C3_1
-                              ? "max-h-96 opacity-1 mb-4"
-                              : "max-h-0 opacity-0"
-                          } md:max-h-full md:opacity-100 md:block`}
+                          className={`transition-all duration-500 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 md:mb-0 list-disc list-inside ${openSections.C3_1
+                            ? "max-h-96 opacity-1 mb-4"
+                            : "max-h-0 opacity-0"
+                            } md:max-h-full md:opacity-100 md:block`}
                         >
                           <div className="flex justify-between">
                             <h1>Length:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig[0].length?.toFixed(1) ?? ""
-                                  } cm`
+                                ? `${toggleConfig[0].length?.toFixed(1) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig[0].length ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (toggleConfig[0].length ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Width:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig[0].width?.toFixed(1) ?? ""
-                                  } cm`
+                                ? `${toggleConfig[0].width?.toFixed(1) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig[0].width ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (toggleConfig[0].width ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                           <div className="flex justify-between">
                             <h1>Height:</h1>
                             <p>
                               {unit === "metric"
-                                ? `${
-                                    toggleConfig[0].height?.toFixed(1) ?? ""
-                                  } cm`
+                                ? `${toggleConfig[0].height?.toFixed(1) ?? ""
+                                } cm`
                                 : `${(
-                                    (toggleConfig[0].height ?? 0) * cmToFeet
-                                  ).toFixed(1)} ft`}
+                                  (toggleConfig[0].height ?? 0) * cmToFeet
+                                ).toFixed(1)} ft`}
                             </p>
                           </div>
                         </div>
