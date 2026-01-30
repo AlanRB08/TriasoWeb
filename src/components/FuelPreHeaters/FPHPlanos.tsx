@@ -58,9 +58,18 @@ const FPHPlanos = () => {
   };
 
   const scrollTrigRef = useRef<any>(null);
-  const resizeTimerRef = useRef<number | null>(null);
-  const isCreatingRef = useRef(false);
+  const observerRef = useRef<MutationObserver | null>(null);
+  const recreateTimerRef = useRef<number | null>(null);
 
+  const debounce = (fn: () => void, wait = 120) => {
+    return () => {
+      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
+      recreateTimerRef.current = window.setTimeout(() => {
+        recreateTimerRef.current = null;
+        fn();
+      }, wait);
+    };
+  };
 
   useEffect(() => {
     const box = boxRef.current;
@@ -77,19 +86,17 @@ const FPHPlanos = () => {
     }
 
     const createScrollTrigger = () => {
-      if (isCreatingRef.current) return;
-      isCreatingRef.current = true;
-      
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill();
-        scrollTrigRef.current = null;
+      try {
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill?.();
+          scrollTrigRef.current = null;
+        }
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+      } catch (e) {
       }
 
-      if (activeTab !== 3) {
-        isCreatingRef.current = false;
-        return;
-      }
-
+      if (activeTab !== 3) return;
       const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
       const boxHeight = box.offsetHeight;
       const boxBottomAbs = boxTopAbs + boxHeight;
@@ -110,9 +117,8 @@ const FPHPlanos = () => {
         trigger: box,
         start: "top+=70 20%",
         end: `+=${adjustedScrollDistance}`,
-        scrub: 1,
+        scrub: true,
         markers: false,
-        invalidateOnRefresh: true,
         animation: anim,
         onUpdate: (self: any) => {
           const p = self.progress;
@@ -126,7 +132,7 @@ const FPHPlanos = () => {
             clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
           });
 
-          gsap.set(otro, {
+          gsap.to(otro, {
             opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
             y: p >= 0.8 && p <= 1.0 ? 0 : -50,
             scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
@@ -134,7 +140,7 @@ const FPHPlanos = () => {
             duration: 0.8,
           });
 
-          gsap.set(options, {
+          gsap.to(options, {
             opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
             y: p >= 0.9 && p <= 1.0 ? 0 : -50,
             scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
@@ -161,40 +167,56 @@ const FPHPlanos = () => {
       });
 
       scrollTrigRef.current = scrollTrig;
-      isCreatingRef.current = false;
     };
 
+    const recreate = debounce(() => {
+      createScrollTrigger();
+      ScrollTrigger.refresh();
+    }, 120);
     createScrollTrigger();
 
-    const handleResize = () => {
-      if (resizeTimerRef.current) {
-        window.clearTimeout(resizeTimerRef.current);
-      }
+    const mo = new MutationObserver((mutations) => {
+      recreate();
+    });
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
+    observerRef.current = mo;
 
-      resizeTimerRef.current = window.setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 300);
-    };
+    const onResize = debounce(() => {
+      recreate();
+    }, 120);
 
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
 
     return () => {
-      if (resizeTimerRef.current) {
-        window.clearTimeout(resizeTimerRef.current);
-      }
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
+      try {
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+          observerRef.current = null;
+        }
+        window.removeEventListener("resize", onResize);
+        window.removeEventListener("orientationchange", onResize);
 
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill();
+        if (scrollTrigRef.current) {
+          scrollTrigRef.current.kill();
+          scrollTrigRef.current = null;
+        }
+        createScrollTrigger(); 
+        ScrollTrigger.refresh();
+        const existing = ScrollTrigger.getById?.("boxScroll");
+        existing?.kill?.();
+        if (recreateTimerRef.current) {
+          window.clearTimeout(recreateTimerRef.current);
+          recreateTimerRef.current = null;
+        }
+      } catch (e) {
       }
     };
   }, [activeTab]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="h-[100vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div className="h-[80vh] relative flex items-center justify-center bg-bgMain w-full">
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
