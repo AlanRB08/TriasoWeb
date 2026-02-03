@@ -12,6 +12,7 @@ import bgBanner from "../../assets/images/IntegralAsphalt/Hero1.webp"
 import FPHPlanos from "./FPHPlanos";
 import FPHGallery from "./FPHGallery.astro";
 import { Image } from "astro:assets";
+import CardSectionResponsive from "../unitComponents/CardSectionResponsive.astro";
 ---
 
 <section class="w-full font-bold mt-20 flex flex-col">
@@ -389,5 +390,6 @@ import { Image } from "astro:assets";
   </div>
   <FPHGallery/>
   <FPHPlanos client:only />
-  <CardSection />
+  <!-- <CardSection /> -->
+   <CardSectionResponsive/>
 </section>

@@ -4,6 +4,7 @@ import BHImgSelector from '../components/BagHouses/BHImgSelector.astro';
 import BHOdometer from "../components/BagHouses/BHOdometer";
 import BHPlanos from "../components/BagHouses/BHPlanos";
 import Tab from '../components/BagHouses/BHTab';
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
@@ -13,4 +14,5 @@ import Layout from "../layouts/Layout.astro";
     <Tab client:only/>
     <BHImgSelector/>
     <BHPlanos client:only/> 
+    <CardSectionResponsive/>
 </Layout>

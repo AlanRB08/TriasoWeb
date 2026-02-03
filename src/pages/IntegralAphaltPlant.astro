@@ -10,7 +10,7 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import PlanoSection from '../components/IntegralAsphalt/PlanoSection'
 import SliderHero from "../components/IntegralAsphalt/SliderHero";
 import OdometerSection from '../components/IntegralAsphalt/OdometerSection';
-
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 
 
 const images2 = [
@@ -37,8 +37,6 @@ const images2 = [
     <NeedSection />
     <Banner />
     <PlanoSection client:only/>
-    <CardSection />
-
-    
-
+    <!-- <CardSection /> -->
+    <CardSectionResponsive/>
 </Layout>

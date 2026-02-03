@@ -6,6 +6,7 @@ import ASHoses from "../components/AsphaltStorage/ASHoses.astro";
 import ASTabs from "../components/AsphaltStorage/ASTabs.astro";
 import ASPlanos from "../components/AsphaltStorage/ASPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 ---
 <Layout title="Asphalt Storage" description="Information about asphalt storage facilities and regulations.">
     <FirstSection /> 
@@ -13,5 +14,6 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
     <ASHoses />
     <ASTabs />
     <ASPlanos client:only/>
-    <CardSection />
+    <!-- <CardSection /> -->
+    <CardSectionResponsive/>    
 </Layout>

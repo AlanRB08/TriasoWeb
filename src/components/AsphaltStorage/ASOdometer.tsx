@@ -49,33 +49,33 @@ const ASOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="max-w-7xl px-8 mx-auto mt-10 ">
+    <div ref={sectionRef} className="max-w-7xl px-8 mx-auto lg:mt-40 lg:mb-40 md:mt-40 md:mb-40 ">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center pb-10">
-        <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
+        <div className="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20">
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">thousand gallons</p>
             </div>
-            <p className="text-black font-thin text-start w-full">
+            <p className="text-grisP text-center lg:text-start font-normal w-full">
               Asphalt storage capacity
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">°C</p>
             </div>
-            <p className="text-black font-thin text-start w-full">
+            <p className="text-grisP text-center lg:text-start font-normal w-full">
               Maximum achievable temperature
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full gap-2">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-start items-baseline w-full gap-2">
               <Odometer value={value4} format="(,ddd)" duration={2000} />
               <p>&</p>
               <Odometer value={value5} format="(,ddd)" duration={2000} />
@@ -83,7 +83,7 @@ const ASOdometer = () => {
               <Odometer value={value6} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">million</p>
             </div>
-            <p className="text-black font-thin text-start w-full">
+            <p className="text-grisP text-center lg:text-start font-normal w-full">
               Btu/hr capacity
             </p>
           </div>

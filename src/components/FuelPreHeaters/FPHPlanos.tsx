@@ -28,6 +28,7 @@ const FPHPlanos = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const clipTargetRef = useRef<HTMLDivElement>(null);
+
   // valor de cm a pies
   const cmToFeet = 0.0328084;
   //SWITCH LOGIC
@@ -58,18 +59,8 @@ const FPHPlanos = () => {
   };
 
   const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
-
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
+  const resizeTimerRef = useRef<number | null>(null);
+  const isCreatingRef = useRef(false);
 
   useEffect(() => {
     const box = boxRef.current;
@@ -85,18 +76,24 @@ const FPHPlanos = () => {
       return;
     }
 
+    
+
     const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
+      // Prevenir recreaciones simultáneas
+      if (isCreatingRef.current) return;
+      isCreatingRef.current = true;
+
+      // Limpiar instancia anterior
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+        scrollTrigRef.current = null;
       }
 
-      if (activeTab !== 3) return;
+      if (activeTab !== 3) {
+        isCreatingRef.current = false;
+        return;
+      }
+
       const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
       const boxHeight = box.offsetHeight;
       const boxBottomAbs = boxTopAbs + boxHeight;
@@ -119,7 +116,9 @@ const FPHPlanos = () => {
         end: `+=${adjustedScrollDistance}`,
         scrub: true,
         markers: false,
+        invalidateOnRefresh: true,
         animation: anim,
+        
         onUpdate: (self: any) => {
           const p = self.progress;
           let clipProgress = 0;
@@ -132,84 +131,71 @@ const FPHPlanos = () => {
             clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
           });
 
+          // Calcular estados
+          const show80 = p >= 0.8 && p <= 1.0;
+          const show90 = p >= 0.9 && p <= 1.0;
+
+          // Usar gsap.set en lugar de gsap.to
           gsap.to(otro, {
-            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
+            opacity: show80 ? 1 : 0,
+            y: show80 ? 0 : -50,
+            scale: show80 ? 1 : 0.95,
           });
 
           gsap.to(options, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
+            opacity: show90 ? 1 : 0,
+            y: show90 ? 0 : -50,
+            scale: show90 ? 1 : 0.95,
           });
 
           gsap.to(col1, {
-            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-            x: p >= 0.9 && p <= 1 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
+            opacity: show90 ? 1 : 0,
+            x: show90 ? 0 : -50,
+            scale: show90 ? 1 : 0.95,
           });
 
           gsap.to(col2, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
+            opacity: show90 ? 1 : 0,
+            x: show90 ? 0 : 50,
+            scale: show90 ? 1 : 0.95,
           });
         },
       });
 
       scrollTrigRef.current = scrollTrig;
+      isCreatingRef.current = false;
     };
 
-    const recreate = debounce(() => {
-      createScrollTrigger();
-      ScrollTrigger.refresh();
-    }, 120);
     createScrollTrigger();
 
-    const mo = new MutationObserver((mutations) => {
-      recreate();
-    });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
+    const handleResize = () => {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
 
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
-
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
-
-    return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
-
+      resizeTimerRef.current = window.setTimeout(() => {
+        // Recrear el ScrollTrigger para recalcular todas las posiciones
         if (scrollTrigRef.current) {
           scrollTrigRef.current.kill();
           scrollTrigRef.current = null;
         }
-        createScrollTrigger(); 
+        createScrollTrigger();
         ScrollTrigger.refresh();
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
-        }
-      } catch (e) {
+      }, 300);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
       }
     };
   }, [activeTab]);

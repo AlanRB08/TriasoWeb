@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import caseta1 from "../../assets/images/DrumMixers/caseta1.webp";
@@ -216,27 +216,37 @@ const DrumMixPlanos = () => {
   const activeData = toggleConfig.find(
     (item) => item.id === activeTab.toString()
   );
+
+  const modelOptions = [
+    { id: 1, label: "80-110 Tph" },
+    { id: 2, label: "110-140 Tph" },
+    { id: 3, label: "140-180 Tph" },
+    { id: 4, label: "200-250 Tph" },
+    { id: 5, label: "300-360 Tph" },
+    { id: 6, label: "400-480 Tph" },
+    { id: 7, label: "500-600 Tph" },
+  ];
+
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
     setUnit(newUnit);
   };
 
-  const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
+  const scrollTrigRef = useRef<ScrollTrigger | null>(null);
+  const resizeTimerRef = useRef<number | null>(null);
+  const isCreatingRef = useRef(false);
+  const isIntersectingRef = useRef(false);
+  const mutationObserverRef = useRef<MutationObserver | null>(null);
+  const pendingRecalcRef = useRef(false);
+  const lastRecalcTimeRef = useRef<number>(0);
+  const animationFrameRef = useRef<number | null>(null);
 
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
+  const createScrollTrigger = useCallback(() => {
 
-  useEffect(() => {
+    if (isCreatingRef.current) return;
+    isCreatingRef.current = true;
+
     const box = boxRef.current;
     const target = nextSectionRef.current;
     const clipTarget = clipTargetRef.current;
@@ -246,140 +256,273 @@ const DrumMixPlanos = () => {
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
 
+
     if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
+      isCreatingRef.current = false;
       return;
     }
 
-    const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
+    if (activeTab !== 3) {
+      isCreatingRef.current = false;
+      return;
+    }
+
+
+    if (scrollTrigRef.current) {
+      scrollTrigRef.current.kill();
+      scrollTrigRef.current = null;
+    }
+
+    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+    const boxHeight = box.offsetHeight;
+    const boxBottomAbs = boxTopAbs + boxHeight;
+    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
+    const distanceToMove = targetTopAbs - boxTopAbs;
+    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+    const scrollDistanceReductionFactor = 0.8;
+    const adjustedDistanceToMove = distanceToMove;
+    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+    const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
+
+    const scrollTrig = ScrollTrigger.create({
+      id: "boxScroll",
+      trigger: box,
+      start: "top+=70 20%",
+      end: `+=${adjustedScrollDistance}`,
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+      animation: anim,
+
+      onUpdate: (self: ScrollTrigger) => {
+        const p = self.progress;
+        let clipProgress = 0;
+
+        if (clipEndClamped > clipStartClamped) {
+          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
         }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
+        clipProgress = Math.max(0, Math.min(clipProgress, 1));
+
+        gsap.set(img, {
+          clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+        });
+
+        const show80 = p >= 0.8 && p <= 1.0;
+        const show90 = p >= 0.9 && p <= 1.0;
+        gsap.to(otro, {
+          opacity: show80 ? 1 : 0,
+          y: show80 ? 0 : -50,
+          scale: show80 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(options, {
+          opacity: show90 ? 1 : 0,
+          y: show90 ? 0 : -50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(col1, {
+          opacity: show90 ? 1 : 0,
+          x: show90 ? 0 : -50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(col2, {
+          opacity: show90 ? 1 : 0,
+          x: show90 ? 0 : 50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+      },
+    });
+
+    scrollTrigRef.current = scrollTrig;
+    isCreatingRef.current = false;
+    lastRecalcTimeRef.current = Date.now();
+
+  }, [activeTab]);
+
+  const scheduleRecalc = useCallback(() => {
+    if (!isIntersectingRef.current) {
+      pendingRecalcRef.current = true;
+      return;
+    }
+
+    const now = Date.now();
+    const timeSinceLastRecalc = now - lastRecalcTimeRef.current;
+    const MIN_RECALC_INTERVAL = 500; 
+
+    if (timeSinceLastRecalc < MIN_RECALC_INTERVAL) {
+      if (!pendingRecalcRef.current) {
+        pendingRecalcRef.current = true;
+        setTimeout(() => {
+          pendingRecalcRef.current = false;
+          scheduleRecalc();
+        }, MIN_RECALC_INTERVAL - timeSinceLastRecalc);
       }
+      return;
+    }
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
 
-      if (activeTab !== 3) return;
-      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-      const boxHeight = box.offsetHeight;
-      const boxBottomAbs = boxTopAbs + boxHeight;
-      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-      const distanceToMove = targetTopAbs - boxTopAbs;
-      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-      const scrollDistanceReductionFactor = 0.8;
-      const adjustedDistanceToMove = distanceToMove;
-      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-      const scrollTrig = ScrollTrigger.create({
-        id: "boxScroll",
-        trigger: box,
-        start: "top+=70 20%",
-        end: `+=${adjustedScrollDistance}`,
-        scrub: true,
-        markers: false,
-        animation: anim,
-        onUpdate: (self: any) => {
-          const p = self.progress;
-          let clipProgress = 0;
-          if (clipEndClamped > clipStartClamped) {
-            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-          }
-          clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-          gsap.set(img, {
-            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-          });
-
-          gsap.to(otro, {
-            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(options, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col1, {
-            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-            x: p >= 0.9 && p <= 1 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col2, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-        },
-      });
-
-      scrollTrigRef.current = scrollTrig;
-    };
-
-    const recreate = debounce(() => {
+    animationFrameRef.current = requestAnimationFrame(() => {
       createScrollTrigger();
       ScrollTrigger.refresh();
-    }, 120);
-    createScrollTrigger();
-
-    const mo = new MutationObserver((mutations) => {
-      recreate();
+      animationFrameRef.current = null;
+      pendingRecalcRef.current = false;
     });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
+  }, [createScrollTrigger]);
 
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const wasIntersecting = isIntersectingRef.current;
+          isIntersectingRef.current = entry.isIntersecting;
+
+          if (entry.isIntersecting && !wasIntersecting) {
+            console.log('viewport entró');
+            createScrollTrigger();
+
+            if (pendingRecalcRef.current) {
+              pendingRecalcRef.current = false;
+              scheduleRecalc();
+            }
+          } else if (!entry.isIntersecting && wasIntersecting) {
+            console.log('viewport salió ');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '200px', 
+        threshold: 0,
+      }
+    );
+
+    observer.observe(container);
 
     return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
+      observer.disconnect();
+    };
+  }, [createScrollTrigger, scheduleRecalc]);
 
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
+  useEffect(() => {
+    if (!isIntersectingRef.current) return;
+
+    const observerConfig: MutationObserverInit = {
+      attributes: true,
+      childList: true,
+      subtree: true,
+      attributeFilter: ['style', 'class'], 
+    };
+
+    const handleMutation = (mutations: MutationRecord[]) => {
+      const relevantMutation = mutations.some((mutation) => {
+        if (
+          mutation.target === boxRef.current ||
+          mutation.target === imgRef.current ||
+          mutation.target === otroElemento.current ||
+          mutation.target === optionsRef.current ||
+          mutation.target === columnGrid1.current ||
+          mutation.target === columnGrid2.current
+        ) {
+          return false;
         }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
+
+        if (mutation.type === 'attributes') {
+          const attrName = mutation.attributeName;
+          return attrName === 'style' || attrName === 'class';
         }
-      } catch (e) {
+
+        return mutation.type === 'childList';
+      });
+
+      if (relevantMutation) {
+        console.log('modificación dom');
+        scheduleRecalc();
       }
     };
-  }, [activeTab]);
+
+    const observer = new MutationObserver(handleMutation);
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current, observerConfig);
+    }
+
+    mutationObserverRef.current = observer;
+
+    return () => {
+      observer.disconnect();
+      mutationObserverRef.current = null;
+    };
+  }, [scheduleRecalc]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+
+      resizeTimerRef.current = window.setTimeout(() => {
+        console.log('cambio de res');
+        scheduleRecalc();
+      }, 300);
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+    };
+  }, [scheduleRecalc]);
+
+
+  useEffect(() => {
+    if (activeTab === 3 && isIntersectingRef.current) {
+      scheduleRecalc();
+    } else if (activeTab !== 3) {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+        scrollTrigRef.current = null;
+      }
+    }
+  }, [activeTab, scheduleRecalc]);
+
+  useEffect(() => {
+    return () => {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+      }
+      if (mutationObserverRef.current) {
+        mutationObserverRef.current.disconnect();
+      }
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="h-[150vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div className="h-[80vh] relative flex items-center justify-center bg-bgMain w-full">
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
@@ -456,91 +599,60 @@ const DrumMixPlanos = () => {
           </div>
         </header>
         <div id="planosDrumMixers" className="w-full px-8 lg:px-8 mt-14">
-          {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              MODELS:
-            </h1>
-            <div className="grid grid-cols-3 md:grid-cols-12 gap-y-4 gap-5 w-full max-w-5xl mx-auto px-2 justify-items-center">
+            {/* móvil */}
+            <div className="block md:hidden w-full max-w-xs mx-auto">
+              <label className="text-white text-sm mb-2 block text-center">
+                MODELS:
+              </label>
+              <div className="relative">
+                <select
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(Number(e.target.value))}
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  {modelOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
 
-              {/* Botón 1 */}
-              <button
-                onClick={() => (setActiveTab(1))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 1
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                80-110 Tph
-              </button>
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg
+                    className="w-4 h-4 text-gray-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
 
-              {/* Botón 2 */}
-              <button
-                onClick={() => (setActiveTab(2))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 2
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                110-140 Tph
-              </button>
-
-              {/* Botón 3 */}
-              <button
-                onClick={() => (setActiveTab(3))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 3
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                140-180 Tph
-              </button>
-
-              {/* Botón 4 */}
-              <button
-                onClick={() => (setActiveTab(4))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 4
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                200-250 Tph
-              </button>
-
-              {/* Botón 5 */}
-              <button
-                onClick={() => (setActiveTab(5))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 5
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                300-360 Tph
-              </button>
-
-              {/* Botón 6 */}
-              <button
-                onClick={() => (setActiveTab(6))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 6
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                400-480 Tph
-              </button>
-
-              <button
-                onClick={() => (setActiveTab(7))}
-                className={`col-start-2 md:col-start-auto md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 7
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                500-600 Tph
-              </button>
-
+            {/* desktop */}
+            <div className="hidden md:flex flex-wrap justify-center gap-5  mx-auto px-2">
+              {modelOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => setActiveTab(option.id)}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-[150px]
+        ${activeTab === option.id
+                      ? "text-gray-900 bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                    }`}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
+
           {/* Contenido de los tabs */}
           <div
             className="w-full mt-20 mb-10"

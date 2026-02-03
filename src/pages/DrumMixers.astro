@@ -7,6 +7,7 @@ import StationarySection from "../components/DrumMixers/StationarySection.astro"
 import IntegratedBaghouses from "../components/DrumMixers/IntegratedBaghouses.astro";
 import DrumMixPlanos from "../components/DrumMixers/DrumMixPlanos";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 ---
 
 <Layout title="Drum Mixers Page">
@@ -16,5 +17,6 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
     <StationarySection />
     <IntegratedBaghouses />
     <DrumMixPlanos client:only />
-    <CardSection />
+    <!-- <CardSection /> -->
+    <CardSectionResponsive/>
 </Layout>

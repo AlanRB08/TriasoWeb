@@ -8,6 +8,7 @@ import BinSelector from "../components/BinUnits/BinSelector";
 import BinPlanosSection from "../components/BinUnits/BinPlanosSection";
 import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import BOdometer from "../components/BinUnits/BOdometer";
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 ---
 
 <Layout title="Bin Units">
@@ -79,5 +80,6 @@ import BOdometer from "../components/BinUnits/BOdometer";
   <IntegrateControl />
   <BinGallery />
   <BinPlanosSection client:only />
-  <CardSection />
+  <!-- <CardSection /> -->
+   <CardSectionResponsive/>
 </Layout>
