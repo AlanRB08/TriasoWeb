@@ -202,7 +202,7 @@ const FPHPlanos = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="h-[50vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div className="h-[80vh] relative flex items-center justify-center bg-bgMain w-full">
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
