@@ -230,7 +230,7 @@ const PAPlanos = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="h-[120vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div className="h-[65vh] relative flex items-center justify-center bg-bgMain w-full">
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{

@@ -7,6 +7,7 @@ import CardSection from "../components/IntegralAsphalt/CardSection.astro";
 import OHFinal from "../components/OilHeaters/OHFinal.astro";
 import OHGallery from "../components/OilHeaters/OHGallery.astro";
 import OHPlanos from "../components/OilHeaters/OHPlanos";
+import CardSectionResponsive from "../components/unitComponents/CardSectionResponsive.astro";
 ---
 <Layout title="Oil Heaters Page">
     <OHFirstSection></OHFirstSection>
@@ -15,5 +16,6 @@ import OHPlanos from "../components/OilHeaters/OHPlanos";
     <OHFinal></OHFinal>
     <OHGallery/>
     <OHPlanos client:only/>
-    <CardSection></CardSection>
+    <!-- <CardSection></CardSection> -->
+    <CardSectionResponsive/>
 </Layout>
