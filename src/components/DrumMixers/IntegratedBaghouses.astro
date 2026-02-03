@@ -73,28 +73,23 @@ const binSlides2 = [
   },
   {
     image: g12.src,
-    caption:
-      "Control console, with Plus computer for counterflow plant",
+    caption: "Control console, with Plus computer for counterflow plant",
   },
   {
     image: g13.src,
-    caption:
-      "Triple bin unit, Plus version",
+    caption: "Triple bin unit, Plus version",
   },
   {
     image: g14.src,
-    caption:
-      "Triple bin unit, Plus version",
+    caption: "Triple bin unit, Plus version",
   },
   {
     image: g15.src,
-    caption:
-      "Triple bin unit, Plus version",
+    caption: "Triple bin unit, Plus version",
   },
   {
     image: g16.src,
-    caption:
-      "Triple bin unit, Plus version",
+    caption: "Triple bin unit, Plus version",
   },
 ];
 ---
@@ -127,8 +122,8 @@ const binSlides2 = [
   <div
     class="grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-2 justify-center items-center gap-5 px-8 w-full"
   >
-    <div class="flex flex-col justify-center rounded-lg space-y-2">
-      <div class="flex flex-col">
+    <div class="flex flex-col justify-center rounded-lg space-y-10">
+      <div class="flex flex-col space-y-2">
         <div
           class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
         >
@@ -143,16 +138,18 @@ const binSlides2 = [
       </div>
 
       <div
-        class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full"
+        class="flex flex-col space-y-2"
       >
-        <p class="text-black">99.99</p>
-        <p class="text-sm font-normal ml-3 text-black">%</p>
+        <div class="flex text-5xl font-normal justify-center lg:justify-start items-baseline w-full">
+          <p class="text-black">99.99</p>
+          <p class="text-sm font-normal ml-3 text-black">%</p>
+        </div>
+        <p
+          class="text-black font-thin text-center lg:text-start w-full text-base"
+        >
+          Fine particle filtration efficiency
+        </p>
       </div>
-      <p
-        class="text-black font-thin text-center lg:text-start w-full text-base"
-      >
-        Fine particle filtration efficiency
-      </p>
     </div>
     <div class="flex flex-col items-center justify-center">
       <Image src={baghouse} alt="Baghouse" class="lg:max-w-[150%]" />
