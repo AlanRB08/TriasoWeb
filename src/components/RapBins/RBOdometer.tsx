@@ -43,11 +43,11 @@ const RPOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20">
+    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto lg:mt-56 lg:mb-56 md:mt-56 md:mb-56">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
         <div className="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20">
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+          <div className="flex flex-col items-center lg:items-start justify-center">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value4} format="(,ddd)" duration={2000} />
@@ -56,8 +56,8 @@ const RPOdometer = () => {
             <p className="text-grisP">RAP feeding capacity</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+          <div className="flex flex-col items-center lg:items-start justify-center">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
@@ -66,8 +66,8 @@ const RPOdometer = () => {
             <p className="text-start text-grisP">RAP capacity</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+          <div className="flex flex-col items-center lg:items-start justify-center">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">inches</p>
             </div>
@@ -97,33 +97,6 @@ const RPOdometer = () => {
             </span>
           </a>
         </div>
-      </div>
-      <div className="my-20">
-        <h1 className="text-center text-3xl md:text-5xl text-redBg font-bold">
-          Your best business begins here
-        </h1>
-      </div>
-
-      <div
-        className="w-full mx-auto px-5 text-center mb-5"
-      >
-        <div className="mb-5">
-          <p className="font-thin text-lg lg:text-xl md:text-xl">
-            For very 10% of RAP, <br />
-            the cost of hot-mix production
-          </p>
-          <h2 className="font-bold text-2xl lg:text-3xl">decreases 7%</h2>
-        </div>
-      </div>
-
-      <div className="flex justify-center">
-        <a
-          href="/RapRecycled"
-          className="hover:bg-blueMain hover:text-white text-blueMain mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg"
-        >
-          Learn more about RAP
-        </a>
-
       </div>
     </div>
   );

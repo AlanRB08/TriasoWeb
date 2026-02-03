@@ -43,11 +43,11 @@ const PAOdometer = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto mt-20 mb-10">
+    <div ref={sectionRef} className="w-full max-w-7xl px-8 mx-auto py-10 lg:py-0 lg:mt-56 lg:mb-56 md:mt-56 md:mb-56">
       <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-        <div className="flex flex-col items-start justify-center gap-10 md:gap-20">
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+        <div className="flex flex-col items-center lg:items-start justify-center gap-10 md:gap-20">
+          <div className="flex flex-col lg:items-start items-center justify-center">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value1} format="(,ddd)" duration={2000} />
@@ -57,7 +57,7 @@ const PAOdometer = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <h1>-</h1>
               <Odometer value={value4} format="(,ddd)" duration={2000} />
@@ -67,12 +67,12 @@ const PAOdometer = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="flex text-7xl font-normal justify-start items-baseline w-full">
+            <div className="flex text-6xl lg:text-[5rem] md:text-[5rem] font-normal justify-center lg:justify-start items-baseline w-full">
               <Odometer value={value2} format="(,ddd)" duration={2000} />
               <p className="text-sm font-normal ml-3">hp</p>
             </div>
             <p className="text-grisP text-start w-full">
-              rated capacity of the discharge motor
+              Rated capacity of the discharge motor
             </p>
           </div>
         </div>
