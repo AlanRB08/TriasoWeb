@@ -216,6 +216,17 @@ const DrumMixPlanos = () => {
   const activeData = toggleConfig.find(
     (item) => item.id === activeTab.toString()
   );
+
+  const modelOptions = [
+    { id: 1, label: "80-110 Tph" },
+    { id: 2, label: "110-140 Tph" },
+    { id: 3, label: "140-180 Tph" },
+    { id: 4, label: "200-250 Tph" },
+    { id: 5, label: "300-360 Tph" },
+    { id: 6, label: "400-480 Tph" },
+    { id: 7, label: "500-600 Tph" },
+  ];
+
   // Función para alternar unidades
   const toggleUnit = () => {
     const newUnit = unit === "metric" ? "imperial" : "metric";
@@ -456,91 +467,60 @@ const DrumMixPlanos = () => {
           </div>
         </header>
         <div id="planosDrumMixers" className="w-full px-8 lg:px-8 mt-14">
-          {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              MODELS:
-            </h1>
-            <div className="grid grid-cols-3 md:grid-cols-12 gap-y-4 gap-5 w-full max-w-5xl mx-auto px-2 justify-items-center">
+            {/* móvil */}
+            <div className="block md:hidden w-full max-w-xs mx-auto">
+              <label className="text-white text-sm mb-2 block text-center">
+                MODELS:
+              </label>
+              <div className="relative">
+                <select
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(Number(e.target.value))}
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  {modelOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
 
-              {/* Botón 1 */}
-              <button
-                onClick={() => (setActiveTab(1))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 1
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                80-110 Tph
-              </button>
-
-              {/* Botón 2 */}
-              <button
-                onClick={() => (setActiveTab(2))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-full max-w-[150px] ${activeTab === 2
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                110-140 Tph
-              </button>
-
-              {/* Botón 3 */}
-              <button
-                onClick={() => (setActiveTab(3))}
-                className={`md:col-span-4 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 3
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                140-180 Tph
-              </button>
-
-              {/* Botón 4 */}
-              <button
-                onClick={() => (setActiveTab(4))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 4
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                200-250 Tph
-              </button>
-
-              {/* Botón 5 */}
-              <button
-                onClick={() => (setActiveTab(5))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 5
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                300-360 Tph
-              </button>
-
-              {/* Botón 6 */}
-              <button
-                onClick={() => (setActiveTab(6))}
-                className={`md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 6
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                400-480 Tph
-              </button>
-
-              <button
-                onClick={() => (setActiveTab(7))}
-                className={`col-start-2 md:col-start-auto md:col-span-3 px-2 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-full max-w-[150px] ${activeTab === 7
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                500-600 Tph
-              </button>
-
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg
+                    className="w-4 h-4 text-gray-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            {/* desktop */}
+            <div className="hidden md:flex flex-wrap justify-center gap-5  mx-auto px-2">
+              {modelOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => setActiveTab(option.id)}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-[150px]
+        ${activeTab === option.id
+                      ? "text-gray-900 bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                    }`}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
+
           {/* Contenido de los tabs */}
           <div
             className="w-full mt-20 mb-10"
