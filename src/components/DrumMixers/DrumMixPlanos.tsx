@@ -357,7 +357,7 @@ const DrumMixPlanos = () => {
 
     const now = Date.now();
     const timeSinceLastRecalc = now - lastRecalcTimeRef.current;
-    const MIN_RECALC_INTERVAL = 500; 
+    const MIN_RECALC_INTERVAL = 500;
 
     if (timeSinceLastRecalc < MIN_RECALC_INTERVAL) {
       if (!pendingRecalcRef.current) {
@@ -406,7 +406,7 @@ const DrumMixPlanos = () => {
       },
       {
         root: null,
-        rootMargin: '200px', 
+        rootMargin: '200px',
         threshold: 0,
       }
     );
@@ -425,7 +425,7 @@ const DrumMixPlanos = () => {
       attributes: true,
       childList: true,
       subtree: true,
-      attributeFilter: ['style', 'class'], 
+      attributeFilter: ['style', 'class'],
     };
 
     const handleMutation = (mutations: MutationRecord[]) => {
@@ -601,8 +601,8 @@ const DrumMixPlanos = () => {
         <div id="planosDrumMixers" className="w-full px-8 lg:px-8 mt-14">
           <div id="options" ref={optionsRef} className="w-full">
             {/* móvil */}
-            <div className="block md:hidden w-full max-w-xs mx-auto">
-              <label className="text-white text-sm mb-2 block text-center">
+            <div className="flex flex-row justify-between items-center px-4 md:hidden w-full max-w-7xl mx-auto">
+              <label className="text-white block text-center">
                 MODELS:
               </label>
               <div className="relative">
@@ -636,6 +636,11 @@ const DrumMixPlanos = () => {
             </div>
 
             {/* desktop */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-5">
+              <label className="text-white block text-center">
+                MODELS:
+              </label>
+            </div>
             <div className="hidden md:flex flex-wrap justify-center gap-5  mx-auto px-2">
               {modelOptions.map((option) => (
                 <button

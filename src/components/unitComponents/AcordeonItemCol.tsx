@@ -26,23 +26,7 @@ export default function AcordeonItemCol({
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    const element = contentRef.current;
-    if (!element) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          setIsOpen(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div
