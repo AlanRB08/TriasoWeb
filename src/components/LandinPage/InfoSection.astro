@@ -2,58 +2,117 @@
 import img1 from "../../assets/images/maquina1.webp";
 import img2 from "../../assets/images/planos.webp";
 import img3 from "../../assets/images/maquina2.webp";
+import logo from "../../assets/logos/triasoLogo.webp";
 import { Image } from "astro:assets";
 ---
-<section class="w-full mt-10 md:mt-20 flex flex-col justify-center items-center">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 justify-center my-10 px-8">
-        <div class="flex flex-col items-start justify-between">
-            <Image src={img1} alt="" class="order-3 md:order-1"/>
-            <div class="order-1 md:order-2">
-                <h1 class="font-bold text-grisT text-base md:text-xl">We care about details </h1>
-                <div class="mt-4 mb-6 flex justify-center">
-                    <div class="w-20 h-0.5 bg-red-500"></div>
-                    <div class="w-20 h-0.5 bg-gray-300"></div>
-                </div>
-            </div>
-            <p class="font-bold text-grisP text-sm md:text-lg text-justify order-2 md:order-3">Our dedicated U.S. sales 
-                team is ready to assist you with your daily needs, ensuring seamless support throughout
-                 the purchasing and manufacturing process. Our Service Team is available 24/7, 365 days
-                  a year, to provide comprehensive maintenance and technical assistance. We understand 
-                  that uptime is crucial, and you can count on our full
-                 team to coordinate and communicate with you every step of the way during your projects.</p>
-        </div>
-        <div class="flex flex-col items-start">
-            <div>
-                <h1 class="font-bold text-grisT text-base md:text-xl">Communications is Key </h1>
-                <div class="mt-4 mb-6 flex justify-center">
-                    <div class="w-20 h-0.5 bg-red-500"></div>
-                    <div class="w-20 h-0.5 bg-gray-300"></div>
-                </div>
-            </div>
-            <p class="font-bold text-grisP text-sm md:text-lg text-justify">Our engineers design with your needs and expectations at the forefront. 
-                At our manufacturing facility, every component undergoes rigorous inspection to guarantee durability, 
-                reliability, and optimal performance. This commitment to excellence enables us to produce cost-effective 
-                equipment that not only deliver superior results but also comply with and exceed environmental regulations.</p>
-            <Image src={img2} alt="" class="md:mt-32"/>
-        </div>
-    </div>
-    <div class="flex flex-col md:grid md:grid-cols-2 justify-center my-10 items-center max-w-[2400px]">
-            <div class="flex justify-center items-center w-full h-full">
-                <div class="bg-redBg rounded-r-2xl py-10 px-8 md:px-16 h-full flex flex-col justify-center">
-                    <h1 class="text-white font-bold text-2xl md:text-3xl">Seamless Integration with <br>Other Systems</h1>
-                    <br>
-                    <p class="text-grisSubP text-sm md:text-lg font-bold">
-                        Triaso® equipment integrates seamlessly with other machinery, 
-                        ensuring smooth transitions between production stages. 
-                        This compatibility supports uninterrupted operations and optimizes workflow efficiency throughout your facility.
-                    </p>
-                </div>
-            </div>
-            <!-- -->
-            <div class="w-full flex justify-center items-center">
-                <Image src={img3} alt="" class="object-contain w-full"/>
-            </div>
-    </div>
-          
 
+<section class="w-full flex flex-col justify-center items-center">
+    <div class="w-full bg-[#2e2e2e] flex flex-col justify-center items-center">
+        <Image
+            src={logo}
+            alt="Triaso Logo"
+            class="w-[500px] lg:w-full md:w-full lg:pt-28 md:pt-28"
+        />
+        <div
+            class="w-full
+         bg-[url(/HeroS.webp)] bg-cover bg-center bg-no-repeat
+         h-[850px] md:h-[800px] lg:h-[900px]
+         flex flex-col justify-start pt-5 items-center"
+        >
+            <div class="flex flex-col mx-auto max-w-7xl px-8">
+                <h1
+                    class="text-white text-2xl lg:text-4xl font-bold text-center lg:text-start md:text-start"
+                >
+                    Fully Portable
+                </h1>
+                <br />
+                <p
+                    class="text-base text-center lg:text-justify md:text-justify lg:text-lg text-white font-thin"
+                >
+                    All components of our asphalt plants are engineered for
+                    complete transportability, allowing for efficient and quick
+                    setup. Their robust structure enables a smooth, hassle-free
+                    installation directly on-site.
+                </p>
+            </div>
+
+            <details class="group w-full">
+                <summary
+                    class="list-none cursor-pointer flex justify-center items-center"
+                >
+                    <div class="text-blueMain px-4 py-2 rounded-2xl">
+                        <svg
+                            width="84"
+                            height="84"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="transition-transform duration-300 group-open:rotate-180"
+                        >
+                            <path
+                                d="M6 9L12 15L18 9"
+                                stroke="#ffffff"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </summary>
+
+                <div
+                    class="max-w-7xl mx-auto flex flex-col lg:flex-row md:flex-row justify-between px-8"
+                >
+                    <div
+                        class="flex flex-col justify-start items-start space-y-3 text-white"
+                    >
+                        <h1 class="font-bold text-2xl">
+                            Integrated 5th wheel. Direct transport to site
+                        </h1>
+                        <div class="text-start pl-5 lg:pl-5 md:pl-5">
+                            <li class="font-thin">
+                                No lowbed or flatbed trailer.
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col text-white space-y-3">
+                        <h1 class="font-bold text-2xl">
+                            Complete plant delivered in just three loads
+                        </h1>
+                        <div class="pl-5 lg:text-start md:text-start">
+                            <li class="font-thin">Simplified logistics.</li>
+                            <li class="font-thin">Reduced setup time</li>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <div
+                class="w-full md:pr-52 py-10 grid grid-cols-1 md:grid-cols-2 gap-10"
+            >
+                <div class="w-full flex flex-col gap-6">
+                    <div class="w-3/4 md:pl-52 bg-redBg p-10 rounded-r-2xl">
+                        <h2 class="text-xl md:text-3xl font-bold text-white">
+                            100% manufactured in neighboring México
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:max-w-7xl flex justify-start items-start">
+               <div class=" bg-blueMain p-10 rounded-2xl lg:w-1/2">
+                <h2 class="text-xl md:text-3xl font-bold text-white">
+                    Versatile Configurations
+                </h2>
+                <p class="text-base md:text-lg font-thin text-[#d9d9d9]">
+                    Triaso® equipment is designed to adapt seamlessly to your
+                    operational needs. Simply tell us your requirements, and
+                    we’ll customize the equipment to provide you with a tailored
+                    quote..
+                </p>
+            </div> 
+            </div>
+            
+        </div>
+    </div>
 </section>
