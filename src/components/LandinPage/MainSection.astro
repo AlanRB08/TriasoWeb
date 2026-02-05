@@ -1,77 +1,182 @@
 ---
-import asphaltPlant from '../../assets/images/asphaltPlant.webp';
-import rockCrusher from '../../assets/images/rockCrush.webp';
-import Image from 'astro/components/Image.astro';
-import Whatsbtn from '../unitComponents/Whatsbtn.astro';
-import LearnBtn from '../unitComponents/LearnBtn.astro';
----
-<div class="w-full flex flex-col items-center justify-center text-xl mt-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 items-center justify-center my-10">
-        <!-- Primer item -->
-        <div class="flex flex-col items-center">
-            <a href="/AsphaltPlant"  class="font-bold text-lg md:text-xl text-center hover:text-blueMain text-grisT my-2">ASPHALT PLANT</a>
-            <a 
-            href="/AsphaltPlant"
-            class="h-[200px] md:h-[300px] w-full flex justify-center transition-transform duration-300 ease-out hover:scale-[1.03]">
-                <Image 
-                    src={asphaltPlant} 
-                    class="h-full object-contain w-full p-2"
-                    alt="Asphalt Plant"
-                    widths={[400, 800, 1200]}  
-                    loading="eager"             
-                    fetchpriority="high"        
-                    />
-            </a>
-        </div>
-        
-        <!-- Segundo item -->
-        <div class="flex flex-col items-center">
-            <a 
-            href="https://www.triasous.com/rock-crushers.html"
-            class="font-bold text-lg md:text-xl text-center text-grisT my-2 hover:text-blueMain">ROCK CRUSHERS</a>
-            <a 
-            href="https://www.triasous.com/rock-crushers.html"
-            class="h-[200px] md:h-[300px] w-full flex justify-center transition-transform duration-300 ease-out hover:scale-[1.03]">
-                <Image 
-                    src={rockCrusher} 
-                    class="h-full object-contain w-full p-2"
-                    alt="Asphalt Plant"
-                    widths={[400, 800, 1200]}  
-                    loading="eager"             
-                    fetchpriority="high"        
-                    />
-            </a>
-        </div>
-    </div>
-    <!-- Banner section -->
-    <div class="flex flex-col md:grid md:grid-cols-4 md:h-full w-full">
-        <div class="bg-blueMain col-span-2 md:col-span-1 w-full h-auto md:h-full flex flex-col justify-center items-center gap-4 p-4">
-    <!-- Botón 1 -->
-            <Whatsbtn/>
+import asphaltPlant from "../../assets/images/asphaltPlant.webp";
+import rockCrusher from "../../assets/images/rockCrush.webp";
+import Image from "astro/components/Image.astro";
+import Whatsbtn from "../unitComponents/Whatsbtn.astro";
+import LearnBtn from "../unitComponents/LearnBtn.astro";
+import HeroSlider from "../unitComponents/HeroSlider.tsx";
 
-            <!-- Botón 2 (añade el segundo botón) -->
-            <a
-            href="/Contact" 
-            aria-label="Button to request a quote" class="bg-blueSecondary border-white border border- text-white text-sm md:text-lg rounded-full w-full py-2 flex items-center justify-center gap-2 shadow-md hover:bg-[#0044A4]/80">
-                Request a quote
-                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF">
-                    <!-- Icono del segundo botón (opcional) -->
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="bg-blueSecondary col-span-2 md:col-span-3 w-full h-full px-8 py-8 flex flex-col text-white justify-center items-start md:items-end">
-            <h1 class="font-bold text-base md:text-2xl mb-2">High productivity and quality at competitive prices</h1>
-            <p class="text-sm md:text-lg font-bold text-grisSubP">Contractors that knows us prefer Triaso over other brands for our high quality, realibility, and pricing.</p>
+const Cards = [
+    {
+        title: "About Us",
+        href: "/",
+        image: "/Gallery/oilsetup.webp",
+    },
+    {
+        title: "Spare Parts",
+        href: "/Spare",
+        image: "/Boxes.webp",
+    },
+    {
+        title: "100% Manufacturers",
+        href: "/",
+        image: "/manufacture.webp",
+    },
+    {
+        title: "Maintenance",
+        href: "/Maintenance",
+        image: "/Gallery/drum-mixer.webp",
+    },
+    {
+        title: "We Care About the Details",
+        href: "/CustomDesign",
+        image: "/consola1.webp",
+    },
+    {
+        title: "Communication is key",
+        href: "/CustomDesign",
+        image: "/coms.webp",
+    },
+];
+---
+
+<div class="w-full flex flex-col items-center justify-center text-xl mt-10">
+    <div class="relative w-full bg-black overflow-hidden mt-5">
+        <video
+            class="absolute inset-0 w-full h-full object-cover"
+            playsinline
+            autoplay
+            muted
+            loop
+            poster="/Gallery/customdes.webp"
+            preload="metadata"
+        >
+            <source src="/Videos/Webm/HeroVideo.webp" type="video/webm" />
+        </video>
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div
+            class="relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-evenly px-8 lg:px-0 pb-10 gap-10"
+        >
+            <div class="flex flex-col items-end text-right max-w-xl ml-auto mt-5">
+                <h1 class="uppercase text-white text-3xl md:text-5xl font-bold">
+                    Manufactured to last
+                </h1>
+
+                <div class="space-y-4 mt-4">
+                    <p class="text-white text-base md:text-lg">
+                        We understand the importance of keeping your equipment
+                        running non-stop.
+                    </p>
+                    <p class="text-white text-sm md:text-base">
+                        Many operations depend on the reliability of your
+                        equipment.
+                    </p>
+                </div>
+            </div>
+            <div class="hidden lg:flex md:flex">
+                <HeroSlider slides={Cards} client:only />
+            </div>
         </div>
     </div>
-    <!-- About us section -->
-    <div class="flex flex-col gap-2 pt-10 text-center items-center h-auto max-w-7xl mx-auto px-8">
-        <h1 class="font-bold text-base md:text-2xl mb-2">About us</h1>
-        <p class="font-bold text-sm md:text-lg text-grisPP mb-5">Triaso is a manufacturer of industrial equipment. With over 27 years of dedication, research, and innovation, 
-            Triaso has become a top choice for asphalt paving contractors, as well as the mining and aggregate industries. 
-            With the ultimate goal of high-quality production at the best possible cost with minimal emissions,
-          Triaso equipments includes numerous standard features that other manufacturers offer only as costly upgrades.</p>
-        <LearnBtn href=''/>
+
+    <div class="relative flex lg:hidden md:hidden w-full overflow-hidden max-w-7xl mx-auto px-8 py-10 ">
+        <HeroSlider slides={Cards} client:only />
+    </div>
+</div>
+
+<div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 py-10 items-center justify-center"
+>
+    <!-- Primer item -->
+
+    <div class="flex flex-col items-center">
+        <a
+            href="/AsphaltPlant"
+            class="font-bold text-lg md:text-xl text-center hover:text-blueMain text-grisT my-2"
+            >ASPHALT PLANT</a
+        >
+        <a
+            href="/AsphaltPlant"
+            class="h-[200px] md:h-[300px] w-full flex justify-center transition-transform duration-300 ease-out hover:scale-[1.03]"
+        >
+            <Image
+                src={asphaltPlant}
+                class="h-full object-contain w-full p-2"
+                alt="Asphalt Plant"
+                widths={[400, 800, 1200]}
+                loading="eager"
+                fetchpriority="high"
+            />
+        </a>
+    </div>
+
+    <!-- Segundo item -->
+    <div class="flex flex-col items-center">
+        <a
+            href="https://www.triasous.com/rock-crushers.html"
+            class="font-bold text-lg md:text-xl text-center text-grisT my-2 hover:text-blueMain"
+            >ROCK CRUSHERS</a
+        >
+        <a
+            href="https://www.triasous.com/rock-crushers.html"
+            class="h-[200px] md:h-[300px] w-full flex justify-center transition-transform duration-300 ease-out hover:scale-[1.03]"
+        >
+            <Image
+                src={rockCrusher}
+                class="h-full object-contain w-full p-2"
+                alt="Asphalt Plant"
+                widths={[400, 800, 1200]}
+                loading="eager"
+                fetchpriority="high"
+            />
+        </a>
+    </div>
+</div>
+<!-- Banner section -->
+<div class="flex flex-col md:grid md:grid-cols-4 md:h-full w-full">
+    <div
+        class="bg-blueMain col-span-2 md:col-span-1 w-full h-auto md:h-full flex flex-col justify-center items-center gap-4 p-4"
+    >
+        <!-- Botón 1 -->
+        <Whatsbtn />
+
+        <!-- Botón 2 (añade el segundo botón) -->
+        <a
+            href="/Contact"
+            aria-label="Button to request a quote"
+            class="bg-blueSecondary border-white border border- text-white text-sm md:text-lg rounded-full w-full py-2 flex items-center justify-center gap-2 shadow-md hover:bg-[#0044A4]/80"
+        >
+            Request a quote
+            <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#FFFFFF"
+            >
+                <!-- Icono del segundo botón (opcional) -->
+                <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="#FFFFFF"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+        </a>
+    </div>
+    <div
+        class="bg-blueSecondary col-span-2 md:col-span-3 w-full h-full px-8 py-8 flex flex-col text-white justify-center items-start md:items-end"
+    >
+        <h1 class="font-bold text-base md:text-2xl mb-2">
+            High productivity and quality at competitive prices
+        </h1>
+        <p class="text-sm md:text-lg font-bold text-grisSubP">
+            Contractors that knows us prefer Triaso over other brands for our
+            high quality, realibility, and pricing.
+        </p>
     </div>
 </div>
