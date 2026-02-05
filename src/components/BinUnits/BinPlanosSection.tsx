@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import tolva6L2 from "../../assets/images/BinUnits/tolva6L2.webp";
@@ -23,7 +23,7 @@ import tolva1L1 from "../../assets/images/BinUnits/tolva1L1.webp";
 import tolva1F from "../../assets/images/BinUnits/tolva1F.webp";
 import tolva1Main from "../../assets/images/BinUnits/tolva1Main.webp";
 import tolva3L2 from "../../assets/images/BinUnits/tolva3L2.webp";
-
+import { useClipPathScrollTrigger } from "../../components/lib/useClipPathScrollTrigger.tsx"
 gsap.registerPlugin(ScrollTrigger);
 
 const singleUnit = [
@@ -173,165 +173,39 @@ const BinPlanosSection = () => {
     updateElements(unit);
   }, []);
 
-  const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
+  const exteriorOptions = [
+    {
+      id: "withPanels",
+      label: "Aesthetic Side Panels",
+    },
+    {
+      id: "withoutPanels",
+      label: "Without Aesthetic Side Panels",
+    },
+  ];
 
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
+  const modelOptions = [
+    { id: 1, label: "1 Bin" },
+    { id: 2, label: "2 Bins" },
+    { id: 3, label: "3 Bins" },
+    { id: 4, label: "4 Bins" },
+    { id: 5, label: "5 Bins" },
+    { id: 6, label: "6 Bins" },
+  ];
 
-  useEffect(() => {
-    const box = boxRef.current;
-    const target = nextSectionRef.current; 
-    const clipTarget = clipTargetRef.current; 
-    const img = imgRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
+  useClipPathScrollTrigger({
+    enabled: activeTab === 3,
 
-    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
-      return;
-    }
-
-    const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
-      }
-
-      if (activeTab !== 3) return;
-
-      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-      const boxHeight = box.offsetHeight;
-      const boxBottomAbs = boxTopAbs + boxHeight;
-      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-
-      const distanceToMove = targetTopAbs - boxTopAbs;
-
-      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-
-      const scrollDistanceReductionFactor = 0.8;
-      const adjustedDistanceToMove = distanceToMove;
-      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-      const scrollTrig = ScrollTrigger.create({
-        id: "boxScroll",
-        trigger: box,
-        start: "top+=70 20%",
-        end: `+=${adjustedScrollDistance}`,
-        scrub: true,
-        markers: false,
-        animation: anim,
-        onUpdate: (self: any) => {
-          const p = self.progress;
-          let clipProgress = 0;
-          if (clipEndClamped > clipStartClamped) {
-            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-          }
-          clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-          gsap.set(img, {
-            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-          });
-
-          gsap.to(otro, {
-            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(options, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col1, {
-            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-            x: p >= 0.9 && p <= 1 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col2, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-        },
-      });
-
-      scrollTrigRef.current = scrollTrig;
-    }; 
-
-    const recreate = debounce(() => {
-      createScrollTrigger();
-      ScrollTrigger.refresh();
-    }, 120);
-    createScrollTrigger();
-
-    const mo = new MutationObserver((mutations) => {
-      recreate();
-    });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
-
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
-
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
-
-    // CLEANUP
-    return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
-
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
-        }
-      } catch (e) {
-      }
-    };
-  }, [activeTab]);
+    boxRef,
+    nextSectionRef,
+    clipTargetRef,
+    imgRef,
+    otroElementoRef: otroElemento,
+    optionsRef,
+    columnGrid1Ref: columnGrid1,
+    columnGrid2Ref: columnGrid2,
+    containerRef,
+  });
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -415,93 +289,118 @@ const BinPlanosSection = () => {
         <div className="w-full px-8 lg:px-8 mt-14">
           {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              EXTERIOR:
-            </h1>
-            <div className="version-selector flex gap-10 justify-center mb-6">
-              <button
-                onClick={() => setActiveVersion("withPanels")}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "withPanels"
-                    ? "text-black bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                Aesthetic Side Panels
-              </button>
-              <button
-                onClick={() => setActiveVersion("withoutPanels")}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "withoutPanels"
-                    ? "text-black bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                Without Aesthetic Side Panels
-              </button>
+            <div className="flex flex-row justify-between items-center px-4 md:hidden w-full max-w-7xl mx-auto mb-6">
+              <label className="text-white block text-center">
+                EXTERIOR:
+              </label>
+
+              <div className="relative">
+                <select
+                  value={activeVersion}
+                  onChange={(e) =>
+                    setActiveVersion(e.target.value as "withPanels" | "withoutPanels")
+                  }
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium appearance-none focus:outline-none focus:ring-2 focus:ring-white/50">
+                  {exteriorOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg
+                    className="w-4 h-4 text-gray-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              UNITS:
-            </h1>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-3 justify-center w-full md:px-32 items-center justify-items-center">
-              {/* Botón 1 */}
-              <button
-                onClick={() => setActiveTab(1)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${activeTab === 1
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                1 BIN
-              </button>
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-5">
+              <label className="text-white block text-center">
+                EXTERIOR:
+              </label>
+            </div>
+            <div className="hidden lg:flex justify-center gap-5 mb-6">
+              {exteriorOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => setActiveVersion(option.id)}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300
+                      ${activeVersion === option.id
+                      ? "text-black bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                    }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
 
-              {/* Botón 2 */}
-              <button
-                onClick={() => setActiveTab(2)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${activeTab === 2
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                2 BINS
-              </button>
 
-              {/* Botón 3 */}
-              <button
-                onClick={() => setActiveTab(3)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${activeTab === 3
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                3 BINS
-              </button>
-              <button
-                onClick={() => setActiveTab(4)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${activeTab === 4
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                4 BINS
-              </button>
-              <button
-                onClick={() => setActiveTab(5)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${activeTab === 5
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                5 BINS
-              </button>
-              <button
-                onClick={() => setActiveTab(6)}
-                className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${activeTab === 6
-                    ? "text-gray-900 bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                  }`}
-              >
-                6 BINS
-              </button>
+            {/* móvil */}
+            <div className="flex flex-row justify-between items-center px-4 md:hidden w-full max-w-7xl mx-auto">
+              <label className="text-white block text-center">
+                MODELS:
+              </label>
+              <div className="relative">
+                <select
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(Number(e.target.value))}
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  {modelOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg
+                    className="w-4 h-4 text-gray-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* desktop */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-5">
+              <label className="text-white block text-center">
+                MODELS:
+              </label>
+            </div>
+            <div className="hidden md:flex flex-wrap justify-center gap-5  mx-auto px-2">
+              {modelOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => setActiveTab(option.id)}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-[150px]
+                    ${activeTab === option.id
+                      ? "text-gray-900 bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                    }`}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -555,8 +454,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -612,8 +511,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -683,8 +582,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -758,8 +657,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -829,8 +728,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -882,8 +781,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -929,8 +828,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -1167,8 +1066,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -1232,8 +1131,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -1303,8 +1202,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">
@@ -1376,8 +1275,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -1433,8 +1332,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -1504,8 +1403,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -1579,8 +1478,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -1650,8 +1549,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -1703,8 +1602,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -1750,8 +1649,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -1996,8 +1895,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -2061,8 +1960,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -2132,8 +2031,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">
@@ -2209,8 +2108,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -2266,8 +2165,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -2335,8 +2234,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -2410,8 +2309,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -2481,8 +2380,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -2534,8 +2433,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -2581,8 +2480,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -2819,8 +2718,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -2884,8 +2783,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -2955,8 +2854,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">
@@ -3028,8 +2927,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -3085,8 +2984,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -3156,8 +3055,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -3231,8 +3130,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -3302,8 +3201,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -3355,8 +3254,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -3402,8 +3301,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -3648,8 +3547,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -3713,8 +3612,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -3784,8 +3683,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">
@@ -3857,8 +3756,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -3914,8 +3813,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -3985,8 +3884,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -4060,8 +3959,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -4131,8 +4030,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -4184,8 +4083,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -4231,8 +4130,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -4469,8 +4368,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -4534,8 +4433,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -4605,8 +4504,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">
@@ -4678,8 +4577,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
@@ -4735,8 +4634,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
@@ -4806,8 +4705,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
@@ -4881,8 +4780,8 @@ const BinPlanosSection = () => {
                       </div>
                       <ul
                         className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
                           } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Designed for relocation</li>
@@ -4952,8 +4851,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>
@@ -5005,8 +4904,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -5052,8 +4951,8 @@ const BinPlanosSection = () => {
                     </div>
                     <ul
                       className={`transition-all duration-500 md:mb-0 overflow-hidden ml-6 list-disc list-inside ${openSections.C3_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
@@ -5290,8 +5189,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -5355,8 +5254,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
@@ -5426,8 +5325,8 @@ const BinPlanosSection = () => {
                     </div>
                     <div
                       className={`grid grid-cols-1 md:grid-cols-2 w-full justify-center items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
                         } md:max-h-full md:opacity-100 `}
                     >
                       <ul className="ml-6 list-disc">

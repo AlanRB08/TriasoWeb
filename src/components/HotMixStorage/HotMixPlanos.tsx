@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HMainS1 from "../../assets/images/HotMix/Silo50-Comp.Assy-R.webp";
@@ -200,21 +200,36 @@ const HotMixPlanos = () => {
     setUnit(newUnit);
   };
 
-  const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
+  const productionCapacityOptions = [
+    { id: "50tons", label: "50 tons", tab: 1 },
+    { id: "100tons", label: "100 tons", tab: 1 },
+    { id: "50tons", label: "50 tons", tab: 2 },
+    { id: "100tons", label: "100 tons", tab: 2 },
+    { id: "150tons", label: "150 tons", tab: 2 },
+    { id: "200tons", label: "200 tons", tab: 2 },
+  ] as const;
 
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
+  const siloOptions = [
+    { id: 1, label: "Self-erecting" },
+    { id: 2, label: "Relocatable Silo" },
+  ];
 
-  useEffect(() => {
+
+
+  const scrollTrigRef = useRef<ScrollTrigger | null>(null);
+  const resizeTimerRef = useRef<number | null>(null);
+  const isCreatingRef = useRef(false);
+  const isIntersectingRef = useRef(false);
+  const mutationObserverRef = useRef<MutationObserver | null>(null);
+  const pendingRecalcRef = useRef(false);
+  const lastRecalcTimeRef = useRef<number>(0);
+  const animationFrameRef = useRef<number | null>(null);
+
+  const createScrollTrigger = useCallback(() => {
+
+    if (isCreatingRef.current) return;
+    isCreatingRef.current = true;
+
     const box = boxRef.current;
     const target = nextSectionRef.current;
     const clipTarget = clipTargetRef.current;
@@ -224,140 +239,281 @@ const HotMixPlanos = () => {
     const col1 = columnGrid1.current;
     const col2 = columnGrid2.current;
 
+
     if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
+      isCreatingRef.current = false;
       return;
     }
 
-    const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
+    if (activeTab !== 1 || activeVersion !== "50tons") {
+      isCreatingRef.current = false;
+      return;
+    }
+
+
+    if (scrollTrigRef.current) {
+      scrollTrigRef.current.kill();
+      scrollTrigRef.current = null;
+    }
+
+    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
+    const boxHeight = box.offsetHeight;
+    const boxBottomAbs = boxTopAbs + boxHeight;
+    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
+    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
+    const distanceToMove = targetTopAbs - boxTopAbs;
+    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
+    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
+    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
+    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
+    const scrollDistanceReductionFactor = 0.8;
+    const adjustedDistanceToMove = distanceToMove;
+    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
+    const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
+
+    const scrollTrig = ScrollTrigger.create({
+      id: "boxScroll",
+      trigger: box,
+      start: "top+=70 20%",
+      end: `+=${adjustedScrollDistance}`,
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+      animation: anim,
+
+      onUpdate: (self: ScrollTrigger) => {
+        const p = self.progress;
+        let clipProgress = 0;
+
+        if (clipEndClamped > clipStartClamped) {
+          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
         }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
+        clipProgress = Math.max(0, Math.min(clipProgress, 1));
+
+        gsap.set(img, {
+          clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
+        });
+
+        const show80 = p >= 0.8 && p <= 1.0;
+        const show90 = p >= 0.9 && p <= 1.0;
+        gsap.to(otro, {
+          opacity: show80 ? 1 : 0,
+          y: show80 ? 0 : -50,
+          scale: show80 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(options, {
+          opacity: show90 ? 1 : 0,
+          y: show90 ? 0 : -50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(col1, {
+          opacity: show90 ? 1 : 0,
+          x: show90 ? 0 : -50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+
+        gsap.to(col2, {
+          opacity: show90 ? 1 : 0,
+          x: show90 ? 0 : 50,
+          scale: show90 ? 1 : 0.95,
+          duration: 0.3,
+        });
+      },
+    });
+
+    scrollTrigRef.current = scrollTrig;
+    isCreatingRef.current = false;
+    lastRecalcTimeRef.current = Date.now();
+
+  }, [activeTab]);
+
+  const scheduleRecalc = useCallback(() => {
+    if (!isIntersectingRef.current) {
+      pendingRecalcRef.current = true;
+      return;
+    }
+
+    const now = Date.now();
+    const timeSinceLastRecalc = now - lastRecalcTimeRef.current;
+    const MIN_RECALC_INTERVAL = 500;
+
+    if (timeSinceLastRecalc < MIN_RECALC_INTERVAL) {
+      if (!pendingRecalcRef.current) {
+        pendingRecalcRef.current = true;
+        setTimeout(() => {
+          pendingRecalcRef.current = false;
+          scheduleRecalc();
+        }, MIN_RECALC_INTERVAL - timeSinceLastRecalc);
       }
+      return;
+    }
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
 
-      if (activeTab !== 1 || activeVersion !== "50tons") return;
-      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-      const boxHeight = box.offsetHeight;
-      const boxBottomAbs = boxTopAbs + boxHeight;
-      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-      const distanceToMove = targetTopAbs - boxTopAbs;
-      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-      const scrollDistanceReductionFactor = 0.8;
-      const adjustedDistanceToMove = distanceToMove;
-      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-      const scrollTrig = ScrollTrigger.create({
-        id: "boxScroll",
-        trigger: box,
-        start: "top+=70 20%",
-        end: `+=${adjustedScrollDistance}`,
-        scrub: true,
-        markers: false,
-        animation: anim,
-        onUpdate: (self: any) => {
-          const p = self.progress;
-          let clipProgress = 0;
-          if (clipEndClamped > clipStartClamped) {
-            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-          }
-          clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-          gsap.set(img, {
-            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-          });
-
-          gsap.to(otro, {
-            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(options, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col1, {
-            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-            x: p >= 0.9 && p <= 1 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col2, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-        },
-      });
-
-      scrollTrigRef.current = scrollTrig;
-    };
-
-    const recreate = debounce(() => {
+    animationFrameRef.current = requestAnimationFrame(() => {
       createScrollTrigger();
       ScrollTrigger.refresh();
-    }, 120);
-    createScrollTrigger();
-
-    const mo = new MutationObserver((mutations) => {
-      recreate();
+      animationFrameRef.current = null;
+      pendingRecalcRef.current = false;
     });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
+  }, [createScrollTrigger]);
 
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
+  useEffect(() => {
+    createScrollTrigger();
+    ScrollTrigger.refresh();
+  }, []);
 
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const wasIntersecting = isIntersectingRef.current;
+          isIntersectingRef.current = entry.isIntersecting;
+
+          if (entry.isIntersecting && !wasIntersecting) {
+            console.log('viewport entró');
+            createScrollTrigger();
+
+            if (pendingRecalcRef.current) {
+              pendingRecalcRef.current = false;
+              scheduleRecalc();
+            }
+          } else if (!entry.isIntersecting && wasIntersecting) {
+            console.log('viewport salió ');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '200px',
+        threshold: 0,
+      }
+    );
+
+    observer.observe(container);
 
     return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
+      observer.disconnect();
+    };
+  }, [createScrollTrigger, scheduleRecalc]);
 
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
+  useEffect(() => {
+    if (!isIntersectingRef.current) {
+      createScrollTrigger();
+    }
+
+    const observerConfig: MutationObserverInit = {
+      attributes: true,
+      childList: true,
+      subtree: true,
+      attributeFilter: ['style', 'class'],
+    };
+
+    const handleMutation = (mutations: MutationRecord[]) => {
+      const relevantMutation = mutations.some((mutation) => {
+        if (
+          mutation.target === boxRef.current ||
+          mutation.target === imgRef.current ||
+          mutation.target === otroElemento.current ||
+          mutation.target === optionsRef.current ||
+          mutation.target === columnGrid1.current ||
+          mutation.target === columnGrid2.current
+        ) {
+          return false;
         }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
+
+        if (mutation.type === 'attributes') {
+          const attrName = mutation.attributeName;
+          return attrName === 'style' || attrName === 'class';
         }
-      } catch (e) {
+
+        return mutation.type === 'childList';
+      });
+
+      if (relevantMutation) {
+        console.log('modificación dom');
+        scheduleRecalc();
       }
     };
-  }, [activeTab, activeVersion]);
+
+    const observer = new MutationObserver(handleMutation);
+
+    if (containerRef.current) {
+      observer.observe(document.body, observerConfig);
+    }
+
+    mutationObserverRef.current = observer;
+
+    return () => {
+      observer.disconnect();
+      mutationObserverRef.current = null;
+    };
+  }, [scheduleRecalc]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+
+      resizeTimerRef.current = window.setTimeout(() => {
+        console.log('cambio de res');
+        scheduleRecalc();
+      }, 300);
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+    };
+  }, [scheduleRecalc]);
+
+
+  useEffect(() => {
+    if (activeTab === 1 && isIntersectingRef.current) {
+      scheduleRecalc();
+    } else if (activeTab !== 1) {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+        scrollTrigRef.current = null;
+      }
+    }
+  }, [activeTab, scheduleRecalc]);
+
+  useEffect(() => {
+    return () => {
+      if (scrollTrigRef.current) {
+        scrollTrigRef.current.kill();
+      }
+      if (mutationObserverRef.current) {
+        mutationObserverRef.current.disconnect();
+      }
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      if (resizeTimerRef.current) {
+        window.clearTimeout(resizeTimerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="h-[65vh] relative flex items-center justify-center bg-bgMain w-full">
+      <div className="h-[60vh] relative flex items-center justify-center bg-bgMain w-full">
         <div
           className="absolute bottom-0 w-full h-4/6 overflow-hidden"
           style={{
@@ -442,88 +598,122 @@ const HotMixPlanos = () => {
         <div className="w-full px-8 lg:px-8 mt-14">
           {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              PRODUCTION CAPACITY:
-            </h1>
-            <div className="flex flex-col lg:flex-row md:flex-row lg:justify-center md:justify-center items-center gap-8">
-              <div className="version-selector grid grid-cols-2 gap-3 lg:flex md:flex md:gap-8 md:justify-center mb-6">
-                <button
-                  onClick={() => setActiveVersion("50tons")}
-                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "50tons"
-                    ? "text-black bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                    }`}
+            {/* mobile primer select */}
+            <div className="flex flex-row justify-between items-center px-4 md:hidden w-full max-w-7xl mx-auto mb-6">
+              <label className="text-white block text-center">
+                PRODUCTION:
+              </label>
+
+              <div className="relative">
+                <select
+                  value={activeVersion}
+                  onChange={(e) => setActiveVersion(e.target.value as any)}
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+        appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
-                  50 tons
-                </button>
+                  {productionCapacityOptions
+                    .filter((opt) => opt.tab === activeTab)
+                    .map((option) => (
+                      <option key={option.id} value={option.id}>
+                        {option.label}
+                      </option>
+                    ))}
+                </select>
 
-                <button
-                  onClick={() => setActiveVersion("100tons")}
-                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "100tons"
-                    ? "text-black bg-white border-white"
-                    : "text-white bg-transparent border-white"
-                    }`}
-                >
-                  100 tons
-                </button>
-
-              </div>
-              {activeTab === 2 && (
-                <div className="grid grid-cols-2 gap-3 justify-center lg:flex md:flex md:gap-6 md:col-span-2 pb-5">
-                  <button
-                    onClick={() => setActiveVersion("150tons")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "150tons"
-                      ? "text-black bg-white border-white"
-                      : "text-white bg-transparent border-white"
-                      }`}
-                  >
-                    150 tons
-                  </button>
-
-                  <button
-                    onClick={() => setActiveVersion("200tons")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeVersion === "200tons"
-                      ? "text-black bg-white border-white"
-                      : "text-white bg-transparent border-white"
-                      }`}
-                  >
-                    200 tons
-                  </button>
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg className="w-4 h-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                 </div>
-              )}
+              </div>
+            </div>
+            {/* label de primer select y botones */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-5">
+              <label className="text-white block text-center">
+                PRODUCTION CAPACITY:
+              </label>
             </div>
 
-
-
-            <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-              OPTIONS:
-            </h1>
-            <div className="flex gap-10 justify-center">
-              {/* Botón 1 */}
-              <button
-                onClick={() => {
-                  setActiveVersion("50tons");
-                  setActiveTab(1);
-                }}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 1
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                Self-erecting
-              </button>
-
-              {/* Botón 2 */}
-              <button
-                onClick={() => setActiveTab(2)}
-                className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${activeTab === 2
-                  ? "text-gray-900 bg-white border-white"
-                  : "text-white bg-transparent border-white"
-                  }`}
-              >
-                Relocatable Silo
-              </button>
+            {/* botones */}
+            <div className="hidden md:flex flex-wrap justify-center gap-5 mb-6">
+              {productionCapacityOptions
+                .filter((opt) => opt.tab === activeTab)
+                .map((option) => (
+                  <button
+                    key={option.id}
+                    onClick={() => setActiveVersion(option.id)}
+                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300
+          ${activeVersion === option.id
+                        ? "text-black bg-white border-white"
+                        : "text-white bg-transparent border-white"
+                      }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
             </div>
+
+            {/* mobile segundo select */}
+            <div className="flex flex-row justify-between items-center px-4 md:hidden w-full max-w-7xl mx-auto mb-6">
+              <label className="text-white block text-center">
+                OPTIONS:
+              </label>
+
+              <div className="relative">
+                <select
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(Number(e.target.value))}
+                  className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+        appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  {siloOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+
+                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                  <svg className="w-4 h-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            {/* opciones desktop */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-5">
+              <label className="text-white block text-center">
+                OPTIONS:
+              </label>
+            </div>
+
+            <div className="hidden md:flex justify-center gap-5">
+              {siloOptions.map((option) => (
+                <button
+                  key={option.id}
+                  onClick={() => {
+                    setActiveTab(option.id);
+                    if (option.id === 1) setActiveVersion("50tons");
+                  }}
+                  className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300
+        ${activeTab === option.id
+                      ? "text-gray-900 bg-white border-white"
+                      : "text-white bg-transparent border-white"
+                    }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+
           </div>
 
           {/* Contenido de los tabs */}
