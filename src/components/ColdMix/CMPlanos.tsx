@@ -21,6 +21,7 @@ import A3TLW from "../../assets/images/ColdMix/Planos/3TLW.webp";
 import A3TWA from "../../assets/images/ColdMix/Planos/3TWA.webp";
 import A3TWW from "../../assets/images/ColdMix/Planos/3TWW.webp";
 import tolva3Main from "../../assets/images/ColdMix/Planos/CMain.webp";
+import { useClipPathScrollTrigger } from "../lib/useClipPathScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -316,169 +317,41 @@ const CMPlanos = () => {
     C4_3: false,
   });
 
-const scrollTrigRef = useRef<any>(null);
-const observerRef = useRef<MutationObserver | null>(null);
-const recreateTimerRef = useRef<number | null>(null);
+  const binUnitOptions = [
+    { id: 2, label: "2 UNITS" },
+    { id: 3, label: "3 UNITS" },
+  ];
 
-const debounce = (fn: () => void, wait = 120) => {
-  return () => {
-    if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-    recreateTimerRef.current = window.setTimeout(() => {
-      recreateTimerRef.current = null;
-      fn();
-    }, wait);
-  };
-};
+  const dischargeOptions = [
+    { id: "groundLevel", label: "At ground level" },
+    { id: "truckLevel", label: "At Truck level" },
+  ];
 
-useEffect(() => {
-  const box = boxRef.current;
-  const target = nextSectionRef.current; // target original
-  const clipTarget = clipTargetRef.current; // target del clipath
-  const img = imgRef.current;
-  const otro = otroElemento.current;
-  const options = optionsRef.current;
-  const col1 = columnGrid1.current;
-  const col2 = columnGrid2.current;
+  const mountedOptions = [
+    { id: "legs", label: "Legs" },
+    { id: "wheels", label: "Wheels" },
+  ];
 
-  if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
-    return;
-  }
+  const exteriorOptions = [
+    { id: "withPanels", label: "Aesthetic Side Panels" },
+    { id: "withoutPanels", label: "Without Aesthetic Side Panels" },
+  ];
 
-  const createScrollTrigger = () => {
-    try {
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill?.();
-        scrollTrigRef.current = null;
-      }
-      const existing = ScrollTrigger.getById?.("boxScroll");
-      existing?.kill?.();
-    } catch (e) {
-    }
 
-    if (activeTab !== 3) return;
+  useClipPathScrollTrigger({
+    enabled: activeTab === 3,
 
-    const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-    const boxHeight = box.offsetHeight;
-    const boxBottomAbs = boxTopAbs + boxHeight;
-    const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-    const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-
-    const distanceToMove = targetTopAbs - boxTopAbs;
-
-    const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-    const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-    const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-    const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-
-    const scrollDistanceReductionFactor = 0.8;
-    const adjustedDistanceToMove = distanceToMove;
-    const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-
-    const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-    const scrollTrig = ScrollTrigger.create({
-      id: "boxScroll",
-      trigger: box,
-      start: "top+=70 20%",
-      end: `+=${adjustedScrollDistance}`,
-      scrub: true,
-      markers: false,
-      animation: anim,
-      onUpdate: (self: any) => {
-        const p = self.progress;
-
-        let clipProgress = 0;
-        if (clipEndClamped > clipStartClamped) {
-          clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-        }
-        clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-        gsap.set(img, {
-          clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-        });
-
-        gsap.to(otro, {
-          opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-          y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-          scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
-
-        gsap.to(options, {
-          opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-          y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-          scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
-
-        gsap.to(col1, {
-          opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-          x: p >= 0.9 && p <= 1 ? 0 : -50,
-          scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
-
-        gsap.to(col2, {
-          opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-          x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-          scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-          ease: "none",
-          duration: 0.8,
-        });
-      },
-    });
-
-    scrollTrigRef.current = scrollTrig;
-  }; 
-
-  const recreate = debounce(() => {
-    createScrollTrigger();
-    ScrollTrigger.refresh();
-  }, 120);
-
-  createScrollTrigger();
-
-  const mo = new MutationObserver((mutations) => {
-    recreate();
+    boxRef,
+    nextSectionRef,
+    clipTargetRef,
+    imgRef,
+    otroElementoRef: otroElemento,
+    optionsRef,
+    columnGrid1Ref: columnGrid1,
+    columnGrid2Ref: columnGrid2,
+    containerRef,
   });
-  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-  observerRef.current = mo;
 
-  // También renovamos en resize/orientationchange
-  const onResize = debounce(() => {
-    recreate();
-  }, 120);
-
-  window.addEventListener("resize", onResize);
-  window.addEventListener("orientationchange", onResize);
-
-  return () => {
-    try {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-        observerRef.current = null;
-      }
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("orientationchange", onResize);
-
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill?.();
-        scrollTrigRef.current = null;
-      }
-      // kill by id just in case
-      const existing = ScrollTrigger.getById?.("boxScroll");
-      existing?.kill?.();
-      if (recreateTimerRef.current) {
-        window.clearTimeout(recreateTimerRef.current);
-        recreateTimerRef.current = null;
-      }
-    } catch (e) {
-    }
-  };
-}, [activeTab]);
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <div className="h-[80vh] relative flex items-center justify-center bg-bgMain w-full">
@@ -538,9 +411,8 @@ useEffect(() => {
             >
               {/* Fondo deslizante */}
               <div
-                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${
-                  unit === "metric" ? "translate-x-full" : ""
-                }`}
+                className={`absolute top-0 left-0 h-full w-1/2 bg-white rounded-full transition-transform duration-300 ${unit === "metric" ? "translate-x-full" : ""
+                  }`}
               ></div>
 
               {/* Texto sobrepuesto */}
@@ -562,122 +434,225 @@ useEffect(() => {
         <div className="w-full px-8 lg:px-8 mt-14">
           {/* Contenedor de los botones */}
           <div id="options" ref={optionsRef} className="w-full">
-            <div className="w-full grid grid-cols-2 md:grid-cols-4 justify-between">
+            {/* MOBILE */}
+            <div className="md:hidden flex flex-col gap-6 px-4 w-full max-w-7xl mx-auto">
+
+              {/* BIN UNITS */}
+              <div className="flex justify-between items-center">
+                <label className="text-white">BIN UNITS:</label>
+                <div className="relative">
+                  <select
+                    value={activeTab}
+                    onChange={(e) => setActiveTab(Number(e.target.value))}
+                    className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    {binUnitOptions.map((opt) => (
+                      <option key={opt.id} value={opt.id}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* DISCHARGE */}
+              <div className="flex justify-between items-center">
+                <label className="text-white">DISCHARGE:</label>
+                <div className="relative">
+                  <select
+                    value={dischargeVersion}
+                    onChange={(e) => setDischargeVersion(e.target.value as any)}
+                    className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    {dischargeOptions.map((opt) => (
+                      <option key={opt.id} value={opt.id}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* MOUNTED ON */}
+              <div className="flex justify-between items-center">
+                <label className="text-white">MOUNTED ON:</label>
+                <div className="relative">
+                  <select
+                    value={mountedVersion}
+                    onChange={(e) => setMountedVersion(e.target.value as any)}
+                    className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    {mountedOptions.map((opt) => (
+                      <option key={opt.id} value={opt.id}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* EXTERIOR */}
+              <div className="flex justify-between items-center">
+                <label className="text-white">EXTERIOR:</label>
+                <div className="relative">
+                  <select
+                    value={activeVersion}
+                    onChange={(e) => setActiveVersion(e.target.value as any)}
+                    className="w-full px-5 py-3 pr-12 rounded-full bg-white text-gray-900 text-sm font-medium
+                 appearance-none focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    {exteriorOptions.map((opt) => (
+                      <option key={opt.id} value={opt.id}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            {/* DESKTOP */}
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
+
+              {/* BIN UNITS */}
               <div>
-                <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-                  BIN UNITS
-                </h1>
-                <div className="grid grid-cols-2 gap-3 justify-center w-full items-center justify-items-center">
-                  {/* Botón 2 */}
-                  <button
-                    onClick={() => setActiveTab(2)}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${
-                      activeTab === 2
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    2 UNITS
-                  </button>
-                  {/* Botón 3 */}
-                  <button
-                    onClick={() => setActiveTab(3)}
-                    className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
-                      activeTab === 3
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    3 UNITS
-                  </button>
+                <h1 className="text-white text-center mb-10">BIN UNITS</h1>
+                <div className="grid grid-cols-2 gap-3 justify-items-center">
+                  {binUnitOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => setActiveTab(opt.id)}
+                      className={`px-4 py-2 text-sm font-medium border rounded-full max-w-[100px]
+            ${activeTab === opt.id
+                          ? "text-gray-900 bg-white border-white"
+                          : "text-white bg-transparent border-white"
+                        }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
+
+              {/* DISCHARGE */}
               <div>
-                <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-                  DISCHARGE
-                </h1>
-                <div className="flex flex-col gap-3 justify-center w-full items-center justify-items-center">
-                  {/* Botón 2 */}
-                  <button
-                    onClick={() => setDischargeVersion("groundLevel")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 w-2/3 ${
-                      dischargeVersion === "groundLevel"
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    At ground level
-                  </button>
-                  {/* Botón 3 */}
-                  <button
-                    onClick={() => setDischargeVersion("truckLevel")}
-                    className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full w-2/3 ${
-                      dischargeVersion === "truckLevel"
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    At Truck level
-                  </button>
+                <h1 className="text-white text-center mb-10">DISCHARGE</h1>
+                <div className="flex flex-col gap-3 items-center">
+                  {dischargeOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => setDischargeVersion(opt.id)}
+                      className={`px-4 py-2 text-sm font-medium border rounded-full w-2/3
+            ${dischargeVersion === opt.id
+                          ? "text-gray-900 bg-white border-white"
+                          : "text-white bg-transparent border-white"
+                        }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
-              <div className="pt-5">
-                <h1 className="text-white lg:text-xl text-lg text-center mb-10">
-                  MOUNTED ON
-                </h1>
-                <div className="grid grid-cols-2 gap-3 justify-center w-full items-center justify-items-center">
-                  {/* Botón 2 */}
-                  <button
-                    onClick={() => setMountedVersion("legs")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 max-w-[100px] ${
-                      mountedVersion === "legs"
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    Legs
-                  </button>
-                  {/* Botón 3 */}
-                  <button
-                    onClick={() => setMountedVersion("wheels")}
-                    className={`px-4 py-2 text-sm font-medium border transition-all duration-300 rounded-full max-w-[100px] ${
-                      mountedVersion === "wheels"
-                        ? "text-gray-900 bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    Wheels
-                  </button>
+
+              {/* MOUNTED ON */}
+              <div>
+                <h1 className="text-white text-center mb-10">MOUNTED ON</h1>
+                <div className="grid grid-cols-2 gap-3 justify-items-center">
+                  {mountedOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => setMountedVersion(opt.id)}
+                      className={`px-4 py-2 text-sm font-medium border rounded-full max-w-[100px]
+            ${mountedVersion === opt.id
+                          ? "text-gray-900 bg-white border-white"
+                          : "text-white bg-transparent border-white"
+                        }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center w-full pt-5">
-                <h1 className="text-white lg:text-xl text-lg text-center mb-5">
-                  EXTERIOR:
-                </h1>
-                <div className="version-selector flex flex-col gap-6 justify-center w-3/4 lg:w-2/3">
-                  <button
-                    onClick={() => setActiveVersion("withPanels")}
-                    className={`px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                      activeVersion === "withPanels"
-                        ? "text-black bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    Aesthetic Side Panels
-                  </button>
-                  <button
-                    onClick={() => setActiveVersion("withoutPanels")}
-                    className={` px-4 py-2 text-sm font-medium border rounded-full transition-all duration-300 ${
-                      activeVersion === "withoutPanels"
-                        ? "text-black bg-white border-white"
-                        : "text-white bg-transparent border-white"
-                    }`}
-                  >
-                    Without Aesthetic Side Panels
-                  </button>
+
+              {/* EXTERIOR */}
+              <div className="flex flex-col items-center">
+                <h1 className="text-white text-center mb-5">EXTERIOR</h1>
+                <div className="flex flex-col gap-6 w-3/4">
+                  {exteriorOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => setActiveVersion(opt.id)}
+                      className={`px-4 py-2 text-sm font-medium border rounded-full
+            ${activeVersion === opt.id
+                          ? "text-black bg-white border-white"
+                          : "text-white bg-transparent border-white"
+                        }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Contenido de los tabs */}
@@ -715,9 +690,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -730,11 +704,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
                         <li>Rubber-coated head pulley for reliable grip</li>
@@ -774,9 +747,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -789,11 +761,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -838,9 +809,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -853,11 +823,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Twin-shaft horizontal pugmill</li>
                         <li>High-resistance steel liners</li>
@@ -895,9 +864,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -910,11 +878,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -961,9 +928,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -976,11 +942,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -1017,9 +982,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1032,11 +996,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="ml-6">Designed for relocation</li>
 
@@ -1118,9 +1081,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1133,11 +1095,10 @@ useEffect(() => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                        openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>Bitumen/emulsion pump with frequency inverter</li>
                       <li>Flowmeter for precision dosing</li>
@@ -1167,9 +1128,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1182,11 +1142,10 @@ useEffect(() => {
                       </button>
                     </div>
                     <ul
-                      className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
                       <li>OSHA</li>
@@ -1222,12 +1181,11 @@ useEffect(() => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1294,12 +1252,11 @@ useEffect(() => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -1351,12 +1308,11 @@ useEffect(() => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -1413,9 +1369,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1428,46 +1383,42 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1494,9 +1445,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1509,22 +1459,20 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 text-sm lg:text-base ml-2 lg:ml-6 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -1539,42 +1487,39 @@ useEffect(() => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.totalHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.totalHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.totalHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.totalHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Discharge height (from ground):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.dischargeHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.dischargeHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.dischargeHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.dischargeHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1601,9 +1546,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_3 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_3 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -1616,36 +1560,33 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`w-full justify-center text-sm lg:text-base ml-2 lg:ml-6 items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 `}
+                      className={`w-full justify-center text-sm lg:text-base ml-2 lg:ml-6 items-center transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 `}
                     >
                       <div className="flex justify-between">
                         <h1>Feeding belt width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.feeding?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.feeding?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.feeding ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.feeding ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Collector belt width: </h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.collector?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.collector?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.collector ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.collector ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -1686,9 +1627,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1701,11 +1641,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>18" variable-speed dosing belt</li>
                         <li>Rubber-coated head pulley for reliable grip</li>
@@ -1745,9 +1684,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1760,11 +1698,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           High-strength, reinforced structure for long-term
@@ -1809,9 +1746,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C1_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C1_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1824,11 +1760,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C1_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C1_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Twin-shaft horizontal pugmill</li>
                         <li>High-resistance steel liners</li>
@@ -1868,9 +1803,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_1 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_1 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1883,11 +1817,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_1
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_1
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>Fully automatic or manual operation</li>
                         <li>
@@ -1934,9 +1867,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_2 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_2 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -1949,11 +1881,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                          openSections.C2_2
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C2_2
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li>
                           Industrial-grade motors, components, and Siemens
@@ -1990,9 +1921,8 @@ useEffect(() => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#000000"
-                            className={`transition-transform duration-300 transform ${
-                              openSections.C2_3 ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 transform ${openSections.C2_3 ? "rotate-180" : ""
+                              }`}
                           >
                             <path
                               d="M6 9L12 15L18 9"
@@ -2005,11 +1935,10 @@ useEffect(() => {
                         </button>
                       </div>
                       <ul
-                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${
-                          openSections.C2_3
-                            ? "max-h-96 opacity-1 mb-4"
-                            : "max-h-0 opacity-0"
-                        } md:max-h-full md:opacity-100 md:block`}
+                        className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc ${openSections.C2_3
+                          ? "max-h-96 opacity-1 mb-4"
+                          : "max-h-0 opacity-0"
+                          } md:max-h-full md:opacity-100 md:block`}
                       >
                         <li className="ml-6">Designed for relocation</li>
 
@@ -2091,9 +2020,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2106,11 +2034,10 @@ useEffect(() => {
                       </button>
                     </div>
                     <ul
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${
-                        openSections.C3_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden text-sm lg:text-base ml-2 lg:ml-6 list-disc list-inside ${openSections.C3_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>Bitumen/emulsion pump with frequency inverter</li>
                       <li>Flowmeter for precision dosing</li>
@@ -2140,9 +2067,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C3_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C3_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2155,11 +2081,10 @@ useEffect(() => {
                       </button>
                     </div>
                     <ul
-                      className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C3_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`list-disc text-sm lg:text-base ml-2 lg:ml-6 transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C3_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <li>EPA</li>
                       <li>OSHA</li>
@@ -2195,12 +2120,11 @@ useEffect(() => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.width?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.width ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.width ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2267,12 +2191,11 @@ useEffect(() => {
                     <div className="my-3">
                       <p className="text-white text-lg">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.height?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.height ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.height ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                     </div>
                     <div className="border-dotted border-b border-b-white w-full h-full flex items-center justify-center">
@@ -2324,12 +2247,11 @@ useEffect(() => {
                       </div>
                       <p className="text-white lg:text-lg text-base w-full text-center mx-4">
                         {unit === "metric"
-                          ? `${
-                              activeData?.dimensions.length?.toFixed(1) ?? ""
-                            } cm`
+                          ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                          } cm`
                           : `${(
-                              (activeData?.dimensions.length ?? 0) * cmToFeet
-                            ).toFixed(1)} ft`}
+                            (activeData?.dimensions.length ?? 0) * cmToFeet
+                          ).toFixed(1)} ft`}
                       </p>
                       <div className="border-dotted border-r border-r-white h-full w-full flex items-center justify-center">
                         <div className="bg-white h-[1px] w-full relative">
@@ -2386,9 +2308,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_1 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_1 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2401,46 +2322,42 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_1
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_1
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Length:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.width?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.width?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.width ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.width ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.height?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.height?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.height ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.height ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2467,9 +2384,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_2 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_2 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2482,22 +2398,20 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_2
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 md:block`}
+                      className={`transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_2
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 md:block`}
                     >
                       <div className="flex justify-between">
                         <h1>Total length (including hitch):</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.length?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.length?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.length ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.length ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
@@ -2512,42 +2426,39 @@ useEffect(() => {
                         <h1>Fifth-wheel hitch height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.wheel?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.wheel?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.wheel ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.wheel ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Total height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.totalHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.totalHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.totalHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.totalHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Discharge height:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.dischargeHeight?.toFixed(
-                                  1
-                                ) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.dischargeHeight?.toFixed(
+                              1
+                            ) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.dischargeHeight ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.dischargeHeight ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>
@@ -2574,9 +2485,8 @@ useEffect(() => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           color="#000000"
-                          className={`transition-transform duration-300 transform ${
-                            openSections.C4_3 ? "rotate-180" : ""
-                          }`}
+                          className={`transition-transform duration-300 transform ${openSections.C4_3 ? "rotate-180" : ""
+                            }`}
                         >
                           <path
                             d="M6 9L12 15L18 9"
@@ -2589,36 +2499,33 @@ useEffect(() => {
                       </button>
                     </div>
                     <div
-                      className={`flex flex-col w-full justify-around items-start transition-all duration-500 md:mb-0 overflow-hidden list-inside ${
-                        openSections.C4_3
-                          ? "max-h-96 opacity-1 mb-4"
-                          : "max-h-0 opacity-0"
-                      } md:max-h-full md:opacity-100 `}
+                      className={`flex flex-col w-full justify-around items-start transition-all duration-500 md:mb-0 overflow-hidden list-inside ${openSections.C4_3
+                        ? "max-h-96 opacity-1 mb-4"
+                        : "max-h-0 opacity-0"
+                        } md:max-h-full md:opacity-100 `}
                     >
                       <div className="flex justify-between">
                         <h1>Feeding belt width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.feeding?.toFixed(1) ?? ""
-                              } cm`
+                            ? `${activeData?.dimensions.feeding?.toFixed(1) ?? ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.feeding ?? 0) * cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.feeding ?? 0) * cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                       <div className="flex justify-between">
                         <h1>Collector belt width:</h1>
                         <p>
                           {unit === "metric"
-                            ? `${
-                                activeData?.dimensions.collector?.toFixed(1) ??
-                                ""
-                              } cm`
+                            ? `${activeData?.dimensions.collector?.toFixed(1) ??
+                            ""
+                            } cm`
                             : `${(
-                                (activeData?.dimensions.collector ?? 0) *
-                                cmToFeet
-                              ).toFixed(1)} ft`}
+                              (activeData?.dimensions.collector ?? 0) *
+                              cmToFeet
+                            ).toFixed(1)} ft`}
                         </p>
                       </div>
                     </div>

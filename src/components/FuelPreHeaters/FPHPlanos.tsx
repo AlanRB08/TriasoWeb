@@ -5,6 +5,7 @@ import PreIMG from "../../assets/images/FuelPreHeaters/planos/PreCVABp.webp"
 import PreBP1 from "../../assets/images/FuelPreHeaters/planos/PreBP1.webp"
 import PreBP2 from "../../assets/images/FuelPreHeaters/planos/PreBP2.webp"
 import PreBP3 from "../../assets/images/FuelPreHeaters/planos/PreBP3.webp"
+import { useClipPathScrollTrigger } from "../../components/lib/useClipPathScrollTrigger.tsx"
 
 const toggleConfig = [
   {
@@ -58,147 +59,19 @@ const FPHPlanos = () => {
     setUnit(newUnit);
   };
 
-  const scrollTrigRef = useRef<any>(null);
-  const resizeTimerRef = useRef<number | null>(null);
-  const isCreatingRef = useRef(false);
+  useClipPathScrollTrigger({
+    enabled: activeTab === 3,
 
-  useEffect(() => {
-    const box = boxRef.current;
-    const target = nextSectionRef.current;
-    const clipTarget = clipTargetRef.current;
-    const img = imgRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
-
-    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
-      return;
-    }
-
-    
-
-    const createScrollTrigger = () => {
-      // Prevenir recreaciones simultáneas
-      if (isCreatingRef.current) return;
-      isCreatingRef.current = true;
-
-      // Limpiar instancia anterior
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill();
-        scrollTrigRef.current = null;
-      }
-
-      if (activeTab !== 3) {
-        isCreatingRef.current = false;
-        return;
-      }
-
-      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-      const boxHeight = box.offsetHeight;
-      const boxBottomAbs = boxTopAbs + boxHeight;
-      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-      const distanceToMove = targetTopAbs - boxTopAbs;
-      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-      const scrollDistanceReductionFactor = 0.8;
-      const adjustedDistanceToMove = distanceToMove;
-      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-      const scrollTrig = ScrollTrigger.create({
-        id: "boxScroll",
-        trigger: box,
-        start: "top+=70 20%",
-        end: `+=${adjustedScrollDistance}`,
-        scrub: true,
-        markers: false,
-        invalidateOnRefresh: true,
-        animation: anim,
-        
-        onUpdate: (self: any) => {
-          const p = self.progress;
-          let clipProgress = 0;
-          if (clipEndClamped > clipStartClamped) {
-            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-          }
-          clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-          gsap.set(img, {
-            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-          });
-
-          // Calcular estados
-          const show80 = p >= 0.8 && p <= 1.0;
-          const show90 = p >= 0.9 && p <= 1.0;
-
-          // Usar gsap.set en lugar de gsap.to
-          gsap.to(otro, {
-            opacity: show80 ? 1 : 0,
-            y: show80 ? 0 : -50,
-            scale: show80 ? 1 : 0.95,
-          });
-
-          gsap.to(options, {
-            opacity: show90 ? 1 : 0,
-            y: show90 ? 0 : -50,
-            scale: show90 ? 1 : 0.95,
-          });
-
-          gsap.to(col1, {
-            opacity: show90 ? 1 : 0,
-            x: show90 ? 0 : -50,
-            scale: show90 ? 1 : 0.95,
-          });
-
-          gsap.to(col2, {
-            opacity: show90 ? 1 : 0,
-            x: show90 ? 0 : 50,
-            scale: show90 ? 1 : 0.95,
-          });
-        },
-      });
-
-      scrollTrigRef.current = scrollTrig;
-      isCreatingRef.current = false;
-    };
-
-    createScrollTrigger();
-
-    const handleResize = () => {
-      if (resizeTimerRef.current) {
-        window.clearTimeout(resizeTimerRef.current);
-      }
-
-      resizeTimerRef.current = window.setTimeout(() => {
-        // Recrear el ScrollTrigger para recalcular todas las posiciones
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill();
-          scrollTrigRef.current = null;
-        }
-        createScrollTrigger();
-        ScrollTrigger.refresh();
-      }, 300);
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-
-    return () => {
-      if (resizeTimerRef.current) {
-        window.clearTimeout(resizeTimerRef.current);
-      }
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
-
-      if (scrollTrigRef.current) {
-        scrollTrigRef.current.kill();
-      }
-    };
-  }, [activeTab]);
+    boxRef,
+    nextSectionRef,
+    clipTargetRef,
+    imgRef,
+    otroElementoRef: otroElemento,
+    optionsRef,
+    columnGrid1Ref: columnGrid1,
+    columnGrid2Ref: columnGrid2,
+    containerRef,
+  });
 
   return (
     <div className="w-full flex flex-col items-center justify-center">

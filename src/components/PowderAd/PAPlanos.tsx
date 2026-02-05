@@ -6,6 +6,7 @@ import imgSuperior from "../../assets/images/PowderA/planos/VSuperior.webp";
 import imgPlano1 from "../../assets/images/PowderA/planos/BluePrint VS.webp";
 import imgPlano2 from "../../assets/images/PowderA/planos/BluePrintVL.webp";
 import imgPlano3 from "../../assets/images/PowderA/planos/BluePrintVT.webp";
+import { useClipPathScrollTrigger } from "../lib/useClipPathScrollTrigger";
 
 const cabinSize = [
   {
@@ -73,160 +74,20 @@ const PAPlanos = () => {
     setUnit(newUnit);
   };
 
-  const scrollTrigRef = useRef<any>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
-  const recreateTimerRef = useRef<number | null>(null);
-
-  const debounce = (fn: () => void, wait = 120) => {
-    return () => {
-      if (recreateTimerRef.current) window.clearTimeout(recreateTimerRef.current);
-      recreateTimerRef.current = window.setTimeout(() => {
-        recreateTimerRef.current = null;
-        fn();
-      }, wait);
-    };
-  };
-
-  useEffect(() => {
-    const box = boxRef.current;
-    const target = nextSectionRef.current;
-    const clipTarget = clipTargetRef.current;
-    const img = imgRef.current;
-    const otro = otroElemento.current;
-    const options = optionsRef.current;
-    const col1 = columnGrid1.current;
-    const col2 = columnGrid2.current;
-
-    if (!box || !target || !clipTarget || !img || !otro || !options || !col1 || !col2) {
-      return;
-    }
-
-    const createScrollTrigger = () => {
-      try {
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-      } catch (e) {
-      }
-
-      if (activeTab !== 3) return;
-      const boxTopAbs = box.getBoundingClientRect().top + window.scrollY;
-      const boxHeight = box.offsetHeight;
-      const boxBottomAbs = boxTopAbs + boxHeight;
-      const targetTopAbs = target.getBoundingClientRect().top + window.scrollY;
-      const clipTargetTopAbs = clipTarget.getBoundingClientRect().top + window.scrollY;
-      const distanceToMove = targetTopAbs - boxTopAbs;
-      const clipStart = (clipTargetTopAbs - boxBottomAbs) / distanceToMove;
-      const clipEnd = (clipTargetTopAbs - boxTopAbs) / distanceToMove;
-      const clipStartClamped = Math.max(0, Math.min(clipStart, 1));
-      const clipEndClamped = Math.max(0, Math.min(clipEnd, 1));
-      const scrollDistanceReductionFactor = 0.8;
-      const adjustedDistanceToMove = distanceToMove;
-      const adjustedScrollDistance = distanceToMove * scrollDistanceReductionFactor;
-      const anim = gsap.to(box, { y: adjustedDistanceToMove, ease: "none" });
-
-      const scrollTrig = ScrollTrigger.create({
-        id: "boxScroll",
-        trigger: box,
-        start: "top+=70 20%",
-        end: `+=${adjustedScrollDistance}`,
-        scrub: true,
-        markers: false,
-        animation: anim,
-        onUpdate: (self: any) => {
-          const p = self.progress;
-          let clipProgress = 0;
-          if (clipEndClamped > clipStartClamped) {
-            clipProgress = (p - clipStartClamped) / (clipEndClamped - clipStartClamped);
-          }
-          clipProgress = Math.max(0, Math.min(clipProgress, 1));
-
-          gsap.set(img, {
-            clipPath: `inset(0% 0% ${clipProgress * 100}% 0%)`,
-          });
-
-          gsap.to(otro, {
-            opacity: p >= 0.8 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.8 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.8 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(options, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            y: p >= 0.9 && p <= 1.0 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col1, {
-            opacity: p >= 0.9 && p <= 1 ? 1 : 0,
-            x: p >= 0.9 && p <= 1 ? 0 : -50,
-            scale: p >= 0.9 && p <= 1 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-
-          gsap.to(col2, {
-            opacity: p >= 0.9 && p <= 1.0 ? 1 : 0,
-            x: p >= 0.9 && p <= 1.0 ? 0 : 50,
-            scale: p >= 0.9 && p <= 1.0 ? 1 : 0.95,
-            ease: "none",
-            duration: 0.8,
-          });
-        },
-      });
-
-      scrollTrigRef.current = scrollTrig;
-    };
-
-    const recreate = debounce(() => {
-      createScrollTrigger();
-      ScrollTrigger.refresh();
-    }, 120);
-    createScrollTrigger();
-
-    const mo = new MutationObserver((mutations) => {
-      recreate();
-    });
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class"] });
-    observerRef.current = mo;
-
-    const onResize = debounce(() => {
-      recreate();
-    }, 120);
-
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
-
-    return () => {
-      try {
-        if (observerRef.current) {
-          observerRef.current.disconnect();
-          observerRef.current = null;
-        }
-        window.removeEventListener("resize", onResize);
-        window.removeEventListener("orientationchange", onResize);
-
-        if (scrollTrigRef.current) {
-          scrollTrigRef.current.kill?.();
-          scrollTrigRef.current = null;
-        }
-        const existing = ScrollTrigger.getById?.("boxScroll");
-        existing?.kill?.();
-        if (recreateTimerRef.current) {
-          window.clearTimeout(recreateTimerRef.current);
-          recreateTimerRef.current = null;
-        }
-      } catch (e) {
-      }
-    };
-  }, [activeTab]);
+   useClipPathScrollTrigger({
+     enabled: activeTab === 3,
+ 
+     boxRef,
+     nextSectionRef,
+     clipTargetRef,
+     imgRef,
+     otroElementoRef: otroElemento,
+     optionsRef,
+     columnGrid1Ref: columnGrid1,
+     columnGrid2Ref: columnGrid2,
+     containerRef,
+   });
+ 
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
