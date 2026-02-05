@@ -152,6 +152,7 @@ import { Image } from "astro:assets";
 >
   <div>
     <video
+    class="hero-video"
       playsinline
       controls
       poster="/Gallery/customdes.webp"
@@ -169,3 +170,14 @@ import { Image } from "astro:assets";
   </div><br />
   <LearnBtn href="/BagHouses" />
 </div>
+
+  <script is:inline>
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+    if (isDesktop) {
+      document.querySelectorAll(".hero-video").forEach((video) => {
+        video.setAttribute("autoplay", "");
+        video.play().catch(() => {});
+      });
+    }
+  </script>

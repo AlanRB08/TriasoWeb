@@ -82,6 +82,7 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
     class="w-full max-w-7xl mx-auto flex flex-col justify-center items-center"
   >
     <video
+      class="hero-video"
       playsinline
       controls
       poster="/Gallery/customdes.webp"
@@ -147,3 +148,14 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
     </div>
   </TwoColumnSection>
 </div>
+
+  <script is:inline>
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+    if (isDesktop) {
+      document.querySelectorAll(".hero-video").forEach((video) => {
+        video.setAttribute("autoplay", "");
+        video.play().catch(() => {});
+      });
+    }
+  </script>

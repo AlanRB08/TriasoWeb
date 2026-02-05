@@ -87,7 +87,7 @@ export default function HeroSlider({
                 </div>
             </div>
 
-            <div className="flex flex-row justify-self-center items-baseline gap-5">
+            <div className="flex flex-row justify-center items-baseline gap-5">
                 <button
                     onClick={prev}
                     className="  w-8 h-8 rounded-full  bg-black/60 lg:bg-white/60 text-white flex items-center justify-center hover:bg-black transition "

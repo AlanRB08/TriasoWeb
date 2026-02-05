@@ -23,12 +23,11 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
     <div class="flex flex-col items-center justify-center px-8 w-full">
       <video
         class="w-full lg:w-1/2 md:w-1/2"
+        autoplay
         playsinline
         controls
         poster="/Gallery/customdes.webp"
         preload="metadata"
-        width="1280"
-        height="720"
       >
         <source src="/Videos/Webm/burnerVideo.webp" type="video/webm" />
         <source src="/Videos/Mp4/burnerVideo.mp4" type="video/mp4" />
@@ -40,8 +39,10 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
 
     <div class="relative w-full min-h-[600px]">
       <video
-        class="absolute inset-0 w-full h-full object-cover z-0"
+        class=" absolute inset-0 w-full h-full object-cover z-0"
+        autoplay
         playsinline
+        muted
         controls
         poster="/Gallery/customdes.webp"
         preload="metadata"
@@ -245,3 +246,4 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
     </div>
   </section>
 </div>
+
