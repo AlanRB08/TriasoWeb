@@ -134,17 +134,16 @@ const images2 = [
         Asphalt plants for the smallest jobs to large projects
       </h1>
 
-      <div class="relative overflow-hidden bg-black transform-gpu">
+      <div class="relative overflow-hidden transform-gpu">
         <video
-          class="hero-video block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black"
+          class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
+          muted
           playsinline
           controls
           poster="/Gallery/customdes.webp"
           preload="metadata"
-          width="1280"
-          height="720"
         >
-          <source src="/Videos/Webm/landingVideo.webp" type="video/webm" />
+          <source src="/Videos/Webm/landingVideo.webm" type="video/webm" />
           <source src="/Videos/Mp4/landingVideo.mp4" type="video/mp4" />
         </video>
       </div>
@@ -232,21 +231,23 @@ const images2 = [
     </div>
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
       <video
-        class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black hero-video"
+        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
         playsinline
         controls
+        muted
         poster="/Gallery/customdes.webp"
         preload="metadata"
         width="1280"
         height="720"
       >
-        <source src="/Videos/Webm/asphaltVideo1.webp" type="video/webm" />
+        <source src="/Videos/Webm/asphaltVideo1.webm" type="video/webm" />
         <source src="/Videos/Mp4/asphaltVideo1.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
       <video
-        class="block w-full h-auto object-cover transform-gpu will-change-transform [backface-visibility:hidden] bg-black hero-video"
+        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform bg-black"
+        muted
         playsinline
         controls
         poster="/Gallery/customdes.webp"
@@ -254,7 +255,7 @@ const images2 = [
         width="1280"
         height="720"
       >
-        <source src="/Videos/Webm/asphaltVideo2.webp" type="video/webm" />
+        <source src="/Videos/Webm/asphaltVideo2.webm" type="video/webm" />
         <source src="/Videos/Mp4/asphaltVideo2.mp4" type="video/mp4" />
       </video>
     </div>
@@ -265,17 +266,17 @@ const images2 = [
       <h2 class="text-lg font-semibold text-center lg:text-2xl md:text-3xl">
         Retractable Drag Slat for Efficient Transport and Operation
       </h2>
-      <div class="">
+      <div class="w-full">
         <div class="w-full flex justify-center">
           <video
             autoplay
-            class="w-full md:w-3/5"
+            muted
             playsinline
             controls
             poster="/Gallery/customdes.webp"
             preload="metadata"
           >
-            <source src="/Videos/Webm/DMVideo1.webp" type="video/webm" />
+            <source src="/Videos/Webm/DMVideo1.webm" type="video/webm" />
             <source src="/Videos/Mp4/DMVideo1.mp4" type="video/mp4" />
           </video>
         </div>
@@ -421,13 +422,14 @@ const images2 = [
         <video
           autoplay
           playsinline
+          muted
           controls
           poster="/Gallery/customdes.webp"
           preload="metadata"
           width="1280"
           height="720"
         >
-          <source src="/Videos/Webm/PGMC.webp" type="video/webm" />
+          <source src="/Videos/Webm/PGMC.webm" type="video/webm" />
           <source src="/Videos/Mp4/PGMC.mp4" type="video/mp4" />
         </video>
       </div>
@@ -577,14 +579,34 @@ const images2 = [
     </div>
   </div>
 </html>
+<script is:inline>
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const videos = document.querySelectorAll(".smart-video");
 
-  <script is:inline>
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
 
-    if (isDesktop) {
-      document.querySelectorAll(".hero-video").forEach((video) => {
-        video.setAttribute("autoplay", "");
-        video.play().catch(() => {});
-      });
-    }
-  </script>
+          if (entry.isIntersecting) {
+            if (!video.src) {
+              video.src = video.dataset.src;
+              console.log("Video entró a viewport")
+            }
+            if (!isMobile) {
+              video.play().catch(() => {});
+              console.log("Video en móvil")
+            }
+          } else {
+            video.pause();
+            console.log("Video salió del viewport")
+          }
+        });
+      },
+      {
+        threshold: 0.6, 
+      },
+    );
+
+    videos.forEach((video) => observer.observe(video));
+</script>

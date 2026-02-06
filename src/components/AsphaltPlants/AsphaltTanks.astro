@@ -114,7 +114,7 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
   <div class="w-full flex flex-col justify-center items-center mb-5">
     <div class="max-w-7xl flex flex-col items-center">
       <video
-      class="hero-video"
+        class="responsive-video"
         playsinline
         controls
         poster="/Gallery/customdes.webp"
@@ -130,13 +130,11 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
   </div>
 </div>
 
-  <script is:inline>
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
-    if (isDesktop) {
-      document.querySelectorAll(".hero-video").forEach((video) => {
-        video.setAttribute("autoplay", "");
-        video.play().catch(() => {});
-      });
-    }
-  </script>
+<script is:inline>
+  const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+  const video = document.querySelectorAll(".responsive-video");
+  if (video && isDesktop) {
+    video.setAttribute("autoplay", "");
+    video.play().catch(() => {});
+  }
+</script>
