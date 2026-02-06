@@ -5,6 +5,7 @@ import ficha from "../../assets/images/Burners/ficha.webp";
 import wordIcon from "../../assets/images/Burners/world.webp";
 import batchIcon from "../../assets/images/Burners/batch.webp";
 import preHeat from "../../assets/images/Burners/preHeat.webp";
+import SmartVideo from "../unitComponents/SmartVideo";
 ---
 
 <div class="flex flex-col mt-20 font-bold">
@@ -21,23 +22,23 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
     </div>
 
     <div class="flex flex-col items-center justify-center px-8 w-full">
-      <video
-        class="w-full lg:w-1/2 md:w-1/2"
-        autoplay
-        playsinline
-        controls
-        poster="/Gallery/customdes.webp"
-        preload="metadata"
-      >
-        <source src="/Videos/Webm/burnerVideo.webp" type="video/webm" />
-        <source src="/Videos/Mp4/burnerVideo.mp4" type="video/mp4" />
-      </video>
+      <SmartVideo
+      client:visible
+      src="/Videos/Webm/burnerVideo.webm"
+      poster="/Gallery/AsphaltPlantPoster/6.webp"
+      desktopHeight="50%"
+      desktopWidth="50%"
+      autoplayOnMobile={true}
+      isLoop={true}
+      />
+
       <h2 class="font-bold text-center my-5">
         From 6 to 125 million Btu/Hr, with preheater and filter
       </h2>
     </div>
 
     <div class="relative w-full min-h-[600px]">
+
       <video
         class=" absolute inset-0 w-full h-full object-cover z-0"
         autoplay
@@ -49,8 +50,7 @@ import preHeat from "../../assets/images/Burners/preHeat.webp";
         width="1280"
         height="720"
       >
-        <source src="/Videos/Webm/bprov1.webp" type="video/webm" />
-        <source src="/Videos/Mp4/bprov1.mp4" type="video/mp4" />
+        <source src="/Videos/Webm/bprov1.webm" type="video/webm" />
       </video>
 
       <div class="absolute inset-0 bg-black/50 z-0"></div>

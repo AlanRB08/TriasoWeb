@@ -11,6 +11,7 @@ import timeIcon from "../../assets/images/HotMix/icon2.webp";
 import lockIcon from "../../assets/images/HotMix/icon3.webp";
 import noCrane from "../../assets/images/HotMix/icon4.webp";
 import siloIcon from "../../assets/images/HotMix/icon5.webp";
+import SmartVideo from "../unitComponents/SmartVideo";
 ---
 
 <div
@@ -140,19 +141,14 @@ import siloIcon from "../../assets/images/HotMix/icon5.webp";
           Self-erecting silo
         </p>
 
-        <video
-          class="block w-full h-auto object-cover rounded-md"
-          autoplay
-          playsinline
-          controls
-          poster="/Gallery/customdes.webp"
-          preload="metadata"
-          width="1280"
-          height="720"
-        >
-          <source src="/Videos/Webm/HMinclinado.webp" type="video/webm" />
-          <source src="/Videos/Mp4/HMinclinado.mp4" type="video/mp4" />
-        </video>
+        <SmartVideo
+        client:visible
+        src="/Videos/Webm/HMinclinado.webm"
+        poster="/Gallery/AsphaltPlantPoster/10.webp"
+        isLoop={true}
+        autoplayOnMobile={true}
+        />
+
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import BinSelector from "../BinUnits/BinSelector";
 import Tred from "../../assets/images/AsphaltStorage/redT.webp";
 import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
+import SmartVideo from "../unitComponents/SmartVideo";
 ---
 
 <div
@@ -81,18 +82,13 @@ import TwoColumnSection from "../unitComponents/TwoColumnSection.astro";
   <div
     class="w-full max-w-7xl mx-auto flex flex-col justify-center items-center"
   >
-    <video
-      class="hero-video"
-      playsinline
-      controls
-      poster="/Gallery/customdes.webp"
-      preload="metadata"
-      width="1280"
-      height="720"
-    >
-      <source src="/Videos/Webm/tolvasVideo.webp" type="video/webm" />
-      <source src="/Videos/Mp4/tolvasVideo.mp4" type="video/mp4" />
-    </video>
+    <SmartVideo
+    client:visible
+    src="/Videos/Webm/tolvasVideo.webm"
+    poster="/Gallery/AsphaltPlantPoster/9.webp"
+    isLoop={false}
+    />
+
     <LearnBtn href="/BinUnits" />
   </div>
   <div
