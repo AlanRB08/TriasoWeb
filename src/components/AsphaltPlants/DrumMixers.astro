@@ -145,6 +145,7 @@ const images2 = [
 
       <a
         href="/DrumMixers"
+        aria-label="View page drum Mixers"
         class="text-white text-center mb-5 mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg bg-[#14427c] hover:bg-transparent hover:text-[#14427c]"
       >
         Discover all asphalt <br /> plants ranges and models
@@ -195,7 +196,9 @@ const images2 = [
               Integrated 5th wheel. Direct transport to site
             </h1>
             <div class="text-start pl-5 lg:pl-5 md:pl-5">
-              <li class="font-thin">No lowbed or flatbed trailer.</li>
+              <ul class="list-disc">
+                <li class="font-thin">No lowbed or flatbed trailer.</li>
+              </ul>
             </div>
 
             <p class="font-thin text-start lg:text-start md:text-start">
@@ -212,8 +215,10 @@ const images2 = [
               Entire plant in just three shipments
             </h1>
             <div class="pl-5 lg:text-start md:text-start">
-              <li class="font-thin">Simplified logistics.</li>
-              <li class="font-thin">Shorter installation time</li>
+              <ul class="list-disc">
+                <li class="font-thin">Simplified logistics.</li>
+                <li class="font-thin">Shorter installation time</li>
+              </ul>
             </div>
             <p class="font-thin lg:text-start md:text-start">
               We design our equipment with an integrated fifth wheel,
@@ -249,11 +254,11 @@ const images2 = [
       <div class="w-full">
         <div class="w-full flex justify-center">
           <SmartVideo
-          client:visible
-          desktopWidth ="80%"
-          src="/Videos/Webm/PlaC140ET.webm"
-          poster="/Gallery/AsphaltPlantPoster/4.webp"
-          autoplayOnMobile={true}
+            client:visible
+            desktopWidth="80%"
+            src="/Videos/Webm/PlaC140ET.webm"
+            poster="/Gallery/AsphaltPlantPoster/4.webp"
+            autoplayOnMobile={true}
           />
         </div>
         <p
@@ -342,19 +347,21 @@ const images2 = [
       </div>
       <div class="flex justify-start items-start">
         <div>
-          <li class="font-bold text-lg lg:text-2xl md:text-2xl">
-            RAP ENTRY FLIGHTS
-          </li>
-          <li class="font-bold text-lg uppercase lg:text-2xl md:text-2xl">
-            Variable-Speed Rotation Drives
-          </li>
+          <ul class="list-disc">
+            <li class="font-bold text-lg lg:text-2xl md:text-2xl">
+              RAP ENTRY FLIGHTS
+            </li>
+            <li class="font-bold text-lg uppercase lg:text-2xl md:text-2xl">
+              Variable-Speed Rotation Drives
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="w-full">
       <div class="w-full flex justify-center">
-        <LearnBtnBlue href="/RapRecycled" />
+        <LearnBtnBlue href="/RapRecycled" label="Go to page Rap Recylced" />
       </div>
       <Image
         src={HeroS2}
@@ -381,7 +388,7 @@ const images2 = [
           efficiency.
         </p>
         <Image src={img8} alt="Rap Bin" class="block md:hidden" />
-        <LearnBtn href="/BinUnits" />
+        <LearnBtn href="/BinUnits" label="Go to page Bin Units" />
       </div>
     </div>
     <ASPanels />
@@ -396,10 +403,10 @@ const images2 = [
       </h1>
       <div>
         <SmartVideo
-        client:visible
-        src="/Videos/Webm/PGMC.webm"
-        poster="/Gallery/AsphaltPlantPoster/5.webp"
-        autoplayOnMobile={true}
+          client:visible
+          src="/Videos/Webm/PGMC.webm"
+          poster="/Gallery/AsphaltPlantPoster/5.webp"
+          autoplayOnMobile={true}
         />
       </div>
       <div
@@ -428,7 +435,7 @@ const images2 = [
           class="hidden md:block"
         />
       </div>
-      <LearnBtn href="/ColdMix" />
+      <LearnBtn href="/ColdMix" label="Go to page Cold Mixers"/>
     </div>
 
     <HeatingSystem />
@@ -541,10 +548,13 @@ const images2 = [
       </h2><br />
       <a
         href="/IntegralAphaltPlant"
+        aria-label="Go to page Integral Asphalt Plants"
         class="text-white text-center mb-5 mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg bg-[#14427c] hover:bg-transparent hover:text-[#14427c]"
       >
         Learn more about our 10 TPH asphalt plants
       </a>
     </div>
   </div>
+
+
 </html>
