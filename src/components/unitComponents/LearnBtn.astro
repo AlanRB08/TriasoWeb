@@ -4,19 +4,22 @@ export interface Props {
   className?: string;
   href?: string;
   isExternal?: boolean;
+  label?: string;
 }
 
 const {
   text = "Learn More",
   className = "bg-redBg hover:bg-transparent hover:text-redBg",
   href = "",
-  isExternal = false
+  isExternal = false,
+  label=""
 } = Astro.props
 ---
 
 <a
   href={href}
   class={`text-white mt-5 text-xs md:text-sm font-normal border-2 border-redBg rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg ${className}`}
+  aria-label={label}
   target={isExternal ? "_blank" : "_self"}
   rel={isExternal ? "noopener noreferrer" : undefined}
 >

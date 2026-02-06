@@ -14,7 +14,7 @@ import ASPanels from "../unitComponents/ASPanels.astro";
 import pugmill from "../../assets/images/DrumMixers/pugmill3.webp";
 import SlidersCarrusel from "../IntegralAsphalt/SlidersCarrusel";
 import OSection from "../unitComponents/OSection.astro";
-
+import SmartVideo from "../unitComponents/SmartVideo";
 import HeatingSystem from "./HeatingSystem.astro";
 import Baghouses from "./Baghouses.astro";
 import LearnBtnBlue from "../unitComponents/LearnBtnBlue.astro";
@@ -135,21 +135,17 @@ const images2 = [
       </h1>
 
       <div class="relative overflow-hidden transform-gpu">
-        <video
-          class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
-          muted
-          playsinline
-          controls
-          poster="/Gallery/customdes.webp"
-          preload="metadata"
-        >
-          <source src="/Videos/Webm/landingVideo.webm" type="video/webm" />
-          <source src="/Videos/Mp4/landingVideo.mp4" type="video/mp4" />
-        </video>
+        <SmartVideo
+          client:visible
+          poster="/Gallery/AsphaltPlantPoster/1.webp"
+          src="/Videos/Webm/landingVideo.webm"
+          className="bg-white"
+        />
       </div>
 
       <a
         href="/DrumMixers"
+        aria-label="View page drum Mixers"
         class="text-white text-center mb-5 mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg bg-[#14427c] hover:bg-transparent hover:text-[#14427c]"
       >
         Discover all asphalt <br /> plants ranges and models
@@ -200,7 +196,9 @@ const images2 = [
               Integrated 5th wheel. Direct transport to site
             </h1>
             <div class="text-start pl-5 lg:pl-5 md:pl-5">
-              <li class="font-thin">No lowbed or flatbed trailer.</li>
+              <ul class="list-disc">
+                <li class="font-thin">No lowbed or flatbed trailer.</li>
+              </ul>
             </div>
 
             <p class="font-thin text-start lg:text-start md:text-start">
@@ -217,8 +215,10 @@ const images2 = [
               Entire plant in just three shipments
             </h1>
             <div class="pl-5 lg:text-start md:text-start">
-              <li class="font-thin">Simplified logistics.</li>
-              <li class="font-thin">Shorter installation time</li>
+              <ul class="list-disc">
+                <li class="font-thin">Simplified logistics.</li>
+                <li class="font-thin">Shorter installation time</li>
+              </ul>
             </div>
             <p class="font-thin lg:text-start md:text-start">
               We design our equipment with an integrated fifth wheel,
@@ -230,34 +230,19 @@ const images2 = [
       </div>
     </div>
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
-      <video
-        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
-        playsinline
-        controls
-        muted
-        poster="/Gallery/customdes.webp"
-        preload="metadata"
-        width="1280"
-        height="720"
-      >
-        <source src="/Videos/Webm/asphaltVideo1.webm" type="video/webm" />
-        <source src="/Videos/Mp4/asphaltVideo1.mp4" type="video/mp4" />
-      </video>
+      <SmartVideo
+        client:visible
+        src="/Videos/Webm/asphaltVideo1.webm"
+        poster="/Gallery/AsphaltPlantPoster/2.webp"
+      />
     </div>
+
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
-      <video
-        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform bg-black"
-        muted
-        playsinline
-        controls
-        poster="/Gallery/customdes.webp"
-        preload="metadata"
-        width="1280"
-        height="720"
-      >
-        <source src="/Videos/Webm/asphaltVideo2.webm" type="video/webm" />
-        <source src="/Videos/Mp4/asphaltVideo2.mp4" type="video/mp4" />
-      </video>
+      <SmartVideo
+        client:visible
+        src="/Videos/Webm/asphaltVideo2.webm"
+        poster="/Gallery/AsphaltPlantPoster/3.webp"
+      />
     </div>
 
     <div
@@ -268,17 +253,13 @@ const images2 = [
       </h2>
       <div class="w-full">
         <div class="w-full flex justify-center">
-          <video
-            autoplay
-            muted
-            playsinline
-            controls
-            poster="/Gallery/customdes.webp"
-            preload="metadata"
-          >
-            <source src="/Videos/Webm/DMVideo1.webm" type="video/webm" />
-            <source src="/Videos/Mp4/DMVideo1.mp4" type="video/mp4" />
-          </video>
+          <SmartVideo
+            client:visible
+            desktopWidth="80%"
+            src="/Videos/Webm/PlaC140ET.webm"
+            poster="/Gallery/AsphaltPlantPoster/4.webp"
+            autoplayOnMobile={true}
+          />
         </div>
         <p
           class="text-black text-center lg:text-justify md:text-justify font-medium lg:font-semibold md:font-semibold mt-5 mb-5"
@@ -366,19 +347,21 @@ const images2 = [
       </div>
       <div class="flex justify-start items-start">
         <div>
-          <li class="font-bold text-lg lg:text-2xl md:text-2xl">
-            RAP ENTRY FLIGHTS
-          </li>
-          <li class="font-bold text-lg uppercase lg:text-2xl md:text-2xl">
-            Variable-Speed Rotation Drives
-          </li>
+          <ul class="list-disc">
+            <li class="font-bold text-lg lg:text-2xl md:text-2xl">
+              RAP ENTRY FLIGHTS
+            </li>
+            <li class="font-bold text-lg uppercase lg:text-2xl md:text-2xl">
+              Variable-Speed Rotation Drives
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="w-full">
       <div class="w-full flex justify-center">
-        <LearnBtnBlue href="/RapRecycled" />
+        <LearnBtnBlue href="/RapRecycled" label="Go to page Rap Recylced" />
       </div>
       <Image
         src={HeroS2}
@@ -405,7 +388,7 @@ const images2 = [
           efficiency.
         </p>
         <Image src={img8} alt="Rap Bin" class="block md:hidden" />
-        <LearnBtn href="/BinUnits" />
+        <LearnBtn href="/BinUnits" label="Go to page Bin Units" />
       </div>
     </div>
     <ASPanels />
@@ -419,19 +402,12 @@ const images2 = [
         <span class="text-3xl md:text-4xl text-black">Pugmill</span>
       </h1>
       <div>
-        <video
-          autoplay
-          playsinline
-          muted
-          controls
-          poster="/Gallery/customdes.webp"
-          preload="metadata"
-          width="1280"
-          height="720"
-        >
-          <source src="/Videos/Webm/PGMC.webm" type="video/webm" />
-          <source src="/Videos/Mp4/PGMC.mp4" type="video/mp4" />
-        </video>
+        <SmartVideo
+          client:visible
+          src="/Videos/Webm/PGMC.webm"
+          poster="/Gallery/AsphaltPlantPoster/5.webp"
+          autoplayOnMobile={true}
+        />
       </div>
       <div
         class="w-full grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-8 mt-20 mb-8"
@@ -459,7 +435,7 @@ const images2 = [
           class="hidden md:block"
         />
       </div>
-      <LearnBtn href="/ColdMix" />
+      <LearnBtn href="/ColdMix" label="Go to page Cold Mixers"/>
     </div>
 
     <HeatingSystem />
@@ -572,41 +548,13 @@ const images2 = [
       </h2><br />
       <a
         href="/IntegralAphaltPlant"
+        aria-label="Go to page Integral Asphalt Plants"
         class="text-white text-center mb-5 mt-5 text-xs md:text-sm font-normal border-2 border-[#14427c] rounded-full py-2 px-6 transition-all duration-300 ease-out transform hover:scale-110 hover:shadow-lg bg-[#14427c] hover:bg-transparent hover:text-[#14427c]"
       >
         Learn more about our 10 TPH asphalt plants
       </a>
     </div>
   </div>
+
+
 </html>
-<script is:inline>
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const videos = document.querySelectorAll(".smart-video");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target;
-
-          if (entry.isIntersecting) {
-            if (!video.src) {
-              video.src = video.dataset.src;
-              console.log("Video entró a viewport")
-            }
-            if (!isMobile) {
-              video.play().catch(() => {});
-              console.log("Video en móvil")
-            }
-          } else {
-            video.pause();
-            console.log("Video salió del viewport")
-          }
-        });
-      },
-      {
-        threshold: 0.6, 
-      },
-    );
-
-    videos.forEach((video) => observer.observe(video));
-</script>

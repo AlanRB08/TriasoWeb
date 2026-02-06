@@ -4,6 +4,7 @@ import single from "../../assets/images/DrumMixers/baghouse.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
 import BagHousesOdometer from "./BagHousesOdometer";
 import { Image } from "astro:assets";
+import SmartVideo from "../unitComponents/SmartVideo";
 ---
 
 <div class="w-full flex flex-col items-center justify-center font-bold">
@@ -41,7 +42,9 @@ import { Image } from "astro:assets";
               <p class="text-black">4 - 90</p>
               <p class="text-sm font-normal ml-3 text-black">thousand ACFM</p>
             </div>
-            <p class="text-black font-thin text-center lg:text-start w-full text-base">
+            <p
+              class="text-black font-thin text-center lg:text-start w-full text-base"
+            >
               Baghouses capacity
             </p>
           </div>
@@ -52,7 +55,9 @@ import { Image } from "astro:assets";
             <p class="text-black">99.99</p>
             <p class="text-sm font-normal ml-3 text-black">%</p>
           </div>
-          <p class="text-black font-thin text-center lg:text-start w-full text-base">
+          <p
+            class="text-black font-thin text-center lg:text-start w-full text-base"
+          >
             Fine particle filtration efficiency
           </p>
         </div>
@@ -151,33 +156,17 @@ import { Image } from "astro:assets";
   class="w-full flex flex-col items-center justify-center mt-5 md:mt-20 max-w-7xl mx-auto px-8"
 >
   <div>
-    <video
-    class="hero-video"
-      playsinline
-      controls
-      poster="/Gallery/customdes.webp"
-      preload="metadata"
-      width="1280"
-      height="720"
-    >
-      <source src="/Videos/Webm/DMVideo.webp" type="video/webm" />
-      <source src="/Videos/Mp4/DMVideo.mp4" type="video/mp4" />
-    </video>
+    <SmartVideo
+      client:visible
+      src="/Videos/Webm/DMVideo.webm"
+      poster="/Gallery/AsphaltPlantPoster/7.webp"
+      isLoop={true}
+      autoplayOnMobile={true}
+    />
     <p class="font-thin text-center text-grisT">
       Triaso® baghouses are portable, self-contained units that operate at
       air-to-cloth ratios up to 8:1
     </p>
   </div><br />
-  <LearnBtn href="/BagHouses" />
+  <LearnBtn href="/BagHouses" label="Go to page Bag Houses"/>
 </div>
-
-  <script is:inline>
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
-    if (isDesktop) {
-      document.querySelectorAll(".hero-video").forEach((video) => {
-        video.setAttribute("autoplay", "");
-        video.play().catch(() => {});
-      });
-    }
-  </script>

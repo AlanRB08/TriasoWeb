@@ -17,7 +17,7 @@ export default function Tabs() {
         alt={images[activeIndex].alt}
         className=" w-full object-contain md:object-cover lg:object-cover"
       />
-      
+
       <div className="flex flex-col items-stretch justify-around gap-4 md:gap-20">
         {images.map((img, index) => (
           <button
@@ -46,9 +46,12 @@ export default function Tabs() {
             <h2>Different Types of Filter Bags and Their Specific Applications:</h2>
           </div>
           <div className="pl-5 font-semibold text-[#5d5d5d]">
-            <li>Polyester</li>
-            <li>Nomex</li>
-            <li>Polyamide (P84)</li>
+            <ul className="list-disc">
+              <li>Polyester</li>
+              <li>Nomex</li>
+              <li>Polyamide (P84)</li>
+            </ul>
+
           </div>
         </div>
       </div>

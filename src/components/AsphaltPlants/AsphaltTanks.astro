@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import ASOdom from "../../assets/images/AsphaltStorage/ASOdo.webp";
 import LearnBtn from "../unitComponents/LearnBtn.astro";
+import SmartVideo from "../unitComponents/SmartVideo";
 ---
 
 <div class="w-full flex flex-col font-bold px-4 mt-5">
@@ -113,19 +114,14 @@ import LearnBtn from "../unitComponents/LearnBtn.astro";
   </div>
   <div class="w-full flex flex-col justify-center items-center mb-5">
     <div class="max-w-7xl flex flex-col items-center">
-      <video
-        class="responsive-video"
-        playsinline
-        controls
-        poster="/Gallery/customdes.webp"
-        preload="metadata"
-        width="1280"
-        height="720"
-      >
-        <source src="/Videos/Webm/ASMainVideo.webm" type="video/webm" />
-        <source src="/Videos/Mp4/ASMainVideo.mp4" type="video/mp4" />
-      </video><br />
-      <LearnBtn href="/AsphaltStorage" />
+      <SmartVideo
+        client:visible
+        src="/Videos/Webm/ASMainVideo.webm"
+        poster="/Gallery/AsphaltPlantPoster/8.webp"
+        isLoop={false}
+      />
+      <br />
+      <LearnBtn href="/AsphaltStorage" label="Go to page Asphalt storage" />
     </div>
   </div>
 </div>
