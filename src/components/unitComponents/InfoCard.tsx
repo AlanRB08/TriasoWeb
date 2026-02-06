@@ -24,11 +24,10 @@ const InfoCard: React.FC<InfoCardProps> = ({ sections }) => {
             <button
               key={section.id}
               onClick={() => setActiveIndex(idx)}
-              className={`w-8 h-12 flex items-center justify-center rounded-md transition-colors ${
-                idx === activeIndex
+              className={`w-8 h-12 flex items-center justify-center rounded-md transition-colors ${idx === activeIndex
                   ? "bg-redBg"
                   : "bg-gray-800 hover:bg-gray-700"
-              }`}
+                }`}
             >
               {section.label}
             </button>
@@ -38,6 +37,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ sections }) => {
         {/* Content */}
         <div className="flex-1">
           <img
+            loading="lazy"
             src={sections[activeIndex].image}
             alt={sections[activeIndex].title}
             className="w-full  object-cover"

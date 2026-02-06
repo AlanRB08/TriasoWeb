@@ -79,11 +79,10 @@ export default function GallerySlider({ images }: Props) {
       <div className="relative overflow-hidden w-full h-[300px]">
         <div
           ref={containerRef}
-          className={`flex transition-transform duration-500 ease-in-out ${
-            isMobile
+          className={`flex transition-transform duration-500 ease-in-out ${isMobile
               ? "overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
               : ""
-          }`}
+            }`}
           style={{
             transform: isMobile ? undefined : `translateX(${offset}%)`,
             width: isMobile
@@ -94,15 +93,15 @@ export default function GallerySlider({ images }: Props) {
           {images.map((img, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 px-2 cursor-pointer ${
-                isMobile ? "snap-start" : ""
-              }`}
+              className={`flex-shrink-0 px-2 cursor-pointer ${isMobile ? "snap-start" : ""
+                }`}
               style={{
                 width: isMobile ? "80%" : `${100 / images.length}%`,
               }}
               onClick={() => setModalIndex(i)}
             >
               <img
+                loading="lazy"
                 src={img.src}
                 alt={img.title}
                 className="w-full h-64 object-cover rounded shadow hover:scale-105 transition"
