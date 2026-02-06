@@ -136,7 +136,8 @@ const images2 = [
 
       <div class="relative overflow-hidden transform-gpu">
         <video
-          class="hero-video block w-full h-auto object-cover transform-gpu will-change-transform"
+          class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
+          muted
           playsinline
           controls
           poster="/Gallery/customdes.webp"
@@ -230,9 +231,10 @@ const images2 = [
     </div>
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
       <video
-        class="block w-full h-auto object-cover transform-gpu will-change-transform hero-video"
+        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform"
         playsinline
         controls
+        muted
         poster="/Gallery/customdes.webp"
         preload="metadata"
         width="1280"
@@ -244,7 +246,8 @@ const images2 = [
     </div>
     <div class="relative overflow-hidden max-w-7xl mx-auto transform-gpu">
       <video
-        class="block w-full h-auto object-cover transform-gpu will-change-transform bg-black hero-video"
+        class="smart-video block w-full h-auto object-cover transform-gpu will-change-transform bg-black"
+        muted
         playsinline
         controls
         poster="/Gallery/customdes.webp"
@@ -267,6 +270,7 @@ const images2 = [
         <div class="w-full flex justify-center">
           <video
             autoplay
+            muted
             playsinline
             controls
             poster="/Gallery/customdes.webp"
@@ -418,6 +422,7 @@ const images2 = [
         <video
           autoplay
           playsinline
+          muted
           controls
           poster="/Gallery/customdes.webp"
           preload="metadata"
@@ -573,16 +578,35 @@ const images2 = [
       </a>
     </div>
   </div>
-
-
-  <script is:inline>
-    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
-    if (isDesktop) {
-      document.querySelectorAll(".hero-video").forEach((video) => {
-        video.setAttribute("autoplay", "");
-        video.play().catch(() => {});
-      });
-    }
-  </script>
 </html>
+<script is:inline>
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const videos = document.querySelectorAll(".smart-video");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            if (!video.src) {
+              video.src = video.dataset.src;
+              console.log("Video entró a viewport")
+            }
+            if (!isMobile) {
+              video.play().catch(() => {});
+              console.log("Video en móvil")
+            }
+          } else {
+            video.pause();
+            console.log("Video salió del viewport")
+          }
+        });
+      },
+      {
+        threshold: 0.6, 
+      },
+    );
+
+    videos.forEach((video) => observer.observe(video));
+</script>
